@@ -1,0 +1,287 @@
+\documentclass[french]{beamer}
+\usetheme{Berkeley}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{epigraph}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{mathtools}
+\usepackage{multimedia}
+\usepackage{textpos}
+
+\DeclareMathOperator{\C}{\mathcal C}
+\DeclareMathOperator{\R}{\mathbb R}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclareMathOperator{\goesto}{\longrightarrow}
+\DeclareMathOperator{\nimplies}{\centernot\implies}
+
+\setbeamertemplate{theorems}[numbered]
+\theoremstyle{plain}
+\newtheorem{pb}{Problème}
+
+
+\title{POFM $ 2020-21 $ - Cours par correspondance : \\ \textsc{Transformations du plan}}
+\subtitle{Groupe C}
+\author[Yaël Dillies]{Yaël Dillies}
+\date{14 novembre 2020}
+
+
+\begin{document}
+\section{Introduction}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{La phrase du jour}
+  \epigraph{La géométrie est l'étude des propriétés invariantes sous un certain type de transformations.}{\textit{Felix Klein}}
+\end{frame}
+
+
+\begin{frame}{Sommaire}
+  \tableofcontents
+\end{frame}
+
+
+\begin{frame}{Qu'est-ce qu'une transformation du plan ?}
+  \begin{itemize}
+    \item Fonction de $ \R^2 $ vers $ \R^2 $
+    \pause
+    \item Bijective
+    \pause
+    \item D'autres propriétés à spécifier
+  \end{itemize}
+\end{frame}
+
+
+
+\section{Géométrie euclidienne}
+\begin{frame}{Transformations en géométrie euclidienne}
+  On veut que nos transformations préservent les angles, c'est-à-dire
+  $$ \text{ pour tous points $ A, B, C $, } \widehat{f(A)f(B)f(C)} = \widehat{ABC} $$
+  Quels genres de transformations obtient-on ?
+\end{frame}
+
+
+\subsection{Homothéties}
+\begin{frame}{Définition d'une homothétie}
+  L'\textit{homothétie} de centre $ O $ et de rapport $ k $ est la transformation qui associe au point $ X $ le point $ X' $ tel que $ \overline{OX'} = k\overline{OX} $ (en longueurs algébriques). \\
+  En terme de vecteurs, $ \overrightarrow{OX'} = k\overrightarrow{OX} $ \\
+  En terme de nombres complexes, $ X' - O = k(X - O) $. \\
+  On écrit l'homothétie $ h_{O, k} $.
+  \begin{figure}
+    \centering
+    %\includegraphics[width=0.4\textwidth]{Géométrie/Exemple d'homothétie.png}
+    \caption{Un bonhomme noir et ses images bleue et rouge par les homothéties de centre $ O $ de rapport $ 2 $ et $ -\frac 12 $.}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Propriétés des homothéties}
+  \begin{exampleblock}{Propriétés des homothéties}
+    \begin{itemize}
+      \item Les homothéties conservent les droites, les cercles, les angles orientés, et les formes.
+      \item L’image d’une droite est une droite parallèle.
+      \item Une homothétie de rapport $ k $ multiplie toutes les longueurs par $ |k| $. En particulier, elle conserve les rapports de longueurs.
+    \end{itemize}
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}{Exemples d'homothéties}
+  \begin{itemize}
+    \item Les symétries centrales sont les homothéties de rapport $ -1 $.
+    \item Si $ AB /\!/ A'B' $, alors il existe exactement une homothétie envoyant $ A $ sur $ A'$ et $ B $ sur $ B' $.
+    \item Si $ \C, \C' $ sont deux cercles, alors il existe exactement deux homothéties envoyant $ \C $ sur $ \C' $, une de rapport positif et une de rapport négatif.
+  \begin{figure}
+    \centering
+    %\includegraphics[width=0.5\textwidth]{Géométrie/Homothéties entre cercles.png}
+    \caption{$ O_+ $ est le centre de l'homothétie de rapport positif envoyant $ \C $ sur $ \C' $ et $ O_- $ le centre de celle de rapport négatif.}
+  \end{figure}
+  Remarque : Les deux homothéties existent toujours, même si $ \C $ et $ \C' $ s'intersectent ou si l'un contient l'autre.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Concourance des médianes}
+  \begin{figure}
+    \centering
+    %\includegraphics[width=0.5\textwidth]{Géométrie/Intersection des médianes.png}
+    \caption{Grâce à une homothétie bien choisie, montrer que $ \overline{B'G} = -\frac 12\overline{BG}, \overline{C'G} = -\frac 12\overline{CG} $. En déduire que les médianes sont concourantes.}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Composition d'homothéties}
+  \begin{exampleblock}{Lemme de composition d'homothéties}
+    Si $ h_1, h_2 $ sont deux homothéties de rapport $ k_1, k_2 $ et de centre $ O_1, O_2 $, alors $ h_2 \circ h_1 $ est une homothétie de rapport $ k_1k_2 $ et de centre un point de la droite
+  \end{exampleblock}
+  \begin{figure}
+    \centering
+    %\includegraphics[width=0.6\textwidth]{Géométrie/Composition d'homothéties.png}
+    \caption{Remarque : quand $ k_1k_2 = 1 $, le centre de $ h_2 \circ h_1 $ va à l'infini et $ h_2 \circ h_1 $ devient une translation.}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Théorème de Monge}
+  \begin{figure}
+    \centering
+    %\includegraphics[width=0.8\textwidth]{Géométrie/Théorème de Monge.png}
+    \caption{Les homothéties envoyant $ \C_1 $ sur $ \C_2 $, $ \C_2 $ sur $ \C_3 $, $ \C_1 $ sur $ \C_3 $ sont de centres $ X, Y, Z $.}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Cercle d'Euler}
+  \begin{figure}
+    \centering
+    %\includegraphics[width=0.5\textwidth]{Géométrie/Cercle d'Euler complet.png}
+    \caption{Tout ce beau monde est cocyclique.}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Homothéties entre le cercle circonscrit et le cercle d'Euler}
+  \begin{figure}
+    \centering
+    %\includegraphics[width=0.5\textwidth]{Géométrie/Cercle d'Euler centres.png}
+    \caption{Quels sont donc leurs centres ?}
+  \end{figure}
+\end{frame}
+
+
+\subsection{Rotations}
+\begin{frame}{Définition d'une rotation}
+  La \textit{rotation} de centre $ O $ et d'angle $ \theta $ est la transformation qui associe au point $ X $ le point $ X' $ tel que $ OX' = OX $ et $ \widehat{X'OX} = \theta $ (en angles orientés). \\
+  En terme de nombres complexes, $ X' - O = e^{i\theta}(X - O) $. \\
+  On écrit la rotation $ r_{O, \theta} $.
+  \begin{figure}
+    \centering
+    %\includegraphics[width=0.3\textwidth]{Géométrie/Exemple de rotation.png}
+    \caption{Un bonhomme noir et son image bleue par la rotation de centre $ O $ d'angle $ 75^\circ $.}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Propriétés des rotations}
+  \begin{exampleblock}{Propriétés des rotations}
+    \begin{itemize}
+      \item Les rotations conservent les longueurs. Ce sont des \textit{isométries}.
+      \item Les rotations conservent les droites, les cercles, les angles.
+      \item L’image d’une droite par une rotation d’angle $ \theta $ fait un angle de $ \theta $ avec celle-ci.
+    \end{itemize}
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}{Exemples de rotations}
+  \begin{itemize}
+    \item Les symétries centrales sont les rotations d'angle $ \pi $.
+    \item Si $ AB = A'B' $, alors il existe exactement une rotation (dégénérée en translation si $ AB /\!/ A'B' $) envoyant $ A $ sur $ A'$ et $ B $ sur $ B' $. (essayez de la construire !)
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Composition de rotations}
+  \begin{exampleblock}{Lemme de composition de rotations}
+    Si $ r_1, r_2 $ sont deux rotations d'angles $ \theta_1, \theta_2 $, alors $ r_2 \circ r_1 $ est une rotation d'angle $ \theta_1 + \theta_2 $.
+  \end{exampleblock}
+  Remarque : quand $ \theta_1 + \theta_2 \equiv 0 \mod 360^\circ $, le centre de $ r_2 \circ r_1 $ va à l'infini et $ r_2 \circ r_1 $ devient une translation.
+\end{frame}
+
+
+\subsection{Symétries axiales}
+\begin{frame}{Définition d'une symétrie axiale}
+  La \textit{symétrie axiale} d'axe la droite $ d $ est la transformation qui au point $ X $ associe $ X' $ tel que $ d $ soit la médiatrice de $ [XX'] $.
+\end{frame}
+
+
+\begin{frame}{Propriétés des symétries axiales}
+  \begin{exampleblock}{Propriétés des symétries axiales}
+    \begin{itemize}
+      \item Les symétries axiales conservent les longueurs. Ce sont des isométries.
+      \item Les symétries axiales conservent les droites, les cercles, mais changent le signe des angles orientés.
+      \item Pour tous points $ A, A'$, il existe exactement une symétrie axiale envoyant $ A $ sur $ A'$.
+    \end{itemize}
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}{Composition de symétries axiales}
+  \begin{exampleblock}{Lemme de composition des symétries axiales}
+    Si $ s_1, s_2 $ sont deux symétries axiales dont les axes forment un angle de mesure $ \alpha $, alors $ s_2 \circ s_1 $ est la rotation d'angle $ 2\alpha $ de centre l'intersection des deux axes.
+  \end{exampleblock}
+  \begin{figure}
+    \centering
+    %\includegraphics[width=0.3\textwidth]{Géométrie/Composition de symétries axiales.png}
+    \caption{Remarque : si les deux axes sont parallèles, alors la rotation est dégénérée en translation.}
+  \end{figure}
+\end{frame}
+
+
+\subsection{Similitudes}
+\begin{frame}{Définition d'une similitude}
+  Une \textit{similitude directe} est toute transformation préservant les angles orientés. \\
+  Une \textit{similitude indirecte} est la composée d'une similitude directe avec une symétrie axiale. \\
+  Les homothéties, rotations, translations, symétries axiales sont toutes des similitudes. C'est en un sens \textbf{la forme la plus générale} de transformation en géométrie euclidienne. \\
+  S'il existe une similitude directe envoyant $ A $ sur $ A' $, $ B $ sur $ B' $, $ C $ sur $ C' $, on écrit $ ABC \sim A'B'C' $. \\
+  S'il existe une similitude indirecte envoyant $ A $ sur $ A' $, $ B $ sur $ B' $, $ C $ sur $ C' $, on écrit $ ABC \overline\sim A'B'C' $.
+\end{frame}
+
+
+\begin{frame}{Propriétés des similitudes}
+  \begin{exampleblock}{Propriétés des similitudes}
+    \begin{itemize}
+      \item Les similitudes conservent les droites, les cercles, les angles (non orientés).
+      \item Les similitudes conservent les longueurs. Ce sont des isométries. Et en fait toute isométrie est une similitude.
+      \item Toute similitude directe peut être écrite comme la composition d'une homothétie (potentiellement dégénérée en translation) et d'une rotation de même centre.
+    \end{itemize}
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}{Théorème de Ptolémée}
+  \begin{exampleblock}{Théorème de Ptolémée}
+    Pour tous points $ A, B, C, D $,
+    $$ AC \cdot BD \le AB \cdot CD + AD \cdot BC $$
+    avec égalité ssi $ ABCD $ sont cocycliques dans cet ordre.
+  \end{exampleblock}
+  Indice : Introduire $ E $ tel que $ ABE \sim ADC $.
+\end{frame}
+
+
+\begin{frame}{Deux similitudes pour le prix d'une}
+  \begin{exampleblock}{Similitudes internes}
+    Les similitudes envoyant $ \begin{cases}A \mapsto A' \\ B \mapsto B'\end{cases} $ et $ \begin{cases}A \mapsto B \\ A' \mapsto B'\end{cases} $ sont de même centre.
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}{Théorème de Miquel}
+  \begin{exampleblock}{Théorème de Miquel}
+    Le point de Miquel $ M $ est le centre de plein de similitudes.
+  \end{exampleblock}
+  \begin{figure}
+    \centering
+    %\includegraphics[width=0.5\textwidth]{Géométrie/Théorème de Miquel.png}
+    \caption{Trouvez-les toutes !}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Puissance d'un point}
+  \begin{figure}
+    \centering
+    %\includegraphics[width=0.8\textwidth]{Géométrie/Puissance d'un point.png}
+  \end{figure}
+\end{frame}
+\end{document}
