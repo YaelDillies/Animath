@@ -47,7 +47,6 @@
 % \RequirePackage{eulervm}
 \RequirePackage{fancyhdr}
 \RequirePackage{float}
-\RequirePackage{intcalc}
 \RequirePackage{framed}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[a4paper,left=19mm,right=19mm,top=26mm,bottom=33mm]{geometry}
@@ -56,6 +55,7 @@
 \RequirePackage{import}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{csquotes} % loaded after inputenc
+\RequirePackage{intcalc}
 \RequirePackage{mathrsfs}
 \RequirePackage{memhfixc}
 \ifpoly % évite tout un tas de warning
