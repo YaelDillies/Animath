@@ -1,0 +1,37 @@
+\author{Matthieu Bouyer}
+Ce cours reprend les exercices des deux années précédentes :
+
+\url{https://maths-olympiques.fr/wp-content/uploads/2019/08/PolycopieV1-1.pdf}
+page 87-92
+
+\url{http://igm.univ-mlv.fr/~juge/pofm/2020-2021/Valbonne-2020/Polycopié-Valbonne-2020-v2.pdf}
+page 104-111
+
+A l'exception de cet exercice difficile traité en complément :
+
+\begin{exo}
+Trouver les fonctions $f:\N\longmapsto\N$ telles que $f(f(n))<f(n+1)$.
+
+(Indication : Montrer par récurrence que $\forall n\in\N,~\forall m\ge n, f(m)\ge n$.)
+\end{exo}
+
+\begin{sol}
+On montre le résultat indiqué par récurrence :
+
+$\bullet$ Initialisation : on a bien $\forall n\in\N,~f(n)\ge0$.
+
+$\bullet$ Hérédité : On suppose le résultat vérifié pour $n\in\N$ fixé.
+
+Alors pour tout $m\ge n+1,~f(m)>f(f(m-1))\ge n$ par hypothèse de récurrence car $f(m-1)\ge n$ par hypothèse de récurrence.
+
+Donc $f(m)\ge n+1$ (entiers).
+
+\bigskip
+
+On en déduit que $\forall n\in\N,~f(n)\ge n$ d'où $\forall n\in\N,~f(n+1)>f(n)$ donc $f$ est strictement croissante.
+
+Donc en réutilisant l'équation de départ, $\forall n\in\N,~f(n)<n+1$ donc $f(n)=n$.
+
+Finalement, la seule solution est $id_\N$ qui convient effectivement.
+\end{sol}
+

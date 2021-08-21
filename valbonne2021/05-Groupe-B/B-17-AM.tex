@@ -1,0 +1,535 @@
+\subsubsection{Rappels sur les points particuliers dans un triangle}
+
+Centre du cercle circonscrit = médiatrices\\
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-1.6,0.2) rectangle (2.6,4.5);
+\fill[line width=2.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (-0.74,3.9) -- (-1.38,1.74) -- (2.24,2.14) -- cycle;
+\draw [line width=2.pt,color=zzttqq] (-0.74,3.9)-- (-1.38,1.74);
+\draw [line width=2.pt,color=zzttqq] (-1.38,1.74)-- (2.24,2.14);
+\draw [line width=2.pt,color=zzttqq] (2.24,2.14)-- (-0.74,3.9);
+\draw [line width=2.pt,domain=-1.6:2.6] plot(\x,{(--3.0802--2.98*\x)/1.76});
+\draw [line width=2.pt,domain=-1.6:2.6] plot(\x,{(--2.3326-3.62*\x)/0.4});
+\draw [line width=2.pt,domain=-1.6:2.6] plot(\x,{(-5.4128--0.64*\x)/-2.16});
+\draw [line width=2.pt] (0.37990480220012723,2.393361540088851) circle (1.8772709487110122cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-0.74,3.9) circle (2.5pt);
+\draw[color=ududff] (-0.6,4.27) node {$A$};
+\draw [fill=ududff] (-1.38,1.74) circle (2.5pt);
+\draw[color=ududff] (-1.58,1.35) node {$B$};
+\draw [fill=ududff] (2.24,2.14) circle (2.5pt);
+\draw[color=ududff] (2.38,2.51) node {$C$};
+\draw [fill=uuuuuu] (0.3799048022001271,2.393361540088851) circle (2.0pt);
+\draw[color=uuuuuu] (0.1,2.77) node {$O$};
+\end{scriptsize}
+\end{tikzpicture}
+
+
+Centre du cercle inscrit = Bissectrices\\
+
+
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.,0.5) rectangle (2.7,4.7);
+\fill[line width=2.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (-1.04,4.04) -- (-1.38,1.74) -- (2.24,2.14) -- cycle;
+\draw [line width=2.pt,color=zzttqq] (-1.04,4.04)-- (-1.38,1.74);
+\draw [line width=2.pt,color=zzttqq] (-1.38,1.74)-- (2.24,2.14);
+\draw [line width=2.pt,color=zzttqq] (2.24,2.14)-- (-1.04,4.04);
+\draw [line width=2.pt] (0.35051770451770464,2.6593147741147742) circle (1.9595487183417826cm);
+\draw [line width=2.pt,domain=-2.:2.7] plot(\x,{(--0.8187445133273902-0.9006651173610847*\x)/0.4345139196492372});
+\draw [line width=2.pt,domain=-2.:2.7] plot(\x,{(-2.555553759460756--0.20600698396093642*\x)/-0.9785505212094665});
+\draw [line width=2.pt,domain=-2.:2.7] plot(\x,{(--2.210473946215364--0.694008588975521*\x)/0.7199667203615777});
+\draw [line width=2.pt] (-0.39053771113020413,2.6937875953462793) circle (0.8393462342374952cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-1.04,4.04) circle (2.5pt);
+\draw[color=ududff] (-0.9,4.41) node {$A$};
+\draw [fill=ududff] (-1.38,1.74) circle (2.5pt);
+\draw[color=ududff] (-1.58,1.35) node {$B$};
+\draw [fill=ududff] (2.24,2.14) circle (2.5pt);
+\draw[color=ududff] (2.38,2.51) node {$C$};
+\draw [fill=uuuuuu] (-0.39053771113020413,2.6937875953462793) circle (2.0pt);
+\draw[color=uuuuuu] (-0.26,3.11) node {$I$};
+\end{scriptsize}
+\end{tikzpicture}
+
+
+Centre de gravité = point d'intersection des médianes
+
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.,1.) rectangle (2.6,4.5);
+\fill[line width=2.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (-0.72,3.86) -- (-1.38,1.74) -- (2.24,2.14) -- cycle;
+\draw [line width=2.pt,color=zzttqq] (-0.72,3.86)-- (-1.38,1.74);
+\draw [line width=2.pt,color=zzttqq] (-1.38,1.74)-- (2.24,2.14);
+\draw [line width=2.pt,color=zzttqq] (2.24,2.14)-- (-0.72,3.86);
+\draw [line width=2.pt] (-0.72,3.86)-- (0.43,1.94);
+\draw [line width=2.pt] (-1.05,2.8)-- (2.24,2.14);
+\draw [line width=2.pt] (0.76,3.)-- (-1.38,1.74);
+\begin{scriptsize}
+\draw [fill=ududff] (-0.72,3.86) circle (2.5pt);
+\draw[color=ududff] (-0.58,4.23) node {$A$};
+\draw [fill=ududff] (-1.38,1.74) circle (2.5pt);
+\draw[color=ududff] (-1.58,1.35) node {$B$};
+\draw [fill=ududff] (2.24,2.14) circle (2.5pt);
+\draw[color=ududff] (2.38,2.51) node {$C$};
+\draw [fill=uuuuuu] (0.04666666666666661,2.58) circle (2.0pt);
+\draw[color=uuuuuu] (0.06,3.01) node {$G$};
+\end{scriptsize}
+\end{tikzpicture}
+
+
+
+
+
+Orthocentre = point d'intersection des hauteurs \\
+
+
+
+
+
+
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.,1.2) rectangle (3.,4.3);
+\fill[line width=2.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (-0.72,3.86) -- (-1.38,1.74) -- (2.24,2.14) -- cycle;
+\draw [line width=2.pt,color=zzttqq] (-0.72,3.86)-- (-1.38,1.74);
+\draw [line width=2.pt,color=zzttqq] (-1.38,1.74)-- (2.24,2.14);
+\draw [line width=2.pt,color=zzttqq] (2.24,2.14)-- (-0.72,3.86);
+\draw [line width=2.pt,domain=-2.:3.] plot(\x,{(--1.0624--3.62*\x)/-0.4});
+\draw [line width=2.pt,domain=-2.:3.] plot(\x,{(--6.0152-0.66*\x)/2.12});
+\draw [line width=2.pt,domain=-2.:3.] plot(\x,{(-7.0776-2.96*\x)/-1.72});
+\begin{scriptsize}
+\draw [fill=ududff] (-0.72,3.86) circle (2.5pt);
+\draw[color=ududff] (-0.58,4.23) node {$A$};
+\draw [fill=ududff] (-1.38,1.74) circle (2.5pt);
+\draw[color=ududff] (-1.24,1.43) node {$B$};
+\draw [fill=ududff] (2.24,2.14) circle (2.5pt);
+\draw[color=ududff] (2.38,2.51) node {$C$};
+\draw [fill=uuuuuu] (-0.6286257152110547,3.0330627226600453) circle (2.0pt);
+\draw[color=uuuuuu] (-0.26,3.31) node {$H$};
+\end{scriptsize}
+\end{tikzpicture}
+
+
+\subsubsection{Eléments de chasse aux angles}
+
+\pro[Angle au centre] On a ici $\alpha = 2\beta$\\
+
+
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.,-1.2) rectangle (4.,4.5);
+\draw [shift={(2.58,3.86)},line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-146.52237360497583:0.6) arc (-146.52237360497583:-75.96375653207352:0.6) -- cycle;
+\draw [shift={(1.08,1.7)},line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-168.26691584358775:0.6) arc (-168.26691584358775:-27.149681697783162:0.6) -- cycle;
+\draw [line width=2.pt] (1.08,1.7) circle (2.629752840097335cm);
+\draw [line width=2.pt] (-1.494805607252677,1.1652326815705973)-- (2.58,3.86);
+\draw [line width=2.pt] (2.58,3.86)-- (3.42,0.5);
+\draw [line width=2.pt] (-1.494805607252677,1.1652326815705973)-- (1.08,1.7);
+\draw [line width=2.pt] (1.08,1.7)-- (3.42,0.5);
+\begin{scriptsize}
+\draw [fill=ududff] (1.08,1.7) circle (2.5pt);
+\draw[color=ududff] (1.22,2.07) node {$O$};
+\draw [fill=ududff] (2.58,3.86) circle (2.5pt);
+\draw[color=ududff] (2.72,4.23) node {$B$};
+\draw [fill=xdxdff] (-1.494805607252677,1.1652326815705973) circle (2.5pt);
+\draw[color=xdxdff] (-1.88,1.11) node {$A$};
+\draw [fill=xdxdff] (3.42,0.5) circle (2.5pt);
+\draw[color=xdxdff] (3.68,0.37) node {$C$};
+\draw[color=qqwuqq] (2.66,3.09) node {$\alpha$};
+\draw[color=qqwuqq] (1.26,0.83) node {$\beta$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\pro[Angle inscrit] $\beta = \gamma$ \\
+
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-9.78,-7.18) rectangle (9.78,3.76);
+\draw [shift={(-1.94,1.48)},line width=2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-118.82400771074582:0.6) arc (-118.82400771074582:-51.08768090565039:0.6) -- cycle;
+\draw [shift={(1.228591546332903,0.9448964341367734)},line width=2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-151.0586563236417:0.6) arc (-151.0586563236417:-83.3223295185463:0.6) -- cycle;
+\draw [line width=2pt] (-0.78,-1.3) circle (3.0123080851732285cm);
+\draw [line width=2pt] (1.6928193764991832,-3.020222174955954)-- (-1.94,1.48);
+\draw [line width=2pt] (-1.94,1.48)-- (-3.749217215665885,-1.8076899902433892);
+\draw [line width=2pt] (-3.749217215665885,-1.8076899902433892)-- (1.228591546332903,0.9448964341367734);
+\draw [line width=2pt] (1.228591546332903,0.9448964341367734)-- (1.6928193764991832,-3.020222174955954);
+\begin{scriptsize}
+\draw [fill=ududff] (-1.94,1.48) circle (2.5pt);
+\draw[color=ududff] (-1.78,1.91) node {$B$};
+\draw [fill=xdxdff] (-3.749217215665885,-1.8076899902433892) circle (2.5pt);
+\draw[color=xdxdff] (-3.58,-1.37) node {$C$};
+\draw [fill=xdxdff] (1.6928193764991832,-3.020222174955954) circle (2.5pt);
+\draw[color=xdxdff] (1.86,-2.59) node {$A$};
+\draw[color=qqwuqq] (-1.78,0.65) node {$\beta$};
+\draw [fill=xdxdff] (1.228591546332903,0.9448964341367734) circle (2.5pt);
+\draw[color=xdxdff] (1.38,1.37) node {$D$};
+\draw[color=qqwuqq] (1.24,0.11) node {$\gamma$};
+\end{scriptsize}
+\end{tikzpicture}
+
+
+Dans cette configuration, on a cette fois $\alpha+\beta = 180°$
+
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-8.48,-9.96) rectangle (12.66,2.12);
+\fill[line width=2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (-0.52,-0.14) -- (-2.52,-5.18) -- (3.58,-4.08) -- (2.767666510383313,-1.1162703004107222) -- cycle;
+\draw [shift={(-0.52,-0.14)},line width=2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-111.64443514071401:0.6) arc (-111.64443514071401:-16.53875055228459:0.6) -- cycle;
+\draw [shift={(3.58,-4.08)},line width=2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (105.32785322206554:0.6) arc (105.32785322206554:190.22216863363613:0.6) -- cycle;
+\draw [line width=2pt] (0.30537556053811704,-3.384355381165919) circle (3.347698710343251cm);
+\draw [line width=2pt,color=zzttqq] (-0.52,-0.14)-- (-2.52,-5.18);
+\draw [line width=2pt,color=zzttqq] (-2.52,-5.18)-- (3.58,-4.08);
+\draw [line width=2pt,color=zzttqq] (3.58,-4.08)-- (2.767666510383313,-1.1162703004107222);
+\draw [line width=2pt,color=zzttqq] (2.767666510383313,-1.1162703004107222)-- (-0.52,-0.14);
+\begin{scriptsize}
+\draw [fill=ududff] (-2.52,-5.18) circle (2.5pt);
+\draw[color=ududff] (-3.3,-4.89) node {$A$};
+\draw [fill=ududff] (-0.52,-0.14) circle (2.5pt);
+\draw[color=ududff] (-0.36,0.29) node {$B$};
+\draw [fill=ududff] (3.58,-4.08) circle (2.5pt);
+\draw[color=ududff] (4,-4.55) node {$C$};
+\draw [fill=xdxdff] (2.767666510383313,-1.1162703004107222) circle (2.5pt);
+\draw[color=xdxdff] (2.92,-0.69) node {$D$};
+\draw[color=qqwuqq] (0.12,-0.93) node {$\alpha$};
+\draw[color=qqwuqq] (2.98,-3.55) node {$\beta$};
+\end{scriptsize}
+\end{tikzpicture}
+
+
+
+Enfin, le théorème de la tangente : $\alpha=\beta$
+
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-3.5,0.5) rectangle (5.,5.5);
+\draw [shift={(-3.071226924428081,3.4621857728975023)},line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-39.91900835709463:0.6) arc (-39.91900835709463:5.668043034100089:0.6) -- cycle;
+\draw [shift={(0.035965517617948056,0.8624176369478369)},line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (21.179094904599935:0.6) arc (21.179094904599935:66.76614629579467:0.6) -- cycle;
+\draw [line width=2.pt] (-0.8,3.02) circle (2.3138712150852303cm);
+\draw [line width=2.pt,domain=-3.5:5.] plot(\x,{(-4.330684583876909-1.977582363052163*\x)/-5.104034482382052});
+\draw [line width=2.pt] (-3.071226924428081,3.4621857728975023)-- (0.035965517617948056,0.8624176369478369);
+\draw [line width=2.pt] (0.035965517617948056,0.8624176369478369)-- (1.34,3.9);
+\draw [line width=2.pt] (1.34,3.9)-- (-3.071226924428081,3.4621857728975023);
+\begin{scriptsize}
+\draw [fill=ududff] (1.34,3.9) circle (2.5pt);
+\draw [fill=xdxdff] (-3.071226924428081,3.4621857728975023) circle (2.5pt);
+\draw [fill=uuuuuu] (0.035965517617948056,0.8624176369478369) circle (2.0pt);
+\end{scriptsize}
+\end{tikzpicture}
+
+
+\begin{exo} Soit $\Gamma_1$ et $\Gamma_2$ deux cercles se coupant en $A$ et $B$ distincts. On note $O$ le centre d $\Gamma_1$. Soit $C$ un point de $\Gamma_1$ distinct de $A$ et $B$, $D$ et $E$ les intersections de $\Gamma_2$ respectivement avec $(AC)$ et $(BC)$ . Montrer que $(OC)$ et $(DE)$ sont perpendiculaires. 
+\end{exo}
+
+\begin{exo} Soit $\Omega_1$ un cercle tangent intérieurement en en second cercle $\Omega_2$. On note $A$ le point de tangence. Soit $P$ un point de $\Omega_2$. On consière les tangentes à $\Omega_1$ passant par $P$ : la première coupe $\Omega_1$ en $X$ et recoupe $\Omega_2$ en $Q$, la seconde coupe $\Omega_1$ en $Y$ et recoupe $\Omega_2$ en $R$. Montrer que $\widehat{QAR} = 2 \cdot \widehat{XAY}$
+\end{exo}
+
+\begin{exo} Soit $ABCD$ un quadrilatère convexe. On se donne $E, F$ deux points tels que $E$, $B$, $C$, $F$, soient alignés dans cet ordre. On suppose de plus que $\widehat{BAE} = \widehat{CDF}$ et $\widehat{EAF} = \widehat{FDE}$. Montrer que $\widehat{FAC}=\widehat{EDB}$
+\end{exo}
+
+\begin{exo} Soit un demi-cercle de diamètre $[AB]$ sur lequl on choisit deux points $C$ et $D$. Soit $S$ l'intersection de $(AC)$ et $(BD)$ et $T$ le pied de la perpendiculaire à $[AB]$ issue de $S$. Montrer que $(ST)$ est la bissectrice de $\widehat{CTD}$.
+\end{exo}
+
+\begin{exo} On considère deux cercles $\Gamma_1$ et $\Gamma_2$ ayant deux points d'intersection $A$ et $D$. On considère deux droites $d_1$ et $d_2$ pssant respectivement par $A$ et par $B$. Soient $C$ et $E$ les points d'intersection respectifs de $\Gamma_1$ et $\Gamma_2$ avec $d_1$, $D$ et $F$ les points d'intersection respectifs avec $d_2$. Montrer que $(CD)$ et $(EF)$ sont parallèles. 
+\end{exo}
+
+\begin{exo} Soit $ABC$ un triangle, $P$ un point de $[BC]$, $Q$ un point de $[CA]$, $R$ un point de $[AB]$. Les cercles circonscrits à $AQR$ et à $BRP$ ont pour second point d'intersection $X$. 
+Montrer que $X$ est aussi sur le cercle circonscrit à $CQP$
+\end{exo}
+
+\begin{exo} Soit $\Gamma$ un cercle et $[BC]$ une corde de ce cercle. On note $A$ le milieu de l'arc $BC$. On considère deux cordes de $\Gamma$ passant par $A$, qu'on note $AD$ et $AE$, et $F$ et $G$ les points d'intersection respectifs de ces cordes avec $BC$. Montrer que $D, E, F, G$ sont cocycliques. 
+\end{exo}
+
+\begin{exo} Soit $ABC$ un triangle. Les bissectrices des angles de sommets $A$ et $B$ rencontrent les côtés $BC$ et $AC$ respectivement en $D$ et $E$. Soit $F$ la projection orthogonale de $C$ sur $BE$ et $G$ la projection orthogonale de $C$ sur $AD$. Montrer que $(FG)$ et $(AB)$ sont parallèles. 
+\end{exo}
+
+\begin{sol} Attention, il y a deux cas à traiter, selon la position de $C$ par rapport à $(AB)$ ! Raisonner par chasse aux angles dans les deux cas, pour montrer qu'un triangle est rectangle. Il est sinon possible d'introduire la tangente à $\Gamma_1$ passant par $C$.
+
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-13.238192640421081,-10.3295862776985) rectangle (8.388414601993757,6.039424717813486);
+\draw [shift={(-0.369314272871138,2.720250931432371)},line width=2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-154.18794207523746:0.8130303474592044) arc (-154.18794207523746:-93.75172907052597:0.8130303474592044) -- cycle;
+\draw [shift={(-5.189192200574957,-3.3375252895493404)},line width=2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (102.62576346084494:0.8130303474592044) arc (102.62576346084494:163.06197646555643:0.8130303474592044) -- cycle;
+\draw [shift={(-9.916898225254352,-1.8977105919808803)},line width=2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (25.81205792476255:0.8130303474592044) arc (25.81205792476255:86.24827092947403:0.8130303474592044) -- cycle;
+\draw [line width=2pt] (-7.384374138714809,-2.0637777451965866) circle (2.5379630707084977cm);
+\draw [line width=2pt,domain=-13.238192640421081:8.388414601993757] plot(\x,{(-23.2503136178177-1.4398146975684611*\x)/4.727706024679393});
+\draw [line width=2pt] (-2.0695982900269105,-0.8732751070855174) circle (3.97547420171499cm);
+\draw [line width=2pt,domain=-13.238192640421081:8.388414601993757] plot(\x,{(--11.521806076346651--1.9224147915137844*\x)/3.974571143614666});
+\draw [line width=2pt,domain=-13.238192640421081:8.388414601993757] plot(\x,{(--4.041038994107491--7.378313989569746*\x)/0.48382386816850725});
+\draw [line width=2pt,domain=-13.238192640421081:8.388414601993757] plot(\x,{(-6.45286884047068-0.16606715321570742*\x)/2.5325240865395413});
+\draw [line width=2pt] (-7.384374138714809,-2.0637777451965866)-- (-5.942327081639684,0.024704199532905147);
+\draw [line width=2pt] (-7.384374138714809,-2.0637777451965866)-- (-5.189192200574957,-3.3375252895493404);
+\draw [line width=2pt] (-5.942327081639684,0.024704199532905147)-- (-5.189192200574957,-3.3375252895493404);
+\draw [line width=2pt,domain=-13.238192640421081:8.388414601993757] plot(\x,{(--24.799636223580315--2.5325240865395413*\x)/0.16606715321570742});
+\begin{scriptsize}
+\draw [fill=ududff] (-7.384374138714809,-2.0637777451965866) circle (2.5pt);
+\draw[color=ududff] (-7.790889312444412,-1.3184999266923156) node {$O$};
+\draw [fill=ududff] (-5.189192200574957,-3.3375252895493404) circle (2.5pt);
+\draw[color=ududff] (-5.324697258484824,-3.8930960269797974) node {$B$};
+\draw [fill=xdxdff] (-9.91689822525435,-1.8977105919808792) circle (2.5pt);
+\draw[color=xdxdff] (-10.636495528551626,-2.565146459463096) node {$C$};
+\draw [fill=xdxdff] (-0.8531381410396452,-4.658063058137375) circle (2.5pt);
+\draw[color=xdxdff] (-0.39231315056565075,-3.83889400381585) node {$E$};
+\draw [fill=xdxdff] (-5.942327081639684,0.024704199532905147) circle (2.5pt);
+\draw[color=xdxdff] (-6.191929629107976,0.7953789767016164) node {$A$};
+\draw [fill=uuuuuu] (-0.369314272871138,2.720250931432371) circle (2pt);
+\draw[color=uuuuuu] (0.04130303474592492,2.0962275326363438) node {$D$};
+\draw[color=black] (-9.091737868379138,5.917470165694606) node {$m$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{sol}
+
+\begin{sol} 
+On raisonne par chasse aux angles :
+\begin{align*}
+\widehat{QAR} &= 180 - \widehat{XPY} \\ &= 180-(180-2 \cdot \widehat{PXY}) \\ &=  2 \cdot \widehat{XAY}
+\end{align*}
+
+\definecolor{ffzzqq}{rgb}{1.,0.6,0.}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.8,-2.1) rectangle (5.6,6.3);
+\draw [shift={(-2.22,2.06)},line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-2.6616847910932893:0.6) arc (-2.6616847910932893:55.78474446274049:0.6) -- cycle;
+\draw [shift={(-2.22,2.06)},line width=2.pt,color=ffzzqq,fill=ffzzqq,fill opacity=0.10000000149011612] (0,0) -- (-39.55429727540038:1.4) arc (-39.55429727540038:77.3385612322672:1.4) -- cycle;
+\draw [line width=2.pt] (1.62,2.28) circle (3.8462969204157917cm);
+\draw [line width=2.pt,domain=-2.8:5.6] plot(\x,{(--8.3988--0.22*\x)/3.84});
+\draw [line width=2.pt] (0.22115398134378816,2.1998577801811545) circle (2.445157041849834cm);
+\draw [line width=2.pt,domain=-2.8:5.6] plot(\x,{(-17.776489366695376-1.2496197876401576*\x)/-3.780603191916566});
+\draw [line width=2.pt,domain=-2.8:5.6] plot(\x,{(--9.296550898880007-3.936978217229932*\x)/-0.5955775561995096});
+\draw [line width=2.pt] (-1.756923320037047,4.121300869111285)-- (-2.22,2.06);
+\draw [line width=2.pt] (-2.22,2.06)-- (2.129523717948641,-1.5323989272960141);
+\draw [line width=2.pt] (-0.5462220626056403,4.521479404494719)-- (-2.22,2.06);
+\draw [line width=2.pt] (-2.22,2.06)-- (2.638803573111416,1.8341209749049443);
+\begin{scriptsize}
+\draw [fill=ududff] (-2.22,2.06) circle (2.5pt);
+\draw[color=ududff] (-2.46,1.83) node {$A$};
+\draw[color=black] (0.83,5.8) node {$\Omega_2$};
+\draw[color=black] (0.95,4.48) node {$\Omega_1$};
+\draw [fill=xdxdff] (3.2343811293109255,5.771099192134876) circle (2.5pt);
+\draw[color=xdxdff] (3.38,6.15) node {$P$};
+\draw [fill=uuuuuu] (-0.5462220626056403,4.521479404494719) circle (2.0pt);
+\draw[color=uuuuuu] (-0.4,4.85) node {$X$};
+\draw [fill=uuuuuu] (2.638803573111416,1.8341209749049443) circle (2.0pt);
+\draw[color=uuuuuu] (2.78,2.17) node {$Y$};
+\draw [fill=uuuuuu] (-1.756923320037047,4.121300869111285) circle (2.0pt);
+\draw[color=uuuuuu] (-2.08,4.45) node {$Q$};
+\draw [fill=uuuuuu] (2.129523717948641,-1.5323989272960141) circle (2.0pt);
+\draw[color=uuuuuu] (1.78,-1.83) node {$R$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{sol}
+
+\begin{sol} On raisonne par chasse aux angles, en cherchant des points cocycliques. \\ Tout d'abord, les points $E, A, D, F$ sont cocycliques. Par le calcul, on montre également que $ABCD$ est cyclique. \\ On conclut enfin en utilisant cette information et en combinant des angles. 
+\end{sol}
+
+
+\begin{sol}  Cet exercice revient à montrer que l'orthocentre d'un triangle est aussi le centre du cercle inscrit du triangle formé par les pieds des hauteurs. \\ Ici, on introduit $H$, le point d'intersection de $(BC)$ et $(AD)$. et l'on raisonne par chasse au angle. \\ Comme la somme de deux angles droits est égale à $180°$, on en déduit que les points $ATHC$ et $TBDH$ sont cocycliques. Ainsi, en utilisant le théorème de l'angle inscrit,
+\begin{align*} 
+\widehat{HTD} &= \widehat{HBD} \\ &= \widehat{CAH} \\ &= \widehat{CTH}
+\end{align*}\\ Cela conclut. 
+
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-3.,0.7) rectangle (5.,7.5);
+\draw[line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (-0.7860840044240612,4.249603302781696) -- (-0.4113279263568833,4.050711669092124) -- (-0.21243629266731107,4.425467747159302) -- (-0.587192370734489,4.624359380848874) -- cycle; 
+\draw[line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (1.7601201379724793,4.7669071850628) -- (2.012444586032444,4.425831866531491) -- (2.353519904563753,4.678156314591455) -- (2.1011954565037887,5.019231633122764) -- cycle; 
+\draw[line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0.6722406162355696,2.432686018075638) -- (0.24797868539646545,2.4313391548031325) -- (0.24932554866897055,2.0070772239640284) -- (0.6735874795080748,2.0084240872365333) -- cycle; 
+\draw[line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (1.0978494103471792,2.0097709505090386) -- (1.096502547074674,2.4340328813481427) -- (0.6722406162355697,2.432686018075638) -- (0.6735874795080748,2.0084240872365333) -- cycle; 
+\draw [shift={(1.17,2.01)},line width=2.pt]  plot[domain=0.003174592510005954:3.144767246099799,variable=\t]({1.*3.150015872975881*cos(\t r)+0.*3.150015872975881*sin(\t r)},{0.*3.150015872975881*cos(\t r)+1.*3.150015872975881*sin(\t r)});
+\draw [line width=2.pt] (-1.98,2.)-- (4.32,2.02);
+\draw [line width=2.pt,domain=-3.:5.] plot(\x,{(--7.981846832611792--2.6243593808488743*\x)/1.392807629265511});
+\draw [line width=2.pt,domain=-3.:5.] plot(\x,{(--17.43866583295269-2.9992316331227644*\x)/2.2188045434962116});
+\draw [line width=2.pt] (0.6799634289913654,0.7) -- (0.6799634289913654,7.5);
+\draw [line width=2.pt] (-0.587192370734489,4.624359380848874)-- (0.6735874795080748,2.0084240872365333);
+\draw [line width=2.pt] (0.6735874795080748,2.0084240872365333)-- (2.1011954565037887,5.019231633122764);
+\draw [line width=2.pt] (-0.587192370734489,4.624359380848874)-- (4.32,2.02);
+\draw [line width=2.pt] (-1.98,2.)-- (2.1011954565037887,5.019231633122764);
+\draw [line width=2.pt,dotted] (-0.6563016509457308,2.979260114045293) circle (1.6465502392119704cm);
+\draw [line width=2.pt,dotted] (2.493698349054269,2.9892601140452926) circle (2.06756931901356cm);
+\draw [line width=2.pt] (-0.587192370734489,4.624359380848874)-- (2.1011954565037887,5.019231633122764);
+\draw [line width=2.pt,dash pattern=on 4pt off 4pt] (0.6673966981085383,3.958520228090586) circle (0.8410896634634164cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-1.98,2.) circle (2.5pt);
+\draw[color=ududff] (-2.4,2.05) node {$A$};
+\draw [fill=ududff] (4.32,2.02) circle (2.5pt);
+\draw[color=ududff] (4.7,2.19) node {$B$};
+\draw [fill=xdxdff] (-0.587192370734489,4.624359380848874) circle (2.5pt);
+\draw[color=xdxdff] (-0.84,4.97) node {$C$};
+\draw [fill=xdxdff] (2.1011954565037887,5.019231633122764) circle (2.5pt);
+\draw[color=xdxdff] (2.36,5.37) node {$D$};
+\draw [fill=uuuuuu] (0.657835590906542,6.9702689967193985) circle (2.0pt);
+\draw[color=uuuuuu] (0.92,7.07) node {$S$};
+\draw [fill=uuuuuu] (0.6735874795080748,2.0084240872365333) circle (2.0pt);
+\draw[color=uuuuuu] (0.4,1.41) node {$T$};
+\draw [fill=uuuuuu] (0.6673966981085383,3.958520228090586) circle (2.0pt);
+\draw[color=uuuuuu] (0.82,4.61) node {$H$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{sol}
+
+
+\begin{sol} Les points $ABDC$ et $ABFE$ sont cocycliques. Donc les angles $\widehat{AEF}$ et $\widehat{ABF}$ sont supplémentaires, de même que les angles $\widehat{ABD}$ et $\widehat{DCA}$. Ainsi, une chasse aux angles fait apparaître des angles alternes-internes égaux qui démontrent le résultat. 
+
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-3.6,-1.) rectangle (5.3,5.5);
+\draw [shift={(3.0033260393873094,5.013565913876389)},line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-155.86221854061625:0.6) arc (-155.86221854061625:-80.08806985488272:0.6) -- cycle;
+\draw [shift={(1.72,0.68)},line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (103.2405199151872:0.6) arc (103.2405199151872:179.01466860092074:0.6) -- cycle;
+\draw [shift={(-3.32,2.18)},line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (24.137781459383767:0.6) arc (24.137781459383767:99.91193014511722:0.6) -- cycle;
+\draw [line width=2.pt,domain=-3.6:5.3] plot(\x,{(--15.5512--1.9*\x)/4.24});
+\draw [line width=2.pt] (-0.6556099397590363,1.9151506024096383) circle (2.677521166399031cm);
+\draw [line width=2.pt,domain=-3.6:5.3] plot(\x,{(-3.400523088030494--0.08242244658002751*\x)/-4.792288941048303});
+\draw [line width=2.pt] (2.778812248602188,2.723249940847573) circle (2.3012939183345607cm);
+\draw [line width=2.pt,domain=-3.6:5.3] plot(\x,{(-4.166347368839611-1.4175775534199726*\x)/0.2477110589516962});
+\draw [line width=2.pt,domain=-3.6:5.3] plot(\x,{(--16.948237143900407-4.368767661199581*\x)/0.7634094240973566});
+\draw [line width=2.pt] (0.92,4.08)-- (1.72,0.68);
+\begin{scriptsize}
+\draw [fill=ududff] (0.92,4.08) circle (2.5pt);
+\draw[color=ududff] (0.78,4.55) node {$A$};
+\draw [fill=ududff] (1.72,0.68) circle (2.5pt);
+\draw[color=ududff] (1.86,1.05) node {$B$};
+\draw [fill=ududff] (-3.32,2.18) circle (2.5pt);
+\draw[color=ududff] (-3.18,2.55) node {$C$};
+\draw [fill=xdxdff] (-3.0722889410483036,0.7624224465800276) circle (2.5pt);
+\draw[color=xdxdff] (-2.94,1.13) node {$D$};
+\draw [fill=xdxdff] (3.0033260393873094,5.013565913876389) circle (2.5pt);
+\draw[color=xdxdff] (3.14,5.39) node {$E$};
+\draw [fill=uuuuuu] (3.766735463484666,0.6447982526768075) circle (2.0pt);
+\draw[color=uuuuuu] (3.9,0.97) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{sol}
+
+
+\begin{sol} On raisonne toujours pas chasse aux angles. Objectif : montrer que les points $C, Q, P, X$ sont cocycliques. \\ On mène les calculs d'angles suivant : \\
+\begin{align*}
+\widehat{PCQ} &= 180 - \widehat{QAR}-\widehat{RBP}\\ &= \widehat{RXQ} - \widehat{RXP} \\ &= \widehat{PXQ}, 
+\end{align*}
+ce qui conclut.
+
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.,-2.5) rectangle (5.5,4.);
+\fill[line width=2.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (2.02,3.52) -- (-1.42,0.52) -- (4.82,1.44) -- cycle;
+\draw [line width=2.pt,color=zzttqq] (2.02,3.52)-- (-1.42,0.52);
+\draw [line width=2.pt,color=zzttqq] (-1.42,0.52)-- (4.82,1.44);
+\draw [line width=2.pt,color=zzttqq] (4.82,1.44)-- (2.02,3.52);
+\draw [line width=2.pt] (1.9635342522114798,1.2416807241308376) circle (2.2790188905470488cm);
+\draw [line width=2.pt] (0.3619512445998765,-0.3941040938078581) circle (2.0027322667913787cm);
+\draw [line width=2.pt] (3.445636700267435,0.31220325036000757) circle (1.7778638834709244cm);
+\draw [line width=2.pt] (1.8042718680876735,0.9953734164488236)-- (2.2652622548474097,-1.0172764060280401);
+\draw [line width=2.pt] (2.2652622548474097,-1.0172764060280401)-- (-0.30129329544581834,1.4956163121112052);
+\draw [line width=2.pt] (4.128469226722777,1.9537085744345082)-- (2.2652622548474097,-1.0172764060280401);
+\begin{scriptsize}
+\draw [fill=ududff] (2.02,3.52) circle (2.5pt);
+\draw[color=ududff] (2.16,3.89) node {$A$};
+\draw [fill=ududff] (-1.42,0.52) circle (2.5pt);
+\draw[color=ududff] (-1.28,0.89) node {$B$};
+\draw [fill=ududff] (4.82,1.44) circle (2.5pt);
+\draw[color=ududff] (4.96,1.81) node {$C$};
+\draw [fill=xdxdff] (1.8042718680876735,0.9953734164488236) circle (2.5pt);
+\draw[color=xdxdff] (1.94,1.37) node {$P$};
+\draw [fill=xdxdff] (4.128469226722777,1.9537085744345082) circle (2.5pt);
+\draw[color=xdxdff] (4.26,2.33) node {$Q$};
+\draw [fill=xdxdff] (-0.30129329544581834,1.4956163121112052) circle (2.5pt);
+\draw[color=xdxdff] (-0.16,1.87) node {$R$};
+\draw [fill=uuuuuu] (2.2652622548474097,-1.0172764060280401) circle (2.0pt);
+\draw[color=uuuuuu] (2.4,-0.69) node {$X$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{sol}
+
+
+\begin{sol} \begin{align*}
+\widehat{FED} &= 180 - \widehat{ABD} \\ &= \widehat{BAD} + \widehat{BDA} \\ &= \widehat{GAB} + \widehat{ACB} \\ &= \widehat{GAB} + \widehat{ABG} \\ &= 180 - \widehat{AGB} \\ &= 180 - \widehat{FGD} 
+\end{align*}
+ce qui conclut.
+\end{sol}
+
+\begin{sol} On note $\alpha, \beta, \gamma$ les angles du triangle $ABC$, selon les conventions d'usage. On note $I$ le centre du cercle inscrit. \\ Alors, on cherche à montrer que $\widehat{AGF} = \widehat{BAG}$. \\ \begin{align*}
+\widehat{AGF} &= \widehat{IGF} \\ &= 90 - \widehat{FIC} \\ &= 90 - (180-\widehat{IEC} - \widehat{ECI}) \\ &= 90 - \widehat{IEA} + \widehat{ICE} \\ &= 90 - (180 - \alpha - \frac{\beta}{2}) + \frac{\gamma}{2} \\ &= \alpha + 90 - \frac{\alpha}{2} - 90 \\&= \widehat{BAI} 
+\end{align*}
+ce qui conclut.
+
+
+\definecolor{ffdxqq}{rgb}{1.,0.8431372549019608,0.}
+\definecolor{ffzzqq}{rgb}{1.,0.6,0.}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-3.,-1.5) rectangle (6.,5.);
+\fill[line width=2.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (1.26,4.84) -- (-2.32,2.32) -- (5.44,-0.14) -- cycle;
+\draw[line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (1.1123779131677582,0.4239499590910786) -- (1.167201937726514,0.8446568954864524) -- (0.7464950013311402,0.899480920045208) -- (0.6916709767723845,0.4787739836498342) -- cycle; 
+\draw[line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (4.469092688954299,3.3681540963824577) -- (4.533826999829428,2.9488576988358988) -- (4.953123397375987,3.0135920097110276) -- (4.888389086500858,3.432888407257587) -- cycle; 
+\draw [shift={(0.6916709767723845,0.4787739836498342)},line width=2.pt,color=ffzzqq,fill=ffzzqq,fill opacity=0.10000000149011612] (0,0) -- (35.14212107395554:0.6) arc (35.14212107395554:82.5753939082155:0.6) -- cycle;
+\draw [shift={(5.44,-0.14)},line width=2.pt,color=ffdxqq,fill=ffdxqq,fill opacity=0.10000000149011612] (0,0) -- (98.7764846236099:0.6) arc (98.7764846236099:146.20975745786987:0.6) -- cycle;
+\draw [line width=2.pt,color=zzttqq] (1.26,4.84)-- (-2.32,2.32);
+\draw [line width=2.pt,color=zzttqq] (-2.32,2.32)-- (5.44,-0.14);
+\draw [line width=2.pt,color=zzttqq] (5.44,-0.14)-- (1.26,4.84);
+\draw [line width=2.pt,domain=-3.:6.] plot(\x,{(--0.6240039647890887-0.9916157587246208*\x)/-0.12922146512477967});
+\draw [line width=2.pt,domain=-3.:6.] plot(\x,{(--2.646821464159366--0.1525802339841394*\x)/0.9882910867742081});
+\draw [line width=2.pt,domain=-3.:6.] plot(\x,{(-5.354942279293913--0.9882910867742081*\x)/-0.1525802339841394});
+\draw [line width=2.pt,domain=-3.:6.] plot(\x,{(--0.5641385640573545-0.12922146512477967*\x)/0.9916157587246208});
+\draw [line width=2.pt,domain=-3.:6.] plot(\x,{(--0.03399576122406067-2.9541144236077526*\x)/-4.196718109728474});
+\draw [line width=2.pt] (0.9983706244142232,2.8323164350007883)-- (5.44,-0.14);
+\draw [line width=2.pt] (3.2191853122071126,1.3461582175003943) circle (2.672205853777096cm);
+\begin{scriptsize}
+\draw [fill=ududff] (1.26,4.84) circle (2.5pt);
+\draw[color=ududff] (0.92,4.29) node {$A$};
+\draw [fill=ududff] (-2.32,2.32) circle (2.5pt);
+\draw[color=ududff] (-2.66,1.99) node {$B$};
+\draw [fill=ududff] (5.44,-0.14) circle (2.5pt);
+\draw[color=ududff] (5.24,-0.67) node {$C$};
+\draw [fill=uuuuuu] (0.8026107438251979,1.3301002023440742) circle (2.0pt);
+\draw[color=uuuuuu] (0.94,1.67) node {$D$};
+\draw [fill=uuuuuu] (2.721827124423467,3.0983973493710852) circle (2.0pt);
+\draw[color=uuuuuu] (2.86,3.43) node {$E$};
+\draw [fill=uuuuuu] (4.888389086500858,3.432888407257587) circle (2.0pt);
+\draw[color=uuuuuu] (5.02,3.77) node {$F$};
+\draw [fill=uuuuuu] (0.6916709767723845,0.4787739836498342) circle (2.0pt);
+\draw[color=uuuuuu] (0.42,0.11) node {$G$};
+\draw[color=black] (-3.12,-2.29) node {$j$};
+\draw [fill=uuuuuu] (0.9983706244142232,2.8323164350007883) circle (2.0pt);
+\draw[color=uuuuuu] (1.14,3.17) node {$I$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{sol}

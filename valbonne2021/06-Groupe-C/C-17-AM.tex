@@ -1,0 +1,223 @@
+Ce cours est inspiré du livre "Olympiad Combinatorics" de Pranav A. Sriram, du cours "Double Counting" de Yufei Zhao, et des polycopiés des années précédentes, notamment du cours de Colin de 2019.
+
+Commençons par un problème introductif~:
+\begin{exo}
+	À Valbonne, $n$ problèmes ont été accrochés sur un mur. Chacun des $m$ stagiaires a résolu au moins $\frac{n}2$ problèmes. Montrer qu'il existe un problème qui a été résolu par au moins $\frac{m}2$ stagiaires.
+\end{exo}
+\begin{sol}
+	Notons $p_i$ le nombre de problèmes résolus par le $i$-ème stagiaire, et $s_j$ le nombre de stagiaires qui ont résolu le $j$-ème problème.
+	Considérons la quantité $Q$, qui est le nombre total de résolutions.  
+	On peut exprimer $Q$ de deux manières différentes~:
+	\begin{align*}
+		Q &= \sum_{i = 1}^m p_i \\
+		Q &= \sum_{j = 1}^n s_j
+	\end{align*}
+	
+	En utilisant les informations données par le problème, on trouve une inégalité sur $Q$~:
+	$$Q = \sum_{i = 1}^m p_i \geq \frac{nm}2$$
+	Puis, en exprimant $Q$ de l'autre manière, on obtient l'inégalité~:
+	$$Q = \sum_{j = 1}^n s_j \geq \frac{nm}2$$
+	D'où l'on déduit que l'un des $s_j$ vaut au moins $\frac{m}2$.
+\end{sol}
+
+Le principe du double-comptage est alors le suivant~:
+\begin{itemize}
+\item On trouve une quantité $Q$ que l'on peut exprimer de deux manières différentes.
+\item On utilise les données du problème pour prouver des (in)égalités sur les deux expressions différentes.
+\item On relie les (in)égalités trouvées sur les deux expressions via $Q$.
+\end{itemize}
+Cela permet de transformer un problème avec des objets combinatoires complexes en (in)égalités plus simples à manipuler. La difficulté de cette technique est souvent de trouver la quantité $Q$.
+
+\subsubsection{Géométrie combinatoire}
+Regardons maintenant d'autres applications du double-comptage à la géométrie combinatoire.
+
+\begin{exo}[Iran 2010]
+	Soit $S$ un ensemble de $n$ points dans le plan tel que trois points de $S$ ne soient jamais sur une même droite.
+	Montrez que le nombre de triangles d'aire $1$ dont les trois sommets sont dans $S$ est d'au plus~:
+	$$\frac{2n(n - 1)}{3}$$
+\end{exo}
+\begin{sol}
+	Soit $Q$ la quantité qui compte le nombre de triplets $(X, Y, Z) \in S^3$ tels que $XYZ$ soit d'aire $1$.
+	Le nombre de triangles d'aire $1$ vaut exactement $\frac{Q}{6}$, car un triangle $XYZ$ d'aire $1$ est compté $6$ fois, une fois pour chacun des $3!$ ordres possibles sur $X, Y$ et $Z$.
+	
+	Si l'on fixe $X, Y$, les points $Z$ tels que l'aire de $XYZ$ soit $1$ sont situés sur deux droites parallèles à $(XY)$. Comme chacune de ces droites peut contenir au plus $2$ points, il existe au plus $4$ points $Z$ de $S$ qui conviennent.
+	On obtient donc~:
+	$$Q \leq 4n(n - 1)$$
+	la borne demandée en découle.
+\end{sol}
+
+\begin{exo}[IMO 1987]
+	Soit $k$ un entier naturel.
+	Soit $S$ un ensemble de $n$ points dans le plan tel que~:
+	\begin{itemize}
+	\item trois points de $S$ ne soient jamais sur une même droite
+	\item pour tout point $P$ de $S$, il existe un réel $r$ tel qu'il y ait au moins $k$ points à distance $r$ de $P$.
+	\end{itemize}
+	Montrez que~:
+	$$k < \frac12 + \sqrt{2n}$$
+\end{exo}
+\begin{sol}
+	Soit $Q$ la quantité qui compte le nombre de triplets $(X, Y, Z) \in S^3$ tels que $X, Y$ et $Z$ soient distincts et $XY = YZ$.
+	
+	D'une part, si l'on fixe $X$ et $Z$, les points $Y$ qui conviennent se trouvent sur la médiatrice de $[XZ]$, sur laquelle il y a au plus $2$ points, car $3$ points ne sont jamais alignés.
+	On obtient donc $Q \leq 2n(n - 1)$.
+	
+	D'autre part, si l'on fixe $Y$, si $r$ est tel qu'il y ait au moins $k$ points à distance $r$ de $P$, il suffit de prendre $X$ et $Z$ deux points distincts à distance $r$ de $Y$ pour avoir la propriété recherchée. Il y a donc au moins $k(k - 1)$ paires $(X, Z)$ qui conviennent.
+	On obtient donc $Q \geq nk(k - 1)$.
+	
+	On en déduit~:
+	\begin{align*}
+	nk(k - 1) & \leq 2n(n - 1) \\
+	k(k - 1) & \leq 2(n - 1) \\
+	(k - \frac12)^2 - \frac1{4} & \leq 2(n - 1) \\
+	(k - \frac12)^2 & < 2n \\
+	k & < \frac12 + \sqrt{2n}
+	\end{align*}
+\end{sol}
+
+\subsubsection{Graphes}
+
+Souvent, on ne travaille pas tel quel sur un problème de combinatoire, on commence par représenter ce problème sous une forme abstraite, et l'on travaille sur celle-ci. La plupart des problèmes utilisent un nombre restreint de ces formes abstraites. En étudiant ces quelques formes, on peut s'y habituer, et généraliser une astuce d'un exercice à de nombreux autres. Le graphe est l'une de ces formes.
+
+Un graphe est constitué d'un ensemble d'objets, que l'on appelle sommets, qui sont mis en relations deux par deux par ce qu'on appelle des arrêtes. On présente souvent un graphe de manière "graphique", en représentant les sommets par des points, et les arrêtes par des courbes qui relient ces points.
+
+\begin{exo}[Indian TST 2001]
+	Considérons un graphe à $n$ sommets et $m$ arrêtes sans $4$-cycle, montrez que~:
+	$$m \leq \frac{n}{4}(1 + \sqrt{4n - 3})$$
+\end{exo}
+\begin{sol}
+	Soit $Q$ la quantité qui compte le nombre de triplets $(x, y, z)$ de sommets tels que $x, y$ et $z$ soient distincts, et tels que $x$ et $z$ soient reliés à $y$.
+	
+	D'une part, si on fixe $x$ et $z$, il n'y a qu'un seul $y$ qui peut convenir, vu qu'il n'y a pas de $4$-cycle, d'où~:
+	$$Q \leq n(n - 1)$$
+	
+	D'autre part, si on fixe $y$, alors il y a exactement $d_y(d_y - 1)$ manières de choisir une paire $(x, z)$ qui convient, où $d_y$ désigne le degré de $y$, d'où~:
+	\begin{align*}
+	Q &= \sum_y d_y(d_y - 1) \\
+	&= \sum_y d_y^2 - d_y \\
+	&\geq \frac{\left(\sum_y d_y\right)^2}{n} - \sum_y d_y \\
+	&= \frac{4m^2}{n} - 2m
+	\end{align*}
+	Où l'on a utilisé l'inégalité des "mauvais élèves".
+	On en déduit~:
+	\begin{align*}
+	\frac{4m^2}{n} - 2m &\leq n(n - 1) \\
+	m^2 - m\frac{n}2 &\leq \frac{n^2(n - 1)}{4} \\
+	\left (m - \frac{n}{4} \right )^2 &\leq \frac{n^2}{16} + \frac{n^2(n - 1)}{4} \\
+	m &\leq \frac{n}{4} + \frac{n}{4} \sqrt{4n - 3} = \frac{n}{4}(1 + \sqrt{4n - 3})
+	\end{align*}
+\end{sol}
+
+Les triplets utilisés dans l'exercice précédent sont appelés des "coudes" ou des "V", ils apparaissent dans de nombreux problèmes de double-comptage. Nous les retrouverons sur la partie sur les graphes bipartis.
+
+\begin{exo}[APMO 1989]
+	Considérons un graphe à $n$ sommets et $m$ arrêtes. Soit $T$ le nombre de triangles de ce graphe. Montrez que~:
+	$$T \geq \frac{m(4m - n^2)}{3n}$$
+\end{exo}
+\begin{sol}
+	Considérons la quantité $Q$ qui compte le nombre de triplets $(x, y, z)$ de sommets qui sont tous les trois reliés deux à deux.
+	
+	D'une part, $Q$ vaut au moins $6T$, car chaque triangle donne $3!$ triplets de points, un pour chaque manière d'ordonner les sommets du triangle.
+	
+	D'autre part, si on fixe $(x, y)$, tel que $x$ et $y$ soit reliés, il y a au moins~:
+	$$(d_x - 1) + (d_y - 1) - (n - 2) = d_x + d_y - n$$
+	manières de choisir un $z$ qui convient, d'où~:
+	
+	$$6T \geq \sum_{(x, y), x \sim y} d_x + d_y - n
+	= 2\left ( \sum_x d_x^2 \right ) - 2nm
+	\geq \frac{8m^2}{n} - 2nm$$
+	
+	D'où~:
+	$$T \geq \frac{m(4m - n^2)}{3n}$$
+\end{sol}
+
+En fixant $T = 0$, on obtient~:
+$$m \leq \frac{n^2}{4}$$
+Il s'agit du théorème de Mantel.
+
+Ce dernier trouve sa généralisation dans le théorème de Turàn~:
+\begin{thm}
+	Soit $k \geq 3$ un entier naturel, considérons un graphe à $n$ sommets et $m$ arrêtes sans $k$-clique. Alors~:
+	$$m \leq \frac{n^2}2 \left (1 - \frac1{k - 1} \right )$$
+\end{thm}
+
+\subsubsection{Graphes bipartis}
+
+Dans certains problèmes, on nous donne deux types d'objets qui sont mis en relation, par exemple des éléments et des ensembles, pour la relation d'appartenance, ou, comme dans le problème introductif, des stagiaires et des problèmes, qui sont mis en relation par "résolution".
+
+On peut représenter ces problèmes par un graphe biparti, c'est à dire un graphe dont on peut partitionner les sommets en deux ensembles $X$ et $Y$, tels que deux sommets de $X$, ou deux sommets de $Y$, ne soient jamais en relation.
+
+\begin{exo}[Lemme de Corradi]
+	Soient $A_1, A_2, \dots, A_n$ des sous-ensembles à $r$ éléments d'un ensemble $X$, tels que $|A_i \cap A_j| \leq k$ pour tous $1 \leq i < j \leq n$.
+	Montrez que~:
+	$$|X| \geq \frac{nr^2}{r + (n - 1)k}$$
+\end{exo}
+\begin{sol}
+	Notons $Q$ le nombre de triplets $(i, j, z)$, où $i \neq j$ et $z \in X$ appartient à $A_i$ et $A_j$.
+	
+	D'une part, si on fixe $i$ et $j$, on a au plus $k$ éléments de $X$ qui peuvent convenir pour $z$, d'où~:
+	$$Q \leq n(n - 1) k$$
+	
+	D'autre part, si on note $d_z$ le nombre de sous-ensembles qui contiennent l'élément $z$, on a~:
+	$$Q = \sum_z d_z(d_z - 1)$$
+	et~:
+	$$\sum_z d_z = \sum_i |A_i| = nr$$
+	Ainsi~:
+	\begin{align*}
+	Q &= \left (\sum_z d_z^2 \right ) - nr \\
+	&\geq \frac{(nr)^2}{|X|} - nr
+	\end{align*}
+	où on a utilisé l'inégalité des mauvais élèves.
+	
+	Finalement~:
+	\begin{align*}
+	n(n - 1) k &\geq \frac{(nr)^2}{|X|} - nr \\
+	r + (n - 1) k &\geq \frac{nr^2}{|X|} \\
+	|X| &\geq \frac{nr^2}{r + (n - 1)k}
+	\end{align*}
+\end{sol}
+
+De manière générale, lorsqu'on a de l'information sur des intersections d'ensembles, il est intéressant de compter des objets de type $(\mbox{ensemble}, \mbox{ensemble}, \mbox{élément})$.
+Regardons un autre exemple de cette idée~:
+
+\begin{exo}[P2 IMO 1998]
+	Dans une compétition, il y a $a$ élèves, et $b$ juges, où $b \geq 3$ est un entier impair. Chaque juge donne son jugement, \textbf{passe} ou \textbf{échoue}, sur chaque élève. Supposons que $k$ est un entier tel que pour chaque paire de juges, leurs verdicts coïncident pour au plus $k$ élèves. Prouvez que~:
+	$$\frac{k}{a} \geq \frac{b - 1}{2b}$$
+\end{exo}
+\begin{sol}
+	Soit $Q$ la quantité qui compte le nombre de triplets $(J_1, J_2, E)$, où $J_1$ et $J_2$ sont deux juges qui ont donné le même verdict à l'élève $E$.
+	
+	Si on fixe $J_1$ et $J_2$, alors d'après l'énoncé, au plus $k$ élèves peuvent convenir pour $E$, d'où~:
+	$$Q \leq b(b - 1)k$$
+	
+	Si on fixe un élève $E$, et qu'on note $p$ le nombre de juges qui ont donné le verdict \textbf{passe} à $E$, il y a exactement~:
+	$$p(p - 1) + (b - p)(b - p - 1)$$
+	paires de juges qui peuvent convenir, or~:
+	$$p(p - 1) + (b - p)(b - p - 1) \geq \frac{b - 1}2\frac{b - 3}2 + \frac{b + 1}2\frac{b - 1}2 = \frac{(b - 1)^2}2$$
+	par convexité, d'où~:
+	$$Q \geq a\frac{(b - 1)^2}2$$
+	
+	On en déduit~:
+	\begin{align*}
+		b(b - 1)k &\geq a\frac{(b - 1)^2}2 \\
+		\frac{k}{a} &\geq \frac{b - 1}{2b}
+	\end{align*}
+\end{sol}
+
+\begin{exo}[Iran 1999]
+	Soient $n \geq 2$ cercles de rayon $1$ dans le plan, tels que deux d'entre eux ne sont jamais tangents, et tel que le sous-ensemble du plan formé par l'union de tous les cercles soit connexe.
+	
+	Soit $S$ l'ensemble des points qui appartiennent à au moins deux cercles.
+	Montrez que $|S| \geq n$.
+\end{exo}
+\begin{sol}
+	Considérons le graphe biparti dont $X$ est l'ensemble des cercles, $Y = S$, et tel qu'un cercle de $X$ est relié à un point de $Y$ si le second se situe sur le premier.
+	On a~:
+	\begin{align*}
+	|S| &= \sum_{y \in Y} 1 \\
+	&= \sum_{(x, y), x \sim y} \frac1{d_y} \\
+	&\geq \sum_{(x, y), x \sim y} \frac1{d_x} \\
+	&= \sum_{x \in X} 1 = n
+	\end{align*}
+	En effet, si $y$ est un point sur le cercle $x$, chaque autre cercle passant par $y$ donne un nouveau point de $S$ sur $x$, d'où $d_x \geq d_y$.
+\end{sol}

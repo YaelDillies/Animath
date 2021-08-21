@@ -70,6 +70,7 @@
 \RequirePackage{psvectorian}
 \RequirePackage{stmaryrd}
 \RequirePackage{tikz}
+\RequirePackage{tkz-euclide}
 \RequirePackage{titlesec}
 \RequirePackage{url}
 \RequirePackage{verbatim}
@@ -98,8 +99,10 @@
 \fi
 
 \usetikzlibrary{arrows}
+\usetikzlibrary{automata}
 \usetikzlibrary{calc}
 \usetikzlibrary{shapes}
+\usetikzlibrary{positioning}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% STYLE DE PAGES POUR POLY %%%
@@ -403,7 +406,10 @@
 % Pour le poly uniquement
 \ifpoly
 \newcommand{\titre}[1]{\begin{center}\Huge\textbf{#1}\end{center}\bigskip}
-\newcommand{\soustitre}[1]{\begin{center}\large\textbf{-- \, #1 \, --}\end{center}} % J'ai enlevé \filbreak, pas compris à quoi ça servait et, paradoxalement, ça me sautait des pages
+\newcommand{\soustitre}[1]{\begin{center}\large\textbf{-- \, #1 \, --}\end{center}}
+% \newcommand{\soustitre}[1]{\filbreak\begin{center}\large\textbf{-- \, #1 \, --}\end{center}}
+% Rajouter \filbreak fait que les pages seront (plus susceptible d'être) sautées avant chaque \soustitre.
+% Bon à savoir, mais rarement voulu.
 \fi
 
 \def\N{\mathbb N} % entiers naturels
