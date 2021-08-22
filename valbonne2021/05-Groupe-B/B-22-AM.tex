@@ -1,0 +1,105 @@
+%TODO: Trouver un poly avec la théorie
+\subsubsection{Critères de divisibilité}
+
+\begin{exo}
+Prouver le critère de divisibilité pour $2, 5, 4, 9, 11$.
+\end{exo}
+\begin{sol}
+On utilise le fait que $\overline{a_n\dots a_1a_0}^{10} = a_0 + 10a_1 + \dots + 10^na_n$.
+\begin{itemize}
+    \item $2$ \\
+    $10^n \equiv 0 \mod 2$ pour $n\ge 1$, donc $a_0 + 10a_1 + \dots + 10^na_n \equiv a_0 \mod 2$. Donc un entier est divisible par $2$ ssi son dernier chiffre l'est.
+    \item $5$ \\
+    $10^n \equiv 0 \mod 5$ pour $n\ge 1$, donc $a_0 + 10a_1 + \dots + 10^na_n \equiv a_0 \mod 5$. Donc un entier est divisible par $5$ ssi son dernier chiffre l'est.
+    \item $4$ \\
+    $10^n \equiv 0 \mod 2$ pour $n\ge 2$, donc $a_0 + 10a_1 + \dots + 10^na_n \equiv a_0 + 10a_1 = \overline{a_1a_0}^{10}$. Donc un entier est divisible par $4$ ssi ses deux derniers chiffres le sont.
+    \item $9$ \\
+    $10 \equiv 1 \mod 9$, donc $10^n \equiv 1^n = 1 \mod 9$ et $a_0 + 10a_1 + \dots + 10^na_n \equiv a_0 + a_1 + \dots + a_n$. Donc un entier est divisible par $9$ ssi la somme de ses chiffres l'est.
+    \item $11$ \\
+    $10 \equiv -1 \mod 11$, donc $10^n \equiv (-1)^n = 1 \mod 9$ et $a_0 + 10a_1 + \dots + 10^na_n \equiv a_0 - a_1 + \dots \pm a_n$. Donc un entier est divisible par $11$ ssi la somme alternée de ses chiffres l'est.
+\end{itemize}
+\end{sol}
+
+\begin{exo}
+Montrer que $\overline{a_n\dots a_0}^{10}$ est divisible par $7$ (resp. $11$, resp. $13$) ssi $\overline{a_n\dots a_3}^{10} - \overline{a_2a_1a_0}^{10}$ est divisible par $7$ (resp. $11$, resp. $13$).
+\end{exo}
+\begin{sol}
+L'idée est de remarquer que $1001 = 7 \cdot 11 \cdot 13$. Ainsi, on peut "transformer" des milliers en des moins unités. \\
+
+Précisément, $\overline{a_n\dots a_0}^{10} = 1000\cdot\overline{a_n\dots a_3}^{10} + \overline{a_2a_1a_0}^{10} \equiv \mod 7, 11, 13$, ce qui est exactement ce qu'on veut puisque multiplier par $-1$ ne change pas la divisibilité.
+\end{sol}
+
+\subsubsection{Modulo bash}
+
+\begin{exo}
+Quels sont les entiers $x$ tels que $x^3 \equiv -1 [7]$ ? Quels sont les entiers $x$ tels que $7\mid x^2 - x + 1$ ?
+\end{exo}
+
+\begin{exo}
+Quelles valeurs prennent $x^2$ et $x^3$ modulo $7$ ? modulo $13$ ? Quel rapport entre $p$ et le nombre de valeurs que prend $x^a$ modulo $p$ ?
+\end{exo}
+
+\begin{exo}
+Trouver tous les naturels $a, b, c$ tels que $2^a = 3^b + 6^c$.
+\end{exo}
+
+\begin{exo}
+Trouver tous les naturels $a, b, c$ tels que $2^a + 15^b = c^3$.
+\end{exo}
+
+\begin{exo}
+Montrer qu'il n'y a pas de solution rationnelle à $x^2 + y^2 = 7$.
+\end{exo}
+
+\subsubsection{Petit Fermat}
+
+\begin{exo}
+Montrer que $n \mid \varphi(2^n - 1)$.
+\end{exo}
+
+\begin{exo}
+Montrer que $3n \mid \varphi(8^n - 1)$.
+\end{exo}
+
+\begin{exo}
+Quel rapport entre $p$ et le nombre de valeurs que prend $x^n$ modulo $p$ ? Modulo quels $p$ peut-on modulo basher efficacement $x^n$ (càd $x^n$ prend peu de valeurs différentes modulo $p$) ?
+\end{exo}
+
+\begin{exo}
+Trouver toutes les solutions entières de $x^2 + y^2 = 4242$.
+\end{exo}
+
+\begin{exo}
+Trouver toutes les solutions entières de $x^3 + y^3 + z^3 = 995$. Attention, elles peuvent être négatives.
+\end{exo}
+
+\begin{exo}
+Trouver toutes les solutions entières de $w^5 + x^5 + y^5 + z^5 = 60$.
+\end{exo}
+
+\begin{exo}
+Montrer que si $w^2 + x^2 + y^2 + z^2 = 1687$, alors l'une des variables est divisible par $2$ mais pas par $4$.
+\end{exo}
+
+\begin{exo}
+Calculer $2^{103}$ modulo $3$. Calculer $23^{23^{23^{23}}}$ modulo $29$.
+\end{exo}
+
+\subsubsection{Théorème de Wilson}
+
+\begin{exo}
+Montrer l'autre sens du théorème de Wilson : Si $(p-1)! \equiv -1 [p]$, alors $p$ est premier.
+\end{exo}
+\begin{sol}
+Réécrivons la condition de modulo comme étant $p\mid (p-1)! + 1$.
+Supposons que $p$ n'est pas premier. Prenons donc $a\mid p$ avec $ 1 < a < p $. $a\mid (p-1)!+1$ et, comme $a\le p - 1$, $a\mid (p - 1)!$. Donc
+\end{sol}
+
+\begin{exo}
+Soit $a$ naturel et $p$ premier. Montrer que $p$ divise $ (0! + a^0) \cdot (1! + a^1) \cdot \dots \cdot (p! + a^p) $.
+\end{exo}
+\begin{sol}
+Si $p\mid a$, alors $p\mid p!$ et $p\mid a^p$, donc $p\mid p! + a^p$ et $p$ divise bien le produit. \\
+
+Si $p\nmid a$, alors $a^{p-1}\equiv 1 [p]$. Comme $(p-1)!\equiv -1 [p]$, $p\mid (p-1)! + a^{p-1}$ et $p$ divise bien le produit.
+\end{sol}

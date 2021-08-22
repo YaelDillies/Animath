@@ -60,7 +60,7 @@ Soit \(p\) premier et \(a_2 , a_2 , \ldots , a_{n}\) des entiers. Si \(p\) divis
 \preuve
 
 On va prouver cette généralisation en appliquant le lemme d'Euclide plusieurs fois.
-Si un premier \(p\) divise \(a_2 \times a_2 \times \cdots \times a_{n}\), alors par le lemme d'Euclide, \(p\) divise soit \(a_2\) soit \(a_2 \times a_{3} \times \cdots a_{n}\). Dans le premier cas, on a terminé. Dans le deuxiemme cas, on reapplique le lemme d'Euclide de la meme maniére. On a alors que \(p\) divise soit \(a_2\) soit \(a_{3} \times a_{4} \times \cdots \times a_{n}\). Dans le premiér cas, on a terminé, dans le deuxiemme cas, on refait le meme raisonnement. Si on refait ce raisonnement assez de fois, on aura terminé au bound d'un moment.
+Si un premier \(p\) divise \(a_2 \times a_2 \times \cdots \times a_{n}\), alors par le lemme d'Euclide, \(p\) divise soit \(a_2\) soit \(a_2 \times a_{3} \times \cdots a_{n}\). Dans le premier cas, on a terminé. Dans le deuxiemme cas, on reapplique le lemme d'Euclide de la meme manière. On a alors que \(p\) divise soit \(a_2\) soit \(a_{3} \times a_{4} \times \cdots \times a_{n}\). Dans le premiér cas, on a terminé, dans le deuxiemme cas, on refait le meme raisonnement. Si on refait ce raisonnement assez de fois, on aura terminé au bound d'un moment.
 
 Remarque: ce raisonnement peut etre rendu plus rigoureux grace a une recurence.
 
@@ -85,8 +85,8 @@ on a alors
 Donc \(p\) divise \(1\), ce qui est une contradiction.
 
 \subsubsection{Décomposition en facteurs premiers}
-\thm[Théoréme fondamental de l'arithmétique]
-Soit \(n\geqslant1\) naturel. \(n\) peut s'ecrir comme produit de facteurs premiers d'une maniére unique. Cette ecriture s'appéle la décomposition de \(n\) en facteurs premiers.
+\thm[Théorème fondamental de l'arithmétique]
+Soit \(n\geqslant1\) naturel. \(n\) peut s'ecrir comme produit de facteurs premiers d'une manière unique. Cette ecriture s'appéle la décomposition de \(n\) en facteurs premiers.
 
 \endgroup
 
@@ -95,7 +95,7 @@ Pour que ce théoréme s'applique aux nombres premiers, on dit qu'un nombre prem
 
 Bien sur, \(12 = 2 \times 2 \times 3 = 2 \times 3 \times 2 = 3 \times 2 \times 2\). On dit que la décomposition en facteurs premiers reste la meme quand on change l'ordre des facteurs, donc quand on dit unique, on veut dire unique a réordonnement pret.
 
-Remarque: on a défini les nombres premiers de maniére a ce que \(1\) ne soit pas premier. On peut maintenant en quoi ca nous simplifie la vie: si \(1\) était premier, la décompositoin en facteurs premiers ne serait pas unique: \(6 = 2 \times 3 = 2 \times 3 \times 1 = 2 \times 3 \times 1 \times 1 = 2 \times 3 \times 1 \times 1 \times 1 = \ldots\).
+Remarque: on a défini les nombres premiers de manière a ce que \(1\) ne soit pas premier. On peut maintenant en quoi ca nous simplifie la vie: si \(1\) était premier, la décompositoin en facteurs premiers ne serait pas unique: \(6 = 2 \times 3 = 2 \times 3 \times 1 = 2 \times 3 \times 1 \times 1 = 2 \times 3 \times 1 \times 1 \times 1 = \ldots\).
 
 \exo
 Montrer qu'un premier divise un nombre naturel si et seulement s’il est présent dans sa décomposition en facteurs premiers.
@@ -123,15 +123,15 @@ Soient \(a\) et \(b\) naturels.
 Montrer que \(a\) divise \(b\) si et seulement si tous les premiers présents dans la décomposition en facteurs premiers de \(a\) sont aussi présent dans la décomposition en facteurs premiers de \(b\) et chacun d'entre eux y apparait au moins au temps de fois que dans celle de \(a\).
 
 \exo
-Combien de diviseurs naturels a \(121\)?
-Combien de diviseurs naturels a \(1\ 000\)?
-Combien de diviseurs naturels a \(1\ 000\ 000\ 000\)?
+Combien de diviseurs naturels a \(121\) ?
+Combien de diviseurs naturels a \(1\ 000\) ?
+Combien de diviseurs naturels a \(1\ 000\ 000\ 000\) ?
 
 \exo
 Soient \(a\) et \(b\) deux naturels premiers entre eux et \(n\) un naturel. Montrer que si \(a\) divise \(n\) et \(b\) divise \(n\), alors \(ab\) divise \(n\).
 
 \exo
-Soit \(p\) premier. Montrer qu'un nombre naturel est une puissance de \(p\) si et seullement si \(p\) est son seul facteur premier.
+Soit \(p\) premier. Montrer qu'un nombre naturel est une puissance de \(p\) si et seulement si \(p\) est son seul facteur premier.
 
 \subsubsection{Lemme de Gauss}
 \thm[Lemme de Gauss]
@@ -234,7 +234,7 @@ n a alors
 \[n = \left(p_2 p_2 \cdots p_{l}\right) \left(p_2 p_2 \cdots p_{l}\right) = \left(p_2 p_2 \cdots p_{l}\right)^2\]
 comme voulu.
 
-Poul la deuxiemme sous question, on procéde de la meme maniére.
+Poul la deuxiemme sous question, on procéde de la meme manière.
 Dans un sens, si un nombre naturel \(n\) est
 une puissance \(k^{e}\), posons \(n=a^{k}\).
 Décomposons \(a\) en facteurs premiers: \(a = p_2 p_2 \cdots p_{l}\). On a alors \(n = a^{k} = a \times a \times \cdots \times a = \left(p_2 p_2 \cdots p_{l}\right) \left(p_2 p_2 \cdots p_{l}\right) \cdots \left(p_2 p_2 \cdots p_{l}\right)\), avec \(k\) fois \(p_2 p_2 \cdots p_{l}\). Si un facteur premier apparait dans cette décomposition, il apparait dans un des \(k\) facteurs. Soit \(x\) le nombre de fois qu'il apparait dans ce facteur. Il apparait alors \(kx\) fois dans toute la décomposition, c'est bien un nombre divisible par \(k\).
