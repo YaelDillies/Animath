@@ -1,0 +1,193 @@
+\begin{rappel}
+Une équation fonctionnelle est une équation où l'inconnue à déterminer est une fonction. La plupart du temps on cherche toutes les fonctions qui vérifie une propriété. On utilise alors le raisonnement d'analyse synthèse : (analyse) on suppose que $f$ est une fonction qui réalise l'énoncé on trouve qu'elle nécessairement d'une certaine forme ensuite (synthèse) on vérifie que ces formes conviennent.
+\end{rappel}
+\begin{rappel}
+Pour $f:X\to Y$ on dit que :
+\begin{itemize}
+    \item $f$ est injective si pour tout $x,y\in X$ : $f(x)=f(y)\implies x=y$
+    \item $f$ est surjective si pour tout $y\in Y$, il existe $x\in X$ tel que $f(x)=y$
+    \item $f$ est bijective si $f$ est injective et surjective.
+    \item $f$ est paire si pour $x\in X$, on a $-x\in X$ et $f(-x)=f(x)$
+    \item $f$ est impaire si pour $x\in X$, on a $-x\in X$ et $f(-x)=-f(x)$
+\end{itemize}
+\end{rappel}
+\subsubsection{Petits conseils}
+\begin{itemize}
+    \item Chercher des valeurs particulières comme $f(0)$, $f(1)$ ... Si on ne les trouve pas c'est peut être des variables qu'on peut alors nommer.
+    \item Chercher quelles solutions pourraient fonctionner pour orienter ses recherches.
+    \item Utiliser les symétries pour obtenir d'autres équations.
+    \item Utiliser les transformations qui changent peu ou pas un des membres de l'équation.
+    \item Chercher les points fixes ($f(x)=x$) et les racines ($f(x)=0$).
+    \item Il peut être utile de changer de fonction d'étude pour avoir une équation plus simple.
+    \item Chercher s'il y a de l'parité, de la surjectivité, de l'injectivité ou de la bijectivité.
+    \item Ne rien effacer sur ses brouillons et penser à mettre en valeur ses trouvailles importantes.
+\end{itemize}
+
+\begin{exo}
+Déterminer dans chaque cas si $f:\R\to\R$ est injective, surjective et bijective :
+\begin{itemize}
+    \item $f(f(x)-1)=x+1$
+    \item $f(y+f(x))=(y-1)f(x^2)+3x$
+    \item $f(x+f(y))=f(x)+y^5$
+    \item $f(f(x))=\sin x$
+    \item $f(x+y^2)=f(x)f(y)+xf(y)-y^3f(x)$
+\end{itemize}
+
+\end{exo}
+%\begin{exo}
+%Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ : 
+%$$f(x)f(y)+f(x+y)=xy$$
+%\end{exo}
+\begin{exo}
+Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ : 
+$$f(2f(x)+f(y))=2x+f(y)$$
+\end{exo}
+\begin{exo}
+Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ : 
+$$(y+1)f(x+y)-f(x)f(x+y^2)=yf(x)$$
+\end{exo}
+\begin{exo}
+Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ : 
+$$f(x)f(y)=f(x-y)$$
+\end{exo}
+
+\begin{exo}
+Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ : 
+$$f(x^{2022}+y)=f(x^{1747}+2y)+f(x^{42})$$
+\end{exo}
+\begin{exo}
+Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ : 
+$$f(f(x)^2+f(y))=xf(x)+y$$
+\end{exo}
+\begin{exo}
+Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ : 
+$$(x-y)f(x+y)-(x+y)f(x-y)=4xy(x^2-y^2)$$
+\end{exo}
+\begin{exo}
+Trouver toutes les fonctions $f:\N\to\N$ telles que pour tous naturels $n$ et $m$ : 
+$$f(3n+2m)=f(n)f(m)$$
+\end{exo}
+\begin{exo}
+Trouver toutes les fonctions $f:\N\to\N$ telles que pour tous naturels $a$ et $b$ : 
+$$f(f(a)+f(b))=a+b$$
+\end{exo}
+\begin{exo}
+Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ : 
+$$f(x^2-y^2)=xf(x)-yf(y)$$
+\end{exo}
+\begin{exo}
+Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ différent de 1 : 
+$$f(x)+f\left(\frac1{1-x}\right)=x$$
+\end{exo}
+\begin{exo}
+Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ :
+$$f(x^2+f(y))=y+f(x)^2$$
+\end{exo}
+\subsubsection{Corrections}
+\begin{sol}[][1]
+\begin{itemize}
+    \item Soient $a$ et $b$ deux réels tels que $f(a)=f(b)$, on a $f(f(a)-1)=f(f(b)-1)$ donc $a+1=b+1$, dès lors $f$ est injective.\\
+    Soit $y$ un réel on a $f(f(y-1)-1)=y$ donc $f$ est surjective, donc $f$ est bijective.
+    \item On considère $y=1$, on a $f(1+f(x))=3x$.\\ 
+    Soient $a$ et $b$ deux réels tels que $f(a)=f(b)$, on a $f(1+f(a))=f(1+f(b))$ donc $a=b$, dès lors $f$ est injective.\\
+    Soit $y$ un réel on a $f(1+f(\frac y3))=y$ donc $f$ est surjective, donc $f$ est bijective.
+    \item Pour $x=0$ : $f(f(y))=y^5+f(0)$ or $y\to y^5+f(0)$ est bijective donc $f$ est bijective.
+    \item Pour $x=0$ et $x=\pi$ : $f(f(0))=f(f(\pi))$, si $f(0)\ne f(\pi)$ ou $f(0)=f(\pi)$, dans les deux cas $f$ n'est pas injective.\\
+    $\sin$ n'est pas surjective or si $f$ est surjective $f\circ f$ est surjective donc $f$ n'est ni surjective ni injective.
+    \item En prenant $x=y=0$, $f(0)=f(0)^2$ donc $f(0)=0$ ou $f(0)=1$.\\
+    Si $f(0)=1$, on considère $y=0$, on a alors $0=x$, c'est impossible. Ainsi, $f(0)=0$ :\\
+    On considère $y=0$, on a $f(x)=0$ donc $f$ n'est ni surjective ni injective.
+\end{itemize}
+\end{sol}
+%\begin{sol}[][2]
+%On considère $y=0$ : on a $f(x)(f(0)+1)=0$.\\
+%Ainsi soit $f=0$ soit $f(0)=-1$. Si $f=0$, on a pour tous $x$ et $y$ : $0=xy$ donc c'est impossible.\\
+%Donc $f(0)=-1$\\
+%On prend $x=-y=1$, on a $f(1)f(-1)=0$, donc $f(1)=0$ ou $f(-1)=0$.\\
+%Si $f(1)=0$, avec $y=1$ : $f(x+1)=x$ donc $f:x\longmapsto x-1$, qui convient.\\
+%Sinon, $f(-1)=0$, avec $y=-1$ : $f(x-1)=-x$ donc $f :\longmapsto -x-1$, qui convient aussi.
+
+%\end{sol}
+\begin{sol}[][2]
+On prend $y=0$, on a $f(2f(x)+f(0))=2x+f(0)$. Soit $a$ et $b$ deux réels tels que $f(a)=f(b)$, on a alors $f(2f(a)+f(0))=f(2f(b)+f(0))$ d'où $2a+f(0)=2b+f(0)$ et $a=b$, donc $f$ est injective.\\
+On considère $x=0$, on a alors $f(2f(0)+f(y))=f(y)$, par injectivité, $f(y)=y-2f(0)$, en particulier $f(0)=-f(0)$ donc $f(0)=0$ et $f$ est l'indentité. Elle convient c'est donc l'unique solution.
+\end{sol}
+\begin{sol}[][3]
+On considère $y=0$, on a alors $f(x)(1-f(x))=0$.\\
+Ainsi $f(x)=0$ ou $f(x)=1$, attention cela ne veut pas dire que $f$ est constante à $1$ ou à $0$, elle ne prend que ces valeurs mais peut changer.\\
+On considère qu'il existe $a$ tel que $f(a)=0$, en considérant $x=a$, on a $(y+1)f(a+y)=0$, donc $f(a+y)=0$ pour $y\ne-1$ on considère $x=a-2$ par exemple et $y=1$, on a alors $f=0$. Cette fonction convient. \\
+Sinon c'est que $f=1$ qui convient également.
+\end{sol}
+\begin{sol}[][4]
+On considère $x=y=0$, on a $f(0)^2=f(0)$, donc $f(0)=0$ ou $1$.\\
+On suppose $f(0)=0$, on considère $y=0$, on a $f(x)=0$, donc, $f=0$, qui convient.\\
+Sinon $f(0)=1$, on prend $x=y$, on a $f(x)^2=1$, d'où $f(x)=\pm1$. Attention cela ne veut pas dire que la fonction est constante à $1$ ou $-1$. On considère $x=0$, on a $f(x)=f(-x)$ donc $f$ est paire. On prend ensuite $y=-x$, pour avoir $$1=f(x)^2=f(x)f(-x)=f(2x)$$
+Pour un réel $y$, on peut considérer $x=\dfrac y2$, et on a $f(y)=1$, donc $f=1$ qui convient aussi. 
+\end{sol}
+\begin{sol}[][5]
+On a des exposants compliqués on va donc essayer de les simplifier. Pour un $x$ donné, on a $x^{2022}+y=x^{1747}+2y$ si et seulement si $y=x^{2022}-x^{1747}$ on prend donc ce $y$. On a alors $f(2x^{2022}-x^{1747})=f(2x^{2022}-x^{1747})+f(x^{42})$ d'où : $f(x^{42})=0$, ainsi $f$ est nul sur les positifs. On considère $y=0$, on a alors pour tous les $x$ négatifs $f(x^{1747})=0$, d'où $f=0$. Cette fonction convient ($0+0=0$).
+\end{sol}
+\begin{sol}[][6]
+On considère $x=0$, on a alors $f(f(0)^2+f(y))=y$ donc $f$ est bijective.\\
+Soit $a$ l'antécédant de $0$, on considère $x=a$, on a $f(f(y))=y$, $f$ est involutive !\\
+En évaluant en $f(x)$ au lieu de $x$ l'équation, le membre de droite ne change pas mais le membre de gauche si. Ainsi : $$f(f(x)^2+f(y))=f(x^2+f(y))$$ par injectivité : $x^2=f(x)^2$. Cela signifie que pour tout $x$, on a $f(x)=x$ ou $f(x)=-x$. (Attention cela ne vaut pas dire que $f:x\longmapsto x$ ou $f:x\longmapsto -x$)\\
+On suppose qu'il existe $b$ et $c$ deux réels tels que $f(b)=b$ et $f(c)=-c$, on a alors en prenant $x=b$ et $y=c$ : $$f(b^2-c)=b^2+c$$ on a alors $b^2-c=b^2+c$ ou $b^2-c=-b^2-c$, dans les deux cas, $b$ ou $c$ est nul. Ainsi on a $f:x\longmapsto x$ ou $f:x\longmapsto -x$. Ces fonctions conviennent à l'énoncé, ce sont donc les solutions.
+
+\end{sol}
+
+\begin{sol}[][7]
+L'expression semble au premier abord compliquée. On peut cependant remarquer la forte présence de $x+y$ et $x-y$. On pose alors $a=x+y$ et $b=x-y$, on a alors $x=\dfrac{a+b}2$ et $y=\dfrac{a-b}2$. L'équation initiale est alors équivalente à : $$bf(a)-af(b)=ab(a^2-b^2)$$ On prend $b=1$, on a alors $f(a)=a^3+a(f(1)-1)$. Ainsi, il existe $c$ un réel tel que $f(x)=x^3+xc$ pour tous les réels $x$, on vérifie que ces fonctions respectent l'équation initiale.
+\end{sol}
+\begin{sol}[][8]
+Pour $n=m=0$ on a $f(0)=f(0)^2$ donc $f(0)=0$ ou $f(0)=1$\\
+On suppose $f(0)=0$, avec $n=0$, $f(2m)=0$ et avec $m=0$, $f(3n)=0$. Puis avec $n=3$, $f(2m+9)=0$, ainsi $f(n)=0$ pour $n$ différent de $1$,$3$,$5$ et $7$. On prend ensuite $n=m$ égal à $3$, $5$ et $7$ pour avoir $f(n)^2=f(5n)=0$ d'où $f(n)=0$ pour $n\in\{3,5,7\}$. De même, $f(1)^2=f(5)=0$ et $f=0$. Cette fonction convient.\\
+On suppose ensuite $f(0)=1$. On a $f(3 \times 4) = f(4)f(0) = f(2 \times 2) = f(2)f(0) = f(1)f(0) = f(1)$, et $f(3 \times2 +
+2 \times 3) = f(2)f(3) = f(1)^2$ Donc $f(1) = f(1)^2$. Donc $f(1) = 1$ ou $f(1) = 0$.\\
+\begin{itemize}
+    \item Si $f(1)=0$. On a $f(2)=0$ donc $f(2n+3)=f(n)f(1)=0$ et $f(2n+6)=f(n)f(2)=0$. Ainsi $f(n)=0$ pour $n$ différent de $4$ (et de $0$). Enfin $f(20)=f(4)^2=0$ donc $f(n)=0$ pour $n\ne 0$. Cette fonction convient également.
+    \item Si $f(1)=1$, $f(2n)=f(n)$ et $f(2n+3)=f(n)$. Ainsi pour $n>1$, il existe $m<n$ tel que $f(m)=f(n)$ ainsi par récurrence forte $f(n)=f(1)=1$. Cette fonction vérifie aussi l'énoncé.
+\end{itemize}
+On a donc trois solutions possibles :
+\begin{itemize}
+    \item $f(n)=0$ pour $n\in\N$
+    \item $f(n)=1$ pour $n\in\N$
+    \item $f(n)=0$ pour $n\ne 0$ et $f(0)=1$
+\end{itemize}
+\end{sol}
+\begin{sol}[][9]
+Pour $b=0$, $f(f(a)+f(0))=a$, on a alors $f$ injective (car si $f(n)=f(m)$, $f(f(n)+f(0))=f(f(m)+f(0))$) et surjective.\\
+Soit $n$ un entier naturel, on prend $a=n$ et $b=1$ puis $a=n+1$ et $b=0$, on a alors 
+$$f(f(n)+f(1))=n+1=f(f(n+1)+f(0))$$
+Ainsi par injectivité : $f(n+1)=f(n)+f(1)-f(0)$, on note $f(0)=a$ et $f(1)=b$, on a alors $f(n+1)=f(n)+b-a$.\\
+Par récurrence facile $f(n)=a+n(b-a)$, on peut alors conclure de deux façons, soit on réinjecte dans l'équation initiale pour avoir $a=0$ et $b=1$, sinon, la surjectivité dit que tout naturel est atteint donc $b-a=1$ et $a=0$. Dans tous les cas $f(n)=n$ pour tout $n$ et cette fonction convient bien.
+\end{sol}
+\begin{sol}[][10]
+Pour $y=0$, on a $f(x^2)=xf(x)$, cela donne en particulier le fait que $f$ est impaire.\\
+Par ailleurs cela donne $f(x^2-y^2)=f(x^2)+f(-y^2)$, ainsi $f(a+b)=f(a)+f(b)$ pour $a\ge0$ et $b\le0$. L'imparité permet d'avoir $f(a+b)=f(a)+f(b)$ dans les autres cas.\\
+On prend $x=t+1$ et $y=t$, pour avoir $$2f(t)+f(1)=f(2t+1)=f((t+1)^2-t^2)=(t+1)f(t+1)-tf(t)=f(t)+(t+1)f(1)$$ Ainsi $f(t)=tf(1)$ et $f$ est une fonction linéaire, on vérifie qu'elles fonctionnent.
+\end{sol}
+\begin{sol}[][11]
+Soit $x$ différent de $0$ et de $1$ \\
+On applique l'équation à $\dfrac1{1-x}$ au lieu de $x$, on a alors : $$f\left(\dfrac1{1-x}\right)+f\left(1-\dfrac1x\right)=\dfrac1{1-x}$$
+On réapplique $\dfrac1{1-x}$ au lieu de $x$ dans cette dernière équation : $$f\left(1-\dfrac1x\right)+f(x)=1-\dfrac1x$$
+On a trois équations à trois inconnues, on peut donc résoudre le système. On prend l'équation de départ plus la dernière auquelle on soustrait la deuxième pour obtenir : $$2f(x)=x+1-\dfrac1x-\dfrac1{1-x}$$
+D'où : $f(x)=\dfrac{x^3-2x}{2x(x-1)}$ pour $x\in\R-\{0,1\}$.\\
+Pour $x=0$, l'équation de départ implique $f(0)+f(1)=0$, c'est la seule contrainte sur $f(0)$ et $f(1)$. \\
+Ainsi les fonctions qui sont solutions (parce qu'elles conviennent) sont les $f:\R\longmapsto\R$ telles qu'il existe $c\in\R$ tel que $f(x)=\dfrac{x^3-2x}{2x(x-1)}$ pour $x$ différent de $0$ et de $1$, $f(0)=c$ et $f(1)=-c$
+\end{sol}
+
+\begin{sol}[][12]
+On prend $x=0$, on a alors $f(f(y))=y+f(0)^2$, cela donne en particulier $f$ bijective.
+On applique $f$ à l'équation initiale pour obtenir :
+$$f(f(x^2+f(y)))=x^2+f(y)+f(0)^2=f(y+f(x)^2)$$
+On prend maintenant $a$ l'antécédant de $0$ par $f$ et on prend $x=a$ dans l'équation précédente :\\
+$a^2+f(y)+f(0)^2=f(y)$, ainsi $a^2+f(0)^2=0$. Un carré (d'un réel) est positif donc $a=f(0)=0$.\\
+D'ailleurs $f(f(y))=y$.
+On prend $y=0$ dans l'équation initiale, on a : $f(x^2)=f(x)^2$.\\
+L'équation de départ donne donc $f(x^2+f(y))=y+f(x^2)$. On prend alors $y=f(-x^2)$ pour avoir  :
+$$f(x^2+f(f(-x^2)))=f(0)=0=f(-x^2)+f(x^2)$$
+Ainsi $f$ est impaire.\\
+En prenant $f(y)$ à la place de $y$ dans l'équation de départ on a :
+$$f(x^2+f(f(y)))=f(x^2+y)=f(y)+f(x^2)$$
+Ainsi $f(a+b)=f(a)+f(b)$ pour $a$ positif, en fait pour $a$ et $b$ réels quelconques en utilisant l'imparité. $f$ résoud l'équation de Cauchy donc $f$ est linéaire sur $\Q$, de plus on a $f(x^2)=f(x)^2$ donc $f(x)\ge0$ pour $x\ge0$, ainsi $f$ est croissante et en encadrant chaque réel par deux suites adjacentes de rationnels, on a $f $ linéaire sur $\R$. Comme $f$ est croissante et $f(x^2)=f(x)^2$, on a $f$ est l'identité qui convient.
+\end{sol}
