@@ -8,7 +8,7 @@ L'équation fonctionnelle $f(x)=f(-x)$ a pour solution les fonctions paires.
 \\
 L'équation fonctionnelle $f(x)=-f(-x)$ a pour solution les fonctions impaires.
 \\
-L'équation fonctionnelle $f\circ f(x)=x $ a pour solution les fonctions involutives.
+L'équation fonctionnelle $f\circ f(x) = x$ a pour solution les fonctions involutives.
 \\
 L'équation fonctionnelle $f(x+T)=f(x) $ a pour solution les fonctions $T$-périodiques.
 \end{ex}
@@ -26,32 +26,32 @@ Sur ces trois premiers exemples, l'équation fonctionnelle sert de définition �
 
 La théorie  des équations fonctionnelles étant basée sur la pratique: voyons quelques exemples.
 \begin{ex}
-Trouver les fonctions $f:\mathbb{R}\to \mathbb{R}$ telle que pour tout $x$ et pour tout $y$ on ait
+Trouver les fonctions $f:\R\to \R$ telle que pour tout $x$ et pour tout $y$ on ait
 $$f(x+y)=f(x)+y $$
 \end{ex}
 \begin{preuve}
-\textbf{Analyse:}
+\textbf{Analyse :}
 On commence par supposer que $f$ est une solution de l'équation.
 \\
 
 Comme la relation tient pour toute paire de réels $(x,y)$, on peut chercher à fixer des valeurs de $(x,y)$ pour simplifier la relation. Une idée naturelle est de poser $x=0$ ou $y=0$. Si on pose $y=0$, on obtient $f(x)=f(x)$ ce qui ne nous avance pas. On pose donc $x=0$ ce qui donne 
 $$f(y)=y+f(0) $$
 $f(0)$ est inconnu mais il est constant, on a donc montré que si $f$ était solution, alors elle doit être de la forme 
-$$f(x)=x+a, \: a\in \mathbb{R} $$
-\textbf{Synthèse:} Vérifions si ces fonctions sont solution:
+$$f(x)=x+a, \: a\in \R $$
+\textbf{Synthèse :} Vérifions si ces fonctions sont solution:
 $$f(x+y)=f(x)+y\iff x+y+a=x+a+y $$
 Donc elles sont bien solutions et les solutions de l'équation de base sont donc les 
-$$f(x)=x+a, \: a\in \mathbb{R} $$
+$$f(x)=x+a, \: a\in \R $$
 \end{preuve}
 \\
 Voyons un deuxième exemple.
 \begin{ex}
-Trouver les fonctions $f:\mathbb{R}\to \mathbb{R}$ telle que pour tout $x$ et pour tout $y$ on ait
+Trouver les fonctions $f:\R\to \R$ telle que pour tout $x$ et pour tout $y$ on ait
 $$f(x-f(y))=1-x-y $$
 \end{ex}
 
 \begin{preuve}
-\textbf{Analyse:}
+\textbf{Analyse :}
 On commence par supposer que $f$ est une solution de l'équation.
 \\
 
@@ -60,8 +60,8 @@ Comme la relation tient pour toute paire de réels $(x,y)$, on peut chercher à 
 L'équation devient alors
 $$f(0)=1-f(y)-y\iff f(y)=1-y-f(0) $$
 Ainsi, si $f$ est une solution, elle doit être une fonction affine. Plus précisément, elle doit s'écrire 
-$$f(y)=-y+a, \; a\in \mathbb{R} $$
-\textbf{Synthèse:}
+$$f(y)=-y+a, \; a\in \R $$
+\textbf{Synthèse :}
 On a trouvé les seuls candidats possibles, il faut vérifier lesquels sont vraiment solutions. On injecte donc la forme $f(y)=-y+a$ dasn l'équation de base et 
 $$f(x-f(y))=1-x-y\iff f(x+y-a)=1-x-y\iff -x-y+a+a=1-x-y $$
 Et donc on doit forcément avoir
@@ -72,55 +72,55 @@ $$f(y)=-y+\frac{1}{2} $$
 
 Voici quelques exercices à chercher qui repose sur cette idée.
 \begin{exo}[F]
-Trouver les fonctions $f:\mathbb{R}\to \mathbb{R}$ à pente constante. C'est à dire telle qu'ile xiste un réel $a$ tel que pour chaque paire de réels distincts $x,y$, on ait:
+Trouver les fonctions $f:\R\to \R$ à pente constante. C'est à dire telle qu'ile xiste un réel $a$ tel que pour chaque paire de réels distincts $x,y$, on ait:
 $$\frac{f(x)-f(y)}{x-y}=a $$
 \end{exo}
 
 \begin{proof}
-\textbf{Analyse:} Supposons que $f$ est solution. On pose $y=0$ ce qui donne pour tout $x$ réel
+\textbf{Analyse :} Supposons que $f$ est solution. On pose $y=0$ ce qui donne pour tout $x$ réel
 $$f(x)=ax+f(0) $$
 Donc $f$ doit être affine de pente $a$.
 \\
-\textbf{Synthèse:} Réciproquement, si $f(x)=ax+b$ on vérifie que pour toute paire de réels $x$ et $y$ distincts, on a
+\textbf{Synthèse :} Réciproquement, si $f(x)=ax+b$ on vérifie que pour toute paire de réels $x$ et $y$ distincts, on a
 $$\frac{f(x)-f(y)}{x-y}=\frac{(ax+b)-(ay+b)}{x-y}=a $$
 Donc les fonctions de pente constante sont les fonctions affines.
 \end{proof}
 \begin{exo}[F]
-Trouver les fonctions $f:\mathbb{R}\to \mathbb{R}$ telles que pour toute paire de réels $(x,y)$ on ait
+Trouver les fonctions $f:\R\to \R$ telles que pour toute paire de réels $(x,y)$ on ait
 $$f(x)f(y)=f(xy)+x+y $$
 \end{exo}
 \begin{preuve}
-\textbf{Analyse:} Supposons que $f$ est solution. On pose $y=0$ ce qui donne pour tout $x$ réel
+\textbf{Analyse :} Supposons que $f$ est solution. On pose $y=0$ ce qui donne pour tout $x$ réel
 $$f(x)f(0)=x+f(0) $$
 Pour $x=1$ on a
 $$f(1)f(0)=1+f(0) $$ ce qui implique en particulier que $f(0)\neq 0$. On en déduit donc que 
 $$f(x)=\frac{x}{f(0)}+1 $$
-\textbf{Synthèse:} On considère une fonction $f$ de la forme $f(x)=ax+1$. On veut
+\textbf{Synthèse :} On considère une fonction $f$ de la forme $f(x)=ax+1$. On veut
 $$(ax+1)(ay+1)=axy+1+x+y\iff a^2xy+a(x+y)+1=axy+x+y+1\Rightarrow a=1 $$
 Donc la seule solution est $f(x)=x+1$.
 \end{preuve}
 \begin{exo}[F]
-Trouver les fonctions $f:\mathbb{R}\to \mathbb{R}$ telles que pour toute paire de réels $(x,y)$ on ait
+Trouver les fonctions $f:\R\to \R$ telles que pour toute paire de réels $(x,y)$ on ait
 $$f(xy)=xf(x)+yf(y) $$
 
 \end{exo}
 \begin{preuve}
-\textbf{Analyse:} Supposons que $f$ est solution. On pose $y=0$ ce qui donne pour tout $x$ réel
+\textbf{Analyse :} Supposons que $f$ est solution. On pose $y=0$ ce qui donne pour tout $x$ réel
 $$f(0)=xf(x) $$
-En particulier, pour $x=0$ on en déduit que $f(0)=0$. On a donc que pour tout $x\in \mathbb{R}$
+En particulier, pour $x=0$ on en déduit que $f(0)=0$. On a donc que pour tout $x\in \R$
 $$0=f(x)x $$ Cela assure que si $x\neq 0$, on a $f(x)=0$.
 \\
 Comme on avait $f(0)=0$, on a en fait montré que la solution nulle était la seule fonction candidate pour être solution.
-\textbf{Synthèse:} Soit $f$ la fonction nulle, on  vérifie que 
+\textbf{Synthèse :} Soit $f$ la fonction nulle, on  vérifie que 
 $$f(xy)=0=xf(x)+yf(y)=0+0 $$
 \end{preuve}
 \begin{exo}[M]
-Trouver les fonctions $f:\mathbb{R}_*^+\to \mathbb{R}_*^+$ telles que pour toute paire de réels $(x,y)$ on ait
+Trouver les fonctions $f:\R_*^+\to \R_*^+$ telles que pour toute paire de réels $(x,y)$ on ait
 $$f(yf(x))(x+y)=x^2(f(x)+f(y)) $$
 
 \end{exo}
 \begin{preuve}
-\textbf{Analyse:} Supposons que $f$ est solution. On pose $x=y=1$ ce qui donne 
+\textbf{Analyse :} Supposons que $f$ est solution. On pose $x=y=1$ ce qui donne 
 $$f(f(1))=f(1) $$
 On pose alors $x=f(1)$ et $y=1$ ce qui donne 
 $$f(f(f(1)))(1+f(1))=f(1)^2(f(f(1))+f(1))\iff f(1)(1+f(1))=2f(1)^2f(1)$$ $$\iff 1+f(1)=2f(1)^2\iff f(1)=1 \textit{ ou } f(1)=-\frac{1}{2} $$
@@ -133,11 +133,11 @@ Considérons la fonction $f$ définie par $f(x)=\frac{1}{x}$. On vérifie que $$
 Et donc la seule la solution est la fonction inverse.
 \end{preuve}
 \begin{exo}[M]
-Trouver les fonctions $f:\mathbb{R}_*\to \mathbb{R}$ vérifiant
-$$x \cdot f\left(\frac{x}{2}\right) - f\left(\frac{2}{x}\right) = 1 \ \text{ pour tout } x \in \mathbb{R}_*. $$
+Trouver les fonctions $f:\R_*\to \R$ vérifiant
+$$x \cdot f\left(\frac{x}{2}\right) - f\left(\frac{2}{x}\right) = 1 \ \text{ pour tout } x \in \R_*. $$
 \end{exo}
 \begin{preuve}
-\textbf{Analyse:} on suppose que $f$ est solution de l'équation:
+\textbf{Analyse :} on suppose que $f$ est solution de l'équation:
 \\
 
 On commence par poser $2y=x$ pour se débarrasser de la division par 2, on a donc
@@ -149,7 +149,7 @@ $$f\left(\frac{1}{y}\right)-\frac{y}{2}f(y)=\frac{y}{2}$$
 La somme des deux équations donne
 $$\left(2y-\frac{y}{2}\right)f(y)=1+\frac{y}{2}$$
 Soit $$f(y)=\frac{2+y}{3y}$$
-\textbf{Synthèse:}
+\textbf{Synthèse :}
 Réciproquement, on vérifie que
 pour $f(y)=\frac{2+y}{3y}$
 On a :
@@ -158,12 +158,12 @@ Donc c'est bien solution est c'est la seule.
 \end{preuve}
 
 \begin{exo}[D]
-Trouver les fonctions $f:\mathbb{R}\to \mathbb{R}$ telles que pour toute paire de réels $x,y$ on ait:
+Trouver les fonctions $f:\R\to \R$ telles que pour toute paire de réels $x,y$ on ait:
 $$f(xy-1)+f(x)f(y)=2xy-1 $$
 \end{exo}
 
 \begin{proof}
-\textbf{Analyse:} Supposons que $f$ soit une solution de l'équation.
+\textbf{Analyse :} Supposons que $f$ soit une solution de l'équation.
 \\
 On pose $x=0$ ce qui donne 
 $$f(-1)+f(x)f(0)=-1 $$ Si $f(0)\neq 0$, on peut diviser et donc $f$ est constante. C'est absurde car aucune fonction constante n'est solution. Donc $f(0)=0$ ce qui donne 
@@ -186,7 +186,7 @@ Si $f(1)=1$ on a $f(x)=-x^2$.
 \\
 Si $f(1)=-1$ on a $f(x)=x$.
 \\
-\textbf{Synthèse:} Si $f(x)=x$ on a 
+\textbf{Synthèse :} Si $f(x)=x$ on a 
 $$f(xy-1)+f(x)f(y)=xy-1+xy=2xy-1 $$
 Si $f(x)=-x^2$ on a 
 $$f(xy-1)+f(x)f(y)=-(x^2y^2-2xy+1)-x^2y^2=-2xy-1 $$
@@ -201,7 +201,7 @@ Donc les deux seules solutions sont $f(x)=x$ ainsi que $f(x)=-x^2$.
 Voici les principales propriétés.
 
 \begin{dfn}[Parité]
-Pour une fonction $f:\mathbb{R}\to \mathbb{R}$, on dit que
+Pour une fonction $f:\R\to \R$, on dit que
 \begin{itemize}
     \item $f$ est une fonction paire si $f(x)=f(-x)$ pour tout réel $x$.
     \item $f$ est une fonction impaire si $f(x)=-f(-x)$ pour tout réel $x$.
@@ -220,11 +220,11 @@ Voici un exercice qui utilise cette idée.
 
 
 \begin{exo}[M]
-Trouver les fonctions $f:\mathbb{R}\to \mathbb{R}$ telles que pour tous $x,y$ réels on ait:
-$$f(x+yf(x)) +f(xf(y)-y) = f(x)-f(y)+2xy^2 \ \text{ pour tous } x, y \in \mathbb{R}.$$
+Trouver les fonctions $f:\R\to \R$ telles que pour tous $x,y$ réels on ait:
+$$f(x+yf(x)) +f(xf(y)-y) = f(x)-f(y)+2xy^2 \ \text{ pour tous } x, y \in \R.$$
 \end{exo}
 \begin{preuve}
-\textbf{Analyse:} On suppose que $f$ est solution de l'équation.
+\textbf{Analyse :} On suppose que $f$ est solution de l'équation.
 \\
 On pose tout d'abord $x=y=0$
 ce qui donne $2f(0)=0$ soit $f(0)=0$.
@@ -247,20 +247,20 @@ En pratique, la surjectivité de $f$ permet des subtitution du type $f(y)=z$.
 \end{rem}
 Voici un exemple.
 \begin{ex}
-Trouver les fonctions $f:\mathbb{R}\to \mathbb{R}$ telles que pour toute paire de réels $x,y$ on ait:
+Trouver les fonctions $f:\R\to \R$ telles que pour toute paire de réels $x,y$ on ait:
 $$f(x^2+f(y))=2x-f(y) $$
 \end{ex}
 \begin{preuve}
-\textbf{Analyse:} Supososon que $f$ est solution de l'équation.
+\textbf{Analyse :} Supososon que $f$ est solution de l'équation.
 \\
 Montrons que $f$ est surjective. Pour cela, on pose $y=0$ ce qui donne 
 $$f(x^2f(0))=2x-f(0) $$
 Ainsi, pour tout réel $x$, on trouver un antécédant de $x$ en posant
-$z=\left( \frac{x+f(0)}{2} \right) ^2+f(0)$. Donc $f$ est surjective. On peut donc poser $z=f(y)$ avec $z$ qui varie dans $\mathbb{R}$. Cela simplifie la relation initiale
+$z=\left( \frac{x+f(0)}{2} \right) ^2+f(0)$. Donc $f$ est surjective. On peut donc poser $z=f(y)$ avec $z$ qui varie dans $\R$. Cela simplifie la relation initiale
 $$f(x^2+z)=2x-z $$
 On pose alors $x=0$ ce qui donne 
 $$f(z)=-z $$
-\textbf{Synthèse:}
+\textbf{Synthèse :}
 Si $f(z)=-z$ on a d'une part $$f(x^2+f(y))=y-x^2$$ et d'autre part
 $$ 2x-f(y)=2x+y$$
 Donc l'équation n'a pas de solutions.
@@ -277,11 +277,11 @@ $$f(A)=f(B) $$ devient simplement $A=B$.
 \end{rem}
 Voici un exemple d'utilisation de l'injectivité.
 \begin{ex}
-Trouver les fonctions $f:\mathbb{R}^+\to \mathbb{R}^+$ telles que pour toute paire de réels $x,y$ on ait:
+Trouver les fonctions $f:\R^+\to \R^+$ telles que pour toute paire de réels $x,y$ on ait:
 $$f(f(x)+y)=2x+f(-f(f(x)))+f(y)) $$
 \end{ex}
 \begin{preuve}
-\textbf{Analyse:} On suppose que $f$ est une solution de l'équation.
+\textbf{Analyse :} On suppose que $f$ est une solution de l'équation.
 \\
 Commençons par poser $x=0$ ce qui donne 
 $$f(f(0)+y)=f(-f(f(0))+f(y)) $$
@@ -291,7 +291,7 @@ Mais aussi
 $$f(f(b)+y)-f(-f(f(b))+f(y))=2b $$
 De là, on a donc $a=b$ et donc $f$ est bien injective. On en déduit que 
 $$f(y)=y+f(0)+f(f(0)) $$
-\textbf{Synthèse:} Si $f(y)=y+a$ on écrit que 
+\textbf{Synthèse :} Si $f(y)=y+a$ on écrit que 
 $$f(f(x)+y)=x+y+2a=2x+f(-f(f(x))+f(y))=2x+(-x+y-a)=x+y-a $$
 Et donc $a=0$. Ainsi, la seule solution est l'identité.
 \end{preuve}
@@ -299,13 +299,13 @@ Et donc $a=0$. Ainsi, la seule solution est l'identité.
 Soit $f:A\to B$ une fonction entre deux ensemble. On dit que $f$ est bijective si elle est injective et surjective.
 \end{dfn}
 \begin{exo}[F-M]
-Trouver les $f:\mathbb{R}\to \mathbb{R}$ telles que pour toute paire de réels $x,y$ on ait $$f(f(x)f(y))=f(x)y $$
+Trouver les $f:\R\to \R$ telles que pour toute paire de réels $x,y$ on ait $$f(f(x)f(y))=f(x)y $$
 
 \end{exo}
 \begin{preuve}
-\textbf{Analyse:} Supposons que $f$ est une solution.
+\textbf{Analyse :} Supposons que $f$ est une solution.
 \\
-La fonction nulle est solution. Sinon, supposons que $f$ est une solution non constamment nulle et donnons nous donc $a\in \mathbb{R}$ tel que $f(a)\neq 0$. On pose alors $x=a$ ce qui donne pour tout $y\in \mathbb{R}$
+La fonction nulle est solution. Sinon, supposons que $f$ est une solution non constamment nulle et donnons nous donc $a\in \R$ tel que $f(a)\neq 0$. On pose alors $x=a$ ce qui donne pour tout $y\in \R$
 $$f(f(a)f(y))=f(a)y $$
 Montrons que $f$ est injective. Supposons donc qu'il existe $b,c$ tels que $f(b)=f(c)$.
 \\
@@ -320,17 +320,17 @@ $$f(f(x)f(1))=f(x)\Rightarrow f(x)f(1)=x $$
 Avec $x=1$, on a$$ f(1)^2=1\Rightarrow f(1)=\pm 1$$
 Donc les seules solutions possibles sont $f(x)=x$ et $f(x)=-x$.
 \\
-\textbf{Synthèse:} On suppose que $f(x)=x$ ce qui donne 
+\textbf{Synthèse :} On suppose que $f(x)=x$ ce qui donne 
 $$f(f(x)f(y))=xy=f(x)y $$
 Si $f(x)=-x$ on vérifie que
 $$f(f(x)f(y))=-xy=f(x)y $$
 Donc les deux seules solutions sont $f(x)=x$ et $f(x)=-x$.
 \end{preuve}
 \begin{exo}[M]
-Trouver les $f:\mathbb{R}\to \mathbb{R}$ telles que pour toute paire de réels $x,y$ on ait $$f(x^2+f(y))=y+f(x)^2$$
+Trouver les $f:\R\to \R$ telles que pour toute paire de réels $x,y$ on ait $$f(x^2+f(y))=y+f(x)^2$$
 \end{exo}
 \begin{preuve}
-\textbf{Analyse:} Supposons que $f$ est une solution.
+\textbf{Analyse :} Supposons que $f$ est une solution.
 \\
 Montrons que $f$ est bijective. On pose $x=0$ et on a $f(f(y))=y+f(0)^2$ puis on pose $x=f(0)$ et $f(f(0)^2+f(y))=f^3(y)=y+f(f(0))^2$ puis avec $x=y=0$ on a $f(f(0))=f(0)^2$ et donc $f^3(y)=y+f(0)^4$. Avec $y=0$ on a $f(x^2+f(0))=f(x)^2$ et donc $f(x)=0$ implique $f(-x)=0$. Mais par bijectivité on doit alors avoir $f(0)=0$. de là, on a $f^3=f^2$ et par injectivité $f=Id$.
 \end{preuve}
@@ -338,12 +338,12 @@ Montrons que $f$ est bijective. On pose $x=0$ et on a $f(f(y))=y+f(0)^2$ puis on
 
 \emph{Une autre idée importante est d'utiliser la symétrie. En effet, si le membre de gauche de l'équation est symétrique en $(x,y)$, alors celui de droite aussi. Ainsi, en exploitant la symétrie, on peut obtenir de nouvelles équations. Voyons une exemple.}
 \begin{ex}
-Trouver les $f:\mathbb{R}\to \mathbb{R}$ telles que pour toute paire de réels $x,y$ on ait
+Trouver les $f:\R\to \R$ telles que pour toute paire de réels $x,y$ on ait
 $$f(f(x)+f(y))=f(-x-f(y))+2(x+y) $$
 \end{ex}
 
 \begin{preuve}
-\textbf{Analyse:} On suppose que $f$ est solution de l'équation. Etudions pour commencer l'injectivité et la surjectivité de $f$. On pose pour cela $x=0$ ce qui donne 
+\textbf{Analyse :} On suppose que $f$ est solution de l'équation. Etudions pour commencer l'injectivité et la surjectivité de $f$. On pose pour cela $x=0$ ce qui donne 
 $$f(f(0)+f(y))-f(-f(y))=2y $$
 Dès lors, si $f(y)=f(z)$ alors on en déduit que 
 $$2z=f(f(0)+f(z))-f(-f(z))=f(f(0)+f(y))-f(-f(y))=2y\Rightarrow z=y $$
@@ -357,14 +357,14 @@ Puis l'injectivité permet de se débarasser des $f$ ce qui donne
 $$-x-f(y)=-y-f(x) $$
 Avec $x=0$ on a montré que pour tout réel $y$ on a 
 $$f(y)=y $$
-\textbf{Synthèse:} Réciproquement, si $f$ est l'identité, on écrit que 
+\textbf{Synthèse :} Réciproquement, si $f$ est l'identité, on écrit que 
 $$f(f(x)+f(y))=x+y=f(-x-f(y))+2(x+y)=-x-y+2(x+y) $$
 Donc la seule solution est l'identité.
 \end{preuve}
 \\
-\emph{La dernière propriété à laquelle on va s'interesser est la périodicité.}
+\emph{La dernière propriété à laquelle on va s'intéresser est la périodicité.}
 \begin{dfn}[Périodicité]
-Soit $f:\mathbb{R}\to \mathbb{R}$ une fonction et $T>0$. On dit que $f$ est $T-$périodique si pour tout réel $x$, on a $f(x)=f(x+T)$.
+Soit $f : \R\to \R$ une fonction et $T>0$. On dit que $f$ est $T-$périodique si pour tout réel $x$, on a $f(x)=f(x+T)$.
 
 \end{dfn}
 \begin{rem}
@@ -376,12 +376,12 @@ $|f(x)|<M$ pour tout réel $x$.
 On verra qu'elle est souvent reliée à l'injectivité. Ce point est un peu plus technique et ne sera pas trop abordé dans le cours.
 \end{rem}
 \begin{exo}[M]
-Trouver toutes les fonctions $f:\mathbb{Z}\to \mathbb{Z}$ telles que pour toute paire d'entiers $x,y$ on ait
+Trouver toutes les fonctions $f : \Z\to \Z$ telles que pour toute paire d'entiers $x,y$ on ait
 $$f(x+f(y))=f(x)-y $$
 
 \end{exo}
 \begin{preuve}
-\textbf{Analyse:} On suppose que $f$ est solution de l'équation.
+\textbf{Analyse :} On suppose que $f$ est solution de l'équation.
 \\
 On pose $x=0$ ce qui donne 
 $$f(f(y))=f(0)-y $$
@@ -399,23 +399,23 @@ $$f(x-z)=f(x)-f(z) $$
 On obtient alors que pour tous entiers, $u,v$ :
 $$f(u)+f(v)=f(u+v) $$
 En particulier, on a pour $u\geq 0$
-$$f(u)=f(\underbrace{1+...+1}_{u \textit{ fois}})=\underbrace{f(1)+...+f(1)}_{u \textit{ fois}} =uf(1)$$
+$$f(u)=f(\underbrace{1+\dots+1}_{u \textit{ fois}})=\underbrace{f(1)+\dots+f(1)}_{u \textit{ fois}} =uf(1)$$
 Et pour $u\leq 0$, on écrit que 
 $$f(u)+f(-u)=f(0)=0\Rightarrow f(u)=-(-uf(1))=uf(1) $$
-\textbf{Synthèse:} Si $f(u)=au$ on vérifie que 
+\textbf{Synthèse :} Si $f(u)=au$ on vérifie que 
 $$ f(x+f(y))=ax+a^2y=f(x)-y=ax-y$$ cela donne $a^2=-y$ donc l'équation n'a pas de solution.
 \end{preuve}
 \begin{rem}
 L'équation fonctionnelle
 $$f(x+y)=f(x)+f(y) $$
-est l'équation de Cauchy. On vient de montrer que les solutions de l'équation de Cauchy de $\mathbb{Z}\to \mathbb{Z}$ sont les fonctions linéaires. C'est aussi vrai pour les fonctions de $\mathbb{Q}\to \mathbb{Q}$. Pour étendre le résultat aux fonctions de $\mathbb{R} \to \mathbb{R}$, il faut une hypothèse de régularité supplémentaire. Par exmeple, si $f$ est continue ou monotone, on montre que $f$ est linéaire. L'étude des solutions de l'équation de Cauchy est faite dans la plupart des cours d'équations fonctionnelles. Nous ne la traiterons pas ici.
+est l'équation de Cauchy. On vient de montrer que les solutions de l'équation de Cauchy de $\Z\to \Z$ sont les fonctions linéaires. C'est aussi vrai pour les fonctions de $\Q\to \Q$. Pour étendre le résultat aux fonctions de $\R \to \R$, il faut une hypothèse de régularité supplémentaire. Par exmeple, si $f$ est continue ou monotone, on montre que $f$ est linéaire. L'étude des solutions de l'équation de Cauchy est faite dans la plupart des cours d'équations fonctionnelles. Nous ne la traiterons pas ici.
 \end{rem}
 \begin{exo}[M]
-Trouver les fonctions $f:\mathbb{R}\to \mathbb{R}$ telles pour toute paire de réels $x,y$ on ait:
+Trouver les fonctions $f : \R\to \R$ telles pour toute paire de réels $x,y$ on ait:
 $$f(f(x)+9y)=f(y)+9x+24y  $$
 \end{exo}
 \begin{preuve}
-\textbf{Analyse:} On suppose que $f$ est une solution de l'équation.
+\textbf{Analyse :} On suppose que $f$ est une solution de l'équation.
 \\
 On pose tout d'abord $y=0$ ce qui nous donne $f(f(x))=f(0)+9x$,$f(0)$ étant constant, en faisant varier $x$, on peut atteindre toutes les valeurs réelles, en particulier, on en déduit que $f$ est surjective.
 \\
@@ -426,19 +426,19 @@ En particulier, on a $$f(f(x))=9x$$ pour tout $x$.
 \\
 On pose maintenant $x=0$ ce qui donne $f(9y)=f(y)+24y$ soit encore $$f(f(f(y)))=f(y)+24y$$ $f$ étant surjective, il existe donc un $w$ tel que $f(w)=y$ en substituant on a $$f(f(f(f(w))))=f(f(9w))=81w=f(f(w))+24f(w)=9w+24f(w)$$
 Soit encore $$24f(w)=(81-9)w=72w$$
-D'où $$f(w)=3w$$ pour tout $w\in \mathbb{R}$ (en faisant varier $y\in \mathbb{R}$.
+D'où $$f(w)=3w$$ pour tout $w\in \R$ (en faisant varier $y\in \R$.
 \\
-\textbf{Synthèse:}
+\textbf{Synthèse :}
 On vérifie que $f$ est bien solution:
 $f(f(x)+9y)=9x+27y=f(y)+9x+24y$
 Ce qui conclut. 
 \end{preuve}
 \begin{exo}[D]
-Trouver les fonctions $f:\mathbb{R}_+^*\to \mathbb{R}_+^*$ telles que pour tout couple de réels positifs $x,y$ on ait 
+Trouver les fonctions $f:\R_+^*\to \R_+^*$ telles que pour tout couple de réels positifs $x,y$ on ait 
 $$f(x)f(y) = 2f(x+yf(x)) $$
 \end{exo}
 \begin{preuve}
-\textbf{Analyse:} On commence par utiliser la symétrie à gauche pour écrire que 
+\textbf{Analyse :} On commence par utiliser la symétrie à gauche pour écrire que 
 $$f(x+yf(x))=f(y+xf(y)) $$
 Ce genre d'équation nous pousse à étudier l'injectivité de $f$. Supposons donc que 
 $0<a<b$ tels que $f(a)=f(b)$. Comme $f(x)>0$ pour tout réel $c>0$ on peut poser $y=\frac{c}{f(x)}$ ce qui donne 
@@ -472,7 +472,7 @@ On prend donc $y_1=\frac{b-a}{n}$ où l'entier $n$ est suffisamment petit pour q
 $$f(a)=f(a+n(y_1+y_2+y_0))=f\left(a+\frac{b-a}{n}n+n(y_0+y_2)\right)=f(b+n(y_0+y_2))=f(b) $$
 Donc $f$ est constante.
 \\
-\textbf{Synthèse:} Si $f$ est constante en $c$ on doit avoir $c^2=2c$ et comme $c>0$ on a $c=2$.
+\textbf{Synthèse :} Si $f$ est constante en $c$ on doit avoir $c^2=2c$ et comme $c>0$ on a $c=2$.
 \\
 Si $f(x)=(f(1)-1)x-1=ax-1$ on écrit que 
 $$f(x)f(y)=a^2xy-a(x+y)+1=2f(x+yf(x))=2f(x+axy-y) $$

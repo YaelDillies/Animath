@@ -1,12 +1,12 @@
 \subsubsection{Exercices}
 \begin{exo} % Source : Baltic Way 2020 https://artofproblemsolving.com/community/c6h2342205p18895561
-Trouver toutes les fonctions $f:\mathbb{R}\rightarrow \mathbb{R}$ vérifiant pour tout $x,y\in \mathbb{R}$ :
+Trouver toutes les fonctions $f:\R\rightarrow \R$ vérifiant pour tout $x,y\in \R$ :
 $$f(f(x)+x+y) = f(x+y) + y f(y)$$
 \end{exo}
 
 
 \begin{exo}
-Trouver les fonctions $f:\mathbb{R}\rightarrow \mathbb{R}$ vérifiant pour tout $x,y\in \mathbb{R}:$
+Trouver les fonctions $f:\R\rightarrow \R$ vérifiant pour tout $x,y\in \R:$
 $$f(x+y)+y\le f(f(f(x)))$$
 \end{exo}
 
@@ -14,7 +14,7 @@ $$f(x+y)+y\le f(f(f(x)))$$
 % On commence par poser $y=f(f(x))-x, qui donne $f(f(x))\le x$, et donc l'équation donne $f(x+y)+y\le f(x)$, en posant $z=x+y$, on obtient $f(z)+z\le f(x)+x$, cela étant valable quelque soit $x$ et $z$, on doit avoir $f(x)+x$ constant, donc $f(x)=C-x$, qui convient.
 
 \begin{exo} % Source : Iran 2020 https://artofproblemsolving.com/community/c6h2349574p19027407
-Trouver toutes les fonctions $f:\mathbb{R}\rightarrow \mathbb{R}$ vérifiant pour tout $x,y\in \mathbb{R}$ :
+Trouver toutes les fonctions $f:\R\rightarrow \R$ vérifiant pour tout $x,y\in \R$ :
 $$f(y-f(x))=f(x)-2x+f(f(y))$$
 \end{exo}
 
@@ -47,7 +47,7 @@ $$\begin{cases}f(1)=1\\ f(f(x))=f(x)^2\end{cases}$$
 % Assez naturelle je trouve et permet de rabacher encore les fonctions additives.
 
 \begin{exo}
-Trouver toutes les fonctions $f:\mathbb{R}\rightarrow \mathbb{R}$ vérifiant:
+Trouver toutes les fonctions $f:\R\rightarrow \R$ vérifiant:
 $$f(x(1+y))=f(x)(1+f(y))$$
 \end{exo}
 
@@ -57,7 +57,7 @@ $$f(x(1+y))=f(x)(1+f(y))$$
 
 
 \begin{exo}
-Trouver les fonctions $f:\mathbb{R}\rightarrow \mathbb{R}$ vérifiant pour tout $x,y\in \mathbb{R}$:
+Trouver les fonctions $f:\R\rightarrow \R$ vérifiant pour tout $x,y\in \R$:
 $$\frac{f(x)+f(y)}{2}\ge f\left(\frac{x+y}{2}\right)+|x-y|$$
 \end{exo}
 
@@ -76,7 +76,7 @@ $$\frac{f(x)+f(y)}{2}\ge f\left(\frac{x+y}{2}\right)+|x-y|$$
 
 
 \begin{exo} % Source : Hong-Kong 2020 https://artofproblemsolving.com/community/c6h1940895p13364097
-Trouver toutes les fonctions $f:\mathbb{R}\rightarrow \mathbb{R}$ vérifiant pour tout $x,y\in \mathbb{R}$ :
+Trouver toutes les fonctions $f : \R\rightarrow \R$ vérifiant pour tout $x,y\in \R$ :
 $$f(f(x)+y)+f(x+f(y))=2f(xf(y))$$
 \end{exo}
 
@@ -90,7 +90,7 @@ $$f(f(x)+y)+f(x+f(y))=2f(xf(y))$$
 
 
 \begin{exo}
-Trouver toutes les fonctions de $\mathbb{R}_{>0}$ dans $\mathbb{R}_{>0}$ telles que :
+Trouver toutes les fonctions de $\R_{>0}$ dans $\R_{>0}$ telles que :
 $$f(x)f(y)=2f(x+yf(x))$$
 \end{exo}
 % Déjà traité en 2019 mais je suis à peu près sur de ne pas l'avoir pas présenté, et quasi certain que Mano et Alec ne l'avaient pas trouvé. Il est dur mais instructif je trouve.
@@ -99,7 +99,7 @@ $$f(x)f(y)=2f(x+yf(x))$$
 %$$y=x+yf(x)\iff y=\dfrac{x}{1-f(x)}$$
 %Donc si $f(x)\le 1$, on peut peut choisir $x,y$ tels que $y=x+yf(x)$, et donc $f(x)=2$, absurde! Donc $f(x)>1$ pour tout $x$. Prenons $x=y$. Cela donne:
 %$$f(x)^2=2f(x+xf(x))$$
-%Comme $f(x+xf(x))$ est plus grand que $1$, $f(x)$ est plus grand que $\sqrt{2}$, donc $f(x+xf(x)$ est plus grand que $\sqrt{2}$, puis $f(x)$ est plus grand que $\sqrt{2\sqrt{2}}$. En poursuivant ainsi $f(x)\ge 2^{1/2+1/4+1/8+...}=2$ pour tout $x$. Quand $y$ parcourt $\mathbb{R}$, $x+yf(x)$ parcourt les réels plus grand que $x$. De plus $f(y)\ge 2$, donc pour tout $y$:
+%Comme $f(x+xf(x))$ est plus grand que $1$, $f(x)$ est plus grand que $\sqrt{2}$, donc $f(x+xf(x)$ est plus grand que $\sqrt{2}$, puis $f(x)$ est plus grand que $\sqrt{2\sqrt{2}}$. En poursuivant ainsi $f(x)\ge 2^{1/2+1/4+1/8+\dots}=2$ pour tout $x$. Quand $y$ parcourt $\R$, $x+yf(x)$ parcourt les réels plus grand que $x$. De plus $f(y)\ge 2$, donc pour tout $y$:
 %$$\dfrac{f(x+yf(x))}{f(x)}\ge 1$$
 %Autrement dit, $f$ est croissante. \\
 %Supposons qu'il existe un réel $x_0$ tel que $f(x_0)=2$. Dans ce cas on remarque qu'avec $x=y=x_0$ on a:
@@ -109,20 +109,17 @@ $$f(x)f(y)=2f(x+yf(x))$$
 %$$P(1,1)\iff f(1)^2=2f(1+f(1))\implies 2f(1+2\alpha)=4\alpha^2\implies f(1+2\alpha)=2\alpha^2$$
 %$$P(1+2\alpha,1)\iff 2\alpha\cdot 2\alpha^2 =2f(1+2\alpha +2\alpha^2)\implies f(1+2\alpha+2\alpha^2)=2\alpha^3$$
 %$$P(1+2\alpha+2\alpha^2,1)\iff 2\alpha\cdot 2\alpha^3=2 f(1+2\alpha+2\alpha^2+2\alpha^3)\implies f(1+2\alpha+2\alpha^2+2\alpha^3)=2\alpha^4$$
-%Par une récurrence immédiate on peut déduire que %$f(1+2\alpha+2\alpha^2+...+2\alpha^n)=2\alpha^{n+1}$.
+%Par une récurrence immédiate on peut déduire que %$f(1+2\alpha+2\alpha^2+\dots+2\alpha^n)=2\alpha^{n+1}$.
 %En particulier:
-%$$P(1+2\alpha+2\alpha^2+...+2\alpha^n,1+2\alpha+2\alpha^2+...+2\alpha^n)$$
-%$$\iff 4\alpha^{n+2}=2f((1+2\alpha+2\alpha^2+...+2\alpha^n)(1+2\alpha^{n+1}))$$
-%$$\implies 2\alpha^{n+2}=f(4\alpha^{2n+1}+...+1)$$
-%Or pour $n$ grand $4\alpha^{2n+1}+...+1>2\alpha^{2n+1}+2\alpha^{2n}+...+1$, donc :
-%$$2\alpha^{2n+2}=f(4\alpha^{2n+1}+...+1)>f(2\alpha^{2n+1}+2\alpha^{2n}+...+1)=2\alpha^{2n+2}$$
+%$$P(1+2\alpha+2\alpha^2+\dots+2\alpha^n,1+2\alpha+2\alpha^2+\dots+2\alpha^n)$$
+%$$\iff 4\alpha^{n+2}=2f((1+2\alpha+2\alpha^2+\dots+2\alpha^n)(1+2\alpha^{n+1}))$$
+%$$\implies 2\alpha^{n+2}=f(4\alpha^{2n+1}+\dots+1)$$
+%Or pour $n$ grand $4\alpha^{2n+1}+\dots+1>2\alpha^{2n+1}+2\alpha^{2n}+\dots+1$, donc :
+%$$2\alpha^{2n+2}=f(4\alpha^{2n+1}+\dots+1)>f(2\alpha^{2n+1}+2\alpha^{2n}+\dots+1)=2\alpha^{2n+2}$$
 %Absurde!
 
 
 %\textbf{Idées importantes:} Utiliser les bornes du domaine et les améliorer, étendre la fonction sur les bords du domaine quand on peut montrer la continuité. \\
-
-
-
 
 
 %\begin{exo} % Source : Indonésie 2015 https://artofproblemsolving.com/community/c6h1470785p8533074
@@ -134,7 +131,6 @@ $$f(x)f(y)=2f(x+yf(x))$$
 %\end{enumerate}
 
 %\end{exo}
-
 
 
 \subsubsection{Solutions}
@@ -155,7 +151,7 @@ On revient à l'équation initiale et on pose $x=0$. Cela nous donne $f(y)=f(f(y
 
 
 \begin{sol}
-On commence par montrer par récurrence que $f^{\frac{n(n-1)}{2}}(1)=n$. Si la suite $(f^{(k)}(1))$ prend deux fois la même valeur, alors elle est périodique, ce qui est impossible d'après ce qui précède. Donc la suite $(f^{(k)}(1))$ prend une unique fois chaque valeur de $\N^*$. Or on sait que $f^{\frac{n(n-1)}{2}}(1)=n$, donc si $k$ n'est pas de la forme $\displaystyle\frac{n(n-1)}{2}$, $f^{(k)}(1)$ ne peut pas prendre une valeur entière, impossible.
+On commence par montrer par récurrence que $f^{\frac{n(n-1)}{2}}(1) = n$. Si la suite $(f^{(k)}(1))$ prend deux fois la même valeur, alors elle est périodique, ce qui est impossible d'après ce qui précède. Donc la suite $(f^{(k)}(1))$ prend une unique fois chaque valeur de $\N^*$. Or on sait que $f^{\frac{n(n-1)}{2}}(1)=n$, donc si $k$ n'est pas de la forme $\displaystyle\frac{n(n-1)}{2}$, $f^{(k)}(1)$ ne peut pas prendre une valeur entière, impossible.
 \end{sol}
 
 
@@ -163,7 +159,7 @@ On commence par montrer par récurrence que $f^{\frac{n(n-1)}{2}}(1)=n$. Si la s
 On commence par remarquer que si $y$ est dans l'image de $f$, alors l'équation fonctionnelle fournit immédiatement que $f(y)=y^2$, donc on peut essayer de déterminer l'image de $f$ pour avancer. \\
 Commençons par montrer que $f$ est à valeurs positives. Supposons que $f$ prenne une valeur strictement négative. Alors d'après le théorème des valeurs intermédiaires, $f$ prend une valeur dans $]-1,0[$. Soit $x$ tel que $f(x)=b\in ]-1,0[$. On a alors $f(b)=b^2$, puis $f(b^2)=b^4$. Donc on a $b<b^2<1$, et $f(b^2)<f(b),f(1)$, contredisant la monotonie. Donc $f$ est à valeurs positives. \\
 De plus si $x$ est dans l'image de $f$, alors $x^2$ également, donc $f$ contient tous les $x^{2^k}$ par récurrence immédiate. Donc d'après le théorème des valeurs intermédiaires, si $x>1$ est dans l'image de $f$, on doit avoir tout $[1,+\infty[$ dans cette image, et si $0\le x<1$ est dans l'image de $f$, alors tout l'intervalle $]0,1]$ également. Donc l'image de $f$ est nécessairement parmi les intervalles $[0,1],]0,1],\{1\},]0,+\infty[,[0,+\infty, [1,+\infty[$. En utilisant la continuité et le fait que $f(x)=x^2$ pour $x$ dans l'image de $f$, on en déduit que les solutions sont parmi les suivantes:\\
-La fonction $f_1$ constante égale à $1$ (qui convient), la fonction $f_2$ vérifiant $f(x)=x^2$ sur $\mathbb{R}$ qui ne convitent pas par monotonie, la fonction $f_3$ vérifiant $f_3(x)=x^2$ sur $[0,1]$, $f_3=0$ sur $]-\infty,0]$ et $f_3=1$ sur $[1,+\infty[$ (qui convient) et la fonction $f_4$ vérifiant $f_4(x)=x^2$ sur $[1,+\infty[$ et $f=1$ sinon (qui convient).
+La fonction $f_1$ constante égale à $1$ (qui convient), la fonction $f_2$ vérifiant $f(x)=x^2$ sur $\R$ qui ne convitent pas par monotonie, la fonction $f_3$ vérifiant $f_3(x)=x^2$ sur $[0,1]$, $f_3=0$ sur $]-\infty,0]$ et $f_3=1$ sur $[1,+\infty[$ (qui convient) et la fonction $f_4$ vérifiant $f_4(x)=x^2$ sur $[1,+\infty[$ et $f=1$ sinon (qui convient).
 \end{sol}
 
 
@@ -186,6 +182,7 @@ De même, on montre que $f\left(\displaystyle\frac{-1}{2^n}\right)\le f(-1)-n$
 De plus on a $f(1)+f(-1)\ge 0$ d'après l'inégalité de départ, contradiction pour $n$ grand.
 \end{sol}
 
+
 \begin{sol}
 On remarque que le membre de gauche est symétrique, donc on peut échanger $x$ et $y$ pour obtenir $f(xf(y))=f(yf(x))$. En posant $y=0$ dans cette équation, on a $f(xf(0))=f(0)$. Si $f(0)\neq 0$, alors $f$ est constante égale à $f(0)$. On suppose donc $f$ non constante et on a $f(0)=0$.
 
@@ -198,8 +195,9 @@ En prenant $x=1$, on trouve alors $0=f(1f(1))=-f(1)$. Mais d'après la toute pre
 
 
 \begin{sol}
-En général, lorsque l'on a affaire à une inégalité sur les positifs (ou plus généralement à un domaine de définition restreint), il est toujours intéressant de faire apparaître des inégalités. On commence ici par remarquer que si $f(x)<1$, on peut poser $y=\frac{x}{1-f(x)}$, de sorte à obtenir $y=x+yf(x)$, l'égalité de l'énoncé fournit $f(x)=2$, ce qui est absurde. On a donc toujours $f(x)\ge 1$. En posant $y=x$, il vient désormais:
+En général, lorsque l'on a affaire à une inégalité sur les positifs (ou plus généralement à un domaine de définition restreint), il est toujours intéressant de faire apparaître des inégalités. On commence ici par remarquer que si $f(x)<1$, on peut poser $y=\frac{x}{1-f(x)}$, de sorte à obtenir $y=x+yf(x)$, l'égalité de l'énoncé fournit $f(x)=2$, ce qui est absurde. On a donc toujours $f(x)\ge 1$. En posant $y=x$, il vient désormais :
 $$f(x)^2=2f(x+xf(x))$$
-En particulier, puisque $f(z)\ge 1~~\forall z $, on a $f(x)\ge 2\sqrt{2}$, en reprenant le même argument, on a $f(x)^2\ge 2\sqrt{2}$, puis $f(x)^2\ge 2\sqrt{2\sqrt{2}}$. En poursuivant ainsi, on a que $f(x)\ge 2^{1+\frac{1}{2}+\frac{1}{4}+...}=2$.\\\\ Si l'on connait la notion d'\textit{inf}, on peut conclure un petit peut plus rapidement: on a directement $f(x)^2\ge 2\ell$, donc par passage à l'inf, $\ell^2 \ge 2\ell$, et donc $\ell\ge 2$. \\\\
+En particulier, puisque $f(z)\ge 1~~\forall z $, on a $f(x)\ge 2\sqrt{2}$, en reprenant le même argument, on a $f(x)^2\ge 2\sqrt{2}$, puis $f(x)^2\ge 2\sqrt{2\sqrt{2}}$. En poursuivant ainsi, on a que $f(x)\ge 2^{1+\frac{1}{2}+\frac{1}{4}+\dots}=2$.\\\\ Si l'on connait la notion d'\textit{inf}, on peut conclure un petit peu plus rapidement : on a directement $f(x)^2\ge 2\ell$, donc par passage à l'inf, $\ell^2 \ge 2\ell$, et donc $\ell\ge 2$. \\
+
 Supposons que $f$ ne soit pas injective, on a alors $a<b$ vérifiant $f(a)=f(b)$, en prenant $x=a$ et $y$ tel que $x+yf(x)=b$, on obtient $f(y)=2$, donc $2$ appartient à l'image de $f$. Supposons que $x_0$ vérifie $f(x_0)=2$, alors en posant $y=x=x_0$, on obtient $f(3x_0)=2$, donc par récurrence immédiate $f(3^n x_0)=2$. Soit $x$ un réél quelconque, on dispose d'après ce qui précède de $z$ tel que $z>x$ et $f(z)=2$, on peut alors choisir $y$ de sorte que $x+yf(x)=z$, et on a $f(x)f(y)=2f(z)=4$. Or $f(x)\ge 2$ et $f(y)\ge 2$, donc on doit avoir égalité, et donc $f(x)=2$. Finalement on obtient que $f$ est constante égale à $2$, ce qui convient.
 \end{sol}

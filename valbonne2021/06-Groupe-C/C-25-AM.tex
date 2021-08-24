@@ -468,7 +468,7 @@ auto]
 Dès lors, l'automate cherché a pour ensemble d'états $\{0,..,5\}\times\{0,..,6\}$. L'état initial est $(0,0)$, les états finaux sont $(0,0),(1,0),..,(5,0)$ et on a $\delta((i,j),k)=(i+1 \mod 6, j+kc_i \mod 7)$. On peut alors vérifier par récurrence sur $l$ que l'état de l'automate après avoir lu $w=w_0..w_l$ est $(l+1\mod 6, w\mod 7)$, toujours en abusant des notations modulo. C'est donc bien l'automate désiré.
 
 Pour la construction chiffre le plus significatif d'abord, on peut constater que
-\[\sum_{i=0}^l w_i10^i= (...((w_l.10+w_{l-1}).10+w_{l-2})...).10+w_0.\]
+\[\sum_{i=0}^l w_i10^i= (\dots((w_l.10+w_{l-1}).10+w_{l-2})\dots).10+w_0.\]
 Dès lors, on peut construire un automate qui ne retient que la valeur modulo 7 du mot déjà lu. Un tel automate a pour ensemble d'états $\{0,..,6\}$, l'état $0$ étant initial et final, et on pose $\delta(i,j)=i.10+j \mod 7$. Ainsi, on peut montrer par récurrence qu'après avoir lu $w_l..w_k$ l'automate est dans l'état qui est la valeur de ce nombre modulo 7, et on a bien le langage cherché.
 \end{enumerate}
 \end{sol}

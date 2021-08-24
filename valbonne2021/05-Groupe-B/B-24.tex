@@ -1,11 +1,10 @@
-\soustitre{Énoncés}
+\subsubsection{Énoncés}
 
 
 \begin{exo}
 	Déterminer tous les entiers positifs $x$, $y$ et $z$ tels que
 	\[x^2+ y^2 - 15 = 2^z.\]
 \end{exo}
-
 
 
 \begin{exo}
@@ -15,7 +14,8 @@
 	Montrer que l'on peut trouver trois points de la même couleur formant un triangle dont au moins l'un des côtés ne contient pas de point de $S$.
 \end{exo}
 
-\begin{exo}{}
+
+\begin{exo}
 	Déterminer les entiers positifs $x$ et $y$ tels que
 	\[\left( 1 + \frac{1}{x}\right) \left(1 + \frac{1}{y} \right) = \frac{3}{2}.\]
 \end{exo}
@@ -27,9 +27,9 @@
 	Déterminer s'il est possible de choisir une case initiale pour le pion de façon à ce qu'il puisse passer par toutes les cases de l'échiquier par une suite de 35 sauts respectant cette alternance.
 \end{exo}
 
-\soustitre{Solutions}
 
-\bigskip
+\subsubsection{Solutions}
+
 
 \begin{sol}
 	Comme un carré est congru à $0$ ou $1$ modulo $4$ on a 
@@ -106,8 +106,8 @@
 
 
 		\underline{Remarque}: il aurait été possible de réduire le nombre de cas à vérifier en remarquant que, par symétrie du problème, quitte à intervertir $x$ et $y$ on peut supposer $x \leq y$.
-
 \end{sol}
+
 
 \begin{sol}
 	Puisque $n$ vaut au moins $5$, par \emph{principe des tiroirs} il y a $3$ points de la même couleur formant un triangle.
@@ -117,6 +117,7 @@
 
 	Supposons par l'absurde que les $3$ côtés d'un tel triangle de périmètre minimal contiennent des point de $S$. Comme $3$ points de la même couleur ne sont jamais alignés, ces $3$ points sont tous de couleur différente que celle des sommets du triangle. Ils forment donc un triangle monochromatique de plus petit périmètre. Contradiction.
 \end{sol}
+
 
 \begin{sol}
 	L'idée est de majorer $x$ et $y$ pour se ramener à un nombre fini de cas à tester.
@@ -174,35 +175,36 @@
 	\[\boxed{\left\lbrace (3,8), (4,5), (8,3), (5,4) \right\rbrace}.\]
 \end{sol}
 
+
 \begin{sol}
 	Nous allons montrer qu'une telle case n'existe pas.
 
 	\underline{Méthode 1} : On colorie l'échiquier en trois couleurs, bleu, blanc et rose, comme ci-dessous.
-	\begin{center}
-		\begin{tikzpicture}[scale=0.8]
-		\draw (0,0) grid (6,6);
-		\foreach \i in {0,...,5}{
-				\pgfmathtruncatemacro{\j}{5-\i}
-				\draw [fill=cyan] (\i,\j)--(\i,\j+1)--(\i+1,\j+1)--(\i+1,\j)--(\i,\j);
-			}
-		\foreach \i in {0,...,1}{
-				\pgfmathtruncatemacro{\j}{1-\i}
-				\draw [fill=cyan] (\i,\j)--(\i,\j+1)--(\i+1,\j+1)--(\i+1,\j)--(\i,\j);
-			}
-		\foreach \i in {0,...,1}{
-				\pgfmathtruncatemacro{\j}{1-\i}
-				\draw [fill=cyan] (5-\i,5-\j)--(5-\i,5-\j+1)--(5-\i+1,5-\j+1)--(5-\i+1,5-\j)--(5-\i,5-\j);
-			}
-		\foreach \i in {0,...,3}{
-				\pgfmathtruncatemacro{\j}{3-\i}
-				\draw [fill=magenta] (\i,\j)--(\i,\j+1)--(\i+1,\j+1)--(\i+1,\j)--(\i,\j);
-			}
-		\foreach \i in {0,...,3}{
-				\pgfmathtruncatemacro{\j}{3-\i}
-				\draw [fill=magenta] (5-\i,5-\j)--(5-\i,5-\j+1)--(5-\i+1,5-\j+1)--(5-\i+1,5-\j)--(5-\i,5-\j);
-			}
-	\end{tikzpicture}
-	\end{center}
+	% \begin{center}
+	% 	\begin{tikzpicture}[scale=0.8]
+	% 	\draw (0,0) grid (6,6);
+	% 	\foreach \i in {0,\dots,5}{
+	% 			\pgfmathtruncatemacro{\j}{5-\i}
+	% 			\draw [fill=cyan] (\i,\j)--(\i,\j+1)--(\i+1,\j+1)--(\i+1,\j)--(\i,\j);
+	% 		}
+	% 	\foreach \i in {0,\dots,1}{
+	% 			\pgfmathtruncatemacro{\j}{1-\i}
+	% 			\draw [fill=cyan] (\i,\j)--(\i,\j+1)--(\i+1,\j+1)--(\i+1,\j)--(\i,\j);
+	% 		}
+	% 	\foreach \i in {0,\dots,1}{
+	% 			\pgfmathtruncatemacro{\j}{1-\i}
+	% 			\draw [fill=cyan] (5-\i,5-\j)--(5-\i,5-\j+1)--(5-\i+1,5-\j+1)--(5-\i+1,5-\j)--(5-\i,5-\j);
+	% 		}
+	% 	\foreach \i in {0,\dots,3}{
+	% 			\pgfmathtruncatemacro{\j}{3-\i}
+	% 			\draw [fill=magenta] (\i,\j)--(\i,\j+1)--(\i+1,\j+1)--(\i+1,\j)--(\i,\j);
+	% 		}
+	% 	\foreach \i in {0,\dots,3}{
+	% 			\pgfmathtruncatemacro{\j}{3-\i}
+	% 			\draw [fill=magenta] (5-\i,5-\j)--(5-\i,5-\j+1)--(5-\i+1,5-\j+1)--(5-\i+1,5-\j)--(5-\i,5-\j);
+	% 		}
+	% \end{tikzpicture}
+	% \end{center}
 	
 
 	Supposons que la case initiale cherchée existe.
@@ -215,24 +217,20 @@
 	Comme il y a huit cases roses et dix cases bleues, c'est la contradiction cherchée.
 
 
-	\medskip
-
 	\underline{Méthode 2} : on colorie l'échiquier en deux couleurs :
-	\begin{center}
-		\begin{tikzpicture}[scale=0.8]
-		\draw (0,0) grid (6,6);
-		\foreach \i in {0,...,2}{
-				\foreach \j in {0,...,2}{
-						\draw [fill=cyan] (2*\i,2*\j)--(2*\i,2*\j+1)--(2*\i+1,2*\j+1)--(2*\i+1,2*\j)--(2*\i,2*\j);
-					}
-			}
-	\end{tikzpicture}
-	\end{center}
+	% \begin{center}
+	% 	\begin{tikzpicture}[scale=0.8]
+	% 	\draw (0,0) grid (6,6);
+	% 	\foreach \i in {0,\dots,2}{
+	% 			\foreach \j in {0,\dots,2}{
+	% 					\draw [fill=cyan] (2*\i,2*\j)--(2*\i,2*\j+1)--(2*\i+1,2*\j+1)--(2*\i+1,2*\j)--(2*\i,2*\j);
+	% 				}
+	% 		}
+	% 	\end{tikzpicture}
+	% \end{center}
 	
 
 	Un saut de deux cases partant d'une case bleue ne peut arriver que sur une autre case bleue. Dès lors, à toute case bleue on peut associer une autre case bleue qui lui est adjacente dans le parcours, sauf si cette case est la case de départ ou d'arrivée. Pour éviter une contradiction, il faut donc que la case de départ ou d'arrivée soit bleue (puisqu'on a un nombre impair de case bleues).
 	
 	Comme on peut refaire le même raisonnement en décalant les cases bleues vers le haut ou vers la droite, on est forcé d'avoir au moins trois cases bleues qui sont de départ ou d'arrivée, ce qui est une contradiction.
-
-
 \end{sol}
