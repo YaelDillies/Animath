@@ -40,10 +40,10 @@ Représentons une configuration par la liste du nombre de mésanges sur chaque a
 \end{sol}
 
 
-Parfois, on peut montrer l'impossibilité d'une construction en coloriant la surface sur laquelle elle doit se dérouler. On peut voir le coloriage comme une façon de créer un invariant.\\ 
+Parfois, on peut montrer l'impossibilité d'une construction en coloriant la surface sur laquelle elle doit se dérouler. On peut voir le coloriage comme une façon de créer un invariant.\\
 
 \begin{exo}
-Sur une grille $2022\times2022$, on peut bouger un jeton d'une case vers une autre si ces deux cases ont un côté commun. Est-il possible, en partant avec le jeton dans le coin inférieur gauche, d'amener le jeton dans le coin supérieur droit en passant une et une seule fois par toutes les cases? 
+Sur une grille $2022\times2022$, on peut bouger un jeton d'une case vers une autre si ces deux cases ont un côté commun. Est-il possible, en partant avec le jeton dans le coin inférieur gauche, d'amener le jeton dans le coin supérieur droit en passant une et une seule fois par toutes les cases?
 \end{exo}
 
 \begin{sol}
@@ -171,7 +171,7 @@ Si on réutilise le coloriage de l'exercice $19$ en plaçant un $A$ dans le coin
 \end{sol}
 
 \begin{sol}
-Considérons un nombre $a$ en dehors de la première ligne. Il représente le nombre d'occurrences d'un des nombres de la ligne du dessus. Ce dernier est donc présent $a$ fois dans la ligne du dessus, et $a$ est présent au moins $a$ fois dans sa ligne. Dès lors, si on regarde une colonne, tous les nombres à l'exception du premier sont triés par ordre croissant. Comme de plus la somme des nombres d'une ligne autre que la première fait $2018$, toutes les lignes deviennent identiques au bout d'un certain temps (sinon, la somme de chaque ligne augmenterait de $1$ autant de fois que voulu, tout en restant inférieure à $2018$). 
+Considérons un nombre $a$ en dehors de la première ligne. Il représente le nombre d'occurrences d'un des nombres de la ligne du dessus. Ce dernier est donc présent $a$ fois dans la ligne du dessus, et $a$ est présent au moins $a$ fois dans sa ligne. Dès lors, si on regarde une colonne, tous les nombres à l'exception du premier sont triés par ordre croissant. Comme de plus la somme des nombres d'une ligne autre que la première fait $2018$, toutes les lignes deviennent identiques au bout d'un certain temps (sinon, la somme de chaque ligne augmenterait de $1$ autant de fois que voulu, tout en restant inférieure à $2018$).
 \end{sol}
 
 \begin{sol}
@@ -191,7 +191,7 @@ Pour savoir qui gagne, considérons les cartes en positon $50k$ à partir de la 
 \begin{sol}
 Notons déjà qu'il existe une solution en allumant $2n-4$ lampes : si l'on numérote les lignes et les colonnes de façon à ce que les lampes en cases $(1,1)$ et $(n,n)$ soient initialement allumées, il suffit d'allumer en plus toutes les lampes en cases $(m,1)$ ou $(n,m)$ avec $m$ entre $2$ et $n-1$, puis d'appliquer les opérations à la colonne 1 et à la ligne $n$. Montrons maintenant que $2n-4$ est la solution optimale.\par
 On remarque que si l'on choisit n'importe quel rectangle de cases du damier, la parité du nombre de lampes allumées parmi les quatre coins de ce rectangle est un invariant. Dès lors, dans tout rectangle ayant pour coin une des cases $(1,1)$ ou $(n,n)$, on doit allumer au moins un autre des coins pour espérer qu'une suite d'opérations demandée existe.\par
-Nous allons donc exhiber $2n-4$ rectangles dont un des coins est une des cases initialement allumées et dont les coins sont disjoints. Ainsi, on aura montré qu'il faut allumer au moins $2n-4$ cases. Les $2n-4$ rectangles annoncés sont les suivants : 
+Nous allons donc exhiber $2n-4$ rectangles dont un des coins est une des cases initialement allumées et dont les coins sont disjoints. Ainsi, on aura montré qu'il faut allumer au moins $2n-4$ cases. Les $2n-4$ rectangles annoncés sont les suivants :
 \begin{itemize}
 \item Les $n-2$ rectangles dont les coins sont $(1,1), (1,m), (m,1)$ et $(m,m)$, pour $m$ entre 2 et $n-1$.
 \item Les $n-3$ rectangles dont les coins sont $(m,m-1), (m,n),(n,m-1)$ et $(n,n)$ pour $m$ entre 3 et $n-1$

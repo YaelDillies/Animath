@@ -1,0 +1,205 @@
+\subsubsection{Exercices}
+\begin{exo} % Source : Baltic Way 2020 https://artofproblemsolving.com/community/c6h2342205p18895561
+Trouver toutes les fonctions $f:\mathbb{R}\rightarrow \mathbb{R}$ vérifiant pour tout $x,y\in \mathbb{R}$ :
+$$f(f(x)+x+y) = f(x+y) + y f(y)$$
+\end{exo}
+
+
+\begin{exo}
+Trouver les fonctions $f:\mathbb{R}\rightarrow \mathbb{R}$ vérifiant pour tout $x,y\in \mathbb{R}:$
+$$f(x+y)+y\le f(f(f(x)))$$
+\end{exo}
+
+% BxMO 2013, facile
+% On commence par poser $y=f(f(x))-x, qui donne $f(f(x))\le x$, et donc l'équation donne $f(x+y)+y\le f(x)$, en posant $z=x+y$, on obtient $f(z)+z\le f(x)+x$, cela étant valable quelque soit $x$ et $z$, on doit avoir $f(x)+x$ constant, donc $f(x)=C-x$, qui convient.
+
+\begin{exo} % Source : Iran 2020 https://artofproblemsolving.com/community/c6h2349574p19027407
+Trouver toutes les fonctions $f:\mathbb{R}\rightarrow \mathbb{R}$ vérifiant pour tout $x,y\in \mathbb{R}$ :
+$$f(y-f(x))=f(x)-2x+f(f(y))$$
+\end{exo}
+
+%Premier réflexe : on voit un $x$ dans le membre de droite donc on montre que $f$ est injective. On pose $y=0$, et si on suppose $f(a)=f(b)$ pour des réels $a$ et $b$, alors tous les termes s'annulent et il reste $-2a=-2b$, donc $f$ est injective. On pose alors $x=0$ et $y=f(0)$, et on obtient $f(f(f(0)))=0$. En prenant ensuite $x=f(f(0))$ et $y=0$, on obtient $f(f(0))=-2f(f(0))$, donc $f(f(0))=0$. En appliquant $f$ des deux côtés, on trouve $f(f(f(0)))=f(0)$, soit finalement $f(0)=0$ en combinant avec ce qui précède.
+
+%On revient à l'équation initiale et on pose $x=0$. Cela nous donne $f(y)=f(f(y))$, soit $f(y)=y$ par injectivité. On vérifie réciproquement que l'identité est bien solution de l'équation.
+
+
+\begin{exo}
+Déterminer s'il existe une fonction $f: \N^* \rightarrow \N^*$ vérifiant pour tout $n\ge 1$: $$f^{(n)}(n)=n+1$$
+\end{exo}
+% Source:olympic revenge 2002 , assez facile quand on a compris ce qui se passe
+%Réponse: Non
+% Par récurrence immédiate, on constate que la suite $f^{k}(1)_{k\in \N}$ contient $\N^*$. Plus précisément, on a facilement par récurrence que $f^{\frac{n(n-1)}{2}}(1)=n$. De plus, si $f^{a}(1)=f^{b}(1)$, la suite $(f^{k}(1))$ est périodique à partir d'un certain rang, ce qui est impossible d'après ce qui précède. Donc la suite $f^{k}(1)$ prend exactement une fois chaque valeur de $\N$, absurde car  $f^{\frac{n(n-1)}{2}}(1)=n$.
+
+
+\begin{exo}
+Trouver les fonctions $f$ continues monotones vérifiant:
+$$\begin{cases}f(1)=1\\ f(f(x))=f(x)^2\end{cases}$$
+\end{exo}
+% Austrian Polish, 1986, pas très dur mais un peu déstabilisant je trouve. % Supposons qu'on ait un $a<0$ et $x$ tel que f(x)=a. Alors par continuité on a également un $b$ tel que $-1<b<0$ et $b=f(y)$. On a alors $f(b)=f(f(y))=f(y)^2=b^2$, et $f(b^2)=f(f(f(y)))=f(f(y))^2=b^4$. Donc $b<b^2<1$ mais $f(b^2)<f(b)<f(1)$, contredisant la monotonie. Donc $f$ est à valeurs positives. Si $a\in Im(f)$, avec, on a $a^{2^k}\in Im(f)$ par récurrence immédiate. Par TVI/continuité, on en déduit que $Im(f)$ est de la forme $\{1\}, [0,1],]0,1], [0,+\infty[,]0,+\infty]$. Dans le premier cas $f=1$. Dans le second et le troisième cas, $f(x)=x^2$ pour $x\in ]0,1[$, puis $f=0$ sur $]-\infty,0]$ et $f=1$ sur $[1,+\infty]$$ par monotonie et continuité. Dans les deux derniers cas, on obtient $f=0 sur $]-\infty,0]$ et $f(x)=x^2$ pour $x\ge 0$.
+
+
+
+%Note: je pense qu'il faut commencer par des exos vraiment faciles. Il y a deux ans j'avais donné le P1 de 2019 que je trouvais vraiment facile (j'étais peut être un peu biaisé à ce moment la), et très peu de ceux qui ne le connaissaient pas avait trouvé.
+
+
+
+%2013 India IMO training camp
+% Assez naturelle je trouve et permet de rabacher encore les fonctions additives.
+
+\begin{exo}
+Trouver toutes les fonctions $f:\mathbb{R}\rightarrow \mathbb{R}$ vérifiant:
+$$f(x(1+y))=f(x)(1+f(y))$$
+\end{exo}
+
+%\textbf{Solution:} La fonction constante nulle est solution, on écarte ce cas. En posant $x=0$, on obtient $f(0)=0$, puis en posant $y=-1$, on obtient $f(-1)=-1$. En posant $x=-1$ et $y=-\frac{1}{2}$, on obtient $f\left(-\frac{1}{2}\right)=-\frac{1}{2}$. En posant enfin $x=-\frac{1}{2}$ et $y=1$, il vient $f(1)=1$. Puis en $x=1$, on obtient finalement $f(y+1)=1+f(y)$, donc $f(x(y+1))=f(x)f(y+1)$. Quitte à faire un changement de variable, on a donc que $f$ est multiplicative. L'équation de départ donne alors:
+%$$f(x+xy)=f(x)+f(x)f(y)=f(x)+f(xy)$$
+%En faisant varier $y$, on obtient que $f$ est additive. De plus, comme $f$ est multiplicative, pour $y\ge 0$, on a $f(y)=f(\sqrt{y})^2\ge 0$. Donc $f(x+y)=f(x)+f(y)\ge f(x)$, donc $f$ est croissante additive avec $f(1)=1$, donc c'est l'identité (à refaire).
+
+
+\begin{exo}
+Trouver les fonctions $f:\mathbb{R}\rightarrow \mathbb{R}$ vérifiant pour tout $x,y\in \mathbb{R}$:
+$$\frac{f(x)+f(y)}{2}\ge f\left(\frac{x+y}{2}\right)+|x-y|$$
+\end{exo}
+
+
+% P1 USAMO 2000, fonction "très convexes"
+%Problème assez facile mais sympa
+% L'idée est que la fonction va devoir etre "trop convexe" pour exister. On essaie donc d'auto-améliorer l'inégalité pour la faire exploser.
+% Quitte à translater $f$, on peut suppose $f(0)=0$. On a alors en prenant $y=0$ et $x\ge 0$:
+% $f(x)\ge 2f\left(\frac{x}{2})+x$
+% en itérant une fois on a:
+% $f(x)\ge 2(2f\left(\frac{x}{4}\right)+\frac{x}{2})+x=4f\left(\frac{x}{4}\right)+2x
+% En recommencant, on a $f(x)\ge 2^n f\left(\frac{x}{2^n}\right)+nx$
+%En particulier, $f\left(\frac{1}{2^n}\right)\le f(1)-n$
+% De même, on montre que $f\left(\frac{-1}{2^n}\right)\le f(-1)-n$
+% De plus on a $f(1)+f(-1)\ge 0$ d'après l'inégalité de départ, contradiction pour n grand.
+
+
+\begin{exo} % Source : Hong-Kong 2020 https://artofproblemsolving.com/community/c6h1940895p13364097
+Trouver toutes les fonctions $f:\mathbb{R}\rightarrow \mathbb{R}$ vérifiant pour tout $x,y\in \mathbb{R}$ :
+$$f(f(x)+y)+f(x+f(y))=2f(xf(y))$$
+\end{exo}
+
+%On remarque que le membre de gauche est symétrique, donc on peut échanger $x$ et $y$ pour obtenir $f(xf(y))=f(yf(x))$. En posant $y=0$ dans cette équation, on a $f(xf(0))=f(0)$. Si $f(0)\neq 0$, alors $f$ est constante égale à $f(0)$. Sinon, on a $f(0)=0$.
+
+%On pose $y=0$ dans l'équation initiale, ce qui donne $f(f(x))=-f(x)$. En évaluant $f(f(f(x)))$ de deux manières différentes, on trouve alors l'égalité $f(-f(x))=-f(f(x))=f(x)$ d'après ce qui précède.
+
+%On pose désormais $x=y$, ce qui donne $f(x+f(x))=f(xf(x))$. Puis on pose $y=-f(x)$, soit $f(y)=f(-f(x))=f(x)$, et on obtient $f(x+f(x))=2f(xf(x))$. Ces deux équations combinées impliquent $f(x+f(x))=f(xf(x))=0$.
+
+%En prenant $x=1$, on trouve alors $0=f(1f(1))=-f(1)$. Mais d'après la toute première remarque, on peut écrire $f(f(y))=f(1f(y))=f(yf(1))=0$, soit finalement $f(y)=-f(f(y))=0$, donc $f$ est la fonction nulle. Réciproquement, on vérifie que toutes les fonctions constantes sont bien des solutions, donc ce sont les seules.
+
+
+\begin{exo}
+Trouver toutes les fonctions de $\mathbb{R}_{>0}$ dans $\mathbb{R}_{>0}$ telles que:
+$$f(x)f(y)=2f(x+yf(x))$$
+\end{exo}
+% Déjà traité en 2019 mais je suis à peu près sur de ne pas l'avoir pas présenté, et quasi certain que Mano et Alec ne l'avaient pas trouvé. Il est dur mais instructif je trouve.
+
+%Si c'est possible, on peut essayer:
+%$$y=x+yf(x)\iff y=\dfrac{x}{1-f(x)}$$
+%Donc si $f(x)\le 1$, on peut peut choisir $x,y$ tels que $y=x+yf(x)$, et donc $f(x)=2$, absurde! Donc $f(x)>1$ pour tout $x$. Prenons $x=y$. Cela donne:
+%$$f(x)^2=2f(x+xf(x))$$
+%Comme $f(x+xf(x))$ est plus grand que $1$, $f(x)$ est plus grand que $\sqrt{2}$, donc $f(x+xf(x)$ est plus grand que $\sqrt{2}$, puis $f(x)$ est plus grand que $\sqrt{2\sqrt{2}}$. En poursuivant ainsi $f(x)\ge 2^{1/2+1/4+1/8+...}=2$ pour tout $x$. Quand $y$ parcourt $\mathbb{R}$, $x+yf(x)$ parcourt les réels plus grand que $x$. De plus $f(y)\ge 2$, donc pour tout $y$:
+%$$\dfrac{f(x+yf(x))}{f(x)}\ge 1$$
+%Autrement dit, $f$ est croissante. \\
+%Supposons qu'il existe un réel $x_0$ tel que $f(x_0)=2$. Dans ce cas on remarque qu'avec $x=y=x_0$ on a:
+%$$f(x_0)^2=2f(x_0+x_0f(x_0))\implies f(x_0+x_0f(x_0))=2$$
+%On définit la suite $a_n$ par $a_0=x_0$ et $a_{n+1}=a_n+a_nf(a_n)$. D'après ce qui précède, on a $f(a_n)=2$ pour tout $n$, et comme %$f(a_n)\ge 2$, $(a_n)$ diverge, ce qui implique $f(a_n)=2$ pour tout $n$, ce qui implique que $f(x)=2$ pour tout $x$  par croissance de $f$.\\
+%On note $f(1)=2\alpha$ avec $\alpha>1$. On remarque alors que:
+%$$P(1,1)\iff f(1)^2=2f(1+f(1))\implies 2f(1+2\alpha)=4\alpha^2\implies f(1+2\alpha)=2\alpha^2$$
+%$$P(1+2\alpha,1)\iff 2\alpha\cdot 2\alpha^2 =2f(1+2\alpha +2\alpha^2)\implies f(1+2\alpha+2\alpha^2)=2\alpha^3$$
+%$$P(1+2\alpha+2\alpha^2,1)\iff 2\alpha\cdot 2\alpha^3=2 f(1+2\alpha+2\alpha^2+2\alpha^3)\implies f(1+2\alpha+2\alpha^2+2\alpha^3)=2\alpha^4$$
+%Par une récurrence immédiate on peut déduire que %$f(1+2\alpha+2\alpha^2+...+2\alpha^n)=2\alpha^{n+1}$.
+%En particulier:
+%$$P(1+2\alpha+2\alpha^2+...+2\alpha^n,1+2\alpha+2\alpha^2+...+2\alpha^n)$$
+%$$\iff 4\alpha^{n+2}=2f((1+2\alpha+2\alpha^2+...+2\alpha^n)(1+2\alpha^{n+1}))$$
+%$$\implies 2\alpha^{n+2}=f(4\alpha^{2n+1}+...+1)$$
+%Or pour $n$ grand $4\alpha^{2n+1}+...+1>2\alpha^{2n+1}+2\alpha^{2n}+...+1$, donc :
+%$$2\alpha^{2n+2}=f(4\alpha^{2n+1}+...+1)>f(2\alpha^{2n+1}+2\alpha^{2n}+...+1)=2\alpha^{2n+2}$$
+%Absurde!
+
+
+%\textbf{Idées importantes:} Utiliser les bornes du domaine et les améliorer, étendre la fonction sur les bords du domaine quand on peut montrer la continuité. \\
+
+
+
+
+
+%\begin{exo} % Source : Indonésie 2015 https://artofproblemsolving.com/community/c6h1470785p8533074
+%Soient $f,g : \mathbb{R^*_+} \rightarrow \mathbb{R^*_+}$ deux fonctions vérifiant pour tout $x,y\in \mathbb{R^*_+}$ :
+%$$f(g(x)y + f(x)) = (y+2015)f(x)$$
+%\begin{enumerate}
+%    \item Montrer que $f(x)=2015g(x)$ pour tout $x>0$.
+%    \item Trouver un exemple de solution vérifiant $f(x)\geqslant 1$ pour tout $x>0$.
+%\end{enumerate}
+
+%\end{exo}
+
+
+
+\subsubsection{Solutions}
+
+\begin{sol}
+On remarque que l'on a $f(f(x)+x+y)$ d'un côté et $f(x+y)$ de l'autre, donc on aimerait trouver un $x$ pour lequel $f(x)=0$. On cherche donc naturellement des valeurs de $x$ et $y$ pour lesquelles $f(x+y)+yf(y)=0$. C'est le cas pour $x=0$ et $y=-1$, cela donne précisément $f(f(0)-1)=0$. On choisit donc ensuite $x=f(0)-1$ pour obtenir $yf(y)=0$ pour tout $y$, donc $f$ est la fonction nulle sur $\mathbb R^*$. Reste à montrer que $f(0)=0$, ce que l'on fait par l'absurde, en supposant $f(0)=a\neq 0$ et en prenant $x=0$ et $y=-a$, ce qui donne $f(0)=f(-a)-af(a)$, ce qui est bien nul puisque $f$ est nulle en $a$ et en $-a$. Finalement, la fonction nulle est la seule solution possible, et on vérifie réciproquement qu'elle convient bien.
+\end{sol}
+
+
+\begin{sol}
+On commence par poser $y=f(f(x))-x$, qui donne $f(f(x))\le x$, et donc l'équation donne $f(x+y)+y\le f(x)$, en posant $z=x+y$, on obtient $f(z)+z\le f(x)+x$, cela étant valable quelque soit $x$ et $z$, on doit avoir $f(x)+x$ constant, donc $f(x)=C-x$, qui convient.
+\end{sol}
+
+\begin{sol}
+Le premier bon réflexe est de voir un $x$ dans le membre de droite donc peut montrer que $f$ est injective. En effet, si on suppose $f(x)=f(x')$ et qu'on écrit l'équation fonctionnelle pour $x$ et $x'$, on obtient en faisant la différence que $2x=2x'$, et donc $f$ est injective. On pose alors $x=0$ et $y=f(0)$, et on obtient $f(f(f(0)))=0$. En prenant ensuite $x=f(f(0))$ et $y=0$, on obtient $f(f(0))=-2f(f(0))$, donc $f(f(0))=0$. En appliquant $f$ des deux côtés, on trouve $f(f(f(0)))=f(0)$, soit finalement $f(0)=0$ en combinant avec ce qui précède. \\
+On revient à l'équation initiale et on pose $x=0$. Cela nous donne $f(y)=f(f(y))$, soit $f(y)=y$ par injectivité. On vérifie réciproquement que l'identité est bien solution de l'équation.
+\end{sol}
+
+
+\begin{sol}
+On commence par montrer par récurrence que $f^{\frac{n(n-1)}{2}}(1)=n$. Si la suite $(f^{(k)}(1))$ prend deux fois la même valeur, alors elle est périodique, ce qui est impossible d'après ce qui précède. Donc la suite $(f^{(k)}(1))$ prend une unique fois chaque valeur de $\N^*$. Or on sait que $f^{\frac{n(n-1)}{2}}(1)=n$, donc si $k$ n'est pas de la forme $\displaystyle\frac{n(n-1)}{2}$, $f^{(k)}(1)$ ne peut pas prendre une valeur entière, impossible.
+\end{sol}
+
+
+\begin{sol}
+On commence par remarquer que si $y$ est dans l'image de $f$, alors l'équation fonctionnelle fournit immédiatement que $f(y)=y^2$, donc on peut essayer de déterminer l'image de $f$ pour avancer. \\
+Commençons par montrer que $f$ est à valeurs positives. Supposons que $f$ prenne une valeur strictement négative. Alors d'après le théorème des valeurs intermédiaires, $f$ prend une valeur dans $]-1,0[$. Soit $x$ tel que $f(x)=b\in ]-1,0[$. On a alors $f(b)=b^2$, puis $f(b^2)=b^4$. Donc on a $b<b^2<1$, et $f(b^2)<f(b),f(1)$, contredisant la monotonie. Donc $f$ est à valeurs positives. \\
+De plus si $x$ est dans l'image de $f$, alors $x^2$ également, donc $f$ contient tous les $x^{2^k}$ par récurrence immédiate. Donc d'après le théorème des valeurs intermédiaires, si $x>1$ est dans l'image de $f$, on doit avoir tout $[1,+\infty[$ dans cette image, et si $0\le x<1$ est dans l'image de $f$, alors tout l'intervalle $]0,1]$ également. Donc l'image de $f$ est nécessairement parmi les intervalles $[0,1],]0,1],\{1\},]0,+\infty[,[0,+\infty, [1,+\infty[$. En utilisant la continuité et le fait que $f(x)=x^2$ pour $x$ dans l'image de $f$, on en déduit que les solutions sont parmi les suivantes:\\
+La fonction $f_1$ constante égale à $1$ (qui convient), la fonction $f_2$ vérifiant $f(x)=x^2$ sur $\mathbb{R}$ qui ne convitent pas par monotonie, la fonction $f_3$ vérifiant $f_3(x)=x^2$ sur $[0,1]$, $f_3=0$ sur $]-\infty,0]$ et $f_3=1$ sur $[1,+\infty[$ (qui convient) et la fonction $f_4$ vérifiant $f_4(x)=x^2$ sur $[1,+\infty[$ et $f=1$ sinon (qui convient).
+\end{sol}
+
+
+\begin{sol}
+La fonction constante nulle est solution, on écarte ce cas. En posant $x=0$, on obtient $f(0)=0$, puis en posant $y=-1$, on obtient $f(-1)=-1$. En posant $x=-1$ et $y=-\displaystyle\frac{1}{2}$, on obtient $f\left(-\displaystyle\frac{1}{2}\right)=-\displaystyle\frac{1}{2}$. En posant enfin $x=-\displaystyle\frac{1}{2}$ et $y=1$, il vient $f(1)=1$. Puis en $x=1$, on obtient finalement $f(y+1)=1+f(y)$, donc $f(x(y+1))=f(x)f(y+1)$. Quitte à faire un changement de variable, on a donc que $f$ est multiplicative. L'équation de départ donne alors:
+$$f(x+xy)=f(x)+f(x)f(y)=f(x)+f(xy)$$
+En faisant varier $y$, on obtient que $f$ est additive. De plus, comme $f$ est multiplicative, pour $y\ge 0$, on a $f(y)=f(\sqrt{y})^2\ge 0$. Donc $f(x+y)=f(x)+f(y)\ge f(x)$, donc $f$ est croissante additive avec $f(1)=1$ donc c'est l'identité, qui convient  (d'après l'étude de l'équation de Cauchy).
+\end{sol}
+
+
+\begin{sol}
+L'idée est que la fonction va être "trop convexe" pour exister. On essaie donc d'auto-améliorer l'inégalité de l'énoncé pour la faire exploser.
+Quitte à translater $f$, on peut suppose $f(0)=0$. On a alors en prenant $y=0$ et $x\ge 0$:
+$$f(x)\ge 2f\left(\frac{x}{2}\right)+x$$
+en itérant une fois on a:
+$$f(x)\ge 2\left(2f\left(\frac{x}{4}\right)+\frac{x}{2}\right)+x=4f\left(\frac{x}{4}\right)+2x$$
+En recommencant, on a $f(x)\ge 2^n f\left(\displaystyle\frac{x}{2^n}\right)+nx$
+En particulier, $f\left(\displaystyle\frac{1}{2^n}\right)\le f(1)-n$\\
+De même, on montre que $f\left(\displaystyle\frac{-1}{2^n}\right)\le f(-1)-n$
+De plus on a $f(1)+f(-1)\ge 0$ d'après l'inégalité de départ, contradiction pour $n$ grand.
+\end{sol}
+
+\begin{sol}
+On remarque que le membre de gauche est symétrique, donc on peut échanger $x$ et $y$ pour obtenir $f(xf(y))=f(yf(x))$. En posant $y=0$ dans cette équation, on a $f(xf(0))=f(0)$. Si $f(0)\neq 0$, alors $f$ est constante égale à $f(0)$. On suppose donc $f$ non constante et on a $f(0)=0$.
+
+On pose $y=0$ dans l'équation initiale, ce qui donne $f(f(x))=-f(x)$. En évaluant $f(f(f(x)))$ de deux manières différentes, on trouve alors l'égalité $f(-f(x))=-f(f(x))=f(x)$ d'après ce qui précède.
+
+On pose désormais $x=y$, ce qui donne $f(x+f(x))=f(xf(x))$. Puis on pose $y=-f(x)$, soit $f(y)=f(-f(x))=f(x)$, et on obtient $f(x+f(x))=2f(xf(x))$. Ces deux équations combinées impliquent $f(x+f(x))=f(xf(x))=0$.
+
+En prenant $x=1$, on trouve alors $0=f(1f(1))=-f(1)$. Mais d'après la toute première remarque, on peut écrire $f(f(y))=f(1f(y))=f(yf(1))=0$, soit finalement $f(y)=-f(f(y))=0$, donc $f$ est la fonction nulle. Réciproquement, on vérifie que toutes les fonctions constantes sont bien des solutions, donc ce sont les seules.
+\end{sol}
+
+
+\begin{sol}
+En général, lorsque l'on a affaire à une inégalité sur les positifs (ou plus généralement à un domaine de définition restreint), il est toujours intéressant de faire apparaître des inégalités. On commence ici par remarquer que si $f(x)<1$, on peut poser $y=\frac{x}{1-f(x)}$, de sorte à obtenir $y=x+yf(x)$, l'égalité de l'énoncé fournit $f(x)=2$, ce qui est absurde. On a donc toujours $f(x)\ge 1$. En posant $y=x$, il vient désormais:
+$$f(x)^2=2f(x+xf(x))$$
+En particulier, puisque $f(z)\ge 1~~\forall z $, on a $f(x)\ge 2\sqrt{2}$, en reprenant le même argument, on a $f(x)^2\ge 2\sqrt{2}$, puis $f(x)^2\ge 2\sqrt{2\sqrt{2}}$. En poursuivant ainsi, on a que $f(x)\ge 2^{1+\frac{1}{2}+\frac{1}{4}+...}=2$.\\\\ Si l'on connait la notion d'\textit{inf}, on peut conclure un petit peut plus rapidement: on a directement $f(x)^2\ge 2\ell$, donc par passage à l'inf, $\ell^2 \ge 2\ell$, et donc $\ell\ge 2$. \\\\
+Supposons que $f$ ne soit pas injective, on a alors $a<b$ vérifiant $f(a)=f(b)$, en prenant $x=a$ et $y$ tel que $x+yf(x)=b$, on obtient $f(y)=2$, donc $2$ appartient à l'image de $f$. Supposons que $x_0$ vérifie $f(x_0)=2$, alors en posant $y=x=x_0$, on obtient $f(3x_0)=2$, donc par récurrence immédiate $f(3^n x_0)=2$. Soit $x$ un réél quelconque, on dispose d'après ce qui précède de $z$ tel que $z>x$ et $f(z)=2$, on peut alors choisir $y$ de sorte que $x+yf(x)=z$, et on a $f(x)f(y)=2f(z)=4$. Or $f(x)\ge 2$ et $f(y)\ge 2$, donc on doit avoir égalité, et donc $f(x)=2$. Finalement on obtient que $f$ est constante égale à $2$, ce qui convient.
+\end{sol}

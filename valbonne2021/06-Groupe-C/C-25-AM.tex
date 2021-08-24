@@ -18,7 +18,7 @@ Les trois opérations régulières sont l'union, la concaténation et l'étoile 
 L'union est définie naturellement : des langages sont des ensembles de mots, et l'union de langages est l'union ensembliste : si $L$ et $M$ sont deux langages, un mot est dans $L\cup M$ s'il est dans $L$ ou s'il est dans $M$.
 
 Pour définir la concaténation de langages, il faut d'abord définir la concaténation de mots. Ceci est fait de la manière suivante : si $u=u_1..u_m$ et $v=v_1..v_n$ sont des mots, leur concaténation est le mot $uv=u_1..u_mv_1..v_n$ de longueur $m+n$. Cette opération est associative, mais pas commutative, et le mot $\varepsilon$ est neutre.
-De là, la concaténation de langages est définie via celle des mots. La concaténation de $L$ et $M$ est l'ensemble des mots qui sont concaténation d'un élément de $L$ et d'un élément de $M$ : 
+De là, la concaténation de langages est définie via celle des mots. La concaténation de $L$ et $M$ est l'ensemble des mots qui sont concaténation d'un élément de $L$ et d'un élément de $M$ :
 \[LM=\bigcup_{\substack{u\in L\\ v\in M}} uv.\]
 Par exemple, la concaténation de $\{ab,abb\}$ avec $\{a,ba\}$ est $\{aba,abba,abbba\}$. Ici aussi, cette opération est associative. On peut donc définir $L^n$ comme étant la concaténation de $n$ copies du langage $L$. On a alors $L^0=\{\varepsilon\}$.
 
@@ -56,7 +56,7 @@ Un \emph{automate fini} est la donnée d'un quintuple $(Q,q_0,F,\Sigma,\delta)$.
 \item $\delta$ est la fonction de transition, c'est une fonction de $Q\times\Sigma$ dans $Q$ qui décrit le comportement de l'automate.
 \end{itemize}
 
-Un \emph{chemin de lecture} d'un mot $w_1..w_n$ est la donnée d'états $q_1,..,q_n$ tels que 
+Un \emph{chemin de lecture} d'un mot $w_1..w_n$ est la donnée d'états $q_1,..,q_n$ tels que
 \[\delta(q_{i-1},w_i)=q_i\;\forall i\in \{1,..,n\}.\]
 Un tel chemin est déterminé uniquement par le mot lu.
 
@@ -113,7 +113,7 @@ On peut également définir un automate fini en autorisant des fonctions de tran
 Il est souvent utile de tolérer plusieurs possibilités de lecture, car cela permet par exemple d'explorer (de manière théorique) toutes les branches d'un arbre de possibilités en même temps. C'est l'objet de la notion suivante.
 
 \begin{dfn}
-Un \emph{automate fini non-déterministe} est la donnée d'un quintuple $(Q,I,F,\Sigma,\Delta)$. Ici, 
+Un \emph{automate fini non-déterministe} est la donnée d'un quintuple $(Q,I,F,\Sigma,\Delta)$. Ici,
 \begin{itemize}
 \item $I$ est un ensemble d'états initiaux. C'est un sous-ensemble de $Q$.
 \item $\Delta$ est une relation de transition. C'est un sous-ensemble de $Q\times \Sigma^\star\times Q$.
@@ -162,7 +162,7 @@ Si un langage $L$ sur un alphabet $\Sigma$ est tel qu'il existe un automate fini
 \end{pro}
 
 \begin{preuve}
-Soit $\mathcal{A}=(Q_A,I,F_A,\Sigma,\Delta)$ l'automate fini non-déterministe reconnaissant $L$. Par la remarque ci-dessus, on peut supposer que $\Delta$ est inclus dans $Q_A\times(\varepsilon\cup\Sigma)\times Q_A$. On propose alors la construction suivante d'un automate $\mathcal{B}=(Q_B,q_0,F_B,\Sigma,\delta)$ : 
+Soit $\mathcal{A}=(Q_A,I,F_A,\Sigma,\Delta)$ l'automate fini non-déterministe reconnaissant $L$. Par la remarque ci-dessus, on peut supposer que $\Delta$ est inclus dans $Q_A\times(\varepsilon\cup\Sigma)\times Q_A$. On propose alors la construction suivante d'un automate $\mathcal{B}=(Q_B,q_0,F_B,\Sigma,\delta)$ :
 \begin{itemize}
 \item L'ensemble d'états $Q_B$ est l'ensemble $2^{Q_A}$ des sous-ensembles de $Q_A$.
 \item L'état initial $q_0$ est l'ensemble des états $r\in Q_A$ tels qu'il existe un chemin de lecture du mot $\varepsilon$ depuis un état de $I$ vers $r$ (à savoir l'ensemble des états atteignables depuis $I$ en utilisant uniquement des flèches étiquetées par $\varepsilon$).
@@ -178,8 +178,8 @@ Reprenons la preuve : on a alors qu'un mot $w$ est accepté par $\mathcal{B}$ si
 \end{preuve}
 
 \begin{rem}
-Cette construction vient sans garantie d'optimalité : il est courant que l'automate ainsi construit aie des états inatteignables et qui peuvent donc être supprimés. En pratique, on peut appliquer un algorithme "tache d'huile", en partant de $q_0$ et en ne calculant les valeurs de $\delta$ qu'en les états qui sont déjà apparus, ce qui évite les états supplémentaires inutiles. 
-\end{rem} 
+Cette construction vient sans garantie d'optimalité : il est courant que l'automate ainsi construit aie des états inatteignables et qui peuvent donc être supprimés. En pratique, on peut appliquer un algorithme "tache d'huile", en partant de $q_0$ et en ne calculant les valeurs de $\delta$ qu'en les états qui sont déjà apparus, ce qui évite les états supplémentaires inutiles.
+\end{rem}
 
 \begin{figure}
 \centering
@@ -313,14 +313,14 @@ Dans cet exercice, on considère des représentations en base 2, chiffre le moin
 
 \begin{enumerate}
 \item Décrire un automate acceptant exactement les représentations binaires des nombres odieux.
-\item On note $\Sigma=\{0,1\}^3$. Décrire un automate sur $\Sigma$ qui accepte les mots de triplets tels que les troisièmes composantes forment la représentation d'un nombre qui est la somme des nombres représentés par les deux premières composantes. Par exemple, le mot 
+\item On note $\Sigma=\{0,1\}^3$. Décrire un automate sur $\Sigma$ qui accepte les mots de triplets tels que les troisièmes composantes forment la représentation d'un nombre qui est la somme des nombres représentés par les deux premières composantes. Par exemple, le mot
 \[(0,0,0)(1,0,1)(0,1,1)(1,1,0)(0,0,1)\]
 sera accepté : les trois composantes sont les représentations de 10, 12 et 22 respectivement, et on a bien $10+12=22$.
 \item En déduire un automate sur $\Sigma$ qui accepte les mots de triplets tels que les deux premières composantes sont des représentations de nombres odieux et la troisième est la représentation de la somme des deux premières.
 \item En déduire un automate sur $\{0,1\}$ qui accepte les représentations de nombres qui sont sommes de deux nombres odieux.
 \item Comment répondre à la question "Quels nombres sont sommes de deux nombres odieux"?
 \end{enumerate}
- 
+
 \end{exo}
 
 \subsubsection{Solutions}
@@ -343,7 +343,7 @@ sera accepté : les trois composantes sont les représentations de 10, 12 et 22 
 
 \begin{sol}
 \begin{enumerate}
-\item L'automate suivant convient : 
+\item L'automate suivant convient :
 
 \begin{tikzpicture}
 [scale=0.8,
@@ -395,7 +395,7 @@ auto]
 
 \begin{sol}
 \begin{enumerate}
-\item On peut montrer qu'un nombre en base 3 est pair si et seulement si la somme de ses chiffres l'est (il s'agit du même argument que pour les nombres multiples de 3 en base 10). On peut ensuite créer un automate qui retient la somme des chiffres déjà lus, modulo 2. L'automate suivant fonctionne si on tolère les zéros de tête ou de queue : 
+\item On peut montrer qu'un nombre en base 3 est pair si et seulement si la somme de ses chiffres l'est (il s'agit du même argument que pour les nombres multiples de 3 en base 10). On peut ensuite créer un automate qui retient la somme des chiffres déjà lus, modulo 2. L'automate suivant fonctionne si on tolère les zéros de tête ou de queue :
 
 \begin{tikzpicture}
 [scale=0.8,
@@ -418,7 +418,7 @@ auto]
 ;
 \end{tikzpicture}
 
-Pour refuser les zéros de tête ou de queue, il faut faire le produit, comme expliqué à la solution 2, avec un des automates suivants : 
+Pour refuser les zéros de tête ou de queue, il faut faire le produit, comme expliqué à la solution 2, avec un des automates suivants :
 
 \begin{tikzpicture}
 [scale=0.8,
@@ -644,7 +644,7 @@ auto]
 
 D'une part, si un nombre est somme de deux nombres odieux, le triplet des représentations de ces deux nombres odieux et du nombre lui-même est accepté par l'automate du point précédent, donc la représentation du nombre lui-même est acceptée par cet automate-ci. D'autre part, si une représentation est acceptée par cet automate-ci, en lisant les étiquettes des mêmes flèches dans l'automate précédent, les deux premières composantes fournissent des représentations de deux nombres qui sont odieux et ont la somme voulue. Donc cet automate est bien celui cherché.
 
-\item Puisqu'on a un automate qui accepte exactement les représentations des nombres cherchés, on peut trouver son langage, ce qui répondra à la question. La méthode décrite dans la preuve du théorème de Kleene est une façon de faire, ce n'est pas la seule. On peut également déterminiser l'automate et le simplifier en espérant avoir un résultat suffisamment simple pour que le langage puisse en être déduit. Tous ces calculs peuvent se faire à la main, mais aussi par ordinateur. On trouvera que l'automate précédent est équivalent à l'automate suivant : 
+\item Puisqu'on a un automate qui accepte exactement les représentations des nombres cherchés, on peut trouver son langage, ce qui répondra à la question. La méthode décrite dans la preuve du théorème de Kleene est une façon de faire, ce n'est pas la seule. On peut également déterminiser l'automate et le simplifier en espérant avoir un résultat suffisamment simple pour que le langage puisse en être déduit. Tous ces calculs peuvent se faire à la main, mais aussi par ordinateur. On trouvera que l'automate précédent est équivalent à l'automate suivant :
 
 \begin{tikzpicture}
 [scale=0.8,
