@@ -306,7 +306,7 @@ Montrer que $X$ est aussi sur le cercle circonscrit à $CQP$
 \begin{sol}
 On raisonne par chasse aux angles :
 \begin{align*}
-\widehat{QAR} &= 180 - \widehat{XPY} \\ &= 180-(180-2 \cdot \widehat{PXY}) \\ &=  2 \cdot \widehat{XAY}
+\widehat{QAR} &= 180 - \widehat{XPY} \\ &= 180-(180-2 \cdot \widehat{PXY}) \\ &= 2 \cdot \widehat{XAY}
 \end{align*}
 
 \definecolor{ffzzqq}{rgb}{1.,0.6,0.}
@@ -347,14 +347,21 @@ On raisonne par chasse aux angles :
 
 \end{sol}
 
-\begin{sol} On raisonne par chasse aux angles, en cherchant des points cocycliques. \\ Tout d'abord, les points $E, A, D, F$ sont cocycliques. Par le calcul, on montre également que $ABCD$ est cyclique. \\ On conclut enfin en utilisant cette information et en combinant des angles.
+\begin{sol}
+On raisonne par chasse aux angles, en cherchant des points cocycliques. \\
+Tout d'abord, les points $E, A, D, F$ sont cocycliques. Par le calcul, on montre également que $ABCD$ est cyclique. \\
+On conclut enfin en utilisant cette information et en combinant des angles.
 \end{sol}
 
 
-\begin{sol}  Cet exercice revient à montrer que l'orthocentre d'un triangle est aussi le centre du cercle inscrit du triangle formé par les pieds des hauteurs. \\ Ici, on introduit $H$, le point d'intersection de $(BC)$ et $(AD)$. et l'on raisonne par chasse au angle. \\ Comme la somme de deux angles droits est égale à $180°$, on en déduit que les points $ATHC$ et $TBDH$ sont cocycliques. Ainsi, en utilisant le théorème de l'angle inscrit,
+\begin{sol}
+Cet exercice revient à montrer que l'orthocentre d'un triangle est aussi le centre du cercle inscrit du triangle formé par les pieds des hauteurs. \\
+Ici, on introduit $H$, le point d'intersection de $(BC)$ et $(AD)$. et l'on raisonne par chasse au angle. \\
+Comme la somme de deux angles droits est égale à $180°$, on en déduit que les points $ATHC$ et $TBDH$ sont cocycliques. Ainsi, en utilisant le théorème de l'angle inscrit,
 \begin{align*}
 \widehat{HTD} &= \widehat{HBD} \\ &= \widehat{CAH} \\ &= \widehat{CTH}
-\end{align*}\\ Cela conclut.
+\end{align*} \\
+Cela conclut.
 
 \definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
@@ -366,7 +373,7 @@ On raisonne par chasse aux angles :
 \draw[line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (1.7601201379724793,4.7669071850628) -- (2.012444586032444,4.425831866531491) -- (2.353519904563753,4.678156314591455) -- (2.1011954565037887,5.019231633122764) -- cycle;
 \draw[line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0.6722406162355696,2.432686018075638) -- (0.24797868539646545,2.4313391548031325) -- (0.24932554866897055,2.0070772239640284) -- (0.6735874795080748,2.0084240872365333) -- cycle;
 \draw[line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (1.0978494103471792,2.0097709505090386) -- (1.096502547074674,2.4340328813481427) -- (0.6722406162355697,2.432686018075638) -- (0.6735874795080748,2.0084240872365333) -- cycle;
-\draw [shift={(1.17,2.01)},line width=2.pt]  plot[domain=0.003174592510005954:3.144767246099799,variable=\t]({1.*3.150015872975881*cos(\t r)+0.*3.150015872975881*sin(\t r)},{0.*3.150015872975881*cos(\t r)+1.*3.150015872975881*sin(\t r)});
+\draw [shift={(1.17,2.01)},line width=2.pt] plot[domain=0.003174592510005954:3.144767246099799,variable=\t]({1.*3.150015872975881*cos(\t r)+0.*3.150015872975881*sin(\t r)},{0.*3.150015872975881*cos(\t r)+1.*3.150015872975881*sin(\t r)});
 \draw [line width=2.pt] (-1.98,2.)-- (4.32,2.02);
 \draw [line width=2.pt,domain=-3.:5.] plot(\x,{(--7.981846832611792--2.6243593808488743*\x)/1.392807629265511});
 \draw [line width=2.pt,domain=-3.:5.] plot(\x,{(--17.43866583295269-2.9992316331227644*\x)/2.2188045434962116});

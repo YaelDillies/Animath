@@ -1,0 +1,471 @@
+% Cours géométrie projective Colin 23/08/2021 Matin, groupe D
+
+\subsection*{Résumé du cours}
+
+La géométrie projective est l'étude des transformations projectives. Ces transformations sont plus générales que les transformations affines, et nécessitent d'ajouter certains points à l'espace affine. Dans ce cours nous nous limiterons à la géométrie projective réelle, en dimention $1$ et $2$. Il est possible de remplacer dans tous le cours (pas forcément pour les exercices) "cercle" par "conique non dégénérée", c'est à dire ellipse ou hyperbole.
+
+%https://alexanderrem.weebly.com/uploads/7/2/5/6/72566533/projectivegeometry.pdf}{Alexander Remorov}
+
+\begin{defn}
+La droite projective associée à une droite affine $d$ est l'ensemble des points de $d$, auquel on ajoute un point à l'infini $\infty$.
+
+\medskip
+
+Le faiseau de droites en un point $O$ du plan affine est l'ensemble des droites passant par $O$.
+\end{defn}
+
+La raison pour laquelle on définit la droite projective de cette manière est la suivante: étant donné un point $P$ en dehors d'une droite $d$, on définit la projection centrée en $P$ entre le faisceau de droites en $P$ et la droite projective $d$ comme l'appliction qui à une droite $\ell$ associe l'intersection de $\ell$ avec $d$ si elle existe, et $\infty$ sinon. Ceci est bien défini car il n'y a qu'une droite en $P$ qui n'intersecte pas $d$: celle prallèle à $d$ passant par $P$.
+
+\medskip
+
+Les projections ont une propriété remarquable : elle préservent une quantité appellée biraport.
+
+\begin{defn}
+
+\begin{itemize}
+
+\item[-]Soient $A,C,B,D$ quatre points distincts sur une droite projective $d$
+. On définit leur \textbf{biraport} comme étant égal à :
+
+ $$b_{A,C,B,D}=\frac{AB}{CD}\times\frac{CB}{AD}$$
+ 
+ où les distances sont considérées avec un signe. Le choix de l'orientation de la droite $d$ ne change pas la valeur du biraport. Lorsque l'un des points est à l'infini, les deux termes où il apparait sont considérés comme égaux à $1$.
+ 
+\item[-] Il existe également une notion de \textbf{biraport} pour $4$ droites $d_1,d_2,d_3,d_4$ dans le faiseau de droites d'un point $P$, qui est définit comme étant égal à :
+ 
+  $$b_{d_1,d_3,d_2,d_4}=\frac{\sin(d_1,d_2)}{\sin(d_3,d_4)}\times\frac{\sin(d_3,d_2)}{\sin(d_1,d_4)}$$
+  
+  où le sinus entre deux droites estle sinus de l'angle orienté entre les droites.
+  
+\item[-] Soit $\Omega$ un cercle. Etant donné $4$ points distincts $A,B,C,D$ de $\Omega$ on peut définir leur \textbf{biraport} $b_{A,C,B,D}$ comme le biraport des droites $(PA)$, $(PB)$, $(PC)$, $(PD)$ pour tout point $P$ sur $\Omega$ différent de $A,B,C,D$.
+
+\medskip
+
+\item[-]Le \textbf{faiseau de droites} associé à un cercle $\Omega$ est l'ensemble des droites tangeantes à $\Omega$. \'Etant donné $4$ droites distinctes $d_1,d_2,d_3,d_4$ de ce faisceau, on peut également définir leur biraport $b_{d_1,d_3,d_2,d_4}$ comme \textbf{le biraport} des points $d_1\cap d,d_2\cap d,d_3\cap d,d_4\cap d$ pour toute droite $d$ tangeante à $\Omega$ différente de $d_1,d_2,d_3,d_4$.
+
+\end{itemize}
+\end{defn}
+
+À l'aide du biraport nous pouvons définir ce qu'est une transformation projective. 
+
+
+\begin{defn}
+Une \textbf{transformation projective} entre deux espaces de l'un des $4$ types de la définition précédente est une application bijective qui préserve le biraport.
+\end{defn}
+
+En utilisant un formalisme d'algèbre linéaire il serait possible d'avoir une définition plus simple, et d'obtenir 
+
+Nous avons ensuite démontré les propriétés suivantes.
+
+\begin{prop}
+La projection en $A$ entre une droite projective $d$ ne passant pas par $A$ et le faiseau de droites en $A$ est une transformation projective. 
+
+\smallskip
+
+La même opération entre les points d'un cercle $\Omega$ et un faisceau de droites en un point $P$ est une transformation projective \textbf{si et seulement si} $P$ est sur le cercle. 
+\end{prop}
+\medskip
+
+La construction de la droite projective réelle peut être généralisée. Il est possible de voir les points du plan affine réel $P$ comme représentant presque toutes les droites de l'espace passant par un point $O$ en dehors du plan $P$. Cependant un cercle de droites n'intersecte pas $P$. En les ajoutant au plan affine on obtient la définition suivante.
+
+\begin{defn}
+
+Le \textbf{plan projectif (réel)} est l'ensemble des points du plan affine, auquel on ajoute les points à l'infini de toutes les droites $d$ incluses dans $P$, en considérant que deux droites parallèles ont le même point à l'infini. 
+
+\medskip
+
+Une \textbf{droite projective} dans le plan projectif est soit la droite projective associée à une droite affine, soit l'ensemble des points à l'infini, appellé "droite à l'infini".
+
+\end{defn}
+
+Autrement dit on ajoute un point à l'infini pour chaque direction (le sens ne compte pas).
+
+\begin{defn}
+Une \textbf{transformation projective} du plan projectif réel est une bijection du plan projectif réel dans lui même tel que chaque droite projective soit envoyée sur une droite projective.
+\end{defn}
+
+À présent voyons les résultats qui ont été évoqués.
+
+\begin{prop}
+Les transformations projectives du plan projectif préservent le biraport. 
+
+\medskip
+
+Pour toute droite et tout cercle disjoint de la droite il existe une trasformation projective qui stabilise le cercle et envoie la droite à l'infini.
+
+\medskip
+
+Une trasformation projective de la drotie projective qui fixe $3$ points est l'identité.
+
+\end{prop}
+
+Lorsque le biraport de quatre points vaut $-1$ on dit que ces points sont harmoniques. Nous avons étudié divers configurations dans lesquelles on retrouve des points harmoniques, notemment le quadrilatère complet. Nous avons également défini la transformation polaire associée à un cercle qui induit une dualité entre points et droites.
+
+\begin{defn}
+La polaire associée à un cercle $C$ associée au point $E$ est la droite contenant les points $X$ tels que si $A,B$ sont les intersections de $(EX)$ et $(AB)$ alors $E,X,A,B$ sont harminoques. C'est la droite passant par les points de tangeances des droites passant par $E$ tangeantes à $C$.
+
+\end{defn}
+
+\subsection*{Préservation du biraport, points harmoniques}
+
+\begin{thm}{[Théorème de Pascal]}
+
+Soient $A,B,C,D,E,F$ six points distincts sur un cercle $\Omega$. Soient $G$ l'intersection de $(AC)$ et $(BD)$, $H$ l'intersection de $(FD)$ et $(AE)$ et enfin $I$ l'intersection de $G$ et $H$  
+
+\end{thm}
+
+\begin{proof}
+
+\begin{center}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-0.9081181960526863,-6.075000188753791) rectangle (12.164265383589996,2.9584077333913172);
+\draw [line width=1.pt] (4.188257888823294,-1.5672047761421417) circle (3.8509180317591993cm);
+\draw [line width=1.pt] (0.54,-2.8)-- (7.877968265841787,-0.4646590759327571);
+\draw [line width=1.pt] (3.5014518377380863,2.2219728570021386)-- (4.96,-5.34);
+\draw [line width=1.pt] (0.54,-2.8)-- (7.701406036329229,-3.144341352664215);
+\draw [line width=1.pt] (7.701406036329229,-3.144341352664215)-- (3.5014518377380863,2.2219728570021386);
+\draw [line width=1.pt] (1.64,1.32)-- (4.96,-5.34);
+\draw [line width=1.pt] (1.64,1.32)-- (7.877968265841787,-0.4646590759327571);
+\draw [line width=1.pt,dash pattern=on 3pt off 3pt] (3.771264861266099,-2.9553686674795827)-- (4.948114216340589,0.3735610620619734);
+\begin{scriptsize}
+\draw [fill=ududff] (1.64,1.32) circle (2.5pt);
+\draw[color=ududff] (1.4805233218222225,1.541509014833701) node {$A$};
+\draw [fill=ududff] (0.54,-2.8) circle (2.5pt);
+\draw[color=ududff] (0.6119264062313464,-2.5951837956678454) node {$B$};
+\draw [fill=ududff] (4.96,-5.34) circle (2.5pt);
+\draw[color=ududff] (5.030913214299927,-5.135829773771157) node {$C$};
+\draw[color=black] (2.457694851861958,1.5849388606132448) node {$\Omega$};
+\draw [fill=xdxdff] (7.701406036329229,-3.144341352664215) circle (2.5pt);
+\draw[color=xdxdff] (7.940712881529361,-3.246631482361002) node {$D$};
+\draw [fill=xdxdff] (7.877968265841787,-0.4646590759327571) circle (2.5pt);
+\draw[color=xdxdff] (7.9515703429742475,-0.2608295850173664) node {$E$};
+\draw [fill=xdxdff] (3.5014518377380863,2.2219728570021386) circle (2.5pt);
+\draw[color=xdxdff] (3.5760133806852106,2.4209633918694626) node {$F$};
+\draw [fill=uuuuuu] (4.242791780223141,-1.6215701043696304) circle (2.0pt);
+\draw[color=uuuuuu] (3.9885969155908767,-1.4551503439548208) node {$I$};
+\draw [fill=uuuuuu] (3.771264861266099,-2.9553686674795827) circle (2.0pt);
+\draw[color=uuuuuu] (3.5977283035749825,-3.127199406467257) node {$G$};
+\draw [fill=uuuuuu] (4.948114216340589,0.3735610620619734) circle (2.0pt);
+\draw[color=uuuuuu] (5.020055752855042,0.5534800233490798) node {$H$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+Considérons $X$ l'intersection de $(BD)$ et $(FC)$ ainsi que $Y$ l'intersection de $(BE)$ et $(FD)$. Le théorème est vrai si et seulement $b_{B,X,G,D}=b_{Y,F,H,D}$: en effet la projection centrée en $I$ entre les droites projectives $(BD)$ et $(FD)$ envoie $G$ sur l'unique point $H'$ satisfiant cette condition.
+
+\medskip
+
+Utilisons donc à présent la cocyclicité de nos points. La projection de centre $C\in \Omega$ entre la droite projective $(BD)$ et $\Omega$ envoie $B,G,X,D$ sur $B,A,F,D$. Ainsi $b_{B,X,G,D}=b_{B,F,A,D}$. De même en considérant la projection de centre $E\in \Omega$ entre la droite projective $(FD)$ et $\Omega$, on obtient $b_{Y,F,H,D}=b_{B,F,A,D}$, d'où le résultat.
+
+\medskip
+
+Cette preuve s'adapte parfaitement au cas où $\Omega$ est une conique quelquonque.
+\end{proof}
+
+\begin{exo}
+Soit $ABC$ un triangle. Soit $P,Q$ des points sur $(BC)$ tels que $\angle ABC=\angle  CAQ$ et $\angle ACB=\angle BAP$. Soient $M$ et $N$ tels que $P$ et $Q$ soient les milieux respectifs de $[AM]$ et $[AN]$. Montrer que l'intersection $D$ de $CN$ et $BM$ est sur le cercle circonscrit à $ABC$.
+\end{exo}
+
+\begin{sol}
+Soit $\Omega$ le cercle circonscrit à $ABC$.Soit $D_1$ l'intersection de $BM$ etde $\Omega$, et $D_2$ l'intersection de $CN$ et de $\Omega$. 
+
+\medskip
+
+L'égalité d'angle donne des droites parallèles à $AN$ et $AM$ respectivement: les droites tangeantes à $\Omega$ en $C$ et $B$ respectivement. Sur la droite projective associée )à $AN$, avec $\infty_{AN}$ à l'infini, les points $ANQ\infty_{AN}$ sont harmoniques, ainsi la projection de centre $C$ sur $\Omega$ envoie ces points sur des points harmoniques. Ainsi $AD_1BC$ sont harmoniques. De même $AD_2BC$ sont harmoniques, ainsi $D_1=D_2$, d'où le résultat. 
+\end{sol}
+
+Voici le théorème de Desargues:
+
+\begin{thm}
+Soit $A_1,B_1,A_2,B_2,A_3,B_3$ des points distincts tels que les droites  $(A_1B_1)$,$(A_2B_2)$ et $(A_3B_3)$ sont distinctes et concourantes en $O$. Soient $X,Y,Z$ les intersections respectivement de $(A_2B_3)$ et $(A_3B_2)$, $(A_3B_1)$ et $(A_1B_3)$ et enfin $(A_1B_2)$ et $(A_2B_1)$. Montrer que $X,Y,Z$ sont alignés.
+\end{thm}
+
+\begin{proof}
+
+Une première approche est de considérer une transformation projective qui envoie une droite passant par $O$ à l'infini. On se ramène alors à un problème avec $3$ segments parallèles, qui se résous en utilisant des homothéties.
+
+\medskip
+
+Mains il existe aussi une approche projective directe. Soit $d$ la droite $(XY)$, et soient $c_1,C_2,C_2$ ses intersections avec $(A_1B_1)$,$(A_2B_2)$ et $(A_3B_3)$ respectivement. Pour montrer que $Z$ est sur cette droite il suffit de montrer que $b_{OC_1A_1B_1}=b_{OC_2A_2B_2}$. Or les projections de centres $X$ et $Y$ montrent que ces biraports sont égaux à $b_{OC_3A_3B_3}$, ce qui conclut.
+\end{proof}
+
+\begin{exo}%{[M.L, Problem 20]}
+Soit $ABCD$ un quadrilatère cyclique. Les droites $(AB)$ et $(CD)$ se coupent en $E$, et les diagonales $AC$ et $BD$ en $F$. Le cercle circonscrit des triangles $AFD$ et $BFC$ s'intersectent à nouveau en $H$. Montrer que l'anlge $\angle EHF$ est un angle droit.
+\end{exo}
+
+\begin{sol}
+
+Soit $C_1$ le cercle circonscrit à $BCF$. On introduit le point $F'$ diamètralement opposé à $F$ sur $C_1$. Le problème se ramène à montrer que $H,F',E$ sont alignés. 
+
+\medskip
+
+Soit $X$ l'intersection de $(AD)$ et $(BC)$. Soit $Y$ l'intersection de $(DE)$ et $(FH)$. La droite $(FH)$ est l'axe radical des cercles circonscrits à $ADF$ et $BCH$ donc $X,Y,H,F$ sont alignés. 
+
+Grâce au quadrilatère complet $ABCD$ les points $DCYE$ sont harmoniques. Les points $H,F',E$ sont donc alignés si et seulement si les droites $HD,HC,HF'$ et $HX$ sont harmoniques, avec $X$ l'intersection de $(AD)$ et $(BC)$. Montrons donc cela. 
+
+\medskip
+
+Cela se ramène à montrer que sur le cercle circonscrit à $BCF$, les points $F,C,F',B'$ sont harmoniques, avec $B'$ l'intersection du cercle avec $DH$, différente de $H$. 
+
+Or l'angle $\angle FHB'$ est égal à $\angle DAC$ grâce au cercle passant par $AFHD$, et cet angle est égal à l'angle $\angle DBC$ grâce au cercle passant par $ABCD$. Ainsi l'arc $B'F$ et $FC$ ont même longueur dans le cercle passant par $BCFH$. 
+
+En particulier $(B'C)$ et $(FF')$ sont orthogonales avec $FF'$ un diamêtre, donc ces points sont harmoniques, ce qui conclut.
+
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=.35cm,y=.35cm]
+\clip(-13.66,-11.96) rectangle (30.42,14.58);
+\draw[line width=1.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (8.11939335949667,2.433791094296911) -- (7.844066261199087,2.7565835801806964) -- (7.521273775315301,2.4812564818831144) -- (7.796600873612883,2.158463995999329) -- cycle; 
+\draw [line width=1.pt] (3.73788720609154,-1.3034315120073592) circle (7.059463753656761);
+\draw [line width=1.pt,domain=-13.66:30.42] plot(\x,{(--33.0768-0.18*\x)/6.54});
+\draw [line width=1.pt,domain=-13.66:30.42] plot(\x,{(-89.21813731417265--10.954881315694555*\x)/6.21839267031114});
+\draw [line width=1.pt] (0.64,5.04)-- (9.62,2.6);
+\draw [line width=1.pt] (7.18,4.86)-- (3.4016073296888596,-8.354881315694556);
+\draw [line width=1.pt] (8.385105893979615,3.713919637747902) circle (1.6630635623584293);
+\draw [line width=1.pt] (2.1090801172543587,-1.6392408028229144) circle (6.838892753436521);
+\draw [line width=1.pt,domain=-13.66:30.42] plot(\x,{(--22.491224983676368-13.394881315694555*\x)/2.7616073296888595});
+\draw [line width=1.pt,domain=-13.66:30.42] plot(\x,{(-28.0852--2.26*\x)/-2.44});
+\draw [line width=1.pt,dash pattern=on 5pt off 5pt,domain=-13.66:30.42] plot(\x,{(-13.695079727705739--2.600648169969808*\x)/3.0489904295084926});
+\draw [line width=1.pt,domain=-13.66:30.42] plot(\x,{(--97.7873449770027-10.14636670615311*\x)/8.654382693635865});
+\begin{scriptsize}
+\draw [fill=ududff] (0.64,5.04) circle (2.5pt);
+\draw[color=ududff] (0.78,5.41) node {$A$};
+\draw [fill=ududff] (7.18,4.86) circle (2.5pt);
+\draw[color=ududff] (7.1,5.51) node {$B$};
+\draw [fill=ududff] (9.62,2.6) circle (2.5pt);
+\draw[color=ududff] (10.06,2.69) node {$C$};
+\draw [fill=xdxdff] (3.4016073296888596,-8.354881315694556) circle (2.5pt);
+\draw[color=xdxdff] (3.74,-8.65) node {$D$};
+\draw[color=black] (-13.5,5.29) node {$f$};
+\draw [fill=uuuuuu] (10.845591303121376,4.759112165969137) circle (2.0pt);
+\draw[color=uuuuuu] (10.58,5.15) node {$E$};
+\draw [fill=uuuuuu] (6.756298805142431,3.378110346932347) circle (2.0pt);
+\draw[color=uuuuuu] (6.34,3.03) node {$F$};
+\draw [fill=uuuuuu] (7.796600873612883,2.158463995999329) circle (2.0pt);
+\draw[color=uuuuuu] (7.72,1.69) node {$H$};
+\draw[color=black] (-8.3,-11.69) node {$l$};
+\draw [fill=uuuuuu] (10.013912982816786,4.0497289285634475) circle (2.0pt);
+\draw[color=uuuuuu] (9.56,4.29) node {$F'$};
+\draw [fill=uuuuuu] (-0.8577818200229825,12.304830702152438) circle (2.0pt);
+\draw[color=uuuuuu] (-0.72,12.63) node {$X$};
+\draw[color=black] (-2.42,14.39) node {$m$};
+\draw [fill=xdxdff] (5.427879834377444,4.935543903308783) circle (2.5pt);
+\draw[color=xdxdff] (5.56,5.31) node {$Y$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{sol}
+
+
+
+\begin{exo}
+
+Dans un quadriltère cyclique $ABCD$, soit $E$ l'intersection de $(AD)$ et $(BC)$ (de sorte que $C$ soit entre $B$ et $E$), et $F$ l'intersection de $(BD)$ et $(AC)$. Soit $M$ le milieu de $[CD]$, et $N\neq M$ un point du cercle circonscrit au triangle $ABC$ tel que $\frac{AM}{MB}=\frac{AN}{NB}$. Montrer que $E,F,N$ sont alignés.
+
+\end{exo}
+
+\begin{sol}
+
+\begin{center}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.35cm,y=0.35cm]
+\clip(-7.2165131217305305,-17.817964317871674) rectangle (36.54176525918287,8.528331240872502);
+\draw [line width=1.pt] (10.960518094080774,-3.073144908072124) circle (6.2701166045712595);
+\draw [line width=1.pt,domain=-7.2165131217305305:36.54176525918287] plot(\x,{(-15.765321577666427-1.1282250123746778*\x)/2.938085969725724});
+\draw [line width=1.pt,domain=-7.2165131217305305:36.54176525918287] plot(\x,{(--86.97363318771907-5.523324263869746*\x)/1.9767448461799848});
+\draw [line width=1.pt,domain=-7.2165131217305305:36.54176525918287] plot(\x,{(--135.5599282312279-9.73094073173159*\x)/-7.874070398864936});
+\draw [line width=1.pt,domain=-7.2165131217305305:36.54176525918287] plot(\x,{(--119.0238795571982-5.335841480236521*\x)/-6.912729275319197});
+\draw [line width=1.pt] (15.189782782980101,1.5558595665584092)-- (10.253798353840889,-9.303306177547858);
+\draw [line width=1.pt] (7.315712384115165,-8.17508116517318)-- (17.166527629160086,-3.967464697311337);
+\draw [line width=1.pt,domain=-7.2165131217305305:36.54176525918287] plot(\x,{(-23.47570191075158--6.884912969628594*\x)/-8.883757361472039});
+\draw [line width=1.pt,color=qqqqff] (9.109102180115437,-1.5750185042595948) circle (6.83937673245038);
+\begin{scriptsize}
+\draw [fill=ududff] (15.189782782980101,1.5558595665584092) circle (2.5pt);
+\draw[color=ududff] (15.25824691783116,2.065845028083332) node {$A$};
+\draw [fill=ududff] (7.315712384115165,-8.17508116517318) circle (2.5pt);
+\draw[color=ududff] (7.276927539824269,-8.635476227503036) node {$B$};
+\draw [fill=ududff] (10.253798353840889,-9.303306177547858) circle (2.5pt);
+\draw[color=ududff] (10.433718040080725,-9.826717925713021) node {$C$};
+\draw [fill=xdxdff] (17.166527629160086,-3.967464697311337) circle (2.5pt);
+\draw[color=xdxdff] (17.561314201037128,-4.227881944126091) node {$D$};
+\draw[color=black] (-0.30731127211262627,-17.549934935774427) node {$i$};
+\draw [fill=uuuuuu] (20.481808866560346,-13.23086221443213) circle (2.0pt);
+\draw[color=uuuuuu] (20.618834559776086,-12.904092312755486) node {$E$};
+\draw [fill=uuuuuu] (13.710162991500487,-6.635385437429598) circle (2.0pt);
+\draw[color=uuuuuu] (14.047151191317676,-6.828759651884559) node {$M$};
+\draw [fill=uuuuuu] (11.598051505088307,-6.345949244803537) circle (2.0pt);
+\draw[color=uuuuuu] (11.485981540166211,-5.677226010281573) node {$F$};
+\draw[color=black] (-7.057680895302534,7.9426374059192595) node {$l$};
+\draw[color=qqqqff] (5.80772944536529,4.011539801826308) node {$C'$};
+\draw [fill=uuuuuu] (12.83909037712848,-7.307754512356173) circle (2.0pt);
+\draw[color=uuuuuu] (12.756639351590195,-7.742044953845547) node {$X$};
+\draw [fill=uuuuuu] (2.6270065296877094,0.6066116355875701) circle (2.0pt);
+\draw[color=uuuuuu] (2.770063114929832,0.934165414783846) node {$N$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{center}
+
+La condition sur le point $N$ est équivalent au fait que les points $A,B,M,N$ sur le cercle $C'$, qui est le cercle circonscrit au triangle $ABC$, soient harmoniques. Soit $N'$ l'intersection de $C'$ et $(EF)$. Montrons que $A,B,M,N$ sont harmoniques sur $C'$.
+
+\medskip
+
+Soit $X$ l'intersection de $(NF)$ et $(CD)$. Considérons la projection de centre $X$ entre $C'$ et la droite $(BD)$, puis celle de centre $A$ entre $(BD)$ et $(CD)$. Elle envoie $A,B,M,N$ sur $X,Y,D,C$ avec $Y$ l'intersection de $AB$ et $CD$. Il reste à montrer que $X,Y,C,D$ sont harmoniques.
+
+\medskip
+
+Plaçons un repère sur la droite $CD$ de sorte que $C=1$, $D=-1$, $M=0$, $X=x$ et $Y=y$. Montrons que $xy=1$. 
+
+Or $Y$ est sur l'axe radical des deux cercles de la figure, ainsi $YC\times YD=YX\times YM$. En d'autres termes $(y-x)y=(y-1)(y+1)$, ce qui implique que $xy=1$. Cela conclut.
+
+\end{sol}
+
+\subsection*{Transformations projectives}
+
+\begin{exo}
+Soit $ABC$ un triangle. Soient $F$ et $G$ les milieux de $AB$ et $AC$. Soit $P$ un point sur la hauteur issue de $A$. Soit $d_1$ la droite passant par $F$ et orthogonale à $(BP)$ et $d_2$ la droite passant par $G$ et orthogonale à $(PC)$. Montrer que l'intersection de $d_1$ et $d_2$, si est équidistante de $B$ et $C$. 
+\end{exo}
+
+\begin{sol}
+
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm, scale=1]
+\clip(-6.94,-6.94) rectangle (13.58,8.58);
+\draw[line width=1.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (-0.6388224001026219,1.4277845180930384) -- (-0.9928994996302749,1.1940551712191707) -- (-0.7591701527564073,0.8399780716915178) -- (-0.40509305322875433,1.0737074185653854) -- cycle; 
+\draw[line width=1.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (3.8185629359836453,0.36038163870242546) -- (3.9356665234068213,0.7681643624814286) -- (3.5278837996278183,0.8852679499046046) -- (3.4107802122046422,0.4774852261256014) -- cycle; 
+\draw [line width=1.pt,color=zzttqq] (0.2,5.54)-- (-2.88,-0.56);
+\draw [line width=1.pt,color=zzttqq] (-2.88,-0.56)-- (7.72,-0.76);
+\draw [line width=1.pt,color=zzttqq] (7.72,-0.76)-- (0.2,5.54);
+\draw [line width=1.pt,domain=-6.94:13.58] plot(\x,{(-1.012--10.6*\x)/0.2});
+\draw [line width=1.pt,dash pattern=on 2pt off 2pt,domain=-6.94:13.58] plot(\x,{(-25.784--10.6*\x)/0.2});
+\draw [line width=1.pt,domain=-6.94:13.58] plot(\x,{(--4.026421637010675--1.9818434163701064*\x)/3.0022989323843414});
+\draw [line width=1.pt,domain=-6.94:13.58] plot(\x,{(--26.126-0.2*\x)/10.6});
+\draw [line width=1.pt,domain=-6.94:13.58] plot(\x,{(-0.9117095373665487--3.0022989323843414*\x)/-1.9818434163701064});
+\draw [line width=1.pt,domain=-6.94:13.58] plot(\x,{(-11.06957836298932--2.181843416370106*\x)/-7.597701067615658});
+\draw [line width=1.pt,domain=-6.94:13.58] plot(\x,{(--1623.5636322388605-495.9475348896797*\x)/-142.42201084697504});
+\begin{scriptsize}
+\draw [fill=ududff] (0.2,5.54) circle (2.5pt);
+\draw[color=ududff] (0.34,5.91) node {$A$};
+\draw [fill=ududff] (-2.88,-0.56) circle (2.5pt);
+\draw[color=ududff] (-2.74,-0.19) node {$B$};
+\draw [fill=ududff] (7.72,-0.76) circle (2.5pt);
+\draw[color=ududff] (7.86,-0.39) node {$C$};
+\draw[color=black] (0.52,6.85) node {$h$};
+\draw[color=black] (1.96,7.09) node {$m$};
+\draw [fill=uuuuuu] (2.42,-0.66) circle (2.0pt);
+\draw[color=uuuuuu] (2.56,-0.33) node {$M$};
+\draw [fill=xdxdff] (0.12229893238434165,1.4218434163701064) circle (2.5pt);
+\draw[color=xdxdff] (0.26,1.79) node {$P$};
+\draw [fill=xdxdff] (-1.34,2.49) circle (2.5pt);
+\draw[color=xdxdff] (-1.86,2.87) node {$F$};
+\draw[color=black] (-6.78,2.45) node {$i$};
+\draw [fill=uuuuuu] (3.96,2.39) circle (2.0pt);
+\draw[color=uuuuuu] (4.1,2.71) node {$G$};
+\draw [fill=uuuuuu] (2.373296582523146,-3.1352811262732523) circle (2.0pt);
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+Ici on a un point qui varie sur une droite: le point $P$. À un tel point sur la hauteur $h$ issue de $A$ on peut associer $K_1(P)$ l'intersection de $d_1$ et la médiatrice $m$ de $[BC]$. De même on peut définir $K_2(P)$ comme l'intersection de $d_2$ et la médiatrice $m$ de $[BC]$. Ceci définit deux applications entre les points de la droite projective $h$ et la droite projective $m$. 
+
+\medskip
+
+Ces transformations s'avèrent être projectives. En effet montrons le pour $K_1$. La transformation qui à $P$ associe la droite $(BP)$ passant par $B$ est projective. Ensuite l'opération qui consiste à associer à une droite passant par $B$ la droite orthogonale passant par $F$ est également projective. Enfin l'opération qui à une droite passant par $F$ associe son intersection avec $m$ est projective.
+
+\medskip
+
+Une transformation projective est uniquement déterminée par trois points. Il suffit de trouver trois points "simples" $P_1$, $P_2$ et $P_3$ et de montrer dans les trois cas que $K=K_1(P)=K_2(P)$. Pour $P_1=A$, les deux points sont sur le centre du cercle circonscrit, pour $P_2$ le pied de la hauteur, ils sont à l'infini, et pour $P_3$ à l'infini, ils sont à l'intersection de $m$ et $(FG)$.
+
+\end{sol}
+
+
+\subsection*{Poles et polaires}
+
+\begin{exo}
+
+Soient $C_1$ et $C_2$ deux cercles tangeants extérieurement en $M$, avec $C_2$ de rayon strictement supérieur à $C_1$. Soit $A$ un point sur $C_2$ en dehors de la droite joignant les centres des deux cercles. Soient $B$ et $C$ deux points sur $C_1$ tels que $AB$ et $AC$ soient tangeant à $C_1$. Les droites $(BM)$ et $(CM)$ intersectent $C_2$ à nouveau en $E$ et $F$ respectivement. Soit $D$ l'intersection de la tangeante à $C_2$ en $A$ et de $(EF)$. Montrer que le lieu du point $D$ lorsque $A$ varie est une droite.
+
+\end{exo}
+
+\begin{sol}
+
+\begin{center}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
+\clip(-10.248360201656851,-7.919165543807547) rectangle (19.54795199179514,10.020810082649268);
+\draw [line width=1.pt] (-1.14,1.38) circle (4.819880549805019);
+\draw [line width=1.pt] (6.6,1.4) circle (2.92014528994513);
+\draw [line width=1.pt,domain=-10.248360201656851:19.54795199179514] plot(\x,{(--26.245476914488904-6.576826591004165*\x)/5.096290418266154});
+\draw [line width=1.pt,domain=-10.248360201656851:19.54795199179514] plot(\x,{(--48.48608077791878-1.9493218487590136*\x)/8.088693860284343});
+\draw [line width=1.pt] (7.284149173690642,4.238870976731267)-- (4.291745731672452,-0.3886337655138852);
+\draw [line width=1.pt,domain=-10.248360201656851:19.54795199179514] plot(\x,{(-1.0048465016947024-7.637983006556839*\x)/-4.939147102377251});
+\draw [line width=1.pt,dash pattern=on 3pt off 3pt,domain=-10.248360201656851:19.54795199179514] plot(\x,{(--14.673813761147976-3.8210774709845805*\x)/0.44006221528841305});
+\begin{scriptsize}
+\draw [fill=ududff] (-1.14,1.38) circle (2.5pt);
+\draw[color=ududff] (-1.0417864250049416,1.6321477795471933) node {$X$};
+\draw [fill=ududff] (6.6,1.4) circle (2.5pt);
+\draw[color=ududff] (6.691194779466266,1.645666977457108) node {$Y$};
+\draw [fill=xdxdff] (3.6798644588368834,1.3924544301261936) circle (2.5pt);
+\draw[color=xdxdff] (3.771048030924691,1.645666977457108) node {$M$};
+\draw[color=black] (-3.4820016477445446,5.356686803728695) node {$C_2$};
+\draw[color=black] (4.913420254312483,3.4775182942505505) node {$C_{1}$};
+\draw [fill=xdxdff] (-0.8045446865937015,6.1881928254902805) circle (2.5pt);
+\draw[color=xdxdff] (-0.703806477257074,6.444982235476829) node {$A$};
+\draw [fill=uuuuuu] (7.284149173690642,4.238870976731267) circle (2.0pt);
+\draw[color=uuuuuu] (7.380673872871915,4.457660142719367) node {$B$};
+\draw [fill=uuuuuu] (4.291745731672452,-0.3886337655138852) circle (2.0pt);
+\draw[color=uuuuuu] (4.555161509699744,-0.2740591257507803) node {$C$};
+\draw [fill=uuuuuu] (-2.2692305580790677,-3.305732265194967) circle (2.0pt);
+\draw[color=uuuuuu] (-2.5153789971856435,-3.05901389519321) node {$F$};
+\draw [fill=uuuuuu] (2.669916544298183,4.332250741361872) circle (2.0pt);
+\draw[color=uuuuuu] (2.8923001667802355,4.376544955259879) node {$E$};
+\draw [fill=uuuuuu] (3.2398022435484704,5.213531901110774) circle (2.0pt);
+\draw[color=uuuuuu] (2.973415354239724,5.485119183872885) node {$D$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+Il est important ici de conjecturer la droite sur laquelle $D$ varie. On se convainc à l'aide d'une figure que c'est l'axe radical $d$ de $C_1$ et $C_2$. Nous allons réduire le problème à montrer qu'une transformation projective est triviale.
+
+\medskip
+
+À un point $D$ sur $d$ on associe le seul point $A$ de $C_2$ tel que $AD$ est tangeant à $C_2$ et $A\neq M$ si $D\neq M$. On lui associe ensuite la droite $MA$ passant par $M$, Puis on lui asscie la polaire $D'$ à $MA$ via à vis de $C_1$, qui se trouve sur la droite $d$. Enfin on applique l'homothétie de centre $M$ qui envoie $C_1$ sur $C_2$. Cette suite de transformations envoie $D$ sur l'intersection de $(EF)$ et $d$. 
+
+\medskip
+
+Il nous reste à montrer que cette transformation, qui est projective est l'identité. On peut considérer $D$ à l'infini, ce qui revient à placer $A$ au point diamétralement opposé à $M$ (l'énoncé l'interdit, mais avec le formalisme de la géométrie projective on peut le faire, et la transformatione st bien définie).
+
+On place ensuite $D$ en $M$. Pour conclure, on place $D$ comme sur la figure au millieu de la tangeante commune à $C_1$ et $C_2$. Soit $B'$ le symétrique de $B$ par rapport à $(XY)$. Ce point se situe sur la polaire de $D$ vis à vis de $C_2$, donc sa polaire vis à vis de $C_2$ passe par $D$. Or elle passe aussi par $E$ et $F$, donc les point sont alignés.
+
+
+\medskip
+
+Ainsi la transformation projective est l'identité, ce qui conclut.
+
+\end{sol}
+
+%\begin{exo}
+%Les cercles $ w_{1}$ et $ w_{2}$ de centres $ O_{1}$ et $ O_{2}$ sont tangeants extérieurement en $ D$ et intérieurement tangeants à un cercle $ w$ aux points $ E$ et $ F$ respectivement. Soit $ t$ la tangeante commune à $ w_{1}$ et $ w_{2}$ en $ D$. Soit $ AB$ le diamètre de $ w$ perpendiculaire à $ t$, tel que $ A, E, O_{1}$ sont sur le même côté de $ t$. Montrer que les droites $ AO_{1}$, $ BO_{2}$, $ EF$ et $ t$ sont concourrantes.
+%\end{exo}
+%
+%%\begin{sol}
+%%
+%%Soit $P$ l'intersection de $t$ et $(EF)$, et $Q$ l'intersection de $(EF)$ et $(AB)$. Soit $X$ l'intersection de la tangeante à $w$ en $E$ et celle en $F$. Le point $X$ appartient à l'axe radical des cercles $w_1$ et $w_2$, donc à $t$. Ce   Le point $Q$ est sur la polaire de $X$ par rapport à $w$, , donc la polaire de $Q$ vis à vis de $w$ passe par $D$, et c'est donc la droite $t$. Ainsi $Q,P,E,F$ sont harmoniques. On projete la droite projective $(EF)$ sur $(O_1O_2)$ depuis le point $O$, et on obtient donc que les points $O_1,O_2,Y,\infty$ sont harmoniques avec $\infty$ le point à l'infini de la droite $(O_1O_2)$ et $Y$ l'intersection de $(OD)$ et $O_1O_2$. Ainsi $Y$ est le milieu de $[O_1O_2]$. Par le théorème de la droite des milieux, le point d'intersection de $AO_1$ et 
+%%
+%%\end{sol}

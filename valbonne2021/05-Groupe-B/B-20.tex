@@ -1,0 +1,316 @@
+\subsubsection{Énoncés}
+\begin{exo}
+Soit $ABC$ un triangle. Soit $D$ le pied de la bissectrice issue de $A$. La tangente au cercle circonscrit à $ABC$ en $A$ coupe la droite $(BC)$ en $P$. Montrer que le triangle $PAD$ est isocèle en $P$.
+\end{exo}
+
+
+\begin{exo}
+Soient $a$ et $b$ deux réels strictement positifs. Montrer que
+$$\left(1+\frac{a}{b}\right)^n+\left(1+\frac{b}{a}\right)^n\geq 2^{n+1} $$
+Quels sont les cas d'égalité?
+\end{exo}
+
+
+\begin{exo}
+Déterminer toutes les fonctions $f:\mathbb{R}\to \mathbb{R}$ telles que pour tous réels $x,y$, on ait
+$$f(f(f(x)))+f(f(y))=f(y)+x $$
+\end{exo}
+
+
+\begin{exo}
+Soit $ABCD$ un quadrilatère non croisé inscrit dans un cercle $\Gamma$. Les tangentes à $\Gamma$ en $A$ et $B$ se coupent en $P$. La parallèle à la droite $(AC)$ passant par $P$ coupe $(AD)$ en $X$. La parallèle à la droite $(BD)$ passant par $P$ coupe $(BC)$ en $Y$. 
+\\
+Montrer que les points $X,Y,C,D$ sont cocycliques.
+\end{exo}
+
+
+\subsubsection{Solutions}
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}
+[scale=0.5]
+\tkzInit[ymin=-5,ymax=5,xmin=-11,xmax=6]
+\tkzClip
+
+\tkzDefPoint(-1,3){A}
+\tkzDefPoint(-2,-2){B}
+\tkzDefPoint(4,-2){C}
+
+\tkzCircumCenter(A,B,C)\tkzGetPoint{O}
+\tkzInCenter(A,B,C)\tkzGetPoint{I}
+\tkzDefTangent[at=A](O)\tkzGetPoint{Q}
+
+\tkzInterLL(A,Q)(B,C)\tkzGetPoint{P}
+\tkzInterLL(A,I)(B,C)\tkzGetPoint{D}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(P,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(A,P)
+\tkzDrawSegment(A,D)
+\tkzDrawPoints[fill=white,color=black](A,B,C,D,P)
+
+\tkzDrawCircle(O,B)
+
+
+\tkzLabelPoint[above left](A){$A$}
+\tkzLabelPoint[below left](B){$B$}
+\tkzLabelPoint[right](C){$C$}
+\tkzLabelPoint[left](P){$P$}
+\tkzLabelPoint[below right](D){$D$}
+
+\tkzMarkAngles[size=0.6, color=red, opacity=1](P,A,B A,C,B)
+\tkzMarkAngles[size=0.6, color=blue, opacity=1](B,A,D D,A,C)
+
+
+\end{tikzpicture}
+\end{center}
+
+On commence par noter $$\left\{
+    \begin{array}{ll}
+        \widehat{BAC}=2\alpha\\
+        \widehat{ACB}=2\gamma\\
+        \widehat{ABC}=2\beta
+    \end{array}
+\right.$$
+En particulier, on remarque que 
+$$\widehat{DAB}=\frac{\widehat{BAC}}{2}=\frac{2\alpha}{2}=\alpha $$
+On en déduit que 
+$$\widehat{PDA}=\widehat{BDA}=\widehat{BCA}+\widehat{CAD}=2\gamma+\alpha $$
+D'autre part, on remarque que 
+$$\widehat{DAP}=\widehat{DAB}+\widehat{BAP}=\alpha+\widehat{BAP} $$
+Que vaut $\widehat{BAP}$? On voit qu'il s'agit d'un angle à la tangence et on en déduit que 
+$$ \widehat{BAP}=\widehat{ACB}=2\gamma$$
+Finalement, on en déduit que 
+$$\widehat{ADP}=\alpha+2\gamma=\widehat{DAP} $$
+Et on a bien montré que $ADP$ était isocèle en $P$.
+\end{sol}
+
+\begin{sol}
+On va utiliser à plusieurs reprises l'inégalité arithmético-géométrique sous la forme suivante :
+$$\mathrm{Pour}\: \mathrm{ tous}\: \mathrm{ nombres}\: \mathrm{ positifs }\:a,b,\:\: \mathrm{on}_: \mathrm{ a }\:\:a+b\geq 2\sqrt{ab}  $$
+
+On commence donc par écrire que 
+$$\left(1+\frac{a}{b}\right)\geq 2\sqrt{\frac{a}{b}} $$
+Ainsi que 
+$$\left(1+\frac{b}{a}\right)\geq 2\sqrt{\frac{b}{a}} $$
+On a donc montré que 
+$$\left(1+\frac{a}{b}\right)^n+\left(1+\frac{b}{a}\right)^n\geq \left(2\sqrt{\frac{a}{b}}\right)^n+\left(2\sqrt{\frac{b}{a}}\right)^n=2^n\left(\left(\sqrt{\frac{b}{a}}\right)^n+\left(\sqrt{\frac{a}{b}}\right)^n \right) $$
+On utilise une dernière fois l'inégalité arithmético géométrique pour obtenir que 
+$$\left(\sqrt{\frac{b}{a}^n}+\sqrt{\frac{a}{b}}^n\right)^n\geq 2\left(\sqrt{\sqrt{\frac{a}{b}}\sqrt{\frac{b}{a}}}\right)^n=2\sqrt{1}=2 $$
+On a donc finalement que 
+$$\left(1+\frac{a}{b}\right)^n+\left(1+\frac{b}{a}\right)^n\geq 2^n\left(1+\frac{a}{b}\right)^n+\left(1+\frac{b}{a}\right)^n \geq2^n\times 2=2^{n+1} $$
+\end{sol}
+\begin{sol}
+\textbf{Analyse:} On suppose que $f$ est solution de l'équation.
+\\
+On remarque la présence d'un terme $"x"$ dans le membre de droite. Cela nous pousse à étudier l'injectivité et la surjectivité de $f$.
+\\
+\textbf{Injectivité:} Supposons qu'il existe $b,c$ des réels tels que $f(b)=f(c)$ et montrons que $b=c$. La remarque importante est que $x$ n'apparait que sous la forme $f(x)$ dans le membre de gauche, ce membre de gauche va donc être le même après la subtitution $x=b$ ou la substitution $x=c$.
+\\
+On pose donc $y=0$ et $x=b$ ce qui donne 
+$$f(f(f(b)))+f(f(0))-f(0)=b $$
+Maintenant, on pose $y=0$ et $x=c$ ce qui donne
+$$f(f(f(c)))+f(f(0))-f(0)=c $$ et donc on en déduit que
+$$b=f(f(f(b)))+f(f(0))-f(0)=f(f(f(c)))+f(f(0))-f(0)=c $$
+Ainsi, $f$ est injective.
+\\
+\textbf{Surjectivité:} On pose encore $y=0$ ce qui donne pour tout réel $x$ que 
+$$f(f(f(x)))=x+f(0)-f(f(0)) $$
+Comme le membre de droite est affine, il est surjectif et on en déduit la surjectivité de $f$. Plus précisément, on se donne un réel $b$ et va chercher un antécédant $a$ de $f$ pour $b$. Pour cela, on remarque que 
+$$x=b-f(0)+f(f(0))\iff f(f(f(x))))=x+f(0)-f(f(0))=b $$
+Et donc $f(f(x))$ est un antécédant de $f$. On a donc $f$ surjective. 
+\\
+Cela permet de faire la subtitution $f(y)=u$ et donc on a pour tous réels $x,u$:
+$$f(f(f(x))))+f(u)=u+x $$
+On pose finalement $x=0$ et on a pour tout réel $u$
+$$f(u)=u-f(f(f(0)))=u+C $$
+\textbf{Synthèse:} On suppose que $f(u)=u+C$ avec $C$ une constante. On vérifie que
+$$f(f(f(x)))+f(f(y))=x+C+C+C+y+C+C=x+y+5C $$
+d'une part et on a 
+$$f(y)+x=x+y=C $$
+On veut donc que 
+$$x+y+5C=x+y+C\Rightarrow C=0 $$
+Et donc la seule solution est l'identité $f(x)=x$.
+\end{sol}
+\begin{rem}
+L'injectivité n'a pas servi dans l'argument. Toutefois, cela reste un bon réflexe de la montrer dès que c'est possible.
+\end{rem}
+\begin{sol}
+
+\begin{center}
+\begin{tikzpicture}
+[scale=1]
+\tkzInit[ymin=-10,ymax=10,xmin=-5,xmax=12]
+\tkzClip
+
+\tkzDefPoint(-1,3){A}
+\tkzDefPoint(2.5,2.5){B}
+\tkzDefPoint(4,-2){C}
+\tkzDefPoint(-2,-2){d}
+
+\tkzCircumCenter(A,B,C)\tkzGetPoint{O}
+\tkzDefTangent[at=A](O)\tkzGetPoint{u}
+\tkzDefTangent[at=B](O)\tkzGetPoint{v}
+\tkzInterLL(A,u)(B,v) \tkzGetPoint{P}
+\tkzInterLC(O,d)(O,A) \tkzGetPoints{D'}{D}
+\tkzInterLL(A,C)(B,D) \tkzGetPoint{Q}
+
+\tkzDefLine[parallel=through P](A,C) \tkzGetPoint{x}
+\tkzDefLine[parallel=through P](B,D) \tkzGetPoint{y}
+
+\tkzInterLL(A,D)(P,x) \tkzGetPoint{X}
+\tkzInterLL(B,C)(P,y) \tkzGetPoint{Y}
+
+\tkzCircumCenter(X,Y,C)\tkzGetPoint{o}
+
+
+\tkzDrawSegment(B,D)
+\tkzDrawSegment(X,D)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(Y,C)
+\tkzDrawSegment(A,P)
+\tkzDrawSegment(B,P)
+\tkzDrawSegment(X,P)
+\tkzDrawSegment(Y,P)
+
+\tkzDrawSegment(X,Y)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(C,D)
+
+\tkzDrawPoints[fill=white,color=black](A,B,C,D,X,Y,P,Q)
+
+\tkzDrawCircle(O,B)
+\tkzDrawCircle[dashed](o,C)
+
+\tkzLabelPoint[above left](A){$A$}
+\tkzLabelPoint[above right](B){$B$}
+\tkzLabelPoint[right](C){$C$}
+\tkzLabelPoint[left](D){$D$}
+\tkzLabelPoint[above](X){$X$}
+\tkzLabelPoint[above](Y){$Y$}
+\tkzLabelPoint[right](P){$P$}
+\tkzLabelPoint[below](Q){$Q$}
+
+
+
+\end{tikzpicture}
+\end{center}
+
+Voici une autre solution ne nécéssitant pas d'introduire des points supplémentaires mais seulement d'utiliser des triangles semblables. 
+\\
+On montre que les triangles $YPB$ et $BCD$ sont semblables. Par angle à la tangence on a 
+$$\widehat{PBY}=\widehat{ADB} $$
+Puis par parallélisme on remarque que 
+$$\widehat{DBC}=\widehat{PYB} $$
+Ce qui montre que 
+$$YPB\sim BCD $$
+De même, on a bien que 
+$$YPA\sim ADC $$
+On note $Q=(AC)\cap (BD)$.
+Comme $(PY)//(QB)$ et $(PX)//(AQ)$, il nous suffit de montrer que 
+$$APY\sim AQB $$ pour obtenir $(AB)//(XY)$. On se ramène donc à montrer que 
+$$\frac{PX}{AQ}=\frac{PY}{PX} $$
+On a d'une part
+$$YP=\frac{BC\times PB}{CD} $$
+D'autre part on a 
+$$XP=\frac{AD\times PA}{CD}$$
+Comme $PA=PB$ on a finalement 
+$$\frac{PY}{BC}=\frac{PX}{AD} $$
+Comme $BQC\sim AQD$, on peut écrire que 
+$$\frac{BC}{QB}=\frac{AD}{QA} $$
+Et on a donc montré que 
+$$\frac{PY}{QB} =\frac{PX}{QA}$$
+Ce qui montre que $X,Y,C$ et $D$ sont cocycliques.
+\newline
+
+\begin{center}
+\begin{tikzpicture}
+[scale=1]
+\tkzInit[ymin=-10,ymax=10,xmin=-5,xmax=12]
+\tkzClip
+
+\tkzDefPoint(-1,3){A}
+\tkzDefPoint(2.5,2.5){B}
+\tkzDefPoint(4,-2){C}
+\tkzDefPoint(-2,-2){d}
+
+\tkzCircumCenter(A,B,C)\tkzGetPoint{O}
+\tkzDefTangent[at=A](O)\tkzGetPoint{u}
+\tkzDefTangent[at=B](O)\tkzGetPoint{v}
+\tkzInterLL(A,u)(B,v) \tkzGetPoint{P}
+\tkzInterLC(O,d)(O,A) \tkzGetPoints{D'}{D}
+
+\tkzDefLine[parallel=through P](A,C) \tkzGetPoint{x}
+\tkzDefLine[parallel=through P](B,D) \tkzGetPoint{y}
+
+\tkzInterLL(A,D)(P,x) \tkzGetPoint{X}
+\tkzInterLL(B,C)(P,y) \tkzGetPoint{Y}
+\tkzInterLL(A,D)(P,y) \tkzGetPoint{W}
+\tkzInterLL(B,C)(P,x) \tkzGetPoint{Z}
+
+\tkzCircumCenter(X,Y,C)\tkzGetPoint{o}
+\tkzCircumCenter(P,A,B)\tkzGetPoint{o'}
+\tkzCircumCenter(X,Y,W)\tkzGetPoint{o''}
+
+
+\tkzDrawSegment(B,D)
+\tkzDrawSegment(X,D)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(Y,C)
+\tkzDrawSegment(A,P)
+\tkzDrawSegment(B,P)
+\tkzDrawSegment(X,Z)
+\tkzDrawSegment(Y,W)
+
+\tkzDrawSegment(X,Y)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(C,D)
+
+\tkzDrawPoints[fill=white,color=black](A,B,C,D,X,Y,P,W,Z)
+
+\tkzDrawCircle(O,B)
+\tkzDrawCircle[dashed](o,C)
+\tkzDrawCircle[dashed](o',P)
+\tkzDrawCircle[dashed](o'',W)
+
+\tkzLabelPoint[above left](A){$A$}
+\tkzLabelPoint[above right](B){$B$}
+\tkzLabelPoint[right](C){$C$}
+\tkzLabelPoint[left](D){$D$}
+\tkzLabelPoint[above](X){$X$}
+\tkzLabelPoint[above](Y){$Y$}
+\tkzLabelPoint[left](W){$W$}
+\tkzLabelPoint[right](Z){$Z$}
+\tkzLabelPoint[right](P){$P$}
+
+\tkzMarkAngles[size=0.6, color=red, opacity=1](P,B,A B,A,P B,D,A B,C,A P,W,A B,Z,P)
+
+\end{tikzpicture}
+\end{center}
+
+
+On introduit deux nouveaux points: on note pour commencer $W=(PY)\cap (AD)$ puis on note  $Z=(XP)\cap (BC)$. 
+\\
+On considère les deux droites de référence $(AD)$ et $(BC)$. On veut montrer que $(XY)$ et $(CD)$ sont antiparallèles. 
+\\
+On sait déjà que $(DC)$ et $(AB)$ sont antiparallèles. On va en fait montrer que 
+$$(ZW)$$ est à la fois antiparallèle à $(XY)$ et à $(AB)$. On en déduira que $(DC)//(WZ)$ et donc que $XYCD$ est cocyclique.
+\\
+\textbf{$XYZW$ cyclique:} On note $\alpha=\widehat{PAB}$. On a alors par angle à la tangence 
+$$\widehat{PAB}=\widehat{ACB}=\alpha $$
+Puis par parallélisme on a 
+$$\alpha=\widehat{ACB}=\widehat{XZY} $$
+Comme $PA=PB$, on en déduit que 
+$$\alpha=\widehat{PAB}=\widehat{PBA} $$
+On montre donc de même que 
+$$\alpha=\widehat{XWY}=\widehat{YZX} $$
+Et donc $XYZW$ est cyclique. En d'autre termes, $(XY)$ et $(CD)$ sont antiparallèles.
+\\
+$AWBZP$ cyclique: On va en fait montrer que l'on a d'une part
+$PAWB$ est cyclique et $PZBA$ est cyclique.
+\\
+Pour cela, on remarque que par parallélisme, on a 
+$$\widehat{AWP}=\widehat{ADB}=\alpha=\widehat{ABP} $$
+On en déduit donc que $PAWB$ est cyclique. On a de même que $PZBA$ est cyclique. Ainsi, $A,B,Z,W$ sont tous sur le cercle circonscrit à $ABP$ et sont donc cocyliques. \\
+On a donc montré que $(AB)$ et $(WZ)$ sont antiparallèles et donc on a finalment montré que $X,Y,C$ et $D$ sont cocycliques.

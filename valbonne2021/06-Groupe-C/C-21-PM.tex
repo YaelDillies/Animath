@@ -5,7 +5,7 @@ Le cours a porté sur deux outils très utiles en géométrie : le théorème du
 
 
 \begin{exo}
-Soient $k_1$ et $k_2$ deux cercles s'intersectant en deux points distincts $A$ et $B$. Une tangente $t$  commune aux deux cercles touche le cercle $k_1$ en un point $C$ et le cercle $k_2$ en un point $D$. Soit $M$ le point d'intersection de la droite $(AB)$ avec la tangente $t$. Montrer que $M$ est le milieu du segment $[CD]$.
+Soient $k_1$ et $k_2$ deux cercles s'intersectant en deux points distincts $A$ et $B$. Une tangente $t$ commune aux deux cercles touche le cercle $k_1$ en un point $C$ et le cercle $k_2$ en un point $D$. Soit $M$ le point d'intersection de la droite $(AB)$ avec la tangente $t$. Montrer que $M$ est le milieu du segment $[CD]$.
 \end{exo}
 
 
@@ -46,7 +46,7 @@ Soient $A$, $B$, $C$ et $D$ quatre points fixés sur un cercle. Quelle est la co
 \begin{sol}
 Calculons la puissance du point $M$ par rapport à chacun des deux cercles en utilisant la définition de $M$ et la tangence de la droite $t$ :
 \begin{gather*}
-    \mathcal{P}_{k_1}(M) = MA \times MB = MC^2,  \\
+    \mathcal{P}_{k_1}(M) = MA \times MB = MC^2, \\
     \mathcal{P}_{k_2}(M) = MA \times MB = MD^2.
 \end{gather*}
 Ainsi, $\mathcal{P}_{k_1}(M) = \mathcal{P}_{k_2}(M) = MA \times MB$. On en déduit que $MC^2 = MD^2$, ce qui prouve que $M$ est le milieu de $[CD]$.
@@ -71,7 +71,7 @@ Tout d'abord, on remarque que le cercle $\Gamma_B$ de diamètre $[AC]$ passe par
 
 En écrivant la puissance de l'orthocentre par rapport à chacun des deux cercles, il vient
 \begin{gather*}
-    \mathcal{P}_{\Gamma_B}(H) = HL \times HK = HA \times HH_A,  \\
+    \mathcal{P}_{\Gamma_B}(H) = HL \times HK = HA \times HH_A, \\
     \mathcal{P}_{\Gamma_C}(H) = HM \times HN = HA \times HH_A.
 \end{gather*}
 Dès lors, $\mathcal{P}_{\Gamma_B}(H) = \mathcal{P}_{\Gamma_C}(H) = HA \times HH_A$. Par conséquent, on a $HL \times HK = HM \times HN$, ce qui prouve que $K$, $L$, $M$ et $N$ sont cocycliques.
@@ -82,7 +82,7 @@ Dès lors, $\mathcal{P}_{\Gamma_B}(H) = \mathcal{P}_{\Gamma_C}(H) = HA \times HH
 Il s'agit d'utiliser le théorème du pôle Sud pour faire apparaître des points cocycliques puis de conclure par chasse aux angles. Appelons $S$ le milieu de l'arc $\wideparen{AB}$. $I_C$ étant le centre du cercle inscrit de $DAB$, le théorème du pôle Sud nous dit que $SA=SB=SI_C$. De même, $SA=SB=SI_D$. Finalement, c'est que $A$, $B$, $I_C$ et $I_D$ sont cocycliques, et on montre de même que les quadrilatères $BCI_AI_D$, $CDI_BI_A$ et $DAI_CI_B$ sont cycliques. On en tire :
 
 \begin{align*}
-(I_AI_D,I_AI_B)  &= (I_AC,I_AI_B)+(I_AI_D,I_AC) \text{\ \ d'après la relation de Chasles}\\
+(I_AI_D,I_AI_B) &= (I_AC,I_AI_B)+(I_AI_D,I_AC) \text{\ \ d'après la relation de Chasles}\\
 &= (DI_B,DC)+(BI_D,BC) \text{\ \ car les quadrilatères $CDI_BI_A$ et $BCI_AI_D$ sont cycliques}\\
 &= \frac{(DA,DC)}{2}+\frac{(BA,BC)}{2} \text{\ \ par définition des points $I_B$ et $I_D$}\\
 &= 90 \text{\ \ car $A$, $B$, $C$ et $D$ sont cocycliques, soit $(DA,DC)+(BA,BC)=180$}

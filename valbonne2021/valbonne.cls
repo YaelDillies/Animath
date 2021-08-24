@@ -113,12 +113,12 @@
 
 \fancyhead[L]{\leftmark}
 \fancyhead[R]{\rightmark}
-\lfoot[\large{ \fontfamily{pzc}  \selectfont\thepage}]{}
-\rfoot[]{\large{ \fontfamily{pzc}  \selectfont\thepage}}
+\lfoot[\large{ \fontfamily{pzc} \selectfont\thepage}]{}
+\rfoot[]{\large{ \fontfamily{pzc} \selectfont\thepage}}
 \cfoot{}
 
-\renewcommand{\chaptermark}[1]{ \markboth { \large{ \fontfamily{pzc}  \selectfont  \chaptername \, \thechapter.  \, #1}} {}}
-\renewcommand{\sectionmark}[1]{\markright{ \large{\fontfamily{pzc}  \selectfont  \thesection.\, #1}}}
+\renewcommand{\chaptermark}[1]{ \markboth { \large{ \fontfamily{pzc} \selectfont \chaptername \, \thechapter. \, #1}} {}}
+\renewcommand{\sectionmark}[1]{\markright{ \large{\fontfamily{pzc} \selectfont \thesection.\, #1}}}
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -129,16 +129,16 @@
 \fancypagestyle{plain}{%
 \fancyhead[L]{\leftmark}
 \fancyhead[R]{\rightmark}
-\lfoot[\large{ \fontfamily{pzc}  \selectfont\thepage}]{}
-\rfoot[]{\large{ \fontfamily{pzc}  \selectfont\thepage}}
+\lfoot[\large{ \fontfamily{pzc} \selectfont\thepage}]{}
+\rfoot[]{\large{ \fontfamily{pzc} \selectfont\thepage}}
 \cfoot{}
 }
 
 \fancypagestyle{trombi}{%
 \fancyhead[L]{}
  \fancyhead[R]{}
-\lfoot[\large{ \fontfamily{pzc}  \selectfont\thepage}]{}
-\rfoot[]{\large{ \fontfamily{pzc}  \selectfont\thepage}}
+\lfoot[\large{ \fontfamily{pzc} \selectfont\thepage}]{}
+\rfoot[]{\large{ \fontfamily{pzc} \selectfont\thepage}}
 \cfoot{}
 }
 

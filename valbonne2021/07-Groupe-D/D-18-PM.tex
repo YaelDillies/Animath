@@ -28,7 +28,7 @@ Déterminer s'il existe une fonction $f: \N^* \rightarrow \N^*$ vérifiant pour 
 \end{exo}
 % Source:olympic revenge 2002 , assez facile quand on a compris ce qui se passe
 %Réponse: Non
-% Par récurrence immédiate, on constate que la suite $f^{k}(1)_{k\in \N}$ contient $\N^*$. Plus précisément, on a facilement par récurrence que $f^{\frac{n(n-1)}{2}}(1)=n$. De plus, si $f^{a}(1)=f^{b}(1)$, la suite $(f^{k}(1))$ est périodique à partir d'un certain rang, ce qui est impossible d'après ce qui précède. Donc la suite $f^{k}(1)$ prend exactement une fois chaque valeur de $\N$, absurde car  $f^{\frac{n(n-1)}{2}}(1)=n$.
+% Par récurrence immédiate, on constate que la suite $f^{k}(1)_{k\in \N}$ contient $\N^*$. Plus précisément, on a facilement par récurrence que $f^{\frac{n(n-1)}{2}}(1)=n$. De plus, si $f^{a}(1)=f^{b}(1)$, la suite $(f^{k}(1))$ est périodique à partir d'un certain rang, ce qui est impossible d'après ce qui précède. Donc la suite $f^{k}(1)$ prend exactement une fois chaque valeur de $\N$, absurde car $f^{\frac{n(n-1)}{2}}(1)=n$.
 
 
 \begin{exo}
@@ -90,7 +90,7 @@ $$f(f(x)+y)+f(x+f(y))=2f(xf(y))$$
 
 
 \begin{exo}
-Trouver toutes les fonctions de $\mathbb{R}_{>0}$ dans $\mathbb{R}_{>0}$ telles que:
+Trouver toutes les fonctions de $\mathbb{R}_{>0}$ dans $\mathbb{R}_{>0}$ telles que :
 $$f(x)f(y)=2f(x+yf(x))$$
 \end{exo}
 % Déjà traité en 2019 mais je suis à peu près sur de ne pas l'avoir pas présenté, et quasi certain que Mano et Alec ne l'avaient pas trouvé. Il est dur mais instructif je trouve.
@@ -104,7 +104,7 @@ $$f(x)f(y)=2f(x+yf(x))$$
 %Autrement dit, $f$ est croissante. \\
 %Supposons qu'il existe un réel $x_0$ tel que $f(x_0)=2$. Dans ce cas on remarque qu'avec $x=y=x_0$ on a:
 %$$f(x_0)^2=2f(x_0+x_0f(x_0))\implies f(x_0+x_0f(x_0))=2$$
-%On définit la suite $a_n$ par $a_0=x_0$ et $a_{n+1}=a_n+a_nf(a_n)$. D'après ce qui précède, on a $f(a_n)=2$ pour tout $n$, et comme %$f(a_n)\ge 2$, $(a_n)$ diverge, ce qui implique $f(a_n)=2$ pour tout $n$, ce qui implique que $f(x)=2$ pour tout $x$  par croissance de $f$.\\
+%On définit la suite $a_n$ par $a_0=x_0$ et $a_{n+1}=a_n+a_nf(a_n)$. D'après ce qui précède, on a $f(a_n)=2$ pour tout $n$, et comme %$f(a_n)\ge 2$, $(a_n)$ diverge, ce qui implique $f(a_n)=2$ pour tout $n$, ce qui implique que $f(x)=2$ pour tout $x$ par croissance de $f$.\\
 %On note $f(1)=2\alpha$ avec $\alpha>1$. On remarque alors que:
 %$$P(1,1)\iff f(1)^2=2f(1+f(1))\implies 2f(1+2\alpha)=4\alpha^2\implies f(1+2\alpha)=2\alpha^2$$
 %$$P(1+2\alpha,1)\iff 2\alpha\cdot 2\alpha^2 =2f(1+2\alpha +2\alpha^2)\implies f(1+2\alpha+2\alpha^2)=2\alpha^3$$
@@ -170,7 +170,7 @@ La fonction $f_1$ constante égale à $1$ (qui convient), la fonction $f_2$ vér
 \begin{sol}
 La fonction constante nulle est solution, on écarte ce cas. En posant $x=0$, on obtient $f(0)=0$, puis en posant $y=-1$, on obtient $f(-1)=-1$. En posant $x=-1$ et $y=-\displaystyle\frac{1}{2}$, on obtient $f\left(-\displaystyle\frac{1}{2}\right)=-\displaystyle\frac{1}{2}$. En posant enfin $x=-\displaystyle\frac{1}{2}$ et $y=1$, il vient $f(1)=1$. Puis en $x=1$, on obtient finalement $f(y+1)=1+f(y)$, donc $f(x(y+1))=f(x)f(y+1)$. Quitte à faire un changement de variable, on a donc que $f$ est multiplicative. L'équation de départ donne alors:
 $$f(x+xy)=f(x)+f(x)f(y)=f(x)+f(xy)$$
-En faisant varier $y$, on obtient que $f$ est additive. De plus, comme $f$ est multiplicative, pour $y\ge 0$, on a $f(y)=f(\sqrt{y})^2\ge 0$. Donc $f(x+y)=f(x)+f(y)\ge f(x)$, donc $f$ est croissante additive avec $f(1)=1$ donc c'est l'identité, qui convient  (d'après l'étude de l'équation de Cauchy).
+En faisant varier $y$, on obtient que $f$ est additive. De plus, comme $f$ est multiplicative, pour $y\ge 0$, on a $f(y)=f(\sqrt{y})^2\ge 0$. Donc $f(x+y)=f(x)+f(y)\ge f(x)$, donc $f$ est croissante additive avec $f(1)=1$ donc c'est l'identité, qui convient (d'après l'étude de l'équation de Cauchy).
 \end{sol}
 
 

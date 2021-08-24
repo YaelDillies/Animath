@@ -1,0 +1,289 @@
+% Cours de Colin, du 22/08/2021 Matin groupe C, transformations géométriques
+
+L'objet de ce cours fut les transformations géométriques directes, des isométries aux similitudes, en passant par les homotéties. Nous avons défini les rotations et translations, ainsi que ce qu'est une isométrie (directe). Nous avons montré que les isométries sont exactement les similitudes (translations et rotations).
+
+\medskip
+
+Nous avons ensuite de même défini les homothéties et homothéties en spirale, ainsi que ce qu'est une similitude (directe).
+
+\medskip
+
+Nous vu les constructions permettant de retrouver le centre d'une rotation ou d'une homotéties en spirale. Ensuite nous avons traité de plusieurs exercices afin de voir comment ces notions peuvent être utiles sur des problèmes de géométrie plane. Pour retrouver les définitions et démonstrations du cours, ainsi que plus d'exercices sur le sujet, on vous conseille \href{le cours de la POFM sur le sujet.}{http://maths-olympiques.fr/wp-content/uploads/2017/09/geom\_transfos.pdf}
+
+\subsubsection{Isométries}
+
+\begin{exo}
+Soit $ABC$ un triangle isocèle rectangle en $A$, et $BDE$ un triangle isocèle rectangle en $D$. Soit $M$ le milieu de $[CE]$. Montrer que le triangle $MAD$ est isocèle rectangle en $M$.
+\end{exo}
+
+\begin{sol}
+Soit $r_1$ la rotation d'angle $90^\circ$ de centre $A$ qui envoie $C$ sur $B$, et $r_2$ celle de centre $D$ qui envoie $B$ sur $E$. Leur composition est une symétrie centrale (i.e une rotation d'angle $180^\circ$), qui envoie $C$ sur $E$. Ainsi elle est de centre $M$.
+Oublions presque toute la figure. Soit $M'=r_1(M)$, alors $r_2(M')=M$. Ainsi $AMDM'$ est un losange, avec deux angles droits, donc c'est un carré. En particulier $AMD$ est isocèle rectangle en $M$.
+
+\end{sol}
+
+\begin{exo}{[Théorème de Napoléon]}
+Soit $ABC$ un triangle. Soient $X,Y,Z$ respectivement les trois points tels que les triangles $XBC$, $YCA$ et $ZAB$ soient équilatéraux et extérieurs au triangle $ABC$. Montrer que les centres de ces trois triangles équilatéraux forme un triangle équilatéral.
+
+\end{exo}
+\begin{sol}
+
+\begin{center}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
+\clip(-7.92,-17.42) rectangle (28.16,9.12);
+\fill[line width=1.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (2.94,-3.44) -- (9.06,2.52) -- (0.8384885934447461,4.840075471160766) -- cycle;
+\fill[line width=1.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (9.06,2.52) -- (12.24,-3.08) -- (15.499742261192857,2.4739607840345137) -- cycle;
+\fill[line width=1.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (12.24,-3.08) -- (2.94,-3.44) -- (7.901769145362394,-11.31403625519528) -- cycle;
+\draw [line width=1.pt,color=zzttqq] (2.94,-3.44)-- (9.06,2.52);
+\draw [line width=1.pt,color=zzttqq] (9.06,2.52)-- (0.8384885934447461,4.840075471160766);
+\draw [line width=1.pt,color=zzttqq] (0.8384885934447461,4.840075471160766)-- (2.94,-3.44);
+\draw [line width=1.pt,color=zzttqq] (9.06,2.52)-- (12.24,-3.08);
+\draw [line width=1.pt,color=zzttqq] (12.24,-3.08)-- (15.499742261192857,2.4739607840345137);
+\draw [line width=1.pt,color=zzttqq] (15.499742261192857,2.4739607840345137)-- (9.06,2.52);
+\draw [line width=1.pt,color=zzttqq] (12.24,-3.08)-- (2.94,-3.44);
+\draw [line width=1.pt,color=zzttqq] (2.94,-3.44)-- (7.901769145362394,-11.31403625519528);
+\draw [line width=1.pt,color=zzttqq] (7.901769145362394,-11.31403625519528)-- (12.24,-3.08);
+\begin{scriptsize}
+\draw [fill=ududff] (9.06,2.52) circle (2.5pt);
+\draw[color=ududff] (9.2,2.89) node {$A$};
+\draw [fill=ududff] (2.94,-3.44) circle (2.5pt);
+\draw[color=ududff] (2.36,-3.35) node {$B$};
+\draw [fill=ududff] (12.24,-3.08) circle (2.5pt);
+\draw[color=ududff] (12.42,-3.57) node {$C$};
+\draw [fill=uuuuuu] (0.8384885934447461,4.840075471160766) circle (2.5pt);
+\draw[color=uuuuuu] (0.98,5.21) node {$Z$};
+\draw [fill=uuuuuu] (15.499742261192857,2.4739607840345137) circle (2.5pt);
+\draw[color=uuuuuu] (15.64,2.85) node {$Y$};
+\draw [fill=uuuuuu] (7.901769145362394,-11.31403625519528) circle (2.5pt);
+\draw[color=uuuuuu] (7.44,-11.05) node {$X$};
+\draw [fill=uuuuuu] (4.2794961978149155,1.3066918237202554) circle (2.0pt);
+\draw[color=uuuuuu] (4.42,1.63) node {$D$};
+\draw [fill=uuuuuu] (7.693923048454128,-5.944678751731759) circle (2.0pt);
+\draw[color=uuuuuu] (7.84,-5.61) node {$E$};
+\draw [fill=uuuuuu] (12.266580753730954,0.6379869280115045) circle (2.0pt);
+\draw[color=uuuuuu] (12.4,0.97) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+Formulons l'énoncé en termes de rotations. On a trois rotations $r_1,r_2,r_3$ de centres $X,Y,Z$ d'angle $120^\circ$ et qui envoie respectivement $B$ sur $C$, $C$ sur $A$ et $A$ sur $B$.
+
+\medskip
+
+La composition $r_3\circ r_2\circ r_1$ est une isométrie d'angle $0^\circ$ qui fixe $B$, donc c'est une translation triviale. Montrons que si trois rotations d'angle $120^\circ$, une fois composées donnent l'identité, alors leurs centres forment un triangle isocèle. Le point $X$ est envoyé par $r_2$ sur $X'$, tel que pour un certain point $Z_0$, $XZ_0Y$ et $Z_0X'Y$ soient équilatéraux. Il existe une unique rotation d'angle $120$ qui envoie $X'$ sur $X$, et c'est le point $Z=Z_0$. Ainsi $XYZ$ forme un triangle équilatéral.
+\end{sol}
+
+\begin{exo}
+Soit $A_1A_2A_3$ un triangle. On note $A_i = A_{i+3}$ pour tout $i$. Soit $(P_i)$ une suite de points
+telle que pour tout $i$, il existe un point $Q_i$ tel que le triangle $Q_iP_iP_{i+1}$ est équilatéral direct et a pour centre $A_i$.
+On suppose que $P_{2020} = P_1$. Montrer que $A_1A_2A_3$ est équilatéral.
+\end{exo}
+
+\begin{sol}
+On considère ici encore les rotations d'angles $120^\circ$ degrés centrés en $A_1$, $A_2$, et $A_3$. Leur composition est une translation $\tau$. Si on compose $\tau$ $\frac{2019}{3}$ foison obteinet l'identité, donc cette translation est la traslation de vecteur le vecteur nul. On applique alors le même raisonnement que précédemment pour voir que les centres $A_1,A_2,A_3$ forment un triangle équilatéral.
+\end{sol}
+
+\subsubsection{Homothéties}
+
+\begin{exo}
+Dans un triangle $ABC$, comment tracer un carré $XYZT$ avec $X,Y$ sur $AB$, $Z$ sur $AC$ et $T$ sur $BC$ ?
+\end{exo}
+
+\begin{sol}
+On trace le carré $BCC'B'$ qui se situe en dehors du triangle $ABC$. On considère l'intersection $E$ et $F$ respectivement des segments $AB'$ et $BC$, et des segments $AC'$ et $BC$. L'homothétie de centre $A$ qui envoie $B$ sur $E$ envoie $C$ sur $F$, et envoie le grand carré $BCC'B'$ sur un carré $EFF'E'$ qui satisfait l'énoncé. On construit donc ce carré qui est le seul carré de base $EF$ du même côté que $A$ de la droite $BC$.
+\end{sol}
+
+Cet exercice permet de démontrer le Théorème de Desargues en géométrie projective.
+
+\begin{exo}
+Soient $[A_1B_1],[A_2B_2],[A_3B_3]$ trois segments parallèles. Soient $X,Y,Z$ les intersections respectivement de $A_1A_2$ et $B_1B_2$, de $A_1A_3$ et $B_1B_3$ et enfin de $A_2A_3$ et $B_2B_3$. Montrer que $X,Y,Z$ sont alignés.
+\end{exo}
+
+\begin{sol}
+Soit $h_1$ l'homotétie qui envoie $[A_1B_1]$ sur $[A_2B_2]$, $h_2$ celle qui envoie $[A_2B_2]$ sur $[A_3B_3]$ et $h_3$ celle qui envoie $[A_3B_3]$ sur $[A_1B_1]$. Les centres de ces homothéties sont respectivement $A_1,B_1,C_1$. La composition des trois homothéties fixe $[A_1B_1]$ et préserve les rapports de distance, donc c'est l'identité. 
+
+\medskip
+
+On peut oublier les trois segments. $h_2\circ h_1$ envoie $X$ sur un point $X'$ sur $XY$. Or $h_3$ envoie ce point sur $X$, et $Z$ est sur la droite $XX'=XY$, donc les trois points sont alignés, ce qui conclut. On a au passage montré que si la composition de trois homothéties est triviale, alors leur centres sont alignés.
+\end{sol}
+
+\subsection*{similitudes}
+
+\begin{exo}%{[IMO Shortlist 2000]}
+Soit $ABCD$ un quadrilatère convexe avec $AB$ et $CD$ non parallèles. Soit $X$ un point à l'intérieur de $ABCD$ tel que $\widehat{ADX} = \widehat{BCX} < 90$ et $\widehat{DAX} = \widehat{CBX} < 90$. Soit $Y$ l'intersection des médiatrices de $[AB]$ et $[CD]$. Montrer que $\widehat{AYB} = 2 \widehat{ADX}$
+\end{exo}
+
+\begin{sol}
+\begin{center}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=.5cm,y=.5cm]
+\clip(1.6237152157175927,-11.520931970764797) rectangle (23.834193241949244,4.816819881125126);
+\draw [shift={(10.56,2.04)},line width=1.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-92.27244973278295:0.3693538474428767) arc (-92.27244973278295:-35.962083211335866:0.3693538474428767) -- cycle;
+\draw [shift={(7.48,-0.74)},line width=1.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-94.43243154249498:0.3693538474428767) arc (-94.43243154249498:-38.12206502104788:0.3693538474428767) -- cycle;
+\draw [shift={(6.828581221306834,-9.14375322306773)},line width=1.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (60.109784887047546:0.3693538474428767) arc (60.109784887047546:85.56756845750502:0.3693538474428767) -- cycle;
+\draw [line width=1.pt] (19.96,-4.78)-- (10.56,2.04);
+\draw [line width=1.pt] (10.56,2.04)-- (10.36,-3.);
+\draw [line width=1.pt] (10.36,-3.)-- (19.96,-4.78);
+\draw [line width=1.pt] (10.36,-3.)-- (7.48,-0.74);
+\draw [shift={(10.56,2.04)},line width=1.pt,color=qqwuqq] (-92.27244973278295:0.3693538474428767) arc (-92.27244973278295:-35.962083211335866:0.3693538474428767);
+\draw [shift={(10.56,2.04)},line width=1.pt,color=qqwuqq] (-92.27244973278295:0.2893271804969201) arc (-92.27244973278295:-35.962083211335866:0.2893271804969201);
+\draw [line width=1.pt] (7.48,-0.74)-- (6.828581221306834,-9.14375322306773);
+\draw [shift={(7.48,-0.74)},line width=1.pt,color=qqwuqq] (-94.43243154249498:0.3693538474428767) arc (-94.43243154249498:-38.12206502104788:0.3693538474428767);
+\draw [shift={(7.48,-0.74)},line width=1.pt,color=qqwuqq] (-94.43243154249498:0.2893271804969201) arc (-94.43243154249498:-38.12206502104788:0.2893271804969201);
+\draw [line width=1.pt] (10.36,-3.)-- (6.828581221306834,-9.14375322306773);
+\draw [line width=1.pt,domain=1.6237152157175927:23.834193241949244] plot(\x,{(-29.5886--3.08*\x)/-2.78});
+\draw [line width=1.pt,domain=1.6237152157175927:23.834193241949244] plot(\x,{(-145.5061277498271--13.131418778693167*\x)/-4.36375322306773});
+\draw [line width=1.pt] (10.56,2.04)-- (7.48,-0.74);
+\draw [line width=1.pt] (6.828581221306834,-9.14375322306773)-- (19.96,-4.78);
+\begin{scriptsize}
+\draw [fill=ududff] (10.56,2.04) circle (2.5pt);
+\draw[color=ududff] (10.648260888238546,2.2621224363118944) node {$A$};
+\draw [fill=ududff] (19.96,-4.78) circle (2.5pt);
+\draw[color=ududff] (20.042160408202374,-4.546300151551804) node {$D$};
+\draw [fill=ududff] (10.36,-3.) circle (2.5pt);
+\draw[color=ududff] (10.451272169602346,-2.773401683825995) node {$X$};
+\draw [fill=ududff] (7.48,-0.74) circle (2.5pt);
+\draw[color=ududff] (7.200958312105031,-0.5080314195096829) node {$B$};
+\draw [fill=ududff] (6.828581221306834,-9.14375322306773) circle (2.5pt);
+\draw[color=ududff] (6.770045490088341,-9.42177093779778) node {$C$};
+\draw [fill=uuuuuu] (11.939730077964713,-2.584808863356587) circle (2.0pt);
+\draw[color=uuuuuu] (12.027181918691953,-2.379424246553593) node {$Y$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+Soit $s_1$ la similitude de centre $C$ qui envoie $B$ sur $X$, et $s_2$ celle de centre $D$ qui envoie $X$ sur $A$. Le rapport de ces similitudes sont inverses l'un de l'autre car les triangles $AXD$ et $BXC$ sont semblables. On pose $Y'$ le point de la médiatrice de $AB$ tel que $\widehat{AY'B} = 2\widehat{ADX}$. Soit $r$ la rotation de centre $Y'$ qui envoie $A$ sur $B$. La composition $r\circ s_2\circ s_1$ est une translation car la somme des angles de rotation est nulle. Or le point $A$ est un point fixe de cette transformation, donc c'est l'identité.
+
+\medskip
+
+Oublions une grande partie de la figure: $T=s_1(Y')$ doit être égal à $s_2^{-1}(Y')$, et les triangles $CY'T$ et $DY'T$ sont semblables, et ont un côté de même longueur, donc ils sont isométriques. Ainsi $Y'$ est sur la médiatrice de $DC$, et $Y'=Y$, ce qui conclut.
+
+\end{sol}
+
+\begin{exo}
+Soient $C_1$ et $C_2$ deux cercles de centres respectifs $O_1$ et $O_2$ qui s'intersectent en $A$ et $B$. Soit $C$ l'intersection de la tangeante à $C_2$ en $B$ et $D$ l'intersection de la tangeante à $C_1$ en $B$. Soit $X$ l'intersection de la bissectrice de $\widehat{BAC}$ et $C_1$. Soit $Y$ l'intersection de la bissectrice de $\widehat{BAD}$ et de $C_2$. Soit $P$ et $Q$ les centres des cercles circonsrits respectivement à $ACD$ et $AXY$. Montrer que $PQ$ et $O_1O_2$ sont perpendiculaires.
+\end{exo}
+
+\begin{sol}
+\begin{center}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7cm,y=0.7cm]
+\clip(-4.3,-10.52) rectangle (19.78,6.12);
+\draw [line width=1.pt] (3.54,-2.52) circle (4.17176509405791cm);
+\draw [line width=1.pt] (12.4,-1.58) circle (2.9003999724175977cm);
+\draw [line width=1.pt,domain=-4.3:19.78] plot(\x,{(-17.7816--3.16*\x)/-2.68});
+\draw [line width=1.pt,domain=-4.3:19.78] plot(\x,{(--60.0804-5.7*\x)/-1.74});
+\draw [line width=1.pt,domain=-4.3:19.78] plot(\x,{(-28.80464109329041--5.993958018146566*\x)/3.0103292496236396});
+\draw [line width=1.pt,domain=-4.3:19.78] plot(\x,{(-28.132100002681753--2.5274589169666193*\x)/-2.0306269415850178});
+\draw [line width=1.pt] (8.748008344334822,0.3772830523334906)-- (-1.005158537646321,-6.374754709143081);
+\draw [line width=1.pt] (8.748008344334822,0.3772830523334906)-- (16.362898070729873,-2.7897267794859624);
+\draw [line width=1.pt,domain=-4.3:19.78] plot(\x,{(-17.51107560329229--9.753166881981144*\x)/-6.752037761476572});
+\draw [line width=1.pt,domain=-4.3:19.78] plot(\x,{(-99.42850814157339--7.614889726395051*\x)/3.167009831819453});
+\begin{scriptsize}
+\draw [fill=ududff] (3.54,-2.52) circle (2.5pt);
+\draw[color=ududff] (3.03,-2.14) node {$O_1$};
+\draw [fill=ududff] (9.24,-4.26) circle (2.5pt);
+\draw[color=ududff] (9.56,-4.09) node {$B$};
+\draw [fill=ududff] (12.4,-1.58) circle (2.5pt);
+\draw[color=ududff] (12.91,-1.68) node {$O_2$};
+\draw [fill=uuuuuu] (8.748008344334822,0.3772830523334906) circle (2.0pt);
+\draw[color=uuuuuu] (8.28,0.55) node {$A$};
+\draw [fill=uuuuuu] (2.754050326188256,3.3876123019571303) circle (2.0pt);
+\draw[color=uuuuuu] (2.9,3.71) node {$C$};
+\draw [fill=uuuuuu] (11.275467261301442,2.4079099939185085) circle (2.0pt);
+\draw[color=uuuuuu] (11.42,2.73) node {$D$};
+\draw [fill=uuuuuu] (-1.005158537646321,-6.374754709143081) circle (2.0pt);
+\draw[color=uuuuuu] (-0.98,-5.79) node {$X$};
+\draw [fill=uuuuuu] (16.362898070729873,-2.7897267794859624) circle (2.0pt);
+\draw[color=uuuuuu] (16.5,-2.45) node {$Y$};
+\draw [fill=uuuuuu] (7.2385508809780665,4.8442970154620655) circle (2.0pt);
+\draw[color=uuuuuu] (7.58,5.09) node {$P$};
+\draw [fill=uuuuuu] (8.830667672315396,-10.162250613525961) circle (2.0pt);
+\draw[color=uuuuuu] (8.98,-9.83) node {$Q$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+On reconnaît un cas dégénéré de la configuration du cours d'une similitude $s$ de centre $A$ qui envoie $C_1$ sur $C_2$, envoyant $C$ sur $B$ et $B$ sur $D$. Elle envoie également $O_1$ sur $O_2$.Ainsi la droite $(O_1P)$ est envoyée sur la médiatrice de $[AB]$, qui est la droite $O_1O_2$, elle même envoyée sur la droite $O_2P$ par cette simillitude $s$. Ainsi $\widehat{PO_1O_2} = \widehat{PO_2O_1}$, et le triangle $PO_1O_2$ est isocèle en $P$.
+
+\medskip
+
+L'angle $\widehat{O_2O_1Q}$ est égal à l'angle $\widehat{ACX}$, par le théorème de l'angle au centre. De même on a de l'autre côté $\widehat{O_1O_2Q} = \widehat{ABY}$. Or la similitude $s$ envoie $X$, le pôle sud de $A$ dans $ABC$, sur $Y$ qui est le pôle sud de $A$ dans $ADB$. Ainsi $O_1O_2Q$ est isocèle en $Q$, et $PO_1QO_2$ est un cerf-volant, donc ses diagonales sont perpendiculaires.
+
+\medskip
+
+Le point $X$ est le pôle sud de $A$ dans le triangle $ABC$, et $Y$ est le pôle sud de $A$ dans le triangle $ABD$. Ainsi la similitude $s$ envoie $X$ sur $Y$, donc la droite $QO_1$ sur $QO_2$. Ainsi $\widehat{O_1QO_2} = \widehat{PO_1O_2}$.Soit $Q'$ la deuxième intersection de $O_1Q$ avec $C_1$. On a alors $\widehat{Q'O_1P} = \widehat{O_2O_1Q}$
+
+\end{sol}
+
+\begin{exo}
+Soit $\mathcal{C}_1$ et $\mathcal{C}_2$ deux cercles de centres $O_1$ et $O_2$ qui s'intersectent en $A$ et $B$. Soient $P$ et $Q$ deux points variables respectivement sur $\mathcal{C}_1$ et $\mathcal{C}_2$ de sorte que $B$ soit sur le segment $[PQ]$. Soit $R$ l'intersection de $AO_1$ et $BO_2$, I le centre du cercle inscrit à $PQR$, et $S$ le centre du cercle circonscrit à $PIQ$.
+
+Montrer que le point $S$ varie sur un arc de cercle dont le centre est sur le cercle circonscit à $O_1O_2A$. 
+\end{exo}
+
+\begin{sol}
+\begin{center}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7cm,y=0.7cm]
+\clip(-9.82181818181818,-6.254545454545452) rectangle (12.069090909090901,8.87272727272727);
+\fill[line width=1.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (-3.366363763593756,2.147496644176063) -- (0.5418181818181786,-0.9636363636363632) -- (5.531174616171953,-1.2072694519400735) -- cycle;
+\fill[line width=1.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (5.531174616171953,-1.2072694519400735) -- (7.228847872092667,4.332870349154822) -- (5.487272727272723,1.8363636363636355) -- cycle;
+\fill[line width=1.pt,dash pattern=on 2pt off 2pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (0.9055346347335693,8.213057088630915) -- (1.7003625447293924,2.757517866688103) -- (5.531174616171953,-1.2072694519400735) -- cycle;
+\draw [line width=1.pt] (0.5418181818181786,-0.9636363636363632) circle (4.9953012632616876);
+\draw [line width=1.pt] (5.487272727272723,1.8363636363636355) circle (3.0439496960472416);
+\draw [line width=1.pt,domain=-9.82181818181818:12.069090909090901] plot(\x,{(--17.8080316148731--1.292503355823937*\x)/6.2663637635937555});
+\draw [line width=1.pt,domain=-9.82181818181818:12.069090909090901] plot(\x,{(-2.080397808618594-3.111133007812426*\x)/3.9081819454119344});
+\draw [line width=1.pt,domain=-9.82181818181818:12.069090909090901] plot(\x,{(--10.500847932610277-2.4965067127911866*\x)/-1.7415751448199446});
+\draw [line width=1.pt] (2.000408389821142,2.9048486467139805) circle (5.419946992583762);
+\draw [line width=1.pt,color=zzttqq] (-3.366363763593756,2.147496644176063)-- (0.5418181818181786,-0.9636363636363632);
+\draw [line width=1.pt,color=zzttqq] (0.5418181818181786,-0.9636363636363632)-- (5.531174616171953,-1.2072694519400735);
+\draw [line width=1.pt,color=zzttqq] (5.531174616171953,-1.2072694519400735)-- (-3.366363763593756,2.147496644176063);
+\draw [line width=1.pt,color=zzttqq] (5.531174616171953,-1.2072694519400735)-- (7.228847872092667,4.332870349154822);
+\draw [line width=1.pt,color=zzttqq] (7.228847872092667,4.332870349154822)-- (5.487272727272723,1.8363636363636355);
+\draw [line width=1.pt,color=zzttqq] (5.487272727272723,1.8363636363636355)-- (5.531174616171953,-1.2072694519400735);
+\draw [line width=1.pt,dash pattern=on 2pt off 2pt] (3.1031645036167848,0.27984167956231687) circle (2.847232449960572);
+\draw [line width=1.pt,dash pattern=on 2pt off 2pt,color=zzttqq] (0.9055346347335693,8.213057088630915)-- (1.7003625447293924,2.757517866688103);
+\draw [line width=1.pt,dash pattern=on 2pt off 2pt,color=zzttqq] (1.7003625447293924,2.757517866688103)-- (5.531174616171953,-1.2072694519400735);
+\draw [line width=1.pt,dash pattern=on 2pt off 2pt,color=zzttqq] (5.531174616171953,-1.2072694519400735)-- (0.9055346347335693,8.213057088630915);
+\begin{scriptsize}
+\draw [fill=ududff] (0.5418181818181786,-0.9636363636363632) circle (2.5pt);
+\draw[color=ududff] (0.07818181818181524,-1.0909090909090904) node {$O_1$};
+\draw [fill=ududff] (5.487272727272723,1.8363636363636355) circle (2.5pt);
+\draw[color=ududff] (5.441818181818176,2.4545454545454533) node {$O_2$};
+\draw [fill=uuuuuu] (5.531174616171953,-1.2072694519400735) circle (2.0pt);
+\draw[color=uuuuuu] (5.7963636363636315,-1.4272727272727266) node {$A$};
+\draw [fill=uuuuuu] (2.9,3.44) circle (2.0pt);
+\draw[color=uuuuuu] (2.7963636363636324,4.027272727272726) node {$B$};
+\draw [fill=xdxdff] (-3.366363763593756,2.147496644176063) circle (2.5pt);
+\draw[color=xdxdff] (-3.6581818181818195,2.5181818181818167) node {$P$};
+\draw[color=black] (-9.676363636363634,1.154545454545454) node {$f$};
+\draw [fill=uuuuuu] (7.228847872092667,4.332870349154822) circle (2.0pt);
+\draw[color=uuuuuu] (7.36,4.627272727272725) node {$Q$};
+\draw[color=black] (-9.676363636363634,7.009090909090906) node {$g$};
+\draw [fill=uuuuuu] (2.4656258183367306,-2.4950956258339465) circle (2.0pt);
+\draw[color=uuuuuu] (2.541818181818178,-3.009090909090908) node {$R$};
+\draw [fill=uuuuuu] (0.9055346347335693,8.213057088630915) circle (2.0pt);
+\draw[color=uuuuuu] (1.0327272727272694,8.518181818181814) node {$S$};
+\draw [fill=uuuuuu] (1.7003625447293924,2.757517866688103) circle (2.0pt);
+\draw[color=uuuuuu] (1.2327272727272693,2.8636363636363624) node {$M$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+On remarque tout d'abord que le point $S$ est le pôle Sud de $R$ dans le triangle $APQ$. 
+
+On reconnaît que la similitude centrée en $A$ qui envoie $\mathcal{C}_1$ sur $\mathcal{C}_2$ envoie $P$ sur $Q$. Ainsi $\widehat{QAO_2} = \widehat{PAO_1}$. On reconnaît la construcion du centre de la similitude qui envoie $[PO_1]$ sur $[QO_2]$, qui est un point sur le cercle passant par $O_1,O_2$ et $R$. Ainsi $A,R,P,Q$ sont cocycliques. Ainsi $S$ est le pôle Sud de $A$.
+
+\medskip
+
+Il est ensuite possible de considérer une autre similitude naturelle de centre $A$: celle qui envoie $O_1$ sur $P$ et $O_2$ sur $Q$. Soit $M$ le point qui est envoyé sur $S$. Les points $A,O_1,O_2,M$ sont cocycliques, et le triangle $AMS$, semblable à $AC_1P$ est isocèle en $M$. Ainsi le point $M$ est le centre d'un cercle sur lequel varie $S$. Le point $M$ ne dépend pas de $P$ et $Q$ car c'est le pôle Sud de $A$ dans le triangle $AO_1O_2$.
+\end{sol}
