@@ -32,7 +32,7 @@ Montrer que si un premier \(p\) divise un premier \(q\), alors \(p=q\).
 Soit \(p\) premier et \(n\) naturel. Montrer que soit \(p\) divise \(n\), soit \(p\) et \(n\) sont premiers entre eux.
 
 \subsubsection{Lemme d'Euclide}
-Le lemme d'Euclide s'énonce comme suit:
+Le lemme d'Euclide s'énonce comme suit :
 
 
 \thm[Lemme d'Euclide]
@@ -49,7 +49,7 @@ On va le prouver plus tard, puis ce que la preuve est assez compliquée et techn
 Soit \(a\) entier.
 Montrer que \(5\) divise \(a^2\) si et seulement si \(5\) divise \(a\).
 
-On peut un peut généraliser le lemme d'Euclide:
+On peut un peut généraliser le lemme d'Euclide :
 
 \thm[Lemme d'Euclide (généralisé)]
 
@@ -62,7 +62,7 @@ Soit \(p\) premier et \(a_2 , a_2 , \ldots , a_{n}\) des entiers. Si \(p\) divis
 On va prouver cette généralisation en appliquant le lemme d'Euclide plusieurs fois.
 Si un premier \(p\) divise \(a_2 \times a_2 \times \cdots \times a_{n}\), alors par le lemme d'Euclide, \(p\) divise soit \(a_2\) soit \(a_2 \times a_{3} \times \cdots a_{n}\). Dans le premier cas, on a terminé. Dans le deuxiemme cas, on reapplique le lemme d'Euclide de la meme manière. On a alors que \(p\) divise soit \(a_2\) soit \(a_{3} \times a_{4} \times \cdots \times a_{n}\). Dans le premiér cas, on a terminé, dans le deuxiemme cas, on refait le meme raisonnement. Si on refait ce raisonnement assez de fois, on aura terminé au bound d'un moment.
 
-Remarque: ce raisonnement peut etre rendu plus rigoureux grace a une recurence.
+Remarque : ce raisonnement peut etre rendu plus rigoureux grace a une recurence.
 
 \exo
 Soit \(a\) entier.
@@ -95,7 +95,7 @@ Pour que ce théoréme s'applique aux nombres premiers, on dit qu'un nombre prem
 
 Bien sur, \(12 = 2 \times 2 \times 3 = 2 \times 3 \times 2 = 3 \times 2 \times 2\). On dit que la décomposition en facteurs premiers reste la meme quand on change l'ordre des facteurs, donc quand on dit unique, on veut dire unique a réordonnement pret.
 
-Remarque: on a défini les nombres premiers de manière a ce que \(1\) ne soit pas premier. On peut maintenant en quoi ca nous simplifie la vie: si \(1\) était premier, la décompositoin en facteurs premiers ne serait pas unique: \(6 = 2 \times 3 = 2 \times 3 \times 1 = 2 \times 3 \times 1 \times 1 = 2 \times 3 \times 1 \times 1 \times 1 = \ldots\).
+Remarque : on a défini les nombres premiers de manière a ce que \(1\) ne soit pas premier. On peut maintenant en quoi ca nous simplifie la vie : si \(1\) était premier, la décompositoin en facteurs premiers ne serait pas unique : \(6 = 2 \times 3 = 2 \times 3 \times 1 = 2 \times 3 \times 1 \times 1 = 2 \times 3 \times 1 \times 1 \times 1 = \ldots\).
 
 \exo
 Montrer qu'un premier divise un nombre naturel si et seulement s’il est présent dans sa décomposition en facteurs premiers.
@@ -169,7 +169,7 @@ Supposons par l'absurde qu'il y a un nombre fini de nombres premiers. Disons que
 
 Ce sont \(2, 3, 5, 7, 11, 13\). Un calcul montre que ses nombres sont bien divisibles que par \(1\) et eux memes. Réciproquement, \(4\) n'est pas premier car il est divisible par \(2\) et \(2\not=1\) et \(2\not=4\). De meme, \(6\) est divisible par \(2\), \(8\) est divisible par \(2\), \(9\) est divisible par \(3\), \(10\) est divisible par \(2\), \(12\) est divisible par \(2\), \(14\) est divisible par \(2\) et \(15\) est divisible par \(3\).
 
-Remarque: \(1\) n'est pas un nombre premier par ce qu'il n'a qu'un seul diviseur naturel. Ca peut paraitre bizare de choisir une définition de premier qui exclut \(1\), mais on vera aprés que ca nous simplifie en faite la vie.
+Remarque : \(1\) n'est pas un nombre premier parce qu'il n'a qu'un seul diviseur naturel. Ca peut paraitre bizare de choisir une définition de premier qui exclut \(1\), mais on vera aprés que ca nous simplifie en faite la vie.
 
 \sol
 
@@ -228,7 +228,7 @@ Dans l'autre sens, si \(p\) divise \(n\), alors décomposons \(n\) en facteurs p
 Pour la premiére sous question, dans un sens, si un nombre naturel \(n\) est un carré parfait, posons \(n = a^2\). Soit alors \(a = p_2 p_2 \cdots p_{l}\) la décomposition de \(a\) en facteurs premiers. On a
 \[n = a \times a = \left(p_2 p_2 \cdots p_{l}\right) \times \left(p_2 p_2 \cdots p_{l}\right)\]. Pour chaque premier qui apparait dans cette décomposition, soit \(x\) le nombre de fois qu'il apparait dans un des facteurs. Il apparait alors \(2x\) fois dans toute la décomposition, un nombre pair de fois.
 
-Dans l'autre sens, si chaque facteur premier apparait un nombre pair de fois dans la décomposition en facteurs premiers de \(n\), on peut regrouper ses facteurs premiers:
+Dans l'autre sens, si chaque facteur premier apparait un nombre pair de fois dans la décomposition en facteurs premiers de \(n\), on peut regrouper ses facteurs premiers :
 \[n = \left(p_2 p_2\right)\left(p_2 p_2\right) \cdots \left(p_{l} p_{l}\right)\]
 n a alors
 \[n = \left(p_2 p_2 \cdots p_{l}\right) \left(p_2 p_2 \cdots p_{l}\right) = \left(p_2 p_2 \cdots p_{l}\right)^2\]
@@ -237,7 +237,7 @@ comme voulu.
 Poul la deuxiemme sous question, on procéde de la meme manière.
 Dans un sens, si un nombre naturel \(n\) est
 une puissance \(k^{e}\), posons \(n=a^{k}\).
-Décomposons \(a\) en facteurs premiers: \(a = p_2 p_2 \cdots p_{l}\). On a alors \(n = a^{k} = a \times a \times \cdots \times a = \left(p_2 p_2 \cdots p_{l}\right) \left(p_2 p_2 \cdots p_{l}\right) \cdots \left(p_2 p_2 \cdots p_{l}\right)\), avec \(k\) fois \(p_2 p_2 \cdots p_{l}\). Si un facteur premier apparait dans cette décomposition, il apparait dans un des \(k\) facteurs. Soit \(x\) le nombre de fois qu'il apparait dans ce facteur. Il apparait alors \(kx\) fois dans toute la décomposition, c'est bien un nombre divisible par \(k\).
+Décomposons \(a\) en facteurs premiers : \(a = p_2 p_2 \cdots p_{l}\). On a alors \(n = a^{k} = a \times a \times \cdots \times a = \left(p_2 p_2 \cdots p_{l}\right) \left(p_2 p_2 \cdots p_{l}\right) \cdots \left(p_2 p_2 \cdots p_{l}\right)\), avec \(k\) fois \(p_2 p_2 \cdots p_{l}\). Si un facteur premier apparait dans cette décomposition, il apparait dans un des \(k\) facteurs. Soit \(x\) le nombre de fois qu'il apparait dans ce facteur. Il apparait alors \(kx\) fois dans toute la décomposition, c'est bien un nombre divisible par \(k\).
 
 Dans l'autre sens, si chaque facteur premier apparait un nombre pair de fois dans la décomposition de \(n\), alors cette décomposition peut etre écrite comme \[n = \left(p_2 p_2 \cdots p_2\right) \left(p_2 p_2 \cdots p_2\right) \cdots \left(p_{l} p_{l} \cdots p_{l}\right)\] et puis réarangée comme \[n = \left(p_2 p_2 \cdots p_{l}\right) \left(p_2 p_2 \cdots p_{l}\right) \cdots \left(p_2 p_2 \cdots p_{l}\right) = \left(p_2 p_2 \cdots p_{l}\right)\] n est donc bien une puissance \(k^{e}\), ce qu'il falait démontrer.
 

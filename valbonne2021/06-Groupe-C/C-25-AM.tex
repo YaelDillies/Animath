@@ -264,7 +264,7 @@ Montrons maintenant que si $L$ est un langage accepté par un automate $\mathcal
 
 Soit $q_0$ l'état initial. Pour chaque paire d'autres états $q$ et $r$, on considère l'automate obtenu en retirant de $\mathcal{A}$ l'état $q_0$ et toutes les transitions en partant ou y aboutissant, en nommant $q$ initial et $r$ final. Le langage accepté par cet automate modifié est régulier par hypothèse de récurrence (il y a un état de moins). Notons-le $L_{qr}$.
 
-Dans l'automate $\mathcal{A}$, un chemin de $q_0$ vers un état final $f$ prend forcément la forme de la  concaténation d'un certain nombre éventuellement nul de boucles autour de $q_0$ ne passant pas par $q_0$ en dehors de leurs extrémités, puis d'un chemin de $q_0$ vers $f$ ne passant pas par $q_0$. Dès lors, le langage accepté par $\mathcal{A}$ est
+Dans l'automate $\mathcal{A}$, un chemin de $q_0$ vers un état final $f$ prend forcément la forme de la concaténation d'un certain nombre éventuellement nul de boucles autour de $q_0$ ne passant pas par $q_0$ en dehors de leurs extrémités, puis d'un chemin de $q_0$ vers $f$ ne passant pas par $q_0$. Dès lors, le langage accepté par $\mathcal{A}$ est
 \[
 \left( (\bigcup_{a\in\Sigma : \delta(q_0,a)=q_0} a) \cup
 (\bigcup_{\substack{a\in\Sigma,\,q=\delta(q_0,a)\\ b\in \Sigma,\, r\in Q: \delta(r,b)=q_0}} aL_{qr}b)
@@ -644,7 +644,7 @@ auto]
 
 D'une part, si un nombre est somme de deux nombres odieux, le triplet des représentations de ces deux nombres odieux et du nombre lui-même est accepté par l'automate du point précédent, donc la représentation du nombre lui-même est acceptée par cet automate-ci. D'autre part, si une représentation est acceptée par cet automate-ci, en lisant les étiquettes des mêmes flèches dans l'automate précédent, les deux premières composantes fournissent des représentations de deux nombres qui sont odieux et ont la somme voulue. Donc cet automate est bien celui cherché.
 
-\item Puisqu'on a un automate qui accepte exactement les représentations des nombres cherchés, on peut trouver son langage, ce qui répondra à la question. La méthode décrite dans la preuve du théorème de Kleene est une façon de faire, ce  n'est pas la seule. On peut également déterminiser l'automate et le simplifier en espérant avoir un résultat suffisamment simple pour que le langage puisse en être déduit. Tous ces calculs peuvent se faire à la main, mais aussi par ordinateur. On trouvera que l'automate précédent est équivalent à l'automate suivant : 
+\item Puisqu'on a un automate qui accepte exactement les représentations des nombres cherchés, on peut trouver son langage, ce qui répondra à la question. La méthode décrite dans la preuve du théorème de Kleene est une façon de faire, ce n'est pas la seule. On peut également déterminiser l'automate et le simplifier en espérant avoir un résultat suffisamment simple pour que le langage puisse en être déduit. Tous ces calculs peuvent se faire à la main, mais aussi par ordinateur. On trouvera que l'automate précédent est équivalent à l'automate suivant : 
 
 \begin{tikzpicture}
 [scale=0.8,

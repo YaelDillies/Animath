@@ -18,7 +18,7 @@ On applique ensuite l'IAG au rang $2$ ce qui démontre $I_{2n}$. \\ Montrons à 
 
 Soit $n \in \mathbb{N}$. On considère deux listes de réels $a_1, \dots, a_n$ et $b_1, \dots, b_n$. \\ Alors, $(a_1^2+\dots + a_n^2)(b_1^2+ \dots b_n^2) \geq (a_1b_1 + \dots + a_nb_n)^2$, avec égalité si les listes sont proportionnelles. 
 
-\preuve On peut démontrer cette inégalité par le calcul. \\ On calcul ainsi la différence des deux termes. 
+\preuve On peut démontrer cette inégalité par le calcul. \\ On calcule ainsi la différence des deux termes. 
 \begin{align*}
 (a_1^2+\dots + a_n^2)(b_1^2+ \dots b_n^2)-(a_1b_1 + \dots + a_nb_n)^2 &= \sum_{1\leq i, j \leq n} a_i^2b_j^2 - \sum_{1 \leq i, j \leq n} a_ia_jb_ib_j \\
 &= \frac{1}{2} \cdot (\sum_{1\leq i, j \leq n} a_i^2b_j^2 + \sum_{1\leq i, j \leq n} a_j^2b_i^2 - \sum_{1 \leq i, j \leq n} 2a_ia_jb_ib_j \\
@@ -28,7 +28,7 @@ Le cas d'égalité en découle naturellement.
 
 \pro[Inégalité des mauvais élèves] Soit $n\in\mathbb{N}$, $a_1, \dots, a_n$ et $b_1, \dots, b_n$ des réels.\\ Alors, $\sum_{k=1}^n\frac{a_k^2}{b_k} \geq \frac{(\sum_{k=1}^na_k)^2}{\sum_{k=1}^n b_k}$
 
-\preuve Montrons cette inégalité dans les cas de réels positifs. \\ D'après l'inégalité de Cauchy-Schwarz,  $(\sum_{k=1}^n\frac{a_k^2}{b_k})\cdot (\sum_{k=1}^nb_k) \geq (\frac{a_k}{\sum_{k=1}^n\sqrt{b_k}}\cdot \sqrt{b_k})^2$
+\preuve Montrons cette inégalité dans les cas de réels positifs. \\ D'après l'inégalité de Cauchy-Schwarz, $(\sum_{k=1}^n\frac{a_k^2}{b_k})\cdot (\sum_{k=1}^nb_k) \geq (\frac{a_k}{\sum_{k=1}^n\sqrt{b_k}}\cdot \sqrt{b_k})^2$
 
 \exo Montrer que $\forall a, b >0, a^3 + b^3 + a+b \geq 4ab$
 
@@ -55,7 +55,7 @@ Montrer que $\frac{a}{b+c} + \frac{b}{a+c} + \frac{c}{a+b} \geq \frac{3}{2} $
 
 \exo Soit $a, b, c$ strictement positifs. Montrer que $\frac{a}{bc}+\frac{b}{ac}+\frac{c}{ab} \geq \frac{2}{a}+\frac{2}{b}-\frac{2}{c}$
 
-\exo Soit $a, b, c, d$ tels que $0\leq a\leq  c \leq d$. Montrer que $ab^3+bc^3+cd^3+da^3 \geq a^2b^2 + b^2c^2+c^2d^2+a^2d^2$
+\exo Soit $a, b, c, d$ tels que $0\leq a\leq c \leq d$. Montrer que $ab^3+bc^3+cd^3+da^3 \geq a^2b^2 + b^2c^2+c^2d^2+a^2d^2$
 \sol On applique l'IAG, ici dans le cas $n=4$
 \sol On écrit $a^2+b^2+c^2 = \frac{a^2+b^2}{2}+\frac{b^2+c^2}{2}+\frac{a^2+c^2}{2}$, puis on applique trois fois l'IAG dans le cas $n=2$. 
 

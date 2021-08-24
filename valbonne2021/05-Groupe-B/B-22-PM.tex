@@ -5,7 +5,7 @@
 Le concept d'invariant n'est que rarement utilisé dans des problèmes "statiques", où la situation est immuable. Par contre, certains problèmes sont "dynamiques" : il s'agit de passer d'une configuration initiale à une configuration finale, en respectant certaines règles sur les transformations effectuées. Dans ce cas, un invariant est une quantité que l'on peut associer à chaque état du problème et qui ne varie jamais lorsqu'on applique une des transformations autorisées. Si les quantités associées aux configurations initiale et finale sont différentes, on a alors démontré l'impossibilité de passer de l'une à l'autre.\\
 
 \begin{exo}
-On se donne le tableau rempli de signes suivant:
+On se donne le tableau rempli de signes suivant :
 \begin{align*}
 & ++-+\\
 & --++\\
@@ -57,7 +57,7 @@ Les nombres entiers de $1$ à $2018$ sont écrits au tableau. Une opération con
 \end{exo}
 
 \begin{exo}
-On a $2018$ piles de jetons. Sur la $i$-ème pile, il y a $p_i$ jetons, où $p_i$ est le $i$-ème nombre premier. On s'autorise:
+On a $2018$ piles de jetons. Sur la $i$-ème pile, il y a $p_i$ jetons, où $p_i$ est le $i$-ème nombre premier. On s'autorise :
 \begin{itemize}
 \item
 à séparer une pile en deux autres et ajouter un jeton à l'une des deux piles ainsi créées.
@@ -118,7 +118,7 @@ Des entiers positifs en nombre fini sont écrits de gauche à droite sur une lig
 \end{exo}
 
 \begin{exo}
-Les participants du stage Animath s'appellent $C_1,\ldots,C_n$ et font la file devant le restaurant selon les règles suivantes:
+Les participants du stage Animath s'appellent $C_1,\ldots,C_n$ et font la file devant le restaurant selon les règles suivantes :
 \begin{itemize}
 \item
 Les animatheurs choisissent l'ordre initial des participants.
@@ -220,9 +220,9 @@ On peut remarquer que le maximum des entiers reste constant, et que leur somme a
 \end{sol}
 
 \begin{sol}
-Tout d'abord, montrons par récurrence que les animatheurs peuvent récolter $2^n-n-1$ euros. La construction est la suivante:\\
+Tout d'abord, montrons par récurrence que les animatheurs peuvent récolter $2^n-n-1$ euros. La construction est la suivante :\\
 Les participants sont placés dans l'ordre inverse ($C_n$ est en premier, puis $C_{n-1}$, etc). Dans un premier temps, les animatheurs remettent en ordre croissant les $n-1$ derniers élèves de la file, de la manière qui leur fait gagner le plus d'argent. On a donc l'ordre $C_n, C_1, C_2,\ldots, C_{n-1}$. Ensuite, ils font avancer une fois chaque participant de $1$ à $n-1$. On a donc l'ordre $C_{n-1},\ldots, C_2, C_1, C_n$. Enfin, ils remettent à nouveau les $n-1$ premiers éléments de la file dans l'ordre croissant. En notant $S_n$ la quantité d'argent obtenue sur une file de $n$ participants par cette méthode, on a $S_n=2S_{n-1}+n-1$ et $S_1=0$. On a donc bien $S_n=2^n-n-1$.\\
-Montrons à présent qu'on ne peut récolter plus de $2^n-n-1$ euros:\\
+Montrons à présent qu'on ne peut récolter plus de $2^n-n-1$ euros :\\
 Si $C_i$ avance, il passe devant $i$ autres participants. En particulier, il passe devant un participant qui a un numéro supérieur au sien. Dès lors, à une configuration $x$ de la file, associons la quantité
 \begin{equation*}
 Q(x)=\sum_{\substack{i,j\in\{1,\ldots, n\}\\ i<j}}2^i\cdot\delta_{ij} \textrm{ avec } \delta_{ij}=
