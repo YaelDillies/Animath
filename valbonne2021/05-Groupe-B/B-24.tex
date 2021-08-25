@@ -180,31 +180,31 @@
 	Nous allons montrer qu'une telle case n'existe pas.
 
 	\underline{Méthode 1} : On colorie l'échiquier en trois couleurs, bleu, blanc et rose, comme ci-dessous.
-	% \begin{center}
-	% 	\begin{tikzpicture}[scale=0.8]
-	% 	\draw (0,0) grid (6,6);
-	% 	\foreach \i in {0,\dots,5}{
-	% 			\pgfmathtruncatemacro{\j}{5-\i}
-	% 			\draw [fill=cyan] (\i,\j)--(\i,\j+1)--(\i+1,\j+1)--(\i+1,\j)--(\i,\j);
-	% 		}
-	% 	\foreach \i in {0,\dots,1}{
-	% 			\pgfmathtruncatemacro{\j}{1-\i}
-	% 			\draw [fill=cyan] (\i,\j)--(\i,\j+1)--(\i+1,\j+1)--(\i+1,\j)--(\i,\j);
-	% 		}
-	% 	\foreach \i in {0,\dots,1}{
-	% 			\pgfmathtruncatemacro{\j}{1-\i}
-	% 			\draw [fill=cyan] (5-\i,5-\j)--(5-\i,5-\j+1)--(5-\i+1,5-\j+1)--(5-\i+1,5-\j)--(5-\i,5-\j);
-	% 		}
-	% 	\foreach \i in {0,\dots,3}{
-	% 			\pgfmathtruncatemacro{\j}{3-\i}
-	% 			\draw [fill=magenta] (\i,\j)--(\i,\j+1)--(\i+1,\j+1)--(\i+1,\j)--(\i,\j);
-	% 		}
-	% 	\foreach \i in {0,\dots,3}{
-	% 			\pgfmathtruncatemacro{\j}{3-\i}
-	% 			\draw [fill=magenta] (5-\i,5-\j)--(5-\i,5-\j+1)--(5-\i+1,5-\j+1)--(5-\i+1,5-\j)--(5-\i,5-\j);
-	% 		}
-	% \end{tikzpicture}
-	% \end{center}
+	\begin{center}
+		\begin{tikzpicture}[scale=0.8]
+		\draw (0,0) grid (6,6);
+		\foreach \i in {0,...,5}{
+				\pgfmathtruncatemacro{\j}{5-\i}
+				\draw [fill=cyan] (\i,\j)--(\i,\j+1)--(\i+1,\j+1)--(\i+1,\j)--(\i,\j);
+			}
+		\foreach \i in {0,...,1}{
+				\pgfmathtruncatemacro{\j}{1-\i}
+				\draw [fill=cyan] (\i,\j)--(\i,\j+1)--(\i+1,\j+1)--(\i+1,\j)--(\i,\j);
+			}
+		\foreach \i in {0,...,1}{
+				\pgfmathtruncatemacro{\j}{1-\i}
+				\draw [fill=cyan] (5-\i,5-\j)--(5-\i,5-\j+1)--(5-\i+1,5-\j+1)--(5-\i+1,5-\j)--(5-\i,5-\j);
+			}
+		\foreach \i in {0,...,3}{
+				\pgfmathtruncatemacro{\j}{3-\i}
+				\draw [fill=magenta] (\i,\j)--(\i,\j+1)--(\i+1,\j+1)--(\i+1,\j)--(\i,\j);
+			}
+		\foreach \i in {0,...,3}{
+				\pgfmathtruncatemacro{\j}{3-\i}
+				\draw [fill=magenta] (5-\i,5-\j)--(5-\i,5-\j+1)--(5-\i+1,5-\j+1)--(5-\i+1,5-\j)--(5-\i,5-\j);
+			}
+	\end{tikzpicture}
+	\end{center}
 	
 
 	Supposons que la case initiale cherchée existe.
@@ -218,16 +218,16 @@
 
 
 	\underline{Méthode 2} : on colorie l'échiquier en deux couleurs :
-	% \begin{center}
-	% 	\begin{tikzpicture}[scale=0.8]
-	% 	\draw (0,0) grid (6,6);
-	% 	\foreach \i in {0,\dots,2}{
-	% 			\foreach \j in {0,\dots,2}{
-	% 					\draw [fill=cyan] (2*\i,2*\j)--(2*\i,2*\j+1)--(2*\i+1,2*\j+1)--(2*\i+1,2*\j)--(2*\i,2*\j);
-	% 				}
-	% 		}
-	% 	\end{tikzpicture}
-	% \end{center}
+	\begin{center}
+		\begin{tikzpicture}[scale=0.8]
+		\draw (0,0) grid (6,6);
+		\foreach \i in {0,...,2}{
+				\foreach \j in {0,...,2}{
+						\draw [fill=cyan] (2*\i,2*\j)--(2*\i,2*\j+1)--(2*\i+1,2*\j+1)--(2*\i+1,2*\j)--(2*\i,2*\j);
+					}
+			}
+		\end{tikzpicture}
+	\end{center}
 	
 
 	Un saut de deux cases partant d'une case bleue ne peut arriver que sur une autre case bleue. Dès lors, à toute case bleue on peut associer une autre case bleue qui lui est adjacente dans le parcours, sauf si cette case est la case de départ ou d'arrivée. Pour éviter une contradiction, il faut donc que la case de départ ou d'arrivée soit bleue (puisqu'on a un nombre impair de case bleues).

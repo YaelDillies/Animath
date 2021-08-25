@@ -2,15 +2,18 @@
 Considérons $4n$ points dans le plan trois à trois non alignés. Montrer que l'on peut former $n$ quadrilatères non croisés disjoints dont les sommets sont ces points
 \end{exo}
 
+
 \begin{exo}
 Soit $n\ge 1$ : on place dans le plan $2n$ points, trois quelconques non alignés. On en colorie $n$ en bleu et $n$ en rouge. Montrer qu’il est possible de tracer $n$ segments qui ne se croisent pas, chaque segment reliant un point bleu à un point rouge, de telle manière que chaque point soit utilisé une seule fois.
 \end{exo}
+
 
 \begin{exo}
 On considère $2021$ droites du plan, deux à deux non parallèles et trois à trois non concourantes. On appelle E l’ensemble de leurs points d’intersection. On veut attribuer une couleur à chacun des points de E de sorte que deux quelconques de ces points qui appartiennent à une même droite et dont le segment qui les relient ne contient aucun autre point de E, soient de couleurs différentes.
 
 Combien faut-il au minimum de couleurs pour pouvoir réaliser une telle coloration ?
 \end{exo}
+
 
 \begin{exo}
 (Théorème de Helly en dimension $2$) On considère quatre parties convexes du plan telles que l’intersection de trois d’entre elles est toujours non vide.
@@ -20,14 +23,17 @@ $a)$ Montrer que l’intersection des quatre convexes est non vide.
 $b)$ Le théorème reste-t-il vrai en remplaçant $4$ par $n \ge 4$ ?
 \end{exo}
 
+
 \begin{exo}
 Soit $A_1,\ldots,A_n$ un polygone convexe fixé. On considère $X$ à l’intérieur du polygone. Pour tout $i$, on note $B_i$ la deuxième intersection de $(A_iX)$ avec le bord du polygone. Montrer qu’il est possible de choisir $X$ de telle manière que pour tout $i$ :
 $$\frac{XA_i}{XB_i}\le 2.$$
 \end{exo}
 
+
 \begin{exo}
 On dit qu’un ensemble de points du plan est \textit{obtus} lorsque trois points quelconques de cet ensemble sont toujours les sommets d’un triangle obtus. Prouver que tout ensemble de $n$ points du plan, trois quelconques jamais alignés, contient un sous-ensemble \textit{obtus} d’au moins $\sqrt n$ éléments.
 \end{exo}
+
 
 \begin{exo}
 (IMO $1995,P3$) Trouver tous les entiers $n > 3$ pour lesquels il existe $n$ points $A_1, \dots, A_n$
@@ -38,21 +44,24 @@ du plan et des réels $r_1, \dots, r_n$ tels que :
 \end{enumerate}
 \end{exo}
 
+
 \begin{exo}
 (Problème de la galerie d’art) Soit $\mathcal{P}$ un polygone non croisé (pas forcément convexe) à $n\ge 3$ sommets. Montrer qu’il existe un ensemble $\mathcal{A}$ de $\lfloor\frac n3\rfloor$ sommets de $\mathcal{P}$ tel que pour tout $X$ à l’intérieur de $\mathcal{P}$ il existe un point $C\in\mathcal{A}$ tel que le segment $[CX]$ soit entièrement à l’intérieur de $\mathcal{P}$.
 \end{exo}
+
 
 \begin{exo}
 (IMO SL 2019 C4)
 
 Sur une plaine plate à Camelot, le roi Arthur construit un labyrinthe $\mathfrak{L}$ constitué de $n$ droites deux-à-deux non parallèles et trois-à-trois non concourantes. Pour chaque mur, Merlin colorie un des côtés en rouge et l'autre en bleu.
 
-A l'intersection de deux murs, il y a $4$ coins: deux coins où un côté rouge et un côté bleu s'intersectent, un coin où deux côtés rouges s'intersectent, et un coin où deux côtés bleus s'intersectent. A cette intersection, il existe une porte reliant les deux coins opposés où des côtés de couleurs différentes s'intersectent.
+À l'intersection de deux murs, il y a $4$ coins : deux coins où un côté rouge et un côté bleu s'intersectent, un coin où deux côtés rouges s'intersectent, et un coin où deux côtés bleus s'intersectent. A cette intersection, il existe une porte reliant les deux coins opposés où des côtés de couleurs différentes s'intersectent.
 
 Après que Merlin a colorié les murs, Morgane place des chevaliers dans le labyrinthe. Les chevaliers peuvent marcher à travers les portes, mais pas à travers les murs.
 
-Soit $k(\mathfrak{L})$ le plus grand entier $k$ tel que: quelle que soit la façon dont Merlin colorie le labyrinthe $\mathfrak{L}$, Morgane peut toujours placer $k$ chevaliers tels que deux d'entre eux ne peuvent jamais se rencontrer. A $n$ fixé, quelles peuvent être les valeurs de $k(\mathfrak{L})$ pour des labyrinthes $\mathfrak{L}$ constitués de $n$ droites ?
+Soit $k(\mathfrak{L})$ le plus grand entier $k$ tel que : quelle que soit la façon dont Merlin colorie le labyrinthe $\mathfrak{L}$, Morgane peut toujours placer $k$ chevaliers tels que deux d'entre eux ne peuvent jamais se rencontrer. A $n$ fixé, quelles peuvent être les valeurs de $k(\mathfrak{L})$ pour des labyrinthes $\mathfrak{L}$ constitués de $n$ droites ?
 \end{exo}
+
 
 \begin{exo}
 (IMO SL 2018 C7)
@@ -62,11 +71,13 @@ Soient $2018$ cercles dans le plan, deux-à-deux concourants et non tangents, et
 Montrer que si un cercle contient au moins $2061$ points jaunes, alors il existe une région dont tous les sommets sont jaunes.
 \end{exo}
 
+
 \begin{sol}
 On utilise ici une technique classique dans les problèmes de géométrie combinatoire: quitte à faire une rotation, on peut considérer que tous les points ont une abscisse distincte, on les regarde alors par abscisse croissante.
 
 Si les points triés comme ceci sont $A_1,\ldots,A_{4n}$, on considère des quadrilatères non croisés formés par les $A_{4k+1},A_{4k+2},A_{4k+3},A_{4k+4}$ ($1\le k\le n$). Ces quadrilatères sont compris entièrement entre les abscisses de $A_{4k+1}$ et $A_{4k+4}$ et sont alors deux-à-deux disjoints.
 \end{sol}
+
 
 \begin{sol}
 On propose deux solutions: une solution utilisant des techniques classiques de géométrie combinatoire et une solution courte mais astucieuse.
@@ -84,11 +95,13 @@ On propose deux solutions: une solution utilisant des techniques classiques de g
 \underline{Solution 2:} Soit $\mathcal{T}$ un tracé de $n$ segments entre des points bleus et rouges, de façon à ce que chaque point appartienne à un unique segment. On définit $p(\mathcal{T})$ comme la somme des longueurs des segments de $\mathcal{T}$. L'ensemble de ces tracés $\mathcal{T}$ étant fini, il en existe un $\mathcal{T}_0$ minimisant $p(\mathcal{T})$. Mais alors si $[B_1,R_1]$ et $[B_2,R_2]$ sont deux segments distincts de $\mathcal{T}_0$ qui s'intersectent (avec les $B_i$ bleus et les $R_i$ rouges), on peut les remplacer par $[B_1,R_2]$ et $[B_2,R_1]$ qui ne s'intersectent pas et dont on vérifie aisément que la somme des longueurs est strictement inférieure à celle d'avant (faire un dessin et appliquer l'inégalité triangulaire $2$ fois). Ainsi, c'est absurde et les segments de $\mathcal{T}_0$ ne s'intersectent pas.
 \end{sol}
 
+
 \begin{sol}
 Tout d'abord, remarquons qu'il est nécessaire d'avoir au moins $3$ couleurs pour obtenir une telle coloration. En effet, on montre facilement par récurrence sue le nombre de droites que la configuration contient au moins un triangle formé par les droites (c'est vrai pour $n=3$, et si on rajoute une droite, soit elle laisse le triangle intact soit elle le sépare en un quadrilatère et un triangle).
 
 Montrons que $3$ couleurs suffit. Comme dans de nombreux autres exos, on effectue une rotation du plan afin qu'aucune droite ne soit verticale, on trie les points d'intersection par abscisse croissante $A_1,\ldots,A_n$ (où $n=\dbinom{2021}2$) et on les colorie dans ce même ordre. A chaque étape, on peut toujours colorier le point considéré en une couleur valide puisque s'il est le point d'intersection de $(d)$ et $(d')$, les seules contraintes sur la couleur du point sont celles données par le point à sa gauche sur $(d)$ et celui à sa gauche sur $(d')$, et dans tous les cas on peut choisir une couleur qui convient.
 \end{sol}
+
 
 \begin{sol}
 \begin{enumerate}
@@ -102,11 +115,13 @@ Montrons que $3$ couleurs suffit. Comme dans de nombreux autres exos, on effectu
 \end{enumerate}
 \end{sol}
 
+
 \begin{sol}
 La condition $\frac{XA_i}{XB_i}\le2$ équivaut à $\frac{A_iX}{A_iB_i}\le \frac 23$, ce qui revient à dire que $X$ est dans l’image du polygone par l’homothétie de centre $A_i$ et de rapport $\frac 23$. On note $P_i$ cette image. Alors $P_i$ est un polygone convexe, et il suffit de vérifier :
 $$\cap_{i=1}^nP_i \ne \emptyset. $$
 D’après le théorème de Helly, il suffit de vérifier que l’intersection de trois $P_i$ n’est jamais vide. C’est vrai car pour tous $i$, $j$ et $k$ le centre de gravité de $A_iA_jA_k$ se trouve dans $P_i$, $P_j$ et $P_k$.
 \end{sol}
+
 
 \begin{sol}
 Encore une fois, on effectue une rotation du plan pour que les abscisses des points soient toujours distinctes. Soient $(x_1,y_1),\ldots,(x_n,y_n)$ les points avec $(x_i)$ croissante. On rappelle le théorème d'Erdös-Szekeres:
@@ -124,6 +139,7 @@ Notamment, ce théorème appliqué à $a=b$ donne que toute suite de taille $n^2
 On peut vérifier facilement (par un produit scalaire par exemple) que les points correspondant forment alors le sous-ensemble \textit{obtus} cherché.
 \end{sol}
 
+
 \begin{sol}
 Si on a quatre points $A_i,A_j,A_k,A_l$ qui forment un quadrilatère convexe dans cet ordre, en notant $\mathcal{A}$ l'aire, on a
 $$\mathcal{A}(A_iA_jA_kA_l) = \mathcal{A}(A_iA_jA_k) + \mathcal{A}(A_kA_lA_i) = \mathcal{A}(A_jA_kA_l)+\mathcal{A}(A_lA_iA_j)$$
@@ -140,6 +156,7 @@ ce qui donne $r_1+r_2+r_3+3r_5=0$. De même, on a $r_2+r_3+r_4+3r_5=0$ d'où $r_
 
 La seule valeur de $n$ qui convient est donc $n=4$.
 \end{sol}
+
 
 \begin{sol}
 On triangule $\mathcal{P}$ en $n-2$ triangles. On montre par récurrence sur $n$ que l'on peut colorier les sommets de $\mathcal{P}$ en $3$ couleurs afin que chacun des triangles ait un sommet de chaque couleur. Pour $n=3$, c'est évident. Si le résultat est vrai pour $n-1$, on remarque que comme il y a $n$ arêtes de $\mathcal{P}$ et $n-2$ triangles, un des triangles possède deux arêtes de $\mathcal{P}$ comme côtés, elles sont nécessairement consécutives et ont un sommet $X$ en commun. On applique alors l'hypothèse de récurrence à $\mathcal{P}$ auquel on a enlevé $X$, puis lorsque l'on rajoute $X$ il n'y a que $2$ contraintes à respecter et on peut colorier $X$ de la façon voulue.

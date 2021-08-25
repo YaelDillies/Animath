@@ -1,0 +1,108 @@
+\author{Aurélien -- 19 août 2021}
+
+\subsubsection{Configurations remarquables}
+
+L'idée du TD est de montrer comment il est possible de guider une chasse aux angles si on a en tête des configurations récurrentes et qu'on arrive (c'est très dur) à les reconnaître dans un exercice. Il est alors possible de redémontrer le résultat dans le cas particulier en question ou d'invoquer le résultat comme une propriété connue.
+
+On utilisera dans ce TD trois configurations remarquables:
+\begin{itemize}
+    \item Parallèles - anti-parallèles
+    \item Pôle Sud
+    \item Théorème de Miquel
+\end{itemize}
+
+Ces trois configurations ont été vues plus tôt dans la semaine et se prouvent en chasse aux angles. En donner des preuves ici serait long et fastidieux, car beaucoup de cas sont à traiter disjointement à moins d'employer le formalisme des angles entre droites, que nous allons éviter. C'est cependant un bon exercice de chasse aux angles de reprouver ces résultats dans différentes configurations.
+
+
+\paragraph{Parallèles - anti-parallèles}
+
+Par rapport à deux droites $g$ et $h$, on définit que $a$ et $b$ sont anti-parallèles si et seulement si les points $a\cap g, a\cap h, b\cap g, b\cap h$ sont cocycliques.
+
+Cette terminologie vient du fait que si on avait $a$ et $b$ parallèle, elles feraient les mêmes angles par avec $g$, et les mêmes angles avec $h$. Ici un phénomène semblable est à observer: les angles avec $g$ et $h$ sont retrouvés à l'identique entre $a$ et $b$, mais ils sont échangés. L'angle entre $a$ et $g$ est identique à celui entre $b$ et $h$, et celui entre $a$ et $h$ est identique à celui entre $b$ et $g$.
+
+De ce constat vient la propriété fondamentale des parallèles - anti-parallèles, qu'on démontrera par chasse aux angles. On se place avec $g$ et $h$ droites de référence, parmi les trois assertions suivantes, si deux sont vraies alors la troisième est vraie également:
+
+\begin{itemize}
+    \item $a$ est anti-parallèle à $b$
+    \item $b$ est anti-parallèle à $c$
+    \item $a$ est parallèle à $c$
+\end{itemize}
+
+Ceci ce réécrit, étant donnés trois points alignés $A,B,C$ sur une droite de référence $g$ et trois points alignés $X,Y,Z$ sur une autre droite de référence $h$, en nommant $a=(AX)$, $b=(BY)$, $a=(CZ)$, on obtient que si parmi les propositions suivantes deux sont vraies la troisième également:
+
+\begin{itemize}
+    \item $A,B,X,Y$ sont cocycliques
+    \item $B,C,Y,Z$ sont cocycliques
+    \item $(AX)$ est parallèle à $(CZ)$
+\end{itemize}
+
+
+\paragraph{Pôle Sud}
+
+On appelle le pôle sud $S$ ou $S_A$ le point de concours, dans un triangle $ABC$, du cercle circonscrit, de la bissectrice issue de $A$, et du la médiatrice du côté opposé à $A$, donc de $[BC]$. Pour prouver son existence, il faut montrer que, en définissant $S$ comme le point d'intersection du cercle circonscrit et de la bissectrice issue de $A$, que $SBC$ est isocèle en $S$.
+
+
+\paragraph{Théorème de Miquel}
+
+Il s'agit du théorème suivant: pour des points $A,B,C,A',B',C',M$ quelconques, si 5 des 6 propriétés suivantes sont vraies alors la dernière aussi.
+
+\begin{itemize}
+    \item $A,B',C',M$ sont cocycliques
+    \item $B,A',C',M$ sont cocycliques
+    \item $C,B',A',M$ sont cocycliques
+    \item $A',B,C$ sont alignés
+    \item $A,B',C$ sont alignés
+    \item $A,B,C'$ sont alignés
+\end{itemize}
+
+Il s'agit d'un triangle $ABC$ sur les côtés duquel on a rajouté trois points $A',B',C'$. on trace ensuite les cercles passant par un sommet du triangle et les points rajoutés sur les côtés adjacents. Ces trois cercles sont concourants. 
+
+Éviter le terme "Point de Miquel" pour ce point, cela fait référence à un autre concept (lié).
+
+
+\subsubsection{Exercices}
+
+
+\begin{exo}
+Soit $ABC$ un triangle. On définit ensuite $D$ le pied de la bissectrice issue de $A$ ($D\in(BC)$), $X$ et $Y$ les points d'intersection de la médiatrice de $[AD]$ avec les bissectrices issues de respectivement $B$ et $C$. Montrer que le centre du cercle inscrit $I$ est sur le cercle circonscrit au triangle $AXY$.
+\end{exo}
+
+
+\begin{exo}
+Soit $BCX$ un triangle acutangle (vous l'attendiez pas celle-là hein, faut changer ses habitudes de temps en temps). Les tangentes à son cercle circonscrit en $B$ et $C$ se coupent en $A$. La droite $(AX)$ recoupe le cercle circonscrit en $Y$. Le cercle circonscrit à $XYB$ recoupe $(AB)$ en $P$ et le cercle circonscrit à $XYC$ recoupe $(AC)$ en $Q$. Montrer que $APQ$ est isocèle en $A$.
+\end{exo}
+
+
+\begin{exo}
+Soient $A,B,C,D$ quatre points sur un cercle. Les projetés orthogonaux de $A$ et $C$ sur $(BD)$ sont nommés $A'$ et $C'$. Ceux de $B$ et $D$ sur $(AC)$ sont $B'$ et $C'$. Montrer que $A',B',C',D'$ se trouvent sur un même cercle.
+\end{exo}
+
+
+\subsubsection{Solutions}
+
+
+\begin{sol}
+On remarque que $X$ est le pôle sud de $B$ dans $ABD$ et que $Y$ est le pôle sud de $C$ dans $ACD$. On en déduit les cocyclicités suivantes: $ADBX$ et $ADCY$.
+
+D'après le théorème de Miquel dans le triangle $BCI$ avec les points $XYD$ sur les côtés, le cercle circonscrit à $IXY$ passe par le deuxième point des intersections des cercles circonscrit à $DBX$ et $DCY$, donc par $A$.
+
+Ceci conclut.
+\end{sol}
+
+
+\begin{sol}
+Par angle à la tangente, $\widehat{BCA}=\widehat{BXC}=\widehat{ABC}$ donc $ABC$ est isocèle en $A$. Par conséquent, $A$ est le pôle sud de $Y$ dans $YBC$. Donc $\widehat{AYB}=\widehat{AYC}$, donc $\widehat{XYB}=\widehat{XYC}$
+
+Par ailleurs, d'après le théorème de Miquel, dans le triangle $APQ$ avec $B,C,X$ sur les côtés et $Y$ sur tous les cercles, on obtient $P,Q,X$ alignés.
+
+$$\widehat{PQA}=\widehat{XQC}=180-\widehat{XYC}=180-\widehat{XYB}=\widehat{BPX}=\widehat{APQ}$$
+\end{sol}
+
+
+\begin{sol}
+On commence par remarquer que $A'$ et $B'$ sont sur le cercle de diamètre $[AB]$, donc que ces 4 points sont cocycliques. De même pour $CDC'D'$ cocycliques.
+
+Par rapport aux droites de référence $(AC)$ et $(BD)$, on sait que $(A'B')$ est anti-parallèle à $(AB)$ et que $(AB)$ l'est à $(CD)$, donc $(A'B')\parallel(CD)$. Par rapport à ces mêmes droites, $(CD)$ est anti-parallèle à $(C'D')$ donc $(A'B')$ est anti-parallèle à $(C'D')$.
+
+On en déduit la cocyclicité voulue.
+\end{sol}

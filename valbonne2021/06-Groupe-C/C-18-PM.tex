@@ -100,20 +100,20 @@ La seule solution est donc $(6,3)$.
 On travaille modulo $p=2\cdot5+1=11$ qui est premier et on a :
 
 $\begin{array}{|r|c|c|c|c|c|c|c|c|c|c|l|}
- \hline
- x & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
- x^2 & 0 & 1 & 4 & 9 & 5 & 3 & 3 & 5 & 9 & 4 & 1 \\
- x^5 & 0 & 1 & 10 & 1 & 1 & 1 & 10 & 10 & 10 & 1 & 10 \\
- \hline
- \end{array}$
+\hline
+x & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+x^2 & 0 & 1 & 4 & 9 & 5 & 3 & 3 & 5 & 9 & 4 & 1 \\
+x^5 & 0 & 1 & 10 & 1 & 1 & 1 & 10 & 10 & 10 & 1 & 10 \\
+\hline
+\end{array}$
 
- Ainsi, il n'y a aucune solution possible.
+Ainsi, il n'y a aucune solution possible.
 
- \medskip
+\medskip
 
- \textit{Explication :} Après s'être convaincu qu'on ne trouverait pas de solutuion, on choisit $p$ premier de manière à limiter le nombre de valeurs que prennent les restes des $x^2$ et des $x^5$ modulo $p$.
+\textit{Explication :} Après s'être convaincu qu'on ne trouverait pas de solutuion, on choisit $p$ premier de manière à limiter le nombre de valeurs que prennent les restes des $x^2$ et des $x^5$ modulo $p$.
 
- On remarque plus généralement que si $q$ premier ne divise pas $p-1$, alors : $$\forall x,y\in\mathbb Z,~x^q\equiv y^q[p]\Longrightarrow x\equiv y[p]$$ donc $x\mapsto x^q$ est injectif, donc bijectif dans $\mathbb Z/p\mathbb Z$ ! C'est pourquoi on choisit $p$ tel que $p-1$ est divisible par $2$ et $5$, le plus petit possible pour limiter les cas à tester.
+On remarque plus généralement que si $q$ premier ne divise pas $p-1$, alors : $$\forall x,y\in\mathbb Z,~x^q\equiv y^q[p]\Longrightarrow x\equiv y[p]$$ donc $x\mapsto x^q$ est injectif, donc bijectif dans $\mathbb Z/p\mathbb Z$ ! C'est pourquoi on choisit $p$ tel que $p-1$ est divisible par $2$ et $5$, le plus petit possible pour limiter les cas à tester.
 \end{sol}
 
 
@@ -139,16 +139,16 @@ On suppose $z\geq1$, comme $7\mid 2016$, $x^2+y^2\equiv0[7]$.
 Or, modulo $7$, on a :
 
 $\begin{array}{|r|c|c|c|c|c|c|l|}
- \hline
- x & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
- x^2 & 0 & 1 & 4 & 2 & 2 & 4 & 1 \\
- \hline
- \end{array}$
+\hline
+x & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+x^2 & 0 & 1 & 4 & 2 & 2 & 4 & 1 \\
+\hline
+\end{array}$
 
- Ainsi, le seul cas possible est $x\equiv y \equiv 0[7]$. On a alors $x=7a,y=7b$. Il suit : $7(a^2+b^2)=11+3\cdot288\cdot 2016^{z-1}$. Si, $z\geq2$, alors la partie de droite ne serait pas divisible par $7$. Donc, $z=1$. On a alors : $7(a^2+b^2)=11+3\cdot288=875$, donc $a^2+b^2=125$, donc nécessairement, $a,b<12$.
- On trouve manuellement : $\{a,b\}\in\{\{11,2\},\{10,5\} \}$.
- Ce qui donne $(x,y,z)\in\{(77,14,1),(14,77,1),(70,35,1),(35,70,1)\}$.
- Sinon, on a $z=0$, et alors $x^2+y^2=80$, donc $x,y<9$. On teste manuellement et on obtient comme autres solutions : $(x,y,z)\in\{(8,4,0),(4,8,0)\}$.
+Ainsi, le seul cas possible est $x\equiv y \equiv 0[7]$. On a alors $x=7a,y=7b$. Il suit : $7(a^2+b^2)=11+3\cdot288\cdot 2016^{z-1}$. Si, $z\geq2$, alors la partie de droite ne serait pas divisible par $7$. Donc, $z=1$. On a alors : $7(a^2+b^2)=11+3\cdot288=875$, donc $a^2+b^2=125$, donc nécessairement, $a,b<12$.
+On trouve manuellement : $\{a,b\}\in\{\{11,2\},\{10,5\} \}$.
+Ce qui donne $(x,y,z)\in\{(77,14,1),(14,77,1),(70,35,1),(35,70,1)\}$.
+Sinon, on a $z=0$, et alors $x^2+y^2=80$, donc $x,y<9$. On teste manuellement et on obtient comme autres solutions : $(x,y,z)\in\{(8,4,0),(4,8,0)\}$.
 \end{sol}
 
 
