@@ -32,6 +32,7 @@
 *.mtc10
 *.nav
 *.out
+*.pdf
 *.snm
 *.synctex(busy)
 *.synctex.gz

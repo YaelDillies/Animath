@@ -8,20 +8,12 @@
 
 
 % Intro
+\input{01-Intro/first_page}
+
 \input{01-Intro/avant-propos}
 
-% Déroulement
-\begin{center}
-{\Huge\textbf{Déroulement du stage}}
-\end{center}
-\vspace{2mm}
-\input{01-Intro/deroulement}
+\pagebreak
 
-
-\newpage
-\thispagestyle{empty}
-\mbox{ }
-%\newpage
 
 % Les trombis
 \pagestyle{plain}
@@ -31,15 +23,15 @@
 \setlength{\tabcolsep}{6pt}
 \addtolength{\voffset}{-1.2cm}
 \addtolength{\textheight}{2.4cm}
-
 \graphicspath{{02-Trombi/}}
-%\input{02-Trombi/trombi-anims}
+
+\input{02-Trombi/trombi-anims}
+
 \pagebreak
-%\input{02-Trombi/trombi-eleves}
+
+\input{02-Trombi/trombi-eleves}
+
 \pagebreak
-
-
-
 
 \graphicspath{{.}}
 \renewcommand{\ssspas}{2.7cm}
@@ -47,11 +39,23 @@
 \addtolength{\textheight}{-2.4cm}
 \normalsize
 
+
 % Animath et la POFM
 \input{PTR/activites_animath}
 
-% Planning
-\input{01-Intro/planning}
+
+% Déroulement
+\begin{center}
+{\Huge\textbf{Déroulement du stage}}
+\end{center}
+\vspace{2mm}
+\input{01-Intro/deroulement}
+
+\newpage
+\thispagestyle{empty}
+\mbox{ }
+%\newpage
+
 
 % Comptes-rendus au jour le jour
 \begin{center}
@@ -95,21 +99,25 @@
 \vspace{1cm}
 
 
+% Planning
+\input{01-Intro/planning}
+
 
 % Citations
 \begin{center}
-{\Huge\textbf{Les citations mémorables}}
+{\Huge\textbf{Citations mémorables}}
 \end{center}
 \vspace{2mm}
 \input{11-Citations/citations}
 
 \newpage
+
+
 % Pages blanches
 \input{PTR/blanc}
 
 
-
-% Derniere page
+% Dernière page
 \input{PTR/last-page}
 
 \end{document}
