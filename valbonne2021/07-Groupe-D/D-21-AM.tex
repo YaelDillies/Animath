@@ -1,0 +1,985 @@
+Une part non négligeable des problèmes de géométrie font intervenir d'une façon ou d'une autre les milieux d'un segment. Soit le milieu est déjà défini dans la figure, soit une partie du problème consiste à montrer qu'un point est un milieu. Le problème des milieux de segment est qu'ils fournissent rarement une hyptohèse sur les angles, on ne peut donc pas l'utiliser dans une chasse aux angles par exemple. Le but de ce cours est d'étudier différents réflexes qui peuvent être utiles pour "intégrer" un milieu de segment dans une figure ou pour montrer que tel point est milieu d'un segment. Il ne s'agit pas d'établir une méthode infaillible, mais juste de voir quelques idées qui peuvent s'avérer utiles. Il est impensable de vouloir résoudre un problème de géométrie faisant intervenir un milieu si l'on n'a pas bien interprété ce milieu.
+
+Lorsqu'un milieu se trouve déjà placé dans une figure, on a plusieurs façons de l'interpréter :
+\begin{itemize}
+\item[•] Par une égalité de longueurs, tout simplement : l'égalité de longueur peut permettre de trouver des triangles isométriques ou semblables, ce qui donne directement une bonne égalité d'angle.
+\item[•] Introduire d'autres milieux :
+Introduire d'autres milieux peut permettre d'obtenir des droites parallèles ou des triangles semblables et donc des angles et des égalités de rapports.
+De manière générale, si on est en présence d'une condition sur des longueurs, il peut être utile d'introduire d'autres points bien choisis satisfaisant les mêmes conditions.
+\item[•] Compléter un parallélogramme : Ce qu'il y a de génial avec un parallèlogramme, c'est qu'on a plein d'égalités d'angles et de longueur (c'est d'ailleurs aussi ce qu'il y a d'embêtant avec un parallélogramme). Lorsqu'on a un point milieu de segment, introduire un autre segment dont ce point est aussi un milieu donne un beau parallélogramme et transforme donc l'hypothèse "$M$ est le milieu d'un segment" en une égalité d'angle, un parallélisme etc...
+\end{itemize}
+La liste ci-dessus n'est évidemment pas exhaustive. La façon d'utiliser un milieu dépend bien sûr avant tout de la figure imposée.
+
+Si le but du problème est de montrer que tel point est un milieu, on peut adapter les idées précédentes : tout bêtement essayer de montrer une égalité de longueur, introduire d'autres points milieux pourrait aussi aider ou encore montrer que le point en question est intersection des diagonales d'un parallélogramme peut se montrer très efficace.
+Une autre idée très efficace est de faire intervenir des axes radicaux à l'aide de la propriété suivante :
+
+
+\begin{lem}[Lemme des axes radicaux]
+Soient deux cercles $k_1$ et $k_2$ se coupant en deux points $A$ et $B$. Une tangente extérieure commune aux $2$ cercles touche $k_1$ en $C$ et $k_2$ en $D$. Alors $(AB)$ coupe $[CD]$ en son milieu.
+\end{lem}
+
+
+\begin{proof}
+La droite $(AB)$ est l'axe radical des deux cercles donc le point d'intersection $M$ de la droite $(AB)$ avec la droite $(CD)$ vérifie $CM^2=DM^2$, ce qui signifie bien que le point $M$ est le milieu du segment $[CD]$.
+\end{proof}
+
+
+Transformer la figure pour aboutir à cette configuration peut s'avérer très efficace.
+
+La meilleure façon de savoir utiliser des milieux restant avant tout de pratiquer :
+
+
+\subsubsection{Exercices}
+
+
+\begin{exo}
+(British MO $2018$ round $2$)
+Soit $ABC$ un triangle et soit $M$ le milieu du segment $[AC]$. Le cercle tangent au segment $[BC]$ au point $B$ et passant par le point $M$ recoupe la droite $(AB)$ au point $P$. Montrer que $AB\cdot BP=2BM^2$.
+\end{exo}
+
+
+\begin{exo}
+(BXMO 2020) Soit $ABC$ un triangle aux angles aigus. Soit $\omega_A$ le cercle passant par les points $A$ et $B$ tangent à la droite $(BC)$ au point $B$. Soit $\omega_C$ le cercle passant par les points $C$ et $B$ tangent à la droite $(AB)$ au point $B$. Les cercles $\omega_A$ et $\omega_C$ se recoupent au point $D$. Soit $M$ le milieu du segment $[BC]$. Soit $E$ le point d'intersection de la droite $(MD)$ avec la droite $(AC)$. Montrer que le point $E$ appartient au cercle $\omega_A$.
+\end{exo}
+
+
+\begin{exo}
+(Caucase MO 2018) Soit $ABCD$ un quadrilatère convexe avec $\widehat{BCD}=90^\circ$. Soit $E$ le milieu du segment $[AB]$. Montrer que $2EC\leq AD+BD$.
+\end{exo}
+
+
+\begin{exo}
+(PAMO $2017$ P$6$)
+Soit $ABC$ un triangle d'orthocentre $H$. Le cercle de diam\`etre $[AC]$ recoupe le cercle circonscrit au triangle $ABH$ au point $K$. Montrer que la droite $(CK)$ coupe le segment $[BH]$ en son milieu.
+\end{exo}
+
+
+\begin{exo}
+(Math Beyond limits $2018$)
+Soit $ABC$ un triangle d'orthocentre $H$. On note $D,E,F$ les pieds des hauteurs issues respectivement des sommets $A,B$ et $C$. La parallèle à la droite $(AC)$ passant par le point $B$ coupe la droite $(EF)$ au point $X$. Soit $M$ le milieu du segment $[AB]$. Montrer que $\widehat{ACM}=\widehat{XDB}$.
+\end{exo}
+
+
+\begin{exo}
+(JBMO $2013$)
+Soit $ABC$ un triangle tel que $AB<AC$ et soit $O$ le centre de son cercle circonscrit $k$. Soit $D$ un point du segment $[BC]$ tel que $\widehat{BAD}=\widehat{CAO}$. Soit $E$ le second point d'intersection du cercle $k$ avec la droite $(AD)$. Soient $M,N$ et $P$ les milieux respectifs des segments $[BE], [OD]$ et $[AC]$. Montrez que les points $M,N$ et $P$ sont align\'es.
+\end{exo}
+
+
+\begin{exo}
+(IMO SL $2015$ G$1$)
+Soit $ABC$ un triangle d'orthocentre $H$ et soit $G$ le point tel que le quadrilatère $ABGH$ est un parall\'elogramme. Soit $I$ le point de la droite $(GH)$ tel que la droite $(AC)$ coupe le segment $[HI]$ en son milieu. La droite $(AC)$ recoupe le cercle circonscrit du triangle $GCI$ au point $J$. Montrer que $IJ=AH$.
+\end{exo}
+
+
+\begin{exo}
+(IMO SL $2007$ G$2$)
+Soit $ABC$ un triangle tel que $AB=AC$. Le milieu du segment $[BC]$ est noté $M$. Soit $X$ un point variable du plus petit arc $AM$ du cercle circonscrit au triangle $ABM$. Soit $T$ le point du m\^eme c\^ot\'e de la droite $(BM)$ que le point $X$ mais dans l'autre demi-plan d\'elimit\'e par la droite $(AM)$ que le point $X$ et tel que $TX=BX$ et tel que l'angle $\widehat{TMX}$ est droit. Montrer que la valeur de $\widehat{MTB}-\widehat{CTM}$ ne dépend pas du choix de $X$.
+\end{exo}
+
+
+\begin{exo}
+(IMO $2009$ P$2$)
+Soit $ABC$ un triangle et soit $O$ le centre de son cercle circonscrit. Les points $P$ et $Q$ sont situés sur les segments $[AC]$ et $[AB]$ respectivement. Soient $K,L$ et $M$ les milieux respectifs des segments $[BP],[CQ]$ et $[PQ]$. Soit $k$ le cercle passant par la points $K,L$ et $M$. On suppose que la droite $(PQ)$ est tangente au cercle $k$. Montrer que $OP=OQ$.
+\end{exo}
+
+
+\begin{exo}
+(IMO $2017$ P$4$)
+Soient $R$ et $S$ des points distincts appartenant à un cercle $\Omega$ tels que le segment $[RS]$ n'est pas un diamètre du cercle $\Omega$. Soit $l$ la tangente au cercle $\Omega$ au point $R$. Le point $T$ est tel que le point $S$ est le milieu du segment $[RT]$. Le point $J$ est choisi sur le plus petit arc $RS$ du cercle $\Omega$ de sorte que le cercle $\Gamma$ circonscrit au triangle $JST$ rencontre la droite $l$ en deux points distincts. Soit $A$ le point commun du cercle $\Gamma$ et de la droite $l$ qui est le plus proche du point $R$. La droite $(AJ)$ recoupe le cercle $\Omega$ au point $K$. Prouver que la droite $(KT)$ est tangente au cercle $\Gamma$.
+\end{exo}
+
+
+\begin{exo}
+(IMO SL $2006$ G$3$)
+Soit $ABCDE$ un pentagone convexe tel que
+$\widehat{BAC}=\widehat{CAD}=\widehat{DAE}$ et $\widehat{ABC}=\widehat{ACD}=\widehat{ADE}$.
+Les diagonales $(BD)$ et $(CE)$ se coupent au point $P$. Montrer que la droite $(AP)$ coupe le segment $[CD]$ en son milieu.
+\end{exo}
+
+
+\begin{exo}
+(IMO SL $2017$ G$3$)
+Soit $ABC$ un triangle acutangle et soit $O$ le centre de son cercle circonscrit. La droite $(OA)$ coupe les hauteurs issues des sommets $B$ et $C$ aux points $P$ et $Q$ respectivement. On note $H$ l'orthocentre du triangle $ABC$. Montrer que le centre du cercle circonscrit au triangle $PQH$ se trouve sur une médiane du triangle $ABC$.
+\end{exo}
+
+
+\begin{exo}
+(IMO SL $2006$ G$4$)
+Soit $ABC$ un triangle tel que $\widehat{C}<\widehat{A}<90^\circ$ et soit $D$ un point du segment $[AC]$ tel que $BD=BA$. Les points de contact du cercle inscrit du triangle $ABC$ avec les côtés $[AB]$ et $[AC]$ sont notés respectivement $K$ et $L$. Soit $J$ le centre du cercle inscrit au triangle $BCD$. Montrer que la droite $(KL)$ coupe le segment $[AJ]$ en son milieu.
+\end{exo}
+
+
+\subsubsection{Solutions}
+
+
+\setcounter{exo}{0}
+
+
+\begin{exo}
+(British MO $2018$ round $2$)
+Soit $ABC$ un triangle et soit $M$ le milieu du segment $[AC]$. Le cercle tangent au segment $[BC]$ au point $B$ et passant par le point $M$ recoupe la droite $(AB)$ au point $P$. Montrer que $AB\cdot BP=2BM^2$.
+\end{exo}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}
+[scale=1]
+\tkzInit[ymin=-2,ymax=9,xmin=-6,xmax=4]
+\tkzClip
+
+\tkzDefPoint(1,6){A}
+\tkzDefPoint(3,0){B}
+\tkzDefPoint(-3,0){C}
+
+\tkzDefMidPoint(A,C) \tkzGetPoint{M}
+\tkzDefLine[perpendicular=through B](B,C) \tkzGetPoint{y}
+\tkzDefMidPoint(M,B) \tkzGetPoint{x}
+\tkzDefLine[perpendicular=through x](M,B) \tkzGetPoint{z}
+\tkzInterLL(x,z)(y,B) \tkzGetPoint{O}
+\tkzInterLC(A,B)(O,B) \tkzGetPoints{B}{P}
+\tkzDefPointBy[symmetry=center M](B) \tkzGetPoint{B'}
+\tkzDefCircle[circum](M,A,P) \tkzGetPoint{O'}
+
+\tkzMarkAngle[color=red,size=0.5](M,P,B)
+\tkzMarkAngle[color=red,size=0.5](M,B,C)
+\tkzMarkAngle[color=red,size=0.5](M,B',A)
+\tkzMarkSegment[color=blue,mark=s||](M,B)
+\tkzMarkSegment[color=blue,mark=s||](M,B')
+\tkzMarkSegment[color=blue,mark=s|](M,C)
+\tkzMarkSegment[color=blue,mark=s|](M,A)
+
+\tkzDrawSegment(P,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(B',B)
+\tkzDrawSegment(B',C)
+\tkzDrawSegment(B',A)
+\tkzDrawSegment(P,M)
+\tkzDrawCircle(O,B)
+\tkzDrawCircle[densely dashed](O',M)
+\tkzDrawPoints[fill=white](A,B,C,M,B',P)
+
+\tkzLabelPoint[right](A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[below left](C){$C$}
+\tkzLabelPoint[left](B'){$B'$}
+\tkzLabelPoint[right](M){$M$}
+\tkzLabelPoint[above](P){$P$}
+\end{tikzpicture}
+\end{center}
+
+L'égalité à démontrer fait penser à la puisance d'un point, à ceci près qu'il y a un facteur $2$ gênant. C'est ce qui nous motive à introduire le point $B'$ tel que le quadrilatère $ABCB'$ soit un parallélogramme. L'égalité à montrer devient $AB \cdot BP= BM\cdot BB'$, c'est-à-dire que l'on doit montrer que les points $M,A,P$ et $B'$ sont cocycliques. Or le cercle circonscrit au triangle $MPB$ est tangent au segment $[BC]$ donc $\widehat{MPA}=\widehat{MPB}=\widehat{MBC}=\widehat{MB'A}$ ce qui montre bien que les points $B',M, A$ et $P$ sont cocycliques.
+\end{sol}
+
+
+\begin{exo}
+(BXMO 2020) Soit $ABC$ un triangle aux angles aigus. Soit $\omega_A$ le cercle passant par les points $A$ et $B$ tangent à la droite $(BC)$ au point $B$. Soit $\omega_C$ le cercle passant par les points $C$ et $B$ tangent à la droite $(AB)$ au point $B$. Les cercles $\omega_A$ et $\omega_C$ se recoupent au point $D$. Soit $M$ le milieu du segment $[BC]$. Soit $E$ le point d'intersection de la droite $(MD)$ avec la droite $(AC)$. Montrer que le point $E$ appartient au cercle $\omega_A$.
+\end{exo}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tkzInit[ymin=-2,ymax=7,xmin=-4,xmax=4]
+\tkzClip
+
+\tkzDefPoint(1,6){A}
+\tkzDefPoint(3,0){B}
+\tkzDefPoint(-3,0){C}
+
+\tkzDefMidPoint(A,B) \tkzGetPoint{x}
+\tkzDefLine[perpendicular=through x](A,B) \tkzGetPoint{y}
+\tkzDefLine[perpendicular=through B](B,C) \tkzGetPoint{z}
+\tkzInterLL(x,y)(z,B) \tkzGetPoint{o}
+\tkzDefMidPoint(B,C) \tkzGetPoint{M}
+\tkzDefLine[perpendicular=through M](B,C) \tkzGetPoint{y'}
+\tkzDefLine[perpendicular=through B](A,B) \tkzGetPoint{z'}
+\tkzInterLL(M,y')(z',B) \tkzGetPoint{o'}
+\tkzInterCC(o,B)(o',B) \tkzGetPoints{B}{D}
+\tkzInterLL(D,M)(A,C) \tkzGetPoint{E}
+\tkzDefCircle[circum](E,D,C) \tkzGetPoint{o''}
+
+\tkzMarkAngle[color=blue,size=0.7](A,B,D)
+\tkzMarkAngle[color=blue,size=0.7](C,E,D)
+\tkzMarkAngle[color=blue,size=0.7](B,C,D)
+\tkzMarkAngle[color=red,size=0.6](D,B,C)
+\tkzMarkAngle[color=red,size=0.6](D,E,B)
+\tkzMarkSegment[color=blue,mark=s||](M,B)
+\tkzMarkSegment[color=blue,mark=s||](M,C)
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(B,D)
+\tkzDrawSegment(D,C)
+\tkzDrawSegment(D,E)
+\tkzDrawSegment(E,B)
+\tkzDrawLine[dashed](D,M)
+\tkzDrawCircle(o,B)
+\tkzDrawCircle(o',B)
+\tkzDrawCircle[densely dashed](o'',C)
+\tkzDrawPoints[fill=white,color=black](A,B,C,D,M,E)
+
+\tkzLabelPoint[above](A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[below left](C){$C$}
+\tkzLabelPoint[above right](D){$D$}
+\tkzLabelPoint(M){$M$}
+\tkzLabelPoint[above left](E){$E=E'$}
+\end{tikzpicture}
+\end{center}
+
+Soit $E'$ le point d'intersection de la droite $(AC)$ avec le cercle $\omega_A$. On veut désormais montrer que la droite $(E'D)$ coupe le segment $[BC]$ en son milieu. En effet, cela montrerait que $E'=E$ et donc terminerait l'exercice.
+
+On a déjà quelques cercles tangents donc on peut envisager d'utiliser la méthode des axes radicaux et montrer que la droite $(BC)$ est tangente aux cercles circonscrits aux triangles $E'DB$ et $E'DC$ respectivement en les points $B$ et $C$.
+
+Or le cercle circonscrit au triangle $E'DB$ correspond au cercle $\omega$ qui est tangent à la droite $(BC)$ au point $B$. D'autre part :
+
+$$\widehat{CE'D}=180^\circ-\widehat{DE'A}=\widehat{DBA}=\widehat{DCB}$$ puisque la droite $(AB)$ est tangente au cercle $\omega_C$ au point $B$.
+On a montré que la droite $(BC)$ est tangente au cercle circonscrit au triangle $EDC$ au point $C$.
+
+D'après le lemme, la droite $(ED)$ coupe le segment $[BC]$ en son milieu, ce qui donne le résultat voulu.
+\end{sol}
+
+
+\begin{exo}
+(Caucase MO 2018) Soit $ABCD$ un quadrilatère convexe avec $\widehat{BCD}=90^\circ$. Soit $E$ le milieu du segment $[AB]$. Montrer que $2EC\leq AD+BD$.
+\end{exo}
+
+
+\begin{sol}
+Le bon milieu à introduire est le milieu de $[BD]$, qu'on appelle $M$. Alors $\frac{AD}{2}+\frac{BD}{2}=EM+MD$ par Thalès et $MD=MC$ car $BCD$ est rectangle et $EM+MC\geq EC$ par inégalité triangulaire.
+\end{sol}
+
+
+\begin{exo}
+(PAMO $2017$ P$6$)
+Soit $ABC$ un triangle d'orthocentre $H$. Le cercle de diam\`etre $[AC]$ recoupe le cercle circonscrit au triangle $ABH$ au point $K$. Montrer que la droite $(CK)$ coupe le segment $[BH]$ en son milieu.
+\end{exo}
+
+
+\begin{sol}
+Voici deux solutions utilisant deux méthodes différentes pour montrer que $(CK)$ coupe $[BH]$ en son milieu.
+
+\textit{\textbf{Solution n$^\circ 1$ :}}
+
+\begin{center}
+\begin{tikzpicture}
+[scale=1.5]
+\tkzInit[ymin=-1.5,ymax=8,xmin=-5,xmax=8]
+\tkzClip
+
+\tkzDefPoint(1,6){A}
+\tkzDefPoint(3,0){B}
+\tkzDefPoint(-3,0){C}
+
+\tkzDefLine[perpendicular=through A](B,C) \tkzGetPoint{y}
+\tkzInterLL(A,y)(B,C) \tkzGetPoint{Y}
+\tkzDefLine[perpendicular=through C](B,A) \tkzGetPoint{x}
+\tkzInterLL(C,x)(B,A) \tkzGetPoint{X}
+\tkzInterLL(A,Y)(C,X) \tkzGetPoint{H}
+\tkzDefMidPoint(A,C) \tkzGetPoint{M}
+\tkzDefCircle[circum](A,B,H) \tkzGetPoint{o}
+\tkzInterCC(o,A)(M,A) \tkzGetPoints{K}{A}
+\tkzInterLC(C,K)(o,A) \tkzGetPoints{E}{K}
+
+\tkzMarkSegment[color=blue,mark=s||](C,B)
+\tkzMarkSegment[color=blue,mark=s||](H,E)
+\tkzMarkSegment[color=black,mark=s|](C,H)
+\tkzMarkSegment[color=black,mark=s|](B,E)
+\tkzMarkRightAngle[color=black](A,X,C)
+\tkzMarkRightAngle[color=black](A,K,C)
+\tkzMarkRightAngle[color=black](A,Y,C)
+\tkzMarkAngle[color=red](K,C,H)
+\tkzMarkAngle[color=red](K,A,X)
+\tkzMarkAngle[color=red](K,E,B)
+\tkzMarkAngle[color=blue,size=2](Y,C,K)
+\tkzMarkAngle[color=blue,size=2](Y,A,K)
+\tkzMarkAngle[color=blue,size=2](H,E,K)
+
+\tkzDrawSegment(B,E)
+\tkzDrawSegment(A,K)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(C,X)
+\tkzDrawSegment(A,Y)
+\tkzDrawSegment(B,H)
+\tkzDrawLine(C,E)
+\tkzDrawLine[dashed](H,E)
+\tkzDrawCircle(o,A)
+\tkzDrawCircle(M,A)
+\tkzDrawPoints[fill=white](A,B,C,X,Y,H,K,E)
+
+\tkzLabelPoint[above](A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[below left](C){$C$}
+\tkzLabelPoint[below](Y){$Y$}
+\tkzLabelPoint[right](X){$X$}
+\tkzLabelPoint[below left](H){$H$}
+\tkzLabelPoint[below](K){$K$}
+\tkzLabelPoint(E){$E$}
+\end{tikzpicture}
+\end{center}
+
+Dans la première solution, on introduit un parallélogramme dont la droite $(CK)$ et le segment $[BH]$ sont les diagonales.
+Soit $E$ le point d'intersection de la droite $(CK)$ avec le cercle circonscrit au triangle $ABH$. Il suffit de montrer que le quadrilatère$CHEB$ est un parallélogramme pour montrer que la droite $(CK)$ coupe le segment $[BH]$ en son milieu.
+Soit $X$ le pied de la hauteur issue du sommet $C$. En voyageant dans les différents cercles :
+$$\widehat{ECH}=\widehat{KCX}=\widehat{XAK}=\widehat{BAK}=\widehat{BEK}=\widehat{BEC}$$
+donc les droites $(CH)$ et $(BE)$ sont parallèles.
+Soit $Y$ le pied de la hauteur issue du sommet $A$.
+Par ailleurs $$\widehat{CEH}=\widehat{KEH}=\widehat{KAH}=\widehat{KAY}=\widehat{KCY}=\widehat{KCB}=\widehat{ECB}$$
+ce qui montre que les droites $(EH)$ et $(BC)$ sont parallèles.
+On a bien un parallélogramme et les diagonales se coupent en leur milieu.
+\newpage
+\textit{\textbf{Solution n$^\circ 2$ :}}
+
+\begin{center}
+\begin{tikzpicture}
+[scale=1.5]
+\tkzInit[ymin=-1.5,ymax=6.5,xmin=-5,xmax=8]
+\tkzClip
+
+\tkzDefPoint(-0.5,5){A}
+\tkzDefPoint(3,0){B}
+\tkzDefPoint(-3,0){C}
+
+\tkzDefLine[perpendicular=through A](B,C) \tkzGetPoint{y}
+\tkzInterLL(A,y)(B,C) \tkzGetPoint{Y}
+\tkzDefLine[perpendicular=through C](B,A) \tkzGetPoint{x}
+\tkzInterLL(C,x)(B,A) \tkzGetPoint{X}
+\tkzInterLL(A,Y)(C,X) \tkzGetPoint{H}
+\tkzDefMidPoint(A,C) \tkzGetPoint{M}
+\tkzDefCircle[circum](A,B,H) \tkzGetPoint{o}
+\tkzInterCC(o,A)(M,A) \tkzGetPoints{K}{A}
+\tkzDefCircle[circum](C,K,B) \tkzGetPoint{o'}
+\tkzDefCircle[circum](C,H,K) \tkzGetPoint{o''}
+
+\tkzMarkRightAngle[color=black](A,X,C)
+\tkzMarkRightAngle[color=black](A,K,C)
+\tkzMarkRightAngle[color=black](A,Y,C)
+\tkzMarkAngle[color=red](K,C,H)
+\tkzMarkAngle[color=red](K,A,X)
+\tkzMarkAngle[color=red](K,H,B)
+\tkzMarkAngle[color=blue,size=2](Y,C,K)
+\tkzMarkAngle[color=blue,size=2](Y,A,K)
+\tkzMarkAngle[color=blue,size=2](H,B,K)
+
+\tkzDrawSegment(A,K)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(C,X)
+\tkzDrawSegment(A,Y)
+\tkzDrawSegment(B,H)
+\tkzDrawSegment(K,H)
+\tkzDrawSegment(K,B)
+\tkzDrawLine(C,K)
+\tkzDrawCircle(o,A)
+\tkzDrawCircle(M,A)
+\tkzDrawCircle[dashed](o',K)
+\tkzDrawCircle[dashed](o'',K)
+\tkzDrawPoints[fill=white](A,B,C,X,Y,H,K)
+
+\tkzLabelPoint[above](A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[below left](C){$C$}
+\tkzLabelPoint[below](Y){$Y$}
+\tkzLabelPoint[right](X){$X$}
+\tkzLabelPoint[left=3pt](H){$H$}
+\tkzLabelPoint[below=3pt](K){$K$}
+\end{tikzpicture}
+\end{center}
+
+Dans la deuxième solution, on se ramène à la configuration du lemme des axes radicaux énoncé au début du cours et montrer que la droite $(CK)$ est l'axe radical de deux cercles bien choisis.
+On montre que la droite $(BH)$ est tangente aux cercles circonscrits aux triangles $KHC$ et $BKC$. Comme la droite $(CK)$ est l'axe radical de ces deux cercles, elle coupe le segment reliant les points de tangence en son milieu :
+$$\widehat{BHK}=\widehat{BAK}=\widehat{XAK}=\widehat{XCK}=\widehat{HCK}$$ donc la droite $(BH)$ est tangente au cercle circonscrit au triangle $KHC$ au point $H$.
+$$\widehat{KBH}=\widehat{KAH}=\widehat{KAY}=\widehat{KCY}=\widehat{KCB}$$ donc la droite $(BH)$ est tangente au cercle circonscrit au triangle $KCB$ en $B$.
+(on a gardé les mêmes notations qu'en solution $1$).
+On peut donc conclure par le lemme des axes radicaux comme annoncé.
+\end{sol}
+
+
+\begin{exo}
+(Math Beyond limits $2018$)
+Soit $ABC$ un triangle d'orthocentre $H$. On note $D,E,F$ les pieds des hauteurs issues respectivement des sommets $A,B$ et $C$. La parallèle à la droite $(AC)$ passant par le point $B$ coupe la droite $(EF)$ au point $X$. Soit $M$ le milieu du segment $[AB]$. Montrer que $\widehat{ACM}=\widehat{XDB}$.
+\end{exo}
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}
+[scale=1]
+\tkzInit[ymin=-2,ymax=9,xmin=-4,xmax=8]
+\tkzClip
+
+\tkzDefPoint(1,6){A}
+\tkzDefPoint(3,0){B}
+\tkzDefPoint(-3,0){C}
+
+\tkzDefLine[perpendicular=through A](B,C) \tkzGetPoint{d}
+\tkzInterLL(A,d)(B,C) \tkzGetPoint{D}
+\tkzDefLine[perpendicular=through B](A,C) \tkzGetPoint{e}
+\tkzInterLL(B,e)(A,C) \tkzGetPoint{E}
+\tkzDefLine[perpendicular=through C](B,A) \tkzGetPoint{f}
+\tkzInterLL(C,f)(B,A) \tkzGetPoint{F}
+\tkzInterLL(B,E)(C,F) \tkzGetPoint{H}
+\tkzDefLine[parallel=through B](A,C) \tkzGetPoint{x}
+\tkzInterLL(E,F)(B,x) \tkzGetPoint{X}
+\tkzDefMidPoint(A,B) \tkzGetPoint{M}
+\tkzDefPointBy[symmetry=center M](C) \tkzGetPoint{C'}
+\tkzDefCircle[circum](C,D,X) \tkzGetPoint{O}
+
+\tkzMarkAngle[color=red,size=0.6](M,C,A)
+\tkzMarkAngle[color=red,size=0.6](C,C',B)
+\tkzMarkAngle[color=red,size=0.6](B,D,X)
+\tkzMarkSegment[color=blue,mark=s||](C,M)
+\tkzMarkSegment[color=blue,mark=s||](C',M)
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(E,X)
+\tkzDrawSegment(B,C')
+\tkzDrawSegment(C,C')
+\tkzDrawSegment(A,C')
+\tkzDrawSegment(B,E)
+\tkzDrawSegment(C,F)
+\tkzDrawSegment(A,D)
+\tkzDrawSegment(D,X)
+\tkzDrawCircle[densely dashed](O,C)
+\tkzDrawPoints[fill=white](A,B,C,D,E,F,X,H,C',M)
+
+\tkzLabelPoint[above](A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[below left](C){$C$}
+\tkzLabelPoint[below](D){$D$}
+\tkzLabelPoint[left](E){$E$}
+\tkzLabelPoint(F){$F$}
+\tkzLabelPoint[below left](H){$H$}
+\tkzLabelPoint[right](C'){$C'$}
+\tkzLabelPoint(X){$X$}
+\tkzLabelPoint(M){$M$}
+\end{tikzpicture}
+\end{center}
+
+Ici, l'introduction du milieu de $[AB]$ et de la parallèle à $(AC)$ passant par $B$ motive encore une fois à créer un parallèlogramme. Soit donc $C'$ le point tel que $BCAC'$ soit un parallèlogramme. On a alors $\widehat{ACM}=\widehat{CC'B}$ donc l'égalité à montrer devient $\widehat{XDB}=\widehat{XC'C}$, c'est-à-dire qu'il suffit de montrer que les points $C,C',D,X$ sont cocycliques.
+Les droites $(BX)$ et $(AC)$ sont parallèles donc Thalès donne
+$$\frac{BX}{AE}=\frac{BF}{AF}$$
+On se rappelle alors que les triangles $BDF$, $BAC$, $EAF$ sont semblables (propriétés du triangles orthique), on obtient donc les égalités suivantes :
+$$BX\cdot BC'= BX\cdot AC=\frac{AE}{AF}\cdot BF\cdot AC=\frac{AB}{AC}\cdot BF\cdot AC=AB\cdot BF=BD\cdot BC$$ et l'on conclut par la réciproque de la puissance d'un point.
+\end{sol}
+
+\begin{exo}
+(JBMO $2013$)
+Soit $ABC$ un triangle tel que $AB<AC$ et soit $O$ le centre de son cercle circonscrit $k$. Soit $D$ un point du segment $[BC]$ tel que $\widehat{BAD}=\widehat{CAO}$. Soit $E$ le second point d'intersection du cercle $k$ avec la droite $(AD)$. Soient $M,N$ et $P$ les milieux respectifs des segments $[BE], [OD]$ et $[AC]$. Montrez que les points $M,N$ et $P$ sont align\'es.
+\end{exo}
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}
+[scale=1]
+\tkzInit[ymin=-2,ymax=7,xmin=-4,xmax=4]
+\tkzClip
+
+\tkzDefPoint(1,6){A}
+\tkzDefPoint(3,0){B}
+\tkzDefPoint(-3,0){C}
+
+\tkzDefCircle[circum](A,B,C) \tkzGetPoint{O}
+\tkzDefLine[perpendicular=through A](B,C) \tkzGetPoint{d}
+\tkzInterLL(A,d)(B,C) \tkzGetPoint{D}
+\tkzInterLC(A,D)(O,A) \tkzGetPoints{A}{E}
+\tkzDefMidPoint(B,E) \tkzGetPoint{M}
+\tkzDefMidPoint(O,D) \tkzGetPoint{N}
+\tkzDefMidPoint(A,C) \tkzGetPoint{P}
+
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(E,A)
+\tkzDrawSegment(B,E)
+\tkzDrawSegment(M,D)
+\tkzDrawSegment(P,O)
+\tkzDrawSegment(D,P)
+\tkzDrawSegment(O,M)
+\tkzDrawLine[densely dashed](M,P)
+\tkzDrawSegment[dashed](O,D)
+\tkzDrawCircle(O,C)
+\tkzDrawPoints[fill=white](A,B,C,D,E,M,N,P,O)
+
+\tkzLabelPoint[above](A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[below left](C){$C$}
+\tkzLabelPoint[below left](D){$D$}
+\tkzLabelPoint[below](E){$E$}
+\tkzLabelPoint[right](O){$O$}
+%\tkzLabelPoint(N){$N$}
+\tkzLabelPoint(M){$M$}
+\tkzLabelPoint[left](P){$P$}
+\end{tikzpicture}
+\end{center}
+
+L'idée principale est de démontrer un résultat plus fort, à savoir que $M,O,D,P$ est un parallèlogramme, ce qui permet alors de conclure. On présente deux méthodes utilisant de deux façons différentes les différentes hypothèses sur les milieux présents.
+
+\textit{Solution $1$ :} Avec des triangles isométriques :
+Les triangles $OMB$ et $POA$ sont tous les deux rectangles et $OA=OB$. Il suffit de montrer que $\widehat{MOB}=\widehat{PAO}$ pour avoir que les deux triangles sont isométriques.
+Or $EOB$ est isocèle donc $\widehat{MOB}=\frac{1}{2}\widehat{BOE}=\widehat{DAB}=\widehat{PAO}$. Les triangles sont donc isométriques et $AP=OM$ et $OP=MB$.
+On utilise alors le fait que $D$ est en fait pied de la hauteur issue de $A$ dans le triangles $ABC$ (résultat classique dont la démonstration est un bon exercice de chasse aux angles). Donc $EDB$ et $CDA$ sont rectangles et $DM=MB=OP$ et $DP=PA=OM$. Donc le quadrilatère $DPOM$ a les côtés opposés égaux deux à deux, c'est un parallélogramme. Donc les diagonales se coupent en leur milieu et $P,N,M$ sont alignés.
+
+\bigskip
+
+\textit{Solution $2$ :} Avec une chasse aux angles un peu fastidieuse :
+On utilise à nouveau que $EDB$ et $ADC$ sont rectangles. Soit $X$ le projeté de $O$ sur $[CB]$. $(OX)$ et $(AD)$ sont parallèles. Les points $P,O,X,C$ sont cocycliques. On commence par montrer que $(OP)$ et $(DM)$ sont parallèles par égalités d'angles alternes internes.
+$$\widehat{ODM}=\widehat{ODA}+90+\widehat{MDB}=\widehat{XOD}+90+\widehat{DBE}=\widehat{XOD}+90+\widehat{CAD}$$
+Or $\widehat{CAD}+90=180-\widehat{DCA}$ donc en utilisant la cocyclicité de $C,P,O,D$ on a
+$$\widehat{ODM}=180-\widehat{CDA}+\widehat{XOD}=\widehat{POX}+\widehat{XOD}=\widehat{POD}$$ donc $(DM)$ et $(OP)$ sont parallèles.
+
+On montre ensuite que $\widehat{DPO}=\widehat{DMO}$. Il faut encore une fois voyager avec les différentes égalités d'angles dues au théorème de l'angle inscrit et au fait que $CDA$ et $EDB$ sont rectangles :
+$$\widehat{DPO}=\widehat{DPA}-\widehat{OPA}=180-2\widehat{PAD}-90=180-2\widehat{MBD}-90=\widehat{DMB}-90=\widehat{DMO}$$
+ce qui donne que $MDPO$ est un quadrilatère avec deux cotés opposés parallèles et deux angles opposés égaux, c'est un parallélogramme, on peut conclure de la même façon qu'en solution $1$.
+\end{sol}
+
+
+\begin{exo}
+(IMO SL $2015$ G$1$)
+Soit $ABC$ un triangle d'orthocentre $H$ et soit $G$ le point tel que le quadrilatère $ABGH$ est un parall\'elogramme. Soit $I$ le point de la droite $(GH)$ tel que la droite $(AC)$ coupe le segment $[HI]$ en son milieu. La droite $(AC)$ recoupe le cercle circonscrit du triangle $GCI$ au point $J$. Montrer que $IJ=AH$.
+\end{exo}
+
+
+\begin{sol}
+Il existe beaucoup de solutions car il y a plusieurs façons d'interpréter le fait que $(AC)$ coupe $([HI]$ en son milieu. On présente ici deux solutions : l'une consiste à calculer patiemment plusieurs rapports de longueur, l'autre introduit astucieusement un point supplémentaire pour avoir des triangles isométriques.
+
+\begin{center}
+\begin{tikzpicture}
+[scale=1]
+\tkzInit[ymin=-1.5,ymax=6.5,xmin=-5,xmax=7]
+\tkzClip
+
+\tkzDefPoint(-1,6){C}
+\tkzDefPoint(3,0){B}
+\tkzDefPoint(-3,0){A}
+
+\tkzDefLine[perpendicular=through A](B,C) \tkzGetPoint{d}
+\tkzInterLL(A,d)(B,C) \tkzGetPoint{D}
+\tkzDefLine[perpendicular=through B](A,C) \tkzGetPoint{e}
+\tkzInterLL(B,e)(A,C) \tkzGetPoint{E}
+\tkzDefLine[perpendicular=through C](A,B) \tkzGetPoint{f}
+\tkzInterLL(C,f)(A,B) \tkzGetPoint{F}
+\tkzInterLL(A,D)(B,E) \tkzGetPoint{H}
+\tkzDefLine[parallel=through B](A,H) \tkzGetPoint{g}
+\tkzDefLine[parallel=through H](A,B) \tkzGetPoint{g'}
+\tkzInterLL(H,g')(B,g) \tkzGetPoint{G}
+\tkzInterLL(A,C)(H,G)  \tkzGetPoint{X}
+\tkzDefPointBy[symmetry=center X](H) \tkzGetPoint{I}
+\tkzDefCircle[circum](C,G,I) \tkzGetPoint{O}
+\tkzInterLC(A,C)(O,G) \tkzGetPoints{J}{C}
+\tkzDefCircle[circum](C,B,H) \tkzGetPoint{o'}
+\tkzInterLL(G,H)(B,C) \tkzGetPoint{Y}
+
+\tkzMarkRightAngle[color=red](C,B,G)
+\tkzMarkRightAngle[color=red](G,H,C)
+\tkzMarkRightAngle[color=red](B,F,C)
+\tkzMarkRightAngle[color=red](C,D,A)
+\tkzMarkAngle[color=blue,size=1](X,C,H)
+\tkzMarkAngle[color=blue,size=1](H,B,F)
+\tkzMarkSegment[color=blue,mark=s||](X,H)
+\tkzMarkSegment[color=blue,mark=s||](X,I)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,J)
+\tkzDrawSegment(A,D)
+\tkzDrawSegment(G,I)
+\tkzDrawSegment(B,H)
+\tkzDrawSegment(C,F)
+\tkzDrawSegment(B,G)
+\tkzDrawSegment(C,G)
+\tkzDrawSegment(I,J)
+\tkzDrawCircle(O,G)
+\tkzDrawCircle[dashed](o',B)
+\tkzDrawPoints[fill=white,color=black](A,B,C,F,H,I,J,G,X,Y)
+
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[above](C){$C$}
+\tkzLabelPoint(F){$F$}
+\tkzLabelPoint(H){$H$}
+\tkzLabelPoint(G){$G$}
+\tkzLabelPoint[left](I){$I$}
+\tkzLabelPoint[below](J){$J$}
+\tkzLabelPoint(X){$X$}
+\tkzLabelPoint[above](Y){$Y$}
+\end{tikzpicture}
+\end{center}
+
+
+\textit{Solution $1$:}
+Dans cette solution, on utilise que la droite $(AC)$ coupe le segment $[HI]$ en son milieu uniquement pour obtenir une égalité de longueurs. En effet, on a des triangles semblables dûs aux diverses propriétés de l'orthocentre et, nous allons le voir, grâce à des points cocycliques cachés dans la figure.
+
+Avant d'attaquer, analysons les diverses hypothèses. On dispose d'un parallèlogramme donc de droites parallèles. Les droites $(BG)$ et $(AH)$ sont parallèles donc les droites $(BG)$ et $(BC)$ sont perpendiculaires. Les droites $(HG)$ et $(AB)$ sont parallèles donc les droite $(HG)$ et $(CH)$ sont perpendiculaires. Les points $G,B,H$ et $C$ sont donc cocycliques.
+
+Maintenant, on va chercher à calculer des égalités de rapports et obtenir $\frac{IJ}{x}=\frac{AH}{x}$, avec $x$ une certaine longueur. Pour cela, on a besoin d'identifier différents triangles semblables. Cela tombe bien, on dispose de deux quadrilatères cycliques, qui induisent des triangles semblables. Ainsi, on introduit $X$ le point d'intersection des droites $(IG)$ et $(CJ)$ et $Y$ le point d'intersection des droites $(BC)$ et $(GH)$. On obtient les paires de triangles semblables suivantes : les triangles $IXJ$ et $CXG$, les triangles $CYH$ et $GYB$ et les triangles $CYG$ et $HYB$. Rappelons aussi que par hypothèse, on a également $XH=XI$ et $BG=AH$. Ainsi, on va calculer $\frac{IJ}{CG}$ et espérer tomber après divers calculs sur $\frac{BG}{CG}$. La corde $CG$ est pribilégiée ici car c'est la corde commune aux deux cercles présents sur la figure. Enfin, on a les différentes égalités d'angles induites par l'orthocentre, impliquant que les triangles $CXH$ et $BHF$ sont semblables, où le point $F$ est le pied de la hauteur issue du sommet $C$. On peut désormais calculer :
+
+$$\frac{IJ}{CG}=\frac{IX}{XC}=\frac{XH}{XC}=\frac{HF}{HB}=\frac{HF}{YB}\cdot \frac{YB}{HB}=\frac{CH}{CY}\cdot \frac{YG}{CG}=\frac{BG}{YG}\cdot \frac{YG}{CG}=\frac{BG}{CG}=\frac{AH}{CG}$$
+
+et on déduit l'égalité $IJ=AH$.
+
+\bigskip
+
+
+\textit{Solution $2$:}
+
+\begin{center}
+\begin{tikzpicture}
+[scale=1]
+\tkzInit[ymin=-1.5,ymax=6.5,xmin=-5,xmax=7]
+\tkzClip
+
+\tkzDefPoint(-1,6){C}
+\tkzDefPoint(3,0){B}
+\tkzDefPoint(-3,0){A}
+
+\tkzDefLine[perpendicular=through A](B,C) \tkzGetPoint{d}
+\tkzInterLL(A,d)(B,C) \tkzGetPoint{D}
+\tkzDefLine[perpendicular=through B](A,C) \tkzGetPoint{e}
+\tkzInterLL(B,e)(A,C) \tkzGetPoint{E}
+\tkzDefLine[perpendicular=through C](A,B) \tkzGetPoint{f}
+\tkzInterLL(C,f)(A,B) \tkzGetPoint{F}
+\tkzInterLL(A,D)(B,E) \tkzGetPoint{H}
+\tkzDefLine[parallel=through B](A,H) \tkzGetPoint{g}
+\tkzDefLine[parallel=through H](A,B) \tkzGetPoint{g'}
+\tkzInterLL(H,g')(B,g) \tkzGetPoint{G}
+\tkzInterLL(A,C)(H,G)  \tkzGetPoint{X}
+\tkzDefPointBy[symmetry=center X](H) \tkzGetPoint{I}
+\tkzDefCircle[circum](C,G,I) \tkzGetPoint{O}
+\tkzInterLC(A,C)(O,G) \tkzGetPoints{J}{C}
+\tkzDefCircle[circum](C,B,H) \tkzGetPoint{o'}
+\tkzInterLL(G,H)(B,C) \tkzGetPoint{Y}
+\tkzInterLC(A,C)(o',G) \tkzGetPoints{Z}{C}
+
+\tkzMarkRightAngle[color=red](C,B,G)
+\tkzMarkRightAngle[color=red](G,H,C)
+\tkzMarkRightAngle[color=red](B,F,C)
+\tkzMarkRightAngle[color=red](C,D,A)
+\tkzMarkAngle[color=blue,size=0.5](X,J,I)
+\tkzMarkAngle[color=blue,size=0.5](C,G,H)
+\tkzMarkAngle[color=blue,size=0.5](C,B,H)
+\tkzMarkAngle[color=blue,size=0.5](H,A,C)
+\tkzMarkAngle[color=blue,size=0.5](A,Z,H)
+\tkzMarkSegment[color=blue,mark=s||](X,H)
+\tkzMarkSegment[color=blue,mark=s||](X,I)
+\tkzMarkSegment[color=black,mark=s|](I,J)
+\tkzMarkSegment[color=black,mark=s|](A,H)
+\tkzMarkSegment[color=black,mark=s|](H,Z)
+\tkzMarkSegment[color=black,mark=s|](B,G)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,J)
+\tkzDrawSegment(A,D)
+\tkzDrawSegment(G,I)
+\tkzDrawSegment(B,H)
+\tkzDrawSegment(C,F)
+\tkzDrawSegment(B,G)
+\tkzDrawSegment(C,G)
+\tkzDrawSegment(I,J)
+\tkzDrawSegment(H,Z)
+\tkzDrawCircle(O,G)
+\tkzDrawCircle[dashed](o',B)
+\tkzDrawPoints[fill=white,color=black](A,B,C,F,H,I,J,G,X,Y,Z)
+
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[above](C){$C$}
+\tkzLabelPoint(F){$F$}
+\tkzLabelPoint(H){$H$}
+\tkzLabelPoint(G){$G$}
+\tkzLabelPoint[left](I){$I$}
+\tkzLabelPoint[below](J){$J$}
+\tkzLabelPoint(X){$X$}
+\tkzLabelPoint[left](Z){$Z$}
+\end{tikzpicture}
+\end{center}
+
+On a toujours $X$ le milieu de $[IH]$. L'hypothèse que la droite $(AC)$ coupe $[IH]$ en son milieu peut donner envie de trouver un triangle avec dans ses sommets $H$ et $X$ et qui soit isométrique à $IJX$. Malheuresement, un tel triangle n'est pas présent dans la figure; et introduire un point $Z$ pour compléter ce triangle ne donne pas beaucoup d'informations sur ce points. Cependant, on sait que si l'énoncé est vrai, $ZH=IJ=AH$. On procède alors dans l'autre sens, on introduit $Z$ tel que $ZH=AH$ et on montre l'isométrie. Cette discussion motive la preuve suivante :
+
+Soit $Z\neq A$ le point du segment $[AC]$ tel que $HZ=AH$.
+De même que précédemment, on trouve que les points $B,G,C,H$ sont cocycliques. Donc en voyageant dans les différents cercles : $$\widehat{CJI}=\widehat{CGH}=\widehat{CBH}=\widehat{HAC}$$
+C'est là que le point $Z$ intervient : $\widehat{XJI}=\widehat{CJI}=\widehat{HAC}=\widehat{XZH}$. C'est suffisant pour avoir que les triangles $IMJ$ et $MHD$ sont semblables. Le fait que $IM=MH$ impose qu'ils sont isométriques. Donc $IJ=ZH=AH$.
+\end{sol}
+
+
+\begin{exo}
+(IMO SL $2007$ G$2$)
+Soit $ABC$ un triangle tel que $AB=AC$. Le milieu du segment $[BC]$ est noté $M$. Soit $X$ un point variable du plus petit arc $AM$ du cercle circonscrit au triangle $ABM$. Soit $T$ le point du m\^eme c\^ot\'e de la droite $(BM)$ que le point $X$ mais dans l'autre demi-plan d\'elimit\'e par la droite $(AM)$ que le point $X$ et tel que $TX=BX$ et tel que l'angle $\widehat{TMX}$ est droit. Montrer que la valeur de $\widehat{MTB}-\widehat{CTM}$ ne dépend pas du choix de $X$.
+\end{exo}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}
+[scale=1.25]
+\tkzDefPoint(0,6){A}
+\tkzDefPoint(2,0){B}
+\tkzDefPoint(-2,0){C}
+\tkzDefPoint(0,1){x}
+
+\tkzDefMidPoint(B,C) \tkzGetPoint{M}
+\tkzDefCircle[circum](A,B,M) \tkzGetPoint{O}
+\tkzInterLC(B,x)(O,A) \tkzGetPoints{B}{X}
+\tkzDefLine[perpendicular=through M](X,M) \tkzGetPoint{t}
+\tkzInterLC(M,t)(X,B) \tkzGetPoints{T}{T2}
+\tkzDefMidPoint(T,B) \tkzGetPoint{Y}
+\tkzDefCircle[circum](X,M,T) \tkzGetPoint{o}
+
+\tkzMarkRightAngle[color=red](T,Y,X)
+\tkzMarkRightAngle[color=red](T,M,X)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(A,C)
+\tkzDrawSegment(M,X)
+\tkzDrawSegment(M,T)
+\tkzDrawSegment(T,B)
+\tkzDrawSegment(X,Y)
+\tkzDrawSegment(A,M)
+\tkzDrawSegment(X,B)
+\tkzDrawSegment(X,T)
+\tkzDrawSegment[dashed](T,C)
+\tkzDrawSegment[dashed](M,Y)
+\tkzDrawCircle(O,A)
+\tkzDrawCircle[dashed](o,M)
+\tkzDrawPoints[fill=white](A,B,C,M,X,T,Y)
+
+\tkzLabelPoint[above](A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[below left](C){$C$}
+\tkzLabelPoint[below](M){$M$}
+\tkzLabelPoint[left](X){$X$}
+\tkzLabelPoint[right](T){$T$}
+\tkzLabelPoint[right](Y){$Y$}
+\end{tikzpicture}
+\end{center}
+
+Quelques milieux apparaissent déjà dans la figure, et l'on cherche visiblement essentiellement à travailler avec des angles. Introduire un nouveau milieu bien choisi faciliterait donc bien les choses. Parmi les différents candidats, le plus intéressant semble être le milieu de $[TB]$, nous allons expliquer pourquoi par la suite.
+
+Soit $Y$ le milieu de $[TB]$. On a alors non seulement $(YM)$ et $(TC)$ parallèles mais aussi $(YX)$ et $(TB)$ perpendiculaires, donc $T,Y,M,X$ sont cocycliques. Une fois ce milieu introduit, le reste n'est plus qu'une courte chasse aux angles :
+$$\widehat{MTB}-\widehat{CTM}=\widehat{YXM}-\widehat{YMT}=\widehat{YXM}-\widehat{YXT}=\widehat{YXM}-\widehat{YXB}=\widehat{BXM}=\frac{1}{2}\cdot \widehat{BAC}$$
+où les deux dernières égalités viennent des différentes cocyclicités et que $(YX)$ est bissectrice de $\widehat{TXB}$.
+Donc la valeur de $\widehat{MTB}-\widehat{CTM}$ est fixe et ne dépend pas de $X$.
+\end{sol}
+
+
+\begin{exo}
+(IMO $2009$ P$2$)
+Soit $ABC$ un triangle et soit $O$ le centre de son cercle circonscrit. Les points $P$ et $Q$ sont situés sur les segments $[AC]$ et $[AB]$ respectivement. Soient $K,L$ et $M$ les milieux respectifs des segments $[BP],[CQ]$ et $[PQ]$. Soit $k$ le cercle passant par la points $K,L$ et $M$. On suppose que la droite $(PQ)$ est tangente au cercle $k$. Montrer que $OP=OQ$.
+\end{exo}
+
+
+\begin{sol}
+Ici, les milieux servent pour obtenir des droites parallèles..
+
+$M$ est le milieu de $[PQ]$ et $L$ celui de $[QC]$ donc $(ML)$ et $(PC)$ sont parallèles. D'où, par tangence et parallélisme,
+$$\widehat{LKM}=\widehat{LMP}=\widehat{MPA}=\widehat{QPA}$$
+De même, $\widehat{PQA}=\widehat{KLM}$. Les triangles $MKL$ et $APQ$ sont donc semblables. Donc
+$$\frac{AP}{AQ}=\frac{MK}{ML}=\frac{\frac{1}{2}QB}{\frac{1}{2}CP}=\frac{QB}{CP}$$
+et on déduit $AP\cdot CP=BQ\cdot AQ$. Donc $P$ et $Q$ on la même puissance par rapport au cercle $(ABC)$. La puissance du point $P$ par rapport au cercle $ABC$ est $OP^2-AO^2$ et la puissance du point $Q$ par rapport à ce même cercle vaut $OQ^2-OA^2$ donc on a $OP^2=OQ^2$ et $OP=OQ$.
+\end{sol}
+
+
+\begin{exo}
+(IMO $2017$ P$4$)
+Soient $R$ et $S$ des points distincts appartenant à un cercle $\Omega$ tels que le segment $[RS]$ n'est pas un diamètre du cercle $\Omega$. Soit $l$ la tangente au cercle $\Omega$ au point $R$. Le point $T$ est tel que le point $S$ est le milieu du segment $[RT]$. Le point $J$ est choisi sur le plus petit arc $RS$ du cercle $\Omega$ de sorte que le cercle $\Gamma$ circonscrit au triangle $JST$ rencontre la droite $l$ en deux points distincts. Soit $A$ le point commun du cercle $\Gamma$ et de la droite $l$ qui est le plus proche du point $R$. La droite $(AJ)$ recoupe le cercle $\Omega$ au point $K$. Prouver que la droite $(KT)$ est tangente au cercle $\Gamma$.
+\end{exo}
+
+
+\begin{sol}
+Encore une fois, la clé est de trouver comment utiliser l'hypothèse que $S$ est le milieu de $[RT]$. On présente deux preuves, l'une se contente de transformer l'hypothèse en une égalité de longueur dans une chasse aux rapports, l'autre consiste à compléter la figure du parallélogramme.
+
+Solution $1$: On a déjà
+$$\widehat{STA}=\widehat{SJK}=\widehat{SRK}$$ par angles inscrits, donc $(AT)$ et $(KR)$ sont parallèles.
+On a donc $\widehat{KRS}=\widehat{RTA}$ et puisque $(RA)$ est tangente à $\Omega$ en $R$, $\widehat{ARS}=\widehat{SKR}$ donc les triangles $KRS$ et $RTA$ sont semblables.
+Donc $$\frac{SR}{AT}=\frac{ST}{AT}=\frac{KR}{RT}$$ et comme $\widehat{KRT}=\widehat{STA}$ par parallélisme, les triangles $KRT$ et $STA$ sont semblables, donc $\widehat{KTS}=\widehat{KTR}=\widehat{SAT}$, on conclut alors par angle tangentiel.
+
+
+Solution $2$: Comme précédemment, on commence par trouver que $(AT)$ et $(KR)$ sont parallèles. On introduit $X$ le point d'intersection de $(SJ)$ et $(KR)$ et $Y$ celui de $(SJ)$ et $(AT)$. Comme $(AT)$ et $KR)$ sont parallèles et que la diagonales $(XY)$ coupe la diagonale $(RT)$ en son milieu, le quadrilatère $TXRY$ est un parallélogramme.
+
+Soit maintenant $V$ le second point d'intersection de $(XT)$ et de $\Gamma$ et $W$ celui de $(YR)$ et de $\Omega$. C'est le moment de remarquer que $X,Y$ sont sur l'axe radical des deux cercles, donc $V,T,K,R$ et $W,T,A,R$ sont cocycliques. On voyage alors dans les différents cercles et en utilisant les droites parallèles trouvées :
+$$\widehat{YWT}=\widehat{YAR}=\widehat{ARK}=\widehat{KWR}$$
+donc $T,K,W$ sont alignés. On a alors
+\[\widehat{XVR}=\widehat{XKT}=\widehat{KTA}=180-\widehat{XTK}-\widehat{TXK}=180-\widehat{KRA}-\widehat{ATV}=180-\widehat{TAV}-\widehat{ATV}\]
+et les points $V,A,R$ sont alignés.
+On en déduit
+$$\widehat{TVA}=\widehat{TVR}=\widehat{ARY}=\widehat{WTY}=\widehat{KTA}$$ et on peut conclure par angle tangentiel.
+\end{sol}
+
+
+\begin{exo}
+(IMO SL $2006$ G$3$)
+Soit $ABCDE$ un pentagone convexe tel que
+$\widehat{BAC}=\widehat{CAD}=\widehat{DAE}$ et $\widehat{ABC}=\widehat{ACD}=\widehat{ADE}$.
+Les diagonales $(BD)$ et $(CE)$ se coupent au point $P$. Montrer que la droite $(AP)$ coupe le segment $[CD]$ en son milieu.
+\end{exo}
+
+
+\begin{sol}
+L'énoncé nous donne que les triangles $ABC,ACD,ADE$ sont semblables. $A$ est donc le centre de la similitude qui envoie $B$ sur $D$ et $C$ sur $E$. Donc $A$ appartient au cercle circonscrit à $(PDE)$ et $(BPC)$.
+On a donc $$\widehat{CDP}=\widehat{CDA}-\widehat{PDA}=\widehat{DEA}-\widehat{PEA}$$ donc $(CD)$ est tangent au cercle $(AEDP)$ en $D$ et on a de même que $(CD)$ est tangente en $C$ au cercle circonscrit à $(APCB)$. On conclut alors par le lemme des axes radicaux, appliqué aux deux cercles qui ont pour axe radical $(AP)$.
+\end{sol}
+
+
+\begin{exo}
+(IMO SL $2017$ G$3$)
+Soit $ABC$ un triangle acutangle et soit $O$ le centre de son cercle circonscrit. La droite $(OA)$ coupe les hauteurs issues des sommets $B$ et $C$ aux points $P$ et $Q$ respectivement. On note $H$ l'orthocentre du triangle $ABC$. Montrer que le centre du cercle circonscrit au triangle $PQH$ se trouve sur une médiane du triangle $ABC$.
+\end{exo}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}
+[scale=2]
+\tkzInit[ymin=-1.5,ymax=8,xmin=-4.5,xmax=4.5]
+\tkzClip
+
+\tkzDefPoint(2,7){A}
+\tkzDefPoint(3,0){B}
+\tkzDefPoint(-3,0){C}
+
+\tkzDefLine[perpendicular=through A](B,C) \tkzGetPoint{d}
+\tkzInterLL(A,d)(B,C) \tkzGetPoint{D}
+\tkzDefLine[perpendicular=through B](A,C) \tkzGetPoint{e}
+\tkzInterLL(B,e)(A,C) \tkzGetPoint{E}
+\tkzDefLine[perpendicular=through C](B,A) \tkzGetPoint{f}
+\tkzInterLL(C,f)(B,A) \tkzGetPoint{F}
+\tkzInterLL(A,D)(B,E) \tkzGetPoint{H}
+\tkzDefCircle[circum](A,B,C) \tkzGetPoint{O}
+\tkzInterLL(A,O)(B,e) \tkzGetPoint{P}
+\tkzInterLL(A,O)(C,f) \tkzGetPoint{Q}
+\tkzDefMidPoint(B,C) \tkzGetPoint{M}
+\tkzDefCircle[circum](P,Q,H) \tkzGetPoint{G}
+\tkzDefCircle[circum](A,B,P) \tkzGetPoint{o}
+\tkzDefCircle[circum](A,C,Q) \tkzGetPoint{o'}
+\tkzDefMidPoint(P,Q) \tkzGetPoint{X}
+
+\tkzMarkAngle[color=blue,size=0.6,mark=s|](H,B,C)
+\tkzMarkAngle[color=blue,size=0.9,mark=s|](C,A,H)
+\tkzMarkAngle[color=blue,size=0.7,mark=s|](O,A,B)
+\tkzMarkAngle[color=black,size=0.4](Q,C,A)
+\tkzMarkAngle[color=black,size=0.4](G,Q,P)
+\tkzMarkAngle[color=black,size=0.4](X,G,Q)
+\tkzMarkAngle[color=black,size=0.5](X,G,Q)
+\tkzMarkAngle[color=black,size=0.4](P,H,Q)
+\tkzMarkAngle[color=black,size=0.5](P,H,Q)
+\tkzMarkRightAngle[color=red](C,E,H)
+\tkzMarkRightAngle[color=red](Q,X,G)
+\tkzMarkSegment[color=blue,mark=s||](G,Q)
+\tkzMarkSegment[color=blue,mark=s||](G,P)
+\tkzMarkSegment[color=black,mark=s|](M,B)
+\tkzMarkSegment[color=black,mark=s|](M,C)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(A,H)
+\tkzDrawSegment(B,E)
+\tkzDrawSegment(C,F)
+\tkzDrawSegment(A,M)
+\tkzDrawSegment(G,P)
+\tkzDrawSegment(G,Q)
+\tkzDrawSegment(G,X)
+\tkzDrawLine(A,Q)
+\tkzDrawCircle(O,A)
+\tkzDrawCircle[dashed](o,A)
+\tkzDrawCircle[dashed](o',A)
+\tkzDrawPoints[fill=white,color=black](A,B,C,H,O,P,G,Q,M)
+
+\tkzLabelPoint[above](A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[below left](C){$C$}
+\tkzLabelPoint[below](H){$H$}
+\tkzLabelPoint(O){$O$}
+\tkzLabelPoint[right](P){$P$}
+\tkzLabelPoint[above left](Q){$Q$}
+\tkzLabelPoint[right](G){$G$}
+\tkzLabelPoint(M){$M$}
+\end{tikzpicture}
+\end{center}
+
+On rappelle que les points $H$ et $O$ sont conjugués isogonaux. La présence des points $O$ et $H$ nous encourage à commencer par effectuer une chasse aux angles. Observons que
+$$\widehat{PBC}=\widehat{HBC}=\widehat{HAC}=\widehat{OAB}=\widehat{PAB}$$ Donc la droite $(BC)$ est tangente au cercle circonscrit au triangle $ABP$ au point $B$. De même la droite $(BC)$ est tangente au cercle circonscrit au triangle $AQC$ au point $C$. L'axe radical de ces deux cercles coupe donc le segment $[BC]$ en son milieu par le lemme des axes radicaux. Donc cet axe radical est la médiane issue de $A$ dans le triangle $ABC$. Il suffit donc de montrer que le centre (que l'on appelle $G$) du cercle circonscrit au triangle $PQH$ est sur l'axe radical des deux cercles. Or :
+$$\widehat{CQG}=\widehat{HQG}=90-\widehat{HPQ}=90-(\widehat{PBA}+\widehat{PAB})=\widehat{BAC}-\widehat{QAB}=\widehat{BAC}=\widehat{QAC}$$
+Donc la droite $(GQ)$ est tangente au cercle circonscrit au triangle $AQC$ au point $Q$ et donc la puissance du point $G$ par rapport à ce cercle est $GQ^2$. Exactement de la même façon, la droite $(GP)$ est tangente au cercle circonscrit au triangle $PBA$ au point $P$ et donc la puissance du point $G$ par rapport à ce cercle est $GP^2$. Comme $G$ est le centre du cercle circonscrit au triangle $QHP$, on a $GP=GQ$. La puissance du point $G$ par rapport aux deux cercles est donc la même, $G$ est donc sur l'axe radical des deux cercles, c'est à dire sur la médiane issue du sommet $A$.
+\end{sol}
+
+
+\begin{exo}
+(IMO SL $2006$ G$4$)
+Soit $ABC$ un triangle tel que $\widehat{C}<\widehat{A}<90^\circ$ et soit $D$ un point du segment $[AC]$ tel que $BD=BA$. Les points de contact du cercle inscrit du triangle $ABC$ avec les côtés $[AB]$ et $[AC]$ sont notés respectivement $K$ et $L$. Soit $J$ le centre du cercle inscrit au triangle $BCD$. Montrer que la droite $(KL)$ coupe le segment $[AJ]$ en son milieu.
+\end{exo}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}
+[scale=1.75]
+\tkzInit[ymin=-0.5,ymax=6.5,xmin=-4,xmax=4]
+\tkzClip
+
+\tkzDefPoint(1,6){B}
+\tkzDefPoint(3,0){A}
+\tkzDefPoint(-3,0){C}
+
+\tkzInterLC(A,C)(B,A) \tkzGetPoints{A}{D}
+\tkzDefCircle[in](A,B,C) \tkzGetPoint{I}
+\tkzDefLine[perpendicular=through I](A,B) \tkzGetPoint{k}
+\tkzInterLL(I,k)(A,B) \tkzGetPoint{K}
+\tkzDefLine[perpendicular=through I](A,C) \tkzGetPoint{l}
+\tkzInterLL(I,l)(A,C) \tkzGetPoint{L}
+\tkzDefCircle[in](B,C,D) \tkzGetPoint{J}
+\tkzDefLine[parallel=through J](K,L) \tkzGetPoint{x}
+\tkzInterLL(A,C)(J,x) \tkzGetPoint{X}
+\tkzDefLine[perpendicular=through J](A,C) \tkzGetPoint{n}
+\tkzInterLL(J,n)(A,C) \tkzGetPoint{N}
+\tkzDefMidPoint(J,A) \tkzGetPoint{Z}
+
+\tkzMarkAngle[color=blue,size=0.3](J,D,C)
+\tkzMarkAngle[color=blue,size=0.3](D,X,J)
+\tkzMarkAngle[color=blue,size=0.4](B,D,J)
+\tkzMarkAngle[color=blue,size=0.3](A,L,K)
+\tkzMarkSegment[color=black,mark=s||](J,Z)
+\tkzMarkSegment[color=black,mark=s||](Z,A)
+\tkzMarkSegment[color=black,mark=s|](N,D)
+\tkzMarkSegment[color=black,mark=s|](N,X)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(B,D)
+\tkzDrawSegment(K,L)
+\tkzDrawSegment(N,J)
+\tkzDrawSegment(A,J)
+\tkzDrawSegment(D,J)
+\tkzDrawSegment(J,X)
+\tkzDrawSegment(C,J)
+\tkzDrawCircle(I,L)
+\tkzDrawPoints[fill=white,color=black](A,B,C,D,J,K,L,X,N)
+
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint[above](B){$B$}
+\tkzLabelPoint[below left](C){$C$}
+\tkzLabelPoint[above](J){$J$}
+\tkzLabelPoint(D){$D$}
+\tkzLabelPoint[right](K){$K$}
+\tkzLabelPoint[below](L){$L$}
+\tkzLabelPoint(X){$X$}
+\tkzLabelPoint[below](N){$N$}
+\end{tikzpicture}
+\end{center}
+
+On maîtrise assez mal la droite $(AJ)$, on va donc essayer de ramener le problème à un problème de milieu sur des segments connus. On va donc chercher à introduire d'autres milieux. Une façon efficace de procéder est de projeter le problème sur le segment $[AC]$. Pour cela, on introduit $X$ le point d'intersection de la parallèle à la droite $(KL)$ passant par la point $J$ coupe $(AC)$.
+
+Désormais, il s'agit de montrer que le point $L$ est le milieu du segment $[AX]$ pour conclure. Examinons de plus près notre point $X$, qui semble vérifier que le triangle $XJD$ est isocèle au point $J$. Et en effet,
+$$\widehat{JXA}=\widehat{KLA}=90^\circ-\frac{1}{2}\widehat{DAB}=\frac{1}{2}(180^\circ-\widehat{DAB})=\frac{1}{2}(180^\circ-\widehat{BDA})=\frac{1}{2}\widehat{BDC}=\widehat{CDJ}$$ donc le triangle $XJD$ est isocèle au point $J$.
+
+On dispose de nombreuses égalités de longueurs. La voie la plus naturelle pour conclure est donc de montrer que $AX=2AL$. Pour projeter l'égalité de longueur $JD=JX$ sur le segment $[AC]$, on introduit le point $N$, projeté orthogonal du point $J$ sur le segment $[AC]$ et qui est aussi le point de contact du cercle inscrit de $BCD$ avec $CD$. On a $ND=NX$.
+On a alors, par une chasse aux longueurs,
+$$AX=AD+XD=AD+2DN=AD+2\frac{CD+CB-BD}{2}=AD+CD+CB-BD=AD+CB-AB=2AL$$ donc $L$ est le milieu du segment $[AX]$. Or les droites $(KL)$ et $(AX)$ sont parallèles, donc la droite $(KL)$ coupe aussi le segment $[AJ]$ en son milieu.
+\end{sol}

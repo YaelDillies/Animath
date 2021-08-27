@@ -31,7 +31,7 @@ On peut remarquer que $\frac1{a}+\frac1{b}\geq \frac{4}{a+b}$ (il suffit de tout
 \end{sol}
 
 \begin{exo}
-Il y a $2021$ mésanges qui nichent sur $120$ arbres. Essayant de les déloger, un chasseur maladroit leur tire dessus. A chaque fois, il manque sa cible mais effraie une mésange qui quitte alors son arbre et se réfugie sur un arbre avec au moins autant de mésanges que son arbre de départ (elle se compte sur ce dernier). Montrer qu'après un certain nombre fini de tirs, toutes les mésanges seront sur le même arbre.
+Il y a $2021$ mésanges qui nichent sur $120$ arbres. Essayant de les déloger, un chasseur maladroit leur tire dessus. À chaque fois, il manque sa cible mais effraie une mésange qui quitte alors son arbre et se réfugie sur un arbre avec au moins autant de mésanges que son arbre de départ (elle se compte sur ce dernier). Montrer qu'après un certain nombre fini de tirs, toutes les mésanges seront sur le même arbre.
 \end{exo}
 
 \begin{sol}
@@ -113,9 +113,11 @@ Sur le plan, on part du point $(1,\sqrt2)$. Quand on est en $(x,y)$, on peut se 
 Alex et Bobette jouent sur une grille $20\times20$ où les cases sont carrées et de côté $1$. La \emph{distance} entre deux cases est la distance entre leurs centres. Ils jouent à tour de rôle de la manière suivante : Alex met une pierre rouge sur une case, de manière à ce que la distance entre deux cases portant des pierres rouges ne soit jamais $\sqrt5$, puis Bobette met une pierre bleue sur la grille, sans restriction. Le jeu s'arrête quand un des deux ne sait plus poser de pierre. Trouver le plus grand $K$ tel qu'Alex peut toujours placer au moins $K$ pierres, quelles que soient les réponses de Bobette.
 \end{exo}
 
+
 \begin{exo}
 Des entiers positifs en nombre fini sont écrits de gauche à droite sur une ligne. Lucie choisit deux nombres voisins $x$ et $y$ tels que $x$ est à gauche de $y$ et $x>y$ et remplace la paire $(x,y)$ par $(x-1,x)$ ou $(y+1,x)$ au choix, puis recommence tant que possible. Montrer qu'elle ne peut continuer indéfiniment.
 \end{exo}
+
 
 \begin{exo}
 Les participants du stage Animath s'appellent $C_1,\ldots,C_n$ et font la file devant le restaurant selon les règles suivantes :
@@ -123,7 +125,7 @@ Les participants du stage Animath s'appellent $C_1,\ldots,C_n$ et font la file d
 \item
 Les animatheurs choisissent l'ordre initial des participants.
 \item
-A chaque étape, les animatheurs choisissent un entier $i$ avec $1\leq i\leq n$. Si le participant $C_i$ a au moins $i$ personnes devant lui dans la queue, il paie 1 euro aux animatheurs et avance de $i$ places. Sinon, le restaurant ouvre et le processus se termine.
+À chaque étape, les animatheurs choisissent un entier $i$ avec $1\leq i\leq n$. Si le participant $C_i$ a au moins $i$ personnes devant lui dans la queue, il paie 1 euro aux animatheurs et avance de $i$ places. Sinon, le restaurant ouvre et le processus se termine.
 \end{itemize}
 Montrer que le processus se termine forcément et déterminer la quantité maximale d'argent que les animatheurs peuvent extorquer aux participants.
 \end{exo}
@@ -135,7 +137,7 @@ Il y a une lampe sur chaque case d'une grille $5\times5$. Lorsqu'on allume ou é
 \subsubsection{Solutions}
 
 \begin{sol}
-A chaque étape, la somme des nombres impliqués dans la transformation passe de $a+b$ à $a-b$ ou $b-a$, elle est donc modifiée d'une quantité paire ($2b$ ou $2a$ respectivement). La parité de la somme des nombres écrits au tableau est donc un invariant. Dans la situation initiale, elle vaut $\frac{2018\cdot 2019}2=1009\cdot 2019$ qui est impair. Après $2017$ étapes, il ne reste plus qu'un nombre au tableau, qui doit être impair.
+À chaque étape, la somme des nombres impliqués dans la transformation passe de $a+b$ à $a-b$ ou $b-a$, elle est donc modifiée d'une quantité paire ($2b$ ou $2a$ respectivement). La parité de la somme des nombres écrits au tableau est donc un invariant. Dans la situation initiale, elle vaut $\frac{2018\cdot 2019}2=1009\cdot 2019$ qui est impair. Après $2017$ étapes, il ne reste plus qu'un nombre au tableau, qui doit être impair.
 \end{sol}
 
 \begin{sol}
@@ -184,7 +186,7 @@ En soustrayant, on a $2n=25$ ce qui est impossible.
 \end{sol}
 
 \begin{sol}
-Ecrivons un $1$ sur chaque face bleue et un $0$ sur chaque face jaune. A toute configuration est alors associé un nombre écrit en binaire et ayant $2009$ chiffres. Quand on fait un coup, on modifie $50$ chiffres consécutifs, dont le plus grand passe de $1$ à $0$. Le nombre associé à la position baisse donc strictement. Puisqu'il ne peut être négatif, la partie finit par s'arrêter.\\
+Écrivons un $1$ sur chaque face bleue et un $0$ sur chaque face jaune. À toute configuration est alors associé un nombre écrit en binaire et ayant $2009$ chiffres. Quand on fait un coup, on modifie $50$ chiffres consécutifs, dont le plus grand passe de $1$ à $0$. Le nombre associé à la position baisse donc strictement. Puisqu'il ne peut être négatif, la partie finit par s'arrêter.\\
 Pour savoir qui gagne, considérons les cartes en positon $50k$ à partir de la droite, et le nombre de cartes bleues parmi celles-ci. Au début, il est de $40$, et il change de $1$ à chaque coup puisqu'exactement une de ces cartes est retournée à chaque coup. Dès lors, quand c'est au tour du second joueur, le nombre de cartes bleues parmi celles considérées est impair, donc non nul. Le second joueur a donc toujours quelque chose à jouer, et ne peut donc perdre. Puisque le jeu se finit, le second joueur gagne toujours.
 \end{sol}
 

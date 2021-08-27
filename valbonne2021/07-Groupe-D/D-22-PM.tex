@@ -55,11 +55,11 @@ du plan et des réels $r_1, \dots, r_n$ tels que :
 
 Sur une plaine plate à Camelot, le roi Arthur construit un labyrinthe $\mathfrak{L}$ constitué de $n$ droites deux-à-deux non parallèles et trois-à-trois non concourantes. Pour chaque mur, Merlin colorie un des côtés en rouge et l'autre en bleu.
 
-À l'intersection de deux murs, il y a $4$ coins : deux coins où un côté rouge et un côté bleu s'intersectent, un coin où deux côtés rouges s'intersectent, et un coin où deux côtés bleus s'intersectent. A cette intersection, il existe une porte reliant les deux coins opposés où des côtés de couleurs différentes s'intersectent.
+À l'intersection de deux murs, il y a $4$ coins : deux coins où un côté rouge et un côté bleu s'intersectent, un coin où deux côtés rouges s'intersectent, et un coin où deux côtés bleus s'intersectent. À cette intersection, il existe une porte reliant les deux coins opposés où des côtés de couleurs différentes s'intersectent.
 
 Après que Merlin a colorié les murs, Morgane place des chevaliers dans le labyrinthe. Les chevaliers peuvent marcher à travers les portes, mais pas à travers les murs.
 
-Soit $k(\mathfrak{L})$ le plus grand entier $k$ tel que : quelle que soit la façon dont Merlin colorie le labyrinthe $\mathfrak{L}$, Morgane peut toujours placer $k$ chevaliers tels que deux d'entre eux ne peuvent jamais se rencontrer. A $n$ fixé, quelles peuvent être les valeurs de $k(\mathfrak{L})$ pour des labyrinthes $\mathfrak{L}$ constitués de $n$ droites ?
+Soit $k(\mathfrak{L})$ le plus grand entier $k$ tel que : quelle que soit la façon dont Merlin colorie le labyrinthe $\mathfrak{L}$, Morgane peut toujours placer $k$ chevaliers tels que deux d'entre eux ne peuvent jamais se rencontrer. Pour $n$ fixé, quelles peuvent être les valeurs de $k(\mathfrak{L})$ pour des labyrinthes $\mathfrak{L}$ constitués de $n$ droites ?
 \end{exo}
 
 
@@ -105,12 +105,12 @@ Montrons que $3$ couleurs suffit. Comme dans de nombreux autres exos, on effectu
 
 \begin{sol}
 \begin{enumerate}
-    \item Soient $C_1,C_2,C_3,C_4$ les $4$ convexes. On utilise l'hypothèse de l'énoncé pour obtenir, pour chaque $1\le i \le 4$ un point $A_i$ appartenant à chacun des $C_j$ pour $j\ne i$. 
+    \item Soient $C_1,C_2,C_3,C_4$ les $4$ convexes. On utilise l'hypothèse de l'énoncé pour obtenir, pour chaque $1\le i \le 4$ un point $A_i$ appartenant à chacun des $C_j$ pour $j\ne i$.
     \begin{itemize}
         \item Si $A_1,A_2,A_3,A_4$ sont les sommets d'un quadrilatère convexe, alors sans perte de généralité $[A_1A_2]$ et $[A_3A_4]$ s'intersectent en un point $X$. $A_1$ et $A_2$ appartiennent à $C_3$ et $C_4$, donc par convexité de ces ensembles, $O$ aussi. De même, $O$ appartient à $C_1$ et $C_2$ et donc à l'intersection des quatre convexes.
         \item Sinon, on suppose sans perte de généralité que $A_1$ est à l'intérieur du triangle $A_2A_3A_4$. Les trois sommets du triangle appartiennent à $C_1$ donc $A_1$ aussi par convexité de $C_1$. Comme $A_1$ apaprtient déjà aux trois autres convexes, il appartient à l'intersection des quatre.
     \end{itemize}
-    
+
     \item La réponse est oui. Pour le montrer, on procède par récurrence sur $n$. On a traité le cas $n=4$, supposons le résultat vrai pour $n$ et montrons le au rang $n+1$. Soient donc $C_1,\ldots,C_{n+1}$ des convexes dont l'intersection de trois quelconques est non vide. Par l'hypothèse de récurrence, pour $1\le i\le 4\le n+1$, on peut trouver un point $A_i$ dans $\cap_{j\ne i}C_j$. De la même manière que dans le cas $n=4$, on termine pour trouver un point dans l'intersection de tous les convexes.
 \end{enumerate}
 \end{sol}
@@ -134,7 +134,7 @@ Soient $a,b$ deux entiers strictement positifs. Parmi toute suite de $ab+1$ rée
 Si $(u_n)_{1\le n\le ab+1}$ est la suite, on définit pour tout $1\le n\le ab+1$ les entiers $a_n$ et $b_n$ qui correspondent aux tailles des plus grandes sous-suites croissante et décroissante de $(u_m)$ se terminant en $n$ respectivement. Si par l'absurde on a toujours $a_n\le a$ et $b_n\le b$, comme ces valeurs sont strictement positives, le couple $(a_n,b_n)$ ne peut prendre que $ab$ valeurs et par le principe des tiroirs, il existe $m<n$ tels que $a_m=a_n$ et $b_m=b_n$. Sans perte de généralité, $u_m\le u_n$ et une des sous-suites croissantes de taille $a_m$ se terminant en $m$ peut se prolonger en une sous-suite croissante de taille $a_m+1>a_n$ se terminant en $n$, absurde.
 \end{preuve}
 
-Notamment, ce théorème appliqué à $a=b$ donne que toute suite de taille $n^2+1$ possède une sous-suite monotone de taille $n+1$. Une suite de taille $n$ est de taille au moins $(\lceil\sqrt n\rceil-1)^2+1$ et contient donc une sous-suite monotone de taille $\lceil\sqrt n\rceil\ge \sqrt n$. On extrait donc une sous-suite monotone de $(y_i)$ de taille au moins $\sqrt n$. 
+Notamment, ce théorème appliqué à $a=b$ donne que toute suite de taille $n^2+1$ possède une sous-suite monotone de taille $n+1$. Une suite de taille $n$ est de taille au moins $(\lceil\sqrt n\rceil-1)^2+1$ et contient donc une sous-suite monotone de taille $\lceil\sqrt n\rceil\ge \sqrt n$. On extrait donc une sous-suite monotone de $(y_i)$ de taille au moins $\sqrt n$.
 
 On peut vérifier facilement (par un produit scalaire par exemple) que les points correspondant forment alors le sous-ensemble \textit{obtus} cherché.
 \end{sol}
@@ -168,11 +168,11 @@ Pour un choix adéquat d'une des trois couleurs, il y a au plus $\lfloor\frac n3
 On va montrer que la seule valeur possible est $n+1$, quel que soit le labyrinthe $\mathfrak{L}$ choisi par le roi Arthur.
 
 \begin{itemize}
-    \item \underline{$k(\mathfrak{L})\ge n+1$:} Comptons le nombre de régions formées par les $n$ murs de $\mathfrak{L}$. On effectue une inversion de la figure pour se ramener à un graphe planaire, qui possède alors $S = \dbinom n2 + 1$ sommets (les $\dbinom n2$ intersections des murs et le point à l'infini), ainsi que $A = n^2$ arêtes (chaque mur est séparé en $n$ parties par les autres murs). La formule d'Euler donne alors le nombre de régions
-    $$F = A + 2 - S = \dbinom n2 + n + 1.$$
-    Considérons une coloration quelconque du labyrinthe par Merlin. Le nombre de portes créées est égal au nombre d'intersection des $n$ murs, soit $\dbinom n2$. Si l'on appelle composante connexe du labyrinthe un ensemble de poins connecté en prenant en compte les portes, chaque porte réduit d'au plus $1$ le nombre de composantes connexes du labyrinthe, et par conséquent $\mathfrak{L}$ contient au moins $n+1$ composantes connexes. Si Morgane place un chevalier dans chacune de ces composantes connexes, elle peut alors placer $n+1$ chevaliers qui ne peuvent pas se rencontrer dans tous les cas. Par conséquent $k(\mathfrak{L})\ge n+1$.
-    
-    \item \underline{$k(\mathfrak{L})\le n+1$:} Montrons maintenant que Merlin peut toujours colorier les murs de façon à obtenir au plus $n+1$ composantes connexes. Pour ceci, on effectue une rotation de la figure afin de n'avoir aucun mur horizontal, et on considère la coloration où le côté gauche de chaque mur est colorié en bleu, et le côté droit en rouge. Alors à l'intersection de deux murs, la porte se trouve du côté "vertical", et si un chevalier placé en un point arbitraire se dirige toujours vers le haut (en longeant des murs si nécessaire) il pourra continuer jusqu'à l'infini. Ainsi, chaque composante connexe du labyrinthe contient une des régions infinies "du haut" (c'est-à-dire qui ont une intersection infinie avec l'hyperplan $y>0$). Mais il n'y a que $n+1$ telles régions puisque chaque droite en créé une nouvelle. Ainsi, Morgane ne peut placer que $n+1$ chevaliers au plus.
+\item \underline{$k(\mathfrak{L})\ge n+1$:} Comptons le nombre de régions formées par les $n$ murs de $\mathfrak{L}$. On effectue une inversion de la figure pour se ramener à un graphe planaire, qui possède alors $S = \dbinom n2 + 1$ sommets (les $\dbinom n2$ intersections des murs et le point à l'infini), ainsi que $A = n^2$ arêtes (chaque mur est séparé en $n$ parties par les autres murs). La formule d'Euler donne alors le nombre de régions
+$$F = A + 2 - S = \dbinom n2 + n + 1.$$
+Considérons une coloration quelconque du labyrinthe par Merlin. Le nombre de portes créées est égal au nombre d'intersection des $n$ murs, soit $\dbinom n2$. Si l'on appelle composante connexe du labyrinthe un ensemble de poins connecté en prenant en compte les portes, chaque porte réduit d'au plus $1$ le nombre de composantes connexes du labyrinthe, et par conséquent $\mathfrak{L}$ contient au moins $n+1$ composantes connexes. Si Morgane place un chevalier dans chacune de ces composantes connexes, elle peut alors placer $n+1$ chevaliers qui ne peuvent pas se rencontrer dans tous les cas. Par conséquent $k(\mathfrak{L})\ge n+1$.
+
+\item \underline{$k(\mathfrak{L})\le n+1$:} Montrons maintenant que Merlin peut toujours colorier les murs de façon à obtenir au plus $n+1$ composantes connexes. Pour ceci, on effectue une rotation de la figure afin de n'avoir aucun mur horizontal, et on considère la coloration où le côté gauche de chaque mur est colorié en bleu, et le côté droit en rouge. Alors à l'intersection de deux murs, la porte se trouve du côté "vertical", et si un chevalier placé en un point arbitraire se dirige toujours vers le haut (en longeant des murs si nécessaire) il pourra continuer jusqu'à l'infini. Ainsi, chaque composante connexe du labyrinthe contient une des régions infinies "du haut" (c'est-à-dire qui ont une intersection infinie avec l'hyperplan $y>0$). Mais il n'y a que $n+1$ telles régions puisque chaque droite en créé une nouvelle. Ainsi, Morgane ne peut placer que $n+1$ chevaliers au plus.
 \end{itemize}
 \end{sol}
 
@@ -181,12 +181,12 @@ On commence par montrer que l'on peut partitionner les cercles en deux catégori
 
 \begin{itemize}
     \item Considérons deux cercles $\mathcal{C}_1$ et $\mathcal{C}_2$ qui s'intersectent en deux points $A$ et $B$. L'intersection des deux disques est alors une partie convexe $\mathcal{D}$ du plan délimitée par deux arcs $a_1$ et $a_2$ de $\mathcal{C}_1$ et $\mathcal{C}_2$ respectivement. Mais alors si un troisième cercle $\mathcal{C}_3$ intersecte $a_1\cup a_2$, il "rentre" dans $\mathcal{D}$ et doit en sortir par une deuxième intersection. Ainsi, le nombre de points autres que $A$ et $B$ sur $a_1\cup a_2$ est pair, ce qui signifie que les parités du nombre de points sur $a_1$ et $a_2$ sont les mêmes. Ceci signifie pour notre problème que si les deux coloriages de $A$ coincident, il en est de même pour les coloriages de $B$ et réciproquement. On dit alors que $\mathcal{C}_1$ et $\mathcal{C}_2$ sont en relation si leurs intersections sont jaunes. Par convention, on impose qu'un cercle est toujours en relation avec lui-même.
-    \item On considère maintenant trois cercles $\mathcal{C}_1,\mathcal{C}_2,\mathcal{C}_3$ ainsi que des points d'intersection $A_i$ de $\cap_{j\ne i}\mathcal{C}_j$ pour $1\le i\le 3$. On considère des arcs $a_i$ de $\mathcal{C}_i$ reliant les $A_j$ sur $\mathcal{C}_i$ pour $1\le i\le 3$ ainsi que $\mathcal{D}$ la partie du plan délimitée par ces arcs. De même que dans l'observation précédente, le nombre de sommets autres que les $A_i$ sur la frontière de $\mathcal{D}$ est pair. Alors si on se balade sur la frontière de $\mathcal{D}$ en ne considérant que les coloriages donnés par les $\mathcal{C}_i$, on effectue quelque chose de la forme 
+    \item On considère maintenant trois cercles $\mathcal{C}_1,\mathcal{C}_2,\mathcal{C}_3$ ainsi que des points d'intersection $A_i$ de $\cap_{j\ne i}\mathcal{C}_j$ pour $1\le i\le 3$. On considère des arcs $a_i$ de $\mathcal{C}_i$ reliant les $A_j$ sur $\mathcal{C}_i$ pour $1\le i\le 3$ ainsi que $\mathcal{D}$ la partie du plan délimitée par ces arcs. De même que dans l'observation précédente, le nombre de sommets autres que les $A_i$ sur la frontière de $\mathcal{D}$ est pair. Alors si on se balade sur la frontière de $\mathcal{D}$ en ne considérant que les coloriages donnés par les $\mathcal{C}_i$, on effectue quelque chose de la forme
     $$R \rightarrow B \rightarrow R \rightarrow \ldots\rightarrow R$$
     sauf pour l'éventuelle perturbation où un des $A_i$ est jaune qui donne
     $$R\rightarrow J \rightarrow B\text{ ou } B\rightarrow J \rightarrow R$$
     La taille de la frontière de $D$ est impaire donc il y a un nombre impair de perturbation et \underline{un nombre impair de $A_i$ est jaune}. Ceci signifie que si $\mathcal{C}_1$ est en relation avec $\mathcal{C}_2$ et $\mathcal{C}_3$, alors $\mathcal{C}_2$ et $\mathcal{C}_3$ sont en relation, et que si $\mathcal{C}_1$ n'est pas en relation avec $\mathcal{C}_2$ et $\mathcal{C}_3$, alors $\mathcal{C}_2$ et $\mathcal{C}_3$ sont en relation.
-    
+
     \item Ces deux observations montrent que si on fixe un cercle $\mathcal{C}$, alors $\mathcal{A}$ l'ensemble des cercles en relation avec $\mathcal{C}$ et $\mathcal{B}$ l'ensemble des autres cercles sont une partition des cercles qui vérifient que deux cercles d'un des ensembles sont en relations, et qu'un cercle de $\mathcal{A}$ et un cercle de $\mathcal{B}$ ne sont pas en relation.
 \end{itemize}
 

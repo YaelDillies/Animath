@@ -1,21 +1,24 @@
-\textbf{Introduction:} Ce qui suit est un TD sur les polynômes adréssé au groupe $D$. La résolution de ces exercices suppose une connaissance des techniques classiques. Chaque exercice est accompagné d'une estimation de la difficulté ($F$ facile, $M$ moyen, $D$ difficile). Certains exercices sont tirés du TD donné au stage de 2020 par Emile Averous. Un cours complet sur les polynômes se trouve sur \href{https://maths-olympiques.fr/wp-content/uploads/2017/09/polynomes.pdf}{le site de la POFM}.
+\textbf{Introduction:} Ce qui suit est un TD sur les polynômes adréssé au groupe $D$. La résolution de ces exercices suppose une connaissance des techniques classiques. Chaque exercice est accompagné d'une estimation de la difficulté ($F$ facile, $M$ moyen, $D$ difficile). Certains exercices sont tirés du TD donné au stage de 2020 par Emile Avérous. Un cours complet sur les polynômes se trouve sur \href{https://maths-olympiques.fr/wp-content/uploads/2017/09/polynomes.pdf}{le site de la POFM}.
 
-Les points importants à retenir sont:
+Les points importants à retenir sont :
 \begin{itemize}
-    \item Un polynôme de degré $n$ a au plus $n$ racines comptées avec multiplicités, notamment si deux polynômes sont égaux pour une infinité de valeurs, on peut identifier leurs coefficients.
+    \item Un polynôme de degré $n$ a au plus $n$ racines comptées avec multiplicité, notamment si deux polynômes sont égaux pour une infinité de valeurs, on peut identifier leurs coefficients.
     \item $\alpha$ est une racine de $P$ si et seulement s'il existe un polynôme $Q$ tel que $P(x)=(x-\alpha)Q(x)$
     \item $\alpha$ est une racine de multiplicité $n$ de $P$ si et seulement si $\alpha$ est une racine de $P,P',\ldots,P^{(n-1)}$ mais pas une racine de $P^{(n)}$. Notamment, $\alpha$ est une racine multiple de $P$ si et seulement si $P(\alpha)=P'(\alpha)=0$.
     \item Si $(x_0,y_0),\ldots,(x_n,y_n)$ sont des couples de réels (respectivement rationnels, complexes), alors il existe un unique polynôme $P$ de degré inférieur ou égal à $n$ vérifiant pour tout $i$ entre $0$ et $n$: $P(x_i)=y_i$. De plus, ce polynôme est à coefficients réels (respectivement rationnels, complexes). Le polynôme est l'interpolateur de Lagrange.
-    \item  L'arithmétique se généralise aux polynômes. La notion de PGCD est bien définie et peut se calculer par division euclidienne. Le théorème de Bézout est aussi applicable.
-    \item On peut utiliser la formule de Taylor qui assure que pour un polynôme $P$ à coefficient dans un corps $\mathbb{K}=\R$, $\mathbb{C}$ ou $\mathbb{C}$, on a pour tout $a\in \mathbb{K}$ 
+    \item L'arithmétique se généralise aux polynômes. La notion de PGCD est bien définie et peut se calculer par division euclidienne. Le théorème de Bézout est aussi applicable.
+    \item On peut utiliser la formule de Taylor qui assure que pour un polynôme $P$ à coefficient dans un corps $\mathbb{K}=\R$, $\mathbb{C}$ ou $\mathbb{C}$, on a pour tout $a\in \mathbb{K}$
     $$P(X+a)=\sum_{n=0}^{\deg(P)}\frac{P^{(k)}(a)}{k!}X^k $$
-    \item  D'après le lemme de Gauss, l'irréductibilité d'un polynôme $P\in \Z[X]$ dans $\Z[X]$ équivaut à son irréductibilité dans $\Q[X]$.
+    \item D'après le lemme de Gauss, l'irréductibilité d'un polynôme $P\in \Z[X]$ dans $\Z[X]$ équivaut à son irréductibilité dans $\Q[X]$.
     \item Les coefficients s'expriment en fonction des racines par les formules de Viète qui font intervenir des polynômes symétriques élémentaires.
 \end{itemize}
+
+
 \subsubsection{Exercices}
 
+
 \begin{exo}[Liouville,D]
-Soit $n\geq 3 $ un entier.Trouver les polynômes $P,Q,R\in \mathbb{C}[X]$ tels que $P^n+Q^n=R^n$. 
+Soit $n\geq 3 $ un entier.Trouver les polynômes $P,Q,R\in \mathbb{C}[X]$ tels que $P^n+Q^n=R^n$.
 \end{exo}
 
 
@@ -23,17 +26,21 @@ Soit $n\geq 3 $ un entier.Trouver les polynômes $P,Q,R\in \mathbb{C}[X]$ tels q
 Soit $p$ un nombre premier et $P\in \Z[X]$ et soit $a\in \Z$ tel que $P(a)\equiv 0 [p]$ ainsi que $P'(a)\neq 0 [p] $. Montrer qu'il existe $b\in \Z$ avec $a\equiv b[p]$ et $P(b)\equiv 0 [p^2]$.
 \end{exo}
 
+
 \begin{exo}[Euclide,M]
 Soient $a,b\in \N^*$, determiner $(X^a-1)\wedge(X^b-1) $.
 \end{exo}
+
 
 \begin{exo}[Inertie du PGCD,M-D]
 Soient $P,Q\in \Q[X]$ premiers entre eux dans $\Q[X]$, montrer qu'ils sont premiers entre eux dans $\mathbb{C}[X]$.
 \end{exo}
 
+
 \begin{exo}[Polynômes irréductibles,M-D]
 Soit $Q\in \Q[X]$ irréductible (c'est à dire qu'il n'admet pas de diviseur strict dans $\Q[X]$) montrer que $Q\wedge Q'=1$.
 \end{exo}
+
 
 \begin{exo}[Polynômes positifs,M-D]
 Montrer que si $P\in \R[X]$ respecte $\forall x \in \R, P(x)\geq 0$ alors il existe $A,B\in \R[X]$ tels que $P=A^2+B^2$.
@@ -51,164 +58,159 @@ Montrer qu'il n'existe pas de polynôme non constant $P\in \Z[X]$ tel que $P(0),
 
 
 \begin{exo}[M]
-Résoudre $$\left \{
-\begin{array}{rcl}
-x^5+y^5=33 \\
-x+y=3
-\end{array}
-\right. $$
-
+Résoudre
+$$\begin{cases} x^5 + y^5 & = 33 \\ x + y & = 3 \end{cases}$$
 \end{exo}
+
 
 \begin{exo}[M-D]
-Résoudre $$^4\sqrt{97-x}+^4\sqrt{x}=5$$
-
+Résoudre
+$$\sqrt[4]{97-x} + \sqrt[4]{x} = 5$$
 \end{exo}
+
 
 \begin{exo}[M]
-Soient $x_1$ et $x_2$ les racines de $X^2-6X+1$. Montrer que pour tout $$n\in \N,\: x_1^n+x_2^n\in \Z, \: x_1^n+x_2^n\not\equiv 0[5 ] $$
-
+Soient $x_1$ et $x_2$ les racines de $X^2-6X+1$. Montrer que, pour tout $n\in \N$,
+$$x_1^n+x_2^n\in \Z \text{ et } x_1^n+x_2^n\not\equiv 0[5]$$
 \end{exo}
+
 
 %\begin{exo}[IMO 1993, M]
 %Soit $n\geq 2$.Montrer que $P(X)=X^n+5X^{n-1}+3$ est irréductible sur $\Z[X]$.
-
 %\end{exo}
+
 
 \begin{exo}[SL IMO 2002, A3, D]
 Soit $P(x)=ax^3+bx^2+cx+d$ avec $a,b,c,d$ des entiers et $a\ne 0$. Supposons que pour une infinité de couples d'entiers distincts $(x,y)$ on ait $xP(x)=yP(y)$. Montrer que $P$ a une racine entière.
 \end{exo}
 
-\begin{exo}[IMO 2016 P5]
-On considère l'équation 
-$$(x-1)(x-2)\dots(x-2016)=(x-1)(x-2)\dots(x-2016) $$
-écrite sur un tableau. Quel est l'entier $k$ minimal tel que l'on puisse éffacer $k$ facteurs parmi ces $4032$ pour qu'il reste au moins un facteur de chaque côté de l'équation mais que l'équation n'ait plus de solution réelle.
-\end{exo}
 
+\begin{exo}[IMO 2016 P5]
+On considère l'équation
+$$(x-1)(x-2)\dots(x-2016)=(x-1)(x-2)\dots(x-2016) $$
+écrite sur un tableau. Quel est l'entier $k$ minimal tel que l'on puisse effacer $k$ facteurs parmi ces $4032$ pour qu'il reste au moins un facteur de chaque côté de l'équation mais que l'équation n'ait plus de solution réelle.
+\end{exo}
 
 
 \subsubsection{Solutions}
 
+
 \begin{sol}
-On commence par remarquer que l'on peut supposer sans perte de généralité que $P,Q,R$ sont \textbf{deux à deux} premiers entre eux.
-\\
-Commençons par l'étude des degrés. On note $d=\max (\deg(R),\deg(P),\deg(Q))$. Alors le maximum est atteint pour au moins deux polynômes. (Sinon la somme des deux autre est de degré $<nd$).
-\\
-Par symétrie, on peut supposer que $d=\deg(P)$.
-\\
-C'est l'énoncé du grand théorème de Fermat. Même si on va utiliser des arguments arithmétiques, il va falloir utiliser une propriété des polynôme non arithmétique (sinon on aurait une preuve du théorème de Fermat dans les entiers!).
-\\
+On commence par remarquer que l'on peut supposer sans perte de généralité que $P,Q,R$ sont \textbf{deux à deux} premiers entre eux. \\
+Commençons par l'étude des degrés. On note $d=\max (\deg(R),\deg(P),\deg(Q))$. Alors le maximum est atteint pour au moins deux polynômes. (Sinon la somme des deux autres est de degré $<nd$). \\
+Par symétrie, on peut supposer que $d=\deg(P)$. \\
+C'est l'énoncé du dernier théorème de Fermat. Même si on va utiliser des arguments arithmétiques, il va falloir utiliser une propriété non arithmétique des polynômes, sinon on aurait une preuve du dernier théorème de Fermat dans les entiers ! \\
+
 Cette propriété est la dérivation. On commence donc par dériver la relation
 $$nP'P^{n-1}+nQ'Q^{n-1}=nR'R^{n-1} $$
-Pour réutiliser la relation de départ, on multiplie par $R$ et on écrit injecte $R^n=P^n+Q^n$:
+Pour réutiliser la relation de départ, on multiplie par $R$ et on réinjecte $R^n = P^n+Q^n$ :
 $$R'(P^n+Q^n)=P'P^{n-1}R+Q'Q^{n-1}R $$
-On factorise 
+On factorise
 $$P^{n-1}(R'P-P'R)=Q^{n-1}(Q'R-R'Q) $$
-Pourquoi est-ce problématique? En fait, on a $P^{n-1}\wedge Q^{n-1}=1$ donc le lemme de Gauss donne 
+Pourquoi est-ce problématique ? En fait, on a $P^{n-1}\wedge Q^{n-1}=1$ donc le lemme de Gauss donne
 $$P^{n-1}|Q'R-R'Q $$
-Mais en étudiant les degrés on a 
+Mais en étudiant les degrés on a
 $$\deg(P^{n-1})=(n-1)d\geq 2d $$
 Et on a
 $$ \deg(Q'R-R'Q)\leq d+(d-1)<2d\leq \deg(P^{n-1})$$
-Ainsi, on doit avoir 
+Ainsi, on doit avoir
 $$Q'R-R'Q=0\iff Q'R=R'Q $$
-On recommence, on a 
-$$Q\wedge R=1 $$ donc le lemme de Gauss implique que 
+On recommence, on a
+$$Q\wedge R=1 $$ donc le lemme de Gauss implique que
 $$R\mid Q', \: Q\mid R' $$
-L'un de ces deux polynôme est de degré $d$ et la dérivée du polynôme restant est de degré au plus $d-1$. Cela assure que $R'=0$ ou $Q'=0$. Comme 
-$$Q'R=R'Q $$ on a en fait $Q'=R'=0$ et donc $d=0$. Les seules solutions sont les solutions triviales constantes.
+L'un de ces deux polynômes est de degré $d$ et la dérivée du polynôme restant est de degré au plus $d-1$. Cela assure que $R'=0$ ou $Q'=0$. Comme
+$$Q'R=R'Q $$, on a en fait $Q'=R'=0$ et donc $d=0$. Les seules solutions sont les solutions triviales constantes.
 \end{sol}
 
 
 \begin{sol}
-On pose $d=\deg(P)$ et on écrit $P=\sum_{n=0}^da_nX^n$ où $a_n\in \Z$.
-\\
-On calcule directement, pour $k\in \Z$ on a donc 
+On pose $d=\deg(P)$ et on écrit $P=\sum_{n=0}^da_nX^n$ où $a_n\in \Z$. \\
+On calcule directement, pour $k\in \Z$ on a donc
 $$P(a+kp)=\sum_{n=0}^da_n(X+kp)^n=\sum_{n=0}^da_n\sum_{l=0}^n\binom{n}{l}a^{n-l}(kp)^l =\sum_{n=0}^da_na^l+\sum_{n=0}^dna_na^{l-1}kp+p^2A$$
-Où $A\in \Z$. On a donc 
+où $A\in \Z$. On a donc
 $$P(a+kp)=P(a)+kpP'(a)+p^2A $$
-Tout cela permet d'érire que modulo $p^2$, on a 
+Tout cela permet d'écrire que modulo $p^2$, on a
 $$P(a+kp)\equiv P(a)+pkP'(a)[p^2] $$
-On note $P(a)=pl$ avec $l\in \Z$.
-\\
-Mais comme $P'(a)\not\equiv 0[p]$ il est inversible modulo $p$. On peut donc trouver $k\in \Z$ tel que $l\equiv -kP'(a)[p]$ ce qui donne 
+On note $P(a)=pl$ avec $l\in \Z$. \\
+Mais, comme $P'(a)\not\equiv 0[p]$, il est inversible modulo $p$. On peut donc trouver $k\in \Z$ tel que $l\equiv -kP'(a)[p]$ ce qui donne
 $$p^2\mid P(a)+pkP'(a) $$
-Ainsi, avec $b=a+kp$ on a bien $b\equiv a[p]$ et 
+Ainsi, avec $b=a+kp$ on a bien $b\equiv a[p]$ et
 $$P(b)\equiv 0[p^2] $$
 \end{sol}
 
-\begin{sol}
-On va montrer que 
-$$(X^a-1)\wedge (X^b-1)=X^{a\wedge b}-1 $$
-Pour cela, on va montrer le lemme d'Euclide suivant: on écrit la division euclidienne 
-$$b=aq+r $$ Alors on a 
-$$(X^a-1)\wedge (X^b-1)=(X^r-1)\wedge (X^b-1) $$
-Puis en itérant comme dans l'algorithme d'euclide classique, on aura montré que 
-$$(X^a-1)\wedge (X^b-1)=(X^r-1)\wedge (X^b-1)=\dots=(X^{a\wedge b}-1)\wedge (X^0-1)=X^{a\wedge b}-1 $$
 
+\begin{sol}
+On va montrer que
+$$(X^a-1)\wedge (X^b-1)=X^{a\wedge b}-1 $$
+Pour cela, on va montrer le lemme d'Euclide suivant : on écrit la division euclidienne
+$$b=aq+r $$ Alors on a
+$$(X^a-1)\wedge (X^b-1)=(X^r-1)\wedge (X^b-1) $$
+Puis en itérant comme dans l'algorithme d'Euclide classique, on aura montré que
+$$(X^a-1)\wedge (X^b-1)=(X^r-1)\wedge (X^b-1)=\dots=(X^{a\wedge b}-1)\wedge (X^0-1)=X^{a\wedge b}-1 $$
 
 Pour cela, on va écrire que pour tout polynôme $Q$ et tout polynôme $P$, on a
 $$Q\mid X^a-1, \: Q\mid X^b-1\iff Q\mid X^a-1, \: Q\mid (X^b-1)-P(X)(X^a-1) $$
-En particulier, avec $P=X^r(X^{(q-1)a}+X^{(q-2)a}+\dots.+1)$ on a 
+En particulier, avec $P=X^r(X^{(q-1)a}+X^{(q-2)a}+\dots.+1)$ on a
 $$Q\mid X^a-1, \: Q\mid X^b-1\iff Q\mid X^a-1 \iff Q\mid X^a-1, \: Q\mid (X^b-1)-(X^{qa+r}-X^r)=X^r-1$$
-Ce qui assure que 
+Ce qui assure que
 $$(X^a-1)\wedge (X^b-1)=(X^r-1)\wedge (X^b-1) $$
 \end{sol}
+
+
 \begin{sol}
-Si $P,Q$ sont premiers entre eux dans $\mathbb{C}[X]$, alors ils n'ont pas de diviseur commun non trivial dans $\mathbb{C}[X]$ donc aussi dans $\Q[X]$. Ainsi, ils sont premier entre eux dans $\Q[X]$.
-\\
+Si $P,Q$ sont premiers entre eux dans $\mathbb{C}[X]$, alors ils n'ont pas de diviseur commun non trivial dans $\mathbb{C}[X]$ donc aussi dans $\Q[X]$. Ainsi, ils sont premier entre eux dans $\Q[X]$. \\
 Réciproquement, s'ils sont premiers entre eux dans $\Q[X]$, on traduit la primaité par l'existence d'une écriture de la forme
-$$AP+BQ=1 $$ Où $A,B\in \Q[X]$ (Bézout).
-\\
-Mais la relation ci-dessus peut aussi être interprétée comme une relation de Bézout dans $\mathbb{C}[X]$! Ainsi, $P,Q$ doivent être premiers entre eux dans $\mathbb{C}[X]$.
-\\
+$$AP+BQ=1 $$
+où $A,B\in \Q[X]$, par Bézout. \\
+Mais la relation ci-dessus peut aussi être interprétée comme une relation de Bézout dans $\mathbb{C}[X]$! Ainsi, $P,Q$ doivent être premiers entre eux dans $\mathbb{C}[X]$. \\
 On a donc montré que le PGCD de deux polynômes ne changeait pas si on les regarde dans un corps plus grand. On peut donc parler sans ambiguité \textbf{du} PGCD de $P$ et $Q$.
 \end{sol}
+
+
 \begin{sol}
-Comme on peut calculer le PGCD par division euclidienne, on sait que $A\wedge Q'\in \Q[X]$. De plus, on sait que 
-$$Q\wedge Q'|Q $$ Mais comme 
+Comme on peut calculer le PGCD par division euclidienne, on sait que $A\wedge Q'\in \Q[X]$. De plus, on sait que
+$$Q\wedge Q'|Q $$ Mais comme
 $$\deg(Q\wedge Q')\leq \deg(Q')<\deg(Q) $$
 On doit avoir par irréductibilité que $Q\wedge Q'=1$. En particulier, le rappel donné en dédut de TD permet d'affirme que $Q$ est à racines simples dans $\mathbb{C}$.
 \end{sol}
+
+
 \begin{sol}
-On commence par traité les petits degrés. Si $d=0$ c'est clair. Si $d=1$ alors le polynôme doit s'annuler par théorème des valeurs intermédiaires (c'est en fait le cas de tout polynôme de degré impair).
+On commence par traiter les petits degrés. Si $d=0$ c'est clair. Si $d=1$ alors le polynôme doit s'annuler par théorème des valeurs intermédiaires (c'est en fait le cas de tout polynôme de degré impair).
 \\
 Le cas $d=2$ est le plus intéressant. Si $P$ ne s'annule pas, alors sa forme canonique est de la forme
 $$P=(X-\alpha)^2+\beta^2 $$
 Cela donne directement la forme voulue.
 \\
-Dans le cas général, comment obtenir le résultat? On sait d'une part que les irréductibles de $\R[X]$ sont les polynôme sde degré $1$ et les polynômes de degré $2$ sans racine réelle. On se donne donc un polynôme positif $P$, on l'écrit sous la forme
+Dans le cas général, comment obtenir le résultat ? On sait d'une part que les irréductibles de $\R[X]$ sont les polynômes de degré $1$ et les polynômes de degré $2$ sans racine réelle. On se donne donc un polynôme positif $P$, on l'écrit sous la forme
 $$P=A\prod_{i=0}^d(X-r_i)^{m_i}\prod_{j=0}^h((X-\alpha_j)^2+\beta_j^2) $$
 On va d'abord montrer que les $m_i$ sont pairs. \\
-Supposons par l'absurde que $m_{i_0}\equiv 1[2]$. Alors proche de $r_{i_0}$, on sait que 
-$$Q=A\prod_{i\neq i_0}^d(X-r_i)^{m_i}\prod_{j=0}^h((X-\alpha_j)^2+\beta_j^2) $$ garde un signe constant (car il ne s'annule pas en $r_{i_0}$ et est continu). Ce signe est le signe de $Q(r_{i_0})$.
-\\
-on en déduit que le signe de $P$ proche de $r_{i_0}$ est celui de $(x-r_{i_0}^{m_{i_0}}Q(r_{i_0})$ mais comme $m_{i_0}$ est impair, ce signe doit changer au passage de $r_{i_0}$. C'est absurde car on a supposé $P\geq 0$. Donc les $m_j$ sont pairs et on peut écrire que 
+Supposons par l'absurde que $m_{i_0}\equiv 1[2]$. Alors proche de $r_{i_0}$, on sait que
+$$Q=A\prod_{i\neq i_0}^d(X-r_i)^{m_i}\prod_{j=0}^h((X-\alpha_j)^2+\beta_j^2) $$ garde un signe constant (car il ne s'annule pas en $r_{i_0}$ et est continu). Ce signe est le signe de $Q(r_{i_0})$. \\
+On en déduit que le signe de $P$ proche de $r_{i_0}$ est celui de $(x-r_{i_0}^{m_{i_0}}Q(r_{i_0})$ mais, comme $m_{i_0}$ est impair, ce signe doit changer au passage de $r_{i_0}$. C'est absurde car on a supposé $P\geq 0$. Donc les $m_j$ sont pairs et on peut écrire que
 $$P=R^2\prod_{j=0}^h((X-\alpha_j)^2+\beta_j^2) $$
-Avec $R\in \R[X]$. Pour finir, on va montrer que la condition "être somme de deux carrés" est stable par produit. En effet, donnons nous $A,B,C,D\in \R[X]$, alors on a 
-$$(A^2+B^2)(C^2+D^2)=(AC)^2+(AD)^2+(BC)^2+(BD)^2$$
-$$(A^2+B^2)(C^2+D^2)=(AC)^2+(BD)^2-2ABCD+(AD)^2+(BC)^2+2ABCD=(AC-BD)^2+(AD+BC)^2 $$
+Avec $R\in \R[X]$. Pour finir, on va montrer que la condition "être somme de deux carrés" est stable par produit. En effet, donnons-nous $A,B,C,D\in \R[X]$. On a alors
+$$(A^2+B^2)(C^2+D^2)=(AC)^2+(AD)^2+(BC)^2+(BD)^2 = ((AC)^2-2ABCD+(BD)^2)+((AD)^2+2ABCD+(BC)^2)=(AC-BD)^2+(AD+BC)^2 $$
 Cela conclut la preuve.
 \end{sol}
 
+
 \begin{sol}
-On suppose par l'absurde que les diviseurs premiers des $a_n$ figurent tous parmi $\mathcal{H}=\{p_1<\dots<p_N\}$ où $N\geq 1$ est un entier. 
-\\
-Pour chaque $a_n$, on peut trouver un $N$-uplet $(m_{1,n},\dots,m_{N,n})$ tel que 
+On suppose par l'absurde que les diviseurs premiers des $a_n$ figurent tous parmi $\mathcal{H}=\{p_1<\dots<p_N\}$ où $N\geq 1$ est un entier. \\
+Pour chaque $a_n$, on peut trouver un $N$-uplet $(m_{1,n},\dots,m_{N,n})$ tel que
 $$a_n=\prod_{i=1}^Np_i^{m_{i,n}} $$
-Nous allons étudier la croissance de $a_n$ et montrer qu'elle ne peut pas être au plus polynomiale.
-\\
-On écrit tout d'abord que 
+Nous allons étudier la croissance de $a_n$ et montrer qu'elle ne peut pas être au plus polynomiale. \\
+On écrit tout d'abord que
 $$a_n\geq p_1^{\sum_{i=1}^Nm_{i,n}}\geq 2^{\sum_{i=1}^Nm_{i,n}} $$
-Il s'agit donc d'estimer 
-$\sum_{i=1}^Nm_{i,n}$.
-Donnons nous $M>0$ un entier, si $$ \sum_{i=1}^Nm_{i,n}<M$$ alors en particulier on a $m_{i,1}<M$. Ainsi, le nombre de uplet de somme au plus $M$ est majoré par $M^N$. Par stricte croissance des $a_n$, on a donc que 
+Il s'agit donc d'estimer
+$\sum_{i=1}^N m_{i,n}$.
+Donnons nous $M>0$ un entier, si $$ \sum_{i=1}^Nm_{i,n}<M$$ alors en particulier on a $m_{i,1}<M$. Ainsi, le nombre de tuples de somme au plus $M$ est majoré par $M^N$. Par stricte croissance des $a_n$, on a donc que
 $$n\geq M^N\Rightarrow a_n\geq 2^M $$
 
-On pose donc $M=\left\lfloor n^{\frac{1}{N}} \right\rfloor$ et on a 
+On pose donc $M=\left\lfloor n^{\frac{1}{N}} \right\rfloor$ et on a
 $$a_n\geq 2^{\left\lfloor n^{\frac{1}{N}} \right\rfloor} $$
-Mais par croissance comparées, la fonction 
-$$n\mapsto 2^{\left\lfloor n^{\frac{1}{N}} \right\rfloor} $$ a une croissance plus que polynomiale pour tout polynôme. Cela contredit l'existence de $f$. Absurde. 
+Mais par croissance comparées, la fonction
+$$n\mapsto 2^{\left\lfloor n^{\frac{1}{N}} \right\rfloor} $$ a une croissance plus que polynomiale pour tout polynôme. Cela contredit l'existence de $f$. Absurde.
 \end{sol}
 
 \begin{sol}
@@ -225,7 +227,7 @@ x^5+y^5=\sigma_1^5-5\sigma_1^3\sigma_2+(10\sigma_1-5\sigma_1)\sigma_2^2=33 \\
 \right. $$
 La magie vient du fait que comme le degré de $\sigma_2$ est $2$, on s'est ramené à un trinôme de degré $2$ en $\sigma_2!$
 $$\sigma_2^2-9\sigma_2+14=0 $$
-Cela donne donc 
+Cela donne donc
 $$\sigma_2=\left \{
 \begin{array}{rcl}
 2 \\
@@ -244,19 +246,16 @@ L'idée est la même, on pose $y=^4\sqrt{x}$ ainsi que $z=^4\sqrt{97-x}$. On se 
 $$\left\{\begin{array}{rcl}
 y^4+z^4=97 \\
 y+z=5
-\end{array}\right.
-  $$
-  En terme de polynômes symétriques, cela devient 
- $$\left\{\begin{array}{rcl}
+\end{array}\right. $$ En terme de polynômes symétriques, cela devient $$\left\{\begin{array}{rcl}
 y^4+z^4=\sigma_1^4-4\sigma_2(\sigma_1^2-2\sigma_2)-6\sigma_2^2=97 \\
 \sigma_1=5
-\end{array}\right. $$ 
-Cela se résume à 
+\end{array}\right. $$
+Cela se résume à
 $$\sigma_2^2-50\sigma_2+264=0\iff \sigma_2=\sigma_2=\left\{\begin{array}{rcl}
 6 \\
 44
 \end{array}\right. $$
-Si $\sigma_2=6$, alors on a 
+Si $\sigma_2=6$, alors on a
 $$ \left\{\begin{array}{rcl}
 y+z=5 \\
 yz=6
@@ -269,9 +268,9 @@ Si $\sigma_2=44$, alors les solutions sont non réelles.
 
 \begin{sol}
 
-On va encore utiliser les polynômes symétriques. On souhaite calculer de proche en proche les $s_n=x_1^n+x_2^n$. Pour cela, on remarque que 
+On va encore utiliser les polynômes symétriques. On souhaite calculer de proche en proche les $s_n=x_1^n+x_2^n$. Pour cela, on remarque que
 $$s_{n+1}=x_1^{n+1}+x_2^{n+1}=(x+y)(x^n+y^n)-xy(x_1^{n-1}+x_2^{n-1})=6s_n-s_{n-1} $$
-Comme $s_0,s_1\in \Z$ on a par récurrence que $s_n\in \Z$ pour tout eniter $n$. On passe la relation modulo $5$ ce qui donne 
+Comme $s_0,s_1\in \Z$ on a par récurrence que $s_n\in \Z$ pour tout eniter $n$. On passe la relation modulo $5$ ce qui donne
 $$s_{n+1}=s_n-s_{n-1} $$
 On vérifie sans peine que cette dernière est périodique de période $2, 1, 4, 3, 4, 1$. On en déduit donc que $s_n$ n'est jamais divisible par $5$.
 \end{sol}
@@ -279,11 +278,11 @@ On vérifie sans peine que cette dernière est périodique de période $2, 1, 4,
 %\begin{sol}
 %On suppose que l'on peut écrire
 %$$P=(b_0+b_1X+\dots+b_mX^m)(c_0+\dots+c_{n-m}X^{n-m})$$
-%Où les $b_i$ et les $c_i$ sont des entiers. Supposons sans perte de généralité que $|b_0|=3$ et donc $|c_0|=1$. On note $i$ l'indice minimal tel que $3$ ne divise pas $b_i$. Cela assure que 
+%Où les $b_i$ et les $c_i$ sont des entiers. Supposons sans perte de généralité que $|b_0|=3$ et donc $|c_0|=1$. On note $i$ l'indice minimal tel que $3$ ne divise pas $b_i$. Cela assure que
 %$$b_ic_0+\underbrace{b_{i-1}c_1+\dots+b_0c_i}_{\equiv 0[3]}\not\equiv 0[3] $$
 %Comme $P$ a ses coefficient nuls pour $1\leq i \leq n-2$, cela assure que $i\geq n-1$ et donc que $\deg(_0+\dots+c_{n-m}X^{n-m})\leq 1$. \\
-%Comme la décomposition est non triviale, on doit avoir 
-%$$X+1|P $$ ou encore 
+%Comme la décomposition est non triviale, on doit avoir
+%$$X+1|P $$ ou encore
 %$$X-1|P $$
 %Mais on vérifie que $P(1)=9\neq 0$ et que $P(-1)=(-1)^n+5(-1)^{n-1}+3\neq 0$. C'est l'absurdité recherchée.
 %\end{sol}

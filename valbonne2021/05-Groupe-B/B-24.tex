@@ -9,7 +9,7 @@
 
 \begin{exo}
 	On se donne un ensemble $S$ de $n \geq 5$ points du plan, coloriés en rouge et noir.
-	On suppose que trois points de la même couleur ne sont jamais alignés. 
+	On suppose que trois points de la même couleur ne sont jamais alignés.
 	
 	Montrer que l'on peut trouver trois points de la même couleur formant un triangle dont au moins l'un des côtés ne contient pas de point de $S$.
 \end{exo}
@@ -32,13 +32,13 @@
 
 
 \begin{sol}
-	Comme un carré est congru à $0$ ou $1$ modulo $4$ on a 
+	Comme un carré est congru à $0$ ou $1$ modulo $4$ on a
 	\[\begin{aligned}
 		x^2 & \equiv 0 \text{ ou } 1 &\mod 4 \\
 		y^2 & \equiv 0 \text{ ou } 1 &\mod 4 \\
 		-15 & \equiv 1 \text{ ou } 1 &\mod 4 \\
 	\end{aligned}\]
-	et par conséquent 
+	et par conséquent
 	\[x^2 + y^2 - 15 \equiv 1, 2 \text{ ou } 3 \mod 4.\]
 
 	Or si $z \geq 2$ on a $2^z \mod 0 \mod 4$.
@@ -52,7 +52,7 @@
 		\item Si $z=0$, on obtient l'équation
 		\[x^2 + y^2 = 16.\]
 
-		Comme un carré est toujours positif on a en particulier 
+		Comme un carré est toujours positif on a en particulier
 		\[x^2 \leq 16\]
 		et par positivité de $x$ il suffit de traiter les cas $0 \leq x \leq 4$.
 
@@ -77,7 +77,7 @@
 		\item Si $z=1$, on obtient l'équation
 		\[x^2 + y^2 = 19.\]
 
-		Comme un carré est toujours positif on a en particulier 
+		Comme un carré est toujours positif on a en particulier
 		\[x^2 \leq 19 < 25\]
 		et par positivité de $x$ il suffit de traiter les cas $0 \leq x \leq 4$.
 
@@ -212,7 +212,7 @@
 
 	Quitte à passer au coloriage symétrique, on peut supposer que cette case est blanche. Examinons alors le déroulement d'un parcours de $35$ sauts. On commence sur une case blanche, puis on fait un saut d'une case, vers une case non-blanche donc. Le saut suivant, de deux cases, nous amène vers une case de l'autre couleur non-blanche. Les sauts d'une case, puis de deux cases suivants nous amènent alors sur une case blanche. On est alors revenu à la situation de départ : sur une case blanche avec un saut d'une case à faire. On répète alors ce processus huit fois (sauf le dernier saut de deux cases la dernière fois).
 
-	Ainsi, les cases roses et bleues vont par paires ; à toute case bleue on peut associer une case rose qui est visitée juste avant ou juste après dans le parcours. 
+	Ainsi, les cases roses et bleues vont par paires ; à toute case bleue on peut associer une case rose qui est visitée juste avant ou juste après dans le parcours.
 	
 	Comme il y a huit cases roses et dix cases bleues, c'est la contradiction cherchée.
 

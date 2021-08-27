@@ -36,18 +36,24 @@ Peut-on partitionner $\Z$ en un nombre fini de suites arithmétiques de raisons 
 Montrer que le nombre de partitions de $[\![1, n]\!]$ vaut
 $$\frac 1e \sum_{k=0}^\infty \frac{k^n}{k!} $$
 \end{exo}
+
+
 \begin{sol}
 Posons $B_n$ ce nombre de partitions. On a $a_{n+1} = \sum_{k=0}^n {n \choose k} a_{n - k}$. et $A$ la série génératrice associée
 $\frac{B_{n+1}}{n!} = \sum_{k+l=n} \frac 1{k!}\frac{B_l}{l!}$
 \end{sol}
 
+
 \subsubsection{Suites arithmétiques}
+
 
 \begin{exo}
 On a $n$ suites arithmétiques qui couvrent les entiers de $1$ à $2^n$. Montrer qu'elles couvrent tous les entiers.
 \end{exo}
 
+
 \subsubsection{Identités combinatoires}
+
 
 \begin{exo}
 Pour $n\geq 0$ calculer $\sum_{k\geq 0}\binom{k}{n-k}$.
@@ -58,188 +64,234 @@ Pour $n\geq 0$ calculer $\sum_{k\geq 0}\binom{k}{n-k}$.
 Pour $1\leq m\leq n$ calculer $\sum_{k=m}^{n} \binom{n}{k}\binom{k}{m}$.
 \end{exo}
 
+
 \subsubsection{Relations de récurrence}
+
 
 \begin{exo}
 Trouver le terme général de la suite définie par $a_0=1, a_{n+1}=2a_n+n$.
 \end{exo}
 
+
 \begin{exo}
 Trouver le terme général de la suite définie par $x_0=x_1=0, x_{n+2}=6x_{n+1}-9x_n+2^n+n$.
 \end{exo}
+
 
 \begin{exo}
 Montrer que $F_0+...+F_n=F_{n+2}+1$
 \end{exo}
 
+
 \subsubsection{Dénombrement}
+
 
 \begin{exo}
 Trouver le nombre de manières de choisir $2005$ balles rouges, vertes et jaunes de sorte que le nombre de balles rouges est pair ou le nombre de balles vertes est impair.
 \end{exo}
 
+
 \begin{exo}
 Soit $n\in\N^*$. Trouver le nombre de manières de colorier $n$ cases en rouge, jaune, vert et bleu de manière à avoir un nombre pair de cases rouges et un nombre pair de cases jaunes.
 \end{exo}
+
 
 \begin{exo}
 Trouver le nombre de séquences de $6$ chiffres dont la somme vaut $10$.
 \end{exo}
 
+
 \begin{exo}
 Soit $p$ un nombre premier. Trouver le nombre de sous-ensembles de $\{1,2,...,2p\}$ à $p$ élements dont la somme est divisible par $p$.
 \end{exo}
+
 
 \begin{exo}
 Soit $n\in\N^*$. Trouver le nombre de polynômes $P$ à coefficients dans $\{0, 1, 2, 3\}$ tels que $P(2) = n$.
 \end{exo}
 
+
 \begin{exo}
 Soit $n\in\N^*$. Trouver le nombre de sous-ensembles de $\{1,2,...,n\}$ dont le cardinal est également le plus petit élement.
 \end{exo}
+
 
 \begin{exo}
 Trouver le nombre de triplets d'entiers $(a,b,c)$ tels que $a+b+c=6$, $-1\leq a\leq 2$ et $1\leq b,c\leq 4$.
 \end{exo}
 
+
 \begin{exo}
 Soit $n\in\N^*$. Trouver le nombre de nombres à $n$ chiffres dont les chiffres sont parmi $\{2,3,7,9\}$ et qui sont divisibles par $3$.
 \end{exo}
+
 
 \begin{exo}
 Trouver le nombre de suites $a_1, a_2, ...$ croissantes ne contenant que des entiers entre $1$ et $20$ et telles que $a_i\equiv i[2]$ pour tout $i$.
 \end{exo}
 
+
 \begin{exo}
 Soit $n,k\in\N^*$. Trouver le nombre de manières de colorier un $n$-gone avec $k$ couleurs sans avoir deux sommets consécutifs de la même couleur.
 \end{exo}
+
 
 \begin{exo}
 Une pièce est lancée plusieurs fois jusqu'à ce que l'on obtienne une suite impaire de faces suivie par un pile. Etant donné $n\in\N^*$, trouver le nombre de séquences de $n$ lancés.
 \end{exo}
 
+
 \begin{exo}
 Soit $n\in\N^*$. Trouver le nombre de manières de colorier $n$ points sur une droite en rouge et bleu de sorte que la différence entre le nombre de points rouges et le nombre de points bleus dans toute sous-suite de points consécutifs soit au plus $2$.
 \end{exo}
+
 
 \begin{exo}
 Déterminer le nombre de suites de $0$ et $1$ de longueur $n$ contenant $m$ fois le bloc $01$.
 \end{exo}
 
+
 \begin{exo}
 Pour tout $n\in\N^*$, soit $p_n$ le nombre de suites de $A$ et de $B$ de longueur $n$ ne contenant ni $AAAA$ ni $BBB$. Calculer
-\[\frac{p_{2004}-p_{2002}-p_{1999}}{p_{2000}+p_{2001}}\]
+$$\frac{p_{2004}-p_{2002}-p_{1999}}{p_{2000}+p_{2001}}$$
 \end{exo}
 
-\subsubsection*{Partitions d'un entier}%-----------------------------------------------------------------------------------
+
+\subsubsection{Partitions d'un entier}
+
 
 \begin{exo}
 Soit $n\in\N^*$. Montrer que le nombre de manière d'exprimer $n$ comme somme d'entiers strictement positifs deux à deux distincts est égal au nombre de manière d'exprimer $n$ comme somme d'entiers strictement positifs impairs (sans tenir compte de l'ordre des termes).
 \end{exo}
 
+
 \begin{exo}
 Déterminer s'il est possible de partitionner $\N$ en deux ensembles $A$ et $B$ tels que pour tout $n\in\N$ il existe autant de manière de l'exprimer comme somme de deux élements distincts de $A$ et comme somme de deux élements distincts de $B$.
 \end{exo}
+
 
 \begin{exo}
 Déterminer s'il existe un ensemble $S\subset\N^*$ tel que pour tout $n\in\N^*$ le nombre de manières d'écrire $n$ comme somme d'entiers strictement positifs où chaque nombre apparait au plus $2$ fois est égal au nombre de manières d'écrire $n$ comme somme d'élements de $S$ (sans tenir compte de l'ordre des termes).
 \end{exo}
 
+
 \begin{exo}
 Soit $n\in\N^*$. Montrer que le nombre de manières d'écrire $n$ comme somme d'entiers strictement positifs où chaque nombre apparait au moins $2$ fois est égal au nombre de manières d'écrire $n$ comme somme d'entiers strictement positifs divisibles par $2$ ou $3$ (sans tenir compte de l'ordre des termes).
 \end{exo}
+
 
 \begin{exo}
 Soit $n\in\N^*$. Montrer que le nombre de manières d'écrire $n$ comme somme d'entiers impairs strictement plus grands que $1$ est égal au nombre de manières d'écrire $n$ comme somme d'entiers strictement positifs deux à deux distincts dont aucun n'est une puissance de $2$ (sans tenir compte de l'ordre des termes).
 \end{exo}
 
+
 \begin{exo}
 Soit $n\in\N^*$. Montrer qu'il y a autant de manières d'exprimer $n$ comme somme de $1$ et de $2$ que de manières d'exprimer $n+2$ comme somme d'entiers strictement supérieurs à $1$ (en tenant compte de l'ordre des termes).
 \end{exo}
+
 
 \begin{exo}
 Soit $n\in\N^*$. Montrer que le nombre de manières d'écrire $n$ comme somme d'entiers strictement positifs où chaque nombre pair apparait au plus $1$ fois est égal au nombre de manières d'écrire $n$ comme somme d'entiers strictement positifs où chaque nombre apparait au plus $3$ fois (sans tenir compte de l'ordre des termes).
 \end{exo}
 
+
 \begin{exo}
 Déterminer s'il existe $S\subset\N$ tel que pour tout $n\in\N$ l'équation $a+2b=n$ a une unique solution dans $S^2$.
 \end{exo}
 
-\subsubsection*{Autres exercices}
+
+\subsubsection{Autres exercices}
+
 
 \begin{exo}
-Soit $S$ l'ensemble des triplets $(i,j,k)\in\N^{\ast 3}$ tels que $i+j+k=17$. Calculer \[\sum_{(i,j,k)\in S}ijk\]
+Soit $S$ l'ensemble des triplets $(i,j,k)\in\N^3$ tels que $i+j+k=17$. Calculer $$\sum_{(i,j,k)\in S}ijk$$
 \end{exo}
 
+
 \begin{exo}
-Soient $1 \leq n \leq k$ tels que $k-n$ est pair. On a $2n$ lampes éteintes. Une opération consiste à changer l'état d'une lampe. Soit $N$ le nombre de séquences constituées de $k$ opérations telles qu'à la fin les lampes $1$ à $n$ sont allumées et les lampes  $n+1$ à $2n$ sont éteintes. Soit M le nombre de séquences constituées de $k$ opérations telles qu'à la fin les lampes $1$ à $n$ sont allumées et les lampes  $n+1$ à $2n$ sont éteintes mais où les lampes de $n+1$ à $2n$
-n'ont jamais été allumées. Déterminer $\frac{N}{M}$.
+Soient $1 \leq n \leq k$ tels que $k-n$ est pair. On a $2n$ lampes éteintes. Une opération consiste à changer l'état d'une lampe. Soit $N$ le nombre de séquences constituées de $k$ opérations telles qu'à la fin les lampes $1$ à $n$ sont allumées et les lampes $n+1$ à $2n$ sont éteintes. Soit M le nombre de séquences constituées de $k$ opérations telles qu'à la fin les lampes $1$ à $n$ sont allumées et les lampes $n+1$ à $2n$ sont éteintes mais où les lampes de $n+1$ à $2n$ n'ont jamais été allumées. Déterminer $\frac{N}{M}$.
 \end{exo}
+
 
 \begin{exo}
 Une suite finie $a_1, \dots, a_n$ est dite $p$-équilibrée si $\sum_{i\equiv r[p]}a_i$ est la même quel que soit $r$. Montrer que si une suite de $50$ réels est $p$-équilibrée pour $p=3,5,7,11,13,17$ alors tous les termes sont nuls.
 \end{exo}
 
+
 \begin{exo}
 Trouver la proportion de permutations à $n$ élements sans point fixe quand $n$ tend vers l'infini.
 \end{exo}
+
 
 \begin{exo}
 Soit $n\in\N^*$, $a_1,...,a_n$ et $b_1,...,b_n$ deux suites finies telles que les nombres $a_i+a_j$, $i\neq j$ et $b_i+b_j$, $i\neq j$ soient les mêmes à permutation près. Montrer que $n$ est une puissance de $2$.
 \end{exo}
 
+
 \begin{exo}
 Soit $k\in\N^*$, $E_i=\{a_i+nd_i, n\in\N\}$, $1\leq i\leq k$ des suites arithmétiques qui forment une partition de $\N^*$. Montrer que $\sum_{i}\frac{1}{d_i}=1$, $\sum_{i}\frac{a_i}{d_i}=\frac{k+1}{2}$ et qu'il existe deux suites de raisons égales si $k\geq 2$.
 \end{exo}
+
 
 \begin{exo}
 Peut-on piper une paire de dés classiques de sorte que chaque somme ait la même probabilité ?
 \end{exo}
 
+
 \begin{exo}
 Peut écrire sur les faces d'une paire de dés classiques d'autres entiers positifs de sorte que la probabilité de chaques somme reste la même ?
 \end{exo}
+
 
 \begin{exo}
 Soit $n\in\N^*$. Alice possèce $n$ pièces biaisées telles que la $k$-ième pièce a une probabilité de $\frac{1}{2k+1}$ de tomber sur face. Elle lance toutes les pièces une fois. Calculer la probabilité qu'elle obtienne un nombre impair de faces.
 \end{exo}
 
+
 \begin{exo}
 Soit $S_i$ une suite d'ensembles tels que $S_0\subset\N^*$ est un ensemble fini et $S_{n+1}$ est l'ensemble des $k\in\N^*$ tels que exactement un des nombres $k$ et $k-1$ est dans $S_n$. Montrer que $S_n$ est l'union de $S_0$ et d'un translaté de $S_0$ pour une infinité de $n$.
 \end{exo}
+
 
 \begin{exo}
 Montrer que tout entier relatif s'écrit de manière unique comme $\sum_{k\geq 0}3^ka_k$ avec $a_k\in\{-1,0,1\}$ pour tout $k$.
 \end{exo}
 
+
 \begin{exo}
 Montrer que tout entier relatif s'écrit de manière unique comme $\sum_{k\geq 0}(-4)^ka_k$ avec $a_k\in\{0,1,2,3\}$ pour tout $k$.
 \end{exo}
+
 
 \begin{exo}
 Soit $a_1,a_2,...$ une suite croissante d'entiers naturels telle que tout entier naturel peut être représenté de manière unique sous la
 forme $a_i +2a_j +4a_k$ (avec $i$, $j$, $k$ non nécessairement distincts). Déterminer $a_{1998}$.
 \end{exo}
 
+
 \begin{exo}
 Montrer que si un rectangle peut être pavé avec des rectangles $1\times p$ et $q\times 1$ alors il peut être pavé uniquement avec des rectangles $1\times p$ ou uniquement avec des rectangles $q\times 1$.
 \end{exo}
+
 
 \begin{exo}
 Pour tout $m,n\in\N$, soit $f(m,n)$ le nombre de $(x_1,...,x_n)\in\mathbb{Z}^n$ tels que $|x_1|+...+|x_n|\leq m$. Montrer que $f(m,n)=f(n,m)$.
 \end{exo}
 
+
 \begin{exo}
 Soit $n\in\N^*$. Pour tout ensemble $S\subseteq \{1,2,...,n\}$, $S\neq\emptyset$, soient $\sigma(S)$ et $\pi(S)$ la somme et le produit des élements de $S$. Montrer que
-\[\sum_{S\neq\emptyset}\frac{\sigma(S)}{\pi(S)}=n^2+2n-(1+\frac{1}{2}+...+\frac{1}{n})(n+1)\]
+$$\sum_{S\neq\emptyset}\frac{\sigma(S)}{\pi(S)}=n^2+2n-(1+\frac{1}{2}+...+\frac{1}{n})(n+1)$$
 \end{exo}
+
 
 \begin{exo}
 Pour tout $n,k\in\N$, soit $p_n(k)$ le nombre de partitions de $\{1,2,...,n\}$ ayant exactement $k$ point fixes. Montrer que
-\[\sum_{k=1}^n kp_n(k)=n!\]
+$$\sum_{k=1}^n kp_n(k)=n!$$
 \end{exo}
+
 
 \begin{exo}
 Soit $n\in\N^*$. Pour toute permutation $\pi$ de $\{1,2,...,n\}$, soit $\sigma(\pi)$ sa signature et $\nu(\pi)$ son nombre de points fixes. Montrer que
-\[\sum_{\pi}\frac{\sigma(\pi)}{\nu(\pi)+1}=(-1)^{n+1}\frac{n}{n+1}\]
+$$\sum_{\pi}\frac{\sigma(\pi)}{\nu(\pi)+1}=(-1)^{n+1}\frac{n}{n+1}$$
 \end{exo}

@@ -24,7 +24,7 @@ Sur ces trois premiers exemples, l'équation fonctionnelle sert de définition �
 
 \emph{L'idée est assez simple, comme la relation fonctionnelle est vérifiée pour tout élément de l'ensemble de définition, on peut chercher à fixer des paramètres pour obtenir d'autres équations. On cherchera surtout à simplifier des termes en utilisant des subtitutions du type $x=y$ ou $x=0$ ou $x=-y$. \textbf{Attention:} en procédant ainsi, on raisonne par analyse synthèse, c'est à dire que l'on suppose que $f$ est une solution puis on trouve des conditions nécéssaires que $f$ doit vérifier jusqu'à obtenir un candidat possible de solution de l'équation de départ puis on \textbf{doit} vérifier que ce candidat est effectivement solution. }
 
-La théorie  des équations fonctionnelles étant basée sur la pratique: voyons quelques exemples.
+La théorie des équations fonctionnelles étant basée sur la pratique: voyons quelques exemples.
 \begin{ex}
 Trouver les fonctions $f:\R\to \R$ telle que pour tout $x$ et pour tout $y$ on ait
 $$f(x+y)=f(x)+y $$
@@ -34,13 +34,13 @@ $$f(x+y)=f(x)+y $$
 On commence par supposer que $f$ est une solution de l'équation.
 \\
 
-Comme la relation tient pour toute paire de réels $(x,y)$, on peut chercher à fixer des valeurs de $(x,y)$ pour simplifier la relation. Une idée naturelle est de poser $x=0$ ou $y=0$. Si on pose $y=0$, on obtient $f(x)=f(x)$ ce qui ne nous avance pas. On pose donc $x=0$ ce qui donne 
+Comme la relation tient pour toute paire de réels $(x,y)$, on peut chercher à fixer des valeurs de $(x,y)$ pour simplifier la relation. Une idée naturelle est de poser $x=0$ ou $y=0$. Si on pose $y=0$, on obtient $f(x)=f(x)$ ce qui ne nous avance pas. On pose donc $x=0$ ce qui donne
 $$f(y)=y+f(0) $$
-$f(0)$ est inconnu mais il est constant, on a donc montré que si $f$ était solution, alors elle doit être de la forme 
+$f(0)$ est inconnu mais il est constant, on a donc montré que si $f$ était solution, alors elle doit être de la forme
 $$f(x)=x+a, \: a\in \R $$
-\textbf{Synthèse :} Vérifions si ces fonctions sont solution:
+\textbf{Synthèse :} Vérifions si ces fonctions sont solutions :
 $$f(x+y)=f(x)+y\iff x+y+a=x+a+y $$
-Donc elles sont bien solutions et les solutions de l'équation de base sont donc les 
+Donc elles sont bien solutions et les solutions de l'équation de base sont donc les
 $$f(x)=x+a, \: a\in \R $$
 \end{preuve}
 \\
@@ -59,14 +59,14 @@ Comme la relation tient pour toute paire de réels $(x,y)$, on peut chercher à 
 \\
 L'équation devient alors
 $$f(0)=1-f(y)-y\iff f(y)=1-y-f(0) $$
-Ainsi, si $f$ est une solution, elle doit être une fonction affine. Plus précisément, elle doit s'écrire 
+Ainsi, si $f$ est une solution, elle doit être une fonction affine. Plus précisément, elle doit s'écrire
 $$f(y)=-y+a, \; a\in \R $$
 \textbf{Synthèse :}
-On a trouvé les seuls candidats possibles, il faut vérifier lesquels sont vraiment solutions. On injecte donc la forme $f(y)=-y+a$ dasn l'équation de base et 
+On a trouvé les seuls candidats possibles, il faut vérifier lesquels sont vraiment solutions. On injecte donc la forme $f(y)=-y+a$ dasn l'équation de base et
 $$f(x-f(y))=1-x-y\iff f(x+y-a)=1-x-y\iff -x-y+a+a=1-x-y $$
 Et donc on doit forcément avoir
 $$a=\frac{1}{2} $$
-Finalement, la seule solution de l'équation fonctionnelle est 
+Finalement, la seule solution de l'équation fonctionnelle est
 $$f(y)=-y+\frac{1}{2} $$
 \end{preuve}
 
@@ -93,7 +93,7 @@ $$f(x)f(y)=f(xy)+x+y $$
 \textbf{Analyse :} Supposons que $f$ est solution. On pose $y=0$ ce qui donne pour tout $x$ réel
 $$f(x)f(0)=x+f(0) $$
 Pour $x=1$ on a
-$$f(1)f(0)=1+f(0) $$ ce qui implique en particulier que $f(0)\neq 0$. On en déduit donc que 
+$$f(1)f(0)=1+f(0) $$ ce qui implique en particulier que $f(0)\neq 0$. On en déduit donc que
 $$f(x)=\frac{x}{f(0)}+1 $$
 \textbf{Synthèse :} On considère une fonction $f$ de la forme $f(x)=ax+1$. On veut
 $$(ax+1)(ay+1)=axy+1+x+y\iff a^2xy+a(x+y)+1=axy+x+y+1\Rightarrow a=1 $$
@@ -111,7 +111,7 @@ En particulier, pour $x=0$ on en déduit que $f(0)=0$. On a donc que pour tout $
 $$0=f(x)x $$ Cela assure que si $x\neq 0$, on a $f(x)=0$.
 \\
 Comme on avait $f(0)=0$, on a en fait montré que la solution nulle était la seule fonction candidate pour être solution.
-\textbf{Synthèse :} Soit $f$ la fonction nulle, on  vérifie que 
+\textbf{Synthèse :} Soit $f$ la fonction nulle, on vérifie que
 $$f(xy)=0=xf(x)+yf(y)=0+0 $$
 \end{preuve}
 \begin{exo}[M]
@@ -120,9 +120,9 @@ $$f(yf(x))(x+y)=x^2(f(x)+f(y)) $$
 
 \end{exo}
 \begin{preuve}
-\textbf{Analyse :} Supposons que $f$ est solution. On pose $x=y=1$ ce qui donne 
+\textbf{Analyse :} Supposons que $f$ est solution. On pose $x=y=1$ ce qui donne
 $$f(f(1))=f(1) $$
-On pose alors $x=f(1)$ et $y=1$ ce qui donne 
+On pose alors $x=f(1)$ et $y=1$ ce qui donne
 $$f(f(f(1)))(1+f(1))=f(1)^2(f(f(1))+f(1))\iff f(1)(1+f(1))=2f(1)^2f(1)$$ $$\iff 1+f(1)=2f(1)^2\iff f(1)=1 \textit{ ou } f(1)=-\frac{1}{2} $$
 Comme $f(1)>0$, on a $f(1)=1$. De là, on pose $x=1$ ce qui donne pour tout $y$ réel
 $$f(y)(1+y)=(1+f(y))\iff f(y)y=1 $$
@@ -154,7 +154,7 @@ Réciproquement, on vérifie que
 pour $f(y)=\frac{2+y}{3y}$
 On a :
 $$xf\left(\frac{x}{2}\right)-f\left(\frac{2}{x}\right)=\frac{x(4+x)}{3x}-\frac{1+1/x}{3/x}=\frac{4+x}{3}-\frac{x+1}{3}=1$$
-Donc c'est bien solution est c'est la seule. 
+Donc c'est bien solution est c'est la seule.
 \end{preuve}
 
 \begin{exo}[D]
@@ -165,30 +165,30 @@ $$f(xy-1)+f(x)f(y)=2xy-1 $$
 \begin{proof}
 \textbf{Analyse :} Supposons que $f$ soit une solution de l'équation.
 \\
-On pose $x=0$ ce qui donne 
-$$f(-1)+f(x)f(0)=-1 $$ Si $f(0)\neq 0$, on peut diviser et donc $f$ est constante. C'est absurde car aucune fonction constante n'est solution. Donc $f(0)=0$ ce qui donne 
+On pose $x=0$ ce qui donne
+$$f(-1)+f(x)f(0)=-1 $$ Si $f(0)\neq 0$, on peut diviser et donc $f$ est constante. C'est absurde car aucune fonction constante n'est solution. Donc $f(0)=0$ ce qui donne
 $$f(-1)=-1 $$
-Pour $x\neq 0$ on pose $y=\frac{1}{x}$ ce qui donne 
+Pour $x\neq 0$ on pose $y=\frac{1}{x}$ ce qui donne
 $$f(0)+f(x)f\left(\frac{1}{x}\right)=2x\frac{1}{x}-1\iff f(x)f\left(\frac{1}{x}\right)=1 $$
-L'idée maintenant est de forcer une factorisation, pour cela, on voudrait que $xy-1=y\iff y=\frac{1}{x-1}$. Pour $x\neq 1$, on a donc 
+L'idée maintenant est de forcer une factorisation, pour cela, on voudrait que $xy-1=y\iff y=\frac{1}{x-1}$. Pour $x\neq 1$, on a donc
 $$f\left(\frac{1}{x-1}\right)\left(1+f(x)\right)=\frac{2x}{x-1}-1=\frac{x+1}{x-1} $$
-Pour utiliser l'égalité précédente, on multiplie par $f(x-1)$ ce qui donne 
+Pour utiliser l'égalité précédente, on multiplie par $f(x-1)$ ce qui donne
 $$f(x)+1=\frac{x+1}{x-1}f(x-1) $$
-On pose maintenant $y=1$ ce qui donne 
+On pose maintenant $y=1$ ce qui donne
 $$f(x-1)+f(x)f(1)=2x-1 $$
 On réinjecte l'expression de $f(x-1)$ obtenue.
 $$(f(x)+1)\frac{x-1}{1+x} +f(x)f(1)=2x-1$$
 Cela donne donc
 $$f(x)=\frac{2x^2}{x-1+f(1)(x+1)}$$
-On pose $x=1$ dans cette expression ce qui donne 
+On pose $x=1$ dans cette expression ce qui donne
 $$f(1)^2=1 $$
 Si $f(1)=1$ on a $f(x)=-x^2$.
 \\
 Si $f(1)=-1$ on a $f(x)=x$.
 \\
-\textbf{Synthèse :} Si $f(x)=x$ on a 
+\textbf{Synthèse :} Si $f(x)=x$ on a
 $$f(xy-1)+f(x)f(y)=xy-1+xy=2xy-1 $$
-Si $f(x)=-x^2$ on a 
+Si $f(x)=-x^2$ on a
 $$f(xy-1)+f(x)f(y)=-(x^2y^2-2xy+1)-x^2y^2=-2xy-1 $$
 Donc les deux seules solutions sont $f(x)=x$ ainsi que $f(x)=-x^2$.
 \end{proof}
@@ -233,7 +233,7 @@ On pose seulement $x=0$ ce qui donne $f(-y)=-f(y)$. Ainsi, $f$ est impaire.
 \\
 On pose $y=-w$ ce qui donne $$f(x-wf(x))+f(w-xf(w))=f(w)+f(x)+2xw^2$$
 Soit encore $$f(x-wf(x))+f(w-xf(w))-f(w)-f(x)=2xw^2$$
-Mais le membre de gauche est symétrique ce qui implique que le membre de droite aussi, donc que $$2xw^2=2wx^2$$ pour tous réels $x,w$ soit encore que $x=w$ pour tous réels non nuls, ce qui est absurde, il n'y a donc pas de telle fonction. 
+Mais le membre de gauche est symétrique ce qui implique que le membre de droite aussi, donc que $$2xw^2=2wx^2$$ pour tous réels $x,w$ soit encore que $x=w$ pour tous réels non nuls, ce qui est absurde, il n'y a donc pas de telle fonction.
 \end{preuve}
 
 \emph{Deux propriétés essentielles sont la surjectivité et l'injectivité.}
@@ -253,12 +253,12 @@ $$f(x^2+f(y))=2x-f(y) $$
 \begin{preuve}
 \textbf{Analyse :} Supososon que $f$ est solution de l'équation.
 \\
-Montrons que $f$ est surjective. Pour cela, on pose $y=0$ ce qui donne 
+Montrons que $f$ est surjective. Pour cela, on pose $y=0$ ce qui donne
 $$f(x^2f(0))=2x-f(0) $$
 Ainsi, pour tout réel $x$, on trouver un antécédant de $x$ en posant
 $z=\left( \frac{x+f(0)}{2} \right) ^2+f(0)$. Donc $f$ est surjective. On peut donc poser $z=f(y)$ avec $z$ qui varie dans $\R$. Cela simplifie la relation initiale
 $$f(x^2+z)=2x-z $$
-On pose alors $x=0$ ce qui donne 
+On pose alors $x=0$ ce qui donne
 $$f(z)=-z $$
 \textbf{Synthèse :}
 Si $f(z)=-z$ on a d'une part $$f(x^2+f(y))=y-x^2$$ et d'autre part
@@ -269,7 +269,7 @@ Donc l'équation n'a pas de solutions.
 Soit $f:A\to B$ une fonction entre deux ensemble. On dit que $f$ est injective si deux élements distincts de $A$ ont des images par $f$ différentes.
 \end{dfn}
 \begin{rem}
-Cela s'écrit que $a\neq a'\Rightarrow f(a)\neq f(a')$. Néanmoins, pour montrer qu'une fonction est injective, on raisonne par contraposée. On montre en fait que 
+Cela s'écrit que $a\neq a'\Rightarrow f(a)\neq f(a')$. Néanmoins, pour montrer qu'une fonction est injective, on raisonne par contraposée. On montre en fait que
 $f(a)=f(a')\Rightarrow a=a'$. On commence donc par supposer que $f(a)=f(a')$, on substitue dans l'équation et on espère montrer que $a=a'$.
 \\
 En pratique, l'injectivité permet de "simplifier les $f$". Ainsi, si $f$ est injective, une relation du type
@@ -283,15 +283,15 @@ $$f(f(x)+y)=2x+f(-f(f(x)))+f(y)) $$
 \begin{preuve}
 \textbf{Analyse :} On suppose que $f$ est une solution de l'équation.
 \\
-Commençons par poser $x=0$ ce qui donne 
+Commençons par poser $x=0$ ce qui donne
 $$f(f(0)+y)=f(-f(f(0))+f(y)) $$
 On aimerait avoir $f$ injective pour se débarasser des $f$. On suppose donc que $f(a)=f(b)$. Alors avec $x=a$ on a
 $$f(f(a)+y)-f(-f(f(a))+f(y))=2a $$
 Mais aussi
 $$f(f(b)+y)-f(-f(f(b))+f(y))=2b $$
-De là, on a donc $a=b$ et donc $f$ est bien injective. On en déduit que 
+De là, on a donc $a=b$ et donc $f$ est bien injective. On en déduit que
 $$f(y)=y+f(0)+f(f(0)) $$
-\textbf{Synthèse :} Si $f(y)=y+a$ on écrit que 
+\textbf{Synthèse :} Si $f(y)=y+a$ on écrit que
 $$f(f(x)+y)=x+y+2a=2x+f(-f(f(x))+f(y))=2x+(-x+y-a)=x+y-a $$
 Et donc $a=0$. Ainsi, la seule solution est l'identité.
 \end{preuve}
@@ -309,18 +309,18 @@ La fonction nulle est solution. Sinon, supposons que $f$ est une solution non co
 $$f(f(a)f(y))=f(a)y $$
 Montrons que $f$ est injective. Supposons donc qu'il existe $b,c$ tels que $f(b)=f(c)$.
 \\
-Alors avec $y=b$ on a 
+Alors avec $y=b$ on a
 $$f(f(a)f(b))=f(a)b $$
-Et avec $y=c$ on a 
+Et avec $y=c$ on a
 $$f(f(a)f(c))=f(a)c $$
-Et donc on a 
+Et donc on a
 $$f(a)b=f(a)c $$ et comme $f(a)\neq 0$ on a $b= c$. Donc $f$ est injective.
-Pour utiliser l'injectivité, on pose $y=1$ ce qui donne 
+Pour utiliser l'injectivité, on pose $y=1$ ce qui donne
 $$f(f(x)f(1))=f(x)\Rightarrow f(x)f(1)=x $$
 Avec $x=1$, on a$$ f(1)^2=1\Rightarrow f(1)=\pm 1$$
 Donc les seules solutions possibles sont $f(x)=x$ et $f(x)=-x$.
 \\
-\textbf{Synthèse :} On suppose que $f(x)=x$ ce qui donne 
+\textbf{Synthèse :} On suppose que $f(x)=x$ ce qui donne
 $$f(f(x)f(y))=xy=f(x)y $$
 Si $f(x)=-x$ on vérifie que
 $$f(f(x)f(y))=-xy=f(x)y $$
@@ -343,21 +343,21 @@ $$f(f(x)+f(y))=f(-x-f(y))+2(x+y) $$
 \end{ex}
 
 \begin{preuve}
-\textbf{Analyse :} On suppose que $f$ est solution de l'équation. Etudions pour commencer l'injectivité et la surjectivité de $f$. On pose pour cela $x=0$ ce qui donne 
+\textbf{Analyse :} On suppose que $f$ est solution de l'équation. Etudions pour commencer l'injectivité et la surjectivité de $f$. On pose pour cela $x=0$ ce qui donne
 $$f(f(0)+f(y))-f(-f(y))=2y $$
-Dès lors, si $f(y)=f(z)$ alors on en déduit que 
+Dès lors, si $f(y)=f(z)$ alors on en déduit que
 $$2z=f(f(0)+f(z))-f(-f(z))=f(f(0)+f(y))-f(-f(y))=2y\Rightarrow z=y $$
-En d'autres termes, on a montré que $f$ était injective. 
+En d'autres termes, on a montré que $f$ était injective.
 \\
 Utilisons maintenant la symétrie. On commence par mettre tous les termes symétriques du même côté:
 $$ f(f(x)+f(y))-2(x+y)=f(-x-f(y))$$
-La symétrie à gauche implique celle à droite ce qui donne 
+La symétrie à gauche implique celle à droite ce qui donne
 $$f(-x-f(y))=f(-y-f(x)) $$
-Puis l'injectivité permet de se débarasser des $f$ ce qui donne 
+Puis l'injectivité permet de se débarasser des $f$ ce qui donne
 $$-x-f(y)=-y-f(x) $$
-Avec $x=0$ on a montré que pour tout réel $y$ on a 
+Avec $x=0$ on a montré que pour tout réel $y$ on a
 $$f(y)=y $$
-\textbf{Synthèse :} Réciproquement, si $f$ est l'identité, on écrit que 
+\textbf{Synthèse :} Réciproquement, si $f$ est l'identité, on écrit que
 $$f(f(x)+f(y))=x+y=f(-x-f(y))+2(x+y)=-x-y+2(x+y) $$
 Donc la seule solution est l'identité.
 \end{preuve}
@@ -368,9 +368,9 @@ Soit $f : \R\to \R$ une fonction et $T>0$. On dit que $f$ est $T-$périodique si
 
 \end{dfn}
 \begin{rem}
-En pratique, la périodicité permet des substitution dy type $x\gets x+T$. 
+En pratique, la périodicité permet des substitution dy type $x\gets x+T$.
 \\
-La périodicité est souvent reliée aux notions de bornitude. C'est à dire telle qu'il existe une constante $M>0$ vérifiant 
+La périodicité est souvent reliée aux notions de bornitude. C'est à dire telle qu'il existe une constante $M>0$ vérifiant
 $|f(x)|<M$ pour tout réel $x$.
 \\
 On verra qu'elle est souvent reliée à l'injectivité. Ce point est un peu plus technique et ne sera pas trop abordé dans le cours.
@@ -383,26 +383,26 @@ $$f(x+f(y))=f(x)-y $$
 \begin{preuve}
 \textbf{Analyse :} On suppose que $f$ est solution de l'équation.
 \\
-On pose $x=0$ ce qui donne 
+On pose $x=0$ ce qui donne
 $$f(f(y))=f(0)-y $$
 On en déduit aisément que $f$ est bijective.
 \\
 On pose $y=0$, on a alors
 $$f(x+f(0))=f(x) $$
-et par injectivité on a 
+et par injectivité on a
 $$x+f(0)=x\Rightarrow f(0)=0 $$
 Puis en posant $y=f(x)$ on a
 $$f(f(f(x))+x)=0 $$ ce qui donne par injectivité
 $$f(f(x))+x=0\iff f(f(x))=-x $$
-On pose alors $y=f(z)$ ce qui donne 
+On pose alors $y=f(z)$ ce qui donne
 $$f(x-z)=f(x)-f(z) $$
 On obtient alors que pour tous entiers, $u,v$ :
 $$f(u)+f(v)=f(u+v) $$
 En particulier, on a pour $u\geq 0$
 $$f(u)=f(\underbrace{1+\dots+1}_{u \textit{ fois}})=\underbrace{f(1)+\dots+f(1)}_{u \textit{ fois}} =uf(1)$$
-Et pour $u\leq 0$, on écrit que 
+Et pour $u\leq 0$, on écrit que
 $$f(u)+f(-u)=f(0)=0\Rightarrow f(u)=-(-uf(1))=uf(1) $$
-\textbf{Synthèse :} Si $f(u)=au$ on vérifie que 
+\textbf{Synthèse :} Si $f(u)=au$ on vérifie que
 $$ f(x+f(y))=ax+a^2y=f(x)-y=ax-y$$ cela donne $a^2=-y$ donc l'équation n'a pas de solution.
 \end{preuve}
 \begin{rem}
@@ -412,7 +412,7 @@ est l'équation de Cauchy. On vient de montrer que les solutions de l'équation 
 \end{rem}
 \begin{exo}[M]
 Trouver les fonctions $f : \R\to \R$ telles pour toute paire de réels $x,y$ on ait:
-$$f(f(x)+9y)=f(y)+9x+24y  $$
+$$f(f(x)+9y)=f(y)+9x+24y$$
 \end{exo}
 \begin{preuve}
 \textbf{Analyse :} On suppose que $f$ est une solution de l'équation.
@@ -431,50 +431,50 @@ D'où $$f(w)=3w$$ pour tout $w\in \R$ (en faisant varier $y\in \R$.
 \textbf{Synthèse :}
 On vérifie que $f$ est bien solution:
 $f(f(x)+9y)=9x+27y=f(y)+9x+24y$
-Ce qui conclut. 
+Ce qui conclut.
 \end{preuve}
 \begin{exo}[D]
-Trouver les fonctions $f:\R_+^*\to \R_+^*$ telles que pour tout couple de réels positifs $x,y$ on ait 
+Trouver les fonctions $f:\R_+^*\to \R_+^*$ telles que pour tout couple de réels positifs $x,y$ on ait
 $$f(x)f(y) = 2f(x+yf(x)) $$
 \end{exo}
 \begin{preuve}
-\textbf{Analyse :} On commence par utiliser la symétrie à gauche pour écrire que 
+\textbf{Analyse :} On commence par utiliser la symétrie à gauche pour écrire que
 $$f(x+yf(x))=f(y+xf(y)) $$
-Ce genre d'équation nous pousse à étudier l'injectivité de $f$. Supposons donc que 
-$0<a<b$ tels que $f(a)=f(b)$. Comme $f(x)>0$ pour tout réel $c>0$ on peut poser $y=\frac{c}{f(x)}$ ce qui donne 
+Ce genre d'équation nous pousse à étudier l'injectivité de $f$. Supposons donc que
+$0<a<b$ tels que $f(a)=f(b)$. Comme $f(x)>0$ pour tout réel $c>0$ on peut poser $y=\frac{c}{f(x)}$ ce qui donne
 $$f(x)f\left(\frac{c}{f(x)}\right)=2f(x+c) $$
-L'astuce est que le membre de gauche ne dépend que de $f(x)$, en particulier, avec $x=a$ et $x=b$ on déduit que 
+L'astuce est que le membre de gauche ne dépend que de $f(x)$, en particulier, avec $x=a$ et $x=b$ on déduit que
 $$2f(a+c)=2f(b+c)\iff f(a+c)=f(b+c)$$
-On a donc montré que $f$ était $b-a$ périodique à partir de $a$. 
+On a donc montré que $f$ était $b-a$ périodique à partir de $a$.
 \\
 \textbf{Attention:} Ici, $c$ est positif donc on a la périodicité seulement pour $x\geq a$.
 
 Ceci nous sera très utile si l'on arrive à trouver une façon de créer des paires de réels positifs de même image. On commence par écarté le cas injectif.
 \\
 \textbf{Si $f$ est injective:}
-Alors la relation $$f(x+f(x)y)=f(y+f(y)x) $$ devient donc 
+Alors la relation $$f(x+f(x)y)=f(y+f(y)x) $$ devient donc
 $$x+f(x)y=y+f(y)x $$
-Donc avec $x=1$ on a 
+Donc avec $x=1$ on a
 $$f(y)=(f(1)-1)y+1 $$
 \textbf{Si $f$ n'est pas injective:}
-Alors par ce qui précède, on se donne $a>0$ te $T=b-a$ tels que $f$ est $T-$périodique pour $x\geq a$. Pour forcer des simplifications, on part de la relation 
+Alors par ce qui précède, on se donne $a>0$ te $T=b-a$ tels que $f$ est $T-$périodique pour $x\geq a$. Pour forcer des simplifications, on part de la relation
 $$f(x)f(y)=2f(x+yf(x)) $$ et on pose $y_0=\frac{T}{f(x)}$ pour $x\geq a$. Cela donne donc
 $$f(x)f(y_0)=2f(x+T)=2f(x)\Rightarrow f(y_0)=2 $$
-On a donc trouvé un antécédant de $2$. On pose alors $x=y_0$ ce qui donne 
+On a donc trouvé un antécédant de $2$. On pose alors $x=y_0$ ce qui donne
 $$f(y)=f(y_0+2y) $$
 Ainsi, par ce qui précède, on a montré que pour tout $y>0$, $f$ est $(y_0+y)$ périodique pour $x\geq y$.
 \\
 Montrons que cela implique que $f$ est constane. Soit donc $0<a<b$. On va montrer que $f(a)=f(b)$.
 \\
-On sait que pour tout $0<y<a$, on a 
+On sait que pour tout $0<y<a$, on a
 $f(a+y+y_0)=f(a)$ ainsi que $f(b)=f(b+y+y_0)$.
-On prend donc $y_1=\frac{b-a}{n}$ où l'entier $n$ est suffisamment petit pour que $\frac{b-a}{n}<a$. On prend alors $y_2>0$ suffisamment petit pour que $0<y_2<y_2+y_1<a$. Alors on écrit que 
+On prend donc $y_1=\frac{b-a}{n}$ où l'entier $n$ est suffisamment petit pour que $\frac{b-a}{n}<a$. On prend alors $y_2>0$ suffisamment petit pour que $0<y_2<y_2+y_1<a$. Alors on écrit que
 $$f(a)=f(a+n(y_1+y_2+y_0))=f\left(a+\frac{b-a}{n}n+n(y_0+y_2)\right)=f(b+n(y_0+y_2))=f(b) $$
 Donc $f$ est constante.
 \\
 \textbf{Synthèse :} Si $f$ est constante en $c$ on doit avoir $c^2=2c$ et comme $c>0$ on a $c=2$.
 \\
-Si $f(x)=(f(1)-1)x-1=ax-1$ on écrit que 
+Si $f(x)=(f(1)-1)x-1=ax-1$ on écrit que
 $$f(x)f(y)=a^2xy-a(x+y)+1=2f(x+yf(x))=2f(x+axy-y) $$
 Soit encore
 $$a^2xy-a(x+y)+1=2a(x+axy-y)-2 $$

@@ -21,7 +21,7 @@ Le principe des tiroirs est un principe très simple et intuitif mais dont les c
 \bigskip
 
 \begin{exo}
-Montrer que si 3 nombres réels sont dans l'intervalle $[0, \, 1[$, alors il existe parmi eux deux nombres a et b tels que $|b - a|< \frac{1}{2}$. 
+Montrer que si 3 nombres réels sont dans l'intervalle $[0, \, 1[$, alors il existe parmi eux deux nombres a et b tels que $|b - a|< \frac{1}{2}$.
 \end{exo}
 
 \begin{exo}
@@ -87,22 +87,25 @@ Soit $n$ le nombre de stagiaires. Chaque stagiaire connaît entre $0$ et $n - 1$
 Considérons les tiroirs de la forme $\{1, \, 3\}, \ \{2, \, 4\}, \ \{5, \, 7\}, \ \{6, \, 8\}, \ \{9, \, 11\}, \ \{10, \, 12\}, \ \{13, \, 15\},$ $\{14, \, 16\}, \ \{17, \, 19\}, \ \{18, \, 20\}$. En choisissant 11 entiers, par le principe des tiroirs, il en existera deux qui seront dans le même tiroir, et donc de différence $2$. Cette quantité est bien minimale car l'ensemble $\{1, \, 2, \, 5, \, 6, \, 9, \, 10, \, 13, \, 14, \, 17, \, 18\}$ est de taille 10 et ne contient pas de tels entiers $a$ et $b$.
 \end{sol}
 
+
 \begin{sol}
-Lorsque l'on fait la division euclidienne d'un entier par $2021$, le reste sera compris entre $0$ et $2020$, soit $2021$ possibilités. En regroupant chaque entier selon son reste dans la division euclidienne par $2021$, on obtient par principe des tiroirs deux entiers qui ont le même reste, et donc la différence des deux sera divisible par $2021$.
+Lorsqu'on fait la division euclidienne d'un entier par $2021$, le reste sera compris entre $0$ et $2020$, soit $2021$ possibilités. En regroupant chaque entier selon son reste dans la division euclidienne par $2021$, on obtient par principe des tiroirs deux entiers qui ont le même reste, et donc la différence des deux sera divisible par $2021$.
 \end{sol}
+
 
 \begin{sol}
 Traçons le rectangle plein à coordonnées entières de taille $4 \times 82$ dont le sommet en bas à gauche est $(0, \, 0)$. Il y a $3^4 = 81$ façons de colorier une colonne de 4 points. Par principe des tiroirs, parmi les 82 colonnes, il en existe 2 identiques. Or, sur ces deux colonnes, parmi les 4 points, deux sont de la même couleur. Il suffit alors de sélectionner ces quatre sommets et de tracer le rectangle adéquat.
 \end{sol}
 
+
 \begin{sol}
 On découpe la table en 200 petits carrés de côté 10cm. D'après le principe des tiroirs, dans au moins un de ces carrés, il y aura trois miettes, et ces miettes vont déterminer un triangle dont l'aire sera inférieure à la moitié de la surface du carré, ie $50cm^2$.
 \end{sol}
 
+
 \begin{sol}
 \begin{itemize}
     \item En considérant les $n$ tiroirs de la forme $\{2k-1, \, 2k\}$ où $1 \le k \le n$, on voit qu'on peut trouver deux entiers consécutifs qui seront premiers entre eux.
-
     \item Chaque entier peut s'écrire sous la forme $2^s(2t+1)$. Or $t$ varie entre $0$ et $n-1$, il existe alors deux entiers parmi les $n + 1$ choisis qui ont la même partie impaire et qui ne diffèrent que par la puissance de 2. L'un divise donc l'autre.
 \end{itemize}
 \end{sol}
@@ -125,7 +128,7 @@ Chacun de ces nombres appartient à l’une de ces catégories, selon le nombre 
 4. six fois un carré.
 \smallskip
 \newline
-Par le principe des tiroirs, une des catégories contient deux nombres. Si ces deux nombres sont dans les catégories 2, 3 ou 4, alors leur différence vaut au moins 6. 
+Par le principe des tiroirs, une des catégories contient deux nombres. Si ces deux nombres sont dans les catégories 2, 3 ou 4, alors leur différence vaut au moins 6.
 \newline
 Si ces deux nombres sont des carrés, alors ce sont 1 et 4, ce qui ne laisse que $1 \times 2 \times 3 \times 4 \times 5 = 120$, qui n’est pas un carré.
 \end{sol}
@@ -134,18 +137,18 @@ Si ces deux nombres sont des carrés, alors ce sont 1 et 4, ce qui ne laisse que
 Appelons $i$-ième croix la réunion de la $i$-ième ligne et de la $i$-ième colonne. Soit $a$ un entier compris entre 1 et $2n-1$. Si cet entier apparaît à la position $(i, j)$, alors il apparaît à la fois dans la $i$-ième croix et dans la $j$-ième croix. Comme
 maintenant $a$ doit apparaître une et une seule fois dans chaque croix, on peut faire la chose suivante : on écrit les uns à la suite des autres les nombres de 1 et 1997, et on barre au fur et à mesure les numéros des croix dans lesquelles $a$ apparaît. À la fin, toutes les croix devront être barrées.
 \newline
-On se rend compte que si $a$ n'apparaît pas sur la diagonale, on va barrer les nombres deux par deux. Mais cela n'est pas possible puisque 1997 est un nombre impair. 
+On se rend compte que si $a$ n'apparaît pas sur la diagonale, on va barrer les nombres deux par deux. Mais cela n'est pas possible puisque 1997 est un nombre impair.
 \newline
 Il reste donc à prouver qu'il existe un entier a qui n'apparaît pas sur la diagonale. C'est la qu'intervient le principe des tiroirs. Il y a 3993 nombres en tout et seulement 1997 places sur la diagonale ; il y a donc au moins un nombre qui ne peut pas apparaître.
 \end{sol}
 
 \begin{sol}
 Supposons par l'absurde qu'il soit possible de colorier $2n$ sommets d'un $4n+ 1$-gone de sorte que
-il n'y ait pas 3 sommets colorés formant un triangle isocèle. Notons les sommets $H_{-2n}$, $H_{-2n+1}$, \dots , $H_0$, $H_1$, $H_2$, \dots, $H_{2n}$. 
+il n'y ait pas 3 sommets colorés formant un triangle isocèle. Notons les sommets $H_{-2n}$, $H_{-2n+1}$, \dots , $H_0$, $H_1$, $H_2$, \dots, $H_{2n}$.
 \newline
-On considère d'abord le cas où deux sommets voisins sont colorés. Supposons sans perte de généralité que les sommets $H_0$ et $H_1$ sont colorés. Alors au plus un des sommets $H_{-i}$ et $H_i$ est coloré pour tous les $i = 1, 2, . . . , 2n$ puisqu'ils forment un triangle isocèle avec $H_0$. 
+On considère d'abord le cas où deux sommets voisins sont colorés. Supposons sans perte de généralité que les sommets $H_0$ et $H_1$ sont colorés. Alors au plus un des sommets $H_{-i}$ et $H_i$ est coloré pour tous les $i = 1, 2, . . . , 2n$ puisqu'ils forment un triangle isocèle avec $H_0$.
 \newline
-De même, au plus un des sommets $H_{-i}$ et $H_{i+2}$ sont colorés pour tous les $i = 1, 2, . . . , 2n-2$, puisqu'ils forment un triangle isocèle avec $H_{1}$. 
+De même, au plus un des sommets $H_{-i}$ et $H_{i+2}$ sont colorés pour tous les $i = 1, 2, . . . , 2n-2$, puisqu'ils forment un triangle isocèle avec $H_{1}$.
 \newline
 Les trois sommets $H_0$, $H_1$, $H_i$ avec $i = 2, -1, -2n$
 forment aussi des triangles isocèles donc $H_{-1}$, $H_2$, $H_{-2n}$ ne sont pas colorés. Il s'ensuit qu'aucun sommets consécutifs dans les deux chaînes
@@ -170,7 +173,7 @@ Le principe de l'extremum consiste à considérer le minimum ou le maximum d’u
 
 \begin{ex}
 Montrer que l'ensemble des réels appartenant à l'intervalle $]0,1]$ n'admet pas de minimum. \newline
-On rappelle qu'un ensemble $A$ admet $m$ pour minimum si : 
+On rappelle qu'un ensemble $A$ admet $m$ pour minimum si :
 \begin{itemize}
 \item $m\in A$
 \item $\forall~ x\in A, ~~ x\geq m$.
@@ -182,8 +185,8 @@ Notons que $1\geq m>0$ donc $1>\frac12\geq\frac{m}{2}>0$, et $\frac{m}{2}\in]0,1
 
 
 \begin{exo}
-A chaque point à coordonnées entières du plan, on attribue un nombre entier strictement positif, tel que chaque nombre est égal à la moyenne arithmétique de ses quatre voisins
-(en haut, en bas, à gauche et à droite). Montrer que toutes les valeurs sont égales. 
+À chaque point à coordonnées entières du plan, on attribue un nombre entier strictement positif, tel que chaque nombre est égal à la moyenne arithmétique de ses quatre voisins
+(en haut, en bas, à gauche et à droite). Montrer que toutes les valeurs sont égales.
 \end{exo}
 
 
@@ -199,7 +202,7 @@ Montrer qu’il existe une liste qui contient le nom de toutes les autres joueus
 \end{exo}
 
 \begin{exo}
-On considère un ensemble $T$ de $2n$ points du plan. Montrer qu'il est possible de relier les points par paire de sorte que deux segments ne se croisent pas.  
+On considère un ensemble $T$ de $2n$ points du plan. Montrer qu'il est possible de relier les points par paire de sorte que deux segments ne se croisent pas.
 \end{exo}
 
 \begin{exo}
@@ -208,7 +211,7 @@ seule personne dans son groupe.
 \end{exo}
 
 \begin{exo}
-On considère un ensemble fini de points $S$ tel que toute droite passant par deux points de $S$ passe aussi par un troisième. Montrer que tous les points de $S$ sont alignés. 
+On considère un ensemble fini de points $S$ tel que toute droite passant par deux points de $S$ passe aussi par un troisième. Montrer que tous les points de $S$ sont alignés.
 \end{exo}
 
 \begin{exo}
@@ -222,7 +225,7 @@ Lors d’une soirée dansante, aucun garçon n’a dansé avec toutes les filles
 
 
 \begin{sol}
- Il existe un minimum des entiers écrit sur l'un des points, ses quatre voisins sont supérieurs ou égaux à celui ci, ce qui n'arrive que si ils sont tous égaux à lui. Donc ses $4$ voisins sont égaux au minimum, puis de proche en proche toutes les cases du plan doivent être égales. 
+ Il existe un minimum des entiers écrit sur l'un des points, ses quatre voisins sont supérieurs ou égaux à celui ci, ce qui n'arrive que si ils sont tous égaux à lui. Donc ses $4$ voisins sont égaux au minimum, puis de proche en proche toutes les cases du plan doivent être égales.
 \end{sol}
 
 
@@ -240,19 +243,19 @@ Parmi toutes les configurations, on considère celle qui minimise les distances 
 \end{sol}
 
 \begin{sol}
-Parmi tous les partages possibles en deux groupes, regardons le nombre total de connaissances qu’il y a cumulées en restant à l’intérieur de son groupe. Choisissons le partage qui minimise ce nombre. Prouvons que celui-ci convient. 
+Parmi tous les partages possibles en deux groupes, regardons le nombre total de connaissances qu’il y a cumulées en restant à l’intérieur de son groupe. Choisissons le partage qui minimise ce nombre. Prouvons que celui-ci convient.
 \newline
 Par l’absurde, supposons que dans le partage il existe un élève $A$ qui connaît au moins deux personnes dans son groupe. Dans l’autre groupe, il y a au plus une personne qu’il connaît : en changeant $A$ de groupe on diminuerait ainsi le nombre total de connaissances qu’il y a cumulées en restant à l’intérieur de son groupe, ce qui contredit la minimalité supposée du partage initial.
 \end{sol}
 
 \begin{sol}
- On considère $P$ le point le plus proche d'une droite reliant des points de $S$, disons $(d)$. Cette droite doit contenir trois points. Donc il en existe deux d'un côté de la projection orthogonale, disons $A$ puis $B$. On montre que $A$ est plus proche de $PB$ que $P$ de $(d)$, absurde. Donc tous les points sont confondus. 
+ On considère $P$ le point le plus proche d'une droite reliant des points de $S$, disons $(d)$. Cette droite doit contenir trois points. Donc il en existe deux d'un côté de la projection orthogonale, disons $A$ puis $B$. On montre que $A$ est plus proche de $PB$ que $P$ de $(d)$, absurde. Donc tous les points sont confondus.
 \end{sol}
 
 \begin{sol}
-On ordonne les amis par nombre de champignon différent, disons $a_1>a_2>\dots>a_7$. Si $a_4\ge 15$, on a $a_3+a_2+a_1\ge 16+17+18=51$, et c'est gagné. Donc $a_4\le 14$ et $a_4+a_5+a_6+a_7\le 14+13+12+11=50$, donc $a_1+a_2+a_3\ge 50$, et on a gagné. 
+On ordonne les amis par nombre de champignon différent, disons $a_1>a_2>\dots>a_7$. Si $a_4\ge 15$, on a $a_3+a_2+a_1\ge 16+17+18=51$, et c'est gagné. Donc $a_4\le 14$ et $a_4+a_5+a_6+a_7\le 14+13+12+11=50$, donc $a_1+a_2+a_3\ge 50$, et on a gagné.
 \end{sol}
 
 \begin{sol}
-On considère le garçon $g$ ayant dansé avec le plus de fille. On considère une fille $f'$ avec qui il n'a pas dansé. $f'$ a dansé avec un garçon $g'$. $g'$ n'a pas pu dansé avec toutes les même filles que $g$ par hypothèse. Donc on peut trouver $f$ qui n'a pas dansé avec $g'$ mais avec $g$. 
+On considère le garçon $g$ ayant dansé avec le plus de fille. On considère une fille $f'$ avec qui il n'a pas dansé. $f'$ a dansé avec un garçon $g'$. $g'$ n'a pas pu dansé avec toutes les même filles que $g$ par hypothèse. Donc on peut trouver $f$ qui n'a pas dansé avec $g'$ mais avec $g$.
 \end{sol}
