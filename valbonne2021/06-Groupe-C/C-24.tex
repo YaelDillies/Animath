@@ -1,0 +1,238 @@
+\begin{exo}
+Soit $ABC$ un triangle non isocèle en $A$, $\Gamma_1$ un cercle passant par les points $B$ et $C$ et dont le centre $O$ se trouve sur la bissectrice de l'angle $\widehat{BAC}$. Soit $\Gamma_2$ un cercle passant par les points $O$ et $A$. On note $P$ et $Q$ les points d'intersection des cercles $\Gamma_1$ et $\Gamma_2$. Soit $X$ le point d'intersection des droites $(PQ)$ et $(AO)$. Montrer que le point $X$ appartient au segment $[BC]$.
+\end{exo}
+
+
+\begin{exo}
+Soit $P$ un polynôme à coefficients entiers. On suppose qu'il existe quatre entiers $a, b, c$ et $d$ distincts tels que
+$$P(a) = P(b) = P(c) = P(d) = 4$$
+\noindent Montrer qu'il n'existe pas d'entier $e$ tel que $P(e) = 7$. 
+\end{exo}
+
+
+\begin{exo}
+Soit $ABC$ un triangle et soient $P$ et $Q$ des points respectivement sur les segments $[AB]$ et $[AC]$ tels que $BP=CQ$. Les droites $(BQ)$ et $(CP)$ se coupent au point $R$. Les cercles circonscrits aux triangles $BPR$ et $CQR$ se recoupent au point $S$. Montrer que le point $S$ appartient à la bissectrice de l'angle $\widehat{BAC}$.
+\end{exo}
+
+\begin{exo}
+Déterminer toutes les fonctions $f : \R \rightarrow \R$ qui vérifient l'équation
+$$f\left(x^2+xy+f(y^2)\right)=xf(y)+x^2+f(y^2)$$
+pour tous réels $x$ et $y$.
+\end{exo}
+
+
+\section{Solutions}
+\setcounter{exo}{0}
+
+\begin{exo}
+Soit $ABC$ un triangle, $\Gamma_1$ un cercle passant par $B$ et $C$ et dont le centre $O$ se trouve sur la bissectrice de $\widehat{BAC}$. Soit $\Gamma_2$ un cercle passant par $O$ et $A$ qui coupe $\Gamma_1$ en $P$ et $Q$. Soit $X$ le point d'intersection des droites $(PQ)$ et $(AO)$. Montrer que $X$ appartient à $[BC]$. 
+\end{exo}
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}
+[scale=1]
+\tkzInit[ymin=-5,ymax=7,xmin=-4,xmax=4]
+\tkzClip 
+
+\tkzDefPoint(2,6){A}
+\tkzDefPoint(3,0){B}
+\tkzDefPoint(-3,0){C}
+
+\tkzDefMidPoint(B,C) \tkzGetPoint{M}
+\tkzDefCircle[in](A,B,C) \tkzGetPoint{I}
+\tkzDefLine[perpendicular=through M](B,C) \tkzGetPoint{o}
+\tkzInterLL(A,I)(M,o) \tkzGetPoint{O}
+\tkzDefMidPoint(O,A) \tkzGetPoint{L}
+\tkzDefLine[perpendicular=through L](O,A) \tkzGetPoint{x}
+\tkzDefLine[parallel=through A](B,C) \tkzGetPoint{y}
+\tkzInterLL(L,x)(A,y) \tkzGetPoint{z}
+\tkzDefMidPoint(z,L) \tkzGetPoint{o'}
+\tkzInterCC(o',A)(O,B) \tkzGetPoints{P}{Q}
+\tkzInterLL(A,O)(P,Q) \tkzGetPoint{X}
+\tkzDefCircle[circum](A,B,C) \tkzGetPoint{U}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(A,O)
+\tkzDrawCircle(o',A)
+\tkzDrawCircle(O,B)
+\tkzDrawCircle(U,B)
+\tkzDrawSegment(P,Q)
+\tkzDrawPoints[fill=white,color=black](A,B,C,O,X,P,Q)
+
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[below left](C){$C$}
+\tkzLabelPoint(O){$O$}
+\tkzLabelPoint(X){$X$}
+\tkzLabelPoint[right](P){$P$}
+\tkzLabelPoint[below](Q){$Q$}
+\end{tikzpicture}
+\end{center}
+
+La définition du point $O$ interpelle, il s'agit du pôle sud du point $A$ dans le triangle $ABC$, il appartient donc à son cercle circonscrit.
+
+On dispose désormais de trois cercles, dont les axes radicaux sont les droites $(PQ), (BC)$ et $(AO)$, elles sont donc concourantes au point $X$ qui appartient donc au segment $[BC]$.
+\end{sol}
+
+
+\begin{exo}
+Soit $P$ un polynôme à coefficients entiers. On suppose qu'il existe quatre entiers $a,b,c$ et $d$ distincts tels que 
+
+\[P(a)=P(b)=P(c)=P(d)=4\]
+
+Montrer qu'il n'existe par d'entier $e$ tel que $P(e)=7$. 
+\end{exo}
+\begin{sol}
+Tout d'abord, l'hypothèse se traduit par le fait que les entiers $a,b,c$ et $d$ sont racines distinctes du polynôme $P(X)-4$. On peut donc factoriser $P$ : on dispose d'un polynôme $Q$ à coefficients entiers tel que 
+
+\[P(X)-4= (X-a)(X-b)(X-c)(X-d)Q(X)\]
+
+Supposons ensuite par l'absurde qu'il existe un entier $e$ tel que $P(e)=7$. On peut alors écrire
+$$7=P(e)=(e-a)(e-b)(e-c)(e-d)Q(e) +4$$
+et donc
+$$3=(e-a)(e-b)(e-c)(e-d)Q(e)$$
+
+Comme tous les termes du membre de droite de l'égalité sont des entiers, les nombres $e-a,e-b,e-c$ et $e-d$ sont des diviseurs de $3$. Comme les entiers $a,b,c$ et $d$ sont distincts, les entiers $e-a,e-b,e-c$ et $e-d$ sont également des diviseurs distincts de $3$. Les seuls diviseurs entiers de $3$ étant $-3,-1,1$ et $3$, on a forcément $\{e-a,e-b,e-c,e-d\}=\{-3,-1,1,3\}$. Mais comme $(e-a)(e-b)(e-c)(e-d)$ divise $3$ et vaut $9$, et on obtient bien une contradiction.
+\end{sol}
+
+
+\begin{exo}
+Soit $ABC$ un triangles et soient $P$ et $Q$ des points respectivement sur les segments $[AB]$ et $[AC]$ tels que $BP=CQ$. Les droites $(BQ)$ et $(CP)$ se coupent au point $R$. Les cercles circonscrits aux triangles $BPR$ et $CQR$ se recoupent au point $S$. Montrer que le point $S$ appartient à la bissectrice de l'angle $\widehat{BAC}$. 
+\end{exo}
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}
+[scale=1]
+\tkzInit[ymin=-2,ymax=7,xmin=-5,xmax=5]
+\tkzClip
+
+\tkzDefPoint(2,5){A}
+\tkzDefPoint(3,0){B}
+\tkzDefPoint(-3,0){C}
+\tkzDefMidPoint(B,C) \tkzGetPoint{M}
+\tkzDefLine[perpendicular=through M](B,C) \tkzGetPoint{n}
+\tkzDefCircle[in](A,B,C) \tkzGetPoint{I}
+\tkzDefLine[perpendicular=through A](A,I) \tkzGetPoint{i}
+\tkzInterLL(M,n)(A,i) \tkzGetPoint{N}
+\tkzDefPoint(2.7,1.5){P}
+\tkzDefCircle[circum](N,A,P) \tkzGetPoint{O'}
+\tkzDefCircle[circum](A,B,C) \tkzGetPoint{O}
+\tkzInterLC(A,C)(O',A) \tkzGetPoints{Q}{A}
+\tkzInterLL(B,Q)(C,P) \tkzGetPoint{R}
+\tkzDefCircle[circum](B,P,R) \tkzGetPoint{O1}
+\tkzDefCircle[circum](C,Q,R) \tkzGetPoint{O2}
+\tkzInterCC(O1,P)(O2,Q) \tkzGetPoints{S}{R}
+
+\tkzMarkSegment[color=blue,mark=s||](Q,C)
+\tkzMarkSegment[color=blue,mark=s||](P,B)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(B,Q)
+\tkzDrawSegment(C,P)
+\tkzDrawLine[dashed](A,S)
+\tkzDrawCircle(O,A)
+\tkzDrawCircle(O1,B)
+\tkzDrawCircle(O2,C)
+%\tkzDrawCircle[dashed](O',A)
+\tkzDrawPoints[fill=white,color=black](A,B,C,P,Q,R,S)
+
+\tkzLabelPoint[above](A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[below left](C){$C$}
+\tkzLabelPoint(P){$P$}
+\tkzLabelPoint[below right](S){$S$}
+\tkzLabelPoint[above left](R){$R$}
+\tkzLabelPoint[below](Q){$Q$}
+\end{tikzpicture}
+\end{center}
+
+Le point $S$ est le centre de la similitude envoyant les points $B$ et $P$ sur les points $Q$ et $C$. Les triangles $BSP$ et $QSC$ sont donc semblables. Puisque $PB=QC$, les triangles sont en fait isométriques et $SB=SQ$.
+
+On a de plus
+$$\widehat{QSB}=\widehat{QSR}+\widehat{RSB}=\widehat{RCQ}+\widehat{RPA}=180^\circ-\widehat{QAB}$$
+donc les points $A,B, S$ et $Q$ sont cocycliques. Le point $S$ est alors le pôle Sud du sommet $A$ dans le triangle $AQB$, le point $S$ appartient donc à la bissectrice de l'angle $\widehat{BAC}$. 
+\end{sol}
+
+
+\begin{exo}
+Déterminer toutes les fonctions $f : \R \rightarrow \R$ qui vérifient l'équation :
+
+\[f(x^2+xy+f(y^2)=xf(y)+x^2+f(y^2)\]
+
+pour tous réels $x$ et $y$. 
+\end{exo}
+
+\begin{sol}
+En remplaçant $x$ par $0$, on trouve $f(f(y^2))=f(y^2)$ pour tout $y$ réel. Puis, en remplaçant $x$ par $-y$, on trouve 
+
+\[f(f(y^2))= -yf(y)+y^2+f(y^2)\]
+
+On déduit que $-yf(y)=y^2$, et donc que $f(y)=y$ pour tout $y\neq 0$. 
+
+\medskip
+
+Il reste à déterminer $f(0)$. Pour cela, on remplace $y$ par $0$ pour avoir 
+
+\[f(x^2+f(0))=xf(0)+x^2+f(0)\]
+
+Puis, en remplaçant $x$ par $-x$ on a 
+
+\[f(x^2+f(0))=-xf(0)+x^2+f(0)\]
+
+En faisant la différences de ces deux dernières équations, on trouve $2xf(0)=0$ pour tout réel $x$. Ceci force $f(0)=0$. 
+
+\medskip
+
+On déduit que $f(x)=x$ pour tout réel $x$. Réciproquement, la fonction identité est bien solution de l'équation, et c'est donc la seule.
+\end{sol}
+
+%\begin{sol}
+%En posant $y=0$, on trouve $f(x^2+f(0))= xf(0)+f(x^2)$. En remplaçant $x$ par $-x$ dans cette équation, on trouve $f(x^2+f(0))=-xf(0)+f(x^2)$, et en combinant on obtient donc $2xf(0)=0$, soit $f(0)=0$. 
+%
+%\medskip
+%
+%En posant $x=0$, on trouve $f(f(y^2))=y^2+f(0)=y^2$. En posant $y=-x$, on trouve cette fois-ci que $f(f(y^2))=-yf(y)+y^2+f(y^2)$. On en déduit que 
+%
+%\[f(y^2)=yf(y)\]
+%
+%D'autre part, en posant $x=-f(y^2)/y$, on trouve 
+%
+%\[-\frac{f(y)f(y^2)}{y}+y^2 =0\]
+%
+%On déduit que si $y$ est non nul, alors $y^3=f(y)f(y^2)=yf(y)^2$, ou encore $f(y)^2=y^2$. Puisque si $y=0$, alors $f(0)=0$, on a donc pour tout $y$ réel que $f(y)=\pm y$.
+%
+%\medskip
+%
+%Dans la suite, on suppose qu'il existe $a$ et $b$ tels que $f(a)=a$ et $f(b)=-b$. Notons qu'alors $f(a^2)=a^2$ et $f(b^2)=-b^2$, puisque $f(x^2)=xf(x)$.
+%
+%En remplaçant $x=a$ et $y=b$ dans l'équation, on trouve 
+%
+%\[\pm (a^2+ab-b^2)=-ab+b^2+a^2\]
+%
+%%Cette équation est vraie pour tout couple de réels $a$ et $b$ tels que $f(a)=a$ et $f(b)=-b$. Par principe des tiroirs infinis, on sait qu'il existe une infinité de réels $a$ tels que $f(a)=a$ ou une infinité de réels $b$ tels que $f(b)=-b$. 
+%%
+%%Dans le premier cas, on fixe $b$ et on fait bouger $a$. Il existe soit une infinité de réels $a$ tels que le signe dans le membre de gauche soit un $+$, soit il en existe une infinité telle que le signe dans le membre de gauche soit un $-$. Dans les deux cas, les deux côtés de l'équation sont des polynômes en $a$, égaux pour une infinité de réels, et donc ils sont égaux. On vérifie que cela implique alors que $b=0$. 
+%%
+%%Le cas où il existe une infinité de réels $b$ tels que $f(b)=-b$ donne de la même façon que $a=0$. 
+%
+%Le cas où le signe du $LHS$ est un $+$ donne que $b(a-b)=0$. Si $b\neq 0$, alors $a=b$ ce qui donne $a=f(a)=f(b)=-b=-a$ donc $a=b=0$. Dans tous les cas, $a$ ou $b$ est nul. 
+%
+%Le cas où le signe du $LHS$ est un $-$ donne que $a^2=0$ donc $a=0$. 
+%
+%On déduit que les seules solutions sont les fonction $f\equiv x$ et $f\equiv -x$.      
+%\end{sol}
+%
+%%\begin{sol}
+%En remplaçant $x$ en $-x$ et $y$ en $-y$. Le membre de gauche est inchangé, ainsi $xf(y)+y^2+f(x^2)=-xf(-y)+y^2+f(x^2)$, ainsi avec $x=1$, $f$ est impaire. En particulier, $f(0)=0$.\\
+%On considère $x=0$, on  a : $f(f(y^2))=y^2$, donc $f$ est involutive sur les positifs, par imparité, elle l'est aussi sur les négatifs. Donc $f$ est involutive (et bijective).\\
+%On prend $y=-x$, on a $$x^2=f(f(x^2))=-xf(x)+x^2+f(x^2)$$
+%donc $f(x^2)=xf(x)$, on change $x$ en $f(x)$ pour avoir $f(f(x)^2)=f(x)f(f(x))=xf(x)$, donc $f(f(x)^2)=f(x^2)$. Ainsi, par injectivité, $f(x)^2=x^2$ et $f(x)=\pm x$.\\
+%On suppose qu'il existe $x$ et $y$ non nuls tels que $f(x)=x$ et $f(y)=-y$. Dans l'équation de départ en utilisant $f(x^2)=xf(x)$, on a $$f(x^2+xy-y^2)=-xy+y^2+x^2$$
+%Dès lors, $x^2+xy-y^2=-xy+y^2+x^2$ ou $x^2+xy-y^2=xy-y^2-x^2$. Dans le premier cas on a $y=0$ ou $x=y$ et dans le deuxième, $x=0$, ce qui est exclu. Par conséquent $f:x\longmapsto x$ ou $f:x\longmapsto -x$.
+%\\
+%Ces fonctions conviennent c'est donc les solutions.
+%\end{sol}

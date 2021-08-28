@@ -1,0 +1,66 @@
+\subsubsection{Sujet}
+
+\begin{exo}
+Montrez que, pour toute paire d'entiers strictement positifs $(a, b)$ premiers entre eux, il existe deux entiers $m, n \geq 1$ tels que~:
+$$a^m + b^n \equiv 1 \; [ab]$$
+\end{exo}
+
+\begin{exo}
+On se donne une grille de taille $m\times n$ remplie avec $mn$ nombres réels non-nuls. Aurélien peut changer les signes de tous les nombres de n'importe quelle ligne ou de n'importe quelle colonne autant de fois qu'il le souhaite. Montrez qu'Aurélien peut faire en sorte que les sommes de chaque ligne et de chaque colonne soient positive.
+\end{exo}
+
+
+\begin{exo}
+Soit $k \geq 1$ un entier qui divise $80$.
+Dans un village de $81$ dinosaures, chaque dinosaure a un type de relation particulier avec chaque autre dinosaure (amour, amitié, fraternité, parenté, \dots). Il y a exactement $k$ types de relations différentes.
+Ces types de relation sont réciproques~: si un dinosaure (nommons-le Baptiste) est en relation d'amitié avec un autre dinosaure (nommons-le Tristan), alors Tristan est en relation d'amitié avec Baptiste. Les scientifiques ont découvert que, pour chaque type $X$ de relation, chaque dinosaure avait une relation de type $X$ avec exactement $\frac{80}{k}$ autres dinosaures.
+Trois dinosaures forment un \textbf{triplet instable} si les trois types de relations entre eux sont tous différents~: ces triplets ont tendance à se battre entre eux.
+Les scientifiques ont observé grâce aux traces des combats qu'il y avait au moins $69120 = 2^9\cdot 3^3\cdot 5$ triplets instables. Aidez les scientifiques à montrer que $k$ est supérieur ou égal à $5$.
+\end{exo}
+
+
+\begin{exo}
+Déterminez tous les triplets d'entiers naturels $(m, n, k)$ tels que $3^n + 4^m = 5^k$.
+\end{exo}
+
+
+\subsubsection{Corrigé}
+
+\begin{sol}
+Par le théorème des restes chinois, il suffit de trouver $m, n \geq 1$ tels que~:
+\begin{align*}
+    b^n &\equiv 1 \; [a] \\
+    a^m &\equiv 1 \; [b]
+\end{align*}
+
+D'après le théorème d'Euler-Fermat, il suffit de prendre~: $n = \varphi(a)$ et $m = \varphi(b)$.
+\end{sol}
+
+
+\begin{sol}
+Si la somme des nombres d'une rangée (ligne ou colonne) est strictement négative, Aurélien change le signe de tous les nombres de cette rangée. On remarque que lors de cette opération, Aurélien fait augmenter strictement la somme de tous les nombres du tableau (qui est aussi la somme de toutes les sommes de lignes, ou encore la somme de toutes les sommes de colonnes). La somme de tous les nombres du tableau est donc un monovariant strictement croissant du problème qui ne peut prendre qu'un nombre fini de valeurs (les $2^{mn}$ sommes des valeurs absolues des cases du tableau avec le signe $\pm$). Aurélien ne peut donc effectuer cette opération qu'un nombre fini de fois : au bout d'un nombre fini d'opérations, toutes les sommes des nombres d'une rangée sont nécessairement positives.
+\end{sol}
+
+\begin{sol}
+Soit $n = 81$ le nombre de dinosaures.
+Soit $Q$ le nombre de triplets de dinosaures distincts $(A, B, C)$ tels que le type de relation entre $A$ et $B$ soit différent du type de relation entre $B$ et $C$.
+Soit $T = 69120$ le nombre de triplets instables. Chaque triplet instable donne $6$ triplets, d'où $Q \geq 6T$.
+Si l'on fixe le dinosaure $B$, il y a $(n - 1)^2 \left (1 - \frac{1}{k}\right )$ manières de le compléter en un triplet valide.
+Ainsi~:
+$$Q = n(n - 1)^2 \left (1 - \frac{1}{k}\right )$$
+D'où~:
+\begin{align*}
+    n(n - 1)^2 \left (1 - \frac{1}{k}\right ) &\geq 6T \\
+    1 - \frac{6T}{n(n - 1)^2} &\geq \frac{1}{k} \\
+    \frac{1}{1 - \frac{6T}{n(n - 1)^2}} &\leq k \\
+    \frac{1}{1 - \frac{6\times 69120}{81\times80^2}} &\leq k \\
+    5 &\leq k
+\end{align*}
+\end{sol}
+
+
+\begin{sol}
+\url{https://maths-olympiques.fr/wp-content/uploads/2017/09/stage_ete_2015.pdf}
+
+Test de fin de parcours, Groupe C, exercice 1, page 323.
+\end{sol}

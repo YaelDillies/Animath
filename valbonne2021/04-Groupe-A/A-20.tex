@@ -1,0 +1,67 @@
+\begin{exo}
+Soient $x, y$ des réels positifs tels que $xy=1$. Montrer que $(x+1)(y+1) \geq 4$. Quels sont les cas d'égalité ?
+\end{exo}
+
+
+\begin{exo}
+Soient $\Omega_1$ et $\Omega_2$ deux cercles qui se coupent en deux points $A$ et $B$ distincts. Soit $(d)$ une tangente commune à $\Omega_1$ et $\Omega_2$. Elle coupe $\Omega_1$ en $X$ et $\Omega_2$ en $Y$. Soit $D$ le symétrique de $B$ par rapport à $(d)$. Montrer que $A, X, D, Y$ sont cocycliques. 
+\end{exo}
+
+
+\begin{exo}
+Soient $x, y$ des réels positifs. Montrer que $x^2+y^2+1 \geq x\sqrt{y^2+1} + y\sqrt{x^2+1}$. Existe-t-il des cas d'égalité ?
+\end{exo}
+
+
+\begin{exo}
+Soit $ABC$ un triangle isocèle en $A$. Soit $D$ le milieu de $BC$. Soit $E$ et $F$ les projetés orthogonaux de $D$ respectivement sur $(AB)$ et $(AC)$. Soit $\mathcal{C}$ le cercle de centre $D$ passant par $E$ (et donc par $F$). Soient $M \in [AB]$ et $N \in [AC]$ tels que $(MN)$ soit une tangente à $\mathcal{C}$. Montrer que $BD^2= BM \cdot CN$
+\end{exo}
+
+
+\begin{sol}
+Cet exercice peut se résoudre de plusieurs façons différentes. L'idée principale est d'utiliser l'IAG au rang $2$. \\
+\textbf{Première méthode :} En développant, \\
+$$(x + 1)(y + 1) = xy + x + y + 1 = 2 + x + y$$
+Or $x+ y  \geq 2\sqrt{xy} = 2$ d'après l'IAG. \\
+Ainsi, $(x + 1)(y + 1) \geq 2 + 2 = 4$ ce qui conclut. \\
+Il y a égalité quand $x = y$, c'est-à-dire quand $x = y = 1$. \\
+\textbf{Deuxième méthode :} On utilise deux fois l'IAG. Tout d'abord, $x + 1 \geq 2 \sqrt{x \cdot 1} = 2 \sqrt{x}$. De même, $y+1 \geq \sqrt 2{y}$. \\
+Par produit d'inégalités dont tous les termes sont positifs, $(x+1)(y+1) \geq 4\sqrt{xy} = 4$. \\
+Il y a égalité quand $x = 1$ et $y = 1$.
+\end{sol}
+
+
+\begin{sol}
+Pour montrer que ces points sont cocycliques, nous allons démontrer que $\widehat{XDY} = \widehat{XAY}$, en utilisant le théorème de la tangente. 
+\begin{align*} 
+\widehat{XAY} &= \widehat{XAB}+ \widehat{BAY} \\
+& = \widehat{BXY} + \widehat{BYX} \\
+& = \widehat{YXD} + \widehat{XYD} \\ 
+& = 180 - \widehat{XDY}
+\end{align*}
+Cela conclut. 
+\end{sol}
+
+\begin{sol}
+\textbf{Première méthode :} IAG \\
+$x^2 + y^2 + 1 = \dfrac{(x^2+1)+y^2}{2} + \dfrac{x^2+(y^2+1)}{2} \geq y\sqrt{x^2+1}+x\sqrt{y^2+1}$\\ On suppose par l'absurde qu'il existe un cas d'égalité. Alors, d'après le cas d'égalité de l'IAG, $y^2=x^2+1$ et $x^2 = y^2+1$ ce qui est absurde.\\
+\textbf{Deuxième méthode :} Cauchy-Schwarz
+\begin{align*}
+\left( x\sqrt{y^2+1} + y \sqrt{x^2+1} \right)^2 &\leq \left( x^2 + y^2 \right) \left( x^2 + 1 +y^2 + 1 \right) \\ 
+&= \left(\left( x^2 + y^2 +1\right) -1 \right) \left(\left( x^2 +y^2 + 1\right) + 1 \right) \\
+&= \left( x^2 +y^2 +1 \right)^2 - 1 \\
+&< \left( x^2 +y^2 +1 \right)^2 
+\end{align*}
+L'inégalité stricte élimine immédiatement un possible cas d'égalité.
+\end{sol}
+
+
+\begin{sol} 
+On cherche à montrer que $BD^2= BM \cdot CN$. Or, $BD = DC$ donc cela revient à montrer que $BD \cdot CD = BM \cdot CN$, c'est-à-dire que $\frac{BD}{BM} = \frac{CN}{CD}$.\\ Il suffit de montrer que les triangles $BDM$ et $CND$ sont semblables pour conclure à l'égalité des rapports de longueur des côtés. \\ Montrons donc que $BDM$ et $CND$ sont semblables. \\ On sait déjà que $ABC$ est isocèle en $A$ donc $\widehat{MBD} = \widehat{NCD}$. \\ Il ne reste qu'une égalité d'angles à montrer. \\ Montrons que $\widehat{BMD} = \widehat{CND}$. \\ Les triangles $BED$ et $CFD$ sont semblables car $\widehat{BED} = \widehat{CFD} = 90°$ et $\widehat{EBD} = \widehat{NCD}$. Ainsi $\widehat{EDB} = \widehat{FDC}$. \\ En outre, on a aussi $\widehat{EDM} = \widehat{GDN}$ et $\widehat{GDN} = \widehat{NDF}$  Donc, $2 \cdot \widehat{BDE} + 2 \cdot \widehat{EDM} + 2 \cdot \widehat{GDN}$ donc $\widehat{BDE} + \widehat{EDM} + \widehat{GDN} = 90°$
+
+Ainsi, \begin{align*} 
+\widehat{BMD} &= \widehat{EMD} \\ &= 90°-\widehat{EDM} \\ &= \widehat{BDE} + \widehat{EDM} + \widehat{GDN} - \widehat{EDM} \\ &= \widehat{BDE} + \widehat{GDN} \\ &= \widehat{FDC} + \widehat{NDF} \\ &= \widehat{NDC} 
+\end{align*}
+
+Ce qui permet de conclure. 
+\end{sol}
