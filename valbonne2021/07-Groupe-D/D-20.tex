@@ -1,0 +1,89 @@
+\subsubsection{Énoncés}
+
+
+\begin{exo}
+Rémi écrit $n$ entiers strictement positifs $a_1,\ldots,a_n$ au tableau. Toutes les minutes, Rémi peut remplacer un entier $a$ écrit au tableau par $\frac{N}{a}$, où $N$ désigne le ppcm des entiers écrits au tableau. Montrer que Rémi peut faire en sorte que tous les nombres écrits au tableau soient des $1$ après un nombre fini d'opérations.
+\end{exo}
+
+
+\begin{exo}
+Déterminer le maximum de l'expression
+$$x^2y + y^2z + z^2x - x^2z - y^2x - z^2y$$
+pour $0\leq x\leq 1, 0\leq y\leq 1, 0\leq z \leq 1$.
+\end{exo}
+
+
+\begin{exo}
+Soit $p\geq 7$ un nombre premier et soit $A = \{b_1, \dots, b_{\frac{p-1}{2}}\}$ l'ensemble des résidus quadratiques non nuls modulo $p$. Montrer qu'il n'existe pas deux entiers $a, c\in \Z$ tels que $a \not\equiv 0\pmod p, c\not \equiv 0 \pmod p$ et de sorte que l'ensemble $B=\{ab_1+c,ab_2+c,\ldots,ab_{\frac{p-1}{2}}+c\}$ soit disjoint de $A$. 
+\end{exo}
+
+\begin{exo}
+Déterminer toutes les fonctions $f : \R_+^* \rightarrow \R_+$ telles que pour tous $x,y>0$, on ait
+$$f(x) - f(x + y) = f(x^2f(y) + x)$$
+\end{exo}
+
+
+\subsubsection{Corrigé}
+
+
+\begin{sol}
+Notons $N_k$ le ppcm des entiers écrits au tableau après $k$ étapes. Commençons par remarquer que $N_{k+1}|N_k$. En effet, si $a_{1,k},...,a_{n,k}$ sont les entiers écrits après $k$ étapes, et si on a $a_{i,k+1}=\frac{N_k}{a_{i,k}}$ (on remplace le i-ème entier après $k$ étapes), alors on a $a_{j,k}=a_{j,k+1}|N_k$ pour $j\ne i$ et $\frac{N_k}{a_{i,k}}=a_{i,k+1}|N_k$, donc $N_{k+1}|N_k$. Il reste à montrer qu'on peut faire diminuer strictement $N_k$ au bout d'un nombre fini d'étapes. Pour ce faire, on prend $p$ le plus grand facteur premier de $N_k$ et on fait des opérations sur tous les $a_{i,k}$ vérifiant $v_p(a_{i,k})=v_p(N_k)$. Après ces opérations, on aura diminué strictement la valuation p-adique de $N_k$ et diminué les autres valuations q-adique. Donc on peut faire décroître strictement $N_k$ en un nombre fini d'opérations, et on peut donc obtenir $N_k=1$ au bout d'un nombre fini d'opérations, ce qui est la propriété attendue.
+\end{sol}
+
+
+\begin{sol}
+On peut commencer par remarquer qu'on a la factorisation suivante :
+$$x^2y + y^2z + z^2x - x^2z - y^2x - z^2y = (x - y)(x - z)(y - z)$$
+Quitte à faire une permutation cyclique de $(x, y, z)$, on peut supposer que $x\ge y, z$. On remarque alors que $(x - y)(x - y)(y - z)$ est maximal en $x = 1$, on cherche donc le maximum de $(1 - y)(1 - z)(y - z)$. Pour que cette quantité soit positive, on doit avoir $y\ge z$. Dans ce cas on a par inégalité arithmético-géométrique :
+$$(1 - y)(1 - z)(y - z)\leq (1-z)\cdot \left(\frac{(1-y)+(y-z)}{2}\right)^2=\frac{(1-z)^3}{4}\leq \frac{1}{4}$$
+On a égalité pour $x = 1, y=\frac{1}{2}, z=0$, donc la valeur du maximum recherché est $\frac{1}{4}$. \\\\
+\textit{Solution alternative:} On a $(x-y)+(y-z)+(z-x)=0$, donc l'un des réels $x - y, y - z,z - x$ est positif. Quitte à faire une permutation cyclique de $(x, y, z)$, on peut supposer que $y - z\ge 0$. La fonction $x\to x^2y+y^2z+z^2x-x^2z-y^2x-z^2y$ est alors convexe comme polynôme du second degré de coefficient dominant égal à $y-z$. En particulier, elle atteint son maximum soit en $x=0$, soit en $x=1$.\\\\
+Si $x=0$, on est ramené à maximiser $y^2z-z^2y$, dans ce cas la fonction $y\to y^2z-z^2y$ est à nouveau convexe, donc le maximum est atteint pour $y=0$ ou $y=1$. Pour $y=0$, $y^2z-z^2y=0$, et pour $y=1$, $y^2z-z^2y=z-z^2$, qui vaut au maximum $\frac{1}{4}$ en $z=\frac{1}{2}$. Dans ce cas le maximum est donc $\frac{1}{4}$. \\\\
+Si $x=1$, on est ramené à maximimiser $y-y^2+z^2-z+y^2z-z^2y$. À nouveau, $z\to y-y^2+z^2-z+y^2z-z^2y$ est convexe (comme polnynôme de degré $2$ de coefficient dominant $1-y\ge 0$), donc atteint son maximum soit en $z=0$, soit en $z=1$,on est encore ramené à maximiser $y-y^2$, et on obtient à nouveau que la valeur du maximum est $\frac{1}{4}$.
+\end{sol}
+
+
+\begin{sol}
+Supposons par l'absurde qu'il existe de tels $a,c$. Ici l'énoncé semble compliqué car $B$ et $A$ ne forment pas une partition des classes modulo $p$, puisqu'ils contiennent à eux-deux $p-1$ éléments. On pourrait donc essayer de déterminer ce $x$. Pour cela comment peut-on faire ?
+
+On peut tout d'abord essayer de trouver des quantités calculables facilement pour les éléments de $A$, et pour toutes les classes modulo $p$ : de ceux-ci, avec un peu de chances on obtiendra la quantité pour les éléments de $B$, donc on en déduira l'élément en question. Une première idée peut être de calculer la somme de ces éléments.
+
+La somme des différentes classes modulo $p$ vaut $0$ : en effet, cela s'obtient facilement par Viète vu que les différentes classes modulo $p$ forment exactement les racines de $X^p-X$, dont le coefficient de degré $p-1$ est bien nul.
+
+La somme des résidus quadratiques se calcule elle aussi : les résidus quadratiques non nuls sont les racines de $X^{\frac{p-1}{2}}-1$, donc comme le coefficient de $\frac{p-3}{2}$ de ce polynôme est nul, la somme des résidus quadratiques vaut $0$. En particulier, modulo $p$ la somme des éléments de $B$ vaut $c\frac{p-1}{2}=-\frac{c}{2}$.
+
+En combinant ces informations, si on note $x$ l'élément qui est ni dans $A$ ni dans $B$, on obtient que $x-\frac{c}{2}\equiv 0 \pmod{p}$, donc $x\equiv \frac{c}{2}\pmod{p}$.
+
+Maintenant reste à se demander comment on peut alors avancer ? Connaître le $x$ semble nous aider, et ici l'utilisation des polynômes semble salvatrice. Essayons d'exprimer le polynôme $X^p-X$ en fonction des données. On a alors 
+
+$$X^p-X=(X-x)\prod \limits_{i=1}^{(p-1)/2} (X-b_i)\prod \limits_{i=1}^{(p-1)/2} (X - ab_i-c)$$
+
+donc $$X(X^{(p-1)/2}-1)(X^{(p-1)/2}+1)=(X^{(p-1)/2}-1)(X-x)a^{(p-1)/2}\prod \limits_{i=1}^{(p-1)/2} (\frac{X-c}{a}-b_i)$$
+
+donc $$X^{(p+1)/2}+X=(X-x)a^{(p-1)/2} \left(\left(\frac{X-c}{a}\right)^{(p-1)/2}-1\right)=(X-x)((X-c)^{(p-1)/2}-a^{(p-1)/2})$$
+
+Regardons le coefficient $(p-1)/2$ de l'égalité, on obtient comme $p>3$ que $1\times (-c) \times \frac{p-1}{2}-x\equiv 0$ donc $x\equiv \frac{c}{2}$ comme nous l'avons déjà vu. Ce qui est logique, vu que ce coefficient donne les informations liées à la somme, que nous avions préalablement exploitées.
+
+Poussons alors le calcul plus loin en regardant le coefficient de degré $\dfrac{p-3}{2}$ qui est nul car $p>5$. On obtient alors que $c^2\binom{(p-1)/2}{2}-x\times (-c)\times \frac{p-1}{2}\equiv 0 \pmod{p}$, ce qui donne que $c^2\times \dfrac{(p-1)(p-3)}{8}-c\dfrac{c/2}{2}\equiv 0$ soit que $\dfrac{c^2}{4}\equiv \dfrac{3c^2}{8}$. Comme $c$ est non nul mod $p$, on en déduit que $3\equiv 2 \pmod{p}$ ce qui est impossible.
+
+Ainsi on a obtenu la contradiction voulue : il n'existe pas de tels $a$ et $c$.
+\end{sol}
+
+
+\begin{sol}
+Soit $f$ une solution de l'équation. On commence naturellement par chercher les fonctions qui sont solution. Après une petite recherche on trouve que les fonctions $x\rightarrow 0$ et $x\rightarrow \frac{1}{x}$ fonctionnent. De plus, comme $f(x^2f(y)+x)\ge 0$, la fonction est décroissante. Est-ce que la fonction peut être strictement décroissante et donc injective ? \\\\
+Si $f$ est injective, pour bien utiliser l'injectivité, on trouve l'astuce suivante :
+$$f(x)-f(x+y)=f(x^2f(y)+x)=f(x)-f(x^2f(x^2f(y))+x)$$
+où l'on applique la formule $f(x+y)=f(x)-f(x^2f(y)+x)$ en remplaçant $y$ par $f(x^2+x^2f(y))$. Cela n'est possible que si $f$ ne s'annule pas. Mais si on avait $a>0$ tel que $f(a)=0$, on aurait par décroissance que $f$ est nulle pour $x\ge a$, contredisant l'injectivité. On obtient alors d'après ce qui précède :
+$$x+y=x^2f(x^2f(y))+x$$
+$$y=x^2f(x^2f(y))$$
+Avec $y=1$ et $x^2=t$, on obtient que $f(t)=\frac{f(1)}{t}$, et en revenant à l'équation de départ, on trouve que la seule solution de cette forme est $t\rightarrow \frac{1}{t}$. \\\\
+Si $f$ n'est pas injective, prenons $0<u<v$ tels que $f(u)=f(v)$. En substituant $y=u$ puis $y=v$, on obtient $f(x+u)=f(x+v)$. Comme $f$ est décroissante, on obtient $f(x)=c$ pour tout $x>u$. Avec $x=y=v$, on obtient tout de suite $c=0$. Puis $x=y=u$ nous donne $f(u)=f(v)=0$. On a donc montré que pour $0<u<v$ :
+$$f(u)=f(v)\implies f(u)=f(v)=0$$
+On veut ici essayer de montrer que la fonction nulle est l'unique solution. On va donc chercher des "petites" valeurs de $x$ et $y$ pour que leur somme dépasse $u$. Par exemple, pour $x=y=u/2$, on obtient:
+$$f\left(\frac{u}{2}\right)=f\left(\frac{u^2}{4}f\left(\frac{u}{2}\right)+\frac{u}{2}\right)$$
+Si $f(u/2)\ne 0$, alors on peut appliquer notre remarque ci-dessus pour en déduire que :
+$$f\left(\frac{u}{2}\right)=f\left(\frac{u^2}{4}f\left(\frac{u}{2}\right)+\frac{u}{2}\right)=0$$
+Contradiction ! Donc on a bien $f(u/2)=0$. En itérant cet argument, on obtient que $f(u/2^n)=0$ pour tout entier $n$. Par décroissance de $f$, $f$ est nulle sur $[u/2^n,+\infty[$ quelque soit $n$, donc $f$ est nulle. \\\\
+Les solutions sont donc $x\rightarrow 0 $ et $x\rightarrow \frac{1}{x}$.
+\end{sol}

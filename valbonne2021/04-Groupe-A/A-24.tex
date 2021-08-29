@@ -1,0 +1,59 @@
+\begin{exo}
+Une classe comporte $25$ élèves. Montrer que, soit il existe deux filles nées le même mois, soit il existe deux garçons nés le même mois.
+\end{exo}
+
+
+\begin{exo}
+Montrer qu'il n'existe pas d'entier $n$ positif tel que $14^n+19$ soit premier.
+\end{exo}
+
+
+\begin{exo}
+Vladimir écrit les nombres de $1$ à $1000$ au tableau. Tant qu'il reste un nombre strictement plus grand que $9$ écrit au tableau, il choisit celui qu'il veut, et le remplace par la somme de ses chiffres. Combien de fois peut-il obtenir le nombre $1$ à la fin ?
+\end{exo}
+
+
+\begin{exo}
+Déterminer tous les quadruplets $(a, b, c, k)$ d'entiers tels que $a, b, c$ soient des nombres \textbf{premiers} et $k$ soit un entier strictement positif vérifiant
+$$a^2 + b^2 + 16c^2 = 9k^2 + 1$$
+\end{exo}
+
+
+\subsubsection{Corrigé}
+
+
+\begin{sol}
+Comme il y a douze mois dans l'année, et $\lceil\dfrac{25}{12}\rceil=3$, il existe $3$ élèves nés le même mois. Parmi ces trois élèves au moins $\lceil\frac{3}{2}\rceil = 2$ élèves ont le même sexe, donc deux filles ou deux garçons sont nés le même mois.
+\end{sol}
+
+
+\begin{sol}
+Commençons par calculer les petites valeurs de $14^n+19$. Pour $n=0$, on obtient $20=2^2\times 5$, pour $n=1$, on obtient $33=3\times 11$. Pour $n=2$ on obtient $215=5\times 43$, pour $n=3$, on obtient $2763=3^2\times 307$. Vu ces calculs, il est raisonnable de regarder quand est-ce que $3$ ou $5$ divise $14^n+19$, on peut conjecturer que $3$ divise $14^n+19$ lorsque $n$ est impair et $5$ divise $14^n+19$ lorsque $n$ est pair.
+
+Regardons modulo $5$, on a $14\equiv 4\equiv -1\pmod{5}$, donc comme $19\equiv 4\pmod{5}$, on a que $14^n+19\equiv (-1)^n+4\equiv 1+4\equiv 0\pmod{5}$ si $n$ est pair. Comme $14^n+19>5$, on en déduit que $14^n+19$ n'est pas premier car divisible par $5$ si $n$ est pair.
+
+Regardons modulo $3$, on a $14\equiv 2\equiv -1\pmod{3}$. En particulier, comme $19\equiv 1\pmod{3}$, on a que $14^n+19\equiv (-1)^n+1\equiv 0 \pmod{3}$. Comme $14^n+19>3$, on en déduit que $14^n+19$ n'est pas premier car divisible par $3$ si $n$ est impair.
+
+Ainsi $14^n+19$ n'est jamais premier si $n$ est une entier positif.
+\end{sol}
+
+
+\begin{sol}
+Notons déjà que Vladimir aboutira au bout d'un certain temps avec uniquement des nombres entre $0$ et $9$, puisqu'à chaque fois, le nombre est remplacé par un nombre plus petit : en effet, tout nombre avec au moins deux chiffres est strictement plus grand que la somme de ses chiffres.
+
+En effet si $n=\overline{a_ka_{k-1}\dots a_0}$ avec $k\geq 1$ et $a_k\neq 0$, $n=10^ka_k+\dots +10^1a_1+10^0a_0>a_k+\dots +a_0$ (l'inégalité étant stricte car $10^ka_k>a_k$). 
+
+Rappelons, comme vu lors du cours de modulo, que un nombre est congru à la somme de ses chiffres modulo $9$. En particulier, à chaque opération, le nombre d'éléments au tableau congrus à $1$ modulo $9$ est invariant. A la fin, tout élément écrit étant entre $0$ et $9$, le nombre d'élément valant $1$ est le nombre d'élément congru à $1$ modulo $9$. Il reste donc à calculer combien d'éléments entre $1$ et $1000$ sont congrus à $1$ modulo $n$, i.e. s'écrivent sous la forme $9k+1$ avec $k$ un entier.
+
+L'inégalité $1\leq 9k+1\leq 1000$ est équivalente à $0\leq 9k \leq 999$, i.e. à $0\leq k \leq 111$, il y a donc $112$ valeurs possibles de $k$, donc comme deux valeurs de $k$ différentes donnent deux valeurs de $9k+1$ différentes entre $1$ et $1000$. Il y a donc au départ $112$ nombres congrus à $1$ modulo $9$, donc à la fin $112$ nombres valant $1$.
+\end{sol}
+
+
+\begin{sol}
+Un carré modulo $3$ vaut $0$ ou $1$, et on a $1\equiv a^2+b^2+c^2\pmod{3}$ donc parmi $(a,b,c)$ deux sont divisibles par $3$ donc deux valent trois. Par symétrie comme $a,b$ jouent le même rôle on peut supposer $a=3$. On a donc deux cas : 
+\begin{itemize}
+    \item Si $b=3$, on a $9k^2=16c^2+17$ donc $(3k-4c)(3k+4c)=17$. Comme $3k+4c$ est positif et strictement supérieur à $3k-4c$ et $17$ est premier, on a $3k-4c=1$, $3k+4c=17$ donc en faisant la différence, $8c=16$ donc $c=2$. On obtient $3k=9$ donc $k=3$. Réciproquement, $(3,3,2,3)$ convient car $9+9+64=1+81=1+9\times 3^2$.
+    \item Si $c=3$, on a $9k^2=b^2+152$ donc $(3k-b)(3k+b)=152$. Or $152=8\times 19$. On a donc comme $3k+b$ est positif et strictement plus grand que $3k-b$, on a $(3k-b,3k+b)=(1,152),(2,76),(4,38),(8,19)$. On obtient en sommant $6k=153,78,42,27$, ce qui exclut en particulier le premier et le dernier couple. On a donc $k=13$ dans le deuxième cas et $b=37$ et dans le troisième cas $k=7$ et $b=17$. Réciproquement $(3,17,3,7)$, $(17,3,3,7)$, $(3,37,3,13)$ et $(37,3, 3,13)$ conviennent car $3^2+17^2+16\times 9=17\times 9 +17^2=17\times 26=21^2+1=9\times 7^2+1$ et car $9+16\times 9 +37^2=37^2+1+152=1+37^2+4+4\times 37=1+39^2=1+9\times 13^2$.
+\end{itemize}
+Les solutions sont donc $(3, 3, 2, 3)$, $(3, 17, 3, 7)$, $(17, 3, 3, 7)$, $(3, 37, 3, 13)$ et $(37, 3, 3, 13)$.
+\end{sol}
