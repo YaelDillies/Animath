@@ -1,0 +1,20 @@
+%Guilaume
+On considère une ligne de $n$ carrés. On note $S(n)$ le nombre minimal de carrés à colorier en bleu tels que chacun des $n-1$ traits séparant deux cases voisines soit à égale distance de deux cases bleues. Montrer que
+$$ \lfloor 2 \sqrt {n-1} \rfloor + 1 \le S(n) \le \lfloor 2 \sqrt n \rfloor +1$$
+~~\\
+\textit{Les "traits séparant deux cases voisines" sont réprésentés en pointillés ici :}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm,scale=0.5]
+\clip(-1.1999257766369921,0.28826668357684565) rectangle (15.872419575786803,10.949993892528848);
+\draw [line width=2pt] (0,8)-- (0,6);
+\draw [line width=2pt] (0,6)-- (14,6);
+\draw [line width=2pt] (14,6)-- (14,8);
+\draw [line width=2pt] (14,8)-- (0,8);
+\draw [line width=2pt, dashed] (4,8)-- (4,6);
+\draw [line width=2pt, dashed] (6,8)-- (6,6);
+\draw [line width=2pt, dashed] (8,8)-- (8,6);
+\draw [line width=2pt, dashed] (10,8)-- (10,6);
+\draw [line width=2pt, dashed] (12,8)-- (12,6);
+\draw [line width=2pt, dashed] (2,8)-- (2,6);
+\end{tikzpicture}\\
+\end{center}

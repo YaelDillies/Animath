@@ -1,0 +1,34 @@
+%Victor Vermès
+Dans le stage de Valbonne, il y a initialement $5$ élèves dans le groupe A, $3$ dans le groupe B, $1$ dans le groupe C, aucun·e dans le groupe D, et aucun·e animatheur·rice.\\
+
+Chaque jour, un certain nombre d'élèves sont promus dans le groupe suivant, alors que d'autres choisissent d'aller se baigner à la piscine jusqu'à la fin du stage, et de quitter leur groupe. Si un·e élève du groupe D est promu·e, il ou elle devient animateur·rice, autrement dit le graal !\\
+
+Plus précisément, chaque jour Raphaël, le directeur de stage, va séparer l'ensemble des élèves en deux parties. Les élèves d'une de ces deux parties seront promus, alors que les élèves de l'autre partie iront se baigner jusqu'à la fin du stage.\\
+Ce sont les élèves, et pas Raphaël, qui choisissent quel groupe va se baigner et quel groupe est promu.\\
+
+Raphaël peut-il toujours faire en sorte qu'il y ait au moins un·e animatheur·rice avant la fin du stage ?
+
+\tikzstyle{int}=[draw, minimum size=2em]
+\tikzstyle{top}=[draw,double, minimum size=2em, minimum height = 1.5 cm]
+\tikzstyle{pool}=[draw,double, minimum width=10cm, minimum height = 2cm]
+
+\begin{center}
+\begin{tikzpicture}[node distance=3cm,auto,>=latex']
+    \node [int] (a) {5 Gr A};
+
+    \node [int] (c) [right of=a] {3 Gr B};
+    \node [int] (d) [right of=c] {1 Gr C};
+    \node [int] (e) [right of=d] {0 Gr D};
+    \node [top] (f) [above of=e] {0 Animatheur·trice};
+    \node [pool, below of = d] (g) {Piscine};
+
+    \path[->] (a) edge node {} (c);
+    \path[->] (c) edge node {} (d);
+    \path[->] (d) edge node {} (e);
+    \path[->] (e) edge node {} (f);
+    \path[->, style= dashed] (a) edge node {} (g);
+    \path[->, style= dashed] (c) edge node {} (g);
+    \path[->, style= dashed] (d) edge node {} (g);
+    \path[->, style= dashed] (e) edge node {} (g);
+\end{tikzpicture}
+\end{center}

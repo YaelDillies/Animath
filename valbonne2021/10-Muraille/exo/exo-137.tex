@@ -1,0 +1,11 @@
+%Théodore Fougereux
+%Iran MO round 3 P6 2014
+% L'idée est de prendre des $a_i$ congrus à $1$ mod $5$, ce qui rend disjoints tous les ensembles sauf $A+A$ et $2A$, si on pose $a_i=5b_i+1$, il reste à faire en sorte que $b_i+b_j\ne b_k$ quelque soient $i, j, k$ avec $i\ne j$. Une façon de faire est de prendre les $b_i$ n'ayant pas de $2$ dans leur écriture ternaire.
+Montrer qu'il existe des entiers $0 < a_1 < \dots < a_{100} < 10^6$ tel que les ensembles $A, B, C, D, E$ suivants soient disjoints deux à deux :
+\begin{align*}
+A & = \{a_i, 1\le i\le 100\} \\
+B & = \{a_i + a_j, 1\le i < j\le 100\} \\
+C & = \{2a_i, 1\le i\le 100\} \\
+D & = \{a_i + 2a_j, 1\le i, j\le 100\} \\
+E & = \{2a_i + 2a_j, 1\le i, j\le 100\}
+\end{align*}

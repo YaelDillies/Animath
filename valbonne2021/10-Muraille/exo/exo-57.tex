@@ -1,0 +1,6 @@
+%Arthur Léonard
+%All russian olympiad 2021
+% Solution : Soit X l'ensemble des mots que l'on a choisi. Pour chaque mot de X, on remplace les A par B ou C de toutes les manières possibles.
+%Il y en a 2^81 par mot dans X, et on remarque que deux mots de X génèrent des ensembles disjoints.
+%Or, on a au plus 2^123 suites de B et C de taille 123, donc la taille de X est d'au plus 2^123/2^81 = 2^42.
+Un mot est une suite de $123$ caractères parmi $A$, $B$ et $C$ contenant $42$ consonnes ($B$ et $C$) et $81$ voyelles ($A$). Au maximum, combien peut-on prendre de mots distincts de telle manière que chaque paire de mots choisis admet une position où l'un des deux mots contient un $B$ et l'autre un $C$ ?

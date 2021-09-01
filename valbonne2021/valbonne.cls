@@ -117,7 +117,7 @@
 \rfoot[]{\large{ \fontfamily{pzc} \selectfont\thepage}}
 \cfoot{}
 
-\renewcommand{\chaptermark}[1]{ \markboth { \large{ \fontfamily{pzc} \selectfont \chaptername \, \thechapter. \, #1}} {}}
+\renewcommand{\chaptermark}[1]{ \markboth{ \large{\fontfamily{pzc} \selectfont \chaptername \, \thechapter. \, #1}} {}}
 \renewcommand{\sectionmark}[1]{\markright{ \large{\fontfamily{pzc} \selectfont \thesection.\, #1}}}
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -191,6 +191,24 @@
    \noindent{\bf Exercice \ifsolutions\hyperref[sol-\thechapter-\thesection-\thesubsection-\theexo]{\theexo}\else\theexo\fi} \ifx\@extit\empty{}\else{(#1)}\fi%
    \label{exo-\thechapter-\thesection-\thesubsection-\theexo}%
    ~\newline}
+  {
+
+  \medskip
+  }
+
+
+\makeatletter
+\newenvironmentx{exoy}[2][1={},2={}]
+  {
+    \medskip
+
+    \def\@extit{#1}%
+    \edef\@exer{#2}%
+    \ifx\@exer\empty{}\else{\setcounter{exo}{#2}\addtocounter{exo}{-1}}\fi%
+    \refstepcounter{exo}%
+    \noindent{\bf Exercice \ifsolutions\hyperref[sol-\thechapter-\thesection-\thesubsection-\theexo]{\theexo}\else\theexo\fi} \ifx\@extit\empty{}\else{(#1)}\fi%
+    \label{exo-\thechapter-\thesection-\thesubsection-\theexo}%
+    ~\newline}
   {
 
   \medskip
@@ -339,18 +357,54 @@
   \includepdf[pages=\intcalcAdd{1}{\intcalcMul{2}{#1}}-, frame, scale=0.75,nup=2x4,delta=5mm 5mm]{#3} %
 }
 
-%%% Mode muraille, pour insérer la muraille joliment, il suffit de remplacer l'en-tête de la muraille par la command \modemuraille
-%%% En vrai ce serait pas mal de factoriser le nstar en l'intégrant dans la définition de \exo dans le fichier de la muraille histoire de ne pas à avoir à réécrire \nstar à chaque fois.
-\newcommand{\modemuraille}{%
-  \newcommand{\nstar}[1]{\raisebox{.1em}{${\foreach \i in {1,...,##1} {{\star}} }$}}
-  \renewenvironment{exo}[1]%
-  {\medskip%
-    \def\@extit{##1}%
-    \refstepcounter{exo}%
-    \noindent {\bf Exercice \theexo} \ifx\@extit\empty{}\else{##1}\fi%
-    \label{exo-\thechapter-\thesection-\thesubsection-\theexo}%
-    ~\newline}%
-  {\medskip}}
+%\nstar{n} imprime n fois ⋆
+\newcommand{\nstar}[1]{\ifthenelse{\equal{#1}{0}}{}{ \raisebox{.1em}{${\foreach \i in {1,...,#1} {{\star}} }$}}}
+
+%\exomur{enonce}{etoiles}[resolv]
+%enonce : L'énoncé. Le mieux est d'utiliser \import
+%etoiles : Nombre d'étoiles.
+%resolv : Qui a résolu l'exercice. Vide par défaut.
+%Si resolv n'est pas vide, ça rajoute "Résolu par resolv" à la fin de l'environnement et transforme le numéro d'exercice en hyperlien vers la solution.
+%Le numéro d'exercice vient du compteur exo.
+\newcommandx{\exomur}[3][3={}]
+{
+  \def\@etoiles{#2}%Nombre d'étoiles
+  \def\@resolv{#3}%Qui a résolu l'exercice
+  \refstepcounter{exo}
+  \medskip
+  \noindent {\bf Exercice \ifthenelse{\equal{\@resolv}{}}{\theexo}{\hyperref[sol-\thechapter-\thesection-\thesubsection-\theexo]{\theexo}}}\nstar{#2}
+  \label{exo-\thechapter-\thesection-\thesubsection-\theexo}
+  ~\newline
+  #1
+
+  \ifthenelse{\equal{\@resolv}{}}{}
+  {
+    \medskip
+    \textit{Résolu par #3}
+    
+  }
+  \medskip
+}
+
+%\solmur{numero}{sol}{etoiles}{resolv}
+%numero : Numéro de l'exercice
+%sol : la solution. Le mieux est d'utiliser \import
+%etoiles : Nombre d'étoiles.
+%resolv : Qui a résolu l'exercice.
+%Si resolv n'est pas vide,ça rajoute "Résolu par resolv" à la fin de l'environnement et transforme le numéro d'exercice en hyperlien vers la solution.
+\newcommandx{\solmur}[4]
+{
+  \def\@numero{#1}%Numéro de l'exercice
+  \def\@etoiles{#3}%Nombre d'étoiles
+  \def\@resolv{#4}%Qui a résolu l'exercice
+  \medskip
+  \noindent {\it \underline{Solution de l'exercice \ref{exo-\thechapter-\thesection-\thesubsection-#1}\nstar{#3}}} résolu par #4
+  \label{sol-\thechapter-\thesection-\thesubsection-#1}
+  ~\newline
+  #2
+
+  \medskip
+}
 
 
 %%%%%%%%%%%%%%
@@ -417,12 +471,12 @@
 \def\Q{\mathbb Q} % nombres rationnels
 \def\R{\mathbb R} % nombres réels
 \def\C{\mathbb C} % nombres complexes
-\DeclareMathOperator\Card{\textrm{Card}} % cardinal d'un ensemble
-\let\oldleq\leq % si vous voulez l'autre symbole inférieur ou égal pour une raison bien précise. On peut aussi utiliser \le
-\def\leq{\leqslant}
-\let\oldgeq\geq % si vous voulez l'autre symbole supérieur ou égal pour une raison bien précise. On peut aussi utiliser \ge
-\def\geq{\geqslant}
-\newcommand{\qte}[1]{\enquote{#1}} % pour mettre entre guillemets
+\DeclareMathOperator\Card{\mathrm{Card}} % cardinal d'un ensemble
+\DeclareMathOperator\pgcd{\mathrm{pgcd}} % PGCD
+\DeclareMathOperator\ppcm{\mathrm{ppcm}} % PPCM
+\def\le{\leqslant}%\le donne ⩽, \leq donne ≤
+\def\ge{\geqslant}%\ge donne ⩾, \geq donne ≥
+\newcommand{\qte}[1]{\enquote{#1}} % guillemets. On a aussi \fg et \og
 \renewcommand{\vec}[1]{\overrightarrow{#1}} % un vecteur ($\vec{AB}$ par exemple)
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert} % une norme
 

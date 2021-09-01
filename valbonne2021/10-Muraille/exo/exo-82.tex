@@ -1,0 +1,8 @@
+%Martin Rakovsky
+%Canada MO 2018 P1
+%\begin{sol}
+%Si $n=2^k$, on procède par récurrence sur l'exposant $k$. Si c'est possible pour $k$, alors dans le cas $k+1$, on partitionne en $2^k$ paires de jetons. Puis on itère (l'initialisation étant triviale).
+%\medskip
+%Si $n\ne 2^k$, on prend la configu avec $n-1$ jetons en $(0, 0)$, puis le dernier en $(1, 0)$. Le barycentre est $(1/n, 0)$ et est invariant. Les abscisses des jetons seront toujours des nombres dyadiques, et $1/n$ n'est pas un nombre dyadique. Dommage.
+%\end{sol}
+On considère une configuration de $n$ jetons dans le plan, pas forcément à des positions distinctes. On s'autorise l'opération suivante : on choisit deux jetons $A$ et $B$ et on les déplace tous les deux vers l'emplacement du milieu du segment joignant les jetons $A$ et $B$. On dit qu'une configuration \textit{collisionne} s'il est possible, après une suite finie d'opérations, que tous les jetons se retrouvent au même emplacement. Montrer que toutes les configurations à $n$ jetons collisionnent si et seulement si $n$ est une puissance de $2$.

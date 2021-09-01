@@ -1,0 +1,11 @@
+%Théodore Fougereux
+%Tournament of towns 2002 A level P4
+% Réponse : tous sauf $n=3$ et $n=1$.
+% Pour n=1 ne marche clairement pas, pour n=3, une petite disjonction de cas montre qu'on finit par tout éteindre.
+% Si on note $0$ les lampes éteintes et $1$ les allumées on peut faire :
+% pour $n=4k+2$: 011001100...0011001
+% Pour $n=4k$: 01100110011...1100110
+% Pour $n=4k+1$: 011001100...00110011001010
+% Pour $n=4k+3$: 011001100...0011001100110001
+% L'idée est de faire une alternance de 00 et 11, qui convient, et de compléter correctement sur les bords.
+Aurélien dispose $n$ lampes en ligne. Toutes les minutes, il éteint les lampes déjà allumées. Il allume également les lampes éteintes qui étaient à côté d'exactement une lampe déjà allumée. Pour quels $n$ existe-il une configuration initiale telle qu'il y ait toujours au moins une lampe allumée ?

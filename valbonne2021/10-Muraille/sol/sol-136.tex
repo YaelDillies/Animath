@@ -1,0 +1,24 @@
+On voit que l'identité est une solution.
+
+Soit $f$ une solution : $\forall x, y > 0,~f(xf(y)) + f(y^3f(x)) = xy + xy^3$.
+
+On fait les substitutions
+\begin{itemize}
+\item $x = y = 1 : f(f(1)) = 1$
+\item $x = f(1), y = 1 : f(f(1)^2) = f(1)$
+\item $x = f(1)^2, y = 1 : f(f(1)^3) = 2f(1)^2 - 1$
+\item $x = y = f(1) : f(1)^2 = f(1)^4$ donc $f(1) = 1$.
+\end{itemize}
+
+On a donc, en substituant $y = 1$, $\forall x > 1, ~f(x) + f(f(x)) = 2x$.
+
+On montre alors par récurrence que si $x > 0$ est fixé, on a
+$$\forall n\in\N,~f^n(x) = \frac{2 + (-2)^n}3 x + \frac{1 - (-2)^n}3 f(x)$$
+où $f^n$ est la $n$-ième itérée de $f$.
+\medskip
+
+Ainsi, puisque $f > 0$,
+$$0 < f^{2n}(x) = \frac{2^{2n} + 2}3 x - \frac{2^{2n} - 1}3 f(x) \text{ et } 0 < f^{2n + 1}(x) = \frac{2^{2n + 1} + 1}3 f(x) - \frac{2^{2n + 1} - 2}3 x$$
+Donc pour tout $n \ge 1$, on a
+$$\frac{2^{2n + 1}-2}{2^{2n + 1} + 1} < \frac{f(x)}x < \frac{2^{2n} + 2}{2^{2n} - 1}$$
+En faisant tendre $n$ vers l'infini, on trouve $1 \le \frac{f(x)}x \le 1$ donc $f(x) = x$.

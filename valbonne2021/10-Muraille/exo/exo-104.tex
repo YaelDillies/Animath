@@ -1,0 +1,11 @@
+%Martin Rakovsky
+%Serbia TST 2018 P3
+Alice et Bob jouent au jeu suivant :
+\begin{itemize}
+\item D'abord, Bob dessine un triangle $ABC$ et un point $P$ à l'intérieur.
+\item Ensuite ils choisissent chacun à leur tour, une permutation $\sigma_1, \sigma_2, \sigma_3$ du triplet $\{A, B, C\}$, de telle sorte qu'Alice choisisse les permutations $\sigma_1$ et $\sigma_3$, c'est-à-dire qu'elle commence.
+\item Alice trace enfin un triangle $V_1V_2V_3$.
+\end{itemize}
+Pour $i=1, 2, 3$, soit $\psi_i$ la similitude qui envoie $\sigma_i(A), \sigma_i(B), \sigma_i(C)$ sur $V_i, V_{i + 1}$ et $X_i$ tel que le triangle $V_iV_{i+1}X_i$ soit à l'extérieur du triangle $V_1V_2V_3$ (on note $V_4=V_1$). Soit enfin $Q_i=\psi_i(P)$. Alice gagne si le triangle $Q_1Q_2Q_3$ est semblable au triangle $ABC$, Bob gagne sinon.
+
+Qui dispose d'une stratégie gagnante ?

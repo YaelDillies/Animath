@@ -1,0 +1,26 @@
+Montrons par récurrence que $F_kF_{k + 2} = F_{k + 1}^2 + (-1)^{k + 1}$ : \\
+\textbf{Initialisation :} $F_0F_{0 + 2} = 0\times 1 = 1^2 + (-1)^{0 + 1} = F_{k + 1}^2 + (-1)^{k + 1} $ \\
+\textbf{Hérédité :} Supposons que $F_kF_{k + 2} = F_{k + 1}^2 + (-1)^{k + 1}$. Alors
+$$F_{k + 1}F_{k + 3} = F_{k + 1}F_{k + 2} + F_{k + 1}^2 = F_{k + 2}F_{k + 1} + (F_kF_{k + 2} - (-1)^{k + 1}) = F_{k + 2}^2 + (-1)^{k + 2}$$
+
+Pour $n = 0$, $P_0 = 0$ a une infinité de racines.
+
+Pour $n \ge 2$ pair, montrons que $P_n$ n'a pas de racine réelle. \\
+Comme $F_1, \dots, F_{n + 1} > 0$, $P_n(x) > 0$ pour tout $x\ge 0$ donc $P_n$ n'admet pas de racines positives. Supposons que $x > 0$ est tel que $P_n(-x) = 0$. On a alors
+$$F_1x^n + F_3x^{n - 2} + \dots + F_{n + 1} = F_2x^{n - 1} + \dots + F_nx$$
+Pour $k = 1, 3, \dots, n - 1$, par IAG et par le résultat préliminaire, on a
+$$\frac{F_kx^{n - k + 1} + F_{k + 2}x^{n - k - 1}}{2} \ge \sqrt{F_kF_{k + 2}}x^{n - k} = \sqrt{F_{k + 1}^2 + 1}x^{n - k} > F_{k + 1}x^{n - k}$$
+On en déduit en sommant pour tout $k$ impair que
+$$F_1x^n + \dots + F_{n + 1} \ge \frac{F_1x^n}{2} + F_3x^{n - 2} + \dots + F_{n - 1}x^2 + \frac{F_{n + 1}}{2} > F_2x^{n - 1} + \dots + F_nx$$
+Contradiction. Ainsi, $P_n$ n'a pas de racines réelles si $n$ est pair.
+\smallskip
+
+Pour $n$ impair, $P_n$ admet au moins une racine par continuité. Montrons que $P_n$ est strictement croissant en montrant que $P_n'$ est strictement positif, ce qui nous assurera l'unicité de cette racine.
+
+On sait que $P_n' = nF_1X^{n - 1} + \dots + 2F_{n - 1}X + F_n$. On a donc
+$$P_n' = F_1X^{n - 1} + (2P_1X^{n - 2} + F_3X^{n - 3}) + \dots + (2P_{n - 2}X + F_n)$$
+
+Il suffit alors de montrer que $2P_kX + F_{k + 2} > 0$ pour $k = 1, 3, \dots, n - 2$. Cette inégalité étant claire si $ x \ge 0$, on se restreint à prouver $F_{k + 2} - x\times 2P_k(-x) > 0$ pour $x > 0$ i.e. que
+$$2y^{k-1}F_1+\dots +2F_{k-2}y^2+F_k>2F_2y^{k-2}+\dots + 2F_{k-1}y$$
+
+Or par IAG, en faisant le même raisonnement qu'au début, $F_jy^{k-j}+F_{j+2}y^{k-j+2}\ge 2F_{j+1}y^{k-j+1}$ pour $j$ impair. On a donc en sommant cela que $$y^{k-1}F_1+\dots +2F_{k-2}y^2+F_k\ge 2F_2y^{k-2}+\dots + 2F_{k-1}y$$ Cela donne l'égalité voulue car $F_1y^{k-1}>0$.

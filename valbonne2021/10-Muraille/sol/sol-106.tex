@@ -1,0 +1,12 @@
+Montrons d'abord que cela marche pour $n$ pair. Soit $l$ un entier vérifiant $0 \le l <\dfrac{n}{2}$. On groupe $4l + 1$ avec $4l + 3$ et $4l + 2$ avec $4l + 4$.
+
+Cela donne $(4l + 1)(4l + 3) + 1 = 16l^2 + 16l + 3 + 1 = (4l + 2)^2$ et $(4l + 2)(4l + 4) + 1 = 16l^2 + 24l + 9 = (4l + 3)^2$. En faisant ce groupement pour tout $l$ vérifiant $0 \le l < \dfrac{n}{2}$, on obtient que l'énoncé est vrai pour $n$ pair.
+\medskip
+
+Montrons que cela est faux pour $n$ impair. Soit $n$ impair, supposons qu'il est possible de diviser l'ensemble $\{1, \dots, 2n\}$ en $n$ paires parfaites. Posons $n = 2k + 1$, il y a, entre $1$ et $2n$, $k+1$ entiers congrus à $1$ modulo $4$, $k + 1$ entiers congrus à $2$, $k$ entier congru à $3$ et $k$ entiers congrus à $0$.
+
+Soit $a$ un entier congru à $1$ modulo $4$, et $b$ un entier tel que $ab + 1$ est un carré. Si $b$ vaut $1$ ou $2$ modulo $4$, alors $ab+1$ vaut $2$ ou $3$ modulo $4$, qui n'est pas un carré. En particulier, les $k + 1$ entiers entre $1$ et $2n$ congrus à $1$ modulo $3$ sont associés dans leur paire à un nombre congru à $3$ ou $0$ modulo $4$.
+
+Soit $a$ un entier congru à $2$ modulo $4$, et $b$ un entier tel que $ab + 1$ est un carré. On a déjà vu que $b$ ne pouvait valoir $1$ modulo $4$. Si $b$ vaut $2$ modulo $4$, alors modulo $8$, $a$ et $b$ valent $2$ ou $6$, donc $ab + 1$ vaut $5$ modulo $8$ qui n'est pas un carré. En particulier, les $k+1$ entiers entre $1$ et $2n$ congrus à $1$ modulo $3$ sont associés dans leur paire à un nombre congru à $3$ ou $0$ modulo $4$.
+
+Il y a donc $2(k + 1)$ paires différentes contenant un nombre congru à $3$ ou $0$ modulo $4$, alors qu'il y a $2k$ tels nombres, on obtient la contradiction voulu. Ainsi pour $n$ impair il n'est pas possible de diviser l'ensemble $\{1, \dots, 2n\}$ en $n$ paires parfaites.

@@ -1,0 +1,16 @@
+Si $m(x)=x^{2020}$, Albert a une stratégie gagnante. Il commence en fixant $a_0=1$. Ainsi à la fin de la partie $f(0)=1$. Il est donc impossible d'avoir $f$ divisible par $m$, sinon comme $m(0)=0$ on aurait $f(0)=0$.
+\smallskip
+
+Si $m(x)=x^2+1$, Homer a une stratégie gagnante. Il répartit les $a_i$ par paires (on le peut car $4$ divise $2020$) de la forme $(a_{4k},a_{4k+2})$, $(a_{4k+1},a_{4k+3})$.
+
+Sauf dans le cas de $(a_0, a_2)$, Homer adopte la stratégie suivante : il joue dans la même paire qu'Albert, et choisit le même réel. On obtient alors que pour tout réel $a$, $a(X^{4k}+X^{4k+2})=aX^{4k}(X^2+1)$, $a(X^{4k+1}+X^{4k+3})=aX^{4k+1}(X^2+1)$, donc on obtiendra bien une somme de polynômes divisibles par $X^2+1$.
+
+Néanmoins, si Homer procède de la sorte, à la fin il obtiendra un polynôme congru à $X^{2020}\equiv (-1)^{1010}\equiv 1$ modulo $X^2+1$. Pour cela, Homer aimerait que le polynôme obtenu avec $a_2$ et $a_0$ soit congru à $-1$ modulo $2020$. Dans ce cas, on aurait bien $X^{2020}+a_2X^2+a_0\equiv X^{2020}-1\equiv 0$ modulo $X^2+1$. Il suffit donc d'avoir $a_0=a_2-1$.
+
+Ainsi Homer applique la stratégie suivante :
+\begin{itemize}
+\item Si Albert joue $a_0$, Homer fixe $a_2$ à $a_0+1$.
+\item Si Albert joue $a_2$, Homer fixe $a_0$ à $a_2-1$.
+\end{itemize}
+
+Bilan, le polynôme obtenu à la fin est divisible par $X^2+1$, donc Homer gagne !

@@ -1,0 +1,20 @@
+Soit $(\varepsilon_1, \dots, \varepsilon_n) \in \{-1,1\}^n$ et soit $i\in \{1,\dots, n\}$. On pose :
+\begin{itemize}
+\item Si $x_i > 0$, $r_i=\frac{\varepsilon_i + 1}{2}$.
+\item Si $x_i < 0$, $r_i=\frac{\varepsilon_i - 1}{2}$.
+\end{itemize}
+
+On a alors
+$$\frac{1}{2} (\sum \limits_{i = 1}^n \varepsilon_i x_i +\sum \limits_{i = 1}^n |x_i|) = \sum \limits_{i = 1}^n r_i x_i=\sum \limits_{i = 1}^n|r_i||x_i|$$
+
+En particulier, $\sum\limits_{i = 1}^n \varepsilon_i x_i \in [a, a + 2[$ est équivalent à $\sum\limits_{i = 1}^n |r_i| |x_i| \in [b, b + 1[$ avec $b=\frac{1}{2}(a + \sum \limits_{i = 1}^n |x_i|)$.
+
+Il y a donc autant de $n$-uplets $(\varepsilon_1, \dots, \varepsilon_n) \in \{-1,1\}^n$ qui vérifient $\sum\limits_{i = 1}^n \varepsilon_i x_i \in [a, a+ 2[$ que de $n$-uplets $(a_1, \dots, a_n)$ où les $a_i$ sont dans $\{0, 1\}$ qui vérifient $\sum\limits_{i = 1}^n \varepsilon_i a_i |x_i|\in [b, b + 1[$. On dira qu'un $n$-uplet $(a_1, \dots, a_n)$ est joli s'il vérifie les deux conditions précédente
+\smallskip
+
+À chaque joli $n$-uplet $(a_1, \dots, a_n)$, on associe $X_a = \{1\le j \le n | a_i = 1\}$. S'il existe $a$ et $b$ deux jolis $n$-uplets distincts qui vérifient l'énoncé avec $X_a\subset X_b$, on a $X_a\neq X_b$ (car les deux $n$-uplets sont distincts). Soit $j$ appartenant à $X_b$ mais pas à $X_a$, on a
+$$b + 1 > \sum\limits_{i = 1}^n \varepsilon_i b_i |x_i| = \sum\limits_{i\in B} \varepsilon_i |x_i|\ge |x_j| + \sum\limits_{i\in A}\varepsilon_i |x_i|\ge b + 1$$
+
+On a alors une contradiction.
+
+Ainsi l'ensemble des $(X_a)$ pour $a$ joli forme une antichaîne, donc a au plus cardinal $\binom{n}{\lceil\frac{n}{2}\rceil}$. Comme deux $n$-uplets différents donnent deux $X_a$ différents, on obtient le résultat voulu.

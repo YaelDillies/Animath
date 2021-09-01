@@ -1,0 +1,9 @@
+Commençons par montrer que $x$ et $y$ sont amis si et seulement si $n\nmid ppcm (x,y)$. D'abord, si $n\nmid ppcm(x,y)$, on peut prendre $a=ppcm(x,y)/x$ et $b=ppcm(x,y)/y$ pour avoir $ax=by\not\equiv 0 (\mod n)$ et $x$ et $y$ sont amis. D'autre part, si $n\mid ppcm(x,y)$,soient $a$ et $b$ tels que $ax=by$. Cette valeur commune est multiple de $x$ et de $y$, donc de $n$. On a donc $ax=by\equiv0 (\mod n)$, et $x$ et $y$ ne sont donc pas amis.
+
+Le nombre 1 est ami avec tous les nombres $y$ entre 2 et $n-1$ en prenant $b=1$ et $a=y$. Si $n$ répond à la condition de l'énoncé, il est donc pair.
+
+Supposons que $n$ soit multiple d'un nombre premier impair. Ecrivons $n=2^sq$ avec $q$ impair et $s\ge 1$. On a $n\mid ppcm(2^s,y)\Longleftrightarrow q\mid y$. Dès lors, les amis de $2^s$ sont les nombres entre 1 et $n-1$ sauf $2^s$ et les $2^s-1$ multiples de $q$ entre $1$ et $n-1$. Cela fait donc un nombre impair d'amis pour $2^s$. Ainsi, seules les puissances de 2 peuvent être des nombres cherchés par l'énoncé.
+
+Si $n=2^s$ avec $s\ge 1$ et si $x,y$ sont entre 1 et $n-1$, on a $x=2^{s_1}q_1$ et $y=2^{s_2}q_2$ avec $s_1,s_2<s$ et $q_1,q_2$ impairs. Alors, $ppcm(x,y)=2^{\max (s_1,s_2)}ppcm(q_1,q_2)$ n'est jamais multiple de $n$. Ainsi, chaque nombre est ami avec tous les autres nombres entre $1$ et $n-1$, ce qui lui fait donc un nombre pair d'amis.
+
+Ainsi, les nombres cherchés sont les $2^s$ avec $s\ge 1$.

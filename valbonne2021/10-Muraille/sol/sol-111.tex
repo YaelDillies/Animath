@@ -1,0 +1,15 @@
+Montrons que
+$$\left(1 + \frac{x}{y + z}\right)^2+\left(1 + \frac{y}{z + x}\right)^2 + \left(1 + \frac{z}{x + y}\right)^2 \ge \frac{27}{4}$$
+
+L'inégalité est équivalente à
+$$(x + y + z)^2\left(\frac{1}{x + y}\right)^2 + \left(\frac{1}{x + z}\right)^2 + \left(\frac{1}{y + z}\right)^2 \ge \frac{27}{4}$$.
+ou encore à
+$$ \left(\frac{2(x + y + z)}{3}\right)^2 ((x + z)^2(y + z)^2 + (x + y)^2(y + z)^2 + (x + y)^2(x + z)^2) \ge 3(x + y)^2(x + z)^2(y + z)^2$$
+Posons $a=x+y$ et $b=y+z$ $c=x+z$, l'égalité devient
+$$\left(\frac{a + b + c}{3}\right)^2 \left(\frac{a^2b^2 + a^2c^2 + b^2c^2}{3}\right)^2 \ge a^2b^2c^2$$
+
+Par IAG $\left(\frac{a + b + c}{3}\right)^2 \ge (abc)^{2/3}$ et $\left(\frac{a^2b^2 + a^2c^2 + b^2c^2}{3}\right) \ge (abc)^{4/3}$. En faisant le produit on a bien l'inégalité voulue.
+
+Si on a égalité, on a égalité dans la première IAG donc $a = b = c$, donc $x=\frac{a+c-b}=\frac{b+c-a}{2} = z = \frac{a+b-c}{2} = y$.
+
+En particulier si $x = y = z$, on a bien égalité dans l'énoncé initial, donc les triplets solution sont ceux de la forme $(a, a, a)$ avec $a\in \N^*$.

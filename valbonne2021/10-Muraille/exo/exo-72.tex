@@ -1,0 +1,7 @@
+%Martin Rakovsky
+%\begin{sol}
+%On va montrer que c'est $\lfloor n^2/4\rfloor$.
+%Pour un coloriage, on place les dominos au hasard. On en a mis $n^/2$, donc au moins la moitié est colorée ou uniforme.
+%Pour montrer qu'on ne peut pas faire mieux. On coupe en carrés de $4$, on colorie la case supérieure gauche de chaque carré en rouge, le reste en bleu. Par récurrence, on peut montrer qu'on ne peut pas mettre plus de $n^2/4$ dominos de l'un ou de l'autre.
+%\end{sol}
+Dans une grille $n\times n$, chaque case est soit bleue soit rouge. On place certains dominos sur la grille, chaque domino couvrant deux cases (pas de recouvrement). Un domino est dit "uniforme" s'il couvre deux cases bleues ou deux cases rouges, "coloré" sinon. Trouver le plus grand entier positif $k$ tel que, quelque soit le coloriage initial, on peut toujours avoir $k$ dominos uniformes ou $k$ dominos colorés.

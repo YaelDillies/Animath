@@ -1,0 +1,13 @@
+Soit $N$ un entier tel qu'il existe $2k+1$ entiers distincts $a_1, \dots, a_{2k + 1} \ge 1$ vérifiant l'énoncé. Sans perte de généralité, on peut supposer que $a_1 \le \dots \le a_{2k + 1}$. On a alors $a_1 + \dots + a_{2k + 1} \ge N$ et $a_{k + 2} + \dots + a_{2k + 1} \le \dfrac{N}{2}$. On en déduit donc que :
+
+$$a_{k+2}+\dots + a_{2k+1}\le \dfrac{N}{2}\le a_1 + \dots +a_{k+1}$$
+
+On a également si $1\le i \le 2k$ que $a_{i+1}\ge a_i+1$ par croissance et comme les $(a_i)$ sont entiers et distincts. En particulier $a_ {n+m}\ge a_n + m$ si $1\le n+m\le 2k+1$. En particulier,
+$$a_2 + \dots + a_{k + 1} + k^2 \le a_{k + 2} + \dots + a_{2k + 1}$$
+
+Cette inégalité couplée à la précédente implique que $a_1\ge k^2$. On a ainsi que
+$$\frac{N}{2} \ge a_{k + 1} + \dots + a_{2k + 1} \ge k^2 + k + 2 + \dots + k^2 + 2k \ge k^3 + k^2 + \frac{k(k+1)}{2}$$
+
+D'où $N\ge 2k^3+3k^2+k$.
+
+Réciproquement, montrons que $2k^3+3k^2+k$ est bien la valeur minimale de $N$. Prenons $a_i=K^2+i-1$ pour $i$ entre $1$ et $2k+1$. La somme des $a_i$ vaut $k^2(2k+1)+\frac{2k(2k+1)}{2}=2k^3+3k^2+k$ et la plus grande somme qu'on peut former avec $k$ $a_i$ vaut par croissance $a_{k+2}+\dots +a_{2k+1}=k^3+k^2+(1+\dots +k)=\frac{2k^3+2k^2+k(k+1)}{2}=\frac{N}{2}$. Ainsi la suite vérifie bien l'énoncé, donc $N=2k^3+3k^2+k$ est bien la valeur minimale.

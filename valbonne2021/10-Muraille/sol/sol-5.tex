@@ -1,0 +1,4 @@
+
+Dans la configuration initiale, il y a $2019$ élèves (sans Alice et Bob) dans le cercle, donc Alice en a un nombre impair à sa gauche et pair ($\ge2$) à sa droite (ou l'inverse). On remarque alors qu'Alice peut se ramener à un nombre impair de voisins à sa gauche et à sa droite : Bob sera alors forcé de laisser à Alice une configuration où d'un côté un nombre pair d'élèves la sépare de Bob et de l'autre un nombre impair d'élèves l'en sépare : ainsi, soit Alice est voisine de Bob et gagne la partie, soit elle peut toujours maintenir un nombre impair d'élèves entre Bob et elle après son tour.
+
+De cette manière, Bob est toujours à distance au moins $1$ d'Alice après qu'elle a joué, donc ne peut pas gagner. En appliquant cette stratégie, Alice est donc certaine d'être gagnante, vu que le jeu a nécessairement un gagnant et se termine en au plus $2020$ tour d'élimination : c'est donc Alice (qui commence) qui dispose d'une stratégie gagnante.
