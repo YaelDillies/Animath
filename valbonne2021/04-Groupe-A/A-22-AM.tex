@@ -1,294 +1,376 @@
 \subsubsection{Définition des nombres premiers}
-\dfn[Nombre premier]
-Un nombre premier est un nombre naturel qui a exactement \(2\) diviseurs naturels - \(1\) et lui-même.
-\endgroup
 
-\exo
-Trouver tous les premiers entre \(1\) et \(15\).
 
-\exo
+\begin{dfn}[Nombre premier]
+Un nombre premier est un entier naturel qui a exactement $2$ diviseurs naturels : $1$ et lui-même.
+\end{dfn}
+
+\begin{rem}
+$1$ n'est pas un nombre premier car qu'il n'a qu'un seul diviseur naturel. Cela peut paraitre bizarre de choisir une définition de premier qui exclut $1$, mais on verra que ça nous simplifie la vie.
+\end{rem}
+
+
+\begin{exo}
+Trouver tous les premiers entre $1$ et $15$.
+\end{exo}
+
+
+\begin{exo}
 Trouver tous les premiers pairs.
+\end{exo}
 
-\exo
+
+\begin{exo}
 Combien y a-t-il de paires de premiers consécutifs ?
+\end{exo}
 
-\exo
-Trouver tous les premiers de la forme \(a^2 - 1\), avec \(a\geqslant2\) naturel.
 
-\exo
-Est-ce que tous les nombres de la forme \(n^2 + n + 41\), avec \(n\) naturel, sont premiers ?
+\begin{exo}
+Trouver tous les premiers de la forme $a^2 - 1$, avec $a\ge 2$ naturel.
+\end{exo}
 
-\exo
-Soit \(n\) un nombre naturel. On veut tester si \(n\) est premier.
-On peut tester si \(n\) est divisible par \(2, 3, 4, \ldots, n-1\). On sait alors que \(n\) est premier si et seulement s’il n'est divisible par aucun de ses nombres. Montrer qu'en faite, il suffit de tester que les diviseurs plus petits que \(\sqrt{n}\), ce qui donne une façon plus rapide de tester si un nombre \(n\) est premier.
 
-\exo
-Soit \(n\) naturel. Montrer que si \(2^{n-1}\) est premier, alors \(n\) est premier.
+\begin{exo}
+Est-ce que tous les nombres de la forme $n^2 + n + 41$, avec $n$ naturel, sont premiers ?
+\end{exo}
 
-\exo
-Montrer que si un premier \(p\) divise un premier \(q\), alors \(p=q\).
 
-\exo
-Soit \(p\) premier et \(n\) naturel. Montrer que soit \(p\) divise \(n\), soit \(p\) et \(n\) sont premiers entre eux.
+\begin{exo}
+Soit $n$ un entier naturel. On veut tester si $n$ est premier.
+On peut tester si $n$ est divisible par $2, 3, 4, \dots, n-1$. On sait alors que $n$ est premier si et seulement s’il n'est divisible par aucun de ses nombres. Montrer qu'en fait, il suffit de tester que les diviseurs plus petits que $\sqrt n$, ce qui donne une façon plus rapide de tester si un nombre $n$ est premier.
+\end{exo}
+
+
+\begin{exo}[Difficile]
+Soit $n$ naturel. Montrer que si $2^n - 1$ est premier, alors $n$ est premier.
+\end{exo}
+
+
+\begin{exo}
+Montrer que si un premier $p$ divise un premier $q$, alors $p=q$.
+\end{exo}
+
+
+\begin{exo}
+Soit $p$ premier et $n$ naturel. Montrer que soit $p$ divise $n$, soit $p$ et $n$ sont premiers entre eux.
+\end{exo}
+
 
 \subsubsection{Lemme d'Euclide}
-Le lemme d'Euclide s'énonce comme suit :
 
 
-\thm[Lemme d'Euclide]
+\begin{lem}[Lemme d'Euclide]
+Soit $p$ premier et $a, b$ naturels. Si $p$ divise $ab$, alors soit $p$ divise $a$, soit $p$ divise $b$
+\end{lem}
 
-Soit \(p\) premier et \(a, b\) naturels. Si \(p\) divise \(ab\), alors soit \(p\) divise \(a\), soit \(p\) divise \(b\)
+\begin{rem}
+La condition $p$ premier est indispensable. De fait, $6$ divise $12 = 3 \times 4$, mais $6$ ne divise ni $3$ ni $4$. Cela arrive parce que $6$ n'est pas premier.
+\end{rem}
 
-\endgroup
+On va prouver le lemme d'Euclide plus tard, puisque la preuve est assez compliquée et technique.
 
-Remarquons que la condition \(p\) premier est indispensable. De faite, \(6\) divise \(12 = 3 \times 4\), mais \(6\) ne divise ni \(3\) di \(4\). C'est possible par ce que \(6\) n'est pas premier.
 
-On va le prouver plus tard, puis ce que la preuve est assez compliquée et technique.
+\begin{exo}
+Soit $a$ entier.
+Montrer que $5$ divise $a^2$ si et seulement si $5$ divise $a$.
+\end{exo}
 
-\exo
-Soit \(a\) entier.
-Montrer que \(5\) divise \(a^2\) si et seulement si \(5\) divise \(a\).
 
-On peut un peut généraliser le lemme d'Euclide :
+On peut légèrement généraliser le lemme d'Euclide :
 
-\thm[Lemme d'Euclide (généralisé)]
+\begin{thm}[Lemme d'Euclide (généralisé)]
+Soit $p$ premier et $a_1, a_2, \dots, a_n$ des entiers. Si $p$ divise $a_1 \times a_2 \times \dots \times a_n$, alors il divise un des $a_1, a_2, \dots, a_n$.
+\end{thm}
 
-Soit \(p\) premier et \(a_2 , a_2 , \ldots , a_{n}\) des entiers. Si \(p\) divise \(a_2 \times a_2 \times \cdots \times a_{n}\), alors il divise un des \(a_2 , a_2 , \ldots , a_{n}\).
-
-\endgroup
-
-\preuve
-
+\begin{preuve}
 On va prouver cette généralisation en appliquant le lemme d'Euclide plusieurs fois.
-Si un premier \(p\) divise \(a_2 \times a_2 \times \cdots \times a_{n}\), alors par le lemme d'Euclide, \(p\) divise soit \(a_2\) soit \(a_2 \times a_{3} \times \cdots a_{n}\). Dans le premier cas, on a terminé. Dans le deuxiemme cas, on reapplique le lemme d'Euclide de la meme manière. On a alors que \(p\) divise soit \(a_2\) soit \(a_{3} \times a_{4} \times \cdots \times a_{n}\). Dans le premiér cas, on a terminé, dans le deuxiemme cas, on refait le meme raisonnement. Si on refait ce raisonnement assez de fois, on aura terminé au bound d'un moment.
+Si un premier $p$ divise $a_1 \times a_2 \times \dots \times a_n$, alors par le lemme d'Euclide, $p$ divise soit $a_1$ soit $a_2 \times a_3 \times \dots a_n$. Dans le premier cas, on a terminé. Dans le deuxième cas, on réapplique le lemme d'Euclide de la même manière. On a alors que $p$ divise soit $a_2$ soit $a_3 \times a_4 \times \dots \times a_n$. Dans le premier cas, on a terminé, dans le deuxième cas, on refait le même raisonnement. Si on refait ce raisonnement assez de fois, on aura terminé au bout d'un moment.
+\end{preuve}
 
-Remarque : ce raisonnement peut etre rendu plus rigoureux grace a une recurence.
+\begin{rem}
+Ce raisonnement peut être rendu plus rigoureux grâce à une récurrence.
+\end{rem}
 
-\exo
-Soit \(a\) entier.
-Montrer que \(5\) divise \(a^{3}\) si et seulement si \(5\) divise \(a\).
 
-\preuve[Lemme d'Euclide]
+\begin{exo}
+Soit $a$ entier.
+Montrer que $5$ divise $a^3$ si et seulement si $5$ divise $a$.
+\end{exo}
 
-Soit \(p\) premier et \(a, b\) entiers tels que \(p\) divise \(ab\), écrivons \(ab = kp\) avec \(k\) entier. Supposons par l'absurde que \(p\) ne divise ni \(a\) ni \(b\). Alors \(p\) est premier avec \(a\) et avec \(b\) donc par le théorème de Bézout, il existe des entiers \(w, x, y, z\) tels que
-\[wa + xp = 1\]
-et
-\[yb + zp = 1\]
+
+On prouve maintenant le lemme d'Euclide. Cette preuve peut paraitre parachutée, il existe une preuve plus naturelle, mais elle utilise les modulos.
+
+\begin{preuve}[Lemme d'Euclide]
+Soit $p$ premier et $a, b$ entiers tels que $p$ divise $ab$, écrivons $ab = kp$ avec $k$ entier. Supposons par l'absurde que $p$ ne divise ni $a$ ni $b$. Alors $p$ est premier avec $a$ et avec $b$ donc par le théorème de Bézout, il existe des entiers $w, x, y, z$ tels que
+$$wa + xp = 1\text{ et }yb + zp = 1$$
 soit
-\[wa = 1 - xp\]
-et
-\[yb = 1 - zp\]
-on a alors
-\[wyab = \left(1 - xp\right)\left(1 - zp\right)\]
-\[wykp = 1 - xp - zp + xzp^2\]
-\[1 = p\left(wyk + x + z - p\right)\]
-Donc \(p\) divise \(1\), ce qui est une contradiction.
+$$wa = 1 - xp\text{ et }yb = 1 - zp$$
+On a alors
+$$wykp = wyab = \left(1 - xp\right)\left(1 - zp\right) = 1 - xp - zp + xzp^2$$
+soit
+$$1 = p(wyk + x + z - xzp)$$
+Donc $p$ divise $1$, ce qui est une contradiction.
+\end{preuve}
+
 
 \subsubsection{Décomposition en facteurs premiers}
-\thm[Théorème fondamental de l'arithmétique]
-Soit \(n\geqslant1\) naturel. \(n\) peut s'écrire comme produit de facteurs premiers d'une manière unique. Cette ecriture s'appelle la \textit{décomposition en facteurs premiers} de $n$.
 
-\endgroup
 
-Par example, \(6 = 2 \times 3\), \(2 \times 3\) est la décomposition de \(6\) en facteurs premiers. \(12 = 2 \times 2 \times 3, 15 = 3 \times 5, 14 = 2 \times 17, 8 = 2 \times 2 \times 2\).
-Pour que ce théorème s'applique aux nombres premiers, on dit qu'un nombre premier est produit de juste lui-même (même si c'est pas vraiment un produit, ca nous simplifie la vie). On dit aussi que \(1\) est produit de zero nombres premiers.
+\begin{thm}[Théorème fondamental de l'arithmétique]
+Soit $n\ge 1$ naturel. $n$ peut s'écrire comme produit de facteurs premiers d'une manière unique. Cette écriture s'appelle la décomposition de $n$ en facteurs premiers.
+\end{thm}
 
-Bien sur, \(12 = 2 \times 2 \times 3 = 2 \times 3 \times 2 = 3 \times 2 \times 2\). On dit que la décomposition en facteurs premiers reste la meme quand on change l'ordre des facteurs, donc quand on dit unique, on veut dire unique a réordonnement pret.
+Par exemple, $6 = 2 \times 3$, $2 \times 3$ est la décomposition de $6$ en facteurs premiers. $12 = 2 \times 2 \times 3, 15 = 3 \times 5, 14 = 2 \times 7, 8 = 2 \times 2 \times 2$.
 
-Remarque : on a défini les nombres premiers de manière a ce que \(1\) ne soit pas premier. On peut maintenant en quoi ca nous simplifie la vie : si \(1\) était premier, la décompositoin en facteurs premiers ne serait pas unique : \(6 = 2 \times 3 = 2 \times 3 \times 1 = 2 \times 3 \times 1 \times 1 = 2 \times 3 \times 1 \times 1 \times 1 = \ldots\).
+\begin{rem}
+\begin{itemize}
+\item Pour que ce théorème s'applique aux nombres premiers et à $1$, un produit d'aucun nombre premier (le \textit{produit vide}) vaut $1$, et un produit d'un seul nombre premier vaut lui-même.
+\item Bien sûr, $12 = 2 \times 2 \times 3 = 2 \times 3 \times 2 = 3 \times 2 \times 2$. Quand on parle de décomposition en facteurs premiers, on la considère implicitement unique \textit{à permutation près}.
+\item On a défini les nombres premiers de manière à ce que $1$ ne soit pas premier. On peut maintenant voir en quoi ça nous simplifie la vie : si $1$ était premier, la décomposition en facteurs premiers ne serait pas unique : $6 = 2 \times 3 = 1 \times 2 \times 3 = 1 \times 1 \times 2 \times 3 = \dots$.
+\end{itemize}
+\end{rem}
 
-\exo
-Montrer qu'un premier divise un nombre naturel si et seulement s’il est présent dans sa décomposition en facteurs premiers.
 
-\exo
-Montrer que si un nombre naturel est divisible par \(2\) et par \(3\), alors il est divisible par \(6\).
+\begin{exo}
+Montrer qu'un premier divise un entier naturel si et seulement s’il est présent dans sa décomposition en facteurs premiers.
+\end{exo}
 
-\exo
 
-Montrer qu’un nombre naturel est un carré parfait si et seulement si chaque premier présent dans sa décomposition en facteurs premiers y apparait un nombre pair de fois.
+\begin{exo}
+Montrer que si un entier naturel est divisible par $2$ et par $3$, alors il est divisible par $6$.
+\end{exo}
 
-Montrer qu’un nombre naturel est une puissance \(k^{e}\) parfait si et seulement si chaque premier présent dans sa décomposition en facteurs premiers y apparait un nombre divisible par \(k\) de fois.
 
-\exo
-Un entier est à la fois un carré parfait et un cube parfait.
-Est-il alors forcement une puissance \(6^{e}\) parfaite ?
+\begin{exo}
+Montrer qu’un entier naturel est un carré parfait si et seulement si chaque premier présent dans sa décomposition en facteurs premiers y apparait un nombre pair de fois.
 
-\exo
+Montrer qu’un entier naturel est une puissance $k$-ième si et seulement si chaque premier présent dans sa décomposition en facteurs premiers y apparait un nombre divisible par $k$ de fois.
+\end{exo}
 
+
+\begin{exo}
+Un entier est à la fois un carré parfait et un cube parfait. Est-ce forcément une puissance $6$-ième ?
+\end{exo}
+
+
+\begin{exo}
 Montrer que deux naturels sont premiers entre eux si et seulement s’ils n'ont pas de facteur premier en commun.
+\end{exo}
 
 
-\exo
-Soient \(a\) et \(b\) naturels.
-Montrer que \(a\) divise \(b\) si et seulement si tous les premiers présents dans la décomposition en facteurs premiers de \(a\) sont aussi présent dans la décomposition en facteurs premiers de \(b\) et chacun d'entre eux y apparait au moins au temps de fois que dans celle de \(a\).
+\begin{exo}
+Soient $a$ et $b$ naturels. Montrer que $a$ divise $b$ si et seulement si tous les premiers présents dans la décomposition en facteurs premiers de $a$ sont aussi présent dans la décomposition en facteurs premiers de $b$ et chacun d'entre eux y apparait au moins autant de fois que dans celle de $a$.
+\end{exo}
 
-\exo
-Combien de diviseurs naturels a \(121\) ?
-Combien de diviseurs naturels a \(1\ 000\) ?
-Combien de diviseurs naturels a \(1\ 000\ 000\ 000\) ?
 
-\exo
-Soient \(a\) et \(b\) deux naturels premiers entre eux et \(n\) un naturel. Montrer que si \(a\) divise \(n\) et \(b\) divise \(n\), alors \(ab\) divise \(n\).
+\begin{exo}
+Combien de diviseurs naturels a $121$ ?
+Combien de diviseurs naturels a $1\ 000$ ?
+Combien de diviseurs naturels a $1\ 000\ 000\ 000$ ?
+\end{exo}
 
-\exo
-Soit \(p\) premier. Montrer qu'un nombre naturel est une puissance de \(p\) si et seulement si \(p\) est son seul facteur premier.
+\begin{exo}
+Soit $p$ premier. Montrer qu'un entier naturel est une puissance de $p$ si et seulement si $p$ est son seul facteur premier.
+\end{exo}
+
 
 \subsubsection{Lemme de Gauss}
-\thm[Lemme de Gauss]
 
-Soient \(n \not= 0, a, b\) des naturels tels que \(n\) et \(a\) sont premiers entre eux. Si \(n\) divise \(ab\), alors \(n\) divise \(b\).
 
-\endgroup
+\begin{thm}[Lemme de Gauss]
+Soient $n, a, b$ des naturels tels que $n$ et $a$ sont premiers entre eux. Si $n$ divise $ab$, alors $n$ divise $b$.
+\end{thm}
 
-\preuve
+\begin{preuve}
+$n$ divise $ab$ et $nb$, donc $n$ divise leur pgcd. Or $\pgcd(ab, nb) = \pgcd(a, n)b = b$. Donc $n$ divise $b$, comme voulu.
+\end{preuve}
 
-Comme \(n\) et \(a\) sont premiers entre eux, ils n'ont pas de facteurs preimers en commun. Or comme \(n\) divise \(ab\), tous les facteurs premiers de \(n\) sont présents dans la décomposition en facteurs premiers de \(ab\) au moins autemps de fois que dans celle de \(n\). Donc, comme \(n\) et \(a\) n'ont pas de facteurs premiers en commun, ils sont tous présents dans la décomposition de \(b\) en facteurs premiers, ce qui conclut.
+\begin{rem}
+L'unicité de la décomposition en facteurs premiers découle du lemme de Gauss. On ne peut donc pas utiliser cette dernière pour le prouver.
+\end{rem}
 
-\exo
+
+\begin{exo}
 Montrer le lemme d'Euclide en utilisant le lemme de Gauss.
+\end{exo}
 
-\exo
-Soient \(x\) et \(y\) des entiers. Montrer que si \(2x+1\) divise \(8y\), alors \(2x+1\) divise \(y\).
 
-\exo
-Soient \(x\) et \(y\) des naturels. Montrer que si \(x^2\) divise \(x^2 + xy + x + y\), alors \(x^2\) divise \(x+y\).
+\begin{exo}
+Soient $x$ et $y$ des entiers. Montrer que si $2x+1$ divise $8y$, alors $2x+1$ divise $y$.
+\end{exo}
 
-\subsubsection{Infinitude de nombres premiers}
-\thm
 
+\begin{exo}
+Soient $a$ et $b$ deux naturels premiers entre eux et $n$ un naturel. Montrer que si $a$ divise $n$ et $b$ divise $n$, alors $ab$ divise $n$.
+\end{exo}
+
+
+\begin{exo}
+Soient $x$ et $y$ des naturels. Montrer que si $x^2$ divise $x^2 + xy + x + y$, alors $x^2$ divise $x+y$.
+\end{exo}
+
+
+\subsubsection{Infinitude des nombres premiers}
+
+
+\begin{thm}
 Il y a une infinité de nombres premiers.
+\end{thm}
 
-\endgroup
+\begin{preuve}
+Supposons par l'absurde qu'il n'y a qu'un nombre fini de nombres premiers. Disons que $p_1, p_2, \dots, p_n$ sont tous les nombres premiers. Mais alors, $p_1 p_2 \dots p_n + 1$ n'est divisible par aucun nombre premier puisque, si $p_i$ divise $p_1 p_2 \dots p_n + 1$, alors il divise $p_1 p_2 \dots p_n + 1 - p_i \times p_1 p_2 \dots p_{i-1} p_{i+1} \dots p_n = 1$. Donc $p_1 p_2 \dots p_n + 1 = 1$, ce qui signifie que l'un des $p_i$ est $0$. Absurde.
+\end{preuve}
 
-\preuve
 
-Supposons par l'absurde qu'il y a un nombre fini de nombres premiers. Disons que \(p_2 , p_2 , \ldots , p_{n}\) sont tous les nombres premiers. Mais alors, \(p_2 p_2 \cdots p_{n} + 1\) n'est divisible par aucun des \(p_2 , p_2 , \ldots , p_{n}\) puis ce que si \(p_{i}\) divise \(p_2 p_2 \cdots p_{n} + 1\), il divise \(p_2 p_2 \cdots p_{n} + 1 - p_{i} \times p_2 p_2 \cdots p_{i-1} p_{i+1} \cdots p_{n} = 1\). Mais, \(p_2 p_2 \cdots p_{n} + 1\) est un entier plus grand que \(2\), il a donc au moins un facteur premier. Comme ce facteur ne peut etre aucun des \(p_2 , p_2 , \ldots , p_{n}\), il y a un autre premier que \(p_2 , p_2 , \ldots , p_{n}\). Contradiction.
+\subsubsection{Solutions}
 
-\subsubsection{Solutions des exercices}
-\sol
 
-Ce sont \(2, 3, 5, 7, 11, 13\). Un calcul montre que ses nombres sont bien divisibles que par \(1\) et eux memes. Réciproquement, \(4\) n'est pas premier car il est divisible par \(2\) et \(2\not=1\) et \(2\not=4\). De meme, \(6\) est divisible par \(2\), \(8\) est divisible par \(2\), \(9\) est divisible par \(3\), \(10\) est divisible par \(2\), \(12\) est divisible par \(2\), \(14\) est divisible par \(2\) et \(15\) est divisible par \(3\).
+\begin{sol}
+Ce sont $2, 3, 5, 7, 11, 13$. Un calcul montre que ces nombres ne sont bien divisibles que par $1$ et eux-mêmes. Réciproquement, $4$ n'est pas premier, car il est divisible par $2$ et $2\ne 1$ et $2\ne 4$. De même, $6$ est divisible par $2$, $8$ est divisible par $2$, $9$ est divisible par $3$, $10$ est divisible par $2$, $12$ est divisible par $2$, $14$ est divisible par $2$ et $15$ est divisible par $3$.
+\end{sol}
 
-Remarque : \(1\) n'est pas un nombre premier parce qu'il n'a qu'un seul diviseur naturel. Ca peut paraitre bizare de choisir une définition de premier qui exclut \(1\), mais on vera aprés que ca nous simplifie en faite la vie.
 
-\sol
+\begin{sol}
+Si un premier est pair, alors il est divisible $2$ en est un diviseur. Donc, comme $2\ne 1$, il vaut $2$. Réciproquement, $2$ est bien premier.
+\end{sol}
 
-\(2\) est le seul premier pair. De faite, si un premier est pair, alors \(2\) en est un diviseur, donc, comme \(2\not=1\), \(2\) est égal a ce premier. Réciproquement, \(2\) est bien premier.
 
-\sol
+\begin{sol}
+Montrons que $2, 3$ est la seule paire de premiers consécutifs. Si deux premiers sont consécutifs, alors l'un d'eux est pair et donc égal à $2$. $1, 2$ ne sont pas deux premiers consécutifs car $1$ n'est pas premier, et $2, 3$ sont bien deux premiers consécutifs.
+\end{sol}
 
-\(2, 3\) est la seule paire de premiers consécutifs. De faite, si deux premiers sont consécutifs, alors un d'entre eux est pair, il est donc égal a \(2\). Réciprquement, \(1, 2\) ne sont pas deux premiers consécutifs car \(1\) n'est pas premier, et \(2, 3\) sont bien deux premiers consecutifs.
 
-\sol
+\begin{sol}
+$3$ est le seul premier de cette forme. De fait, si un premier $p$ est de la forme $a^2 - 1 = (a - 1)(a + 1)$, il est divisible par $a - 1$ et $a + 1$. Donc ceux-ci doivent être $1$ et $p$. Comme ils sont distincts et $a - 1$ est le plus petit d'entre eux, $a - 1 = 1$ et $p = a^2 - 1 = 2^2 - 1 = 3$. Réciproquement, $2^2 - 1 = 3$ est bien premier.
+\end{sol}
 
-\(3\) est le seul premier de cette forme. De faite, si un premier \(p\) est de la forme \(a^2 - 1 = \left(a-1\right)\left(a+1\right)\), il est divisible par \(a-1\) et \(a+1\). Or, comme \(a\geqslant2\), \(a-1\) et \(a+1\) sont naturels, donc chacun d'entre eux vaut soit \(1\) soit \(p\). Comme ils sont distincts et \(a-1\) est le plus petit d'entre eux, c'est \(a-1\) qui doit valoir \(1\), donc \(a\) doit valoir \(2\). Réciproquement, \(2^2 - 1 = 3\) est bien premier.
 
-\sol
+\begin{sol}
+On veut montrer que la réponse est non. On veut qu'un nombre de cette forme ait un diviseur autre que $1$ et lui-même. Notamment, si on veut que ce diviseur soit $41$, on n'a qu'à prendre $n=41$ et on aura alors $n^2 + n + 41 = 41^2 + 41 + 41 = 41 \left(41 + 1 + 1\right)$ est le produit de deux naturels $>1$ et donc pas premier.
+\end{sol}
 
-On veut montrer que la réponse est non. On veut qu'un nombre de cette forme ait un diviseur autre que \(1\) et lui-même. Notament, si on veut que ce diviseur soit \(41\), on n'a qu'a prendre \(n=41\) et on aura alors \(n^2 + n + 41 = 41^2 + 41 + 41 = 41 \left(41 + 1 + 1\right)\) est le produit de deux naturels \(>1\) et donc pas premier.
 
-\sol
+\begin{sol}
+On va montrer que si $n$ n'est pas premier, alors il a un diviseur naturel autre que $1$ et $n$ qui vaut au plus $\sqrt n$. Prenons n'importe quel diviseur $d$ de $n$. Si $d \le \sqrt n$, on a fini. Sinon, si $d > \sqrt n$, on a que $\frac nd$ est aussi un diviseur de $n$, mais alors $\frac nd < \frac n{{\sqrt n}} = \frac{{\sqrt n}^2 }{\sqrt n} = \sqrt n$, ce qui conclut.
+\end{sol}
 
-On va montrer que si \(n\) n'est pas premier, alors il a un diviseur naturel autre que \(1\) et \(n\) qui vaut au plus \(\sqrt{n}\). Prenons n'importe quel diviseur \(d\) de \(n\). Si \(d \leqslant \sqrt{n}\), on a fini. Sinon, si \(d > \sqrt{n}\), on a que \(\frac{n}{d}\) est aussi un diviseur de \(n\), mais alors \(\frac{n}{d} < \frac{n}{{\sqrt{n}}} = \frac{{\sqrt{n}}^2}{{\sqrt{n}}} = \sqrt{n}\), soit \(\frac{n}{d} < \sqrt{n}\), ce qui conclut.
 
-\sol
+\begin{sol}
+Supposons que $n$ n'est pas premier. Écrivons donc $n = ab$ avec $a, b > 1$. Alors
+$$2^n - 1 = 2^{ab} - 1 = (2^a - 1)(2^{a(b - 1)} + 2^{a(b - 2)} + \dots + 2^{2a} + 2^a + 1)$$
+est divisible par $2^a - 1$ tandis que $1 = 2^1 - 1 < 2^a - 1 = 2^{a\cdot 1} - 1 < 2^{ab} - 1$ et n'est donc pas premier.
+\end{sol}
 
-Supposons par l'absurde que \(2^{n} - 1\) est premier et \(n\) n'est pas premier. \(n\) a alors un diviseur naturel \(k\not=1, n\) et on peut alors ecrir \(n = kl\) avec \(l = \frac{n}{k} \not= 1, n\) entier naturel. Alors \(2^{n} - 1 = 2^{kl} - 1 = \left(2^{k} - 1\right)\left(2^{\left(l-1\right)k} + 2^{\left(l-2\right)k} + \cdots + 2^{2k} + 2^{k} + 1\right)\) est un produit de deux entiers \(>1\) et donc pas premier.
 
-\sol
+\begin{sol}
+Comme $p$ est un diviseur de $q$ et $q$ est premier, on a que $p$ vaut soit $q$ soit $1$. Le deuxième cas n'étant pas possible (car $1$ n'est pas premier), on a fini.
+\end{sol}
 
-Comme \(p\) est un diviseur de \(q\) et \(q\) est premier, on a que \(p\) vaut soit \(q\) soit \(1\). Le deuxiemme cas n'étant pas possible (car \(1\) n'est pas premier), on a bien fini.
 
-\sol
+\begin{sol}
+Soit $d$ le plus grand diviseur commun de $p$ et de $n$. Comme $d$ divise $p$, $d$ vaut soit $1$ soit $p$. Dans le premier cas, $p$ et $n$ sont premiers entre eux, dans le second cas, $p = d$ divise $n$.
+\end{sol}
 
-Soit \(d\) le plus grand diviseur commun de \(p\) et de \(n\). Comme \(d\) divise \(p\), on a que \(d\) vaut soit \(1\) soit \(p\). Dans le premier cas, \(p\) et \(n\) sont premiers entre eux, dans le second cas, \(p\) divise \(n\) car \(d\) divise \(n\).
 
-\sol
+\begin{sol}
+$5$ est premier. Donc, par le lemme d'Euclide, si $5$ divise $a^2 = a \times a$, alors soit $5$ divise $a$, soit $5$ divise $a$, on a donc conclu.
+\end{sol}
 
-\(5\) est premier. Donc, par le lemme d'Euclide, si \(5\) divise \(a^2 = a \times a\), alors soit \(5\) divise \(a\), soit \(5\) divise \(a\), on a donc conclu.
 
-\sol
+\begin{sol}
+$5$ est premier. Donc par la généralisation du lemme d'Euclide, on a que $5$ divise soit $a$, soit $a$, soit $a$.
+\end{sol}
 
-\(5\) est premier. Donc par la généralisation du lemme d'Euclide, on a que \(5\) divise soit \(a\), soit \(a\), soit \(a\).
 
-On prouve maintenant le lemme d'Euclide. Cette preuve peut paraitre parachutée, il existe une preuve plus naturelle mais elle utilise les modulos qui sont au programme du cours de demain.
+\begin{sol}
+Dans un sens, si $p$ est présent dans la décomposition en facteurs premiers de $n$, alors on peut ordonner cette décomposition comme $n = p \times q_1 q_2 \dots q_k$, donc $p$ divise bien $n$.
 
-\sol
+Dans l'autre sens, si $p$ divise $n$, alors décomposons $n$ en facteurs premiers : $n = q_1 q_2 \dots q_k$. $p$ divise $q_1 q_2 \dots q_k$ et donc par la généralisation du lemme de Gauss il divise $q_i$ pour un certain $i$. Donc, comme $p$ et $q_i$ sont premiers, on a $q_i = p$, donc $p$ est bien présent dans la décomposition de $n$ en facteurs premiers.
+\end{sol}
 
-Dans un sens, si \(p\) est présent dans la décomposition en facteurs premiers de \(n\), alors on peut ordonner cette decomposition comme \(n = p \times q_2 q_2 \cdots q_{k}\), donc \(p\) divise bien \(n\).
 
-Dans l'autre sens, si \(p\) divise \(n\), alors décomposons \(n\) en facteurs premiers : \(n = q_2 q_2 \cdots q_{k}\). \(p\) divise \(q_2 q_2 \cdots q_{k}\) et donc par la généralisation du lemme de Gauss il divise \(q_{i}\) pour un certain \(i\). Donc, comme \(p\) et \(q_{i}\) sont premiers, on a \(q_{i} = p\), donc \(p\) est bien présent dans la décomposition de \(n\) en facteurs premiers.
+\begin{sol}
+$2$ et $3$ sont premiers. Donc, si un entier naturel $n$ est divisible par $2$ et par $3$, $2$ et $3$ sont présents dans sa décomposition en facteurs premiers. Alors cette décomposition peut être réordonnée comme $n = 2 \times 3 \times q_1 q_2 \dots q_k = 6 \times q_1 q_2 \dots q_k$. $n$ est donc bien divisible par $6$.
+\end{sol}
 
-\sol
 
-\(2\) et \(3\) sont premiers. Donc, si un nombre naturel \(n\) est divisible par \(2\) et par \(3\), \(2\) et \(3\) sont présents dans sa décomposition en faceturs premiers. Alors cette décomposition peut etre reordonnée comme \(n = 2 \times 3 \times q_2 q_2 \cdots q_{k} = 6 \times q_2 q_2 \cdots q_{k}\), \(n\) est donc bien divisible par \(6\).
+\begin{sol}
+Pour la première sous-question, dans un sens, si un entier naturel $n$ est un carré parfait, posons $n = a^2$. Soit alors $a = p_1^{a_1} p_2^{a_2} \dots p_l^{a_l}$ la décomposition de $a$ en facteurs premiers. On a
+$$n = a \times a = \left(p_1^{a_1} \dots p_l^{a_l}\right) \times \left(p_1^{a_1} \dots p_l^{a_l}\right) = p_1^{2a_1} \dots p_l^{2a_l}$$
+On voit que chaque nombre premier apparait un nombre pair de fois.
 
-\sol
-
-Pour la premiére sous question, dans un sens, si un nombre naturel \(n\) est un carré parfait, posons \(n = a^2\). Soit alors \(a = p_2 p_2 \cdots p_{l}\) la décomposition de \(a\) en facteurs premiers. On a
-\[n = a \times a = \left(p_2 p_2 \cdots p_{l}\right) \times \left(p_2 p_2 \cdots p_{l}\right)\]. Pour chaque premier qui apparait dans cette décomposition, soit \(x\) le nombre de fois qu'il apparait dans un des facteurs. Il apparait alors \(2x\) fois dans toute la décomposition, un nombre pair de fois.
-
-Dans l'autre sens, si chaque facteur premier apparait un nombre pair de fois dans la décomposition en facteurs premiers de \(n\), on peut regrouper ses facteurs premiers :
-\[n = \left(p_2 p_2\right)\left(p_2 p_2\right) \cdots \left(p_{l} p_{l}\right)\]
-n a alors
-\[n = \left(p_2 p_2 \cdots p_{l}\right) \left(p_2 p_2 \cdots p_{l}\right) = \left(p_2 p_2 \cdots p_{l}\right)^2\]
+Dans l'autre sens, si chaque facteur premier apparait un nombre pair de fois dans la décomposition en facteurs premiers de $n$, on peut écrire
+$$n = p_1^{2a_1} \dots p_l^{2a_l} = \left(p_1^{a_1} \dots p_l^{a_l}\right)^2$$
 comme voulu.
 
-Poul la deuxiemme sous question, on procéde de la meme manière.
-Dans un sens, si un nombre naturel \(n\) est
-une puissance \(k^{e}\), posons \(n=a^{k}\).
-Décomposons \(a\) en facteurs premiers : \(a = p_2 p_2 \cdots p_{l}\). On a alors \(n = a^{k} = a \times a \times \cdots \times a = \left(p_2 p_2 \cdots p_{l}\right) \left(p_2 p_2 \cdots p_{l}\right) \cdots \left(p_2 p_2 \cdots p_{l}\right)\), avec \(k\) fois \(p_2 p_2 \cdots p_{l}\). Si un facteur premier apparait dans cette décomposition, il apparait dans un des \(k\) facteurs. Soit \(x\) le nombre de fois qu'il apparait dans ce facteur. Il apparait alors \(kx\) fois dans toute la décomposition, c'est bien un nombre divisible par \(k\).
+Pour la deuxième sous-question, on procède de la même manière.
+Dans un sens, si un entier naturel $n$ est une puissance $k$-ième, posons $n = a^k$ et décomposons $a$ en facteurs premiers : $a = p_1 \dots p_l$. On a alors
+$$n = a^k = \left(p_1 \dots p_l\right)^k = p_1^{ka_1} \dots p_l^{ka_l}$$
+Chaque facteur apparait bien un multiple de $k$ fois dans cette décomposition.
 
-Dans l'autre sens, si chaque facteur premier apparait un nombre pair de fois dans la décomposition de \(n\), alors cette décomposition peut etre écrite comme \[n = \left(p_2 p_2 \cdots p_2\right) \left(p_2 p_2 \cdots p_2\right) \cdots \left(p_{l} p_{l} \cdots p_{l}\right)\] et puis réarangée comme \[n = \left(p_2 p_2 \cdots p_{l}\right) \left(p_2 p_2 \cdots p_{l}\right) \cdots \left(p_2 p_2 \cdots p_{l}\right) = \left(p_2 p_2 \cdots p_{l}\right)\] n est donc bien une puissance \(k^{e}\), ce qu'il falait démontrer.
+Dans l'autre sens, si chaque facteur premier apparait un multiple de $k$ fois dans la décomposition de $n$, alors on peut écrire
+$$n = p_1^{ka_1} \dots p_l^{ka_l} = \left(p_1^{a_1} \dots p_l^{a_l}\right)^k$$
+comme voulu.
+\end{sol}
 
-\sol
 
-La réponse est oui. Supposons que \(n\) est un naturel qui est a la fois un carré parfait et un cube parfait. Comme \(n\) est un carré parfait, chaque facteur premier présent dans sa décomposition en facteurs premiers est présent un nombre divisible par \(2\) de fois dans sa décomposition en facteurs premiers. Comme \(n\) est un cube parfait, chaque facteur premier présent dans sa décomposition en facteurs premiers y est présent un nombre divisible par \(3\) de fois. Donc, chaque facteur premier de \(n\) est présent un nombre divisible par \(2 \times 3 = 6\) de fois dans la décomposition de \(n\) en facteurs premiers, d'ou \(n\) est bien une puissance \(6^{e}\).
+\begin{sol}
+La réponse est oui. Soit $n$ un naturel qui est à la fois un carré parfait et un cube parfait. Comme $n$ est un carré parfait, chaque facteur premier présent dans sa décomposition en facteurs premiers est présent un nombre divisible par $2$ de fois dans sa décomposition en facteurs premiers. Comme $n$ est un cube parfait, chaque facteur premier présent dans sa décomposition en facteurs premiers y est présent un nombre divisible par $3$ de fois. Donc, chaque facteur premier de $n$ est présent un nombre divisible par $2 \times 3 = 6$ de fois dans la décomposition de $n$ en facteurs premiers, donc $n$ est bien une puissance $6$-ième.
+\end{sol}
 
-\sol
 
-Si deux naturels ont un facteur premier en commun, alors ce facteur en est un diviseur commun. Comme il n'est pas égal a \(1\) (car premier), ils ne sont pas premiers entre eux.
+\begin{sol}
+Soient $a, b$ ces deux naturels.
 
-Réciproquement, si supposons que deux naturels n'ont pas de facteurs premiers en commun. Supposons par l'absurde qu'ils ne sont pas premiers entre eux, c'est a dire que leur pgcd ne vaut pas \(1\). Ce pgcd a alors au moins un diviseur premier (n'importe quel facteur de sa décomposition en facteurs premiers). C'est alors un facteur premier en commun des deux naturels, contradiction.
+Si $p$ premier divise $a$ et $b$, alors il divise leur pgcd qui ne peut donc pas valoir $1$. $a$ et $b$ ne sont pas premiers entre eux.
 
-\sol
+Réciproquement, supposons que $\pgcd(a, b) \ne 1$. Alors ce pgcd possède au moins un facteur premier $p$. $p$ divise $\pgcd(a, b)$ qui divise $a$ et $b$, donc $a$ et $b$ ont $p$ comme facteur premier en commun.
+\end{sol}
 
-Supposons que dans la décomposition de \(a\) en facteurs premiers, \(p_2\) apparait \(k_2\) fois, \(p_2\) apparait \(k_2\) fois, \(\ldots\), \(p_{n}\) apparait \(k_{n}\) fois, avec \(p_2 , p_2 , \ldots , p_{n}\) des premiers distincts. On a alors
-\[a = p_2 ^{k_2} p_2 ^{k_2} \cdots p_{n} ^{k_{n}}\]
-Supposons que \(p_2 , p_2 , \ldots , p_{n}\) apparaissent aussi dans la décomposition de \(b\) en facteurs premiers, \(l_2\) fois, \(l_2\) fois, \(\ldots\), \(l_{n}\) fois respectivement, avec \(k_2 \leqslant l_2 , k_2 \leqslant l_2 , \ldots , k_{n} \leqslant l_{n}\). On a alors
-\[b = p_2 ^{l_2} p_2 ^{l_2} \cdots p_{n} ^{l_{n}} q_2 q_2 \cdots q_{m}\]
-pour certains premiers \(q_2 , q_2 , \ldots q_{m}\). On a alors
-\[b = p_2 ^{k_2} p_2 ^{k_2} \cdots p_{n} ^{k_{n}} \times p_2 ^{{l_2 - k_2}} p_2 ^{{l_2 - k_2}} \cdots p_{n} ^{{l_{n} - k_{n}}} q_2 q_2 \cdots q_{m}\]
-\[b = a \times p_2 ^{{l_2 - k_2}} p_2 ^{{l_2 - k_2}} \cdots p_{n} ^{{l_{n} - k_{n}}} q_2 q_2 \cdots q_{m}\]
-Donc \(a\) divise bien \(b\) (Remarque qu'on a besoin que \(k_{i} \leqslant l_{i}\) pour que \(l_{i} - k_{i}\) soit positif et donc que \(p_{i} ^{{l_{i} - k_{i}}}\) soit entier).
 
-Réciproquement, supposons que \(a\) divise \(b\) et qu'un preimer \(p\) apparait \(k\) fois dans la décomposition de \(a\) en facteurs premiers. On a que \(p\) divise \(a\) et \(a\) divise \(b\), donc \(p\) divise \(b\). \(p\) apparait donc aussi dans la décomposition de \(b\) en facteurs premiers. Soit \(l\) le nombre de fois que \(p\) apparait dans la décomposition de \(b\) en facteurs premiers. On peut ecrire \(b = p^{l} \times q_2 q_2 \cdots q_{n}\). Supposons alors par l'absurde que \(k > l\). On peut alors écrir \(p^{k} = p^{l-k} p^{l}\), avec \(l-k \geqslant 1\). Comme \(p^{k}\) divise \(a\) et \(a\) divise \(b\), on a que \(p^{k}\) divise \(b\). Autrement dit, \(p^{l-k} p^{l}\) divise \(p^{l} \times q_2 q_2 \cdots q_{n}\), donc \(p^{l-k}\) divise \(q_2 q_2 \cdots q_{n}\), donc \(p\) divise \(q_2 q_2 \cdots q_{n}\), ce qui n'est pas possible car \(p\) est premier mais il n'est pas un des \(q_2 , q_2 , \cdots , q_{n}\).
+\begin{sol}
+Supposons que dans la décomposition de $a$ en facteurs premiers, $p_1$ apparait $k_1$ fois, $p_2$ apparait $k_2$ fois, $\dots$, $p_n$ apparait $k_n$ fois, avec $p_1, p_2, \dots, p_n$ des premiers distincts. On a alors
+$$a = p_1^{k_1} p_2^{k_2} \dots p_n^{k_n}$$
+Supposons que $p_1, \dots, p_n$ apparaissent aussi dans la décomposition de $b$ en facteurs premiers, $l_1$ fois, $\dots$, $l_n$ fois respectivement, avec $k_1 \le l_1, \dots, k_n \le l_n$. On a alors, pour certains premiers $q_1, q_2, \dots q_m$,
+$$b = p_1^{l_1} \dots p_n^{l_n} q_1 \dots q_m = p_1^{k_1} \dots p_n^{k_n} \times p_1^{l_1 - k_1} \dots p_n^{l_n - k_n} q_1 \dots q_m = a \times p_1^{l_1 - k_1} \dots p_n^{l_n - k_n} q_1 \dots q_m$$
+Donc $a$ divise bien $b$ (on utilise $k_i \le l_i$ pour que $l_i - k_i$ soit positif et donc que $p_i^{l_i - k_i}$ soit entier).
 
-\sol
+Réciproquement, supposons que $a$ divise $b$ et qu'un premier $p$ apparait $k$ fois dans la décomposition de $a$ en facteurs premiers. On a que $p^k$ divise $a$ et $a$ divise $b$, donc $p^k$ divise $b$. $p$ apparait donc aussi (au moins) $k$ fois dans la décomposition de $b$ en facteurs premiers.
+\end{sol}
 
-\(121 = 11^2\). Donc les diviseurs naturels de \(121\) sont exactement \(1\), qui n'a aucun facteur premier, et les nombres naturels dont \(11\) est le seul facteur premier et ce facteur premier est présent \(1\) ou \(2\) fois dans la décomposition en facteurs premiers, ce sont \(11\) et \(121\). Donc, \(121\) a exactement \(3\) diviseurs naturels.
 
-\(1\ 000 = 2^{3} \times 5^{3}\). Les diviseurs naturels de \(1\ 000\) sont donc exactement les nombres naturels avec que des \(2\) et \(5\) dans la décomposition en facteurs premiers et qui y ont \(0, 1, 2\) ou \(3\) fois \(2\) et \(0, 1, 2\) ou \(3\) fois \(5\). Il y a quatre possibilités de combien de facteurs \(2\) il y a et quatre possibilités
-de combien de facteurs \(5\) il y a, ca donne donc en tout \(4 \times 4 = 16\) diviseurs.
+\begin{sol}
+$121 = 11^2$. Donc les diviseurs naturels de $121$ sont exactement $1$, qui n'a aucun facteur premier, et les naturels dont $11$ est le seul facteur premier et ce facteur premier est présent $1$ ou $2$ fois dans la décomposition en facteurs premiers, ce sont $11$ et $121$. Donc, $121$ a exactement $3$ diviseurs naturels.
 
-\(1\ 000\ 000\ 000 = 2^{9} \times 5^{9}\). Donc, de meme que dans la question précédente, il a \(\left(9+1\right)\times\left(9+1\right) = 100\) diviseurs.
+$1\ 000 = 2^3 \times 5^3$. Les diviseurs naturels de $1\ 000$ sont donc exactement les naturels avec que des $2$ et $5$ dans la décomposition en facteurs premiers et qui y ont $0, 1, 2$ ou $3$ fois $2$ et $0, 1, 2$ ou $3$ fois $5$. Il y a quatre possibilités de combien de facteurs $2$ il y a et quatre possibilités de combien de facteurs $5$ il y a, ça donne donc en tout $4 \times 4 = 16$ diviseurs.
 
-\sol
+$1\ 000\ 000\ 000 = 2^9 \times 5^9$. Donc, de même que dans la question précédente, il a $(9 + 1)\times (9 + 1) = 100$ diviseurs.
+\end{sol}
 
-Comme \(a\) et \(b\) sont premiers entre eux, ils n'ont pas de facteur premier en commun. Par l'exercice précédent, tous les facteurs premiers de \(a\) apparaissent dans la décomposition en facteurs premiers de \(n\) au moins autemps de fois que dans celle de \(a\). De meme, tous les facteurs preimers de \(b\) apparaissent dans la décomposition de \(n\) en facteurs premiers au moins autemps de fois que dans celle de \(b\). Donc, tous les facteurs premiers de \(ab\) apparaissent dans la décomposition de \(n\) au moins autemps de fois que dans celle de \(n\) (par ce que chaque facteur premier de \(ab\) est soit un facteur premier de \(a\) et il apparait dans la décomposition en facteurs premiers de \(ab\) autemps de fois que dans celle de \(b\), soit la meme chose mais c'est un facteur premier de \(b\)).
 
-\sol
+\begin{sol}
+Si $p$ est le seul facteur premier de $n$, alors, en décomposant $n$, $n = p \times p \times \dots \times p$ est bien une puissance de $p$. Réciproquement, si $n$ est une puissance de $p$, alors on peut écrire $n = p \times p \times \dots \times p$, un produit de nombres premiers, donc $p$ est le seul facteur premier de $n$.
+\end{sol}
 
-Si \(p\) est le seul facteur premier de \(n\), alors \(n = p \times p \times \times \times p\) est bien une puissance de \(p\). Réciproquement, si \(n\) est une puissance de \(p\), alors on peut ecrir \(n = p \times p \times \times \times p\), un produit de nombres premiers, donc \(p\) est le seul facteur premier de \(n\).
 
-\sol
+\begin{sol}
+Supposons qu'un premier $p$ divise $ab$. Si $p$ divise $a$, alors on a gagné. Si $p$ ne divise pas $a$, alors $p$ est premier avec $a$ et le lemme de Gauss donne alors que $p$ divise $b$.
+\end{sol}
 
-Supposons qu'un premier \(p\) divise \(ab\) mais il ne divise ni \(a\) ni \(b\), c'est a dire il est premier avec \(a\) et avec \(b\). Par le lemme de Gauss, il divise alors \(b\), ce qui n'est pas possible car il est premier avec \(b\).
 
-\sol
+\begin{sol}
+$2x+1$ est premier avec $8 = 2 \times 2 \times 2$ car $2x+1$ est impair et $2$ n'en est donc pas un facteur premier. Donc, par le lemme de Gauss, $2x+1$ divise $y$ car il divise $8y$.
+\end{sol}
 
-\(2x+1\) est premier avec \(8 = 2 \times 2 \times 2\) car \(2x+1\) est impair et \(2\) n'en est donc pas un facteur premier. Donc, par le lemme de Gauss, \(2x+1\) divise \(y\) car il divise \(8y\).
 
-\sol
+\begin{sol}
+$b$ divise $n = a \cdot \frac n a$ or $b$ est premier avec $a$ et $\dfrac n a$ est entier. Par le lemme de Gauss, $b$ divise donc $\dfrac n a$, et cela revient à dire que $ab$ divise $n$.
+\end{sol}
 
-On factorise \(x^2 + xy + x + y = x\left(x+y\right) + x+y = \left(x+1\right)\left(x+y\right)\). \(x+1\) est premier avec \(x\) car ils n'ont pas de facteurs premiers en commun. De faite, si \(p\) est un facteur premier de \(x^2\), il est aussi un facteur premier de \(x\), donc il ne divise pas \(x+1\) car sinon il diviserais \(x+1-x=1\). Donc, par le lemme de Gauss, \(x^2\) divise \(x+y\), ce qu'il fallait démontrer.
+
+\begin{sol}
+\textit{Première solution, factorisation} \\
+On factorise $x^2 + xy + x + y = x\left(x+y\right) + x+y = (x + 1)(x + y)$. $x+1$ est premier avec $x^2$ car ils n'ont pas de facteurs premiers en commun. De fait, si $p$ est un facteur premier de $x^2$, il est aussi un facteur premier de $x$, donc il ne divise pas $x+1$ car sinon il diviserait $x+1-x=1$. Donc, par le lemme de Gauss, $x^2$ divise $x+y$, ce qu'il fallait démontrer. \\
+\textit{Seconde solution, divisibilité} \\
+$x$ divise $x^2$ qui divise $x^2 + xy + x + y$. Donc $x$ divise $x^2 + xy + x + y$. Donc $x$ divise $y$ (on retire tout ce qui est divisible par $x$). Donc $x^2$ divise $xy$. Donc $x^2$ divise $x + y$ (car $x^2$ divise $x^2 + xy + x + y$ et on retire tout ce qui est divisible par $x^2$).
+\end{sol}
