@@ -1,0 +1,686 @@
+
+\subsubsection{Introduction}
+
+On appelle \emph{équation diophantiennes} une équation dont on cherche des solutions \textbf{entières}.
+
+Par exemple, la question:
+\begin{quote}
+  Déterminer l'ensemble des entiers \(x\) et
+  \(y\) tels que \[x^2-3 y = 1\]
+\end{quote}
+est une question relevant des équations
+diophantiennes.
+
+Étant donné une équation diophantienne les questions se posant
+naturellement sont:
+
+\begin{itemize}
+  \item  combien existe-t-il de solutions (aucune, un nombre fini, un nombre
+        infini) ?
+  \item  si il existe un nombre fini de solution, peut les exhiber ou donner un
+        algorithme le faisant ?
+  \item  si il existe une infinité de solutions, est-il possible de toutes les
+        exprimer (à partir de certaines solutions ``basiques'') ?
+\end{itemize}
+
+De manière générale ces questions sont très difficiles (penser par
+exemple à la célèbre équation de Fermat \(x^n+y^n=z^n\)) et les
+techniques utilisées sont très différentes de celles utilisées pour des
+équations réelles.
+
+De plus (il s'agit du dixième problème de Hilbert, résolu par
+Matiassevitch en 1970) il a été montré qu'il \textbf{n'existe pas de
+  méthode générale} permettant de déterminer si une équation diophantienne
+admet ou non des solutions.
+
+
+
+On se contentera dans ce cours/TD d'exposer quelques techniques simples
+à travers des équations classiques. Pour plus de détails sur d'autres
+techniques et réflexes à acquérir on renvoie vers le chapitre 4 du
+\href{https://maths-olympiques.fr/wp-content/uploads/2017/09/arith_cours.pdf}{polycopié d'arithmétique de le POFM}.
+
+
+\subsubsection{Les équations linéaires}
+
+Une équation diophantienne est dite linéaire si toutes les inconnues
+sont ``sans puissance''.
+
+Dans un outil de base est le \textbf{théorème de Bézout} ainsi que
+\textbf{l'algorithme d'Euclide} permettant de construire explicitement
+des solutions.
+
+L'exemple le plus simple est:
+
+\begin{quote}
+  Déterminer l'ensemble des prix pouvant être payés avec des pièces de $2€$ et des billets de $5€$ si il est possible de rendre la monnaie.
+\end{quote}
+
+dont une formulation mathématique est la suivante:
+
+\begin{exo}
+  Déterminer l'ensemble des $n \in \mathbb{N}$ tels que l'équation
+  \[5x+2y=n\]
+  admette au moins une solution avec $x$ et $y$ des entiers relatifs.
+\end{exo}
+
+On peut généraliser le problème
+
+\begin{exo}
+  Soient $a$ et $b$ deux entiers.
+  Déterminer l'ensemble des $n \in \mathbb{N}$ tels que l'équation
+  \[ax+by=n\]
+  admette au moins une solution avec $x$ et $y$ des entiers (relatifs).
+\end{exo}
+
+
+On peut alors raffiner la question de plusieurs façons: regarder avec plus de deux valeurs de pièces de monnaie (c'est encore Bézout et l'algorithme d'Euclide), regarder sans rendu de monnaie (c'est à dire chercher des solutions \emph{positives}), compter le nombre de solutions positives, etc.
+
+
+\begin{exo}
+  Déterminer l'ensemble des $n \in \mathbb{N}$ tels que l'équation
+  \[5x+2y=n\]
+  admette au moins une solution avec $x$ et $y$ des entiers \textbf{positifs}.
+\end{exo}
+
+\subsubsection{Méthodes ``réelles'' et majoration}
+
+Une façon intuitive de résoudre une équation diophantienne est de résoudre l'équation dans un ensemble de nombres plus grands que $\mathbb{N}$ et d'ensuite ne garder que les solutions entières.
+
+\begin{exo}
+  Déterminer les entiers $n$ tels que
+  \[7 n^2 - n^4 = 12. \]
+\end{exo}
+
+
+Malheureusement ce genre de méthode fonctionne rarement. De plus les équations diophantiennes sont des équations à nombreuses variables ce qui rend cette approche irréalisable.
+
+On peut néanmoins en \textbf{effectuer des majorations}: en utilisant des calculs algébriques on établi des bornes sur les solutions éventuelles pour se ramener à traiter un nombre fini de cas.
+
+
+\begin{exo}
+  Déterminer tous les entiers strictement positifs $a$ et $b$ tels que
+  \[\frac{1}{a} + \frac{1}{b} = 1.\]
+\end{exo}
+
+
+Ces majorations et disjonction de cas peuvent alors s'enchaîner.
+\begin{exo}
+  Déterminer le nombre de triplets $(a,b,c) \in \left(\mathbb{N}^* \right)^3$ solutions de
+  \[\frac{1}{a} + \frac{1}{b} + \frac{1}{c} = 1.\]
+\end{exo}
+
+\begin{exo}
+  Déterminer tous les entiers strictement positifs $a$ et $b$ tels que
+  \[a^b = b^a.\]
+\end{exo}
+
+\begin{exo}[CG 90]
+  Déterminer les entiers $n \in \mathbb{N}^*$ tels que l'équation
+  \[ \sum_{k=1}^n \frac{1}{{x_k}^2}= 1\]
+  admette une solution $(x_1,\ldots,x_n) \in (\mathbb{N}^*)^n$.
+\end{exo}
+
+Enfin il ne vaut pas oublier les factorisations et identités remarquables pour simplifier les équations. Un cas particulier très utile étant la différence de deux puissances.
+
+\begin{exo}
+  Déterminer l'ensemble des entiers naturels $n$ tels que $5^n + 4$ est un carré.
+\end{exo}
+
+\begin{exo}
+  Déterminer tous les entiers positifs $n$ et $m$ tels que
+
+  \[n^4-m^4 = 42.\]
+\end{exo}
+
+\subsubsection{Réduction modulo $n$}
+
+Un autre outil à disposition est la réduction modulo $n$.
+
+En effet \textbf{si} l'équation $P(x)=0$ admet une solution $x \in \mathbb{Z}$, \textbf{alors} en particulier pour tout entier $n$, l'équation $P(x) \equiv 0 \mod n$ admet une solution.
+
+La stratégie est alors la suivante: supposer qu'il existe une solution, regarder l'équation modulo $n$, effectuer les simplifications et essayer d'en déduire des informations sur la solution.
+
+Le cas le plus simple est celui ou l'équation n'admet pas de solution modulo $n$. Alors l'équation de départ n'admet pas de solution entière.
+
+\begin{exo}
+  Montrer que l'équation
+  \[a^2 + b^2 = 2023\]
+  n'admet pas de solution.
+\end{exo}
+
+La question est alors de trouver un choix judicieux de $n$, en gardant à l'esprit les heuristiques suivantes:
+\begin{itemize}
+  \item un $n$ faisant disparaître un terme de l'équation,
+  \item pour les termes carrés $n=4$ ou $n=8$,
+  \item pour les cubes $n=7$,
+  \item remarquer qu'une puissance $4$ est aussi un carré,
+  \item etc. (cf cours sur les modulos)
+\end{itemize}
+
+\begin{exo}
+  Montrer que l'équation
+  \[a^{5} - 2 b^2 = 2021\]
+  n'admet pas de solutions.
+\end{exo}
+
+
+Souvent cette réduction modulo $n$ ne permet pas directement de conclure, mais permet de ``grappiller des informations''. Ainsi si on obtient qu'un entier $a$ vérifie $a^2 \equiv 0 \mod 4$, cela n'implique pas une contradiction, mais on peut ensuite poser $a = 2 \widetilde{a}$ et réinjecter dans l'équation pour continuer.
+
+Pour plus de détails on renvoie encore une fois aux polycopiés d'arithmétique de la POFM et au cours sur les modules.
+
+
+\subsubsection{Descente infinie}
+
+On rappelle la propriété suivante:
+\begin{quote}
+  Toute partie non vide de $\mathbb{N}$ admet un plus petit élément.
+\end{quote}
+
+Cette propriété à la base du principe de récurrence a une conséquence:
+\begin{quote}
+  Il n'existe pas de suite strictement décroissante d'entiers naturels.
+\end{quote}
+
+Ce principe, parfois appelé \emph{descente infinie de Fermat} permet de montrer qu'une équation diophantienne n'admet pas de solution en montrant que si une solution existe, alors une autre strictement plus petite existe.
+
+On remarquera le lien avec les méthodes de minimum: on pourrait de manière équivalente considérer la plus petite solution et obtenir une contradiction.
+
+\begin{exo}
+  Montrer que l'équation
+  \[r^3 = 2\]
+  n'admet pas de solution rationnelle.
+\end{exo}
+
+\begin{exo}[Bac 2003]
+  Déterminer tous les entiers positifs $x$, $y$ et $z$ solutions de
+  \[x^2 + y^2 = 7 z^2.\]
+\end{exo}
+
+\subsubsection{À vous de trouver la méthode}
+
+À vous de déterminer la ou les méthodes à utiliser pour résoudre les exercices suivants:
+
+\begin{exo}
+  Déterminer l'ensemble des entiers positifs $a$ et $b$ tels que
+  \[3^a = 2^b +1.\]
+\end{exo}
+
+\begin{exo}
+  Déterminer l'ensemble des entiers positifs $a$ et $b$ tels que
+  \[a^2 + b^2 = (ab)^2.\]
+\end{exo}
+
+\subsubsection{Solutions}
+
+\begin{sol}
+  On remarque que
+  \[5 \times 1 + 2 \times (-2) = 1\]
+  donc pour tout $n$ entier
+  \[5 \times n + 2 \times (-2n) = n\]
+  et \framebox{tous les entiers $n \in \mathbb{N}$ conviennent}.
+
+
+  Il s'agit en fait tout simplement du théorème de Bézout.
+\end{sol}
+
+\begin{sol}
+  Il s'agit du théorème de Bézout: il existe une solution ssi
+  \[\boxed{\operatorname{pgcd}(a,b) | n}.\]
+\end{sol}
+
+\begin{sol}
+  Il y a de très nombreuses façons de procéder. On peut par exemple remarquer que si $n$ convient alors $n+2$ convient aussi (il suffit de changer $y$ en $y+1$).
+
+  On teste alors à la main les petits cas:
+  \begin{itemize}
+    \item $0=5 \times 0 + 2 \times 0$,
+    \item si $x$ et $y$ non nuls alors $5x+2y \geq 2$ donc $1$ ne convient pas,
+    \item $2=5 \times 0 + 2 \times 1$,
+    \item si $x\geq 1$ ou $y\geq 2$ alors $5x+2y \geq 4$ et donc $3$ ne convient pas,
+    \item $2=5 \times 0 + 2 \times 2$,
+    \item $5=5 \times 1 + 2 \times 0$.
+  \end{itemize}
+
+  Et par la remarque précédente tous les entiers suivants conviennent.
+
+  L'équation admet des solutions entières positives ssi
+  \[\boxed{n \in \mathbb{N} \backslash \{1,3\}}.\]
+
+  \underline{Remarque}: avec des $a$ et $b$ premiers entre eux on montre que le plus grand entier non atteignable ets $ab-a-b$.
+\end{sol}
+
+
+\begin{sol}
+  Le plus simple est de reconnaître un \textbf{trinôme du second degré}.
+
+  Avec $x = n^2$, $n$ est solution de l'équation ssi
+  \[x^2-7x+12 = 0.\]
+
+  Il s'agit d'un trinôme du second degré de discriminant
+  \[\Delta = 7^2 - 4 \times 12 = 1 > 0\]
+  et donc ayant deux racines réelles
+  \[\frac{7 \pm 1}{2}.\]
+
+  Donc $n$ est solution ssi $n^2 = 4$ ou $n^2 = 3$.
+
+  Or $n^2 = 4$ admet deux solutions entières: $n=2$ et $n=-2$.
+
+  Et $n^2 = 3$ n'admet aucune solution entière (cf la suite).
+
+
+  On conclut donc que l'ensemble des solutions entières est
+  \[\boxed{\{-2,2\}}.\]
+\end{sol}
+
+\begin{sol}
+
+  \textbf{Première option: majoration}
+
+  Soient $a$ et $b$ deux entiers strictement positifs vérifiant
+  \[\frac{1}{a} + \frac{1}{b} = 1.\]
+  Quitte à changer l'ordre on peut supposer que $0 < a \leq b$.
+
+  Dans ce cas on a
+  \[0 < \frac{1}{b} \leq \frac{1}{a}\]
+  et donc
+
+  \[\frac{1}{a} + \frac{1}{b} \leq \frac{2}{a}.\]
+  d'où on déduit
+  \[0 < a \leq 2.\]
+
+  Il suffit alors de regarder $a = 1$ et $a=2$.
+
+  \begin{itemize}
+    \item Pour $a=1$, $\frac{1}{b} + 1 = 1$ n'admet pas de solution.
+    \item Pour $a=2$, $\frac{1}{b} + \frac{1}{2} = 1$ admet $b=2$ comme solution.
+  \end{itemize}
+
+  La seule solution est donc
+  \[\boxed{(a,b) = (2,2).}\]
+
+  \textbf{Deuxième option: résolution dans $\mathbb{R}$}
+
+  Si $a$ et $b$ sont solutions alors $a \neq 1$ et
+  \[b = \frac{a}{a-1}.\]
+
+  Donc comme $a$ et $b$ sont entiers $a-1 | a$ et donc $a-1| a-(a-1)$.
+
+  On en déduit que $a-1 = 1$ donc $a=2$.
+
+  Et donc $b=2$.
+
+  La seule solution est donc
+  \[\boxed{(a,b) = (2,2).}\]
+
+\end{sol}
+
+\begin{sol}
+  Soient $a$ , $b$ et $c$ trois entiers strictement positifs vérifiant
+  \[\frac{1}{a} + \frac{1}{b} + \frac{1}{c} = 1.\]
+  Quitte à changer l'ordre on peut supposer que $0 < a \leq b \leq c$.
+
+  Dans ce cas on a
+  \[0 < \frac{1}{c} \leq \frac{1}{b} \leq \frac{1}{a}\]
+  et donc
+
+  \[\frac{1}{a} + \frac{1}{b}  + \frac{1}{c}\leq \frac{3}{a}.\]
+  d'où on déduit
+  \[0 < a \leq 3.\]
+
+  Il suffit alors de regarder $a = 1$, $a=2$ et  $a=3$.
+
+  \begin{itemize}
+    \item Pour $a=1$, $1+\frac{1}{b} + \frac{1}{c} = 1$ n'admet pas de solution.
+    \item Pour $a=2$, $\frac{1}{2}+\frac{1}{b} + \frac{1}{c} \frac{1}{b}  = 1$ revient à
+          \[\frac{1}{b} + \frac{1}{c} = \frac{1}{2}.\]
+
+          Comme $0 < b \leq c$, par le même raisonnement que précédemment on a
+          \[\frac{1}{2} \leq \frac{2}{b}\]
+          c'est à dire $b \leq 4$. De plus $b \geq a = 2$. Il suffit donc de regarder $b=2$, $b=3$ et $b=4$.
+          \begin{itemize}
+            \item Pour $b=2$, \[\frac{1}{2} + \frac{1}{c} = \frac{1}{2}\] n'admet pas de solution.
+            \item Pour $b=3$, \[\frac{1}{3} + \frac{1}{c} = \frac{1}{2}\] admet $c=6$ comme solution.
+            \item Pour $b=4$, \[\frac{1}{4} + \frac{1}{c} = \frac{1}{2}\] admet $c=4$ comme solution.
+          \end{itemize}
+    \item Pour $a=2$, $\frac{1}{3}+\frac{1}{b} + \frac{1}{c} \frac{1}{b}  = 1$ revient à
+          \[\frac{1}{b} + \frac{1}{c} = \frac{2}{3}.\]
+
+          Comme $0 < b \leq c$, par le même raisonnement que précédemment on a
+          \[\frac{2}{3} \leq \frac{2}{b}\]
+          c'est à dire $b \leq 3$. De plus $b \geq a = 3$. Il suffit donc de regarder $b=3$.
+          \begin{itemize}
+            \item Pour $b=3$, \[\frac{1}{3} + \frac{1}{c} = \frac{2}{3}\] admet $c=3$ comme solution.
+          \end{itemize}
+  \end{itemize}
+
+
+  Les solutions vérifiant $a \leq b \leq c$ sont donc $(2,3,6)$, $(2,4,4)$ et $(3,3,3)$.
+
+  En comptant les permutations de ces solutions, on obtient donc $6+3+1$ c'est à dire
+  \[\boxed{10 \text{ triplets solutions}}.\]
+\end{sol}
+
+\begin{sol}
+  On observe que $a=b$ est toujours solution.
+
+
+
+  Fixons $a$ et résolvons
+  \[a^x = x^a\]
+  d'inconnue $x \in \mathbb{R}$.
+
+  En passant au $\ln$ l'équation se réécrit
+
+  \[\frac{\ln(x)}{x} = \frac{\ln(a)}{a}.\]
+
+  Posons
+  \[f : \begin{aligned}
+      ]0,+\infty[ & \to \mathbb{R}                              \\
+      x           & \mapsto \frac{\ln(x)}{x} - \frac{\ln(a)}{a}
+    \end{aligned}\]
+  et étudions la fonction $f$.
+
+  La fonction $f$ est dérivable sur son ensemble de définition, et sa dérivée est, pour tout $x > 0$
+  \[f'(x) = \frac{\frac{1}{x} \times x - \ln(x) \times 1}{x^2} = \frac{1-\ln(x)}{x^2}.\]
+
+  La fonction $f$ est donc
+  \begin{itemize}
+    \item \textbf{croissante} sur $]0,e^1[$
+    \item puis \textbf{décroissante} sur $]e^1,+\infty[$.
+  \end{itemize}
+
+  Comme de plus $f(a)=0$,
+
+  \begin{itemize}
+    \item Si $a > e^1$ on a le tableau de variations
+
+
+          et l'équation $f(x) = 0$ admet une unique solution dans $]0,a[$ n'admet aucune solution dans $]a,+\infty[$.
+    \item Si $a < e^1$ on a le tableau de variations
+
+
+          et l'équation $f(x) = 0$ admet n'admet aucune dans $]0,a[$ et admet une unique solution $]a,+\infty[$.
+  \end{itemize}
+
+  Retournons au problème initial.
+
+  Quitte à réordonner on peut supposer $a < b$.
+
+  Si $a>e^1$ il n'y a donc pas de solution.
+
+  Comme $a$ est un entier strictement positif et que $e^1 < 3$ il suffit donc de regarder $a=1$ et $a=2$.
+
+  \begin{itemize}
+    \item Pour $a=1$, $1^b = b^1$ n'admet pas de solution $b > 1$.
+    \item Pour $a=2$, $2^b = b^2$ admet $b=4$ comme solution, et par l'étude précédente c'est la seule.
+  \end{itemize}
+
+  On conclut donc que la seule solution avec $a<b$  est $a=2$ et $b=4$.
+
+
+  Par conséquent l'ensemble des solutions est
+  \[\boxed{\left\lbrace (n,n), n \in \mathbb{N}^*\right\rbrace \cup \{(2,4),(4,2)\}}.\]
+
+  \underline{Remarque:} il aurait été bien plus simple de, dès le début
+  \begin{itemize}
+    \item supposer $a < b$
+    \item transformer le problème en
+          \[\frac{\ln(a)}{a} = \frac{\ln(b)}{b}\]
+          et étudier $\frac{\ln(x)}{x}$ sur $]0,+\infty[$. On en déduit directement que
+          \[a < e^1 < b.\]
+  \end{itemize}
+\end{sol}
+\begin{sol}
+  On remarque tout d'abord que si $n$ et $m$ conviennent alors avec
+  \[\frac{1}{{x_1}^2} + \cdots + \frac{1}{{x_n}^2} =1 \]
+  et
+  \[\frac{1}{{y_1}^2} + \cdots + \frac{1}{{y_m}^2} =1 \]
+  on a
+  \[\begin{aligned}
+      \frac{1}{{x_1 y_1}^2} + \cdots + \frac{1}{{x_1 y_m}^2} + \frac{1}{{x_2}^2} + \cdots + \frac{1}{{x_n}^2} & = \left(\frac{1}{{y_1}^2} + \cdots + \frac{1}{{y_m}^2} \right) \frac{1}{{x_1}^2}+
+      \\ = \frac{1}{{x_2}^2} + \cdots + \frac{1}{{x_n}^2} =1
+    \end{aligned}\]
+  et donc $n+m-1$ convient aussi.
+
+
+  On cherche donc ce qui se passe pour les petits cas, en espérant ensuite reconstituer tous les entiers assez grands à partir de ces derniers.
+
+
+  \begin{itemize}
+    \item Pour $n=2$, si
+          \[\frac{1}{{x_1}^2} + \frac{1}{{x_2}^2} = 1\]
+          alors
+    \item Pour $n=3$, on peut effectuer des majorations (cf exercice précédent) et on obtient qu'il n'y a pas de solution.
+    \item Pour $n=4$ on peut remarquer directement que
+          \[\frac{1}{2^2} + \frac{1}{2^2} + \frac{1}{2^2} + \frac{1}{2^2} = 1.\]
+          Donc $n=4$ convient.
+    \item Pour $n=5$, on majore comme dans les exercices précédents. Plus précisément si
+          \[\frac{1}{{x_1}^2} + \frac{1}{{x_2}^2} + \frac{1}{{x_3}^2} + \frac{1}{{x_4}^2} + \frac{1}{{x_5}^2} = 1\]
+          , en se ramenant à $1 < x_1 \leq x_2 \leq x_3 \leq x_4 \leq x_5$ on obtient
+          \[1 \leq \frac{5}{{x_1}^2}\]
+          donc $1 < x_1 \leq \sqrt{5}$. Il suffit de regarder $x_1 = 2$.
+
+          Dans ce cas on obtient
+          \[\frac{1}{{x_2}^2} + \frac{1}{{x_3}^2} + \frac{1}{{x_4}^2} + \frac{1}{{x_5}^2} = \frac{3}{4}\]
+          et donc de même
+          \[\frac{3}{4} \leq \frac{4}{{x_2}^2}\]
+          d'où $x_1 =2 \leq x_2 \leq \sqrt{\frac{16}{3}} < 3$. Il suffit donc de regarder $x_2 = 2$.
+
+          Dans ce cas on obtient
+          \[\frac{1}{{x_3}^2} + \frac{1}{{x_4}^2} + \frac{1}{{x_5}^2} = \frac{1}{2}\]
+          et donc de même
+          \[\frac{1}{2} \leq \frac{3}{{x_3}^2}\]
+          d'où $x_2 =2 \leq x_2 \leq \sqrt{6} < 3$. Il suffit donc de regarder $x_3 = 2$.
+
+          Dans ce cas on obtient
+          \[\frac{1}{{x_4}^2} + \frac{1}{{x_5}^2} = \frac{1}{4}\]
+          et donc de même
+          \[\frac{1}{4} \leq \frac{2}{{x_4}^2}\]
+          d'où $x_3 =2 \leq x_2 \leq \sqrt{8} < 3$. Il suffit donc de regarder $x_4 = 2$.
+
+          Dans ce cas on obtient
+          \[\frac{1}{{x_5}^2} = 0\]
+          qui n'admet pas de solution.
+
+    \item Pour $n=6$ on peut de même que précédemment effectuer des majorations en chaîne pour se ramener à un nombre fini de cas à traiter.
+
+          Plus précisément, en ordonnant de même que précédemment $1 < x_1 \leq x_2 \leq x_3 \leq x_4 \leq x_5 \leq x_6$ on obtient successivement
+
+          \[1 \leq \frac{6}{{x_1}^2}\]
+          c'est à dire $1 < x_1 \leq \sqrt{6} < 3$ et il suffit donc de regarder $x_1 = 2$. On obtient alors
+          \[\frac{3}{4} \leq \frac{5}{{x_2}^2}\]
+          c'est à dire $x_2 = 2 \leq x_1 \leq \sqrt{\frac{20}{3}} < 3$ et il suffit donc de regarder $x_2 = 2$. On obtient alors
+          \[\frac{1}{2} \leq \frac{4}{{x_3}^2}\]
+          c'est à dire $x_2 = 2 \leq x_3 \leq \sqrt{8} < 3$ et il suffit donc de regarder $x_3 = 2$. On obtient alors
+          \[\frac{1}{4} \leq \frac{3}{{x_4}^2}\]
+          c'est à dire $x_4 = 2 \leq x_1 \leq \sqrt{12} < 4$ et il suffit donc de regarder $x_4 = 2$ ou $x_4=3$. Pour $x_4 = 2$ on obtiendrait que la somme restante est nulle, ce qui est impossible. Il suffit donc de regarder $x_4 =3$. On obtient alors
+          \[\frac{1}{4}-\frac{1}{9} \leq \frac{2}{{x_5}^2}\]
+          c'est à dire $x_4 = 3 \leq x_5 \leq \sqrt{\frac{72}{5}} < 4$ il suffit donc de regarder $x_5 = 3$.
+
+          On obtient alors
+
+          \[\frac{1}{{x_6}^2} = \frac{5}{36} - \frac{1}{9}\]
+          et $x_6 = 6$ convient.
+
+
+          Par conséquent on obtient une solution qui est $(2,2,2,3,3,6)$.
+    \item Le cas $n=7$ se construit à partir des précédents car $7 = 4 + 4 -1$.
+    \item Pour $n=8$ après avoir effectué des majorations et regardé un nombre fini de cas on obtient que $(2,2,2,3,3,6,9,9,18)$ est solution.
+    \item Tous les entiers $\geq 9$ conviennent. En effet par le cas $n=4$, si $m$ convient alors $m+3$ convient. Et les cas $6,7,8$ conviennent.
+  \end{itemize}
+
+  En conclusion les entiers $n$ qui conviennent sont \framebox{tous les entiers sauf $2$, $3$, $5$}.
+
+\end{sol}
+\begin{sol}
+  On cherche donc les $n$ tels que l'équation
+  \[5^n + 4 = a^2.\]
+  Ce qui peut se réécrire
+  \[5^n = a^2 - 4.\]
+  En reconnaissant une identité remarquable, cela revient à
+  \[(a-2)(a+2) = 5^n.\]
+
+  Par conséquent, comme $5$ est premier, on en déduit que $a-2$ et $a+2$ sont des puissances de $5$, i.e il existe $r$ et $s$ entiers tels que
+  \[\begin{aligned}
+      a + 2 & = 5^r \\
+      a - 2 & = 5^s
+    \end{aligned}.\]
+
+  Leur différence est donc, en supposant quitte à changer l'ordre que $r \geq s$,
+  \[\begin{aligned}
+      (a+2)-(a-2) = 4 & = 5^r-5^s          \\
+                      & = 5^s (5^{r-s}-1).
+    \end{aligned}\]
+
+  La seule possibilité est donc $s=0$ et $r-s=1$.
+
+  On en déduit que si $n$ est solution alors $5^n + 4 = 9$.
+
+  On vérifie que $5^2 + 4 = 9$.
+
+  Par conséquent il existe une unique solution qui est
+  \[\boxed{n=2}\]
+
+
+\end{sol}
+
+\begin{sol}
+  On a l'identité remarquable
+  \[n^4 - m^4 = (n-m)(n^3+n^2 m + n m^2 + m^3).\]
+  Comme $n > m$ on a donc
+  \[42 \geq 4m^3\]
+  par conséquent il faut que
+  \[m \leq \sqrt[3]{\frac{42}{4}} < 3.\]
+
+  Il suffit donc de regarder $m = 0,1,2$.
+
+  \begin{itemize}
+    \item Pour $m=0$, $n^4 = 42$ n'a pas de solutions entières.
+    \item Pour $m=1$, $n^4 = 43$ n'a pas de solutions entières.
+    \item Pour $m=2$, $n^4 = 50$ n'a pas de solutions entières.
+  \end{itemize}
+
+  Donc l'équation n'a \framebox{pas de solution}.
+\end{sol}
+
+\begin{sol}
+  On regarde modulo $4$.
+
+  Comme un carré est congru à $0$ ou $1$ modulo $4$ on a
+
+  \[a^2 + b^2 \equiv 0,~1 \text{ ou } 2 \mod 4.\]
+
+  Mais \[2023 \equiv 3 \mod 4.\]
+
+  Donc il n'y a pas de solution.
+\end{sol}
+
+\begin{sol}
+  On regarde modulo $11$.
+
+  On a $2021 \equiv 8 \mod 11$.
+
+  La table des carrés et des puissances $5$èmes modulo $11$ est
+
+  \begin{center}
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+      \hline
+      $x \mod 11$   & $0$ & $1$ & $2$  & $3$ & $4$ & $5$ & $6$  & $7$  & $8$  & $9$ & $10$ \\
+      \hline
+      $x^2 \mod 11$ & $0$ & $1$ & $4$  & $9$ & $5$ & $3$ & $3$  & $5$  & $9$  & $4$ & $1$  \\
+      $x^5 \mod 11$ & $0$ & $1$ & $10$ & $1$ & $1$ & $1$ & $10$ & $10$ & $10$ & $1$ & $10$ \\
+      \hline
+    \end{tabular}
+  \end{center}
+
+  Et il est donc impossible d'avoir
+  \[a^{5} - 2 b^2 \equiv 8 \mod 11.\]
+
+
+  L'équation n'admet donc \framebox{pas de solution}.
+
+  \underline{Remarque:} Pourquoi modulo $11$ ? On cherche un entier $n$ pour lequel les puissances $2$ et $5$ sont simples modulo $n$. Comme le ppcm de $2$ et $5$ est $10$ on cherche par exemple $n$ tel que $\varphi(n)=22$ ce qui permet de simplifier toutes les puissances $10$ème. Ici $11$ convient car $11$ est premier et $11-1 = 10$.
+\end{sol}
+\begin{sol}
+  Avec $r = \frac{p}{q}$ où $p$ et $q$ sont des entiers (positifs), $q \neq 0$, cela revient à montrer que l'équation
+  \[p^3 = 2 q^3\]
+  n'admet pas de solutions entières.
+
+  Supposons qu'il existe $(p,q)$ solutions.
+
+  Alors $2 | p^3$ et donc, comme $2$ est premier on a $2 | p$.
+
+  Par conséquent on peut écrire $p = 2 \tilde{p}$ avec $\tilde{p}$ entier.
+
+  Alors
+  \[8 \tilde{p}^3 = 2 q^3\]
+  i.e
+  \[4 \tilde{p}^3 =  q^3.\]
+
+  De même, comme $2$ est premier, $2 | q^3$ donc $2 | q$, et il existe un entier $\tilde{q}$ tel que $q = 2 \tilde{q}$.
+
+  On a alors
+
+  \[\tilde{p}^3 = 2 \tilde{q}.\]
+
+
+  On a donc montrer que si $(p,q)$ est une solution alors on peut construire une solution $(\tilde{p},\tilde{q})$ avec $\tilde{p} < p$.
+
+  Par principe de descente infinie, il n'existe donc \framebox{pas de solution}.
+
+  \underline{Remarque}: De même que pour la preuve de l'irrationalité de $\sqrt{2}$, on peut rédiger différent, par exemple en prenant une solution vérifiant $\operatorname{pgcd}(p,q) = 1$, en prenant une solution minimale, on en considérant la valuation $2$-adique.
+\end{sol}
+\begin{sol}
+  On observe que $x=y=z=0$ est solution.
+
+  Montrons que c'est la seule.
+
+
+  Soit $(x,y,z) \neq (0,0,0)$ une solution. Sans perte de généralité on peut supposer $x \neq 0$.
+
+
+
+
+  On peut écrire modulo $7$
+  \[x^2 = - y^2 \equiv 0 \mod 7\]
+
+
+  Supposons que $7 \not| x$.
+  Comme $7 \not| x$, comme $7$ est premier, $x$ est inversible modulo $7$.
+
+  En notant $\xi$ un inverse de $x$ modulo $7$, i.e un entier tel que
+  \[x \xi \equiv 1 \mod 7\]
+  et en multipliant par $\xi$ on en déduit
+
+  \[(\xi y)^2 \equiv -1 \mod 7.\]
+
+
+  Or la table des carrés modulo $7$ est:
+
+
+  \begin{center}
+    \begin{tabular}{|l|c|c|c|c|c|c|c|}
+      \hline
+      $x \mod 7$   & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\
+      \hline
+      $x^2 \mod 7$ & $0$ & $1$ & $4$ & $2$ & $2$ & $4$ & $1$ \\
+      \hline
+    \end{tabular}
+  \end{center}
+  et on aboutit donc à une contradiction.
+
+
+  Donc pour toute solution non nulle $7 | x$.
+
+  Si $7 | x$ alors $7 | y$ et donc en posant $x = 7 \tilde{x}$ et $y= 7 \tilde{y}$ on obtient
+  \[7 \tilde{x} + 7 \tilde{y} =  z\]
+  donc on peut écrire $z = 7 \tilde{z}$. Et obtient alors
+  \[\tilde{x}^2 + \tilde{y}^2 = 7 \tilde{z}^2.\]
+
+  On obtient donc une solution $(\tilde{x},\tilde{y},\tilde{z})$ avec $0 < \tilde{x} < x$.
+
+  Par principe de descente infinie il n'existe pas de solution non nulle.
+
+  \underline{Remarque:} ici le point clé est que $-1$ n'est pas carré modulo le nombre premier $7$. Un résultat très classique est que $-1$ est un carré modulo le nombre premier impair $p$ ssi $p \equiv 1 \mod 4$.
+\end{sol}
