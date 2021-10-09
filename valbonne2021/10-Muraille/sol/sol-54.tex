@@ -1,0 +1,14 @@
+En développant, on se ramène à
+$$16x_1^4 + \dots + 16x_n^4 \ge 2x_1^4 + \dots + 2x_n^4 + 6(x_1^2x_2^2 + \dots + x_n^2x_1^2) - 4(x_1x_2^3 + x_1^3x_2 + \dots + x_nx_1^3 + x_n^3x_1)$$
+Dans un premier temps, comme $x_1^2$ et $x_2^2$ sont positifs, on peut appliquer l'inégalité des moyennes arithmétique et géométrique pour obtenir
+$$3x_1^4 + 3x_2^4 \ge 6x_1^2x_2^2$$
+En ajoutant cycliquement et en soustrayant à l'inégalité originale, on obtient qu'il est suffisant de montrer que
+$$8x_1^4 + \dots + 8x_n^4 \ge -4(x_1x_2^3 + x_1^3x_2 + \dots + x_nx_1^3 + x_n^3x_1)$$
+Il est alors suffisant de montrer que
+$$8|x_1|^4 + \dots + 8|x_n|^4 \ge 4(|x_1||x_2|^3 + |x_1|^3|x_2| + \dots + |x_n||x_1|^3 + |x_n|^2|x_1|)$$
+puisque passer à la valeur absolue ne change pas la valeur de $x_i^4$, déjà positive, et ne peut qu'augmenter les valeurs des autres termes.
+Or, par l'inégalité des moyennes arithmétique et géométrique, on a
+$$|x_1|^4 + |x_1|^4 + |x_1|^4 + |x_2|^4 \ge 4|x_1|^3|x_2|$$
+et
+$$|x_1|^4 + |x_2|^4 + |x_2|^4 + |x_2|^4 \ge 4|x_1||x_2|^3$$
+En ajoutant cycliquement, on conclut.

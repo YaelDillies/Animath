@@ -1,0 +1,18 @@
+$$\beginx(y^2-p)+y(x^2-p)=5p$$
+$$\iff xy^2-xp+x^2y-yp = 5p$$
+$$\iff xy(x + y)-p(x + y)=5p$$
+$$\iff (xy - p)(x + y)=5p$$
+
+Ainsi, $x + y$ est un diviseur positif de $5p$. Nous avons donc quatre cas à traiter :
+\begin{itemize}
+\item Si $x + y = 1$, alors on a $x, y \le 1$, donc $xy - p \le 1 - p < 0$. Contradiction.
+\item Si $x + y = 5$, alors $xy - p = p$, soit $xy = 2p$. On a par inégalité arithmético-géométrique
+$$p = \frac{xy}2 \le \frac{(x + y)^2}8 = \frac{25}8 $$
+Donc $p = 2$ ou $p = 3$.
+\item Si $x + y = p$, alors $xy - p = 5$. Donc $(x - 1)(y - 1) = xy - (x + y) + 1 = (p + 5) - p + 1 = 6$. Sans perte de généralité, $x \le y$ donc $x - 1$ vaut $-1$, $1$ ou $2$. $y - 1$ vaut alors respectivement $-6$ (impossible), $6$ et $3$. $p = x + y$ ne peut donc valoir que $2 + 7 = 9$ (impossible), ou $3 +  4 = 7$.
+\item Si $x + y = 5p$, alors $xy - p = 1$. Supposons sans perte de généralité $x \le y$. Si $x = 0$, alors $-p = 1$, absurde. Si $x \ge 1$, alors
+$$1 < \frac 32 p = \frac{x + y}2 - p \le  y - p \le xy - p = 1$$
+Contradiction.
+\end{itemize}
+
+En conclusion, les seules valeurs possibles de $p$ sont $2$, $3$ et $7$. Elles sont toutes solutions car $(x, y) = (4, 1)$ convient pour $p = 2$, $(x, y) = (3, 2)$ convient pour $p = 3$, et $(x, y) = (3, 4)$ convient pour $p = 7$.

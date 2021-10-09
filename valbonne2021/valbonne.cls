@@ -179,7 +179,6 @@
 \newtheorem{rappel}[theo]{Rappel}
 
 
-\makeatletter
 \newenvironmentx{exo}[2][1={},2={}]
   {
    \medskip
@@ -191,24 +190,6 @@
    \noindent{\bf Exercice \ifsolutions\hyperref[sol-\thechapter-\thesection-\thesubsection-\theexo]{\theexo}\else\theexo\fi} \ifx\@extit\empty{}\else{(#1)}\fi%
    \label{exo-\thechapter-\thesection-\thesubsection-\theexo}%
    ~\newline}
-  {
-
-  \medskip
-  }
-
-
-\makeatletter
-\newenvironmentx{exoy}[2][1={},2={}]
-  {
-    \medskip
-
-    \def\@extit{#1}%
-    \edef\@exer{#2}%
-    \ifx\@exer\empty{}\else{\setcounter{exo}{#2}\addtocounter{exo}{-1}}\fi%
-    \refstepcounter{exo}%
-    \noindent{\bf Exercice \ifsolutions\hyperref[sol-\thechapter-\thesection-\thesubsection-\theexo]{\theexo}\else\theexo\fi} \ifx\@extit\empty{}\else{(#1)}\fi%
-    \label{exo-\thechapter-\thesection-\thesubsection-\theexo}%
-    ~\newline}
   {
 
   \medskip
@@ -265,7 +246,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% SOMMAIRE ET AUTRE (POLY) %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makeatletter
 \renewcommand\thefigure{\@arabic\c@figure}
 \renewcommand\thechapter{\@Roman\c@chapter}
 \renewcommand\thesection{\@arabic\c@section}
@@ -300,7 +280,6 @@
 \renewcommand*\l@subsection{\@dottedtocline{2}{3.5em}{2.4em}}
 \renewcommand*\l@subsubsection{\@dottedtocline{3}{5.9em}{3.3em}}
 \renewcommand\@chapapp{}
-\makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\sectionbreak}{\newpage}
@@ -474,6 +453,9 @@
 \DeclareMathOperator\Card{\mathrm{Card}} % cardinal d'un ensemble
 \DeclareMathOperator\pgcd{\mathrm{pgcd}} % PGCD
 \DeclareMathOperator\ppcm{\mathrm{ppcm}} % PPCM
+\DeclareMathOperator\prob{\mathbb P} % Probabilité
+\DeclareMathOperator\esp{\mathbb E} % Espérance
+\DeclareMathOperator\var{\mathcal V} % Variance
 \def\le{\leqslant}%\le donne ⩽, \leq donne ≤
 \def\ge{\geqslant}%\ge donne ⩾, \geq donne ≥
 \newcommand{\qte}[1]{\enquote{#1}} % guillemets. On a aussi \fg et \og
