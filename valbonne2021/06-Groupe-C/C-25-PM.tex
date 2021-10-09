@@ -8,32 +8,31 @@ Les notions de mot et de langage sont un formalisme permettant de travailler ave
 Un \emph{alphabet} est un ensemble fini, dont les éléments sont appelés \emph{lettres}. Un \emph{mot} est une suite finie de lettres, le nombre de lettres dans un mot est sa \emph{longueur}. Il existe un unique mot de longueur 0, appelé \emph{mot vide} et noté $\varepsilon$. Si l'alphabet est noté $A$, l'ensemble des mots de longueur $n$ est noté $A^n$, l'ensemble de tous les mots est noté $A^\star$ et l'ensemble de tous les mots non vides $A^+$. Enfin, un \emph{langage} est un sous-ensemble de $A^\star$.
 \end{dfn}
 
-Un langage est un ensemble de mots : si l'alphabet est $\{a,b\}$, des exemples de langages sont l'ensemble des mots comportant un nombre pair de $a$, l'ensemble des mots formés d'un certain nombre de $a$ suivis d'un certain nombre de $b$, le langage $\{abba,baab\}$ ou encore le langage des mots formés d'un nombre premier de lettres.
+Un langage est un ensemble de mots : si l'alphabet est $\{a, b\}$, des exemples de langages sont l'ensemble des mots comportant un nombre pair de $a$, l'ensemble des mots formés d'un certain nombre de $a$ suivis d'un certain nombre de $b$, le langage $\{abba, baab\}$ ou encore le langage des mots formés d'un nombre premier de lettres.
 
-Une question intéressante à se poser est celle de déterminer la "complexité" d'un langage. Est-il possible de donner un algorithme répondant de manière générale à la question "Le mot $w$ fait-il partie du langage?"? Si oui, quelles contraintes supplémentaires peut-on mettre sur cet algorithme? Intuitivement, il semble que si le langage $L$ est obtenu en tirant au sort l'appartenance ou non de chaque mot à celui-ci, il ne sera pas possible de construire un tel algorithme. De l'autre côté de l'échelle, il est très facile de déterminer si un mot fait partie d'un ensemble fini de mots ou s'il contient un nombre pair de lettres. Déterminer si un mot contient un nombre premier de lettres, ou est un palindrome, sont des questions d'une difficulté intermédiaire.
+Une question intéressante à se poser est celle de déterminer la "complexité" d'un langage. Est-il possible de donner un algorithme répondant de manière générale à la question "Le mot $w$ fait-il partie du langage ?" ? Si oui, quelles contraintes supplémentaires peut-on mettre sur cet algorithme ? Intuitivement, il semble que si le langage $L$ est obtenu en tirant au sort l'appartenance ou non de chaque mot à celui-ci, il ne sera pas possible de construire un tel algorithme. De l'autre côté de l'échelle, il est très facile de déterminer si un mot fait partie d'un ensemble fini de mots ou s'il contient un nombre pair de lettres. Déterminer si un mot contient un nombre premier de lettres, ou est un palindrome, sont des questions d'une difficulté intermédiaire.
 
 Nous allons nous intéresser à l'échelon le plus bas dans ce spectre de complexités possibles, en introduisant les opérations régulières puis les langages réguliers.
 
 Les trois opérations régulières sont l'union, la concaténation et l'étoile de Kleene.
 L'union est définie naturellement : des langages sont des ensembles de mots, et l'union de langages est l'union ensembliste : si $L$ et $M$ sont deux langages, un mot est dans $L\cup M$ s'il est dans $L$ ou s'il est dans $M$.
 
-Pour définir la concaténation de langages, il faut d'abord définir la concaténation de mots. Ceci est fait de la manière suivante : si $u=u_1..u_m$ et $v=v_1..v_n$ sont des mots, leur concaténation est le mot $uv=u_1..u_mv_1..v_n$ de longueur $m+n$. Cette opération est associative, mais pas commutative, et le mot $\varepsilon$ est neutre.
-De là, la concaténation de langages est définie via celle des mots. La concaténation de $L$ et $M$ est l'ensemble des mots qui sont concaténation d'un élément de $L$ et d'un élément de $M$ :
-\[LM=\bigcup_{\substack{u\in L\\ v\in M}} uv.\]
-Par exemple, la concaténation de $\{ab,abb\}$ avec $\{a,ba\}$ est $\{aba,abba,abbba\}$. Ici aussi, cette opération est associative. On peut donc définir $L^n$ comme étant la concaténation de $n$ copies du langage $L$. On a alors $L^0=\{\varepsilon\}$.
+Pour définir la concaténation de langages, il faut d'abord définir la concaténation de mots. Ceci est fait de la manière suivante : si $u = u_1 \dots u_m$ et $v = v_1 \dots v_n$ sont des mots, leur concaténation est le mot $uv = u_1 \dots u_m v_1 \dots v_n$ de longueur $m + n$. Cette opération est associative, mais pas commutative ($abcd \ne cdab$), et le mot $\varepsilon$ est neutre. De là, la concaténation de langages est définie via celle des mots. La concaténation de $L$ et $M$ est l'ensemble des mots qui sont concaténation d'un élément de $L$ et d'un élément de $M$ :
+$$LM = \{u\in L, v\in M | uv\}$$
+Par exemple, la concaténation de $\{ab, abb\}$ avec $\{a, ba\}$ est $\{aba, abba, abbba\}$. Ici aussi, cette opération est associative. On peut donc définir $L^n$ comme étant la concaténation de $n$ copies du langage $L$. On a alors $L^0 = \{\varepsilon\}$.
 
 Enfin, l'étoile de Kleene $\star$ est une opération unaire qui au langage $L$ associe le plus petit langage qui contient $L$ et $\varepsilon$ et est stable pour la concaténation (tel que s'il contient $u$ et $v$ il contient aussi $uv$). De manière équivalente, l'étoile du langage $L$ est
-\[L^\star=\cup_{n\in\N} L^n.\]
-Par exemple, l'étoile du langage $\{a\}$ est $\{\varepsilon,a,aa,aaa,aaaa,..\}$.
+$$L^\star = \cup_{n\in\N} L^n$$
+Par exemple, l'étoile du langage $\{a\}$ est $\{\varepsilon, a, aa, aaa, aaaa, \dots\}$.
 
 On peut alors définir l'ensemble des langages réguliers sur $A$ : il s'agit du plus petit ensemble de langages qui contient les langages finis et qui est stable pour les trois opérations ci-dessus (à savoir, si $L$ et $M$ sont réguliers alors $L\cup M$, $LM$ et $L^\star$ sont réguliers également). Il s'agit encore de l'ensemble des langages qu'on peut obtenir à partir des langages finis en appliquant un nombre fini de fois des opérations régulières.
 
 \begin{exo}
-Les trois langages suivants sont-ils réguliers?
+Les trois langages suivants sont-ils réguliers ?
 \begin{enumerate}
-\item Le langage $\{abba,baab\}$.
+\item Le langage $\{abba, baab\}$.
 \item Le langage des mots formés d'un certain nombre de lettres $a$ suivis d'un certain nombre de lettres $b$.
-\item Le langage des mots sur $\{a,b\}$ contenant un nombre pair de $a$.
+\item Le langage des mots sur $\{a, b\}$ contenant un nombre pair de $a$.
 \end{enumerate}
 \end{exo}
 
@@ -47,7 +46,7 @@ Par définition, l'ensemble des langages réguliers est stable par union, concat
 Un automate fini peut être vu comme une "boîte noire", dont le fonctionnement est régi par certaines contraintes, qui prend comme arguments des mots sur un alphabet donné et qui renvoie "oui" ou "non". Il est alors possible d'associer à tout automate un langage, celui des mots auxquels l'automate répond "oui". Le processus inverse est plus compliqué, donc plus intéressant.
 
 \begin{dfn}
-Un \emph{automate fini} est la donnée d'un quintuple $(Q,q_0,F,\Sigma,\delta)$.
+Un \emph{automate fini} est la donnée d'un quintuple $(Q, q_0, F, \Sigma, \delta)$.
 \begin{itemize}
 \item $Q$ est l'ensemble des états de l'automate, c'est un ensemble fini.
 \item $q_0$ est l'état initial de l'automate, c'est un élément de $Q$.
@@ -56,11 +55,11 @@ Un \emph{automate fini} est la donnée d'un quintuple $(Q,q_0,F,\Sigma,\delta)$.
 \item $\delta$ est la fonction de transition, c'est une fonction de $Q\times\Sigma$ dans $Q$ qui décrit le comportement de l'automate.
 \end{itemize}
 
-Un \emph{chemin de lecture} d'un mot $w_1..w_n$ est la donnée d'états $q_1,..,q_n$ tels que
-\[\delta(q_{i-1},w_i)=q_i\;\forall i\in \{1,..,n\}.\]
+Un \emph{chemin de lecture} d'un mot $w_1\dots w_n$ est la donnée d'états $q_1, \dots, q_n$ tels que
+$$\delta(q_{i - 1}, w_i) = q_i\;\forall i\in \{1, \dots, n\}$$
 Un tel chemin est déterminé uniquement par le mot lu.
 
-Un mot de $\Sigma^\star$ est \emph{accepté} par un automate fini $\mathcal{A}$ si son chemin de lecture se termine dans un état final (i.e. si $q_n\in F$ avec les notations ci-dessus).
+Un mot de $\Sigma^\star$ est \emph{accepté} par un automate fini $\mathcal A$ si son chemin de lecture se termine dans un état final (i.e. si $q_n\in F$ avec les notations ci-dessus).
 \end{dfn}
 
 Intuitivement, un automate lit un mot d'entrée lettre par lettre, en se déplaçant d'un état à l'autre au fur et à mesure de sa lecture.
@@ -70,7 +69,7 @@ Comme dit dans l'introduction de cette section, on peut alors associer à un aut
 \begin{figure}
 \centering
 \begin{tikzpicture}[scale=1,
-%inner sep=0pt,
+%inner sep = 0pt,
 %minimum size= 0pt,
 %shorten >=1pt,
 node distance=3cm,
@@ -104,7 +103,7 @@ auto]
 \label{sk:fig:dfa1}
 \end{figure}
 
-On représente visuellement les automates par des graphes. Les états sont représentés par des cercles, doublés si l'état est final. Les transitions sont représentées par des flèches, étiquetées par la lettre correspondante. Une flèche sans origine ni étiquette indique l'état initial. L'automate de la figure \ref{sk:fig:dfa1} est un exemple d'une telle représentation. Par exemple, le chemin de lecture du mot $abbab$ est $(q_0),q_2,q_1,q_0,q_2,q_1$ et ce mot est accepté. On peut montrer que le langage accepté est le langage des mots qui contiennent un nombre impair de $b$ et jamais deux $a$ consécutifs, à savoir le langage régulier $(\{ab,b\}\{ab,b\})^\star \{ab,b\}\{\varepsilon,a\}$, ou encore $\{abab,bab,abb,bb\}^\star \{ab,aba,b,ba\}$.
+On représente visuellement les automates par des graphes. Les états sont représentés par des cercles, doublés si l'état est final. Les transitions sont représentées par des flèches, étiquetées par la lettre correspondante. Une flèche sans origine ni étiquette indique l'état initial. L'automate de la figure \ref{sk:fig:dfa1} est un exemple d'une telle représentation. Par exemple, le chemin de lecture du mot $abbab$ est $(q_0), q_2, q_1, q_0, q_2, q_1$ et ce mot est accepté. On peut montrer que le langage accepté est le langage des mots qui contiennent un nombre impair de $b$ et jamais deux $a$ consécutifs, à savoir le langage régulier $(\{ab, b\}\{ab, b\})^\star \{ab, b\}\{\varepsilon, a\}$, ou encore $\{abab, bab, abb, bb\}^\star \{ab, aba, b, ba\}$.
 
 \begin{rem}
 On peut également définir un automate fini en autorisant des fonctions de transition partielles, dont le domaine est une partie stricte de $Q\times\Sigma$. On peut en effet ajouter un nouvel état, appelé puits, duquel ne partent que des boucles et tel que toutes les transitions non définies arrivent à cet état. On est alors ramené au cas d'une fonction de transition totale.
@@ -113,14 +112,14 @@ On peut également définir un automate fini en autorisant des fonctions de tran
 Il est souvent utile de tolérer plusieurs possibilités de lecture, car cela permet par exemple d'explorer (de manière théorique) toutes les branches d'un arbre de possibilités en même temps. C'est l'objet de la notion suivante.
 
 \begin{dfn}
-Un \emph{automate fini non-déterministe} est la donnée d'un quintuple $(Q,I,F,\Sigma,\Delta)$. Ici,
+Un \emph{automate fini non-déterministe} est la donnée d'un quintuple $(Q, I, F, \Sigma, \Delta)$. Ici,
 \begin{itemize}
 \item $I$ est un ensemble d'états initiaux. C'est un sous-ensemble de $Q$.
 \item $\Delta$ est une relation de transition. C'est un sous-ensemble de $Q\times \Sigma^\star\times Q$.
 \end{itemize}
 Les autres éléments sont définis comme dans le cas déterministe.
 
-Un chemin de lecture d'un mot $w$ depuis un état $q_0$ vers un état $q_n$ est un $n$-uple de mots $u_1,..,u_n$ et un $n-1$-uple d'états $q_1,..,q_{n-1}$ avec $u_1..u_n=w$ et $(q_{i-1},u_i,q_i)\in\Delta\;\forall i\in \{1,..,n\}$.
+Un chemin de lecture d'un mot $w$ depuis un état $q_0$ vers un état $q_n$ est un $n$-uple de mots $u_1, \dots, u_n$ et un $n-1$-uple d'états $q_1, \dots, q_{n-1}$ avec $u_1, \dots, u_n = w$ et $(q_{i - 1}, u_i, q_i)\in\Delta\;\forall i\in \{1, \dots, n\}$.
 
 Un mot est accepté s'il existe un chemin de lecture de $w$ depuis $q_0$ vers $q_n$ pour des $q_0\in I$ et $q_n\in F$.
 \end{dfn}
@@ -130,7 +129,7 @@ L'idée est de pouvoir choisir son propre point de départ de la lecture, d'avoi
 \begin{figure}
 \centering
 \begin{tikzpicture}[scale=1,
-%inner sep=0pt,
+%inner sep = 0pt,
 %minimum size= 0pt,
 %shorten >=1pt,
 node distance=3cm,
@@ -152,29 +151,29 @@ auto]
 \end{figure}
 
 \begin{rem}
-On peut sans perte de généralité limiter la relation de transition à un sous-ensemble de $Q\times(\varepsilon\cup\Sigma)\times Q$, puisqu'on peut supprimer une transition étiquetée par $w_1..w_n$ de $q_0$ à $q_n$ et la remplacer par $n-1$ nouveaux états $q_1,..,q_{n-1}$ et $n$ nouvelles transitions de $q_{i-1}$ à $q_i$ étiquetées par $w_i$, et ce sans changer les mots acceptés par l'automate.
+On peut sans perte de généralité limiter la relation de transition à un sous-ensemble de $Q\times(\varepsilon\cup\Sigma)\times Q$, puisqu'on peut supprimer une transition étiquetée par $w_1\dots w_n$ de $q_0$ à $q_n$ et la remplacer par $n-1$ nouveaux états $q_1, \dots, q_{n-1}$ et $n$ nouvelles transitions de $q_{i-1}$ à $q_i$ étiquetées par $w_i$, et ce sans changer les mots acceptés par l'automate.
 \end{rem}
 
 Il est clair que si un langage est reconnu par un automate fini déterministe, il sera également reconnu par un automate fini non-déterministe (le même). L'inverse n'est pas évident, mais nous allons le montrer de manière constructive.
 
 \begin{pro}
-Si un langage $L$ sur un alphabet $\Sigma$ est tel qu'il existe un automate fini non-déterministe $\mathcal{A}$ reconnaissant $L$, alors il existe également un automate fini déterministe $\mathcal{B}$ reconnaissant $L$.
+Si un langage $L$ sur un alphabet $\Sigma$ est tel qu'il existe un automate fini non-déterministe $\mathcal A$ reconnaissant $L$, alors il existe également un automate fini déterministe $\mathcal{B}$ reconnaissant $L$.
 \end{pro}
 
 \begin{preuve}
-Soit $\mathcal{A}=(Q_A,I,F_A,\Sigma,\Delta)$ l'automate fini non-déterministe reconnaissant $L$. Par la remarque ci-dessus, on peut supposer que $\Delta$ est inclus dans $Q_A\times(\varepsilon\cup\Sigma)\times Q_A$. On propose alors la construction suivante d'un automate $\mathcal{B}=(Q_B,q_0,F_B,\Sigma,\delta)$ :
+Soit $\mathcal A=(Q_A, I, F_A, \Sigma, \Delta)$ l'automate fini non-déterministe reconnaissant $L$. Par la remarque ci-dessus, on peut supposer que $\Delta$ est inclus dans $Q_A\times(\varepsilon\cup\Sigma)\times Q_A$. On propose alors la construction suivante d'un automate $\mathcal{B} = (Q_B, q_0, F_B, \Sigma, \delta)$ :
 \begin{itemize}
 \item L'ensemble d'états $Q_B$ est l'ensemble $2^{Q_A}$ des sous-ensembles de $Q_A$.
 \item L'état initial $q_0$ est l'ensemble des états $r\in Q_A$ tels qu'il existe un chemin de lecture du mot $\varepsilon$ depuis un état de $I$ vers $r$ (à savoir l'ensemble des états atteignables depuis $I$ en utilisant uniquement des flèches étiquetées par $\varepsilon$).
 \item Un état de $Q_B$ est final si et seulement si cet état a une intersection non-vide avec $F$.
-\item L'image de $(q,a)$ par $\delta$, avec $q\in Q_B$ et $a\in\Sigma$, est l'ensemble des $r\in Q_A$ tels qu'il existe un chemin de lecture du mot $a$ depuis un état de $q$ vers $r$ (à savoir l'ensemble des états vers lesquels on peut se rendre depuis un état de $q$ en empruntant un certain nombre de flèches étiquetées par $\varepsilon$ et exactement une flèche étiquetée par $a$).
+\item L'image de $(q, a)$ par $\delta$, avec $q\in Q_B$ et $a\in\Sigma$, est l'ensemble des $r\in Q_A$ tels qu'il existe un chemin de lecture du mot $a$ depuis un état de $q$ vers $r$ (à savoir l'ensemble des états vers lesquels on peut se rendre depuis un état de $q$ en empruntant un certain nombre de flèches étiquetées par $\varepsilon$ et exactement une flèche étiquetée par $a$).
 \end{itemize}
-Il reste ensuite à montrer que ce nouvel automate $\mathcal{B}$ accepte bien le même langage que $\mathcal{A}$. Pour ce faire, on va montrer par récurrence sur la longueur de $w$ que l'état dans lequel on se trouve après la lecture de $w$ par $\mathcal{B}$ est exactement l'ensemble des $r\in Q_A$ tels qu'il existe un chemin de lecture de $w$ entre un état de $I$ et $r$.
+Il reste ensuite à montrer que ce nouvel automate $\mathcal{B}$ accepte bien le même langage que $\mathcal A$. Pour ce faire, on va montrer par récurrence sur la longueur de $w$ que l'état dans lequel on se trouve après la lecture de $w$ par $\mathcal{B}$ est exactement l'ensemble des $r\in Q_A$ tels qu'il existe un chemin de lecture de $w$ entre un état de $I$ et $r$.
 
 Cette affirmation est vraie si $w$ est de longueur $0$ ou $1$ vu la définition de $\mathcal{B}$. Supposons qu'elle est vraie pour tous les mots de longueur $l$ et soit $w$ de longueur $l+1$. Alors, $w$ s'écrit $ua$ avec $u$ de longueur $l$ et $a\in\Sigma$.
-On a alors que l'état $q'$ dans lequel on se trouve après la lecture de $w$ par $\mathcal{B}$ est $\delta(q,a)$ où $q$ est l'état dans lequel on se trouve après la lecture de $u$ par $\mathcal{B}$. Par hypothèse de récurrence, ce dernier est l'ensemble des $r\in Q_A$ tels qu'il existe un chemin de lecture de $u$ dans $\mathcal{A}$ entre un état de $I$ et $r$. De plus, par définition de $\delta$, $q'$ est l'ensemble des $r\in Q_A$ tels qu'il existe un chemin de lecture de $a$ entre un état de $q$ et $r'$. Tout chemin de lecture de $ua$ se décomposant en un chemin de lecture de $u$ et un chemin de lecture de $a$, on a la conclusion voulue.
+On a alors que l'état $q'$ dans lequel on se trouve après la lecture de $w$ par $\mathcal{B}$ est $\delta(q, a)$ où $q$ est l'état dans lequel on se trouve après la lecture de $u$ par $\mathcal{B}$. Par hypothèse de récurrence, ce dernier est l'ensemble des $r\in Q_A$ tels qu'il existe un chemin de lecture de $u$ dans $\mathcal A$ entre un état de $I$ et $r$. De plus, par définition de $\delta$, $q'$ est l'ensemble des $r\in Q_A$ tels qu'il existe un chemin de lecture de $a$ entre un état de $q$ et $r'$. Tout chemin de lecture de $ua$ se décomposant en un chemin de lecture de $u$ et un chemin de lecture de $a$, on a la conclusion voulue.
 
-Reprenons la preuve : on a alors qu'un mot $w$ est accepté par $\mathcal{B}$ si et seulement si on est dans un état de $F_B$ après la lecture de $w$ par $\mathcal{B}$. Un état de $F_B$ contient toujours un état $r\in F_A$. On a alors qu'il y a un chemin de lecture de $w$ entre un état de $I$ et $r$ vu le lemme montré par récurrence. Ceci indique bien que $w$ est accepté par $\mathcal{A}$. Réciproquement, si $w$ est accepté par $\mathcal{A}$ car il y a un chemin de lecture vers $r\in F_A$, l'état de $\mathcal{B}$ après lecture de $w$ contiendra $r$ et sera donc final pur $\mathcal{B}$. Ainsi, les deux automates acceptent les même mots, comme demandé.
+Reprenons la preuve : on a alors qu'un mot $w$ est accepté par $\mathcal{B}$ si et seulement si on est dans un état de $F_B$ après la lecture de $w$ par $\mathcal{B}$. Un état de $F_B$ contient toujours un état $r\in F_A$. On a alors qu'il y a un chemin de lecture de $w$ entre un état de $I$ et $r$ vu le lemme montré par récurrence. Ceci indique bien que $w$ est accepté par $\mathcal A$. Réciproquement, si $w$ est accepté par $\mathcal A$ car il y a un chemin de lecture vers $r\in F_A$, l'état de $\mathcal{B}$ après lecture de $w$ contiendra $r$ et sera donc final pur $\mathcal{B}$. Ainsi, les deux automates acceptent les même mots, comme demandé.
 \end{preuve}
 
 \begin{rem}
@@ -201,9 +200,9 @@ auto]
 (r_2) edge [bend right=360] node [below]{$\varepsilon$} (r_1);
 \end{tikzpicture}
 \hspace{0.05\textwidth}
-\begin{tikzpicture}[scale=0.8,
-every node/.style={scale=0.8},
-minimum size=0,
+\begin{tikzpicture}[scale = 0.8,
+every node/.style={scale = 0.8},
+minimum size = 0,
 node distance=2.5cm,
 auto]
 
@@ -250,77 +249,81 @@ Un langage est régulier si, et seulement si, il est reconnu par un automate fin
 \end{thm}
 
 \begin{preuve}
-Montrons d'abord que tout langage régulier est accepté par un automate fini non-déterministe. C'est clairement le cas des langages finis (en suivant une construction similaire à celle de la figure \ref{sk:fig:nfa1}). Il suffit donc de montrer que si deux langages $L$ et $M$ sont acceptés par deux automates $\mathcal{A}$ et $\mathcal{B}$, c'est également le cas de $L\cup M$, $LM$ et $L^\star$. On procède constructivement.
+Montrons d'abord que tout langage régulier est accepté par un automate fini non-déterministe. C'est clairement le cas des langages finis (en suivant une construction similaire à celle de la figure \ref{sk:fig:nfa1}). Il suffit donc de montrer que si deux langages $L$ et $M$ sont acceptés par deux automates $\mathcal A$ et $\mathcal{B}$, c'est également le cas de $L\cup M$, $LM$ et $L^\star$. On procède constructivement.
 
-Pour avoir un automate acceptant $L\cup M$, il suffit de prendre l'union des automates $\mathcal{A}$ et $\mathcal{B}$, à savoir l'automate dont l'ensemble d'états (d'états initiaux, d'états finaux) est l'union des deux ensembles d'états (initiaux, finaux) et la relation de transition est l'union des relations de transition. Alors, il existe un chemin de lecture d'un mot $w$ d'un état initial vers un état final dans l'union si et seulement si il existe un tel chemin dans un des deux automates, ce qui est bien ce qu'on veut.
+Pour avoir un automate acceptant $L\cup M$, il suffit de prendre l'union des automates $\mathcal A$ et $\mathcal{B}$, à savoir l'automate dont l'ensemble d'états (d'états initiaux, d'états finaux) est l'union des deux ensembles d'états (initiaux, finaux) et la relation de transition est l'union des relations de transition. Alors, il existe un chemin de lecture d'un mot $w$ d'un état initial vers un état final dans l'union si et seulement si il existe un tel chemin dans un des deux automates, ce qui est bien ce qu'on veut.
 
-Pour construire la concaténation des deux langages, on prend l'union des deux ensembles d'états, les états initiaux de $\mathcal{A}$, les états finaux de $\mathcal{B}$, et l'union des deux relations de transition ainsi que des transitions $(f,\varepsilon,i)$ pour tous $f$ final de $\mathcal{A}$ et $i$ initial de $\mathcal{B}$. Ainsi, un chemin de lecture d'un mot $w$ qui conduit à son acceptation emprunte forcément exactement une de ces nouvelles transitions, ce qui définit une expression de $w$ comme concaténation d'un mot de $L$ et d'un mot de $M$, comme désiré.
+Pour construire la concaténation des deux langages, on prend l'union des deux ensembles d'états, les états initiaux de $\mathcal A$, les états finaux de $\mathcal{B}$, et l'union des deux relations de transition ainsi que des transitions $(f, \varepsilon, i)$ pour tous $f$ final de $\mathcal A$ et $i$ initial de $\mathcal{B}$. Ainsi, un chemin de lecture d'un mot $w$ qui conduit à son acceptation emprunte forcément exactement une de ces nouvelles transitions, ce qui définit une expression de $w$ comme concaténation d'un mot de $L$ et d'un mot de $M$, comme désiré.
 
-Enfin, pour construire un automate acceptant $L^\star$, on introduit en plus des états de $\mathcal{A}$ un état $q$ initial et accepteur, on prive les états de $A$ de leur ancien statut éventuel, et on rajoute aux transitions de $\mathcal{A}$ des transitions $(q,\varepsilon,i)$ pour tous les anciens états initiaux $i$ de $\mathcal{A}$ et $(f,\varepsilon,q)$ pour tous les anciens états finaux $f$ de $\mathcal{A}$. Ainsi, un chemin de lecture de $w$ qui conduit à son acceptation est formé d'un certain nombre de boucles correspondant chacune à un mot accepté par $\mathcal{A}$, ce qui donne une décomposition de $w$ comme concaténation de mots de $L$. À nouveau, c'est ce qu'on cherchait. Dans les trois cas, on a montré que les mots acceptés par l'automate étaient dans le langage cherché, on peut également vérifier que tous les mots qui doivent être acceptés le sont en faisant construisant les chemins voulus.
+Enfin, pour construire un automate acceptant $L^\star$, on introduit en plus des états de $\mathcal A$ un état $q$ initial et accepteur, on prive les états de $A$ de leur ancien statut éventuel, et on rajoute aux transitions de $\mathcal A$ des transitions $(q,\varepsilon,i)$ pour tous les anciens états initiaux $i$ de $\mathcal A$ et $(f,\varepsilon,q)$ pour tous les anciens états finaux $f$ de $\mathcal A$. Ainsi, un chemin de lecture de $w$ qui conduit à son acceptation est formé d'un certain nombre de boucles correspondant chacune à un mot accepté par $\mathcal A$, ce qui donne une décomposition de $w$ comme concaténation de mots de $L$. À nouveau, c'est ce qu'on cherchait. Dans les trois cas, on a montré que les mots acceptés par l'automate étaient dans le langage cherché, on peut également vérifier que tous les mots qui doivent être acceptés le sont en faisant construisant les chemins voulus.
 Ainsi, les langages acceptés par automates finis forment une famille stable pour les opérations régulières et contenant les langages finis, cette famille contient donc celle des langages réguliers.
 %TODO : figures.
 
-Montrons maintenant que si $L$ est un langage accepté par un automate $\mathcal{A}$, alors $L$ est régulier. On procède par récurrence sur le nombre d'états de l'automate, qu'on suppose déterministe et pour lequel on autorise les fonctions de transition partielles. Si ce nombre d'états est 0 ou 1, le langage accepté est soit $\emptyset$, qui est fini, soit l'étoile d'un langage fini, celui des lettres qui étiquettent une boucle sur l'unique état. Passons à l'induction.
+Montrons maintenant que si $L$ est un langage accepté par un automate $\mathcal A$, alors $L$ est régulier. On procède par récurrence sur le nombre d'états de l'automate, qu'on suppose déterministe et pour lequel on autorise les fonctions de transition partielles. Si ce nombre d'états est 0 ou 1, le langage accepté est soit $\emptyset$, qui est fini, soit l'étoile d'un langage fini, celui des lettres qui étiquettent une boucle sur l'unique état. Passons à l'induction.
 
-Soit $q_0$ l'état initial. Pour chaque paire d'autres états $q$ et $r$, on considère l'automate obtenu en retirant de $\mathcal{A}$ l'état $q_0$ et toutes les transitions en partant ou y aboutissant, en nommant $q$ initial et $r$ final. Le langage accepté par cet automate modifié est régulier par hypothèse de récurrence (il y a un état de moins). Notons-le $L_{qr}$.
+Soit $q_0$ l'état initial. Pour chaque paire d'autres états $q$ et $r$, on considère l'automate obtenu en retirant de $\mathcal A$ l'état $q_0$ et toutes les transitions en partant ou y aboutissant, en nommant $q$ initial et $r$ final. Le langage accepté par cet automate modifié est régulier par hypothèse de récurrence (il y a un état de moins). Notons-le $L_{qr}$.
 
-Dans l'automate $\mathcal{A}$, un chemin de $q_0$ vers un état final $f$ prend forcément la forme de la concaténation d'un certain nombre éventuellement nul de boucles autour de $q_0$ ne passant pas par $q_0$ en dehors de leurs extrémités, puis d'un chemin de $q_0$ vers $f$ ne passant pas par $q_0$. Dès lors, le langage accepté par $\mathcal{A}$ est
-\[
+Dans l'automate $\mathcal A$, un chemin de $q_0$ vers un état final $f$ prend forcément la forme de la concaténation d'un certain nombre éventuellement nul de boucles autour de $q_0$ ne passant pas par $q_0$ en dehors de leurs extrémités, puis d'un chemin de $q_0$ vers $f$ ne passant pas par $q_0$. Dès lors, le langage accepté par $\mathcal A$ est
+$$
 \left( (\bigcup_{a\in\Sigma : \delta(q_0,a)=q_0} a) \cup
 (\bigcup_{\substack{a\in\Sigma,\,q=\delta(q_0,a)\\ b\in \Sigma,\, r\in Q: \delta(r,b)=q_0}} aL_{qr}b)
 \right) ^\star
 \left(
 \bigcup_{\substack{a\in\Sigma,\, q=\delta(q_0,a)\\ f\in F}} aL_{qf}
 \right)
-\]
+$$
 qui est bien régulier, puisqu'on n'a fait que des unions, concaténations et étoiles de langages réguliers.
 \end{preuve}
 
 Ainsi, nous avons montré que la reconnaissabilité par automate fini et la régularité forment une seule et même notion, qui fournit un échelon de complexité adapté pour les langages dont la structure est "non-triviale mais assez simple".
 
+
 \subsubsection{Exercices}
 
+
 \begin{exo}
-Si $L$ et $M$ sont deux langages réguliers sur un alphabet $\Sigma$, les langages suivants sont-ils réguliers?
+Si $L$ et $M$ sont deux langages réguliers sur un alphabet $\Sigma$, les langages suivants sont-ils réguliers ?
 \begin{enumerate}
 \item Le complémentaire de $L$, $L^c$
 \item L'intersection de $L$ et $M$
 \item Le langage des préfixes de $L$,
-\[Pre(L)=\{u\in\Sigma^\star : \exists v\in\Sigma^\star ,\, uv\in L\}\]
+$$Pre(L)=\{u\in\Sigma^\star : \exists v\in\Sigma^\star ,\, uv\in L\}$$
 \end{enumerate}
 \end{exo}
 
+
 \begin{exo}
 \begin{enumerate}
-\item Décrire un automate fini déterministe sur le langage $\{a,n,s\}$ qui accepte un mot si, et seulement si, celui-ci contient le mot "ananas".
+\item Décrire un automate fini déterministe sur le langage $\{a, n, s\}$ qui accepte un mot si, et seulement si, celui-ci contient le mot "ananas".
 \item Si $L$ est un langage régulier, décrire un automate qui accepte un mot si et seulement si celui-ci contient un mot de $L$.
 \end{enumerate}
 \end{exo}
 
+
 \begin{exo}
-On rappelle que, si $n$ est un nombre naturel, l'écriture de $n$ en base $b$, chiffre le plus significatif d'abord, est le mot $w=w_l..w_0$ sur l'alphabet $\{0,..,b-1\}$ qui est tel que $w_l\neq 0$ et $\sum_{i=0}^l w_ib^i=n$. L'écriture de $n$ en base $b$, chiffre le moins significatif d'abord est alors $w_0..w_l$. Par convention, l'écriture de 0 est $\varepsilon$ dans les deux cas.
+On rappelle que, si $n$ est un nombre naturel, l'écriture de $n$ en base $b$, chiffre le plus significatif d'abord, est le mot $w=w_l\dots w_0$ sur l'alphabet $\{0, \dots, b-1\}$ qui est tel que $w_l\ne 0$ et $\sum_{i = 0}^l w_ib^i=n$. L'écriture de $n$ en base $b$, chiffre le moins significatif d'abord est alors $w_0\dots w_l$. Par convention, l'écriture de 0 est $\varepsilon$ dans les deux cas.
 
 \begin{enumerate}
-\item Décrire un automate acceptant exactement les représentations en base 3 des nombres pairs, chiffre le plus significatif d'abord, puis un automate faisant de même chiffre le moins significatif d'abord. Si nécessaire, vous pouvez admettre les représentations qui contiennent des zéros de tête (resp. de queue).
-\item Faire de même pour les multiples de 7 en base 10.
+\item Décrire un automate acceptant exactement les représentations en base $3$ des nombres pairs, chiffre le plus significatif d'abord, puis un automate faisant de même chiffre le moins significatif d'abord. Si nécessaire, vous pouvez admettre les représentations qui contiennent des zéros de tête (resp. de queue).
+\item Faire de même pour les multiples de $7$ en base $10$.
 \end{enumerate}
 
 Ces constructions se généralisent à n'importe quelle base et n'importe quel critère de divisibilité.
 \end{exo}
+
 
 \begin{exo}
 Dans cet exercice, on considère des représentations en base 2, chiffre le moins significatif d'abord. On permet également de laisser des zéros de queue. Un nombre est dit odieux si sa représentation contient un nombre impair de chiffres 1.
 
 \begin{enumerate}
 \item Décrire un automate acceptant exactement les représentations binaires des nombres odieux.
-\item On note $\Sigma=\{0,1\}^3$. Décrire un automate sur $\Sigma$ qui accepte les mots de triplets tels que les troisièmes composantes forment la représentation d'un nombre qui est la somme des nombres représentés par les deux premières composantes. Par exemple, le mot
-\[(0,0,0)(1,0,1)(0,1,1)(1,1,0)(0,0,1)\]
-sera accepté : les trois composantes sont les représentations de 10, 12 et 22 respectivement, et on a bien $10+12=22$.
+\item On note $\Sigma = \{0, 1\}^3$. Décrire un automate sur $\Sigma$ qui accepte les mots de triplets tels que les troisièmes composantes forment l'écriture binaire d'un nombre qui est la somme des nombres représentés par les deux premières composantes. Par exemple, le mot
+$$(0, 0, 0)(1, 0, 1)(0, 1, 1)(1, 1, 0)(0, 0, 1)$$
+sera accepté : les trois composantes sont les représentations de $\overline{01010}^2 = 10$, $\overline{01100}^2 = 12$ et $\overline{10110}^2 = 22$ respectivement, et on a bien $10 + 12 = 22$.
 \item En déduire un automate sur $\Sigma$ qui accepte les mots de triplets tels que les deux premières composantes sont des représentations de nombres odieux et la troisième est la représentation de la somme des deux premières.
-\item En déduire un automate sur $\{0,1\}$ qui accepte les représentations de nombres qui sont sommes de deux nombres odieux.
-\item Comment répondre à la question "Quels nombres sont sommes de deux nombres odieux"?
+\item En déduire un automate sur $\{0, 1\}$ qui accepte les représentations de nombres qui sont sommes de deux nombres odieux.
+\item Comment répondre à la question "Quels nombres sont sommes de deux nombres odieux" ?
 \end{enumerate}
-
 \end{exo}
 
 \subsubsection{Solutions}
@@ -335,7 +338,7 @@ sera accepté : les trois composantes sont les représentations de 10, 12 et 22 
 
 \begin{sol}
 \begin{enumerate}
-\item Notons $\mathcal{A}$ un automate fini déterministe reconnaissant $L$. Alors l'automate $\mathcal{A'}$ obtenu en remplaçant l'état final de $\mathcal{A}$ par son complémentaire accepte le complémentaire de $L$, qui est donc régulier.
+\item Notons $\mathcal A$ un automate fini déterministe reconnaissant $L$. Alors l'automate $\mathcal A'$ obtenu en remplaçant l'état final de $\mathcal A$ par son complémentaire accepte le complémentaire de $L$, qui est donc régulier.
 \item Le langage est régulier car il s'agit de $(L^c\cap M^c)^c$. On peut également construire directement un automate l'acceptant, et la figure \ref{sk:fig:dfa1} est un exemple de cette construction : on prend le produit cartésien des états et on définit tout "composante à composante", par exemple les états finaux sont ceux dont les deux composantes sont finales.
 \item Il s'agit encore d'un langage régulier. Pour obtenir un automate fini correspondant, on part d'un automate fini pour $L$ et on rend finaux tous les états à partir duquel il y a un chemin (dans l'automate vu en tant que graphe orienté) vers un état final.
 \end{enumerate}
@@ -346,9 +349,9 @@ sera accepté : les trois composantes sont les représentations de 10, 12 et 22 
 \item L'automate suivant convient :
 
 \begin{tikzpicture}
-[scale=0.8,
-every node/.style={scale=0.8},
-minimum size=0,
+[scale = 0.8,
+every node/.style={scale = 0.8},
+minimum size = 0,
 node distance=1.7cm,
 auto]
 
@@ -389,18 +392,18 @@ auto]
 ;
 \end{tikzpicture}
 
-\item Soit $\mathcal{A}$ un automate fini qui accepte $L$. On apporte les modifications suivantes à $\mathcal{A}$. D'une part, on crée un nouvel état $i$ qui devient l'unique état initial, on munit cet état de transitions vers lui-même étiquetées par chaque lettre de l'alphabet et de transitions vers chaque ancien état initial étiquetées par $\varepsilon$. D'autre part, on crée un nouvel état $f$ qui devient l'unique état final, on munit cet état de transitions vers lui-même étiquetées par chaque lettre de l'alphabet et de transitions depuis chaque ancien état final étiquetées par $\varepsilon$. L'automate obtenu est alors celui cherché.
+\item Soit $\mathcal A$ un automate fini qui accepte $L$. On apporte les modifications suivantes à $\mathcal A$. D'une part, on crée un nouvel état $i$ qui devient l'unique état initial, on munit cet état de transitions vers lui-même étiquetées par chaque lettre de l'alphabet et de transitions vers chaque ancien état initial étiquetées par $\varepsilon$. D'autre part, on crée un nouvel état $f$ qui devient l'unique état final, on munit cet état de transitions vers lui-même étiquetées par chaque lettre de l'alphabet et de transitions depuis chaque ancien état final étiquetées par $\varepsilon$. L'automate obtenu est alors celui cherché.
 \end{enumerate}
 \end{sol}
 
 \begin{sol}
 \begin{enumerate}
-\item On peut montrer qu'un nombre en base 3 est pair si et seulement si la somme de ses chiffres l'est (il s'agit du même argument que pour les nombres multiples de 3 en base 10). On peut ensuite créer un automate qui retient la somme des chiffres déjà lus, modulo 2. L'automate suivant fonctionne si on tolère les zéros de tête ou de queue :
+\item On peut montrer qu'un nombre en base $3$ est pair si et seulement si la somme de ses chiffres l'est (il s'agit du même argument que pour les nombres multiples de $3$ en base $10$). On peut ensuite créer un automate qui retient la somme des chiffres déjà lus, modulo $2$. L'automate suivant fonctionne si on tolère les zéros de tête ou de queue :
 
 \begin{tikzpicture}
-[scale=0.8,
-every node/.style={scale=0.8},
-minimum size=0,
+[scale = 0.8,
+every node/.style={scale = 0.8},
+minimum size = 0,
 node distance=1.7cm,
 auto]
 
@@ -418,12 +421,12 @@ auto]
 ;
 \end{tikzpicture}
 
-Pour refuser les zéros de tête ou de queue, il faut faire le produit, comme expliqué à la solution 2, avec un des automates suivants :
+Pour refuser les zéros de tête ou de queue, il faut faire le produit, comme expliqué à la solution $2$, avec un des automates suivants :
 
 \begin{tikzpicture}
-[scale=0.8,
-every node/.style={scale=0.8},
-minimum size=0,
+[scale = 0.8,
+every node/.style={scale = 0.8},
+minimum size = 0,
 node distance=1.7cm,
 auto]
 
@@ -443,9 +446,9 @@ auto]
 \end{tikzpicture}
 \hspace{0.05\textwidth}
 \begin{tikzpicture}
-[scale=0.8,
-every node/.style={scale=0.8},
-minimum size=0,
+[scale = 0.8,
+every node/.style={scale = 0.8},
+minimum size = 0,
 node distance=1.7cm,
 auto]
 
@@ -463,13 +466,13 @@ auto]
 ;
 \end{tikzpicture}
 
-\item Commençons par la construction chiffre le moins significatif d'abord. On sait que les valeurs des puissances de 10 modulo 7\footnote{On se permettra d'abuser du vocabulaire et de désigner le reste de la division par 7 comme la valeur modulo 7.} sont $1,3,2,6,4,5,1,..$. Notons $c_i$ le reste de la division de $10^i$ par 7. Si la représentation de $n$ en base 10 est $w_0..w_l$, on sait alors que $n$ sera multiple de 7 si et seulement si $\sum_{i=0}^l w_ic_i$ l'est. On va donc construire un automate qui, dans son état, retient deux informations : l'endroit où on en est dans le cycle $1,3,2,6,4,5$ et la valeur actuelle de $\sum_{i=0}^l w_ic_i$ modulo 7.
+\item Commençons par la construction du chiffre le moins significatif d'abord. On sait que les valeurs des puissances de $10$ modulo 7\footnote{On se permettra d'abuser du vocabulaire et de désigner le reste de la division par $7$ comme la valeur modulo $7$.} sont $1, 3, 2, 6, 4, 5, 1, \dots$. Notons $c_i$ le reste de la division de $10^i$ par 7. Si la représentation de $n$ en base $10$ est $w_0\dots w_l$, on sait alors que $n$ sera multiple de 7 si et seulement si $\sum_{i = 0}^l w_ic_i$ l'est. On va donc construire un automate qui, dans son état, retient deux informations : l'endroit où on en est dans le cycle $1, 3, 2, 6, 4, 5$ et la valeur actuelle de $\sum_{i = 0}^l w_ic_i$ modulo $7$.
 
-Dès lors, l'automate cherché a pour ensemble d'états $\{0,..,5\}\times\{0,..,6\}$. L'état initial est $(0,0)$, les états finaux sont $(0,0),(1,0),..,(5,0)$ et on a $\delta((i,j),k)=(i+1 \mod 6, j+kc_i \mod 7)$. On peut alors vérifier par récurrence sur $l$ que l'état de l'automate après avoir lu $w=w_0..w_l$ est $(l+1\mod 6, w\mod 7)$, toujours en abusant des notations modulo. C'est donc bien l'automate désiré.
+Dès lors, l'automate cherché a pour ensemble d'états $\{0, \dots, 5\}\times\{0, \dots, 6\}$. L'état initial est $(0, 0)$, les états finaux sont $(0, 0),(1, 0), \dots, (5, 0)$ et on a $\delta((i, j),k) = (i + 1 \mod 6, j + kc_i \mod 7)$. On peut alors vérifier par récurrence sur $l$ que l'état de l'automate après avoir lu $w = w_0\dots w_l$ est $(l+1\mod 6, w\mod 7)$, toujours en abusant des notations de modulo. C'est donc bien l'automate désiré.
 
-Pour la construction chiffre le plus significatif d'abord, on peut constater que
-\[\sum_{i=0}^l w_i10^i= (\dots((w_l.10+w_{l-1}).10+w_{l-2})\dots).10+w_0.\]
-Dès lors, on peut construire un automate qui ne retient que la valeur modulo 7 du mot déjà lu. Un tel automate a pour ensemble d'états $\{0,..,6\}$, l'état $0$ étant initial et final, et on pose $\delta(i,j)=i.10+j \mod 7$. Ainsi, on peut montrer par récurrence qu'après avoir lu $w_l..w_k$ l'automate est dans l'état qui est la valeur de ce nombre modulo 7, et on a bien le langage cherché.
+Pour la construction du chiffre le plus significatif d'abord, on peut constater que
+$$\sum_{i = 0}^l w_i10^i = (\dots((w_l\dots 10 + w_{l-1})\cdot 10 + w_{l - 2})\dots)\cdot 10 + w_0$$
+Dès lors, on peut construire un automate qui ne retient que la valeur modulo $7$ du mot déjà lu. Un tel automate a pour ensemble d'états $\{0, \dots, 6\}$, l'état $0$ étant initial et final, et on pose $\delta(i, j) = i \cdot 10 + j \mod 7$. Ainsi, on peut montrer par récurrence qu'après avoir lu $w_l\dots w_k$ l'automate est dans l'état qui est la valeur de ce nombre modulo $7$, et on a bien le langage cherché.
 \end{enumerate}
 \end{sol}
 
@@ -477,9 +480,9 @@ Dès lors, on peut construire un automate qui ne retient que la valeur modulo 7 
 \begin{enumerate}
 \item L'automate suivant convient :
 \begin{tikzpicture}
-[scale=0.8,
-every node/.style={scale=0.8},
-minimum size=0,
+[scale = 0.8,
+every node/.style={scale = 0.8},
+minimum size = 0,
 node distance=1.7cm,
 auto]
 
@@ -499,9 +502,9 @@ auto]
 \item L'automate suivant convient. L'idée est de retenir s'il y a ou non un report dans l'addition qu'on est en train d'effectuer. On commence sans report, le report et les chiffres qu'on lit permettent de déterminer si l'addition est correcte et le report suivant, et on doit finir sans report.
 
 \begin{tikzpicture}
-[scale=0.8,
-every node/.style={scale=0.8},
-minimum size=0,
+[scale = 0.8,
+every node/.style={scale = 0.8},
+minimum size = 0,
 node distance=1.7cm,
 auto]
 
@@ -518,12 +521,12 @@ auto]
 ;
 \end{tikzpicture}
 
-\item En combinant les deux points précédents, on construit un automate qui retient trois choses dans ses états : le caractère odieux ou non de ce qu'on a lu à la première ligne, puis de ce qu'on a lu à la deuxième ligne, et enfin la présence ou non d'un report dans l'addition. On prend donc pour ensemble d'états $\{n,y\}^3$. On obtient l'automate suivant.
+\item En combinant les deux points précédents, on construit un automate qui retient trois choses dans ses états : le caractère odieux ou non de ce qu'on a lu à la première ligne, puis de ce qu'on a lu à la deuxième ligne, et enfin la présence ou non d'un report dans l'addition. On prend donc pour ensemble d'états $\{n, y\}^3$. On obtient l'automate suivant.
 
 
-\begin{tikzpicture}[scale=0.8,
-every node/.style={scale=0.8},
-minimum size=0,
+\begin{tikzpicture}[scale = 0.8,
+every node/.style={scale = 0.8},
+minimum size = 0,
 node distance=3.5cm,
 auto]
 
@@ -583,9 +586,9 @@ auto]
 \item Cette fois, le choix des deux termes de la somme est libre, on va donc se servir du non-déterminisme pour deviner ces termes. Considérons l'automate suivant.
 
 
-\begin{tikzpicture}[scale=0.8,
-every node/.style={scale=0.8},
-minimum size=0,
+\begin{tikzpicture}[scale = 0.8,
+every node/.style={scale = 0.8},
+minimum size = 0,
 node distance=3.5cm,
 auto]
 
@@ -647,9 +650,9 @@ D'une part, si un nombre est somme de deux nombres odieux, le triplet des repré
 \item Puisqu'on a un automate qui accepte exactement les représentations des nombres cherchés, on peut trouver son langage, ce qui répondra à la question. La méthode décrite dans la preuve du théorème de Kleene est une façon de faire, ce n'est pas la seule. On peut également déterminiser l'automate et le simplifier en espérant avoir un résultat suffisamment simple pour que le langage puisse en être déduit. Tous ces calculs peuvent se faire à la main, mais aussi par ordinateur. On trouvera que l'automate précédent est équivalent à l'automate suivant :
 
 \begin{tikzpicture}
-[scale=0.8,
-every node/.style={scale=0.8},
-minimum size=0,
+[scale = 0.8,
+every node/.style={scale = 0.8},
+minimum size = 0,
 node distance=1.7cm,
 auto]
 
@@ -678,6 +681,6 @@ auto]
 ;
 \end{tikzpicture}
 
-De là, on vérifie que tous les nombres sont sommes de deux nombres odieux, sauf 0 et les nombres de la forme $2^{2i+1}-1$ pour $i$ naturel.
+De là, on vérifie que tous les nombres sont sommes de deux nombres odieux, sauf $0$ et les nombres de la forme $2^{2i + 1} - 1$ pour $i$ naturel.
 \end{enumerate}
 \end{sol}
