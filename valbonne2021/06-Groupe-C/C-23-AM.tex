@@ -1,0 +1,567 @@
+Ce cours reprend la partie théorique du fantasmagorique cours de Valbonne 2018, Groupe B, Puissance d’un point et axes radicaux.
+
+
+\subsubsection{Exercices}
+
+%1
+\begin{exo}
+Soient $\omega_1$ et $\omega_2$ deux cercles, $t$ et $t'$ deux tangentes aux cercles. On note $T_1$ et $T_2$ les points de tangence de $t$ avec $\omega_1$ et $\omega_2$ respectivement et $T_1'$ et $T_2'$ les points de tangence avec $t'$, $M$ le milieu de $[T_1T_2]$, $P_1$ et $P_2$ les intersections respectives de $(MT_1')$ et $(MT_2')$ avec $\omega_1$ et $\omega_2$. Montrer que le quadrilatère $P_1P_2T_1'T_2'$ est cyclique.
+\end{exo}
+
+%2
+\begin{exo}
+Soit $ABC$ un triangle, on note $H_A$ le pied de la hauteur issue de $A$ sur $[BC]$. On note $P$ et $Q$ les projections orthogonales de $H_A$ sur les côtés $[AB]$ et $[AC]$. Montrer que les quatres points $B$, $P$, $Q$ et $C$ sont sur un même cercle.
+\end{exo}
+
+%3
+\begin{exo}
+Soit $\omega$ un cercle de diamètre $[AB]$. On note $O$ un point sur $\omega$. Le projeté orthogonal de $O$ sur $[AB]$ est $H$. Le cercle de centre $O$ et de rayon $OH$ recoupe $\omega$ en $X$ et $Y$. Montrer que $X$, $Y$ et le milieu de $[OH]$ sont alignés.
+\end{exo}
+
+%4
+\begin{exo}
+Soit $ABC$ un triangle. On note $M_B$ et $M_C$ les milieux des côtés $[AC]$ et $[AB]$. On regarde $\omega_1$ et $\omega_2$ les cercles de diamètres respectifs $BM_B$ et $CM_C$. On note $X$ et $Y$ les intersections de $\omega_1$ et $\omega_2$. Montrer que $X$, $Y$ et $A$ sont alignés.
+\end{exo}
+
+%5
+\begin{exo}
+Soit $ABC$ un triangle, on choisit deux points $D$ et $E$ sur $[BC]$ avec $B$, $D$, $E$ et $C$ dans cet ordre. On prend alors $F$ tel que les triangles $ABC$ et $FDE$ soient semblables. Les cercles $BEF$ et $CDF$ se coupent une deuxième fois en $P$. Montrer que les points $A$, $F$ et $P$ sont alignés.
+\end{exo}
+
+%6
+\begin{exo}[Cercle de Conway]
+Soit $ABC$ un triangle, on place les points $A_1$ et $A_2$ de telle sorte que $AA_1=AA_2=BC$, $A_1 \in (AB)$ et $A_2 \in (AC)$ du côté opposé de $B$ et $C$ par rapport à $A$, on définit $B_1$, $B_2$, $C_1$ et $C_2$ de manière similaire. Montrer que les points $A_1$, $A_2$, $B_1$, $B_2$, $C_1$ et $C_2$ sont sur un même cercle.
+\end{exo}
+
+%7
+\begin{exo}
+Soit $ABC$ un triangle, on note $H_A$ le pied de la hauteur issue de $A$. On note $M_B$ et $M_C$ les milieux respectifs de $[AC]$ et $[AB]$. On note alors $Z$ l'intersection des cercles circonscrits des triangles $BM_BH_A$ et $CM_CH_A$. On note $M$ le milieu de $[M_BM_C]$. Montrer que $H_A$, $M$ et $Z$ sont alignés.
+\end{exo}
+
+%8
+\begin{exo}
+Soit $ABCD$ un trapèze avec $(AB)$ parallèle à $(CD)$, on trace les cercles $\omega_1$, $\omega_2$ de diamètres respectifs $[DA]$ et $[BC]$. $\omega_1$ et $\omega_2$ se coupent en $X$ et $Y$. Montrer que la droite $(XY)$ passe par l'intersection des diagonales $(AC)$ et $(BD)$.
+\end{exo}
+
+%9
+\begin{exo}
+Soit $\omega$ et $\Omega$ deux cercles disjoints de centres respectifs $O_1$ et $O_2$. On choisit $t$ une tangente commune extérieure à $\omega$ et $\Omega$ qui les touche respectivement en $T_1$ et $T_2$ et $M$ est le milieu de $[T_1T_2]$. Le segment $[O_1O_2]$ coupe $\omega$ et $\Omega$ en $X$ et $Y$ respectivement. On note $Z$ l'intersection de $(T_1X)$ avec $(T_2Y)$. Montrer que la droite $(ZM)$ est perpendiculaire à la droite $(O_1O_2)$.
+\end{exo}
+
+%10
+\begin{exo}
+Soit $ABC$ un triangle. Soit $P$ un point dans le triangle et $Q$ et $R$ sur les côtés $(AB)$ et $(AC)$ respectivement de telle sorte que $BCQR$ soit cyclique. On note $X$ (resp. $Y$) l'intersection du cercle circonscrit de $QAP$ (resp. $PRA$) et du cercle circonscrit au quadrilatère $BCQR$. On note $Z$ l'intersection des droites $(BY)$ et $(CX)$. Montrer que les points $P$, $A$ et $Z$ sont alignés.
+\end{exo}
+
+%11
+\begin{exo}
+Soit $\omega$ un cercle et $[AB]$ une corde de ce cercle. On trace, du même côté de $(AB)$ deux cercles $\omega_1$ et $\omega_2$ tangents à $(AB)$ et à $\omega$, qui se coupent en $X$ et $Y$. Montrer que la droite $(XY)$ recoupe l'arc $\wideparen{AB}$ en son milieu.
+\end{exo}
+
+
+\subsubsection{Solutions}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\tkzInit[ymin=-6,ymax=5,xmin=-8,xmax=8]
+\tkzClip
+
+\tkzDefPoint(-3, 0){O1}
+\tkzDefPoint(3, 0){O2}
+\tkzExtSimilitudeCenter(O1, 2 cm)(O2, 3 cm) \tkzGetPoint{Z}
+\tkzDefTangent[from with R = Z](O1, 2 cm) \tkzGetPoints{T1'}{T1}
+\tkzDefTangent[from with R = Z](O2, 3 cm) \tkzGetPoints{T2'}{T2}
+\tkzDefMidPoint(T1,T2) \tkzGetPoint{M}
+\tkzInterLC(M,T1')(O1,T1') \tkzGetFirstPoint{P1}
+\tkzInterLC(M,T2')(O2,T2') \tkzGetSecondPoint{P2}
+
+\tkzDrawPoints(T1, T1', T2, T2', M, P1, P2)
+\tkzLabelPoint(T1){$T_1$}
+\tkzLabelPoint(T2){$T_2$}
+\tkzLabelPoint(T1'){$T_1'$}
+\tkzLabelPoint(T2'){$T_2'$}
+\tkzLabelPoint(P1){$P_1$}
+\tkzLabelPoint(P2){$P_2$}
+\tkzLabelPoint(M){$M$}
+\tkzMarkSegments[mark=s|](T1,M M,T2)
+\tkzDrawCircle[R](O1, 2 cm)
+\tkzDrawCircle[R](O2, 3 cm)
+\tkzDrawLine(T1,T2)
+\tkzDrawLine(T1',T2')
+\tkzDrawSegments(M,T1' M,T2')
+\tkzDrawCircle[circum,dashed](P1,P2,T1')
+\end{tikzpicture}
+\end{center}
+
+$M$ est sur l'axe radical de $\omega_1$ et $\omega_2$ car $P_{\omega_1} \left(M\right) = MT_1^2 = MT_2^2 = P_{\omega_2} \left(M\right)$. Donc $MP_1 \cdot MT_1 ' = P_{\omega_1} \left(M\right) = P_{\omega_2} \left(M\right) = MP_2 \cdot MT_2 '$, ce qui conclut par puissance du point $M$.
+\end{sol}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\tkzInit[ymin=-6,ymax=5,xmin=-8,xmax=8]
+\tkzClip
+
+\tkzDefPoints{2/4/A,-5/-4/B,5/-4/C}
+\tkzDefLine[perpendicular = through A](B,C) \tkzGetPoint{ha}
+\tkzInterLL(A,ha)(B,C) \tkzGetPoint{Ha}
+\tkzDefLine[perpendicular = through Ha](A,B) \tkzGetPoint{p}
+\tkzInterLL(Ha,p)(A,B) \tkzGetPoint{P}
+\tkzDefLine[perpendicular = through Ha](A,C) \tkzGetPoint{q}
+\tkzInterLL(Ha,q)(A,C) \tkzGetPoint{Q}
+
+\tkzDrawPoints(A,B,C,Ha,P,Q)
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint(C){$C$}
+\tkzLabelPoint(Ha){$H_A$}
+\tkzLabelPoint(P){$P$}
+\tkzLabelPoint(Q){$Q$}
+\tkzDrawSegments(A,B B,C C,A A,Ha Ha,P Ha,Q)
+\tkzMarkRightAngle(B,Ha,A)
+\tkzMarkRightAngle(B,P,Ha)
+\tkzMarkRightAngle(C,Q,Ha)
+\tkzDrawCircle[circum,dashed](B,C,P)
+\end{tikzpicture}
+\end{center}
+
+Les triangles $A P H_A$ et $A H_A B$ ont tous les deux un angle droit et un angle égal à $\widehat{BAH_A}$, ils sont donc semblables. Notament, $\frac{AP}{AH_A} = \frac{AH_A}{AB}$ soit $AP \cdot AB = AH_A^2$. De même, $AQ \cdot AC = AH_A^2$. Donc, $AP \cdot AB = AQ \cdot AC$ ce qui conclut par puissance du point $A$.
+\end{sol}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\tkzInit[ymin=-6,ymax=5,xmin=-8,xmax=8]
+\tkzClip
+
+\tkzDefPoints{0/-2/O',-4/-2/A,4/-2/B}
+\tkzDefPoints{-2.5/0/oo}
+\tkzDefLine[perpendicular = through oo](A,B) \tkzGetPoint{o}
+\tkzInterLL(oo,o)(A,B) \tkzGetPoint{H}
+\tkzInterLC(oo,o)(O',B) \tkzGetPointsC{O}
+\tkzInterLC(oo,o)(O,H) \tkzGetSecondPoint{D}
+\tkzInterCC(O',A)(O,H) \tkzGetPoints{X}{Y}
+\tkzDefMidPoint(O,H) \tkzGetPoint{M}
+\tkzDefMidPoint(O,D) \tkzGetPoint{n}
+\tkzDefMidPoint(H,C) \tkzGetPoint{nn}
+
+\tkzDrawPoints(A,B,O,H,X,Y,M,C,D,n,nn)
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint(O){$O$}
+\tkzLabelPoint(H){$H$}
+\tkzLabelPoint[left](X){$X$}
+\tkzLabelPoint(Y){$Y$}
+\tkzLabelPoint(M){$M$}
+\tkzLabelPoint(C){$C$}
+\tkzLabelPoint(D){$D$}
+\tkzDrawCircle(O',B)
+\tkzDrawSegment(A,B)
+\tkzDrawCircle(O,H)
+\tkzDrawSegment(C,D)
+\tkzMarkSegments[mark=s|](D,n n,O O,M M,H H,nn nn,C)
+\end{tikzpicture}
+\end{center}
+
+Soit $M$ le milieu de $OH$. On nomme $D$ l'intersection, autre que $H$, de $\left(OH\right)$ avec le cercle de centre $O$ et de rayon $OH$. On nomme $C$ l'intersection, autre que $O$, de $\left(OH\right)$ et du cercle de diamètre $AB$.
+
+Il faut montrer que $M$ est sur l'axe radical des deux cercles. Pour cela, montrons que $M$ a la même puissance par rapport aux deux cercles. On note $d=MO$. On a $MH=d$ et $OH=2d$, mais on a aussi $HC=MO=2d$ par symétrie d'axe $\left(AB\right)$ et $OD = OM = 2d$ par symétrie de centre $O$. On a donc $MO \cdot MC = d \cdot 3d = 3d^2$ et $MH \cdot MD = d \cdot 3d = 3d^2$, d'ou $MO \cdot MC = MH \cdot MD$, ce qui conclut par puissance du point $M$.
+\end{sol}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\tkzInit[ymin=-6,ymax=5,xmin=-8,xmax=8]
+\tkzClip
+
+\tkzDefPoints{2/4/A,-5/-4/B,5/-4/C}
+\tkzDefMidPoint(A,C) \tkzGetPoint{Mb}
+\tkzDefMidPoint(A,B) \tkzGetPoint{Mc}
+\tkzDefMidPoint(B,Mb) \tkzGetPoint{Ob}
+\tkzDefMidPoint(C,Mc) \tkzGetPoint{Oc}
+\tkzInterLC(A,C)(Ob,B) \tkzGetSecondPoint{Hb}
+\tkzInterLC(A,B)(Oc,C) \tkzGetSecondPoint{Hc}
+\tkzInterCC(Ob,B)(Oc,C) \tkzGetPoints{X}{Y}
+
+\tkzDrawPoints(A,B,C,Mb,Mc,Hb,Hc,X,Y)
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint(C){$C$}
+\tkzLabelPoint(Mb){$M_B$}
+\tkzLabelPoint(Mc){$M_C$}
+\tkzLabelPoint(Hb){$H_B$}
+\tkzLabelPoint(Hc){$H_C$}
+\tkzLabelPoint[above](X){$X$}
+\tkzLabelPoint[above](Y){$Y$}
+\tkzDrawSegments(A,B B,C C,A B,Hb C,Hc)
+\tkzDrawCircle(Oc,C)
+\tkzDrawCircle(Ob,B)
+\tkzMarkRightAngle(B,Hb,Mb)
+\tkzMarkRightAngle(C,Hc,Mc)
+\tkzDrawLine[dashed](A,Y)
+\end{tikzpicture}
+\end{center}
+
+On va montrer que $A$ est sur le centre radical des cercles de diamètres $BM_B$ et $CM_C$. Pour cela, montrons que $A$ a la même puissance par rapport à ces deux cercles. Soient $H_B$ et $H_C$ les intersections respectives de ces deux cercles avec $\left(AC\right)$ et $\left(AB\right)$. Par le théoréme de l'angle inscrit, $\widehat{M_B H_B B}$ et $\widehat{M_C H_C C}$ sont droits, d'ou $H_B$ et $H_C$ sont les pieds des hauteurs issues de $B$ et $C$ dans le triangle $ABC$. Montrer $AH_C \cdot AM_C = AH_B \cdot AM_B$ équivaut alors à montrer $AH_C \cdot \left(\frac12 AB\right) = AH_B \cdot \left(\frac12 AC\right)$ soit $AH_C \cdot AB = AH_B \cdot AC$, ce qui équivaut à montrer que $B C H_B H_C$ est cocyclique par puissance du point $A$. Il est de faite cocyclique par angle inscrit car $\widehat{B H_C C}$ et $\widehat{B H_B C}$ sont droits.
+\end{sol}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\tkzInit[ymin=-9,ymax=5,xmin=-8,xmax=8]
+\tkzClip
+
+\tkzDefPoints{2/4/A,-5/-4/B,5/-4/C}
+\tkzDefPoints{-2/-4/D,1/-4/E}
+\tkzDefLine[parallel = through D](A,B) \tkzGetPoint{p}
+\tkzDefLine[parallel = through E](A,C) \tkzGetPoint{q}
+\tkzInterLL(D,p)(E,q) \tkzGetPoint{F}
+\tkzDefTriangleCenter[circum](B,E,F) \tkzGetPoint{o}
+\tkzDefTriangleCenter[circum](C,D,F) \tkzGetPoint{oo}
+\tkzInterCC(o,F)(oo,F) \tkzGetSecondPoint{P}
+\tkzInterLL(A,P)(B,C) \tkzGetPoint{Z}
+
+\tkzDrawPoints(A,B,C,D,E,F,P,Z)
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint(C){$C$}
+\tkzLabelPoint(D){$D$}
+\tkzLabelPoint(E){$E$}
+\tkzLabelPoint(F){$F$}
+\tkzLabelPoint(P){$P$}
+\tkzLabelPoint(Z){$Z$}
+\tkzDrawSegments(A,B B,C C,A D,E E,F F,D A,Z)
+\tkzDrawCircle[circum](B,E,F)
+\tkzDrawCircle[circum](C,D,F)
+\tkzDrawSegment[dashed](Z,P)
+\end{tikzpicture}
+\end{center}
+
+On note $\omega_1$ et $\omega_2$ les cercles circonscrits respectifs de $BEF$ et $CDF$. On va montrer que $A$ est sur l'axe radical de $\omega_1$ et $\omega_2$. Soit $Z$ le point d'intersection de $AF$ avec $BC$. $Z$ est le centre de l'homothétie qui envoie $FDE$ sur $ABC$ car il est aligné avec $A$ et $F$, avec $B$ et $D$ et avec $C$ et $E$. Donc, $\frac{ZD}{ZB} = \frac{ZE}{ZC}$, car ces deux rapports sont égaux au facteur de l'homothétie. Donc, $ZD \cdot ZC = ZE \cdot ZB$, d'ou $Z$ est sur l'axe radical de $\omega_1$ et $\omega_2$. Donc l'axe radical de $\omega_1$ et $\omega_2$ est la droite $\left(FZ\right)$ (car il doit passer par $F$ - un des points d'intersection de $\omega_1$ et $\omega_2$). Cela conclut car $A$ est bien sur $\left(FZ\right)$.
+\end{sol}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\tkzInit[ymin=-8,ymax=6,xmin=-8,xmax=8]
+\tkzClip
+
+\tkzDefPoints{1/2/A,-2/-2/B,2/-2/C}
+\tkzDefLine[parallel = through A](B,C) \tkzGetPoint{a}
+\tkzDefLine[parallel = through B](A,C) \tkzGetPoint{aa}
+\tkzInterLL(A,a)(B,aa) \tkzGetPoint{aaa}
+\tkzInterLC(A,B)(A,aaa) \tkzGetFirstPoint{A1}
+\tkzInterLC(A,C)(A,aaa) \tkzGetFirstPoint{A2}
+\tkzDefLine[parallel = through B](A,C) \tkzGetPoint{b}
+\tkzDefLine[parallel = through A](B,C) \tkzGetPoint{bb}
+\tkzInterLL(B,b)(A,bb) \tkzGetPoint{bbb}
+\tkzInterLC(C,B)(B,bbb) \tkzGetSecondPoint{B1}
+\tkzInterLC(A,B)(B,bbb) \tkzGetSecondPoint{B2}
+\tkzDefLine[parallel = through C](A,B) \tkzGetPoint{c}
+\tkzDefLine[parallel = through A](B,C) \tkzGetPoint{cc}
+\tkzInterLL(C,c)(A,cc) \tkzGetPoint{ccc}
+\tkzInterLC(C,A)(C,ccc) \tkzGetFirstPoint{C1}
+\tkzInterLC(C,B)(C,ccc) \tkzGetFirstPoint{C2}
+
+\tkzDrawPoints(A,B,C,A1,A2,B1,B2,C1,C2)
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint(C){$C$}
+\tkzLabelPoint(A1){$A_1$}
+\tkzLabelPoint(A2){$A_2$}
+\tkzLabelPoint(B1){$B_1$}
+\tkzLabelPoint(B2){$B_2$}
+\tkzLabelPoint[above right](C1){$C_1$}
+\tkzLabelPoint[below left](C2){$C_2$}
+\tkzDrawSegments(A1,B2 B1,C2 C1,A2)
+\tkzDrawCircle[dashed,circum](A1,B1,C1)
+\tkzMarkSegments[mark=s|](A,C B,B1 B,B2)
+\tkzMarkSegments[mark=s||](B,C A,A1 A,A2)
+\tkzMarkSegments[mark=s|||](A,B C,C1 C,C2)
+\end{tikzpicture}
+\end{center}
+
+On va d'abord montrer que $A_1 A_2 B_2 C_1$, $B_1 B_2 C_2 A_1$ et $C_1 C_2 A_2 B_1$ sont cocycliques. Posons $a = BC, b = CA$ et $c = AB$. On a $AA_1 \cdot AB_2 = a\left(c+b\right)$ et $AA_2 \cdot AC_1 = a\left(b+c\right)$, d'ou $AA_1 \cdot AB_2 = AA_2 \cdot AC_1$. Donc $A_1 A_2 B_2 C_1$ est cocyclique. De  même, $B_1 B_2 C_2 A_1$ et $C_1 C_2 A_2 B_1$ sont cocycliques. Il suffit de montrer que de les cercles circonscrits de ces quadrilatères sont confondus pour conclure.
+
+Supposons alors que ces cercles sont deux à deux disjoints. Leurs axes radicaux sont alors $\left(A_1 B_2\right)$, $\left(B_1 C_2\right)$ et $\left(C_1 A_2\right)$. Ce sont les cotés du triangle $ABC$. Ceci est une contradiction car ces axes radicaux doivent être concourants.
+\end{sol}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\tkzInit[ymin=-7,ymax=6,xmin=-8,xmax=9]
+\tkzClip
+
+\tkzDefPoints{2/4/A,-5/-4/B,5/-4/C}
+\tkzDefLine[perpendicular = through A](B,C) \tkzGetPoint{ha}
+\tkzInterLL(B,C)(A,ha) \tkzGetPoint{Ha}
+\tkzDefMidPoint(A,C) \tkzGetPoint{Mb}
+\tkzDefMidPoint(A,B) \tkzGetPoint{Mc}
+\tkzDefTriangleCenter[circum](B,Mb,Ha) \tkzGetPoint{o}
+\tkzDefTriangleCenter[circum](C,Mc,Ha) \tkzGetPoint{oo}
+\tkzInterCC(o,B)(oo,C) \tkzGetFirstPoint{Z}
+\tkzDefMidPoint(Mb,Mc) \tkzGetPoint{M}
+\tkzInterLC(Mb,Mc)(o,B) \tkzGetFirstPoint{D}
+\tkzInterLC(Mb,Mc)(oo,C) \tkzGetFirstPoint{E}
+
+\tkzDrawPoints(A,B,C,Ha,Mb,Mc,Z,M,D,E)
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint(C){$C$}
+\tkzLabelPoint(Ha){$H_A$}
+\tkzLabelPoint(Mb){$M_B$}
+\tkzLabelPoint(Mc){$M_C$}
+\tkzLabelPoint(Z){$Z$}
+\tkzLabelPoint(M){$M$}
+\tkzLabelPoint(D){$D$}
+\tkzLabelPoint[below left](E){$E$}
+\tkzDrawCircle[circum](B,Mb,Ha)
+\tkzDrawCircle[circum](C,Mc,Ha)
+\tkzDrawSegment[dashed](Z,Ha)
+\tkzDrawSegments(A,B B,C C,A D,E Mc,Ha C,E Mb,Ha B,D)
+\tkzMarkSegments[mark=s|](Mb,M M,Mc)
+\tkzMarkSegments[mark=s||](A,Mb Mb,C Mb,Ha B,D)
+\tkzMarkSegments[mark=s|||](A,Mc Mc,B Mc,Ha C,E)
+\end{tikzpicture}
+\end{center}
+
+Soient $\omega_1$ et $\omega_2$ les cercles circonscrits de $B M_B H_A$ et $C M_C H_A$ respectivement. Il faut montrer que $M$ est sur l'axe radical de $\omega_1$ et $\omega_2$, c'est-à-dire que $M$ a la même puissance par rapport à $\omega_1$ et $\omega_2$. Soit $D$ la deuxieme intersection de $\left(M_B M_C\right)$ avec $\omega_1$ et soit $E$ la deuxieme intersection de $\left(M_B M_C\right)$ avec $\omega_2$. Comme $\widehat{A H_A C}$ est droit, $H_A$ est sur un cercle de diamètre $AC$, d'ou $M_B H_A = M_B C$. Comme $\left(D M_B\right)$ et $\left(B H_A\right)$ sont parallèles et $D M_B H_A B$ est cocyclique, $D M_B H_A B$ est un trapéze isocéle, d'ou $M_B H_A = DB$. Donc, $M_B C = DB$, d'ou $D M_B C B$ est un parallélogramme car $\left(D M_B\right)$ et $\left(B C\right)$ sont parallèles. On a donc
+$$D M_B = BC\text{ et de même } E M_C = BC$$
+
+On pose maintenant $x = M M_B = M M_C$ et $y = B C = D M_B = E M_C$. On a $P_{\omega_1} \left(M\right) = M M_B \cdot M D = x \left(y - x\right)$ et $P_{\omega_2} \left(M\right) = M M_C \cdot M E = x \left(y - x\right)$, d'ou $P_{\omega_1} \left(M\right) = P_{\omega_2} \left(M\right)$, ce qui conclut.
+\end{sol}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\tkzInit[ymin=-6,ymax=6,xmin=-8,xmax=8]
+\tkzClip
+
+\tkzDefPoints{-1/5/A,4/5/B,4.5/-5/C,-4/-5/D}
+\tkzDefMidPoint(A,D) \tkzGetPoint{O1}
+\tkzDefMidPoint(B,C) \tkzGetPoint{O2}
+\tkzInterCC(O1,A)(O2,B) \tkzGetPoints{X}{Y}
+\tkzInterLL(A,C)(B,D) \tkzGetPoint{Z}
+\tkzInterLC(A,C)(O2,B) \tkzGetSecondPoint{E}
+\tkzInterLC(B,D)(O1,A) \tkzGetFirstPoint{F}
+
+\tkzDrawPoints(A,B,C,D,X,Y,Z,E,F)
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint(C){$C$}
+\tkzLabelPoint(D){$D$}
+\tkzLabelPoint[above](X){$X$}
+\tkzLabelPoint[below](Y){$Y$}
+\tkzLabelPoint[below](Z){$Z$}
+\tkzLabelPoint[left](E){$E$}
+\tkzLabelPoint[right](F){$F$}
+\tkzDrawSegments(A,B B,C C,D D,A A,C B,D B,E A,F E,F)
+\tkzDrawCircle[diameter](D,A)
+\tkzDrawCircle[diameter](B,C)
+\tkzDrawSegment[dashed](X,Y)
+\tkzMarkRightAngle(A,E,B)
+\tkzMarkRightAngle(A,F,B)
+\tkzMarkAngles(A,B,F C,E,F C,D,F)
+\tkzDrawCircle[circum,dashed](A,B,E)
+\tkzDrawCircle[circum,dashed](D,C,F)
+\end{tikzpicture}
+\end{center}
+
+Soit $Z$ le point d'intersection des diagonales $\left(AC\right)$ et $\left(BD\right)$. Soient $E$ l'autre point d'intersection de $\left(AC\right)$ avec $\omega_2$ et $F$ l'autre point d'intersection de $\left(BD\right)$ avec $\omega_1$. Les angles $\widehat{BEC}$ et $\widehat{AFD}$ sont droits par angle inscrit. Donc, $ABFE$ est cyclique. Donc, par angle inscrit, $\widehat{ABF} = 180^\circ - \widehat{FEA} = \widehat{FEC}$. Or, par angles altérnes internes, $\widehat{ABF} = \widehat{FDC}$. Donc, $\widehat{FEC} = \widehat{FDC}$, soit, par angle inscrit, $DCFE$ est cocyclique. On en conclut que $\left(EC\right)$, $\left(FD\right)$ et $\left(XY\right)$ sont concourantes car ce sont les axes radicaux des cercles circonscrits à $AFD$, $BEC$ et $DCFE$.
+\end{sol}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}
+[scale=0.5]
+\tkzInit[ymin=-6,ymax=6,xmin=-8,xmax=8]
+\tkzClip
+
+\tkzDefPoints{-5/0/O1,4/0/O2,-5/2.5/w1,4/3.9/w2}
+\tkzExtSimilitudeCenter(O1,2.5)(O2,3.9) \tkzGetPoint{z}
+\tkzDefTangent[from = z](O1,w1) \tkzGetSecondPoint{T1}
+\tkzDefTangent[from = z](O2,w2) \tkzGetSecondPoint{T2}
+\tkzDefMidPoint(T1,T2) \tkzGetPoint{M}
+\tkzInterLC(O1,O2)(O1,w1) \tkzGetPoints{X'}{X}
+\tkzInterLC(O1,O2)(O2,w2) \tkzGetPoints{Y}{Y'}
+\tkzInterLL(T1,X)(T2,Y) \tkzGetPoint{Z}
+\tkzInterLL(O1,O2)(Z,M) \tkzGetPoint{O}
+
+\tkzDrawPoints(O1,O2,w1,w2,T1,T2,M,X,Y,Z,X',Y')
+\tkzLabelPoint[above](T1){$T_1$}
+\tkzLabelPoint[above](T2){$T_2$}
+\tkzLabelPoint[above](M){$M$}
+\tkzLabelPoint(O1){$O_1$}
+\tkzLabelPoint(O2){$O_2$}
+\tkzLabelPoint(X){$X$}
+\tkzLabelPoint(Y){$Y$}
+\tkzLabelPoint(Z){$Z$}
+\tkzLabelPoint(X'){$X'$}
+\tkzLabelPoint[below left](Y'){$Y'$}
+\tkzDrawCircle(O1,w1)
+\tkzDrawCircle(O2,w2)
+\tkzDrawLine(T1,T2)
+\tkzDrawSegments(X',Y' T1,Z T2,Z M,Z T1,X' T2,Y')
+\tkzMarkRightAngle(O1,O,M)
+\tkzMarkSegments[mark=s||](T1,M M,T2)
+\tkzDrawCircle[dashed,circum](T1,T2,X)
+\tkzMarkAngles(X,X',T1 Y',Y,T2 X,T1,T2)
+\end{tikzpicture}
+\end{center}
+
+Soient $X'$ l'autre intersection de $\omega_1$ avec $\left(O_1 O_2\right)$ et $Y'$ l'autre intersection de $\omega_2$ avec $\left(O_1 O_2\right)$. L'homothétie exterieure qui envoie $\omega_1$ sur $\omega_2$ envoie $X'$ sur $Y$, $X$ sur $Y'$ et $T_1$ sur $T_2$. Donc, $\widehat{T_1 X' X} = \widehat{T_2 Y Y'}$. De plus, par angle tangent, $\widehat{T_1 X' X} = \widehat{X T_1 T_2}$ et on a $\widehat{T_2 Y X} = 180^\circ - \widehat{T_2 Y Y'}$ d'ou $\widehat{X T_1 T_2} = 180^\circ - \widehat{T_2 Y X}$, donc $T_1 T_2 Y X$ est cocyclique par angle inscrit. Par concourance des axes radicaux des cercles circonscrits de $T_1 T_2 Y X$, $T_1 X X'$ et $T_2 Y Y'$, $\left(T_1 X\right)$, $\left(T_2 Y\right)$ et l'axe radical des cercles circonscrits de $T_1 X X'$ et $T_2 Y Y'$ sont concourants. Donc $Z$ est sur l'axe radical des cercles circonscrits de $T_1 X X'$ et $T_2 Y Y'$. $M$ est aussi sur cet axe car $MT_1^2 = MT_2^2$, donc cet axe est $\left(MZ\right)$. Cela conclut car l'axe radical de deux cercles est perpendiculaire à la droite qui relie leurs centres.
+\end{sol}
+
+
+\begin{sol}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\tkzInit[ymin=-6,ymax=6,xmin=-8,xmax=8]
+\tkzClip
+
+\tkzDefPoints{2/5/A,-5.5/-4/B,5.5/-4/C,0/0/P,-1/0/q}
+\tkzInterLL(A,B)(C,q) \tkzGetPoint{Q}
+\tkzDefTriangleCenter[circum](B,C,Q) \tkzGetPoint{O1}
+\tkzInterLC(A,C)(O1,C) \tkzGetFirstPoint{R}
+\tkzDefTriangleCenter[circum](Q,A,P) \tkzGetPoint{O2}
+\tkzInterCC(O1,B)(O2,A) \tkzGetSecondPoint{X}
+\tkzDefTriangleCenter[circum](P,R,A) \tkzGetPoint{O3}
+\tkzInterCC(O1,B)(O3,A) \tkzGetFirstPoint{Y}
+\tkzInterLL(B,Y)(C,X) \tkzGetPoint{Z}
+\tkzInterLC(B,Z)(O3,A) \tkzGetSecondPoint{D}
+\tkzInterLC(C,Z)(O2,A) \tkzGetSecondPoint{E}
+
+\tkzDrawPoints(A,B,C,P,Q,R,X,Y,Z,D,E)
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint(C){$C$}
+\tkzLabelPoint(P){$P$}
+\tkzLabelPoint[left](Q){$Q$}
+\tkzLabelPoint(R){$R$}
+\tkzLabelPoint(X){$X$}
+\tkzLabelPoint[above left](Z){$Z$}
+\tkzLabelPoint[above left](Y){$Y$}
+\tkzLabelPoint(D){$D$}
+\tkzLabelPoint(E){$E$}
+\tkzDrawSegments(A,B B,C C,A B,D C,E D,E X,Y)
+\tkzDrawCircle[circum](B,C,Q)
+\tkzDrawCircle[circum](Q,A,P)
+\tkzDrawCircle[circum](P,R,A)
+\tkzDrawSegment[dashed](A,P)
+\tkzDrawCircle[dashed,circum](E,D,X)
+\end{tikzpicture}
+\end{center}
+
+Soient $D$ et $E$ les intersections respectives de $\left(BZ\right)$ et $\left(CZ\right)$ avec les cercles circonscrits de $APR$ et $APQ$. Par angle inscrit, $\widehat{AEX} = \widehat{AQX} = 180^\circ - \widehat{BQX} = \widehat{BCX}$, d'ou $\left(EA\right)$ et $\left(BC\right)$ sont parallèles par angles altérnes intérnes. De même, $\left(DA\right)$ et $\left(BC\right)$ sont parallèles. Donc $E,A,D$ sont alignés. Mais alors, par angle inscrit et puis par angles altérnes internes, $\widehat{DYX} = 180^\circ - \widehat{XYB} = \widehat{XCB} = \widehat{DEX}$. Donc, par angle inscrit, $DEYX$ est cocyclique. Donc $\left(AP\right)$, $\left(EX\right)$ et $\left(DY\right)$ sont concourantes car ce sont les axes radicaux des cercles circonscrits de $DEYX$, $AXPQE$ et $AYPRD$, ce qui conclut.
+\end{sol}
+
+
+\begin{sol}
+Montrons d'abord deux lemmes.
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\tkzInit[ymin=-4,ymax=4,xmin=-8,xmax=8]
+\tkzClip
+
+\tkzDefPoints{4/0/O,4/-3.5/S,4/1.5/cc,3.5/0/p}
+\tkzDefLine[perpendicular = through cc](O,S) \tkzGetPoint{c}
+\tkzInterLC(c,cc)(O,S) \tkzGetPoints{A}B
+\tkzInterLL(S,p)(A,B) \tkzGetPointC
+\tkzInterLC(S,p)(O,S) \tkzGetSecondPoint{D}
+
+\tkzDrawPoints(S,A,B,C,D)
+\tkzLabelPoint[above right](S){$S$}
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint(C){$C$}
+\tkzLabelPoint(D){$D$}
+\tkzDrawCircle(O,S)
+\tkzDrawSegments(A,B D,S A,D A,S)
+\tkzMarkAngles(A,D,S S,A,C)
+
+\tkzDefPoints{-4/0/O',-4/-3.5/S',-4/1.5/cc',-4.5/0/p'}
+\tkzDefLine[perpendicular = through cc'](O',S') \tkzGetPoint{c'}
+\tkzInterLC(c',cc')(O',S') \tkzGetPoints{A'}{B'}
+\tkzInterLL(S',p')(A',B') \tkzGetPoint{C'}
+\tkzInterLC(S',p')(O',S') \tkzGetSecondPoint{D'}
+\tkzDefLine[perpendicular = through C'](A',B') \tkzGetPoint{o1'}
+\tkzInterLL(C',o1')(D',O') \tkzGetPoint{O1'}
+\tkzDefTangent[at = S'](O') \tkzGetPoint{t'}
+
+\tkzDrawPoints(S',A',B',C',D')
+\tkzLabelPoint[above right](S'){$S$}
+\tkzLabelPoint(A'){$A$}
+\tkzLabelPoint(B'){$B$}
+\tkzLabelPoint(C'){$C$}
+\tkzLabelPoint(D'){$D$}
+\tkzDrawCircle(O',S')
+\tkzDrawCircle(O1',C')
+\tkzDrawSegments(A',B' D',S')
+\tkzDrawLine[add = 1 and 2](t',S')
+\end{tikzpicture}
+\end{center}
+
+\begin{lemme}
+Soit $\left[AB\right]$ une corde d'un cercle et $\Omega$ et $\omega$ un cercle tangent intérieurement à $\Omega$ en $D$ et à $\left[AB\right]$ en $C$. Alors $\left(CD\right)$ recoupe $\Omega$ en le milieu de l'arc $\wideparen{AB}$.
+\end{lemme}
+\begin{preuve}
+L'homothétie qui envoie $\omega$ sur $\Omega$ est de centre $D$ et elle envoie $\left(AB\right)$ sur une tangente à $\Omega$ parallèle à $\left(AB\right)$. Elle envoie $C$ sur son point de tangence, qui est le milieux de l'arc $\wideparen{AB}$ car la tangente est parallèle à $\left(AB\right)$, ce qui conclut.
+\end{preuve}
+
+\begin{lemme}
+Soit $\left[AB\right]$ une corde d'un cercle $\Omega$, $S$ le milieu de l'arc $\wideparen{AB}$ et $D,C$ deux points de $\Omega$ et $\left(AB\right)$ respectivement qui sont alignés avec $S$. On a $SC \cdot SD = SA^2$
+\end{lemme}
+
+\begin{preuve}
+Par le théoréme du pôle Sud, $\left(DS\right)$ est la bissectrice de $\widehat{ADB}$. Par cette observation et puis par angle inscrit, $\widehat{ADS} = \widehat{SDB} = \widehat{SAB}$. De plus, $\widehat{ASC} = \widehat{ASD}$, d'ou les triangles $SAD$ et $SCA$ sont semblables. Donc $\frac{SC}{SA} = \frac{SA}{SD}$ soit $SC\cdot SD = SA^2$, ce qui conclut.
+\end{preuve}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\tkzInit[ymin=-7,ymax=7,xmin=-7,xmax=7]
+\tkzClip
+
+\tkzDefPoints{0/0/O,0/-6.5/S,0/2.5/cc,-1/0/ww1,0.75/0/ww2}
+\tkzDefLine[perpendicular = through cc](O,S) \tkzGetPoint{c}
+\tkzInterLC(c,cc)(O,S) \tkzGetPoints{A}B
+\tkzInterLL(A,B)(S,ww1) \tkzGetPoint{C1}
+\tkzInterLL(A,B)(S,ww2) \tkzGetPoint{C2}
+\tkzInterLC(S,ww1)(O,S) \tkzGetSecondPoint{D1}
+\tkzInterLC(S,ww2)(O,S) \tkzGetFirstPoint{D2}
+\tkzDefLine[perpendicular = through C1](A,B) \tkzGetPoint{www1}
+\tkzDefLine[perpendicular = through C2](A,B) \tkzGetPoint{www2}
+\tkzInterLL(O,D1)(C1,www1) \tkzGetPoint{O1}
+\tkzInterLL(O,D2)(C2,www2) \tkzGetPoint{O2}
+\tkzInterCC(O1,C1)(O2,C2) \tkzGetPoints{X}{Y}
+
+\tkzDrawPoints(A,B,S,C1,C2,D1,D2,X,Y)
+\tkzLabelPoint(A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[above right](S){$S$}
+\tkzLabelPoint(C1){$C_1$}
+\tkzLabelPoint(C2){$C_2$}
+\tkzLabelPoint(D1){$D_1$}
+\tkzLabelPoint(D2){$D_2$}
+\tkzLabelPoint[below](X){$X$}
+\tkzLabelPoint[above](Y){$Y$}
+\tkzDrawCircle(O,S)
+\tkzDrawCircle(O1,C1)
+\tkzDrawCircle(O2,C2)
+\tkzDrawSegments(A,B)
+\tkzDrawSegments[dashed](S,D1 S,D2 X,S)
+\tkzDrawCircle[dashed,circum](D1,D2,C1)
+\end{tikzpicture}
+\end{center}
+
+Par le premier lemme, on a que $S, C_1, D_1$ sont alignés et que $S, C_2, D_2$ sont alignés. Par le second lemme, on a que $S C_1 \cdot S D_1 = S A ^2 = S C_2 \cdot S D_2$, d'ou $C_1 C_2 D_2 D_1$ est cocyclique par puissance d'un point. Donc, $\left(XY\right)$, $\left(C_1 D_1\right)$ et $\left(C_2 D_2\right)$ sont concourantes car ce sont les axes radicaux de $\omega_1$, $\omega_2$ et du cercle circonscrit de $C_1 C_2 D_2 D_1$, ce qui conclut.
+\end{sol}
