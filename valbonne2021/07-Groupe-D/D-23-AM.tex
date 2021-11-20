@@ -2,7 +2,7 @@
 
 \subsubsection{Résumé du cours}
 
-La géométrie projective est l'étude des transformations projectives. Ces transformations sont plus générales que les transformations affines, et nécessitent d'ajouter certains points à l'espace affine. Dans ce cours nous nous limiterons à la géométrie projective réelle, en dimention $1$ et $2$. Il est possible de remplacer dans tous le cours (pas forcément pour les exercices) "cercle" par "conique non dégénérée", c'est à dire ellipse ou hyperbole.
+La géométrie projective est l'étude des transformations projectives. Ces transformations sont plus générales que les transformations affines, et nécessitent d'ajouter certains points à l'espace affine. Dans ce cours nous nous limiterons à la géométrie projective réelle, en dimention $1$ et $2$. Il est possible de remplacer dans tous le cours (pas forcément pour les exercices) "cercle" par "conique non dégénérée", c'est-à-dire ellipse ou hyperbole.
 
 %https://alexanderrem.weebly.com/uploads/7/2/5/6/72566533/projectivegeometry.pdf}{Alexander Remorov}
 
@@ -14,37 +14,25 @@ La droite projective associée à une droite affine $d$ est l'ensemble des point
 Le faisceau de droites en un point $O$ du plan affine est l'ensemble des droites passant par $O$.
 \end{dfn}
 
-La raison pour laquelle on définit la droite projective de cette manière est la suivante : étant donné un point $P$ en dehors d'une droite $d$, on définit la projection centrée en $P$ entre le faisceau de droites en $P$ et la droite projective $d$ comme l'appliction qui à une droite $\ell$ associe l'intersection de $\ell$ avec $d$ si elle existe, et $\infty$ sinon. Ceci est bien défini car il n'y a qu'une droite en $P$ qui n'intersecte pas $d$: celle parallèle à $d$ passant par $P$.
+La raison pour laquelle on définit la droite projective de cette manière est la suivante : étant donné un point $P$ en dehors d'une droite $d$, on définit la projection centrée en $P$ entre le faisceau de droites en $P$ et la droite projective $d$ comme l'application qui à une droite $\ell$ associe l'intersection de $\ell$ avec $d$ si elle existe, et $\infty$ sinon. Ceci est bien défini car il n'y a qu'une droite en $P$ qui n'intersecte pas $d$ : celle parallèle à $d$ passant par $P$.
 
 \medskip
 
 Les projections ont une propriété remarquable : elle préservent une quantité appelée birapport.
 
 \begin{dfn}
-
 \begin{itemize}
-
-\item[-]Soient $A,C,B,D$ quatre points distincts sur une droite projective $d$
-. On définit leur \textbf{birapport} comme étant égal à :
-
-$$b_{A,C,B,D}=\frac{AB}{CD}\times\frac{CB}{AD}$$
-
-où les distances sont considérées avec un signe. Le choix de l'orientation de la droite $d$ ne change pas la valeur du birapport. Lorsque l'un des points est à l'infini, les deux termes où il apparait sont considérés comme égaux à $1$.
-
-\item[-] Il existe également une notion de \textbf{birapport} pour $4$ droites $d_1,d_2,d_3,d_4$ dans le faisceau de droites d'un point $P$, qui est défini comme étant égal à :
-
-$$b_{d_1,d_3,d_2,d_4}=\frac{\sin(d_1,d_2)}{\sin(d_3,d_4)}\times\frac{\sin(d_3,d_2)}{\sin(d_1,d_4)}$$
-
+\item[-] Soient $A$, $B$, $C$, $D$ quatre points distincts sur une droite projective $d$. On définit leur \textbf{birapport} comme étant égal à :
+$$b_{ACBD} = \frac{AB}{CD} \times \frac{CB}{AD}$$
+où les distances sont considérées avec un signe. Attention à l'ordre ! Le choix de l'orientation de la droite $d$ ne change pas la valeur du birapport. Lorsque l'un des points est à l'infini, les deux termes où il apparait sont considérés comme égaux à $1$.
+\item[-] Il existe également une notion de \textbf{birapport} pour $4$ droites $d_1, d_2, d_3, d_4$ dans le faisceau de droites d'un point $P$, qui est défini comme étant égal à :
+$$b_{d_1, d_3, d_2, d_4} = \frac{\sin(d_1, d_2)}{\sin(d_3, d_4)}\times\frac{\sin(d_3, d_2)}{\sin(d_1, d_4)}$$
 où le sinus entre deux droites estle sinus de l'angle orienté entre les droites.
-
-\item[-] Soit $\Omega$ un cercle. Etant donné $4$ points distincts $A,B,C,D$ de $\Omega$ on peut définir leur \textbf{birapport} $b_{A,C,B,D}$ comme le birapport des droites $(PA)$, $(PB)$, $(PC)$, $(PD)$ pour tout point $P$ sur $\Omega$ différent de $A,B,C,D$.
-
-\medskip
-
-\item[-]Le \textbf{faisceau de droites} associé à un cercle $\Omega$ est l'ensemble des droites tangentes à $\Omega$. \'Etant donné $4$ droites distinctes $d_1,d_2,d_3,d_4$ de ce faisceau, on peut également définir leur birapport $b_{d_1,d_3,d_2,d_4}$ comme \textbf{le birapport} des points $d_1\cap d,d_2\cap d,d_3\cap d,d_4\cap d$ pour toute droite $d$ tangeante à $\Omega$ différente de $d_1,d_2,d_3,d_4$.
-
+\item[-] Soit $\Omega$ un cercle. Étant donné $4$ points distincts $A$, $B$, $C$, $D$ de $\Omega$, on peut définir leur \textbf{birapport} $b_{ACBD}$ comme le birapport des droites $(PA)$, $(PB)$, $(PC)$, $(PD)$ pour tout point $P$ sur $\Omega$ différent de $A, B, C, D$.
+\item[-]Le \textbf{faisceau de droites} associé à un cercle $\Omega$ est l'ensemble des droites tangentes à $\Omega$. Étant donné $4$ droites distinctes $d_1, d_2, d_3, d_4$ de ce faisceau, on peut également définir leur birapport $b_{d_1, d_3, d_2, d_4}$ comme le \textbf{birapport} des points $d_1\cap d, d_2\cap d, d_3\cap d, d_4\cap d$ pour toute droite $d$ tangente à $\Omega$ différente de $d_1, d_2, d_3, d_4$.
 \end{itemize}
 \end{dfn}
+
 
 À l'aide du birapport nous pouvons définir ce qu'est une transformation projective.
 
@@ -53,9 +41,9 @@ où le sinus entre deux droites estle sinus de l'angle orienté entre les droite
 Une \textbf{transformation projective} entre deux espaces de l'un des $4$ types de la définition précédente est une application bijective qui préserve le birapport.
 \end{dfn}
 
-En utilisant un formalisme d'algèbre linéaire il serait possible d'avoir une définition plus simple, et d'obtenir
 
-Nous avons ensuite démontré les propriétés suivantes.
+Le formalisme de l'algèbre linéaire fournit une définition plus homogène du birapport et des espaces auxquels il s'applique.
+
 
 \begin{pro}
 La projection en $A$ entre une droite projective $d$ ne passant pas par $A$ et le faisceau de droites en $A$ est une transformation projective.
@@ -68,54 +56,61 @@ La même opération entre les points d'un cercle $\Omega$ et un faisceau de droi
 
 La construction de la droite projective réelle peut être généralisée. Il est possible de voir les points du plan affine réel $P$ comme représentant presque toutes les droites de l'espace passant par un point $O$ en dehors du plan $P$. Cependant un cercle de droites n'intersecte pas $P$. En les ajoutant au plan affine on obtient la définition suivante.
 
-\begin{dfn}
 
+\begin{dfn}
 Le \textbf{plan projectif (réel)} est l'ensemble des points du plan affine, auquel on ajoute les points à l'infini de toutes les droites $d$ incluses dans $P$, en considérant que deux droites parallèles ont le même point à l'infini.
 
 \medskip
 
 Une \textbf{droite projective} dans le plan projectif est soit la droite projective associée à une droite affine, soit l'ensemble des points à l'infini, appelé "droite à l'infini".
-
 \end{dfn}
 
-Autrement dit on ajoute un point à l'infini pour chaque direction (le sens ne compte pas).
+
+L'idée est qu'on ajoute un point à l'infini (à l'horizon) pour chaque direction (le sens ne compte pas), et l'horizon lui-même est une droite. Il est remarquable que deux droites projectives distinctes s'intersectent toujours en exactement un point, même si elles sont parallèles.
 
 \begin{dfn}
-Une \textbf{transformation projective} du plan projectif réel est une bijection du plan projectif réel dans lui même tel que chaque droite projective soit envoyée sur une droite projective.
+Une \textbf{transformation projective réelle} est une bijection du plan projectif réel avec lui-même tel que chaque droite projective soit envoyée sur une droite projective.
 \end{dfn}
 
-À présent, voyons les résultats qui ont été évoqués.
+
+Les transformations projectives réelles portent bien leur nom.
+
 
 \begin{pro}
-Les transformations projectives du plan projectif préservent le birapport.
+Les transformations projectives réelles sont des transformations projectives : elles préservent le birapport.
 
 \medskip
 
-Pour toute droite et tout cercle disjoint de la droite il existe une transformation projective qui stabilise le cercle et envoie la droite à l'infini.
+Pour toute droite et tout cercle disjoint de la droite, il existe une transformation projective qui stabilise le cercle et envoie la droite à l'infini.
 
 \medskip
 
-Une transformation projective de la droite projective qui fixe $3$ points est l'identité.
+Une transformation projective réelle qui fixe $3$ points est l'identité.
 \end{pro}
 
-Lorsque le birapport de quatre points vaut $-1$ on dit que ces points sont \textit{harmoniques}. Nous avons étudié divers configurations dans lesquelles on retrouve des points harmoniques, notamment le quadrilatère complet. Nous avons également défini la transformation polaire associée à un cercle qui induit une dualité entre points et droites.
+
+Lorsque le birapport de quatre points vaut $-1$ on dit que ces points sont \textit{harmoniques}. On retrouve des points harmoniques dans diverses Configurations classiques, notamment le quadrilatère complet. À présent, voyons la transformation polaire associée à un cercle qui induit une dualité entre points et droites.
+
 
 \begin{dfn}
-La \textit{polaire} associée à un cercle $C$ associée au point $E$ est la droite contenant les points $X$ tels que si $A,B$ sont les intersections de $(EX)$ et $(AB)$ alors $E,X,A,B$ sont harminoques. C'est la droite passant par les points de tangence des droites passant par $E$ tangentes à $C$.
+La \textit{polaire} associée à un cercle $C$ associée au point $E$ est la droite contenant les points $X$ tels que si $A$, $B$ sont les intersections de $(EX)$ et $(AB)$ alors $E$, $X$, $A$, $B$ sont harmoniques. C'est la droite passant par les points de tangence des droites passant par $E$ tangentes à $C$.
 \end{dfn}
+
 
 \subsubsection{Préservation du birapport, points harmoniques}
 
+
 \begin{thm}[Théorème de Pascal]
-Soient $A,B,C,D,E,F$ six points sur un cercle $\Omega$. Soient $G$ l'intersection de $(AC)$ et $(BD)$, $H$ l'intersection de $(FD)$ et $(AE)$ et enfin $I$ l'intersection de $G$ et $H$
+Soient $A$, $B$, $C$, $D$, $E$, $F$ six points sur un cercle $\Omega$. Soient $G$ l'intersection de $(AC)$ et $(BD)$, $H$ l'intersection de $(FD)$ et $(AE)$ et enfin $I$ l'intersection de $G$ et $H$. Alors $G$, $H$, $I$ sont alignés.
 \end{thm}
+
 
 \begin{rem}
 Comme d'habitude, une droite entre deux points confondus est considérée comme étant la tangente à la conique en ce point.
 \end{rem}
 
-\begin{proof}
 
+\begin{proof}
 \begin{center}
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
 \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
@@ -154,20 +149,22 @@ Comme d'habitude, une droite entre deux points confondus est considérée comme 
 \end{tikzpicture}
 \end{center}
 
-Considérons $X$ l'intersection de $(BD)$ et $(FC)$ ainsi que $Y$ l'intersection de $(BE)$ et $(FD)$. Le théorème est vrai si et seulement $b_{B,X,G,D}=b_{Y,F,H,D}$: en effet la projection centrée en $I$ entre les droites projectives $(BD)$ et $(FD)$ envoie $G$ sur l'unique point $H'$ satisfiant cette condition.
+Considérons $X$ l'intersection de $(BD)$ et $(FC)$ ainsi que $Y$ l'intersection de $(BE)$ et $(FD)$. Le théorème est vrai si et seulement $b_{BXGD} = b_{YFHD}$ : en effet, la projection centrée en $I$ entre les droites projectives $(BD)$ et $(FD)$ envoie $G$ sur l'unique point $H'$ satisfaisant cette condition.
 
 \medskip
 
-Utilisons donc à présent la cocyclicité de nos points. La projection de centre $C\in \Omega$ entre la droite projective $(BD)$ et $\Omega$ envoie $B,G,X,D$ sur $B,A,F,D$. Ainsi $b_{B,X,G,D}=b_{B,F,A,D}$. De même en considérant la projection de centre $E\in \Omega$ entre la droite projective $(FD)$ et $\Omega$, on obtient $b_{Y,F,H,D}=b_{B,F,A,D}$, d'où le résultat.
+Utilisons donc à présent la cocyclicité de nos points. La projection de centre $C\in \Omega$ entre la droite projective $(BD)$ et $\Omega$ envoie $B$, $G$, $X$, $D$ sur $B$, $A$, $F$, $D$. Ainsi, $b_{BXGD} = b_{BFAD}$. De même, en considérant la projection de centre $E\in \Omega$ entre la droite projective $(FD)$ et $\Omega$, on obtient $b_{YFHD} = b_{BFAD}$, d'où le résultat.
 
 \medskip
 
 Cette preuve s'adapte parfaitement au cas où $\Omega$ est une conique quelconque.
 \end{proof}
 
+
 \begin{exo}
-Soit $ABC$ un triangle. Soit $P,Q$ des points sur $(BC)$ tels que $\angle ABC=\angle  CAQ$ et $\angle ACB=\angle BAP$. Soient $M$ et $N$ tels que $P$ et $Q$ soient les milieux respectifs de $[AM]$ et $[AN]$. Montrer que l'intersection $D$ de $CN$ et $BM$ est sur le cercle circonscrit à $ABC$.
+Soit $ABC$ un triangle. Soient $P$, $Q$ des points sur $(BC)$ tels que $\widehat{ABC} = \widehat{CAQ}$ et $\widehat{ACB} = \widehat{BAP}$. Soient $M$ et $N$ tels que $P$ et $Q$ sont les milieux respectifs de $[AM]$ et $[AN]$. Montrer que l'intersection $D$ de $CN$ et $BM$ est sur le cercle circonscrit à $ABC$.
 \end{exo}
+
 
 \begin{sol}
 Soit $\Omega$ le cercle circonscrit à $ABC$.Soit $D_1$ l'intersection de $BM$ etde $\Omega$, et $D_2$ l'intersection de $CN$ et de $\Omega$.
@@ -177,27 +174,52 @@ Soit $\Omega$ le cercle circonscrit à $ABC$.Soit $D_1$ l'intersection de $BM$ e
 L'égalité d'angle donne des droites parallèles à $AN$ et $AM$ respectivement : les droites tangentes à $\Omega$ en $C$ et $B$ respectivement. Sur la droite projective associée )à $AN$, avec $\infty_{AN}$ à l'infini, les points $ANQ\infty_{AN}$ sont harmoniques, ainsi la projection de centre $C$ sur $\Omega$ envoie ces points sur des points harmoniques. Ainsi $AD_1BC$ sont harmoniques. De même $AD_2BC$ sont harmoniques, ainsi $D_1=D_2$, d'où le résultat.
 \end{sol}
 
+
 Voici le théorème de Desargues :
 
-\begin{thm}
-Soit $A_1,B_1,A_2,B_2,A_3,B_3$ des points distincts tels que les droites $(A_1B_1)$,$(A_2B_2)$ et $(A_3B_3)$ sont distinctes et concourantes en $O$. Soient $X,Y,Z$ les intersections respectivement de $(A_2B_3)$ et $(A_3B_2)$, $(A_3B_1)$ et $(A_1B_3)$ et enfin $(A_1B_2)$ et $(A_2B_1)$. Montrer que $X,Y,Z$ sont alignés.
+\begin{thm}[Théorème de Desargues]
+Soient $A_1$, $B_1$, $A_2$, $B_2$, $A_3$, $B_3$ des points distincts tels que les droites $(A_1B_1)$, $(A_2B_2)$ et $(A_3B_3)$ sont distinctes et concourantes en $O$. Soient $X$, $Y$, $Z$ les intersections respectivement de $(A_2B_3)$ et $(A_3B_2)$, $(A_3B_1)$ et $(A_1B_3)$ et enfin $(A_1B_2)$ et $(A_2B_1)$. Montrer que $X$, $Y$, $Z$ sont alignés.
 \end{thm}
 
 \begin{proof}
-
-Une première approche est de considérer une transformation projective qui envoie une droite passant par $O$ à l'infini. On se ramène alors à un problème avec $3$ segments parallèles, qui se résous en utilisant des homothéties.
+Une première approche est de considérer une transformation projective qui envoie une droite passant par $O$ à l'infini. On se ramène alors à un problème avec $3$ segments parallèles, qui se résoud en utilisant des homothéties.
 
 \medskip
 
-Mais il existe aussi une approche projective directe. Soit $d$ la droite $(XY)$, et soient $c_1,C_2,C_2$ ses intersections avec $(A_1B_1)$,$(A_2B_2)$ et $(A_3B_3)$ respectivement. Pour montrer que $Z$ est sur cette droite il suffit de montrer que $b_{OC_1A_1B_1}=b_{OC_2A_2B_2}$. Or les projections de centres $X$ et $Y$ montrent que ces birapports sont égaux à $b_{OC_3A_3B_3}$, ce qui conclut.
+Mais il existe aussi une approche projective directe. Soit $d$ la droite $(XY)$, et soient $C_1$, $C_2$, $C_3$ ses intersections avec $(A_1B_1)$,$(A_2B_2)$ et $(A_3B_3)$ respectivement. Pour montrer que $Z$ est sur cette droite il suffit de montrer que $b_{OC_1A_1B_1} = b_{OC_2A_2B_2}$. Or les projections de centres $X$ et $Y$ montrent que ces birapports sont égaux à $b_{OC_3A_3B_3}$, ce qui conclut.
 \end{proof}
 
+
 \begin{exo}%{[M.L, Problem 20]}
-Soit $ABCD$ un quadrilatère cyclique. Les droites $(AB)$ et $(CD)$ se coupent en $E$, et les diagonales $AC$ et $BD$ en $F$. Le cercle circonscrit des triangles $AFD$ et $BFC$ s'intersectent à nouveau en $H$. Montrer que l'anlge $\angle EHF$ est un angle droit.
+Soit $ABCD$ un quadrilatère cyclique. Les droites $(AB)$ et $(CD)$ se coupent en $E$, et les diagonales $AC$ et $BD$ en $F$. Le cercle circonscrit des triangles $AFD$ et $BFC$ s'intersectent à nouveau en $H$. Montrer que l'anlge $\widehat{EHF}$ est un angle droit.
 \end{exo}
 
-\begin{sol}
 
+\begin{exo}
+Dans un quadriltère cyclique $ABCD$, soient $E$ l'intersection de $(AD)$ et $(BC)$ (de sorte que $C$ soit entre $B$ et $E$), et $F$ l'intersection de $(BD)$ et $(AC)$. Soit $M$ le milieu de $[CD]$, et $N \ne M$ un point du cercle circonscrit au triangle $ABC$ tel que $\frac{AM}{MB} = \frac{AN}{NB}$. Montrer que $E$, $F$, $N$ sont alignés.
+\end{exo}
+
+
+\subsubsection{Transformations projectives}
+
+
+\begin{exo}
+Soit $ABC$ un triangle. Soient $F$ et $G$ les milieux de $AB$ et $AC$. Soit $P$ un point sur la hauteur issue de $A$. Soit $d_1$ la droite passant par $F$ et orthogonale à $(BP)$ et $d_2$ la droite passant par $G$ et orthogonale à $(PC)$. Montrer que l'intersection de $d_1$ et $d_2$ est équidistante de $B$ et $C$.
+\end{exo}
+
+
+\subsubsection{Pôles et polaires}
+
+
+\begin{exo}
+Soient $C_1$ et $C_2$ deux cercles tangents extérieurement en $M$, avec $C_2$ de rayon strictement supérieur à $C_1$. Soit $A$ un point sur $C_2$ en dehors de la droite joignant les centres des deux cercles. Soient $B$ et $C$ deux points sur $C_1$ tels que $AB$ et $AC$ soient tangent à $C_1$. Les droites $(BM)$ et $(CM)$ intersectent $C_2$ à nouveau en $E$ et $F$ respectivement. Soit $D$ l'intersection de la tangente à $C_2$ en $A$ et de $(EF)$. Montrer que le lieu du point $D$ lorsque $A$ varie est une droite.
+\end{exo}
+
+
+\subsubsection{Solutions}
+
+
+\begin{sol}
 Soit $C_1$ le cercle circonscrit à $BCF$. On introduit le point $F'$ diamètralement opposé à $F$ sur $C_1$. Le problème se ramène à montrer que $H,F',E$ sont alignés.
 
 \medskip
@@ -208,11 +230,11 @@ Grâce au quadrilatère complet $ABCD$ les points $DCYE$ sont harmoniques. Les p
 
 \medskip
 
-Cela se ramène à montrer que sur le cercle circonscrit à $BCF$, les points $F,C,F',B'$ sont harmoniques, avec $B'$ l'intersection du cercle avec $DH$, différente de $H$.
+Cela se ramène à montrer que sur le cercle circonscrit à $BCF$, les points $F$, $C$, $F'$, $B'$ sont harmoniques, avec $B'$ l'intersection du cercle avec $DH$, différente de $H$.
 
-Or l'angle $\angle FHB'$ est égal à $\angle DAC$ grâce au cercle passant par $AFHD$, et cet angle est égal à l'angle $\angle DBC$ grâce au cercle passant par $ABCD$. Ainsi l'arc $B'F$ et $FC$ ont même longueur dans le cercle passant par $BCFH$.
+Or l'angle $\widehat{FHB'}$ est égal à $\widehat{DAC}$ grâce au cercle passant par $AFHD$, et cet angle est égal à l'angle $\widehat{DBC}$ grâce au cercle passant par $ABCD$. Ainsi, l'arc $B'F$ et $FC$ ont même longueur dans le cercle passant par $BCFH$.
 
-En particulier $(B'C)$ et $(FF')$ sont orthogonales avec $FF'$ un diamètre, donc ces points sont harmoniques, ce qui conclut.
+En particulier, $(B'C)$ et $(FF')$ sont orthogonales avec $FF'$ un diamètre, donc ces points sont harmoniques, ce qui conclut.
 
 \begin{center}
 \definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
@@ -263,15 +285,7 @@ En particulier $(B'C)$ et $(FF')$ sont orthogonales avec $FF'$ un diamètre, don
 \end{sol}
 
 
-
-\begin{exo}
-
-Dans un quadriltère cyclique $ABCD$, soit $E$ l'intersection de $(AD)$ et $(BC)$ (de sorte que $C$ soit entre $B$ et $E$), et $F$ l'intersection de $(BD)$ et $(AC)$. Soit $M$ le milieu de $[CD]$, et $N\neq M$ un point du cercle circonscrit au triangle $ABC$ tel que $\frac{AM}{MB}=\frac{AN}{NB}$. Montrer que $E,F,N$ sont alignés.
-
-\end{exo}
-
 \begin{sol}
-
 \begin{center}
 \definecolor{qqqqff}{rgb}{0.,0.,1.}
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
@@ -315,26 +329,19 @@ Dans un quadriltère cyclique $ABCD$, soit $E$ l'intersection de $(AD)$ et $(BC)
 
 \end{center}
 
-La condition sur le point $N$ est équivalent au fait que les points $A,B,M,N$ sur le cercle $C'$, qui est le cercle circonscrit au triangle $ABC$, soient harmoniques. Soit $N'$ l'intersection de $C'$ et $(EF)$. Montrons que $A,B,M,N$ sont harmoniques sur $C'$.
+La condition sur le point $N$ est équivalent au fait que les points $A$, $B$, $M$, $N$ sur le cercle $C'$, qui est le cercle circonscrit au triangle $ABC$, soient harmoniques. Soit $N'$ l'intersection de $C'$ et $(EF)$. Montrons que $A$, $B$, $M$, $N$ sont harmoniques sur $C'$.
 
 \medskip
 
-Soit $X$ l'intersection de $(NF)$ et $(CD)$. Considérons la projection de centre $X$ entre $C'$ et la droite $(BD)$, puis celle de centre $A$ entre $(BD)$ et $(CD)$. Elle envoie $A,B,M,N$ sur $X,Y,D,C$ avec $Y$ l'intersection de $AB$ et $CD$. Il reste à montrer que $X,Y,C,D$ sont harmoniques.
+Soit $X$ l'intersection de $(NF)$ et $(CD)$. Considérons la projection de centre $X$ entre $C'$ et la droite $(BD)$, puis celle de centre $A$ entre $(BD)$ et $(CD)$. Elle envoie $A$, $B$, $M$, $N$ sur $X$, $Y$, $D$, $C$ avec $Y$ l'intersection de $AB$ et $CD$. Il reste à montrer que $X$, $Y$, $C$, $D$ sont harmoniques.
 
 \medskip
 
 Plaçons un repère sur la droite $CD$ de sorte que $C=1$, $D=-1$, $M=0$, $X=x$ et $Y=y$. Montrons que $xy=1$.
 
-Or $Y$ est sur l'axe radical des deux cercles de la figure, ainsi $YC\times YD=YX\times YM$. En d'autres termes $(y-x)y=(y-1)(y+1)$, ce qui implique que $xy=1$. Cela conclut.
+Or $Y$ est sur l'axe radical des deux cercles de la figure, ainsi $YC\times YD=YX\times YM$. En d'autres termes $(y-x)y = (y - 1)(y + 1)$, ce qui implique que $xy = 1$. Cela conclut.
 \end{sol}
 
-
-\subsubsection{Transformations projectives}
-
-
-\begin{exo}
-Soit $ABC$ un triangle. Soient $F$ et $G$ les milieux de $AB$ et $AC$. Soit $P$ un point sur la hauteur issue de $A$. Soit $d_1$ la droite passant par $F$ et orthogonale à $(BP)$ et $d_2$ la droite passant par $G$ et orthogonale à $(PC)$. Montrer que l'intersection de $d_1$ et $d_2$, si est équidistante de $B$ et $C$.
-\end{exo}
 
 \begin{sol}
 \begin{center}
@@ -384,20 +391,12 @@ Ici on a un point qui varie sur une droite : le point $P$. À un tel point sur l
 
 \medskip
 
-Ces transformations s'avèrent être projectives. En effet montrons le pour $K_1$. La transformation qui à $P$ associe la droite $(BP)$ passant par $B$ est projective. Ensuite l'opération qui consiste à associer à une droite passant par $B$ la droite orthogonale passant par $F$ est également projective. Enfin l'opération qui à une droite passant par $F$ associe son intersection avec $m$ est projective.
+Ces transformations s'avèrent être projectives. Montrons le pour $K_1$. La transformation qui à $P$ associe la droite $(BP)$ passant par $B$ est projective. Ensuite, l'opération qui consiste à associer à une droite passant par $B$ la droite orthogonale passant par $F$ est également projective. Enfin l'opération qui à une droite passant par $F$ associe son intersection avec $m$ est projective.
 
 \medskip
 
-Une transformation projective est uniquement déterminée par trois points. Il suffit de trouver trois points "simples" $P_1$, $P_2$ et $P_3$ et de montrer dans les trois cas que $K=K_1(P)=K_2(P)$. Pour $P_1=A$, les deux points sont sur le centre du cercle circonscrit, pour $P_2$ le pied de la hauteur, ils sont à l'infini, et pour $P_3$ à l'infini, ils sont à l'intersection de $m$ et $(FG)$.
+Une transformation projective est uniquement déterminée par trois points. Il suffit de trouver trois points "simples" $P_1$, $P_2$ et $P_3$ et de montrer dans les trois cas que $K = K_1(P) = K_2(P)$. Pour $P_1 = A$, les deux points sont sur le centre du cercle circonscrit, pour $P_2$ le pied de la hauteur, ils sont à l'infini, et pour $P_3$ à l'infini, ils sont à l'intersection de $m$ et $(FG)$.
 \end{sol}
-
-
-\subsubsection{Pôles et polaires}
-
-
-\begin{exo}
-Soient $C_1$ et $C_2$ deux cercles tangeants extérieurement en $M$, avec $C_2$ de rayon strictement supérieur à $C_1$. Soit $A$ un point sur $C_2$ en dehors de la droite joignant les centres des deux cercles. Soient $B$ et $C$ deux points sur $C_1$ tels que $AB$ et $AC$ soient tangeant à $C_1$. Les droites $(BM)$ et $(CM)$ intersectent $C_2$ à nouveau en $E$ et $F$ respectivement. Soit $D$ l'intersection de la tangeante à $C_2$ en $A$ et de $(EF)$. Montrer que le lieu du point $D$ lorsque $A$ varie est une droite.
-\end{exo}
 
 
 \begin{sol}
@@ -443,27 +442,25 @@ Il est important ici de conjecturer la droite sur laquelle $D$ varie. On se conv
 
 \medskip
 
-À un point $D$ sur $d$ on associe le seul point $A$ de $C_2$ tel que $AD$ est tangeant à $C_2$ et $A\neq M$ si $D\neq M$. On lui associe ensuite la droite $MA$ passant par $M$, Puis on lui asscie la polaire $D'$ à $MA$ via à vis de $C_1$, qui se trouve sur la droite $d$. Enfin on applique l'homothétie de centre $M$ qui envoie $C_1$ sur $C_2$. Cette suite de transformations envoie $D$ sur l'intersection de $(EF)$ et $d$.
+À un point $D$ sur $d$ on associe le seul point $A$ de $C_2$ tel que $AD$ est tangent à $C_2$ et $A\ne M$ si $D\ne M$. On lui associe ensuite la droite $MA$ passant par $M$, Puis on lui asscie la polaire $D'$ à $MA$ via à vis de $C_1$, qui se trouve sur la droite $d$. Enfin on applique l'homothétie de centre $M$ qui envoie $C_1$ sur $C_2$. Cette suite de transformations envoie $D$ sur l'intersection de $(EF)$ et $d$.
 
 \medskip
 
-Il nous reste à montrer que cette transformation, qui est projective est l'identité. On peut considérer $D$ à l'infini, ce qui revient à placer $A$ au point diamétralement opposé à $M$ (l'énoncé l'interdit, mais avec le formalisme de la géométrie projective on peut le faire, et la transformatione st bien définie).
+Il nous reste à montrer que cette transformation, qui est projective est l'identité. On peut considérer $D$ à l'infini, ce qui revient à placer $A$ au point diamétralement opposé à $M$ (l'énoncé l'interdit, mais avec le formalisme de la géométrie projective on peut le faire, et la transformation est bien définie).
 
-On place ensuite $D$ en $M$. Pour conclure, on place $D$ comme sur la figure au millieu de la tangeante commune à $C_1$ et $C_2$. Soit $B'$ le symétrique de $B$ par rapport à $(XY)$. Ce point se situe sur la polaire de $D$ vis à vis de $C_2$, donc sa polaire vis à vis de $C_2$ passe par $D$. Or elle passe aussi par $E$ et $F$, donc les point sont alignés.
-
+On place ensuite $D$ en $M$. Pour conclure, on place $D$ comme sur la figure au millieu de la tangente commune à $C_1$ et $C_2$. Soit $B'$ le symétrique de $B$ par rapport à $(XY)$. Ce point se situe sur la polaire de $D$ vis-à-vis de $C_2$, donc sa polaire vis-à-vis de $C_2$ passe par $D$. Or elle passe aussi par $E$ et $F$, donc les point sont alignés.
 
 \medskip
 
 Ainsi la transformation projective est l'identité, ce qui conclut.
-
 \end{sol}
 
 %\begin{exo}
-%Les cercles $ w_{1}$ et $ w_{2}$ de centres $ O_{1}$ et $ O_{2}$ sont tangeants extérieurement en $ D$ et intérieurement tangeants à un cercle $ w$ aux points $ E$ et $ F$ respectivement. Soit $ t$ la tangeante commune à $ w_{1}$ et $ w_{2}$ en $ D$. Soit $ AB$ le diamètre de $ w$ perpendiculaire à $ t$, tel que $ A, E, O_{1}$ sont sur le même côté de $ t$. Montrer que les droites $ AO_{1}$, $ BO_{2}$, $ EF$ et $ t$ sont concourrantes.
+%Les cercles $ w_{1}$ et $ w_{2}$ de centres $ O_{1}$ et $ O_{2}$ sont tangents extérieurement en $ D$ et intérieurement tangents à un cercle $ w$ aux points $ E$ et $ F$ respectivement. Soit $ t$ la tangente commune à $ w_{1}$ et $ w_{2}$ en $ D$. Soit $ AB$ le diamètre de $ w$ perpendiculaire à $ t$, tel que $ A, E, O_{1}$ sont sur le même côté de $ t$. Montrer que les droites $ AO_{1}$, $ BO_{2}$, $ EF$ et $ t$ sont concourantes.
 %\end{exo}
 %
 %%\begin{sol}
 %%
-%%Soit $P$ l'intersection de $t$ et $(EF)$, et $Q$ l'intersection de $(EF)$ et $(AB)$. Soit $X$ l'intersection de la tangeante à $w$ en $E$ et celle en $F$. Le point $X$ appartient à l'axe radical des cercles $w_1$ et $w_2$, donc à $t$. Le point $Q$ est sur la polaire de $X$ par rapport à $w$, , donc la polaire de $Q$ vis à vis de $w$ passe par $D$, et c'est donc la droite $t$. Ainsi $Q,P,E,F$ sont harmoniques. On projete la droite projective $(EF)$ sur $(O_1O_2)$ depuis le point $O$, et on obtient donc que les points $O_1,O_2,Y,\infty$ sont harmoniques avec $\infty$ le point à l'infini de la droite $(O_1O_2)$ et $Y$ l'intersection de $(OD)$ et $O_1O_2$. Ainsi $Y$ est le milieu de $[O_1O_2]$. Par le théorème de la droite des milieux, le point d'intersection de $AO_1$ et
+%%Soit $P$ l'intersection de $t$ et $(EF)$, et $Q$ l'intersection de $(EF)$ et $(AB)$. Soit $X$ l'intersection de la tangente à $w$ en $E$ et celle en $F$. Le point $X$ appartient à l'axe radical des cercles $w_1$ et $w_2$, donc à $t$. Le point $Q$ est sur la polaire de $X$ par rapport à $w$, , donc la polaire de $Q$ vis-à-vis de $w$ passe par $D$, et c'est donc la droite $t$. Ainsi $Q,P,E,F$ sont harmoniques. On projete la droite projective $(EF)$ sur $(O_1O_2)$ depuis le point $O$, et on obtient donc que les points $O_1,O_2,Y,\infty$ sont harmoniques avec $\infty$ le point à l'infini de la droite $(O_1O_2)$ et $Y$ l'intersection de $(OD)$ et $O_1O_2$. Ainsi $Y$ est le milieu de $[O_1O_2]$. Par le théorème de la droite des milieux, le point d'intersection de $AO_1$ et
 %%
 %%\end{sol}
