@@ -1,138 +1,172 @@
 %Cours Combinatroire.graphes Groupe D 24/08/2021 Après midi Colin
 
-L'objet de ce TD fut d'étudier des exercices variés en théorie des graphes sans essayer d'appliquer de théorie générale.
+L'objet de ce TD est d'étudier des exercices variés en théorie des graphes sans essayer d'appliquer de théorie générale.
+
 
 \subsubsection{Lemme des mariages de Hall}
 
+
 Voici le lemme des mariages de Hall. On en trouve de nombreuses preuves dans la littérature.
+
 
 \begin{lem}[Lemme des mariages de Hall]
 Considérons un ensemble $X$ de $n$ filles et un ensemble $Y$ de $n$ garçons. Chaque fille $x$ apprécie un ensemble $A(x)$ de garçons.
 \smallskip
 
- On suppose qu'il n'y a pas de groupes de filles trop exigentes, c'est à dire que pour tout ensemble $X_0\subset X$ de filles alors $|X_0|\leq |\cup_{x\in X_0} A(x)|$. Alors il est possible de marier chaque fille avec un garçon de façon bijective, et de sorte que toutes les paires fille/garçon s'apprécient.
+On suppose qu'il n'y a pas de groupes de filles trop exigeantes, c'est-à-dire que pour tout ensemble $X_0\subset X$ de filles alors $|X_0| \le |\cup_{x\in X_0} A(x)|$. Alors il est possible de marier chaque fille à un garçon qu'elle apprécie de façon bijective.
 \end{lem}
 
-Avant de prouver ce lemme remarquons que si il est possible d'organiser les mariages, alors l'hypothèse du lemme doit également être vérifiée.
+Avant de prouver ce lemme, remarquons que s'il est possible d'organiser les mariages, alors l'hypothèse du lemme doit également être vérifiée.
 
 \begin{proof}
-
-Nous allons procéder par récurrence forte sur $n=1$. Le cas $n=1$ est clair.
+Nous allons procéder par récurrence forte sur $n \ge 1$. Les cas $n = 0$ et $n = 1$ sont clairs.
 
 \medskip
 
-Si $n>1$, supposons qu'il existe un ensemble $X_0\subset X$ de taille $n>k>0$ qui soit saturé, c'est à dire que $|X_0|=|\cup_{x\in X_0}A(x)|$. Alors si on retire les garçons et filles de ces deux ensembles, il reste $0<n-k<n$ garçons et autant de filles. De plus on peut vérifier que l'hypothèse du lemme est vérifiée pour tous ceux qui restent. Ainsi on peut marier ces $n-k$ garçons et filles, par hypothèse de récurrence forte, ainsi que les $k$ garçons et filles oubliés.
+Si $n > 1$, supposons qu'il existe un ensemble $X_0 \subset X$ de taille $0 < k < n$ qui soit \textit{saturé}, c'est-à-dire que $|X_0| = |\cup_{x\in X_0}A(x)|$. Alors si on retire les garçons et filles de ces deux ensembles, il reste $0 < n - k < n$ garçons et autant de filles. De plus, on peut vérifier que l'hypothèse du lemme est vérifiée pour tous ceux qui restent. Ainsi on peut marier ces $n - k$ garçons et filles, par hypothèse de récurrence forte, ainsi que les $k$ garçons et filles oubliés.
 
-Il reste à traiter le cas où aucun ensemble n'est saturé. Dans ce cas, on marie tout simplement n'importe quel garçon avec n'importe quelle fille, et l'hypothèse reste encore vérifiée puisqu'aucunb ensemble n'est saturé. On conclut par récurrence.
+Il reste à traiter le cas où aucun ensemble n'est saturé. Dans ce cas, on marie tout simplement n'importe quel garçon avec n'importe quelle fille, et l'hypothèse reste encore vérifiée puisqu'aucun ensemble n'est saturé. On conclut par récurrence.
 \end{proof}
 
+
 \begin{exo}
-Le petit Nicolas découpe deux feuilles carrées de côté 2019 en $2019^2$ polygones d'aire 1 de deux facons différentes. Ensuite il remet les morceaux ensemble et superpose les deux feuilles. Montrer qu'il peut planter $2019^2$ punaises à travers les deux feuilles de façon à ce tous les polygones soient percés.
+Le petit Nicolas découpe deux feuilles carrées de côté $2019$ en $2019^2$ polygones d'aire $1$ de deux facons différentes. Ensuite il remet les morceaux ensemble et superpose les deux feuilles. Montrer qu'il peut planter $2019^2$ punaises à travers les deux feuilles de façon à ce tous les polygones soient percés.
 \end{exo}
 
-\begin{sol}
-
-On applique le lemme des mariages de Hall avec les polygones de la première feuille à la place des filles, les polygones de la seconde feuille à la place des garçons et deux polygones sont compatibles si lorsque l'on superpose les feuilles il ont un point d'intersection. Pour un ensemble $X_0$ de polygones, l'union des polygones compatibles avec ceux-ci englobe l'union des polygones de $X_0$, et par conséquent leur aire vaut au moins le cardinal de $X_0$ Par conséquent le lemme peut être appliqué, et on en déduit l'existence d'une bijection entre les $2019^2$ polygones de chaque côté.
-
-\smallskip
- Il reste à prendre pour chaque paire un point où elles se chevauchent, et à planter une punaise à cet endroit.
-
-\end{sol}
 
 \begin{exo}
 Dans une grille $8\times 8$ des cailloux sont posés sur certaines cases de sorte que sur chaque ligne et chaque colonne il y a exactement $3$ pierres. Montrer qu'il existe un ensemble de $n$ pierres telles que deux d'entre elles ne sont jamais sur la même ligne ou colonne.
 \end{exo}
 
-\begin{sol}
-On applique encore le lemme des mariages de Hall. Les colonnes ici jouent le rôle des filles, et les lignes jouent celui des garçons. Une ligne et une colonne sont compatibles si il y a un caillou à leur interection.
 
-Si on considère $k$ lignes, elles contiennent $3k$ pierres réparties sur $\ell$ colonnes. Or chaque colonne contient au plus $3$ pierres parmis les $3k$ pierres, donc $\ell \geq k$.
+\begin{exo}
+Sur une planète lointaine, il y a $n$ hommes, $n$ femmes et $n$ matheux. Une famille heureuse est une famille composée d'un homme, une femme et un matheux. Cependant pour former une famille, il faut que les trois membres s'apprécient (le fait de s'apprécier est toujours réciproque). Est-il toujours possible de former $n$ familles disjointes sachant que chaque membre de chacun des trois groupes apprécie au moins $k$ personnes dans chacun des deux autres groupes (donc $2k$ personnes en tout), et si :
+
+\begin{itemize}
+\item[(i)] $2k = n$ ?
+\item[(ii)] $4k = 3n$ ?
+\end{itemize}
+\end{exo}
+
+
+\begin{exo}
+On considère une grille $m \times n$ sur laquelle sont posées des pierres. Soit $k$ le plus petit nombre de lignes et colonnes qu'il faut supprimer pour supprimer toutes les pierres. Montrer qu'il existe $k$ pierres telles que deux de ces pierres ne soient jamais sur la même ligne ou colonne.
+\end{exo}
+
+
+\begin{exo}%{[IMO C2]}
+Sur une planète, il y a $2^N$ pays $(N \ge 5)$. Chaque pays a un drapeau composé d'une ligne de $N$ carrés de côté $1$, chacun étant en jaune ou bleu. Les drapeaux sont deux à deux distincts. Un ensemble de $N$ drapeaux est divers s'ils peuvent être placés dans un certain ordre pour former un carré $N \times N$ tel que les $N$ carrés sur la diagonale principale soient de la même couleur. Déterminez le plus petit entier $M$ tel que tout ensemble de $M$ drapeaux contient un ensemble divers de $N$ drapeaux.
+\end{exo}
+
+
+%\begin{exo}
+%Une compagnie aérienne propose des vols entre toutes les capitales de l'union européenne. Le coût d'un vol entre deux villes est le même dans les deux sens. Anna et Bella partent chacune d'une capitale, pas forcément la même. Anna prend systématiquement le vol le moins cher parmi les vols qui la mènent à une capitale non encore visitée, et Bella prend systématiquement le vol le plus cher parmi les vols qui la mènent à une capitale non encore visitée. De plus les prix des vols sont tous distincts. Lorsqu'elles ont visité toutes les capitales, Anna et Bella comparent le prix total qu'elles ont payé. Est-il possible qu'Anna ait plus dépensé que Bella ?
+%\end{exo}
+
+
+\subsubsection{Graphes orientés}
+
+
+\begin{exo}
+Il faut attribuer $n$ maisons à $n$ personnes. Chaque personne range les maisons dans un ordre, sans égalités. Après les attributions, on remarque que toute autre attribution attribuerait à au moins une personne une maison moins bien classée. Montrer qu'il existe une personne qui a eu son premier choix de maison.
+\end{exo}
+
+
+\begin{exo}
+Une grille $n\times n$ est remplie avec les nombres $-1, 0, 1$ de sorte que chaque ligne et colonne contienne exactement un $1$ et un $-1$. Montrer que l'on peut permuter les lignes et les colonnes de sorte à obtenir le même tableau avec les signes échangés.
+\end{exo}
+
+
+\begin{exo}
+Dans une élection, il y a $2042$ candidats et des votants. Chaque votant ordonne les candidats dans l'ordre de son choix.
+
+On forme un graphe orienté de $2042$ sommets, avec une flèche de $U$ vers $V$ lorsque le candidat $U$ est placé au dessus de $V$ pour strictement plus de la moitié des votes. En cas d'égalité il n'y a pas d'arêtes.
+
+Est-il possible d'obtenir tous les graphes complets orientés connexes ?
+\end{exo}
+
+
+\begin{exo}
+Un tournoi est un graphe complet où chaque arête a une orientation. Un coloriage propre des arêtes est un coloriage des arêtes tel que si $a$, $b$, $c$ sont trois sommets distinct du graphe, et si l'arête entre $a$ et $b$ pointe vers $b$, et l'arête entre $b$ et $c$ pointe vers $c$, alors ces deux arêtes sont de couleur différente.
+
+Le nombre chromatique des arêtes d'un graphe orienté complet est le plus petit nombre de couleurs nécessaire pour obtenir un coloriage propre des arêtes. Quel est le plus petit nombre chromatique des arêtes possible d'un tournoi ?
+\end{exo}
+
+\begin{exo}%{[Olympiades Russes]}
+Soit $G$ un graphe orienté (sans arêtes pointant d'un sommet vers lui-même), tel que chaque sommet admet au moins deux arêtes sortantes et deux arêtes entrantes. Supposons que $G$ est fortement connexe. Montrer qu'il existe un cycle dans le graphe tel qu'en le supprimant le graphe reste fortement connexe.
+\end{exo}
+
+
+\subsubsection{Solutions}
+
+
+\begin{sol}
+On applique le lemme des mariages de Hall avec les polygones de la première feuille à la place des filles, les polygones de la seconde feuille à la place des garçons et deux polygones sont compatibles si lorsque l'on superpose les feuilles ils ont un point d'intersection. Pour un ensemble $X_0$ de polygones, l'union des polygones compatibles avec ceux-ci englobe l'union des polygones de $X_0$, et par conséquent leur aire vaut au moins le cardinal de $X_0$ Par conséquent le lemme peut être appliqué, et on en déduit l'existence d'une bijection entre les $2019^2$ polygones de chaque côté.
+
+\smallskip
+ Il reste à prendre pour chaque paire un point où elles se chevauchent, et à planter une punaise à cet endroit.
+\end{sol}
+
+
+\begin{sol}
+On applique encore le lemme des mariages de Hall. Les colonnes ici jouent le rôle des filles, et les lignes jouent celui des garçons. Une ligne et une colonne sont compatibles s'il y a un caillou à leur interection.
+
+Si on considère $k$ lignes, elles contiennent $3k$ pierres réparties sur $\ell$ colonnes. Or chaque colonne contient au plus $3$ pierres parmi les $3k$ pierres, donc $\ell \ge k$.
 
 \smallskip
 
 Ainsi le lemme des mariage de Hall nous donne $n$ paires de lignes et colonnes dont les points d'intersections contiennent des pierres : ces $n$ pierres conviennent.
 \end{sol}
 
-\begin{exo}
-
-Sur une planète lointaine, il y a $n$ hommes, $n$ femmes et $n$ matheux. Une famille heureuse est une famille composée d'un homme, une femme et un matheux. Cependant pour former une famille, il faut que les trois membres s'apprécient (le fait de s'aprécier est toujours réciproque). Est-t-il toujours possible de former $n$ familles disjointes sachant que chaque membre de chacun des trois groupes apprécie au moins $k$ personnes dans chacun des deux autres groupes (donc $2k$ personnes en tout), et si :
-
-\begin{itemize}
-\item[(i)] $2k=n$ ?
-\item[(ii)] $4k=3n$?
-\end{itemize}
-\end{exo}
 
 \begin{sol}
-
 Dans le cas $(i)$ il est possible qu'aucune famille ne puisse être créée. En effet séparons chaque groupe en deux moitiés $A$ et $B$. Si les hommes $A$ apprécient les femmes $A$ et les matheux $B$ alors que les femmes $A$ apprécient les matheux $A$ et que à l'inverse les hommes $B$ apprécient les femmes $B$ et les matheux $A$ alors que les femmes $B$ apprécient les matheux $B$, aucune famille ne peut être créée.
 
 \medskip
 
-Dans le cas $(ii)$, il est toujours possible de créer des familles. On commencer par créer des couples homme/femme à l'aide du lemme de Hall. C'est possible car si on a un groupes de $\ell\geq 1$ femmes, et si $\ell\leq k$ alors apprécient à elles toutes au moins $k$ hommes. Si $\ell>k\geq n-k$, alors tous les hommes doivent apprécier au moins une femme de ce groupe. Ainsi par le lemme de Hall on peut créer ces couples.
+Dans le cas $(ii)$, il est toujours possible de créer des familles. On commencer par créer des couples homme/femme à l'aide du lemme de Hall. C'est possible car si on a un groupes de $\ell\ge 1$ femmes, et si $\ell\le k$ alors apprécient à elles toutes au moins $k$ hommes. Si $n - k \le k < \ell$, alors tous les hommes doivent apprécier au moins une femme de ce groupe. Ainsi par le lemme de Hall on peut créer ces couples.
 
 \medskip
-Ensuite on cherche à appareiller chaque couple avec un matheux. Puisque $k>\frac{3}{4}n$, alors un homme et une femme ont au moins $\frac{n}{2}$ matheux qu'ils apprécient tous deux. De plus un matheux apprécie aussi au moins $\frac{n}{2}$ couples. Ainsi par le même raisonnement, on peut appareiller les couples et les matheux pour créer les triplets souhaités.
+Ensuite on cherche à apparier chaque couple avec un matheux. Puisque $\frac 34 n < k$, un homme et une femme ont au moins $\frac n2$ matheux qu'ils apprécient en commun. De plus, un matheux apprécie aussi au moins $\frac n2$ couples. Ainsi, par le même raisonnement, on peut apparier les couples et les matheux pour créer les triplets souhaités.
 \end{sol}
-
-\begin{exo}
-On considère une grille $n\times m$ sur laquelle sont posés des pierres. Soit $k$ le plus petit nombre de lignes et colonnes qu'il faut supprimer pour supprimer toutes les pierres. Montrer qu'il existe $k$ pierres telles que deux de ces pierres ne soient jamais sur la même ligne ou colonne.
-\end{exo}
-
-\begin{sol}
-Si $k=n=m$ on retrouve exactement le lemme des mariages de Hall. Cet exercice est un lemme attribué à König.
-
-\medskip
-
-Nous allons reformuler le problème comme suit. On considère un graphe bipartite dont l'ensemble de sommets est partitionné en deux ensembles $A$ et $B$ et avec un ensemble d'arrêtes $E$. On suppose que le plus grand ensemble d'arrêtes tel que deux arrêtes choisies n'ont pas de sommet en commun est de taille $k$. Soit $E_0\subset E$ un tel ensemble.
-
-\medskip
-
- Etant donné une arrête $e\in E_0$ on dit qu'elle est de type $A$ si il existe une suite de sommets distincts $a_0, b_0,a_1,b_1,\cdots b_x,a_x$ où $a_x$ n'appartient à aucune arrête de $E_0$ et tel que pour tout $0\leq y\leq x$, $\{a_i,b_i\}\in E_0$ et $\{b_i,a_{i+1}\}\in E$ avec $e=\{a_0,b_0\}$.
- De même on dit que $e$ est de type $B$ si il existe une suite de sommets distincts $b_0, a_0,b_1,a_1,\cdots a_x,b_x$ où $b_x$ n'appartient à aucune arrête de $E_0$ et tel que pour tout $0\leq y\leq x$, $\{b_i,a_i\}\in E_0$ et $\{a_i,b_{i+1}\}\in E$ avec $e=\{a_0,b_0\}$.
-
- \medskip
-
- Si une arrête était de type $A$ et $B$, on aurait un chemin alternant entre $A$ et $B$. Si on enlève les arrête de $E_0$ de ce chemin et que l'on ajoute les arrêtes de ce chemin qui ne sont pas dans $E_0$, on obtient un ensemble $E_0$ plus grand contredisant la maximalité de $E_0$. Ainsi les arrêtes de $E_0$ ne sont pas des deux types.
-
- \medskip
-
- Pour une arrête de type $A$, on choisis le sommet dans $B$, pour une arrête de type $B$ on choisis le sommet dans $A$ (si une arrête n'a pas de type on choisi l'un des deux). Ces sommets choisis couvrent bien toutes les arrêtes, et sont au nombre de $k$ au plus, ce qui conclut.
-
-\end{sol}
-
-\begin{exo}%{[IMO C2]}
-
-Sur une planête il y a $2^N$ pays $(N \geq 5).$ Chaque pays a un drapeau composé d'une ligne de $N$ carrés de côté $1$, chacun étant en jaune ou bleu. Les drapeaux sont $2$ à $2$ distincts. Un ensemble de $N$ drapeaux est divers si ils peuvent être placés dans un certain ordre pour former un carré $N \times N$ tel que les $N$ carrés sur la diagonale principale soient de la même couleur. Déterminez le plus petit entier $M$ tel que tout ensemble de $M$ drapeaux contient un ensemble divers de $N$ drapeaux.
-\end{exo}
 
 
 \begin{sol}
-Si $M=2^{N-2}$, on peut choisir tous kes drapeaux qui finissent par jaune puis bleu. Il est impossible d'avoir un sous ensemble divers de cet ensemble de drapeaux.
+Si $k = n = m$ on retrouve exactement le lemme des mariages de Hall. Cet exercice est un lemme attribué à König.
 
 \medskip
 
-Montrons que $M=2^{N-2}+1$ est optimal. Considérons la grille $M\times N$ obtenue en mettant les drapeaux les uns sur les autres. Par la contraposée de l'exercice précédent, si à permutation près il n'est pas possible d'observer de diagonale monochrome, c'est qu'il existe $a$ lignes et $a'$ colonnes avec $a+a'<N$ qui recouvrent toutes les cases jaunes, et $b$ lignes et $b'$ colonnes avec $b+b'<N$ qui recouvrent toutes les cases bleues.
+Nous allons reformuler le problème comme suit. On considère un graphe bipartite dont l'ensemble de sommets est partitionné en deux ensembles $A$ et $B$ et avec un ensemble d'arêtes $E$. On suppose que le plus grand ensemble d'arêtes tel que deux arêtes choisies n'ont pas de sommet en commun est de taille $k$. Soit $E_0 \subset E$ un tel ensemble.
 
 \medskip
 
-
-Soit $A$ et $B$ les ensembles de colonnes choisies, de taille $a'$ et $b'$. Supposons que $A\cup B$ n'est pas égal à l'ensemble des colonnes. Puisque toutes les cases de la colonne restante sont bleues ou jaunes, $a+b\geq M$, donc $2N-2\geq 2^{N-2}+1$, ce qui est impossible car $N\geq 5$. Ainsi $A\cup B$ recouvre toutes les colonnes.
+Étant donné une arête $e \in E_0$ on dit qu'elle est de type $A$ s'il existe une suite de sommets distincts $a_0, b_0, a_1, b_1, \dots, b_x, a_x$ où $a_x$ n'appartient à aucune arête de $E_0$ et tel que pour tout $0 \le y \le x$, $\{a_i, b_i\} \in E_0$ et $\{b_i, a_{i + 1}\} \in E$ avec $e = \{a_0, b_0\}$. De même on dit que $e$ est de type $B$ s'il existe une suite de sommets distincts $b_0, a_0, b_1, a_1, \dots, a_x, b_x$ où $b_x$ n'appartient à aucune arête de $E_0$ et tel que pour tout $0 \le y \le x$, $\{b_i, a_i\} \in E_0$ et $\{a_i, b_{i + 1}\} \in E$ avec $e = \{a_0, b_0\}$.
 
 \medskip
 
-En particulier il n'y a que $2^{|A \cap B|}+a+b$ drapeaux possibles dans cet ensemble, car en dehors des $a+b$ lignes choisies, les couleurs sur les colonnes hors de $A\cap B$ sont déjà fixées. Ainsi $2^{|A \cap B|}+a+b> 2^{N-2}$. Or $|A\cap B|<N-(N-a')-(N-b')\leq N-2-a-b$. Ainsi si $x=a+b$, $2^{N-2-x}+x> 2^{N-2}$, ce qui est impossible, d'où le résultat.
+Si une arête était de type $A$ et $B$, on aurait un chemin alternant entre $A$ et $B$. Si on enlève les arêtes de $E_0$ de ce chemin et que l'on ajoute les arêtes de ce chemin qui ne sont pas dans $E_0$, on obtient un ensemble $E_0$ plus grand contredisant la maximalité de $E_0$. Ainsi, les arêtes de $E_0$ ne sont pas des deux types.
+
+\medskip
+
+Pour une arête de type $A$, on choisit le sommet dans $B$. Pour une arête de type $B$, on choisit le sommet dans $A$. Si une arête n'a pas de type on choisit n'importe Ces sommets choisis couvrent bien toutes les arêtes, et sont au nombre de $k$ au plus, ce qui conclut.
 \end{sol}
 
-%\begin{exo}
-%Une compagnie aérienne propose des vols entre toutes les capitales de l'union européenne. Le coût d'un vol entre deux villes est le même dans les deux sens. Anna et Bella partent chacune d'une capitale, pas forcément la même. Anna prend systématiquement le vol le moins cher parmi les vols qui la mènent à une capitale non encore visitée, et Bella prend systématiquement le vol le plus cher parmi les vols qui la mènent à une capitale non encore visitée. De plus les prix des vols sont tous distincts. Lorsqu'elles ont visité toutes les capitales, Anna et Bella comparent le prix total qu'elles ont payé. Est-il possible qu'Anna ait plus dépensé que Bella ?
-%\end{exo}
 
-\subsubsection{Graphes orientés}
+\begin{sol}
+Si $M = 2^{N - 2}$, on peut choisir tous les drapeaux qui finissent par jaune puis bleu. Il est impossible d'avoir un sous ensemble divers de cet ensemble de drapeaux.
 
-\begin{exo}
-Il faut attribuer $n$ maisons à $n$ personnes. Chaque personne range les maisons dans un ordre, sans égalités. Après les attributions, on remarque que toute autre attribution attribuerait à au moins une personne une maison moins bien classée. Montrer qu'il existe une personne qui a eu son premier choix de maison.
-\end{exo}
+\medskip
+
+Montrons que $M = 2^{N - 2} + 1$ est optimal. Considérons la grille $M \times N$ obtenue en mettant les drapeaux les uns sur les autres. Par la contraposée de l'exercice précédent, si à permutation près il n'est pas possible d'observer de diagonale monochrome, c'est qu'il existe $a$ lignes et $a'$ colonnes avec $a + a' < N$ qui recouvrent toutes les cases jaunes, et $b$ lignes et $b'$ colonnes avec $b + b' < N$ qui recouvrent toutes les cases bleues.
+
+\medskip
+
+Soit $A$ et $B$ les ensembles de colonnes choisies, de taille $a'$ et $b'$. Supposons que $A\cup B$ n'est pas égal à l'ensemble des colonnes. Puisque toutes les cases de la colonne restante sont bleues ou jaunes, $a + b \ge M$, donc $2N - 2 \ge 2^{N - 2} + 1$, ce qui est impossible car $N \ge 5$. Ainsi, $A\cup B$ recouvre toutes les colonnes.
+
+\medskip
+
+En particulier il n'y a que $2^{|A \cap B|} + a + b$ drapeaux possibles dans cet ensemble, car en dehors des $a + b$ lignes choisies, les couleurs sur les colonnes hors de $A \cap B$ sont déjà fixées. Ainsi, $2^{|A \cap B|} + a + b > 2^{N - 2}$. Or $|A \cap B| < N - (N - a') - (N - b') \le N - 2 - a - b$. Ainsi, si $x = a + b$, $2^{N - 2 - x} + x > 2^{N - 2}$, ce qui est impossible, d'où le résultat.
+\end{sol}
 
 
 \begin{sol}
@@ -140,24 +174,14 @@ Supposons que les personnes,et les maisons sont numérotées de $1$ à $n$ , et 
 
 \medskip
 
-Si on obtient un cycle $c_0,c_1,\cdots,c_k=c_0$, alors en associant à $c_i$ la maison $c_{i+1}$, on donnerai à chacun une maison qu'il préfère à celle qu'il avait avant, contredisant la condition de l'énoncé.
+Si on obtient un cycle $c_0, c_1, \dots, c_k = c_0$, alors en associant à $c_i$ la maison $c_{i + 1}$, on donnerait à chacun une maison qu'il préfère à celle qu'il avait avant, contredisant la condition de l'énoncé.
 \end{sol}
 
-\begin{exo}
-Une grille $n\times n$ est remplie avec les nombres $-1,0,1$ de sorte que chaque ligne et colonne contienne exactement un $1$ et un $-1$. Montrer que l'on peut permuter les lignes et les colonnes de sorte à obtenir le même tableau avec les signes échangés.
-\end{exo}
 
 \begin{sol}
-Ce tableau décrit un graphe orienté: si dans la ligne $i$ il y a un $1$ en position $a$ et un $-1$ en position $b$ on place une arrête entre $a$ et $b$. Il y a exactement une arrête entrante et sortante à chaque sommet, donc le graphe est une union disjointe de cycles. Pour chaque cycle $c_0,c_1,\cdots,c_k=c_0$, on peut permuter les lignes et colonnes correspondantes de sorte à envoyer $c_1,c_2,\cdots, c_k$ sur $c_k,c_{k-1},\cdots,c_1$. Si on effectue cette permutation pour chaque cycle, on obtient le graphe opposé, ce qui revient à échanger les $+1$ et $-1$.
+Ce tableau décrit un graphe orienté: si dans la ligne $i$ il y a un $1$ en position $a$ et un $-1$ en position $b$ on place une arête entre $a$ et $b$. Il y a exactement une arête entrante et sortante à chaque sommet, donc le graphe est une union disjointe de cycles. Pour chaque cycle $c_0, \dots, c_k = c_0$, on peut permuter les lignes et colonnes correspondantes de sorte à envoyer $c_1, \dots, c_k$ sur $c_k, c_{k - 1}, \dots, c_1$. Si on effectue cette permutation pour chaque cycle, on obtient le graphe opposé, ce qui revient à échanger les $+1$ et $-1$.
 \end{sol}
 
-\begin{exo}
-Dans une élection, il y a $2042$ candidats et des votants. Chaque votant ordonne les candidats dans l'ordre de son choix.
-
-On forme un graphe orienté de $2042$ sommets, avec une flèche de $U$ vers $V$ lorsque le candidat $U$ est placé au dessus de $V$ pour strictement plus de la moitié des votes. En cas d'égalité il n'y a pas d'arrêtes.
-
-Est-il possible d'obtenir tous les graphes complets orientés connexes ?
-\end{exo}
 
 \begin{sol}
 Pour chaque paire de sommets $a,b$ on note $e_{a,b}$ le nombre de vote pour lequel $a$ est mieux classé que $b$ moins le nombre des autres votes. Il est possible d'ajouter des votants de sorte à faire grandir arbitrairement $e_{a,b}$ ou $e_{b,a}=-e_{a,b}$ sans changer les autres écarts: il suffit d'ajouter un votant pour chaque ordre dans lequel $a$ est au dessus de $b$ (ou l'inverse).
@@ -168,44 +192,29 @@ Avec cette opération on peut construire le gaphe orienté que l'on souhaite.
 \end{sol}
 
 
-\begin{exo}
-Un tournois est un graphe complet où chaque arrête a une orientation. Un coloriage propre des arrêtes Est un coloriage des arêtes tel que si $a,b,c$ sont 3 sommets distinct du graphe, et si l'arrête entre $a$ et $b$ pointe vers $b$, et l'arrête entre $b$ et $c$ pointe vers $c$, alors ces deux arrêtes sont de couleur différente.
-
-Le nombre chromatique des arrêtes d'un graphe orienté complet est le plus petit nombre de couleurs nécessaire pour obtenir un coloriage propre des arrêtes. Quel est le plus petit nombre chromatique des arrêtes possible pour un graphe orienté complet à $n$ sommets ?
-\end{exo}
-
 \begin{sol}
-
-Soit $k$ l'unique entier tel que $2^{k-1}<n\leq 2^k$. Supposons que les sommets du graphe soient numérotés de $0$ à $n-1$, et que les arrêtes pointent toujours vers le sommet au plus petit numéro. On colore de la couleur $1\leq i\leq k$ l'arrête entre les sommets numéroté $a$ et $b$ si le plus grand chiffre dans l'écriture en base $2$ de $a$ et $b$ qui diffère est le $k$-ième. Ce coloriage en $k$ couleurs est bien propre.
+Soit $k$ l'unique entier tel que $2^{k - 1} < n \le 2^k$. Supposons que les sommets du graphe sont numérotés de $0$ à $n - 1$, et que les arêtes pointent toujours vers le sommet au plus petit numéro. On colore de la couleur $1\le i\le k$ l'arête entre les sommets numéroté $a$ et $b$ si le plus grand chiffre dans l'écriture en base $2$ de $a$ et $b$ qui diffère est le $k$-ième. Ce coloriage en $k$ couleurs est bien propre.
 
 \medskip
 
-Montrons qu'aucun graphe orienté complet à $n$ sommets ne peut être colorié avec $k-1$ couleurs. En effet pour la couleur $1\leq i\leq k-1$, on peut définir l'ensemble $A_i$ des sommets qui sont point d'arrivée d'une arrête de couleur $i$, et $B_i$ les autres. Etant donnée deux sommets $x$ et $y$, il existe au moins un $i$ (la couleur de l'arrête entre $x$ et $y$ tel que $x,y$ ne soient pas dans la même partie de la partition $A_i\cup B_i$. Ainsi l'ensemble des $i$ pour lesquels $x\in A_i$ est différent pour chaque sommet $x$, il y a donc au plus $2^{k-1}$ sommets, ce qui est absurde car $n>2^{k-1}$, d'où le résultat.
-
+Montrons qu'aucun graphe orienté complet à $n$ sommets ne peut être colorié avec $k - 1$ couleurs. En effet pour la couleur $1 \le i \le k-1$, on peut définir l'ensemble $A_i$ des sommets qui sont point d'arrivée d'une arête de couleur $i$, et $B_i$ les autres. Étant donné deux sommets $x$ et $y$, il existe au moins un $i$ (la couleur de l'arête entre $x$ et $y$ tel que $x$, $y$ ne soient pas dans la même partie de la partition $A_i\cup B_i$. Ainsi l'ensemble des $i$ pour lesquels $x\in A_i$ est différent pour chaque sommet $x$, il y a donc au plus $2^{k - 1}$ sommets, ce qui est absurde car $2^{k - 1} < n$, d'où le résultat.
 \end{sol}
 
-\begin{exo}%{[Olympiades Russes]}
-Soit $G$ un graphe orienté (sans arrêtes pointant d'un sommet vers lui même), tel que chaque sommet admet au moins deux arrêtes sortantes et deux arrêtes entrantes. Supposons que $G$ est fortement connexe. Montrer qu'il existe un cycle dans le graphe tel qu'en le supprimant le graphe reste fortement connexe.
-\end{exo}
 
 \begin{sol}
-On considère le plus grand cycle $c$ qui ne passe pas deux fois sur la même arrête. Ce cycle contient au moins un sous-cycle $c'$ qui ne passent pas deux fois par le même sommet. Notons $c_0,c_1,c_2,\cdots,c_k=c_0,c_{k+1},\cdots,c_n=c_0$ le cycle $c$ et
-le cycle $c'$ le cycle contenant les $k$ premières étapes.
+On considère le plus grand cycle $c$ qui ne passe pas deux fois sur la même arête. Ce cycle contient au moins un sous-cycle $c'$ qui ne passent pas deux fois par le même sommet. Notons $c_0, c_1, c_2, \dots, c_k = c_0, c_{k + 1}, \dots, c_n = c_0$ le cycle $c$ et le cycle $c'$ le cycle contenant les $k$ premières étapes.
 
 \medskip
 
-Montrons que si on supprime ce cycle, le graphe reste fortement connexe. Pour cela montrons que tout sommet du cycle $c'$ peut mener à un sommet du cycle $c\setminus c'$. De même on pourra montrer en inversant le même raisonement que tout sommet du cycle $c'$ peut être atteint par un sommet du cycle $c\setminus c'$, et on en déduira alors que le graphe est fortement connexe.
+Montrons que si on supprime ce cycle, le graphe reste fortement connexe. Pour cela, montrons que tout sommet du cycle $c'$ peut mener à un sommet du cycle $c\setminus c'$. De même, on pourra par raisonnement inverse que tout sommet du cycle $c'$ peut être atteint par un sommet du cycle $c\setminus c'$, et on en déduira alors que le graphe est fortement connexe.
 
 \medskip
 
-Soit $1\leq\ell_1<k$, et supposons que le sommet $c_{\ell_1}$ ne puisse pas mener à $c\setminus c'$. Ce sommet dispose d'au moins deux arrêtes sortantes, donc il mène à un sommet $b$ par une arrête qui n'est pas dans le cycle. En continuant d'utiliser des arrêtes qui ne sont pas dans le cycle, et puisque le graphe était fortemment connexe, il est possible de trouver un chemin disjoint du cycle qui va de $c_{\ell_1}$ à $c_{\ell_2}$ pour un certain $1\leq\ell<k$. On peut recommencer à partir de $\ell_2$, et définir $\ell_3$, $\ell_4,\cdots$, juqu'à ce qu'il existe $i,j$ tels que $\ell_i=\ell_j$.
+Soit $1\le\ell_1<k$, et supposons que le sommet $c_{\ell_1}$ ne puisse pas mener à $c\setminus c'$. Ce sommet dispose d'au moins deux arêtes sortantes, donc il mène à un sommet $b$ par une arête qui n'est pas dans le cycle. En continuant d'utiliser des arêtes qui ne sont pas dans le cycle, et puisque le graphe était fortemment connexe, il est possible de trouver un chemin disjoint du cycle qui va de $c_{\ell_1}$ à $c_{\ell_2}$ pour un certain $1\le\ell<k$. On peut recommencer à partir de $\ell_2$, et définir $\ell_3$, $\ell_4,\dots$, juqu'à ce qu'il existe $i,j$ tels que $\ell_i=\ell_j$.
 
-
-Ainsi on dispose d'un chemin de $c_{\ell_i}$ à $c_{\ell_j}$ qui est disjoint du cycle initial. Il est possible de faire en sorte que ce chemin ne passe pas deux fois par la même arrête, quitte à le réduire, sans le rendre trivial. Ainsi on peut alonger le cycle initial, ce qui est une contradiction.
+Ainsi on dispose d'un chemin de $c_{\ell_i}$ à $c_{\ell_j}$ qui est disjoint du cycle initial. Il est possible de faire en sorte que ce chemin ne passe pas deux fois par la même arête, quitte à le réduire, sans le rendre trivial. Ainsi on peut alonger le cycle initial, ce qui est une contradiction.
 
 \medskip
 
 Cela conclut la solution.
-
-
 \end{sol}
