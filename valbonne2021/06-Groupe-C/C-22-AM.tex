@@ -1,33 +1,79 @@
 % Cours de Colin, du 22/08/2021 Matin groupe C, transformations géométriques
 
-L'objet de ce cours fut les transformations géométriques directes, des isométries aux similitudes, en passant par les homotéties. Nous avons défini les rotations et translations, ainsi que ce qu'est une isométrie (directe). Nous avons montré que les isométries sont exactement les similitudes (translations et rotations).
+L'objet de ce cours est les transformations géométriques directes, des isométries aux similitudes, en passant par les homothéties. Cela comprend
+\begin{itemize}
+\item les rotations, translations, similitudes (directes), homothéties, homothéties en spirale, isométries (directes)
+\item la preuve que les isométries sont exactement les similitudes
+\item les constructions permettant de retrouver le centre d'une rotation ou d'une homothéties en spirale
+\item plusieurs exercices mettant ces notions dans le contexte des problèmes olympiques de géométrie plane
+\end{itemize}
 
-\medskip
+Pour retrouver les définitions et démonstrations du cours, ainsi que plus d'exercices sur le sujet, nous vous conseillons \href{le cours de la POFM sur le sujet}{http://maths-olympiques.fr/wp-content/uploads/2017/09/geom\_transfos.pdf}.
 
-Nous avons ensuite de même défini les homothéties et homothéties en spirale, ainsi que ce qu'est une similitude (directe).
-
-\medskip
-
-Nous vu les constructions permettant de retrouver le centre d'une rotation ou d'une homotéties en spirale. Ensuite nous avons traité de plusieurs exercices afin de voir comment ces notions peuvent être utiles sur des problèmes de géométrie plane. Pour retrouver les définitions et démonstrations du cours, ainsi que plus d'exercices sur le sujet, on vous conseille \href{le cours de la POFM sur le sujet.}{http://maths-olympiques.fr/wp-content/uploads/2017/09/geom\_transfos.pdf}
 
 \subsubsection{Isométries}
+
 
 \begin{exo}
 Soit $ABC$ un triangle isocèle rectangle en $A$, et $BDE$ un triangle isocèle rectangle en $D$. Soit $M$ le milieu de $[CE]$. Montrer que le triangle $MAD$ est isocèle rectangle en $M$.
 \end{exo}
 
+
+\begin{exo}[Théorème de Napoléon]
+Soit $ABC$ un triangle. Soient $X,Y,Z$ respectivement les trois points tels que les triangles $XBC$, $YCA$ et $ZAB$ soient équilatéraux et extérieurs au triangle $ABC$. Montrer que les centres de ces trois triangles équilatéraux forme un triangle équilatéral.
+\end{exo}
+
+
+\begin{exo}
+Soit $A_1A_2A_3$ un triangle. On note $A_i = A_{i+3}$ pour tout $i$. Soit $(P_i)$ une suite de points
+telle que pour tout $i$, il existe un point $Q_i$ tel que le triangle $Q_iP_iP_{i+1}$ est équilatéral direct et a pour centre $A_i$.
+On suppose que $P_{2020} = P_1$. Montrer que $A_1A_2A_3$ est équilatéral.
+\end{exo}
+
+
+\subsubsection{Homothéties}
+
+
+\begin{exo}
+Dans un triangle $ABC$, comment tracer un carré $XYZT$ avec $X,Y$ sur $AB$, $Z$ sur $AC$ et $T$ sur $BC$ ?
+\end{exo}
+
+Cet exercice permet de démontrer le Théorème de Desargues en géométrie projective.
+
+\begin{exo}
+Soient $[A_1B_1],[A_2B_2],[A_3B_3]$ trois segments parallèles. Soient $X,Y,Z$ les intersections respectivement de $A_1A_2$ et $B_1B_2$, de $A_1A_3$ et $B_1B_3$ et enfin de $A_2A_3$ et $B_2B_3$. Montrer que $X,Y,Z$ sont alignés.
+\end{exo}
+
+\subsubsection{Similitudes}
+
+
+\begin{exo}[Shortlist IMO 2000]
+Soit $ABCD$ un quadrilatère convexe avec $AB$ et $CD$ non parallèles. Soit $X$ un point à l'intérieur de $ABCD$ tel que $\widehat{ADX} = \widehat{BCX} < 90^\circ$ et $\widehat{DAX} = \widehat{CBX} < 90^\circ$. Soit $Y$ l'intersection des médiatrices de $[AB]$ et $[CD]$. Montrer que $\widehat{AYB} = 2\widehat{ADX}$.
+\end{exo}
+
+
+\begin{exo}
+Soient $C_1$ et $C_2$ deux cercles de centres respectifs $O_1$ et $O_2$ qui s'intersectent en $A$ et $B$. Soit $C$ l'intersection de la tangente à $C_2$ en $B$ et $D$ l'intersection de la tangente à $C_1$ en $B$. Soit $X$ l'intersection de la bissectrice de $\widehat{BAC}$ et $C_1$. Soit $Y$ l'intersection de la bissectrice de $\widehat{BAD}$ et de $C_2$. Soit $P$ et $Q$ les centres des cercles circonsrits respectivement à $ACD$ et $AXY$. Montrer que $PQ$ et $O_1O_2$ sont perpendiculaires.
+\end{exo}
+
+
+\begin{exo}
+Soit $\mathcal{C}_1$ et $\mathcal{C}_2$ deux cercles de centres $O_1$ et $O_2$ qui s'intersectent en $A$ et $B$. Soient $P$ et $Q$ deux points variables respectivement sur $\mathcal{C}_1$ et $\mathcal{C}_2$ de sorte que $B$ soit sur le segment $[PQ]$. Soit $R$ l'intersection de $AO_1$ et $BO_2$, I le centre du cercle inscrit à $PQR$, et $S$ le centre du cercle circonscrit à $PIQ$.
+
+Montrer que le point $S$ varie sur un arc de cercle dont le centre est sur le cercle circonscrit à $O_1O_2A$.
+\end{exo}
+
+
+\subsubsection{Solutions}
+
+
 \begin{sol}
 Soit $r_1$ la rotation d'angle $90^\circ$ de centre $A$ qui envoie $C$ sur $B$, et $r_2$ celle de centre $D$ qui envoie $B$ sur $E$. Leur composition est une symétrie centrale (i.e une rotation d'angle $180^\circ$), qui envoie $C$ sur $E$. Ainsi elle est de centre $M$.
 Oublions presque toute la figure. Soit $M'=r_1(M)$, alors $r_2(M')=M$. Ainsi $AMDM'$ est un losange, avec deux angles droits, donc c'est un carré. En particulier $AMD$ est isocèle rectangle en $M$.
-
 \end{sol}
 
-\begin{exo}{[Théorème de Napoléon]}
-Soit $ABC$ un triangle. Soient $X,Y,Z$ respectivement les trois points tels que les triangles $XBC$, $YCA$ et $ZAB$ soient équilatéraux et extérieurs au triangle $ABC$. Montrer que les centres de ces trois triangles équilatéraux forme un triangle équilatéral.
 
-\end{exo}
 \begin{sol}
-
 \begin{center}
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
 \definecolor{zzttqq}{rgb}{0.6,0.2,0.}
@@ -75,45 +121,25 @@ Formulons l'énoncé en termes de rotations. On a trois rotations $r_1,r_2,r_3$ 
 La composition $r_3\circ r_2\circ r_1$ est une isométrie d'angle $0^\circ$ qui fixe $B$, donc c'est une translation triviale. Montrons que si trois rotations d'angle $120^\circ$, une fois composées donnent l'identité, alors leurs centres forment un triangle isocèle. Le point $X$ est envoyé par $r_2$ sur $X'$, tel que pour un certain point $Z_0$, $XZ_0Y$ et $Z_0X'Y$ soient équilatéraux. Il existe une unique rotation d'angle $120$ qui envoie $X'$ sur $X$, et c'est le point $Z=Z_0$. Ainsi $XYZ$ forme un triangle équilatéral.
 \end{sol}
 
-\begin{exo}
-Soit $A_1A_2A_3$ un triangle. On note $A_i = A_{i+3}$ pour tout $i$. Soit $(P_i)$ une suite de points
-telle que pour tout $i$, il existe un point $Q_i$ tel que le triangle $Q_iP_iP_{i+1}$ est équilatéral direct et a pour centre $A_i$.
-On suppose que $P_{2020} = P_1$. Montrer que $A_1A_2A_3$ est équilatéral.
-\end{exo}
-
 \begin{sol}
 On considère ici encore les rotations d'angles $120^\circ$ degrés centrés en $A_1$, $A_2$, et $A_3$. Leur composition est une translation $\tau$. Si on compose $\tau$ $\frac{2019}{3}$ foison obteinet l'identité, donc cette translation est la traslation de vecteur le vecteur nul. On applique alors le même raisonnement que précédemment pour voir que les centres $A_1,A_2,A_3$ forment un triangle équilatéral.
 \end{sol}
 
-\subsubsection{Homothéties}
-
-\begin{exo}
-Dans un triangle $ABC$, comment tracer un carré $XYZT$ avec $X,Y$ sur $AB$, $Z$ sur $AC$ et $T$ sur $BC$ ?
-\end{exo}
 
 \begin{sol}
 On trace le carré $BCC'B'$ qui se situe en dehors du triangle $ABC$. On considère l'intersection $E$ et $F$ respectivement des segments $AB'$ et $BC$, et des segments $AC'$ et $BC$. L'homothétie de centre $A$ qui envoie $B$ sur $E$ envoie $C$ sur $F$, et envoie le grand carré $BCC'B'$ sur un carré $EFF'E'$ qui satisfait l'énoncé. On construit donc ce carré qui est le seul carré de base $EF$ du même côté que $A$ de la droite $BC$.
 \end{sol}
 
-Cet exercice permet de démontrer le Théorème de Desargues en géométrie projective.
-
-\begin{exo}
-Soient $[A_1B_1],[A_2B_2],[A_3B_3]$ trois segments parallèles. Soient $X,Y,Z$ les intersections respectivement de $A_1A_2$ et $B_1B_2$, de $A_1A_3$ et $B_1B_3$ et enfin de $A_2A_3$ et $B_2B_3$. Montrer que $X,Y,Z$ sont alignés.
-\end{exo}
 
 \begin{sol}
-Soit $h_1$ l'homotétie qui envoie $[A_1B_1]$ sur $[A_2B_2]$, $h_2$ celle qui envoie $[A_2B_2]$ sur $[A_3B_3]$ et $h_3$ celle qui envoie $[A_3B_3]$ sur $[A_1B_1]$. Les centres de ces homothéties sont respectivement $A_1,B_1,C_1$. La composition des trois homothéties fixe $[A_1B_1]$ et préserve les rapports de distance, donc c'est l'identité.
+Soit $h_1$ l'homothétie qui envoie $[A_1B_1]$ sur $[A_2B_2]$, $h_2$ celle qui envoie $[A_2B_2]$ sur $[A_3B_3]$ et $h_3$ celle qui envoie $[A_3B_3]$ sur $[A_1B_1]$. Les centres de ces homothéties sont respectivement $A_1,B_1,C_1$. La composition des trois homothéties fixe $[A_1B_1]$ et préserve les rapports de distance, donc c'est l'identité.
 
 \medskip
 
 On peut oublier les trois segments. $h_2\circ h_1$ envoie $X$ sur un point $X'$ sur $XY$. Or $h_3$ envoie ce point sur $X$, et $Z$ est sur la droite $XX'=XY$, donc les trois points sont alignés, ce qui conclut. On a au passage montré que si la composition de trois homothéties est triviale, alors leur centres sont alignés.
 \end{sol}
 
-\subsubsection{Similitudes}
 
-\begin{exo}%[IMO Shortlist 2000]
-Soit $ABCD$ un quadrilatère convexe avec $AB$ et $CD$ non parallèles. Soit $X$ un point à l'intérieur de $ABCD$ tel que $\widehat{ADX} = \widehat{BCX} < 90$ et $\widehat{DAX} = \widehat{CBX} < 90$. Soit $Y$ l'intersection des médiatrices de $[AB]$ et $[CD]$. Montrer que $\widehat{AYB} = 2 \widehat{ADX}$
-\end{exo}
 
 \begin{sol}
 \begin{center}
@@ -160,13 +186,9 @@ Soit $s_1$ la similitude de centre $C$ qui envoie $B$ sur $X$, et $s_2$ celle de
 
 \medskip
 
-Oublions une grande partie de la figure: $T=s_1(Y')$ doit être égal à $s_2^{-1}(Y')$, et les triangles $CY'T$ et $DY'T$ sont semblables, et ont un côté de même longueur, donc ils sont isométriques. Ainsi $Y'$ est sur la médiatrice de $DC$, et $Y'=Y$, ce qui conclut.
-
+Oublions une grande partie de la figure: $T = s_1(Y')$ doit être égal à $s_2^{-1}(Y')$, et les triangles $CY'T$ et $DY'T$ sont semblables, et ont un côté de même longueur, donc ils sont isométriques. Ainsi $Y'$ est sur la médiatrice de $DC$, et $Y'=Y$, ce qui conclut.
 \end{sol}
 
-\begin{exo}
-Soient $C_1$ et $C_2$ deux cercles de centres respectifs $O_1$ et $O_2$ qui s'intersectent en $A$ et $B$. Soit $C$ l'intersection de la tangeante à $C_2$ en $B$ et $D$ l'intersection de la tangeante à $C_1$ en $B$. Soit $X$ l'intersection de la bissectrice de $\widehat{BAC}$ et $C_1$. Soit $Y$ l'intersection de la bissectrice de $\widehat{BAD}$ et de $C_2$. Soit $P$ et $Q$ les centres des cercles circonsrits respectivement à $ACD$ et $AXY$. Montrer que $PQ$ et $O_1O_2$ sont perpendiculaires.
-\end{exo}
 
 \begin{sol}
 \begin{center}
@@ -218,14 +240,8 @@ L'angle $\widehat{O_2O_1Q}$ est égal à l'angle $\widehat{ACX}$, par le théor�
 \medskip
 
 Le point $X$ est le pôle sud de $A$ dans le triangle $ABC$, et $Y$ est le pôle sud de $A$ dans le triangle $ABD$. Ainsi la similitude $s$ envoie $X$ sur $Y$, donc la droite $QO_1$ sur $QO_2$. Ainsi $\widehat{O_1QO_2} = \widehat{PO_1O_2}$.Soit $Q'$ la deuxième intersection de $O_1Q$ avec $C_1$. On a alors $\widehat{Q'O_1P} = \widehat{O_2O_1Q}$
-
 \end{sol}
 
-\begin{exo}
-Soit $\mathcal{C}_1$ et $\mathcal{C}_2$ deux cercles de centres $O_1$ et $O_2$ qui s'intersectent en $A$ et $B$. Soient $P$ et $Q$ deux points variables respectivement sur $\mathcal{C}_1$ et $\mathcal{C}_2$ de sorte que $B$ soit sur le segment $[PQ]$. Soit $R$ l'intersection de $AO_1$ et $BO_2$, I le centre du cercle inscrit à $PQR$, et $S$ le centre du cercle circonscrit à $PIQ$.
-
-Montrer que le point $S$ varie sur un arc de cercle dont le centre est sur le cercle circonscrit à $O_1O_2A$.
-\end{exo}
 
 \begin{sol}
 \begin{center}
