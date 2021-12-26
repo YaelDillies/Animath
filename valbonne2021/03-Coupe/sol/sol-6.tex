@@ -1,0 +1,70 @@
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tkzInit[ymin=-0.5,ymax=6,xmin=-4.5,xmax=4.5]
+\tkzClip
+
+\tkzDefPoint(-3,5){A}
+\tkzDefPoint(-4,0){B}
+\tkzDefPoint(4,0){C}
+\tkzDefPoint(3,5){D}
+\tkzDefMidPoint(B,C) \tkzGetPoint{M}
+\tkzInterLL(M,D)(A,C) \tkzGetPoint{E}
+\tkzDefMidPoint(A,D) \tkzGetPoint{m}
+\tkzDefLine[perpendicular=through A](B,C) \tkzGetPoint{x}
+\tkzInterLL(A,x)(B,C) \tkzGetPoint{X}
+\tkzDefLine[perpendicular=through D](B,C) \tkzGetPoint{y}
+\tkzInterLL(D,y)(B,C) \tkzGetPoint{Y}
+
+\tkzMarkRightAngle[color=red](M,X,A)
+\tkzMarkRightAngle[color=red](D,Y,M)
+\tkzMarkSegment[color=blue,mark=s||](M,B)
+\tkzMarkSegment[color=blue,mark=s||](M,C)
+\tkzMarkSegment[color=red,mark=s|](A,M)
+\tkzMarkSegment[color=red,mark=s|](M,D)
+\tkzMarkSegment[color=black,mark=s|||](A,B)
+\tkzMarkSegment[color=black,mark=s|||](C,D)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(C,D)
+\tkzDrawSegment(A,D)
+\tkzDrawSegment(A,M)
+\tkzDrawSegment(M,D)
+\tkzDrawSegment[dashed](A,X)
+\tkzDrawSegment[dashed](D,Y)
+\tkzDrawLine[dashed](M,m)
+\tkzDrawPoints[fill=white,color=black](A,B,C,D,E,M,X,Y)
+
+\tkzLabelPoint[above left](A){$A$}
+\tkzLabelPoint[below left](B){$B$}
+\tkzLabelPoint[below right](C){$C$}
+\tkzLabelPoint[above right](D){$D$}
+\tkzLabelPoint[below=2.5pt](E){$E$}
+\tkzLabelPoint[below left](M){$M$}
+\tkzLabelPoint[below](X){$X$}
+\tkzLabelPoint[below](Y){$Y$}
+\end{tikzpicture}
+\end{center}
+
+Tout d'abord, montrons l'égalité $AM=MD$. En effet, si $X$ et $Y$ sont sur le segment $[BC]$ tels que les droites $(AX)$ et $(DY)$ sont perpendiculaires à la droite $(BC)$, alors le quadrilatère $ADYX$ possède ses côtés deux-à-deux parallèles et deux angles droits, il s'agit donc d'un rectangle.
+
+De plus par le théorème de Pythagore dans les triangles rectangles $DYC$ et $AXB$, $XB=\sqrt{AB^2+AX^2}=\sqrt{CD^2+DY^2}=YC$ donc $MY=MC-YC=MB-XB=MX$ et le point $M$ est le milieu du segment $[XY]$. La médiatrice du segment $[BC]$ est donc aussi la médiatrice du segment $[XY]$ et est un axe de symétrie du rectangle $ADYX$. On en déduit bien que $MA=MD$.
+
+\medskip
+
+Revenons à l'exercice.
+Le périmètre du triangle $AMC$ vaut $AM+MC+CA$ tandis que le périmètre du triangle $ABME$ vaut $AB+BM+ME+AE$. On calcule donc la différence de ces deux expressions, que l'on note
+$\Delta$, et l'on espère tomber sur une quantité positive :
+
+\begin{align*}
+\Delta & = AM+MC+CA -(AB+BM+ME+AE) \\
+& = AM+CA - (CD+ME+AE) && \text{car $MB=MC$ et $AB=CD$} \\
+& = AM+CE+EA - (CD+ME+AE) && \text{car $A$, $E$ et $C$ sont alignés} \\
+& = AM+CE - (CD+ME) \\
+& = MD+CE - (CD+ME) && \text{car $AM=MD$} \\
+& = ME+ED+CE - (CD+ME) && \text{car $M$, $E$ et $D$ sont alignés} \\
+& = CE+ED - CD \\
+& \ge 0 && \text{par inégalité triangulaire}
+\end{align*}
+
+On a donc le résultat voulu.

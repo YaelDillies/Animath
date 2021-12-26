@@ -1,0 +1,702 @@
+Dans toute la suite, on utilise uniquement la distance décrite dans l'énoncé, et on note $d(X,Y)$ la distance entre deux points $X$ et $Y$.
+On note $F_1, \ldots , F_8$ les fourmis. À chaque fourmi $F_i$, on associe le sommet $S_i$ duquel elle est le plus proche.
+Si une fourmi se trouve sur le milieu d'une arête, on choisit au hasard ce sommet parmi les deux sommets aux extrémités de l'arête en question. Pour tout indice $i$, on a donc $d(F_i,S_i)\le \dfrac{1}{2}$.
+
+\medskip
+
+S'il existe deux indices $i\neq j$ tels que $S_i=S_j$, alors
+$$d(F_i,S_i)+d(F_j,S_i)=d(F_i,S_i)+d(F_j,S_j) \le \frac{1}{2}+\frac{1}{2} =1,$$
+donc on a un chemin de longueur inférieure ou égal à $1$ passant par les arêtes du cube et qui relie les deux fourmis $F_i$ et $F_j$
+
+\medskip
+
+En revanche, si les sommets $S_i$ sont tous deux à deux distincts, et puisqu'il y a $8$ sommets sur le cube, chaque sommet est le sommet le plus proche d'exactement une fourmi. Soit $D$ la plus grande des distances
+$d(F_i,S_i)$. Quitte à renuméroter les fourmis, on peut supposer que $D=d(F_1,S_1)$.
+
+Soit $i$ l'indice tel que la fourmi $F_1$ est sur l'arête reliant le sommet $S_1$ au sommet $S_i$. Puisque chaque sommet est le sommet le plus proche d'exactement une fourmi, l'indice $i$ existe bien. On a alors
+$$d(F_i,S_i)+d(S_i,F_1) = d(F_i,S_i)+1-D \le D+1-D=1,$$
+donc les fourmis $F_1$ et $F_i$ sont à distance inférieure ou égale à $1$, comme désiré.
+
+
+\altsol
+
+Procédons par l'absurde, et supposons que les huit fourmis sont
+deux à deux à distance strictement plus grande que $1$.
+Puisque chaque arête est de longueur $1$, elle ne peut pas
+contenir plus de deux fourmis. On peut donc choisir $8$ arêtes différentes contenant chacune une fourmi.
+%Nos fourmis occupent donc
+%huit arêtes différentes.
+
+\medskip
+
+On considère alors le graphe formé des huit sommets du cube et de ces huit arêtes.
+Tout graphe qui contient au moins autant d'arêtes que de sommets contient un cycle.
+Il existe donc un cycle formé de $n$ arêtes $[S_1 S_2],
+[S_2 S_3], \ldots, [S_{n-1} S_n], [S_n S_1]$, dont chacune contient une fourmi que l'on notera $F_i$.
+
+Par construction, quitte à considérer les indices modulo $n$, et puisque le plus court chemin reliant $F_i$
+à $F_{i+1}$ en passant par $S_{i+1}$ est de longueur au moins $d(F_i,F_{i+1})$, on sait que $d(F_i,F_{i+1}) \le
+d(F_i,S_{i+1}) + d(S_{i+1},F_{i+1})$, donc que
+$$d(F_i,S_i) = 1 - d(F_i,S_{i+1}) < d(F_i,F_{i+1}) - d(F_i,S_{i+1}) \le d(F_{i+1},S_{i+1}).$$
+Mais alors, en enchaînant ces inégalités pour $i = 1,2,\ldots,n$, on obtient $d(F_1,S_1) < d(F_1,S_1)$, ce qui est absurde.
+
+En conclusion, notre hypothèse initiale est invalide, ce qui conclut.
+
+\textbf{Remarque :} Une fois introduits $S_1,\dots, S_n$, $F_1,\dots, F_n$ dans le raisonnement précédent on peut procéder ainsi : la distance entre $F_i$ et $F_{i+1}$ vaut strictement plus que $1$ pour $i$ entre $1$ et $n-1$, et celle entre $F_n$ et $F_1$ vaut aussi strictement plus que $1$. En particulier, le périmètre du cycle vaut strictement plus que $k$, or il est composé de $k$ arêtes, donc il vaut $k$, ce qui est absurde.
+
+
+\altsol
+Toujours en supposant par l'absurde que deux fourmis quelconques sont toujours à distance strictement supérieure à $1$, on peut procéder à une étude de tous les cas possibles, en utilisant le principe suivant, développé dans la solution précédente : sur un cycle de $n$ arêtes, il y a au plus $n-1$ fourmis. On notera $(P)$ cette propriété. Dans la suite, on utilise également que deux fourmis ne peuvent appartenir à la même arête, sans quoi elles seraient à distance au plus $1$.
+
+\medskip
+
+Commençons par considérer le coloriage du cube dans la figure de gauche :
+
+
+\begin{center}
+\begin{tikzpicture}
+[scale=0.75]
+\tkzInit[ymin=-0.5,ymax=7.5,xmin=-2.5,xmax=9]
+\tkzClip
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDrawSegment[color=yellow](A,B)
+\tkzDrawSegment[color=purple](B,C)
+\tkzDrawSegment[color=yellow](C,D)
+\tkzDrawSegment[color=purple](D,A)
+\tkzDrawSegment[color=green](A,E)
+\tkzDrawSegment[color=green](B,F)
+\tkzDrawSegment[color=green](C,G)
+\tkzDrawSegment[color=green](D,H)
+\tkzDrawSegment[color=yellow](E,F)
+\tkzDrawSegment[color=purple](F,G)
+\tkzDrawSegment[color=yellow](G,H)
+\tkzDrawSegment[color=purple](H,E)
+
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+[scale=0.75]
+\tkzInit[ymin=-0.5,ymax=7.5,xmin=-2,xmax=10.5]
+\tkzClip
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDrawSegment[color=red](A,B)
+\tkzDrawSegment[color=red](B,C)
+\tkzDrawSegment[color=red](C,D)
+\tkzDrawSegment[color=red](D,A)
+\tkzDrawSegment[color=green](A,E)
+\tkzDrawSegment[color=green](B,F)
+\tkzDrawSegment[color=green](C,G)
+\tkzDrawSegment[color=green](D,H)
+\tkzDrawSegment[color=blue](E,F)
+\tkzDrawSegment[color=blue](F,G)
+\tkzDrawSegment[color=blue](G,H)
+\tkzDrawSegment[color=blue](H,E)
+
+\end{tikzpicture}
+\end{center}
+
+
+On a réparti les arêtes en $3$ groupes de couleurs. Puisqu'il y a $8$ fourmis, il y a au moins une couleur telle qu'au moins trois fourmis appartiennent aux arêtes de cette couleur. Quitte à modifier l'orientation du cube, on suppose qu'il s'agit de la couleur verte.
+
+\medskip
+
+On fixe une orientation du cube, et on recolorie le cube comme dans la figure de droite, pour partitionner les arêtes en $3$ groupes : les $4$ arêtes \textit{verticales} (en vert sur la figure), les $4$ arêtes \textit{hautes} (en bleu sur la figure) et les $4$ arêtes \textit{basses} (en rouge sur la figure). On examine alors toutes les configurations de $8$ fourmis.
+
+
+Tout d'abord, en appliquant la propriété $(P)$ au cycle composé des $4$ arêtes bleues, puis au cycle composé des arêtes rouges, on sait qu'il n'y a pas plus de $3$ fourmis sur les arêtes bleues, ni plus de $3$ fourmis sur les arêtes rouges.
+
+Puisque deux fourmis ne peuvent appartenir à la même arête, il y a deux cas à traiter :
+
+\textbf{cas n$^\circ 1$ :} Il y a $4$ fourmis en tout sur les arêtes verticales, c'est-à-dire une fourmi sur chaque arête verte. Les $4$ autres fourmis sont alors réparties comme suit : soit $2$ fourmis sur les arêtes basses et $2$ sur les arêtes hautes, soit $3$ fourmis sur les arêtes hautes et $1$ sur les arêtes basses, soit l'inverse. On garde ensuite en tête qu'une même face ne peut contenir $4$ fourmis d'après la propriété $(P)$, ce qui nous laisse, à symétrie du cube près, $3$ cas à traiter. Pour chacun de ces cas, on représente en rouge un cycle contenant autant d'arêtes que de fourmis (une arête contenant une fourmi est représentée avec un point bleu en son milieu), ce qui nous donne la contradiction voulue.
+
+\begin{center}
+\begin{tikzpicture}
+[scale=0.6]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(A,E)	\tkzGetPoint{K}
+\tkzDefMidPoint(B,F)	\tkzGetPoint{L}	
+\tkzDefMidPoint(C,G)	\tkzGetPoint{M}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{N}
+\tkzDefMidPoint(A,B)	\tkzGetPoint{W}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{X}
+\tkzDefMidPoint(E,H)	\tkzGetPoint{Y}
+\tkzDefMidPoint(F,G)	\tkzGetPoint{Z}
+
+\tkzDrawSegment[color=red](A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment[color=red](C,D)
+\tkzDrawSegment(D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment[color=red](B,F)
+\tkzDrawSegment[color=red](C,G)
+\tkzDrawSegment[color=red](D,H)
+\tkzDrawSegment(E,F)
+\tkzDrawSegment[color=red](F,G)
+\tkzDrawSegment(G,H)
+\tkzDrawSegment[color=red](H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,N,W,X,Y,Z)
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+[scale=0.6]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(A,E)	\tkzGetPoint{K}
+\tkzDefMidPoint(B,F)	\tkzGetPoint{L}	
+\tkzDefMidPoint(C,G)	\tkzGetPoint{M}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{N}
+\tkzDefMidPoint(A,B)	\tkzGetPoint{W}
+\tkzDefMidPoint(F,G)	\tkzGetPoint{X}
+\tkzDefMidPoint(G,H)	\tkzGetPoint{Y}
+\tkzDefMidPoint(H,E)	\tkzGetPoint{Z}
+
+\tkzDrawSegment[color=red](A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,D)
+\tkzDrawSegment(D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment[color=red](B,F)
+\tkzDrawSegment(C,G)
+\tkzDrawSegment(D,H)
+\tkzDrawSegment(E,F)
+\tkzDrawSegment[color=red](F,G)
+\tkzDrawSegment[color=red](G,H)
+\tkzDrawSegment[color=red](H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,N,W,X,Y,Z)
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+[scale=0.6]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(A,E)	\tkzGetPoint{K}
+\tkzDefMidPoint(B,F)	\tkzGetPoint{L}	
+\tkzDefMidPoint(C,G)	\tkzGetPoint{M}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{N}
+\tkzDefMidPoint(A,B)	\tkzGetPoint{W}
+\tkzDefMidPoint(B,C)	\tkzGetPoint{X}
+\tkzDefMidPoint(E,H)	\tkzGetPoint{Y}
+\tkzDefMidPoint(G,H)	\tkzGetPoint{Z}
+
+\tkzDrawSegment[color=red](A,B)
+\tkzDrawSegment[color=red](B,C)
+\tkzDrawSegment(C,D)
+\tkzDrawSegment(D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment(B,F)
+\tkzDrawSegment[color=red](C,G)
+\tkzDrawSegment(D,H)
+\tkzDrawSegment(E,F)
+\tkzDrawSegment(F,G)
+\tkzDrawSegment[color=red](G,H)
+\tkzDrawSegment[color=red](H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,N,W,X,Y,Z)
+
+\end{tikzpicture}
+\end{center}
+
+\textbf{cas n$^\circ 2$ :} Il y a $3$ fourmis en tout sur les arêtes verticales. Donc les $5$ autres fourmis sont réparties comme suit : $3$ fourmis sur les arêtes basses et $2$ fourmis sur les arêtes hautes (ou l'inverse). Si on fixe l'arête basse ne contenant pas de fourmi, il y a $4$ choix possibles pour l'arête verticale ne contenant pas de fourmis et $6$ configurations possibles pour les arêtes hautes contenant une fourmi. Mais le cube est symétrique par rapport au plan médian de l'arête basse ne contenant pas de fourmis. Il y a donc $12$ cas à traiter.
+Pour chacun de ces cas, on représente en rouge un cycle contenant autant d'arêtes que de fourmis (une arête contenant une fourmi est représentée avec un point bleu en son milieu), ce qui nous donne la contradiction voulue.
+
+\begin{center}
+\begin{tikzpicture}
+[scale=0.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{W}
+\tkzDefMidPoint(C,G)	\tkzGetPoint{X}
+\tkzDefMidPoint(E,F)	\tkzGetPoint{Y}
+\tkzDefMidPoint(G,H)	\tkzGetPoint{Z}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment[color=red](C,D)
+\tkzDrawSegment(D,A)
+\tkzDrawSegment(A,E)
+\tkzDrawSegment(B,F)
+\tkzDrawSegment[color=red](C,G)
+\tkzDrawSegment[color=red](D,H)
+\tkzDrawSegment(E,F)
+\tkzDrawSegment(F,G)
+\tkzDrawSegment[color=red](G,H)
+\tkzDrawSegment(H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,V,W,X,Y,Z)
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+[scale=0.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{W}
+\tkzDefMidPoint(C,G)	\tkzGetPoint{X}
+\tkzDefMidPoint(F,G)	\tkzGetPoint{Y}
+\tkzDefMidPoint(E,H)	\tkzGetPoint{Z}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,D)
+\tkzDrawSegment[color=red](D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment(B,F)
+\tkzDrawSegment(C,G)
+\tkzDrawSegment[color=red](D,H)
+\tkzDrawSegment(E,F)
+\tkzDrawSegment(F,G)
+\tkzDrawSegment(G,H)
+\tkzDrawSegment[color=red](H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,V,W,X,Y,Z)
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+[scale=0.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{W}
+\tkzDefMidPoint(C,G)	\tkzGetPoint{X}
+\tkzDefMidPoint(E,F)	\tkzGetPoint{Y}
+\tkzDefMidPoint(F,G)	\tkzGetPoint{Z}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment[color=red](C,D)
+\tkzDrawSegment[color=red](D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment(B,F)
+\tkzDrawSegment[color=red](C,G)
+\tkzDrawSegment(D,H)
+\tkzDrawSegment[color=red](E,F)
+\tkzDrawSegment[color=red](F,G)
+\tkzDrawSegment(G,H)
+\tkzDrawSegment(H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,V,W,X,Y,Z)
+
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+[scale=0.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{W}
+\tkzDefMidPoint(C,G)	\tkzGetPoint{X}
+\tkzDefMidPoint(F,G)	\tkzGetPoint{Y}
+\tkzDefMidPoint(G,H)	\tkzGetPoint{Z}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment[color=red](C,D)
+\tkzDrawSegment(D,A)
+\tkzDrawSegment(A,E)
+\tkzDrawSegment(B,F)
+\tkzDrawSegment[color=red](C,G)
+\tkzDrawSegment[color=red](D,H)
+\tkzDrawSegment(E,F)
+\tkzDrawSegment(F,G)
+\tkzDrawSegment[color=red](G,H)
+\tkzDrawSegment(H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,V,W,X,Y,Z)
+
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+[scale=0.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{W}
+\tkzDefMidPoint(C,G)	\tkzGetPoint{X}
+\tkzDefMidPoint(G,H)	\tkzGetPoint{Y}
+\tkzDefMidPoint(H,E)	\tkzGetPoint{Z}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,D)
+\tkzDrawSegment[color=red](D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment(B,F)
+\tkzDrawSegment(C,G)
+\tkzDrawSegment[color=red](D,H)
+\tkzDrawSegment(E,F)
+\tkzDrawSegment(F,G)
+\tkzDrawSegment(G,H)
+\tkzDrawSegment[color=red](H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,V,W,X,Y,Z)
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+[scale=0.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{W}
+\tkzDefMidPoint(C,G)	\tkzGetPoint{X}
+\tkzDefMidPoint(H,E)	\tkzGetPoint{Y}
+\tkzDefMidPoint(E,F)	\tkzGetPoint{Z}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,D)
+\tkzDrawSegment[color=red](D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment(B,F)
+\tkzDrawSegment(C,G)
+\tkzDrawSegment[color=red](D,H)
+\tkzDrawSegment(E,F)
+\tkzDrawSegment(F,G)
+\tkzDrawSegment(G,H)
+\tkzDrawSegment[color=red](H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,V,W,X,Y,Z)
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+[scale=0.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(B,F)	\tkzGetPoint{W}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{X}
+\tkzDefMidPoint(E,F)	\tkzGetPoint{Y}
+\tkzDefMidPoint(G,H)	\tkzGetPoint{Z}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment[color=red](B,C)
+\tkzDrawSegment[color=red](C,D)
+\tkzDrawSegment[color=red](D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment[color=red](B,F)
+\tkzDrawSegment(C,G)
+\tkzDrawSegment(D,H)
+\tkzDrawSegment[color=red](E,F)
+\tkzDrawSegment(F,G)
+\tkzDrawSegment(G,H)
+\tkzDrawSegment(H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,V,W,X,Y,Z)
+
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+[scale=0.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(B,F)	\tkzGetPoint{W}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{X}
+\tkzDefMidPoint(E,F)	\tkzGetPoint{Y}
+\tkzDefMidPoint(G,H)	\tkzGetPoint{Z}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,D)
+\tkzDrawSegment[color=red](D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment(B,F)
+\tkzDrawSegment(C,G)
+\tkzDrawSegment[color=red](D,H)
+\tkzDrawSegment(E,F)
+\tkzDrawSegment(F,G)
+\tkzDrawSegment(G,H)
+\tkzDrawSegment[color=red](H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,V,W,X,Y,Z)
+
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+[scale=0.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(B,F)	\tkzGetPoint{W}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{X}
+\tkzDefMidPoint(E,F)	\tkzGetPoint{Y}
+\tkzDefMidPoint(F,G)	\tkzGetPoint{Z}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment[color=red](B,C)
+\tkzDrawSegment[color=red](C,D)
+\tkzDrawSegment[color=red](D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment[color=red](B,F)
+\tkzDrawSegment(C,G)
+\tkzDrawSegment(D,H)
+\tkzDrawSegment[color=red](E,F)
+\tkzDrawSegment(F,G)
+\tkzDrawSegment(G,H)
+\tkzDrawSegment(H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,V,W,X,Y,Z)
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+[scale=0.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(B,F)	\tkzGetPoint{W}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{X}
+\tkzDefMidPoint(F,G)	\tkzGetPoint{Y}
+\tkzDefMidPoint(G,H)	\tkzGetPoint{Z}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment[color=red](B,C)
+\tkzDrawSegment[color=red](C,D)
+\tkzDrawSegment(D,A)
+\tkzDrawSegment(A,E)
+\tkzDrawSegment[color=red](B,F)
+\tkzDrawSegment(C,G)
+\tkzDrawSegment[color=red](D,H)
+\tkzDrawSegment(E,F)
+\tkzDrawSegment[color=red](F,G)
+\tkzDrawSegment[color=red](G,H)
+\tkzDrawSegment(H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,V,W,X,Y,Z)
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+[scale=0.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(B,F)	\tkzGetPoint{W}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{X}
+\tkzDefMidPoint(G,H)	\tkzGetPoint{Y}
+\tkzDefMidPoint(H,E)	\tkzGetPoint{Z}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,D)
+\tkzDrawSegment[color=red](D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment(B,F)
+\tkzDrawSegment(C,G)
+\tkzDrawSegment[color=red](D,H)
+\tkzDrawSegment(E,F)
+\tkzDrawSegment(F,G)
+\tkzDrawSegment(G,H)
+\tkzDrawSegment[color=red](H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,V,W,X,Y,Z)
+
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[scale=0.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(B,F)	\tkzGetPoint{W}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{X}
+\tkzDefMidPoint(G,H)	\tkzGetPoint{Y}
+\tkzDefMidPoint(H,E)	\tkzGetPoint{Z}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,D)
+\tkzDrawSegment[color=red](D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment(B,F)
+\tkzDrawSegment(C,G)
+\tkzDrawSegment[color=red](D,H)
+\tkzDrawSegment(E,F)
+\tkzDrawSegment(F,G)
+\tkzDrawSegment(G,H)
+\tkzDrawSegment[color=red](H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,V,W,X,Y,Z)
+
+\end{tikzpicture}
+\end{center}
+
+En conclusion, on ne peut placer $8$ fourmis de telle sorte que deux fourmis quelconques soient toujours à distance strictement supérieure à $1$.

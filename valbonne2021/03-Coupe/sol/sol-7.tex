@@ -1,0 +1,23 @@
+L'exercice demande de trouver le plus grand entier $n$ tel qu'il existe une suite de $n$ chiffres $0$ ou $1$ vérifiant les conditions de l'énoncé. Pour montrer que le plus grand entier recherché est un entier $c$, il y a donc nécessairement deux parties distinctes : l'analyse, dans laquelle on établit que tout entier $n$ vérifiant la propriété énoncée vérifie $n\le c$, et la construction, dans laquelle on donne un exemple de suite de $c$ chiffres vérifiant les conditions.
+
+\medskip
+
+\textbf{Analyse :} Soit $a_1a_2\ldots a_n$ la suite de chiffres écrite au tableau, où chaque $a_i$ vaut soit $0$ soit $1$. Pour saisir à quel point les remarque d'Aline sont restrictives sur la nature de la suite, on regarde ce que ces remarques impliquent sur un bloc de $200$ chiffres consécutifs, puis sur le même bloc auquel on ajoute $2$ chiffres.
+
+Soit $1\le k\le n-201$. Considérons le bloc de $200$ chiffres consécutifs $\{a_k,a_{k+1},\ldots, a_{k+199}\}$ et le bloc de $202$ chiffres $\{a_k,a_{k+1},\ldots ,a_{k+200},a_{k+201}\}$. Le nombre de $0$ et de $1$ est le même dans le bloc de $200$ chiffres mais différent dans le bloc de $202$ chiffres. Ceci impose que $a_{k+200}=a_{k +201}$.
+
+$$a_1, \ldots ,\underbrace{a_k, a_{k+1}, \ldots , a_{k+199},}_{\text{cent $0$ et cent $1$}} \underbrace{a_{k+200}, a_{k+201}}_{\neq \{0,1\},\{1,0\}}, \ldots , a_n$$
+
+Cette égalité est vraie pour tout entier $k$. En combinant les égalités relatives à $k=1, 2, \ldots n-201$, on obtient que $a_{201}=a_{202}= \ldots = a_n$. Quitte à inverser les $0$ et les $1$, on pourra considérer dans la suite que tous ces chiffres sont égaux à $0$.
+
+La suite est donc constante à partir d'un certain rang. Mais si $n$ est trop grand, on aura une suite de $200$ chiffres avec un nombre de $1$ strictement plus grand que le nombre de $0$ (ou l'inverse).
+
+$$a_1, \ldots , \underbrace{a_{n-199}, a_{n-198}, \ldots , a_{199}, a_{200}, \overbrace{0, 0,\ldots ,0}^{\text{$n-200$ chiffres $0$}}}_{\text{comporte cent $0$} }$$
+
+Pour formaliser cette idée, on considère le bloc de $200$ chiffres $\{a_{n-199}, a_{n-198} , \ldots , a_n\}$. Puisque les $n-200$ derniers chiffres de ce bloc sont des $0$, ils ne peuvent constituer plus de la moitié de ce bloc, sans quoi strictement plus de la moitié des chiffres du bloc sont des $0$, ce qui est exclu. On en déduit que $n-200 \le 100$ et que $n\le 300$.
+
+\medskip
+
+\textbf{Construction :} L'analyse nous a montré que dans toute suite convenable de $300$ chiffres, les chiffres $a_{201}, \ldots , a_{300}$ sont tous égaux. Ceci nous inspire la construction suivante :
+$$ \{\underbrace{0,0, \ldots 0}_{100 \text{ chiffres}} ,\underbrace{1,1, \ldots 1}_{100 \text{ chiffres}}, \underbrace{0,0,\ldots 0}_{100 \text{ chiffres}} \},$$
+dans laquelle on vérifie bien que toute suite de $200$ chiffres consécutifs contient $100$ chiffres $0$ et $100$ chiffres $1$ et toute suite de $202$ chiffres consécutifs contient $102$ chiffres $1$ et $100$ chiffres $0$.

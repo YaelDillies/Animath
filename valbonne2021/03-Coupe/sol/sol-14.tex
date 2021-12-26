@@ -1,0 +1,153 @@
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\tkzDefPoint(1,5){X}
+\tkzDefPoint(3,0){Y}
+\tkzDefPoint(-3,0){Z}
+\tkzDefPoint(0.5,3){M}
+\tkzInterLL(Y,M)(X,Z) \tkzGetPoint{N}
+\tkzInterLL(Z,M)(X,Y) \tkzGetPoint{L}
+
+\tkzDrawSegment(X,Y)
+\tkzDrawSegment(Y,Z)
+\tkzDrawSegment(Z,X)
+\tkzDrawSegment(Y,N)
+\tkzDrawSegment(L,Z)
+
+\tkzDrawPoints[fill=white,color=black](X,Y,Z,M,N,L)
+
+\tkzLabelPoint[above](X){$X$}
+\tkzLabelPoint(Y){$Y$}
+\tkzLabelPoint[below left](Z){$Z$}
+\tkzLabelPoint[below](M){$M$}
+\tkzLabelPoint[above left](N){$N$}
+\tkzLabelPoint[above right](L){$L$}
+
+\begin{scope}[shift={(10,0)}]
+\tkzDefPoint(-2,6){A}
+\tkzDefPoint(-3,0){B}
+\tkzDefPoint(3,0){C}
+\tkzDefPoint(2,6){D}
+\tkzDefPoint(-0.25,2.5){P}
+
+\tkzMarkSegment[color=blue,mark=s||](A,B)
+\tkzMarkSegment[color=blue,mark=s||](C,D)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,D)
+\tkzDrawSegment(D,A)
+\tkzDrawSegment(A,C)
+\tkzDrawSegment(B,D)
+\tkzDrawSegment(A,P)
+\tkzDrawSegment(B,P)
+\tkzDrawSegment(C,P)
+\tkzDrawSegment(D,P)
+\tkzDrawPoints[fill=white,color=black](A,B,C,D,P)
+
+\tkzLabelPoint[above left](A){$A$}
+\tkzLabelPoint[below left](B){$B$}
+\tkzLabelPoint[below right](C){$C$}
+\tkzLabelPoint[above right](D){$D$}
+\tkzLabelPoint[below](P){$P$}
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item
+Il suffit de vérifier directement que
+\begin{align*}
+MY + MZ
+& \le MY + MN + NZ && \text{par inégalité triangulaire} \\
+& \le NY + NZ && \text{car $M$, $N$ et $Y$ sont alignés} \\
+& \le NX + XY + NZ && \text{par inégalité triangulaire} \\
+& \le XZ + XY && \text{car $X$, $N$ et $Z$ sont alignés.}
+\end{align*}
+
+\item
+Nous allons utiliser la question précédente. On commence par l'inégalité de gauche. Les diagonales du quadrilatère $ABCD$ partagent celui-ci en quatre triangles de sorte que le point $P$ appartient à au moins deux des triangles $ABC$, $BCD$, $ABD$ et $ACD$.
+
+Si $P$ appartient au triangle $ABC$, la question 1.
+indique que $PA + PC \le BA + BC < 2 AB$.
+Sinon, $P$ appartient au triangle $ACD$, et la question
+1. indique que $PA + PC \le DA + DC < 2AB$.
+Dans les deux cas, on a bien $PA + PC < 2AB$.
+
+On montre de même que $PB + PD < 2AB$, de telle sorte que
+$$PA+PB+PC+PD < 4AB.$$
+
+On montre ensuite l'inégalité de droite. D'après l'inégalité triangulaire dans le triangle $PCD$,
+$$PC +PD \ge CD,$$
+avec égalité si et seulement si $P$ appartient au côté
+$[CD]$.
+De même, dans le triangle $PAB$,
+$$PA+PB \ge AB$$
+avec égalité si et seulement si $P$ appartient au côté $[AB]$.
+Ces deux cas d'égalité sont donc incompatibles, si bien que
+$$2(PA+PB+PC+PD) > 2AB+2CD = 4AB$$
+
+\end{enumerate}
+
+
+\altsol
+
+\begin{center}
+\begin{tikzpicture}
+[scale=1]
+\tkzInit[ymin=-0.5,ymax=6.5,xmin=-5,xmax=5]
+\tkzClip
+
+\tkzDefPoint(-2,6){A}
+\tkzDefPoint(-3,0){B}
+\tkzDefPoint(3,0){C}
+\tkzDefPoint(2,6){D}
+\tkzDefPoint(-0.25,2.5){P}
+\tkzDefLine[perpendicular=through P](A,D) \tkzGetPoint{m}
+\tkzInterLL(P,m)(A,D) \tkzGetPoint{M}
+\tkzDefLine[perpendicular=through P](B,C) \tkzGetPoint{n}
+\tkzInterLL(P,n)(B,C) \tkzGetPoint{N}
+\tkzDefLine[perpendicular=through A](B,C) \tkzGetPoint{x}
+\tkzInterLL(A,x)(B,C) \tkzGetPoint{X}
+
+\tkzMarkSegment[color=blue,mark=s||](A,B)
+\tkzMarkSegment[color=blue,mark=s||](C,D)
+\tkzMarkRightAngle[color=red](P,M,D)
+\tkzMarkRightAngle[color=red](C,N,P)
+\tkzMarkRightAngle[color=red](C,X,A)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(C,D)
+\tkzDrawSegment(P,M)
+\tkzDrawSegment(P,N)
+\tkzDrawSegment(D,A)
+\tkzDrawSegment(A,P)
+\tkzDrawSegment(B,P)
+\tkzDrawSegment(C,P)
+\tkzDrawSegment(D,P)
+\tkzDrawSegment[dashed](A,X)
+\tkzDrawPoints[fill=white,color=black](A,B,C,D,P,M,N,X)
+
+\tkzLabelPoint[above left](A){$A$}
+\tkzLabelPoint[below left](B){$B$}
+\tkzLabelPoint[below right](C){$C$}
+\tkzLabelPoint[above right](D){$D$}
+\tkzLabelPoint[above](M){$M$}
+\tkzLabelPoint[below](N){$N$}
+\tkzLabelPoint[below](X){$X$}
+\tkzLabelPoint[right](P){$P$}
+\end{tikzpicture}
+\end{center}
+
+On présente une deuxième façon de réaliser l'inégalité de gauche. On note $M$ et $N$ les projetés oorthogonaux du point $P$ respectivement sur les segment $[AD]$ et $[BC]$.
+
+Alors d'après l'inégalité triangulaire, on a les inégalités suivantes :
+$$\begin{array}{llllllll}
+PA\le PM+MA &,& PB\le PN+NB &,& PC \le PN+NC&,&PD\le PM+MD\\
+\end{array}$$
+
+Puisque $PM+PN=MN$,$AM+MD=AD$ et $BN+NC=BC$, on obtient en sommant les inégalités que
+
+$$ PA+PB+PC+PD \le 2MN+AD+BC$$
+
+Ensuite, on sait que $AD< AB$ et $BC<AB$. Il est donc suffisant de montrer que $MN\le AB$. Pour cela, on introduit le projeté orthogonal du point $A$ sur la droite $[BC]$, que l'on note $X$. Le quadrilatère $AXNM$ est un rectangle puisque ses côtés sont parallèles deux à deux et qu'il possède un angle droit. On a donc $MN=AX$. Mais dans le triangle rectangle $AXB$, l'hypothénuse est plus grand que chacun des deux autres côtés, ce qui signifie que $AB>AX=MN$, comme annoncé. On a donc bien
+
+$$PA+PB+PC+PD < 4AB$$

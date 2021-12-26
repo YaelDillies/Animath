@@ -1,0 +1,17 @@
+Soit $a_k$ le nombre d'élèves ayant obtenu la note $k$ avant les modifications de Vincent. La moyenne des notes avant les modifications de Vincent est donc
+$$m_1 = \frac{0a_0 + 1a_1 + 2a_2 + 3a_3 + 4a_4 + 5a_5 + 6a_6 + 7a_7 + 8a_8}{6000}.$$
+
+Après les modifications, le nombre d'élèves ayant obtenu $0$ est de $a_0 + a_1 + a_2 + a_3$, le nombre d'élèves ayant obtenu $1$,
+$2$ ou $3$ est nul, le nombre d'élèves ayant obtenu $4$ est toujours $a_4$, le nombre d'élèves ayant obtenu $5$, $6$ ou $7$ est nul et le nombre d'élèves ayant obtenu $8$ est $a_5 + a_6 + a_7 + a_8$. La moyenne des notes après modifications est donc
+$$m_2 = \frac{0(a_0 + a_1 + a_2 + a_3) + 4a_4 + 8(a_5 + a_6 + a_7 + a_8)}{6000}.$$
+
+Or on sait que $m_2 = m_1 + \dfrac{1}{10}$. En combinant les deux équations, on a donc
+$$4a_4 + 8(a_5 + a_6 + a_7 + a_8) = 6000m_2 = 6000m_1 + 600 = 6000 + a_1 + 2a_2 + 3a_3 + 4a_4 + 5a_5 + 6a_6 + 7a_7 + 8a_8$$
+
+En simplifiant l'équation, on trouve
+$$600 = a_7 + 2a_6 + 3a_5 - 3a_3 - 2a_2 - a_1 = (a_7 - a_1) + 2(a_6 - a_2) + 3(a_5 - a_3).$$
+
+Si chacune des différences $a_7 - a_1, a_6 - a_2$ et $a_5 - a_3$ était strictement inférieure à $100$ en valeur absolue, alors on aurait
+$$|(a_7 - a_1) + 2(a_6 - a_2) + 3(a_5 - a_3)| \le |a_7 - a_1| + 2|a_6 - a_2| + 3|a_5 - a_3| < 100 + 2\times 100 + 3\times 100 = 600$$
+en contradiction avec l'égalité établie précédemment.
+Ainsi, au moins une des différences $a_7 - a_1$, $a_6 - a_2$ et $a_5 - a_3$ est supérieure ou égale à $100$, ce qui correspond au résultat demandé.

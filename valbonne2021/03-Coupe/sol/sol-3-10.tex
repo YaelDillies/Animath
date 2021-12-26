@@ -1,0 +1,55 @@
+\begin{center}
+\begin{tikzpicture}
+[scale=1]
+\tkzInit[ymin=-0.5,ymax=5.5,xmin=-0.5,xmax=5.5]
+\tkzClip
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(5,5){C}
+\tkzDefPoint(0,5){D}
+\tkzDefPointBy[rotation=center A angle 60](B) \tkzGetPoint{S}
+
+\tkzMarkSegment[color=black,mark=s||](A,D)
+\tkzMarkSegment[color=black,mark=s||](D,C)
+\tkzMarkSegment[color=black,mark=s||](C,B)
+\tkzMarkSegment[color=black,mark=s||](A,B)
+\tkzMarkSegment[color=black,mark=s||](A,S)
+\tkzMarkSegment[color=black,mark=s||](S,B)
+\tkzMarkAngle[color=black,size=0.5,mark=none](A,D,S)
+\tkzMarkAngle[color=black,size=0.5,mark=none](D,S,A)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment(A,D)
+\tkzDrawSegment(D,C)
+\tkzDrawSegment(A,S)
+\tkzDrawSegment(S,B)
+\tkzDrawSegment(S,D)
+\tkzDrawSegment(S,C)
+\tkzDrawPoints[fill=white,color=black](A,B,C,D,S)
+
+\tkzLabelPoint[below left](A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[above right](C){$C$}
+\tkzLabelPoint[above left](D){$D$}
+\tkzLabelPoint[above](S){$S$}
+\end{tikzpicture}
+\end{center}
+
+Puisque le triangle $ABS$ est équilatéral, $\widehat{BAS}=60^\circ$. Puisque $\widehat{BAD}=90^\circ$, $\widehat{SAD}=90^\circ-60^\circ=30^\circ$. 
+
+De plus, on a $AS=AB$, car le triangle $ABS$ est équilatéral, et $AB=AD$, car le quadrilatère $ABCD$ est un carré. On a donc $AS=AD$, c'est-à-dire que le triangle $DAS$ est isocèle en $A$.
+
+La somme des angles du triangle $DAS$ vaut $180^\circ$, donc 
+$$180^\circ=\widehat{DAS}+\widehat{ADS}+\widehat{ASD}=30^\circ+2\widehat{DSA}.$$
+On en déduit que $\widehat{DSA}=75^\circ$.
+
+De la même manière, on démontre que $\widehat{BSC}=75^\circ$. On en déduit que 
+$$\widehat{DSC}=360^\circ-\widehat{DSA}-\widehat{BSC}-\widehat{ASB}=360^\circ-75^\circ-75^\circ-60^\circ=150^\circ.$$
+et l'angle $\widehat{DSC}$ mesure $150^\circ$.
+
+\altsol
+
+Une fois que l'on a calculé l'angle $\widehat{ADS}$, on peut remarquer que le triangle $DSC$ est isocèle en $S$, étant donné que la figure est symétrique par rapport à la médiatrice du segment $[AB]$. L'angle $\widehat{SDC}$ vaut $90^\circ-\widehat{ASD}=15^\circ$. De même, $\widehat{DCS}=15^\circ$. En utilisant que la somme des angles du triangle $DSC$ vaut $180^\circ$, on trouve
+$$\widehat{DSC}=180^\circ-\widehat{SDC}-\widehat{SCD}=180^\circ-15^\circ-15^\circ=150^\circ,$$
+ce qui est de nouveau la réponse attendue.

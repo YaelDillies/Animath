@@ -1,0 +1,86 @@
+En l'absence d'idée sur la réponse, une bonne idée est de regarder des petits cas. Par exemple, on peut se poser la question de l'énoncé pour les ensembles $\{1, \ldots ,2^2\}$ et $\{1,\ldots ,3^2\}$ pour commencer. On trouve alors que l'ensemble $\{1, \ldots , 2^2\}$ admet effectivement une partition comme souhaitée avec les ensembles $\{1\}$ et $\{2,3,4\}$ et l'ensemble $\{1,\ldots , 3^2\}$ admet lui aussi une partition comme souhaitée avec les ensembles $\{2,3,4\}$ et $\{1,5,6,7,8,9\}$. Une étude prolongée des ensembles $\{1,\ldots n^2\}$ avec des valeurs de $n$ particulières peut nous convaincre, si ce n'est pas déjà le cas, que la réponse est oui et que la partition recherchée (s'il n'en existe pas d'autres) comporte deux sous-ensembles.
+
+\medskip
+
+On traite ici l'exercice dans le cas plus général de l'ensemble $\{1,\ldots , n^2\}$, avec $n\ge 2$. Dans la suite, on notera $E_n$ l'ensemble $\{1,\ldots , n^2\}$.
+
+\medskip
+
+Une étude plus scrupuleuse sur les tailles des ensembles dans les petits cas suggère que l'on peut chercher une partition en deux ensembles avec un ensemble de taille $\dfrac{n(n-1)}{2}$ et l'autre de taille $\dfrac{n(n+1)}{2}$.
+
+On cherche d'abord à construire un ensemble $A$ équilibré
+de taille $a_n = \dfrac{n(n-1)}{2}$.
+Pour cela, le plus simple est de choisir $A$ symétrique par rapport à $a_n$ :
+\begin{itemize}
+\item si $a_n$ est pair, on définit $A$ comme l'ensemble
+des nombres de la forme $a_n \pm k$ où $1 \le k \le \dfrac{a_n}{2}$ ;
+\item sinon, on définit $A$ comme l'ensemble
+des nombres de la forme $a_n \pm k$ où $0 \le k \le \dfrac{a_n-1}{2}$.
+\end{itemize}
+
+Dans les deux cas, l'ensemble $A$ est manifestement équilibré,
+et ses éléments sont compris entre $\dfrac{a_n}{2} = \dfrac{n(n-1)}{4}$ et
+$\dfrac{3a_n}{2} = \dfrac{3n(n-1)}{4}$, donc $A$ est un
+sous-ensemble de $E_n$.
+
+\medskip
+
+Soit désormais $B$ l'ensemble des entiers de $E_n$ qui n'appartiennent pas à $A$. Cet ensemble est de cardinal
+$$b_n=n^2-|A| = n^2-\frac{n(n-1)}{2} = \frac{n(n+1)}{2},$$
+et la somme de ses éléments est égale à la somme des éléments
+de $E_n$ à laquelle on soustrait la somme des éléments de $A$.
+Or, la somme des éléments de $A$ est égale à $a_n$ fois leur
+moyenne arithmétique $a_n$, c'est-à-dire à $a_n^2$.
+De même, la somme des éléments de $E_n$ est égale à $n^2$ fois
+leur moyenne arithmétique, et comme $E_n$ est symétrique
+par rapport à $\dfrac{n^2+1}{2}$, cette moyenne arithmétique
+est égale à $\dfrac{n^2+1}{2}$.
+
+Par conséquent, la somme des éléments de $B$ est égale à
+$$n^2 \dfrac{n^2+1}{2} - a_n^2 =
+\dfrac{2n^4+2n^2 - (n^4-2n^3+n^2)}{4} =
+\dfrac{n^4+2n^3+n^2}{4} = b_n^2,$$
+et la moyenne arithmétique de ces éléments est bien égale
+à $B$. L'ensemble $B$ est donc équilibré.
+
+On a donc trouvé deux ensembles équilibrés qui partitionnent $E_n$ ce qui répond à l'exercice par l'affirmative.
+
+
+\altsol
+ 
+Les élèves familiers avec la notion de récurrence pourront également être intéressés par la preuve suivante, que
+suggère l'observation selon laquelle l'ensemble $\{2,3,4\}$
+apparaît dans les deux partitions de $\{1,\ldots,2^2\}$ et
+$\{1,\ldots,3^2\}$
+obtenues au début de la solution précédente.
+
+On se propose de démontrer par récurrence le résultat suivant : pour tout entier $n\ge 2$, on peut partitionner
+l'ensemble $E_n = \{1,\ldots,n^2\}$ en deux
+ensembles équilibrés $A_n$ et $B_n$, de tailles respectives $\dfrac{n(n-1)}{2}$ et $\dfrac{n(n+1)}{2}$.
+
+\textbf{Initialisation :} Pour $n=2$, on dispose de la partition de $\{1,2,3,4\}$ en les deux ensembles $A_1 = \{1\}$ et $B_1 = \{2,3,4\}$, qui vérifient bien la propriété de l'énoncé.
+
+\medskip
+
+\textbf{Hérédité :} On suppose la propriété vérifiée pour un certain entier $n\ge 2$, c'est-à-dire que l'on dispose de deux sous-ensembles équilibrés $A_n$ et $B_n$ de $\{1,\ldots ,n^2\}$ respectivement de taille $a_n = \dfrac{n(n-1)}{2}$ et $b_n = \dfrac{n(n+1)}{2}$ qui partitionnent $E_n$.
+
+Afin de démontrer alors la propriété pour $n+1$, on cherche
+donc deux sous-ensembles équilibrés $A_{n+1}$ et $B_{n+1}$ équilibrés partitionnant $E_{n+1}$, de tailles
+respectives $a_{n+1} = \dfrac{n(n+1)}{2}$ et
+$b_{n+1} = \dfrac{(n+1)(n+2)}{2}$.
+
+On commence déjà par poser $A_{n+1} = B_n$,
+puisque, par hypothèse de récurrence, cet ensemble est équilibré et a le bon cardinal.
+Soit alors $B_{n+1}$ l'ensemble des entiers de $E_{n+1}$ qui ne sont pas dans $A_{n+1}$. Cet ensemble est de taille
+$(n+1)^2 - a_{n+1} = b_{n+1}$, et on démontre comme dans la
+première solution qu'il est équilibré.
+
+Ainsi, les ensembles $A_{n+1}$ et $B_{n+1}$ conviennent, donc
+la propriété est vraie pour $n+1$, ce qui achève la récurrence.
+
+\medskip
+
+\textbf{Remarque :}
+Lorsque $n=6$, $n=7$ ou $n \ge 9$, on peut aussi partitionner $E_n$ en trois ensembles équilibrés non vides. Ainsi, les ensembles
+$\{2,3,4\}$, $\{1,5,6,\ldots,11,24\}$ et
+$\{12,13,\ldots,23,25,26,\ldots,36\}$, qui sont de tailles et de moyennes respectivement égales à $3$, $9$ et $24$, forment une partition de $E_6$ en trois sous-ensembles équilibrés.

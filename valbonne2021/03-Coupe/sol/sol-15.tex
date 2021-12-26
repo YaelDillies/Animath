@@ -1,0 +1,50 @@
+L'exercice demande de trouver le plus petit entier $n$ vérifiant une certaine propriété. Pour montrer que le plus grand entier recherché est un entier $c$, il y a donc nécessairement deux parties distinctes : l'analyse, dans laquelle on établit que tout entier $n$ vérifiant la propriété énoncée vérifie $n\ge c$, et la construction, dans laquelle on donne un exemple de $c$ réels $x_1, \ldots , x_c$ de l'intervalle $]-1,1[$ vérifiant les deux égalités mentionnées.
+
+\bigskip
+
+\textbf{Analyse :}
+Soit $n$ le plus petit entier vérifiant la propriété de l'énoncé et soit $x_1, \ldots , x_n$ des réels de l'intervalle $]-1,1[$ pour lesquels
+$$x_1+\ldots +x_n =0 \hspace{6mm} \text{ et } \hspace{6mm}
+x_1^2+\ldots +x_n^2 = 2020.$$
+
+Tout d'abord, puisque $x_i^2 < 1$ pour tout entier $i \le n$, on a $2021=x_1^2+\ldots + x_n^2 <1+ \ldots +1 =n$ donc $n\ge 2021$.
+
+Par ailleurs, si l'un des réels, par exemple $x_n$, est nul,
+alors
+$$x_1+\ldots +x_{n-1} =0 \hspace{6mm} \text{ et } \hspace{6mm}
+x_1^2+\ldots +x_{n-1}^2 = 2020.$$
+Ainsi, $n-1$ vérifie également la propriété, en contradiction
+avec la minimalité de $n$. On sait donc que
+tous les réels $x_i$ sont non nuls.
+Quitte à les renuméroter, on peut aussi supposer que ${-1 < x_1, \ldots , x_k <0}$ et $0 < x_{k+1}, \ldots , x_n < 1$ pour un certain entier $1\le k \le n-1$. En effet, comme la somme des réels est nulle, on dispose d'au moins un réel strictement négatif, et d'au moins un réel strictement positif.
+
+\medskip
+
+Tout d'abord, puisque $x_i > -1$ pour tout réel $i \le k$, on sait que
+$$0 = x_1 + x_2 + \ldots + x_n > (-k) + x_{k+1} + x_{k+2} + \ldots + x_n.$$
+
+En outre, pour tout $i \le k$, le réel $x_i$ appartient à l'intervalle $]-1,0[$, donc $x_i^2 < 1$.
+De même, pour tout $i \ge k+1$, le réel $x_i$ appartient
+à l'intervalle $]0,1[$, donc $x_i^2 < x_i$.
+On en déduit que
+$$2020 = x_1^2 + x_2^2 + \ldots + x_n^2
+< k + x_{k+1} + x_{k+2} + \ldots + x_n,$$
+et donc que
+$$2020 - 2k < (-k) + x_{k+1} + x_{k+2} + \ldots + x_n < 0.$$
+
+On a donc $k>1010$, soit $k\ge 1011$. Ainsi, quels que soient les réels tous non nuls vérifiant les deux égalités, il y a au moins $1011$ réels strictement négatifs. Or, si $(x_1, \ldots ,x_n)$ est un $n$-uplet vérifiant les deux égalités de l'énoncé, le $n$-uplet
+$(-x_1, \ldots , -x_n)$ vérifie également les deux égalités de l'énoncé. On a donc également au moins $1011$ réels strictement positifs. On a donc en tout au moins $2022$ réels, de sorte que $n\ge 2022$.
+
+\bigskip
+
+\textbf{Construction :}
+Réciproquement, on montre que $n=2022$ vérifie la propriété de l'énoncé. Le plus simple pour cela est de chercher un
+$2022$-uplet de la forme $(x,-x,x,-x, \ldots , x, -x)$ avec $x$ bien choisi. En injectant ce $2022$-uplet
+dans l'équation de droite, on trouve $2022x^2=2020$, soit
+$$x = \pm\sqrt{\dfrac{2020}{2022}}.$$
+Par construction, pour un tel $x$, le $2022$-uplet
+$(x,-x,x,-x, \ldots , x, -x)$ vérifie bien les deux égalités.
+
+\bigskip
+
+En conclusion, le plus petit entier $n$ vérifiant la propriété de l'énoncé est $n=2022$.

@@ -4,6 +4,9 @@
 % Mis à jour par Matthieu PIQUEREZ en 2020
 % Vous pouvez m'envoyer un mail à matthieu.piquerez@animath.fr si vous avez des questions (bien que je ne comprends pas tout dans ce fichier)
 
+% Mis à jour par Yaël DILLIES en 2021
+% Vous pouvez m'envoyer un mail à yael.dillies@gmail.com, surtout pour les commandes de la muraille et de la coupe.
+
 \def\@@ptsize{12pt}
 \DeclareOption{10pt}{\def\@@ptsize{10pt}}
 \DeclareOption{11pt}{\def\@@ptsize{11pt}}
@@ -339,6 +342,9 @@
 %\nstar{n} imprime n fois ⋆
 \newcommand{\nstar}[1]{\ifthenelse{\equal{#1}{0}}{}{ \raisebox{.1em}{${\foreach \i in {1,...,#1} {{\star}} }$}}}
 
+%Pour commencer une solution alternative
+\newcommand{\altsol}{\noindent {\it \underline{Solution alternative}}\hspace{0.5em}}
+
 %\exomur{enonce}{etoiles}[resolv]
 %enonce : L'énoncé. Le mieux est d'utiliser \import
 %etoiles : Nombre d'étoiles.
@@ -366,11 +372,10 @@
 }
 
 %\solmur{numero}{sol}{etoiles}{resolv}
-%numero : Numéro de l'exercice
+%numero : Numéro de l'exercice. C'est aussi un hyperlien vers l'énoncé.
 %sol : la solution. Le mieux est d'utiliser \import
 %etoiles : Nombre d'étoiles.
 %resolv : Qui a résolu l'exercice.
-%Si resolv n'est pas vide,ça rajoute "Résolu par resolv" à la fin de l'environnement et transforme le numéro d'exercice en hyperlien vers la solution.
 \newcommandx{\solmur}[4]
 {
   \def\@numero{#1}%Numéro de l'exercice
@@ -385,6 +390,64 @@
   \medskip
 }
 
+%\exocoupe{enonce}
+%enonce : L'énoncé. Le mieux est d'utiliser \import
+%Le numéro d'exercice vient du compteur exo
+\newcommandx{\exocoupe}[1]
+{
+  \begin{exo}
+  #1
+
+  \end{exo}
+  \medskip
+}
+
+%\solcoupe{sol}
+%sol : la solution. Le mieux est d'utiliser \import
+%Le numéro d'exercice vient du compteur sol
+\newcommandx{\solcoupe}[1]
+{
+  \begin{sol}
+  #1
+  
+  \end{sol}
+  
+  \medskip
+}
+
+%\solcoupe{sol}
+%sol : la solution. Le mieux est d'utiliser \import
+%Le numéro d'exercice vient du compteur sol
+\newcommandx{\comcoupe}[1]
+{
+  {\noindent {\it \underline{Commentaire des correcteurs}}\hspace{0.5em}}
+  #1
+
+  \medskip
+}
+
+% Version qui combine \solcoupe et \comcoupe mais qui ne marche pas
+% %\solcoupe{sol}{com}
+% %sol : la solution. Le mieux est d'utiliser \import
+% %com : Commentaire des correcteurs. Le mieux est d'utiliser \import
+% %Le numéro d'exercice vient du compteur sol
+% \newcommandx{\solcoupe}[2][2={}]
+% {
+%   \def\@com{#2} %Commentaire des correcteurs
+%   \begin{sol}
+%   #1
+  
+%   \end{sol}
+
+%   \ifthenelse{\equal{\@com}{}}{}
+%   {
+%     \medskip
+%     {\noindent {\it \underline{Commentaire des correcteurs}}\hspace{0.5em}}
+%     #2
+%   }
+
+%   \medskip
+% }
 
 %%%%%%%%%%%%%%
 %%% TROMBI %%%
@@ -476,6 +539,7 @@
 % lem : lemme
 % exo : exercice
 % sol : solution
+% altsol : solution alternative
 % rem : remarque
 % ax : axiome
 % nott : notation

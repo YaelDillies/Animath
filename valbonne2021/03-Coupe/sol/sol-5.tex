@@ -1,0 +1,23 @@
+Une première idée peut être de chercher un couplage pour lequel certains des nombres écrits au tableau sont déjà des carrés parfaits.
+
+Une second idée est que si deux nombres écrits au tableau sont égaux, leur produit est un carré parfait. On peut donc chercher un couplage pour lequel certains entiers sont égaux deux à deux.
+
+Puisqu'il y a sept entiers écrits au tableau, on peut combiner ces deux idées et chercher un couplage dans lequel l'un des sept entiers est un carré parfait et les six autres nombres sont égaux deux à deux. 
+
+Voici, à cet effet, plusieurs exemples de couplages qui fonctionnent :
+
+\begin{itemize}
+\item Le couplage
+$$\{(0,1), (2,13), (3,12),(4,11),(5,10),(6,9), (7,8)\}$$
+aboutit aux sept sommes $1$, $15$, $15$, $15$, $15$, $15$ et $15$, dont le produit $15^6=(15^3)^2$ est un carré parfait.
+
+\item Le couplage
+$$\{(0,11),(1,10),(2,9),(3,8),(4,7),(5,6),(12,13)\}$$
+aboutit aux sept sommes $11$, $11$, $11$, $11$, $11$, $11$ et $25$, dont le produit $11^6\times 25= (11^3\times 5)^2$ est un carré parfait. 
+
+\item Le couplage 
+$$\{(0,1),(2,5),(3,4),(6,9),(7,8),(10,13),(11,12)\}$$
+aboutit aux sept sommes $1$, $7$, $7$, $15$, $15$, $23$ et $23$, dont le produit $7^2\times 15^2\times 23^2$ est un carré parfait. 
+\end{itemize}
+
+\textbf{Remarque :} Il existe $1825$ couplages qui satisfont la propriété demandée.

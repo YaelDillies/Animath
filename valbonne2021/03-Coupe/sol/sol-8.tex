@@ -1,0 +1,141 @@
+\begin{enumerate}
+\item Puisqu'il y a $12$ arêtes sur le cube et $13$ fourmis, il existe au moins deux fourmis qui appartiennent à la même arête.
+Une fourmi que serait sur un sommet est considérée comme appartenant aux trois arêtes partant de ce sommet. Puisque la longueur d'une arête est de $1$, la distance entre les deux fourmis est bien inférieure ou égale à $1$.
+
+\item On note $F_1, \ldots , F_9$ les fourmis. Pour chaque fourmi $F_i$, on note $S_i$ le sommet le plus proche
+de la fourmi $F_i$, au sens de la distance définie dans l'exercice. Si une fourmi est située au milieu d'une arête, on choisit au hasard l'un des deux sommets joints par l'arête pour $S_i$. Étant donné qu'il y a $8$ sommets sur le cube, il existe deux fourmis $F_i$ et $F_j$ telles que $S_i=S_j$. En notant $d(X,Y)$ la distance entre les points $X$ et $Y$, on a
+$$d(F_i,S_i)+d(S_i,F_j)\le \frac{1}{2}+\frac{1}{2}=1,$$
+donc il existe un chemin de longueur inférieure ou égale à $1$ reliant les deux fourmis $F_i$ et $F_j$, ce qui correspond au résultat désiré.
+\end{enumerate}
+
+\textbf{Remarque :} Il est également possible de montrer le résultat pour $n=8$, comme cela est montré dans l'exercice $17$.
+
+
+\altsol
+
+On présente une autre solution de la question $2)$ à partir d'une étude de cas un peu fastidieuse mais qui permet de résoudre l'exercice en un temps fini. On suppose par l'absurde que deux fourmis quelconques sont toujours à distance strictement plus grande que $1$. En particulier, chaque arête contient au plus une fourmi.
+
+\medskip
+
+Dans toute la suite, on appelle \textit{cycle} un chemin dans le cube dont le sommet de départ est aussi le sommet d'arrivée. On utilisera dans toute la suite le principe suivant, noté $(P)$ : dans tout cycle de $n$ arête, il y au plus $n$ fourmis. En effet, si on suppose qu'un tel cycle contient $n$ fourmis notées $F_1, \ldots F_n$ dans l'ordre de parcours du cycle, alors la longueur du chemin est $n$ puisqu'il y a $n$ arêtes. Pourtant, la longueur du cycle vaut également $d(F_1, F_2)+d(F_2,F_3)+\ldots +d(F_{n-1}, F_n)+d(F_n,F_1) > 1+\ldots + 1 = n$. On a donc $n>n$, ce qui est absurde.
+
+\medskip
+
+Commençons par considérer le coloriage du cube dans la figure de gauche :
+
+
+\begin{center}
+\begin{tikzpicture}
+[scale=0.75]
+\tkzInit[ymin=-0.5,ymax=7.5,xmin=-2.5,xmax=9]
+\tkzClip
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDrawSegment[color=yellow](A,B)
+\tkzDrawSegment[color=purple](B,C)
+\tkzDrawSegment[color=yellow](C,D)
+\tkzDrawSegment[color=purple](D,A)
+\tkzDrawSegment[color=green](A,E)
+\tkzDrawSegment[color=green](B,F)
+\tkzDrawSegment[color=green](C,G)
+\tkzDrawSegment[color=green](D,H)
+\tkzDrawSegment[color=yellow](E,F)
+\tkzDrawSegment[color=purple](F,G)
+\tkzDrawSegment[color=yellow](G,H)
+\tkzDrawSegment[color=purple](H,E)
+
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+[scale=0.75]
+\tkzInit[ymin=-0.5,ymax=7.5,xmin=-2,xmax=10.5]
+\tkzClip
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDrawSegment[color=red](A,B)
+\tkzDrawSegment[color=red](B,C)
+\tkzDrawSegment[color=red](C,D)
+\tkzDrawSegment[color=red](D,A)
+\tkzDrawSegment[color=green](A,E)
+\tkzDrawSegment[color=green](B,F)
+\tkzDrawSegment[color=green](C,G)
+\tkzDrawSegment[color=green](D,H)
+\tkzDrawSegment[color=blue](E,F)
+\tkzDrawSegment[color=blue](F,G)
+\tkzDrawSegment[color=blue](G,H)
+\tkzDrawSegment[color=blue](H,E)
+
+\end{tikzpicture}
+\end{center}
+
+
+On a réparti les arêtes en $3$ groupes de couleurs. Puisqu'il y a $9$ fourmis, il y a au moins une couleur telle qu'au moins trois fourmis appartiennent aux arêtes de cette couleur. Quitte à modifier l'orientation du cube, on suppose qu'il s'agit de la couleur verte.
+
+\medskip
+
+On fixe une orientation du cube, et on recolorie le cube comme dans la figure de droite, pour partitionner les arêtes en $3$ groupes : les $4$ arêtes \textit{verticales} (en vert sur la figure), les $4$ arêtes \textit{hautes} (en bleu sur la figure) et les $4$ arêtes \textit{basses} (en rouge sur la figure). On examine alors toutes les configurations de $8$ fourmis.
+
+Tout d'abord, en appliquant la propriété $(P)$ au cycle composé des $4$ arêtes bleues, puis au cycle composé des arêtes rouges, on sait qu'il n'y a pas plus de $3$ fourmis sur les arêtes bleues, ni plus de $3$ fourmis sur les arêtes rouges.
+
+Puisque deux fourmis ne peuvent appartenir à la même arête, il y a deux cas à traiter.
+
+\textbf{cas n$^\circ 1$ :} Il y a $4$ fourmis en tout sur les arêtes verticales, c'est-à-dire une fourmi sur chaque arête verte. Les $5$ autres fourmis sont alors réparties comme suit : $3$ fourmis sur les arêtes basses et $2$ fourmis sur les arêtes hautes (ou l'inverse). Cela implique qu'il existe une face latérale du cube ont l'arête haute et l'arête basse contiennt chacune une fourmi. Puisque les arêtes verticales de cette face contiennent également une fourmi, les quatre arêtes de cette face forment un cycle de longueur $4$ contenant $4$ fourmis, ce qui est contraire à la propriété $(P)$.
+
+\textbf{cas n$^\circ 2$ :} Il y a $3$ fourmis en tout sur les arêtes verticales. Les $6$ autres fourmis sont réparties comme suit : $3$ fourmis sur les arêtes basses et $3$ fourmis sur les arêtes hautes. On note alors $A_1, A_2$ et $A_3$ les $3$ arêtes verticales contenant une fourmi. On dit que la paire $(A_i,A_j)$ est \textit{reliée par le bas} (resp. reliée par le haut) si il est possible de se déplacer de l'arête $A_i$ vers l'arête $A_j$ en passant uniquement par des arêtes basses (resp hautes) contenant des fourmis. Puisqu'il y a trois arêtes basses contenant des fourmis, au moins deux des paires $(A_1,A_2), (A_2,A_3)$ et $(A_3,A_1)$ sont reliées par le bas. De même, au moins deux de ces paires sont reliées par le haut. Ainsi, il existe une paire $(A_i,A_j)$ reliée par le bas et par le haut. On obtient donc un cycle contenant autant d'arêtes que de fourmis, ce qui contredit la propriété $(P)$.
+
+\begin{center}
+\begin{tikzpicture}
+[scale=0.75]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(8,2){C}
+\tkzDefPoint(3,2){D}
+\tkzDefPoint(0,5){E}
+\tkzDefPoint(5,5){F}
+\tkzDefPoint(8,7){G}
+\tkzDefPoint(3,7){H}
+
+\tkzDefMidPoint(B,C)	\tkzGetPoint{K}
+\tkzDefMidPoint(C,D)	\tkzGetPoint{L}	
+\tkzDefMidPoint(D,A)	\tkzGetPoint{M}
+\tkzDefMidPoint(A,E)	\tkzGetPoint{V}
+\tkzDefMidPoint(D,H)	\tkzGetPoint{W}
+\tkzDefMidPoint(C,G)	\tkzGetPoint{X}
+\tkzDefMidPoint(E,F)	\tkzGetPoint{Y}
+\tkzDefMidPoint(G,H)	\tkzGetPoint{Z}
+\tkzDefMidPoint(F,G)	\tkzGetPoint{U}
+
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(B,C)
+\tkzDrawSegment[color=red](C,D)
+\tkzDrawSegment[color=red](D,A)
+\tkzDrawSegment[color=red](A,E)
+\tkzDrawSegment(B,F)
+\tkzDrawSegment[color=red](C,G)
+\tkzDrawSegment(D,H)
+\tkzDrawSegment[color=red](E,F)
+\tkzDrawSegment[color=red](F,G)
+\tkzDrawSegment(G,H)
+\tkzDrawSegment(H,E)
+
+\tkzDrawPoints[fill=blue,color=black](K,L,M,U,V,W,X,Y,Z)
+
+\end{tikzpicture}
+\end{center}
