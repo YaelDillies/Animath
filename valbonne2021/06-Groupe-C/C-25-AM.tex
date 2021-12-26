@@ -1,1 +1,339 @@
-Ce cours était inspiré du délicieux cours de Pierre Bornsztein http://maths-olympiques.fr/wp-content/uploads/2017/09/graphes.pdf sur la théorie des graphes.
+\subsubsection{Espace de probabilité et variable aléatoire}
+
+On ne travaillera qu'avec des variables aléatoires discrètes c'est-à-dire à valeurs dans un ensemble fini (ou dans les entiers à la limite) que l'on notera souvent $A$.
+
+
+\begin{dfn}[Variable aléatoire]
+À une variable aléatoire discrète $X$ à valeurs dans $A$ est associée une probabilité $\prob$, satisfaisant
+\begin{enumerate}
+\item $0\le\prob(X = a)\le1$,
+\item $\sum_{a\in A}\prob(X = a) = 1$.
+\end{enumerate}
+\end{dfn}
+
+\begin{ex}
+\begin{itemize}
+\item Pour un tirage (équilibré) à pile ou face, $A = \{\text{Pile}, \text{Face}\}$
+et $\prob(X = \text{Pile}) = \prob(X = \text{Face}) = \frac12$.
+\item Pour un dé (équilibré), $A = \{1, \dots, 6\}$ et $\prob(X = i) = \frac16$
+pour tout $1\le i\le6$.
+\item Pour $A'\subseteq A$ on notera $\prob(X\in A') = \sum_{a\in A'}\prob(X = a)$. Par exemple dans le cas du dé pour la probabilité d'obtenir un nombre pair, on a $A' = \{2, 4, 6\}$ et $\prob(X\in A') = \frac16 + \frac16 + \frac16 = \frac12$.
+\item On a toujours $\prob(X\in A) = 1$.
+\end{itemize}
+\end{ex}
+
+
+\begin{dfn}[Plusieurs variables aléatoires]
+Soient $X$ une variable aléatoire à valeurs dans $A$ et $Y$ une variable aléatoire à valeurs dans $B$. La probabilité $\prob$ (la loi jointe) à $X$ et $Y$ satisfait
+\begin{enumerate}
+\item $0\le\prob(X = a, Y = b) \le 1$,
+\item $\sum_{a\in A}\prob(X = a, Y = b) = \prob(Y = b)$ et $\sum_{b\in B}\prob(X = a, Y = b) = \prob(X = a)$.
+\end{enumerate}
+\end{dfn}
+
+\begin{ex}
+Avec $X$ le dé équilibré et $Y$ le tirage à pile ou face et la loi
+$\prob(X = i, Y = \text{Pile}) = \prob(X = i, Y = \text{Face}) = \frac1{12}$.
+On a bien $\prob(X = i) = \prob(X = i, Y = \text{Pile}) + \prob(X = i, Y = \text{Face})$
+pour tout $i$.
+\end{ex}
+
+\begin{rem}
+On a bien
+$$\sum_{a\in A, b\in B}\prob(X = a, Y = b) = \sum_{a\in A}\prob(X = a) = 1$$
+Tout cela se généralise bien sûr à un nombre quelconque de variables aléatoires.
+\end{rem}
+
+
+\begin{dfn}[Espérance]
+Soit $X$ une variable aléatoire à valeurs dans $A$
+$$\esp(X) = \sum_{a\in A}a \cdot \prob(X = a)$$
+\end{dfn}
+
+\begin{ex}
+On a si $X$ est la valeur d'un dé $6$, alors $\esp(X) = \frac16 + \frac26 + \frac36 + \frac46 + \frac56 + \frac66 = 3.5$.
+\end{ex}
+
+
+\begin{pro}
+L'espérance est linéaire : soit $X$ et $Y$ deux variables aléatoires
+alors
+$$\esp(X + Y) = \esp(X) + \esp(Y)$$
+pour $\alpha\in\R$
+$$\esp(\alpha X) = \alpha\esp(X)$$
+\end{pro}
+
+\begin{proof}
+On a
+\begin{align*}
+\esp(X + Y) & = \sum_{a\in A, b\in B}(a + b)\prob(X = a, Y = b) \\
+& = \sum_{a\in A}\sum_{b\in B}a\prob(X = a, Y = b) + \sum_{b\in B}\sum_{a\in A}b\prob(X = a, Y = b) \\
+& = \sum_{a\in A}a\prob(X = a) + \sum_{b\in B}b\prob(Y = b) \text{ car } \begin{cases} \sum_{b\in B}\prob(X = a, Y = b) = \prob(X = a) \\ \sum_{a\in A}\prob(X = a, Y = b) = \prob(Y = b)\end{cases} \\
+& = \esp(X) + \esp(Y)
+\end{align*}
+De même,
+\begin{align*}
+\esp(\alpha X)
+& = \sum_{a\in A}\alpha a\prob(X = a) \\
+& = \alpha \sum_{a\in A}a\prob(X = a) \\
+& = \alpha\esp(X).
+\end{align*}
+\end{proof}
+
+Plus généralement avec $X_1, \dots, X_n$ des variables aléatoires et $\alpha_1, \dots, \alpha_n$ des réels alors
+$$\esp(\alpha_1X_1 + \dots + \alpha_nX_n) = \alpha_1\esp(X_1) + \dots + \alpha_n\esp(X_n)$$
+
+
+\begin{ex}
+L'espérance de la somme de $3$ dés équilibrés est égale à $\esp(X_1 + X_2 + X_3) = 3 \cdot \esp(X_1) = 10.5$.
+\end{ex}
+
+
+\begin{exo}[Inégalité de Markov]
+Soit $X$ une variable aléatoire qui ne prend que des valeurs positives. Montrer que
+$$\prob(X\ge 13)\le\frac{\esp(X)}{13}$$
+\end{exo}
+
+\begin{sol}
+On a
+\begin{align*}
+\esp(X)
+& = \sum_{0 \le a < 13} a \cdot \prob(X = a) + \sum_{a\ge13}a \cdot \prob(X = a) \\
+& \ge 0 + \sum_{a \ge 13 }13 \cdot \prob(X = a) \\
+& \ge 13 \cdot \prob(X\ge13)
+\end{align*}
+\end{sol}
+
+
+\subsubsection{Indépendance et loi (faible) des grands nombres}
+
+
+\begin{dfn}[Indépendance]
+On dit que $X$ et $Y$ sont des variables aléatoires
+indépendantes si
+$$\prob(X = a, Y = b) = \prob(X = a) \cdot \prob(Y = b)$$
+pour tous $a, b$ dans $A$ et $B$.
+\end{dfn}
+
+
+\begin{pro}
+Si $X$ et $Y$ sont deux variables aléatoires indépendantes alors
+$$\esp(XY) = \esp(X) \cdot \esp(Y)$$
+\end{pro}
+
+\begin{proof}
+On a
+\begin{align*}
+\esp(XY) & = \sum_{a\in A, b\in B}ab \cdot \prob(X = a, Y = b) \\
+& = \sum_{a\in A, b\in B}ab \cdot \prob(X = a)\prob(Y = b) \\
+& = \left(\sum_{a\in A}a \cdot \prob(X = a)\right)\left(\sum_{b\in B}b \cdot \prob(Y = b)\right) \\
+& = \esp(X)\esp(Y)
+\end{align*}
+\end{proof}
+
+Attention, cette propriété n'est pas réciproque, on peut avoir $\esp(XY) = \esp(X) \cdot \esp(Y)$ sans que $X$ et $Y$ soient indépendants.
+
+\begin{exo}
+Proposer un contre exemple.
+\end{exo}
+
+
+\begin{dfn}[Variance]
+On note
+$$\var(X) = \esp((X - \esp(X))^2) = \esp(X^2) - \esp(X)^2$$
+\end{dfn}
+
+\begin{proof}
+Démontrons la dernière égalité. On note $a = \esp(X)$ qui est un réel.
+\begin{align*}
+\esp((X - a)^2) & = \esp(X^2 - 2aX + a^2) \\
+& = \esp(X^2) - 2a\esp(X) + a^2 \\
+& = \esp(X^2) - a^2
+\end{align*}
+où on a utilisé la linéarité de l'espérance.
+\end{proof}
+
+\begin{rem}
+\begin{itemize}
+\item Si $\esp(X) = 0$ alors on a simplement $\var(X) = \esp(X^2)$.
+\item Pour tout $a\in\R$, $\var(X - a) = \var(X)$. En effet, $X - a - \esp(X - a) = X - \esp(X)$. Dans la suite on pourra choisir $a = \esp(X)$ pour simplifier les calculs.
+\item Pour tout $\alpha\in\R$, $\var(\alpha X) = \alpha^2\var(X)$.
+\end{itemize}
+On note $\sigma(X) = \sqrt{\var(X)}$ l'\textit{écart-type}. Il donne une idée de la répartition des valeurs possibles autour de la moyenne.
+\end{rem}
+
+
+\begin{ex}
+Soit $X$ une variable aléatoire équitablement répartie sur $\{990, 991, \dots, 1010\}$. On calcule la moyenne, la variance et l'écart type : $\esp(X) = 1000$, $\var(X)\approx 36$ et $\sigma(X)\approx 6$. Noté que $\sigma(X)$ donne une idée assez correcte de combien $X$ s'écarte de son espérance
+(qui est entre $0$ et $10$).
+\end{ex}
+
+
+\begin{pro}
+Si $X$ et $Y$ sont deux variables aléatoires indépendantes alors
+$$\var(X + Y) = \var(X) + \var(Y)$$
+\end{pro}
+
+\begin{proof}
+Supposons que $\esp(X) = \esp(Y) = 0$. Alors
+\begin{align*}
+\var(X + Y)
+& = \esp((X + Y)^2) \\
+& = \esp(X^2) + \esp(Y^2) + 2\esp(XY) \\
+& = \var(X) + \var(Y) + 2\esp(X)\esp(Y) \text{ par indépendance de $X$ et $Y$} \\
+& = \var(X) + \var(Y).
+\end{align*}
+Dans le cas où $\esp(X), \esp(Y)$ ne sont pas nulles, on refait le calcul précédent avec $X - \esp(X)$ et $Y - \esp(Y)$ qui eux sont d'espérance nulle,
+\begin{align*}
+\var(X + Y)
+& = \var(X - \esp(X) + Y - \esp(Y)) \\
+& = \var(X - \esp(X)) + \var(Y - \esp(Y)) \\
+& = \var(X) + \var(Y).
+\end{align*}
+\end{proof}
+
+
+Plus généralement, on a pour $X_1, \dots, X_n$ des variables \textbf{indépendantes}
+$$\var(X_1 + \dots + X_n) = \var(X_1) + \dots + \var(X_n)$$
+
+On dit que $X$ et $Y$ sont \og identiquement distribuées\fg si elle ont la même probabilité. On dit aussi qu'elle ont la même loi (aléatoire). C'est-à- dire qu'elles prennent leurs valeurs dans le même espace $A$ et que $\prob(X = a) = \prob(Y = a)$ pour tout $a$ dans $A$. Par exemple si on lance plusieurs fois un même dé. Les différents lancers suivent la même loi.
+
+
+\begin{thm}[Loi des grands nombres]
+Soient $X_1, \dots, X_n$ des variables indépendantes et identiquement distribuées. On note l'espérance $m = \esp(X_1)$.
+\begin{enumerate}
+\item $\esp(\frac1n\sum_{i = 1}^nX_i) = m$
+\item $\sigma(\frac1n\sum_{i = 1}^nX_i) = \frac{\sigma(X_1)}{\sqrt n}$
+\end{enumerate}
+\end{thm}
+
+\begin{rem}
+Pour $n\rightarrow\infty$, on a $\frac 1{\sqrt n}\rightarrow 0$, c'est-à-dire que l'écart type (et la variance) tend vers $0$. Cela s'interprète ainsi : Si on lance de nombreuse fois de manière indépendante une même variable aléatoire, que l'on somme le tout et que l'on fait la moyenne, alors ce que l'on obtient sera proche de l'espérance. Et plus il y a de lancers plus on sera proche. Pour être tout à fait exact il faudrait plutôt dire que la probabilité d'obtenir un écart important est très petit.
+\end{rem}
+
+
+\begin{ex}
+Pour un dé, l'espérance est $\esp(X_1) = 3.5$ et l'écart type $\sigma(X_1)\approx 1.7$. Si on lance $10$ dés et que l'on fait leur somme et qu'on divise le tout par $10$. on doit s'attendre à obtenir quelque chose dans $3.5\pm\frac{1.7}{\sqrt{10}}$ c'est-à-dire grosso modo entre $3$ et $4$. Si on lance $100$ dés, ce serait plutôt entre $3.3$ et $3.7$. Avec $1000000$ dés, entre $3.498$ et $3.502$.
+\end{ex}
+
+\begin{proof}
+Pour l'espérance, on a directement
+$$\esp(\frac1n\sum_{i = 1}^nX_i) = \frac1n\esp(\sum_{i = 1}^nX_i) = \frac1n(n \cdot \esp(X_1)) = m$$
+et, pour la variance,
+\begin{align*}
+\var(\frac1n\sum_{i = 1}^nX_i) & = \frac1{n^2}\var(\sum_{i = 1}^nX_i) \\
+& = \frac1{n^2}n \cdot \var(X_1) \\
+& = \frac{\var(X_1)}n.
+\end{align*}
+Et donc pour l'écart type $\sigma(\frac1n\sum_{i = 1}^nX_i) = \sqrt{\var(\frac1n\sum_{i = 1}^nX_i)} = \sqrt{\frac{\var(X_1)}n} = \frac{\sigma(X_1)}{\sqrt n}$.
+\end{proof}
+
+
+\subsubsection{Exemple de loi binomiale}
+
+
+Soient $X_i$ des variables aléatoires indépendantes et identiquement distribuées telles que $\prob(X_1 = 1) = p$ et $\prob(X_1 = 0) = 1 - p$. On note $S_n = \sum_{i = 1}^nX_i$ la somme de ces variables aléatoires.
+
+
+\begin{pro}
+La loi de $S_n$ est donnée par
+$$\prob(S_n = k) = \binom n k p^k(1 - p)^{n - k}$$
+On dit que $S_n$ suit une \textit{loi binomiale}.
+\end{pro}
+
+\begin{proof}
+Soit une suite de $n$ caractères avec $k$ $1$ et $n - k$ $0$. Alors la probabilité que
+\begin{align*}
+\prob("X_1\dots X_n" = "01101\dots0") & = \prob(X_1 = 0)\prob(X_2 = 1)\dots\prob(X_n = 0) \\
+& = (1 - p) \cdot  p \cdot \dots \cdot (1 - p) \\
+&  = p^k(1 - p)^{n - k}
+\end{align*}
+En particulier, la probabilité ne dépend que du nombre de $1$ ou de $0$ mais pas de leur répartition. On calcule maintenant
+\begin{align*}
+\prob(S_n = k) & = \sum_{\substack{\text{combinaisons} \\
+\text{ avec $k$ $1$ et $n - k$ $0$}
+}
+}\prob("X_1\dots X_n" = "\text{combinaison}") \\
+& = \sum_{\substack{\text{combinaisons} \\
+\text{ avec $k$ $1$ et $n - k$ $0$}
+}
+}p^k(1 - p)^{n - k} \\
+& = \binom n kp^k(1 - p)^{n - k}.
+\end{align*}
+\end{proof}
+
+
+\subsubsection{Autour de la loi binomiale}
+
+
+\begin{exo}
+De combien de manières peut-on prendre un nombre impair d'objets parmi $n$ objets ?
+\end{exo}
+
+
+\begin{exo}
+Calculer
+\begin{enumerate}
+\item $M_n = \sum_{k = 1}^n\binom n k k^2$
+\item $N_n = \sum_{k = 1}^n\binom n k k^3$
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}
+Montrer que
+$$\sum_{k = 1}^n\binom{n + k} k\frac 1{2^k} = 2^n$$
+\end{exo}
+
+
+\subsubsection{Divers}
+
+
+\begin{exo}
+On lance plusieurs fois un dé (équilibré) à $n$ faces numérotées de $1$ à $n$. On s'arrête dès qu'on obtient $1$. Soit $k\in\N$, quelle est la probabilité de s'arrêter au $k$-ième lancer ? En moyenne, combien de lancers fera-t-on ?
+\end{exo}
+
+
+\begin{exo}
+On pioche une à une les cartes d'un jeu de $52$ cartes. En moyenne combien de cartes piochera-t-on avant de piocher un roi ?
+\end{exo}
+
+
+\begin{exo}
+Soit $A$ un alphabet fini et $F$ un ensemble fini de mots de $A$. On suppose que $F$ est sans suffixe (aucun mot de $F$ n'est le suffixe strict d'un autre mot de $F$). On note $N_i$ le nombre de mots de $F$ de longueur $i$. Montrer que
+$$\sum_{i\ge1}\frac{N_i}{|A|^i}\le1$$
+\end{exo}
+
+
+\subsubsection{Construire des trucs compliqués en faisant n'importe quoi}
+
+
+\begin{exo}
+Montrer qu'il est possible de colorier en quatre couleurs les éléments de $1$ à $2019$ de façon à n'avoir aucune progression arithmétique monochrome de longueur $11$.
+\end{exo}
+
+
+\begin{exo}
+Soit $K_n$ le graphe complet à $n$ sommets. On suppose que
+$$\binom n k < 2^{\binom k 2}$$
+Montrer qu'il existe un coloriage à deux couleurs de $K_n$ sans sous-graphe $K_k$ monochromatique.
+\end{exo}
+
+
+\subsubsection{Les jeux équilibrés, alias les martingales}
+
+
+\begin{exo}
+Maena et Emile jouent à pile ou face (pièce équilibré). À chaque tour, Maena parie $1$ euro que le prochain lancer est face. Elle commence avec $20$ euros en poche et elle continue de jouer jusqu'à avoir $100$ euros mais doit s'arrêter si elle n'a plus rien. Quelle est la probabilité qu'elle atteigne $100$ euros ?
+\end{exo}
+
+
+\begin{exo}
+Maena et Emile jouent de nouveau à pile ou face mais cette fois-ci comptent juste les points. Ils s'arrêtent lorsqu'il y a $2$ points d'écart. En moyenne combien de temps dure la partie ? Et s'ils s'arrêtent avec $k$ points d'écart ?
+\end{exo}
+
+
+\begin{exo}[Livret du stage]
+Anna mélange un jeu de cartes (26 cartes rouges et 26 cartes noires) puis retourne les cartes les unes après les autres. À n'importe quel moment Victor peut arrêter Anna et
+parier $1$ euro que la carte suivante est rouge. Il doit parier une et une seule fois (et devra donc miser sur la dernière carte s'il attend le dernier tour). Quelle est la meilleure stratégie de Victor ? Quel est le mieux qu'il puisse espérer ?
+\end{exo}
