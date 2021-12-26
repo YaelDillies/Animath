@@ -1,0 +1,207 @@
+\subsubsection{Invariants}
+
+
+\begin{exo}
+Les nombres entiers de $1$ à $2021$ sont écrits au tableau. À chaque étape, Matthieu choisit deux des nombres écrits au tableau, les efface et réécrit sur le tableau la valeur absolue de leur différence. Montrer que le dernier nombre que Matthieu écrit au tableau est impair.
+\end{exo}
+
+\begin{sol}
+On observe qu'après chaque opération, la parité de la somme des nombres écrits au tableau ne change pas. Donc la parité du dernier nombre est la même que celle de la somme des nombres initialement écrits.
+\end{sol}
+
+
+De manière générale, un \emph{invariant} est une quantité qui ne change pas lors de l'exécution d'un processus.
+
+Une bonne idée quand on cherche à résoudre un problème est d'identifier l'invariant pour les transformations qui interviennent dans le problème, de calculer sa valeur initiale, et d'en déduire que la valeur finale de cet invariant doit être la même.
+
+À quoi est-ce que ça sert ? Premièrement, à trouver des informations sur l'état final en se basant sur la valeur de l'invariant. Deuxièmement, à montrer que certains états finaux sont impossibles car ils donnent une autre valeur pour l'invariant.
+
+\begin{exo}
+Un dragon a $100$ têtes. Arthur le chevalier peut couper $15$, $17$, $20$, ou $5$ têtes, respectivement, avec un seul coup de son épée.
+Dans chacun de ces cas, $24$, $2$, $14$, ou $17$ têtes poussent à la place. Si toutes les têtes sont coupées, le dragon meurt. Est-ce que le dragon peut mourir ?
+\end{exo}
+
+\begin{sol}
+On observe que le nombres de têtes modulo $3$ est un invariant. En effet, quel que soit le nombre de têtes coupées à une étape, la variation du nombre de têtes du dragon est toujours de $0$ modulo $3$.
+
+On calcule la valeur initiale de l'invariant : $1$ modulo $3$.
+
+On en déduit qu'à la fin, le dragon a un nombre de têtes congru à $1$ modulo $3$. Donc, il ne peut jamais avoir $0$ têtes.
+\end{sol}
+
+
+Comme enseignement de cet exercice, on retiendra que c'est une bonne idée d'essayer une quantité modulo un certain entier pour chercher un invariant.
+
+Observons un exemple d'invariant géométrique :
+
+\begin{exo}
+Trois fourmis se déplacent sur le plan cartésien de la manière suivante.
+
+Chaque minute, deux des fourmis vont rester immobiles, et la troisième fourmi se déplacera sur une droite parallèle à la droite formée par ses deux comparses ; elle peut bien sûr rester immobile elle aussi si cela lui chante. Originellement, les trois fourmis se situent en trois points de coordonnées $(0, 0)$, $(0, 1)$ et $(1, 0)$.
+
+Est-il possible qu'au bout d'un certain temps, nos trois fourmis se retrouvent en $(-1, 0)$, $(0, 1)$ et $(1, 0)$ ?
+\end{exo}
+
+\begin{sol}
+On observe que l'aire du triangle formé par les trois fourmis est un invariant.
+
+La valeur initiale est de $\frac 1 2$.
+
+Donc, la valeur finale de $1$ est impossible.
+\end{sol}
+
+
+Comme exemple classique de problèmes sur les invariants, il y a les problèmes de pavage :
+
+\begin{exo}
+À l'aide de dominos $2 \times 1$ que l'on peut placer horizontalement ou verticalement, peut-on paver un plateau de taille $5 \times 7$ ? un plateau de taille $5\times7$ auquel on a enlevé le coin inférieur gauche ? un plateau de taille $5\times7$ auquel on a enlevé la case la plus à gauche qui se situe sur la deuxième ligne ?
+
+À l'aide de tétraminos $4\times1$ que l'on peut placer horizontalement ou verticalement, peut-on paver un plateau de taille $6\times6$ ?
+\end{exo}
+
+\begin{sol}
+Le pavage peut être vu comme un processus où l'on recouvre tour à tour des cases du plateau.
+
+Pour la première question, on peut dire que la parité du nombre de cases non recouvertes est un invariant. En effet, à chaque étape, on recouvre deux nouvelles cases. Initialement, il y a un nombre impair de cases non recouvertes. Donc, à la fin, il ne peut pas y avoir $0$ cases non recouvertes.
+
+Pour la deuxième question, on peut y arriver. Il suffit de dessiner un exemple.
+
+Pour la troisième question, on colorie les cases du plateau à la manière d'un échiquier. L'invariant est la différence entre le nombre de cases blanches non recouvertes et le nombre de cases noires non recouvertes. Initialement, cette différence est non nulle. Elle ne peut donc être nulle à la fin.
+
+Pour la dernière question, c'est le même principe que la troisième question, mais on colorie les cases du plateau avec $4$ couleurs.
+\end{sol}
+
+
+\subsubsection{Monovariants}
+
+
+\begin{exo}
+Dans le parlement de Valbonne, certaines paires de membres sont ennemis. Chaque membre a au plus $3$ ennemis. Montrer que le parlement peut être
+sépare en $2$ maisons tels que chaque membre ait au plus un ennemi dans la maison où il se trouve.
+\end{exo}
+
+\begin{sol}
+Essayons de les séparer en deux maisons. Supposons qu'il y en a un qui a deux ennemis dans sa maison. Que faire ? On peut le déplacer dans l'autre maison. Est-ce que cela aide ? Oui, car dans l'autre maison, il a au plus $1$ ennemi (vu qu'il a au plus $3$ ennemis au total). Sauf que maintenant, peut-être qu'un député de la deuxième maison a $2$ ennemis, alors qu'avant il n'en avait qu'un. Mais, on peut continuer ces opérations. Si on continue ces opérations, va-t-on finir ? Autrement dit, est-on sûr de ne jamais obtenir de cycle entre les configurations ? Il ne peut pas y avoir de cycle car le nombre total de relations d'inimitié au sein des maisons baisse strictement (en ayant enlevé le député de la première maison, on a cassé au moins $2$ relations d'inimité ; en l'ayant mis dans la deuxième maison, on a créé au plus une relation d'inimitié).
+
+Ainsi, il y aura forcément un moment à partir duquel ce nombre ne pourra plus baisser (une suite strictement décroissante d'entiers naturels est forcément finie). À ce moment là, est-il possible que quelqu'un ait deux ennemis dans sa maison ? Non, parce que si c'était le cas, on aurait pu le bouger dans l'autre maison et baisser strictement le nombre total des relations d'inimitié au sein des maisons.
+\end{sol}
+
+
+Un \emph{monovariant} est une quantité qui change strictement dans la même direction à chaque étape, i.e. une quantité strictement monotone.
+
+En particulier, si un monovariant ne prend que des valeurs entières et qu'il est borné, alors on a affaire à un processus qui a nécessairement une fin. À défaut d'avoir un monovariant à valeurs entières, on peut avoir un monovariant à valeurs réelles mais pour lequel on sait justifier qu'il ne peut prendre qu'un nombre fini de valeurs.
+
+À quoi servent les monovariants ? Premièrement, à montrer qu'un processus se termine. Deuxièmement, à caractériser un état final possible d'un processus (c'est un état où le monovariant ne peut plus bouger).
+
+
+\begin{exo}
+Supposons donnée une carte du monde avec un certain nombre (bien choisi) de villes indiquées.
+
+Domitille part s'une ville $C_1$ et va dans la ville $C_2$, qui se trouve le plus loin possible de la ville $C_1$. De $C_2$, elle voyage vers $C_3$, qui se trouve le plus loin possible de $C_2$, et ainsi de suite. On suppose qu'il n'y a jamais d'ambiguité pour la ville qui se trouve le plus loin d'une ville donnée. Montrer que si $C_1$ et $C_3$ sont différentes, alors Domitille ne reviendra jamais à $C_1$.
+\end{exo}
+
+\begin{sol}
+On observe qu'un monovariant est la longueur du dernier chemin entre deux villes parcouru. En effet, si $C_{n + 1}$ n'est pas la même que $C_{n - 1}$, alors nécessairement $C_{n + 1}C_n > C_nC_{n - 1}$ (dans le cas contraire, elle aurait plutôt dû revenir à $C_{n - 1}$ plutôt que d'aller vers $C_{n + 1}$).
+
+Ainsi, $C_1C_2 < C_2C_3$ car $C_3$ n'est pas la même que $C_1$. Après $C_3$, on ne peut pas affirmer que la longueur du dernier chemin parcouru grandit strictement, mais on peut dans tous les cas dire que cette quantité ne diminue jamais.
+
+Supposons par l'absurde qu'on a $C_n = C_1$ pour un $n \ge 4$. On a alors que $C_nC_{n - 1} > C_2C_1$, autrement dit $C_1C_{n - 1} > C_2C_1$. Mais ceci est une contradiction avec le choix de $C_2$ ; dans ce cas, elle aurait plutôt dû choisir $C_{n - 1}$ à la place de $C_2$.
+\end{sol}
+
+
+Voici un exemple géométrique où l'on peut se servir d'un monovariant :
+
+\begin{exo}
+Soient $n$ points rouges et $n$ points bleus dans le plan (trois d'entre eux ne sont jamais alignés). Montrer qu'on peut tracer $n$ segments qui ne s'intersectent pas (ils ne doivent pas avoir d'intersection en commun non plus) tels que chacun ait une extrémité rouge et l'autre bleue.
+\end{exo}
+
+
+\begin{sol}
+À chaque fois qu'on voit deux segments $AC$ et $BD$ qui se coupent, on cherche à enlever leur intersection en les remplaçant par les segments $AB$ et $CD$. Ceci dit, on peut créer de nouvelles intersections avec de nouveaux segments quand on fait ça. Comment être sûr qu'on se rapproche de la bonne configuration ?
+
+Il faut trouver un monovariant associé à cette transformation. On observe que la somme des longueurs des segments tracés est un monovariant pour ce processus. On justifie le fait que c'est un monovariant grâce à l'inégalité triangulaire.
+
+Ensuite, il faut justifier que l'on est sûr que l'on finit par atteindre une configuration à partir de laquelle ce monovariant ne pourra plus baisser. Pour cela, il suffit de remarquer que notre monovariant ne peut prendre qu'un nombre fini de valeurs. En effet, il n'y a qu'un nombre fini de configurations.
+
+Ainsi, à partir du moment où on a atteint une configuration à partir de laquelle le monovariant ne peut plus baisser, on a atteint la configuration qu'on cherche (dans le cas contraire, on aurait encore pu baisser le monovariant). 
+\end{sol}
+
+
+\begin{exo}
+Tristan commence avec une suite finie $a_1, ..., a_n$ d'entiers positifs. Si cela est possible, il choisit deux indices $j < k$ tels que $a_j$ ne divise pas $a_k$, et il remplace $a_j$ et $a_k$ par $pgcd(a_j, a_k)$ et $ppcm(a_j ,a_k)$ respectivement. Montrer que Tristan devra s'arrêter après un nombre fini d'étapes.
+\end{exo}
+
+
+\begin{sol}
+On peut remarquer que $(a_1, ..., a_n)$ est déjà en soi un monovariant pour cet exercice. Il suffit pour cela de considérer les $n$-uplets munis de l'ordre lexicographique, i.e. $(0, 0)$ est plus petit que $(0, 1)$ ou $(1, 0)$ ou $(1, 1)$, mais $(0, 1)$ est plus petit que $(1, 0)$ (autrement dit, on ordonne les $n$-uplets selon l'ordre du dictionnaire).
+
+Comme on prend $a_j$ qui ne divise pas $a_k$, $pgcd(a_j,a_k)$ est strictement plus petit que $a_j$ et $ppcm(a_j,a_k)$ est strictement plus grand que $a_k$.
+
+Ainsi, $(a_1,...,a_n)$ est un monovariant strictement décroissant pour le processus décrit. Et, une suite strictement décroissante pour l'ordre lexicographique est nécessairement finie dans le cas où chaque coordonnée du $n$-uplet est un entier naturel.
+
+Donc, Tristan devra s'arrêter après un nombre fini d'étapes.
+\end{sol}
+
+
+\subsubsection{Exercices}
+
+
+Les exercices présentés ci-dessous sont corrigés dans les polycopiés de $2019$ et de $2018$.
+
+\begin{exo}[Solutions d'expert, Ch.1, P36]
+Les entiers $1, ..., n$ sont écrits dans un certain ordre. À chaque étape, Jérémy peut permuter deux entiers voisins. Montrer qu'il ne peut pas retrouver l'ordre initial après un nombre impair d'étapes.
+\end{exo}
+
+
+\begin{exo}
+Pierre-Marie a un carré $100\times100$ d'ampoules. Pour une ligne ou une colonne donnée, il peut éteindre toutes les ampoules allumées et allumer toutes les ampoules éteintes. Initialement, il n'y a qu'une ampoule qui est allumée. Peut-il se retrouver avec toutes les ampoules allumées à la fin ?
+\end{exo}
+
+
+\begin{exo}
+Sur un tableau, on écrit $n$ fois le chiffre $1$. À chaque étape, Auguste choisit deux nombres $a$ et $b$ écrits au tableau, les efface et écrit $\frac{a+b}4$ à la place. Montrer que le nombre qu'il écrit au tableau après $n - 1$ étapes est supérieur ou égal à $\frac1n$.
+\end{exo}
+
+
+\begin{exo}
+On a tracé quatre droites dans le plan, deux à deux non parallèles, et l'on constate que, depuis la nuit des temps, on trouve sur chaque droite une fourmi qui avance à une vitesse constante (pas forcément la même vitesse pour deux fourmis différentes). Une éternité ayant passé, on remarque que parmi les $6$ paires possibles de fourmis, $5$ se sont croisées. Démontrer que la sixième paire de fourmis s'est également croisée.
+\end{exo}
+
+
+\begin{exo}
+Sur une île se trouvent $2021$ caméléons. Parmi eux, on comptait jadis $800$ caméléons bleus, $220$ caméléons blancs et $1001$ caméléons rouges. Puis, lorsque deux caméléons de couleurs différentes se rencontrent, ils changent tous les deux de couleur, et prennent la troisième couleur. Un jour, Théodore le pirate arriva sur l'île, et découvrit que tous les caméléons étaient de la même couleur. Quelle était cette couleur ?
+\end{exo}
+
+
+\begin{exo}
+Anna la magicienne dispose d'un jeu de $100$ cartes, numérotées de $1$ à $100$ ; chaque carte arbore le même numéro sur ses deux faces. Initialement, elle a mélange ses cartes de manière arbitraire et les a empilées. Puis, elle effectue les opérations suivantes : si la carte numéro $k$ se trouve en haut de la pile, alors elle prend les $k$ premières cartes de la pile et les retourne, la $k$-ième carte passant ainsi en première position, et ainsi de suite. Enfin, si la carte de numéro $1$ se trouve en haut de la pile, Anna s'arrête. Toute suite de telles opérations est-elle nécessairement finie ?
+\end{exo}
+
+
+\begin{exo}
+Victor a écrit le mot MATHEMATIQUES au tableau. Puis il s'autorise les opérations suivantes : il choisit une lettre du mot écrit au tableau (disons $\lambda$) et la remplace par une suite finie de lettres qui sont strictement plus grandes que $\lambda$ pour l'ordre alphabétique (la suite peut même être vide ou, au contraire, être très longue, auquel cas Victor va sans doute devoir écrire très petit). Toute suite de telles opérations est-elle nécessairement finie ?
+\end{exo}
+
+
+\begin{exo}[IMO 2019 P5]
+La banque de Valbonne a émis des pièces dont une face arbore la lettre $V$ et l'autre face arbore la lettre $B$. Raphaël a aligné $n$ de ces pièces de gauche à droite. Il réalise alors plusieurs fois de suite l'opération suivante : si la lettre $V$ est visible sur exactement $k$ pièces, avec $k\ge1$, alors Raphaël retourne la $k$-ième pièce en partant de la gauche ; si $k=0$, il s'arrête. Par exemple, si $n=3$, le processus partant de la configuration $BVB$ sera $BVB\rightarrow VVB\rightarrow VBB\rightarrow BBB$ : Raphaël s'arrête donc au bout de $3$ opérations.
+
+\begin{itemize}
+\item Démontrer que, quelque soit la configuration initiale, Raphaël va s'arrêter au bout d'un nombre fini d'opérations.
+\item Pour chaque configuration initiale $C$, on note $L(C)$ le nombre d'opération que va réaliser Raphaël avant de s'arrêter. Par exemple, $L(BVB)=3$ et $L(BBB)=0$. Trouver la valeur moyenne des nombres $L(C)$ obtenus lorsque $C$ parcourt l'ensemble des $2^n$ configurations initiales possibles.
+\end{itemize}
+\end{exo}
+
+
+\begin{exo}[IMO 1986 P3]
+Rémi a inscrit, sur chaque sommet d'un pentagone, un entier, de sorte que la somme de ces $5$ entiers soit strictement positive. Puis, il s'autorise les opérations de la forme suivante : il choisit trois sommets consécutifs sur lesquels se trouvent des entiers $x,y$ et $z$, tels que $y<0$, il les remplace respectivement par $x+y$, $-y$ et $y+z$. Toute suite de telles opérations est-elle nécessairement finie ? Et si Rémi reprend ce processus avec un $2021$-gone au lieu d'un pentagone ?
+\end{exo}
+
+
+\begin{exo}[IMO 2019 P3]
+Lors de l'Olympiade Internationale de Mathématiques, on comptait $2021$ participants. Parmi eux, $1011$ avaient $1010$ amis et $1010$ avaient $1011$ amis, la relation d'amitié étant réciproque. Le machiavélique Théo, passé maître de l'art de faire et de défaire les amitiés, décide alors de faire survenir des évènements comme celui-ci : 
+
+il choisit trois participants $A$, $B$ et $C$, tel que $A$ soit ami avec $B$ et $C$, mais que $B$ ne soit pas ami avec $C$ ; puis $B$ et $C$ deviennent amis, mais mettent fin à leur relation d'amitié avec $A$ ; les autres relations d'amitié ne changent pas durant cet évènement.
+
+Démontrer que, quelles que soient les relations d'amitié initiales, Théo pourra nécessairement se débrouiller pour que, à la fin de l'olympiade, chaque participant ait au plus un ami.
+\end{exo}
