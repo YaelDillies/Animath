@@ -22,7 +22,7 @@ Soient $a$, $b$, $c$, $d$ des entiers, $n$ un entier strictement positif et $m$ 
 \textbf{Démonstration} :\\
 Par hypothèse, $n|a-b$ et $n|c-d$.
 \begin{itemize}
-    \item On a alors $n|a-b+c-d$, c'est à dire $a-b+c-d\equiv 0[n]$, d'où $a+c\equiv b+d [n]$\
+    \item On a alors $n|a-b+c-d$, c'est-à-dire $a-b+c-d\equiv 0[n]$, d'où $a+c\equiv b+d [n]$\
     \item $ac - bd = a(c - d + d) - bd = a(c - d) + ad - bd = a(c - d) + (a - b)d$ qui est divisible par $n$, donc $ac \equiv bd [n]$.\
     \item Il suffit d'appliquer $m$ fois la proposition précédente.\
 \end{itemize}
@@ -166,15 +166,15 @@ Trouver les entiers $a$ et $b$ tels que : $3a^2=b^2+1$
 
 
 \begin{exo}
-Existe-t-il un entier $n\geq 0$ tel que $6^n+19$ est premier ?
+Existe-t-il un entier $n\ge 0$ tel que $6^n+19$ est premier ?
 \end{exo}
 
 
 \begin{exo}
 Soit $a_1,a_2,\ldots$ la suite d'entiers telle que $a_1 = 1$ et,
-pour tout entier $n \geqslant 1$,
+pour tout entier $n \ge 1$,
 \[a_{n+1} = a_n^2+a_n+1.\]
-Démontrer, pour tout entier $n \geqslant 1$, que
+Démontrer, pour tout entier $n \ge 1$, que
 $a_n^2+1$ divise $a_{n+1}^2+1$.
 \end{exo}
 
@@ -189,23 +189,8 @@ Trouver tous les entiers $n$ tels que $2^n + 3$ est un carré parfait. Même que
 
 
 \begin{exo}
-Déterminer toutes les $x,y$ entiers positifs solution de $x^2-2\times y!=2021$.
+Déterminer toutes les $x,y$ entiers positifs solution de $x^2-2\cdot y!=2021$.
 \end{exo}
-
-
-%\begin{exo}
-%Trouver tous les entiers $k\geq 1$ tels qu'il existe un couple d'entiers $(n,m)$ tels que $9n^6=2^k+5m^2+2$.
-%\end{exo}
-
-
-%\begin{exo}
-%Trouver l’ensemble des entiers $a$ tels que l’équation $2a^2-7k+2=0$ admet une solution $k$ entière.
-%\end{exo}
-
-
-%\begin{exo}
-%Soit $p>2$ un nombre premier. Combien y a-t-il d'entiers $a\in \{0,1,\cdots,p-1\}$ tels que $c^2=pk+a$ admette une solution ?
-%\end{exo}
 
 
 \begin{sol}
@@ -213,7 +198,7 @@ Le côté gauche de l'équation est pair si $x>0$. Le côté droit est toujours 
 
 \smallskip
 
-Si $x=0$, alorsil faut et il suffit que $1+y+y^2=1$ avec $y\geq 0$ donc la seule solution est $x=y=0$.
+Si $x=0$, alorsil faut et il suffit que $1+y+y^2=1$ avec $y\ge 0$ donc la seule solution est $x=y=0$.
 \end{sol}
 
 
@@ -223,7 +208,7 @@ Nous avons vu que pour tout entier $a$, $a^2$ est soit congru à 0 soit à 1 mod
 
 
 \begin{sol}
-On regarde modulo 4, un carré est congru à 0 ou 1. Ainsi si $n\geq 2$, on n'a pas de solutions car le membre de gauche est congru à 1,2 ou 3 modulo 4, alors que le membre de droite est congru à 0 modulo 4. Ainsi il reste seulement le cas où $n=0$ ou $n=1$, et on vérifie alors qu'il n'y a pas de solutions.
+On regarde modulo 4, un carré est congru à 0 ou 1. Ainsi si $n\ge 2$, on n'a pas de solutions car le membre de gauche est congru à 1,2 ou 3 modulo 4, alors que le membre de droite est congru à 0 modulo 4. Ainsi il reste seulement le cas où $n=0$ ou $n=1$, et on vérifie alors qu'il n'y a pas de solutions.
 \end{sol}
 
 
@@ -251,7 +236,7 @@ Modulo $a_n^2+1,$ on a $a_{n+1}\equiv a_n[a_n^2+1],$ donc $a_{n+1}^2+1\equiv a_n
 \begin{sol}
 \begin{itemize}
 \item Un carré n’est jamais congru à 3 mod 4, donc si $n > 2$, $2^n + 3$ ne peut jamais être un carré. Pour $n = 1$, $2^1 + 3 = 5$ n’est pas le carré d’un entier. Pour $n = 0$, $2^0 + 3 = 4$ est le carré de 2.
-\item On cherche deux entiers $n$ et $x$ tels que $2^n + 1 = x^2$. On réécrit cette équation $2^n =x^2-1 = (x + 1)(x - 1)$. $x + 1$ et $x - 1$ sont tous les deux des puissance de 2. Les seules puissances de 2 à distance 2 l’une de l’autre sont 2 et 4. Donc $2^n = 2 \times 4 = 8 = 2^3$. $n = 3$ est la seule solution.
+\item On cherche deux entiers $n$ et $x$ tels que $2^n + 1 = x^2$. On réécrit cette équation $2^n =x^2-1 = (x + 1)(x - 1)$. $x + 1$ et $x - 1$ sont tous les deux des puissance de 2. Les seules puissances de 2 à distance 2 l’une de l’autre sont 2 et 4. Donc $2^n = 2 \cdot 4 = 8 = 2^3$. $n = 3$ est la seule solution.
 \end{itemize}
 \end{sol}
 
@@ -259,31 +244,14 @@ Modulo $a_n^2+1,$ on a $a_{n+1}\equiv a_n[a_n^2+1],$ donc $a_{n+1}^2+1\equiv a_n
 \begin{sol}
 On regarde modulo $8$. Pour $n<3$ les seules solutions sont :
 $$(0,0,0,0),(0,0,1,1),(0,1,0,1),(1,0,0,1),(1,1,1,2)$$
-Si $n\geq 3$, on regarde modulo $8$. Un carré est congru à $0,1,4$ modulo $8$, donc le membre de droite vaut $1,2,3,4,5,6$ ou $7$, mais jamais $0$ modulo $8$. Ainsi il n'y a que les $5$ solutions citées précédemment.
+Si $n\ge 3$, on regarde modulo $8$. Un carré est congru à $0,1,4$ modulo $8$, donc le membre de droite vaut $1,2,3,4,5,6$ ou $7$, mais jamais $0$ modulo $8$. Ainsi il n'y a que les $5$ solutions citées précédemment.
 \end{sol}
 
 
 \begin{sol}
-En regardant modulo $8$, $2021\equiv 5,$ et $8\mid 2\times y!$ dès que $y\ge 4.$ Ainsi, on aurait $x^2\equiv 5[8],$ contradiction !\\
+En regardant modulo $8$, $2021\equiv 5,$ et $8\mid 2\cdot y!$ dès que $y\ge 4.$ Ainsi, on aurait $x^2\equiv 5[8],$ contradiction !\\
 Donc $y<4$. En traitant les cas restants, on trouve le couple $(45,2)$ comme seule solution.
 \end{sol}
-
-
-%\begin{sol}
-%Il est nécessaire et suffisant que $2a^2\equiv-2[7]$.
-%\newline
-%$2\times 4 \equiv 1[7]$ ce qui implique que $a^2\equiv -1[7]$, or les carrés modulo $7$ sont $0,1,4,2$. Ainsi il n'y a aucun réel $a$ qui satisfait cela.
-%\end{sol}
-
-
-%\begin{sol}
-%Soient $a$ et $b$ deux restes différents modulo $p$. Supposons que $a^2\equiv b^2[p]$. Alors $(a-b)(a+b)\equiv 0[p]$, mais $p$ est premier. Par le lemme de Gauss, $p$ divise $a-b$ ou $a+b$. Ainsi $a\equiv b$ ou $-b[p]$.
-
-%\smallskip
-
-%De plus $a^2$ et $(p-a)^2$ sont bien congrus modulo $p$. Ainsi si $p \neq 2$, $0$ est un carré et les restes $1,2,\cdots,\frac{p-1}{2}$ ont des carrés différents. Tous les carrés sont obtenus ainsi. Il y a donc $\frac{p+1}{2}$ carrés modulo $p$ si $p\neq 2$, et modulo $2$ on vérifie qu'il y a $2$ carrés.
-
-%\end{sol}
 
 
 \subsubsection{Inverse modulo $n$}
@@ -295,18 +263,18 @@ Un entier $b$ est appelé \textbf{inverse de $a$ modulo $n$} si $ab \equiv 1 [n]
 
 
 \begin{ex}
-$2$ est son propre inverse modulo $3$ car $2 \times 2 = 4 \equiv 1 [3]$.
+$2$ est son propre inverse modulo $3$ car $2 \cdot 2 = 4 \equiv 1 \mod 3$.
 \end{ex}
 
 \begin{pro}
 Un entier $a$ possède un inverse modulo $n$ si et seulement si $a$ et $n$ sont premiers entre eux. L'inverse de $a$ est alors unique modulo $n$.
 \end{pro}
 
-\textbf{Démonstration}:
-\newline
+\begin{preuve}
 Par le théorème de Bézout, il existe des entiers $u$ et $v$ tels que $au + nv = 1$ si et seulement si $a$ et $n$ sont premiers entre eux. Dans ce cas, $u$ est l'inverse de $a$ modulo $n$.
-\newline
-Pour montrer l'unicité, supposons que $b$ et $b'$ sont deux inverses de $a$ modulo $n$. \\
-Alors $b=b\times 1\equiv b(ab')\equiv (ba)b'\equiv b'[n]$
-\newline
+
+Pour montrer l'unicité, supposons que $b$ et $b'$ sont deux inverses de $a$ modulo $n$. Nous avons alors
+$$b=b\cdot 1\equiv b(ab')\equiv (ba)b'\equiv b'[n]$$
+
 On a donc $b\equiv b'[n]$, d’où l’unicité modulo $n$.
+\end{preuve}

@@ -1,11 +1,32 @@
-\subsubsection{Énoncés}
+\soustitre{Sujet}
+
 
 \begin{exo}
 Des participants venant de $100$ pays différents participent à une compétition internationale. Chaque pays a envoyé $2$ participants. Chaque participant connaît son compatriote et exactement un autre participant, et cette connaissance est réciproque. Montrer qu'il est possible de répartir les participants en deux groupes disjoints de sorte que dans chaque groupe il n'y ait ni deux participants du même pays, ni deux participants qui se connaissent.
 \end{exo}
 
-\begin{sol}
 
+\begin{exo}
+Soit $ABC$ un triangle aux angles aigus et soit $\Omega$ son cercle circonscrit. Soient $E$ et $F$ les pieds des hauteurs respectivement issues des sommets $B$ et $C$. La hauteur issue du sommet $A$ recoupe le cercle $\Omega$ au point $D$. Les tangentes au cercle $\Omega$ aux points $B$ et $C$ se coupent au point $T$. Les droites $(EF)$ et $(BC)$ se coupent au point $P$. Montrer que les droites $(DT)$ et $(AP)$ se coupent sur le cercle circonscrit au triangle $AEF$.  
+\end{exo}
+
+
+\begin{exo}
+Soit $ABC$ un triangle isocèle en $A$. Soit $D$ le milieu du segment $[AC]$ et soit $\gamma$ le cercle circonscrit au triangle $ABD$. La tangente au cercle $\gamma$ en $A$ coupe la droite $(BC)$ au point $E$. Soit $O$ le centre du cercle circonscrit au triangle $ABE$. Montrer que le milieu du segment $[AO]$ appartient au cercle $\gamma$. 
+\end{exo}
+
+
+\begin{exo}
+Dans le plan sont dessinées $2n$ droites bleues et $n$ droites rouges en position générale, c'est-à-dire que deux de ces droites ne sont jamais parallèles, et trois de ces droites ne sont jamais concourantes.
+
+Une région monochromatique est une région du plan délimitée par ces $3n$ droites, possiblement infinie, dont le périmètre est intégralement bleu ou intégralement rouge. Montrer qu'il existe au moins $\frac{(n-1)(n-2)}{2}$ régions monochromatiques.
+\end{exo}
+
+
+\soustitre{Corrigé}
+
+
+\begin{sol}
 On peut représenter la situation par un graphe dont les sommets sont les participants. On dessine une arête rouge entre deux participants si ils se connaissent, et une arête verte si ils viennent du même pays.
 
 \medskip
@@ -18,63 +39,60 @@ Ainsi l'ensemble des $200$ sommets peut être partitionné en cycles de longueur
 \end{sol}
 
 
-\begin{exo}
-Soit $ABC$ un triangle aux angles aigus et soit $\Omega$ son cercle circonscrit. Soient $E$ et $F$ les pieds des hauteurs respectivement issues des sommets $B$ et $C$. La hauteur issue du sommet $A$ recoupe le cercle $\Omega$ au point $D$. Les tangentes au cercle $\Omega$ aux points $B$ et $C$ se coupent au point $T$. Les droites $(EF)$ et $(BC)$ se coupent au point $P$. Montrer que les droites $(DT)$ et $(AP)$ se coupent sur le cercle circonscrit au triangle $AEF$.  
-\end{exo}
 \begin{sol}
-%\begin{center}
-%\begin{tikzpicture}
-%\tkzDefPoint(1,6){A}
-%\tkzDefPoint(3,0){B}
-%\tkzDefPoint(-3,0){C}
-%
-%\tkzDefCircle[circum](A,B,C) \tkzGetPoint{O}
-%\tkzDefLine[perpendicular=through B](A,C) \tkzGetPoint{e}
-%\tkzInterLL(A,C)(B,e) \tkzGetPoint{E}
-%\tkzDefLine[perpendicular=through C](A,B) \tkzGetPoint{f}
-%\tkzInterLL(A,B)(C,f) \tkzGetPoint{F}
-%\tkzInterLL(B,E)(C,F) \tkzGetPoint{H}
-%\tkzInterLC(A,H)(O,A) \tkzGetPoints{A}{D}
-%\tkzDefTangent[at=B](O) \tkzGetPoint{t}
-%\tkzDefTangent[at=C](O) \tkzGetPoint{t1}
-%\tkzInterLL(B,t)(C,t1) \tkzGetPoint{T}
-%\tkzInterLL(E,F)(B,C) \tkzGetPoint{P}
-%\tkzInterLL(A,P)(D,T) \tkzGetPoint{X}
-%\tkzDefCircle[circum](A,E,F) \tkzGetPoint{o}
-%\tkzInterLL(B,C)(A,H) \tkzGetPoint{Ha}
-%\tkzDefMidPoint(B,C) \tkzGetPoint{M}
-%
-%\tkzMarkRightAngle[color=red](C,E,B)
-%\tkzMarkRightAngle[color=red](C,F,B)
-%\tkzDrawSegment(A,B)
-%\tkzDrawSegment(P,C)
-%\tkzDrawSegment(C,A)
-%\tkzDrawSegment(B,E)
-%\tkzDrawSegment(C,F)
-%\tkzDrawSegment(A,D)
-%\tkzDrawSegment(T,B)
-%\tkzDrawSegment(T,C)
-%\tkzDrawSegment(E,P)
-%\tkzDrawLine[dashed](T,X)
-%\tkzDrawLine(A,P)
-%\tkzDrawCircle(O,A)
-%\tkzDrawCircle[dashed](o,A)
-%\tkzDrawCircle[dashed](M,B)
-%\tkzDrawPoints[fill=white](A,B,C,H,E,F,D,P,X,T,Ha)
-%
-%\tkzLabelPoint[above](A){$A$}
-%\tkzLabelPoint(B){$B$}
-%\tkzLabelPoint[below left](C){$C$}
-%\tkzLabelPoint(D){$D$}
-%\tkzLabelPoint[left](E){$E$}
-%\tkzLabelPoint[right](F){$F$}
-%\tkzLabelPoint[below left](H){$H$}
-%\tkzLabelPoint[below](P){$P$}
-%\tkzLabelPoint[above right](X){$X$}
-%\tkzLabelPoint[below right](T){$T$}
-%\tkzLabelPoint[below left](Ha){$H_A$}
-%\end{tikzpicture}
-%\end{center}
+\begin{center}
+\begin{tikzpicture}
+\tkzDefPoint(1,6){A}
+\tkzDefPoint(3,0){B}
+\tkzDefPoint(-3,0){C}
+
+\tkzDefCircle[circum](A,B,C) \tkzGetPoint{O}
+\tkzDefLine[perpendicular=through B](A,C) \tkzGetPoint{e}
+\tkzInterLL(A,C)(B,e) \tkzGetPoint{E}
+\tkzDefLine[perpendicular=through C](A,B) \tkzGetPoint{f}
+\tkzInterLL(A,B)(C,f) \tkzGetPoint{F}
+\tkzInterLL(B,E)(C,F) \tkzGetPoint{H}
+\tkzInterLC(A,H)(O,A) \tkzGetPoints{A}{D}
+\tkzDefTangent[at=B](O) \tkzGetPoint{t}
+\tkzDefTangent[at=C](O) \tkzGetPoint{t1}
+\tkzInterLL(B,t)(C,t1) \tkzGetPoint{T}
+\tkzInterLL(E,F)(B,C) \tkzGetPoint{P}
+\tkzInterLL(A,P)(D,T) \tkzGetPoint{X}
+\tkzDefCircle[circum](A,E,F) \tkzGetPoint{o}
+\tkzInterLL(B,C)(A,H) \tkzGetPoint{Ha}
+\tkzDefMidPoint(B,C) \tkzGetPoint{M}
+
+\tkzMarkRightAngle[color=red](C,E,B)
+\tkzMarkRightAngle[color=red](C,F,B)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(P,C)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(B,E)
+\tkzDrawSegment(C,F)
+\tkzDrawSegment(A,D)
+\tkzDrawSegment(T,B)
+\tkzDrawSegment(T,C)
+\tkzDrawSegment(E,P)
+\tkzDrawLine[dashed](T,X)
+\tkzDrawLine(A,P)
+\tkzDrawCircle(O,A)
+\tkzDrawCircle[dashed](o,A)
+\tkzDrawCircle[dashed](M,B)
+\tkzDrawPoints[fill=white](A,B,C,H,E,F,D,P,X,T,Ha)
+
+\tkzLabelPoint[above](A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[below left](C){$C$}
+\tkzLabelPoint(D){$D$}
+\tkzLabelPoint[left](E){$E$}
+\tkzLabelPoint[right](F){$F$}
+\tkzLabelPoint[below left](H){$H$}
+\tkzLabelPoint[below](P){$P$}
+\tkzLabelPoint[above right](X){$X$}
+\tkzLabelPoint[below right](T){$T$}
+\tkzLabelPoint[below left](Ha){$H_A$}
+\end{tikzpicture}
+\end{center}
 
 En traçant la figure, on remarque que le point d'intersection supposé est également sur le cercle $\Omega$. On commence donc par montrer que le second point d'intersection $X$ des cercles circonscrit aux triangles $ABC$ et $AEF$ est sur la droite $(AP)$. Les points $B,C,F$ et $e$ étant cocycliques, les droites $(EF),(BC)$ et $(AX)$ sont concourantes comme les axes radicaux des cercles circonscrits aux triangles $BCE$, $AEF$ et $ABC$. Ainsi, les points $P,X$ et $A$ sont alignés. 
 
@@ -86,102 +104,92 @@ Il s'agit désormais de montrer que les droites $(DT)$ et $(AP)$ se coupent sur 
 
 D'autre part, on note $H_A$ le pied de la hauteur issue du sommet $A$. On reconnaît la configuration d'un quadrilatère complet. Les points $B,C,H_A$ et $P$ sont donc harmoniques. En projetant depuis le point $A$ sur le cercle $\Omega$, on trouve que les points $B,C,D$ et $X$ sont harmoniques. Pour récapituler : 
 
-\[b_{(B,C;D,X)}=b_{(B,C;H_A,P)}= -1=b_{(B,C;D,X')}\]
+$$b_{(B,C;D,X)}=b_{(B,C;H_A,P)}= -1=b_{(B,C;D,X')}$$
 
 ce qui implique que $X=X'$, ce qui est le résultat voulu.
 \end{sol}
 
 
-\begin{exo}
-Soit $ABC$ un triangle isocèle en $A$. Soit $D$ le milieu du segment $[AC]$ et soit $\gamma$ le cercle circonscrit au triangle $ABD$. La tangente au cercle $\gamma$ en $A$ coupe la droite $(BC)$ au point $E$. Soit $O$ le centre du cercle circonscrit au triangle $ABE$. Montrer que le milieu du segment $[AO]$ appartient au cercle $\gamma$. 
-\end{exo}
 \begin{sol}
-%\begin{center}
-%\begin{tikzpicture}
-%[scale=1]
-%\tkzInit[ymin=-1,ymax=6.9,xmin=-5,xmax=5]
-%\tkzClip
-%
-%\tkzDefPoint(2,6){A}
-%\tkzDefPoint(4,0){B}
-%\tkzDefPoint(0,0){C}
-%\tkzDefMidPoint(A,C) \tkzGetPoint{D}
-%\tkzDefCircle[circum](A,D,B) \tkzGetPoint{O1}
-%\tkzDefTangent[at=A](O1) \tkzGetPoint{e}
-%\tkzInterLL(A,e)(B,C) \tkzGetPoint{E}
-%\tkzDefCircle[circum](A,E,B) \tkzGetPoint{O}
-%\tkzDefMidPoint(A,O) \tkzGetPoint{M}
-%\tkzDefPointBy[symmetry=center D](B) \tkzGetPoint{B'}
-%
-%\tkzMarkAngle[color=red](A,B,D)
-%\tkzMarkAngle[color=red](A,E,B')
-%\tkzMarkAngle[color=red](E,A,C)
-%\tkzMarkSegment[color=blue, mark=s||](E,C)
-%\tkzMarkSegment[color=blue, mark=s||](C,B)
-%\tkzDrawSegment(A,B)
-%\tkzDrawSegment(O,C)
-%\tkzDrawSegment(M,D)
-%\tkzDrawSegment(B,E)
-%\tkzDrawSegment(C,A)
-%\tkzDrawSegment(A,E)
-%\tkzDrawSegment(A,O)
-%\tkzDrawSegment(B',E)
-%\tkzDrawSegment(A,B')
-%\tkzDrawSegment(B,B')
-%\tkzDrawCircle(O1,A)
-%\tkzDrawCircle(O,A)
-%\tkzDrawPoints[fill=white](A,B,C,D,E,O,M,B')
-%
-%\tkzLabelPoint[above](A){$A$}
-%\tkzLabelPoint(B){$B$}
-%\tkzLabelPoint[below](C){$C$}
-%\tkzLabelPoint[right](D){$D$}
-%\tkzLabelPoint[below left](E){$E$}
-%\tkzLabelPoint(O){$O$}
-%\tkzLabelPoint[left](M){$M$}
-%\tkzLabelPoint[above left](B'){$B'$}
-%\end{tikzpicture}
-%\end{center}
+\begin{center}
+\begin{tikzpicture}
+[scale=1]
+\tkzInit[ymin=-1,ymax=6.9,xmin=-5,xmax=5]
+\tkzClip
+
+\tkzDefPoint(2,6){A}
+\tkzDefPoint(4,0){B}
+\tkzDefPoint(0,0){C}
+\tkzDefMidPoint(A,C) \tkzGetPoint{D}
+\tkzDefCircle[circum](A,D,B) \tkzGetPoint{O1}
+\tkzDefTangent[at=A](O1) \tkzGetPoint{e}
+\tkzInterLL(A,e)(B,C) \tkzGetPoint{E}
+\tkzDefCircle[circum](A,E,B) \tkzGetPoint{O}
+\tkzDefMidPoint(A,O) \tkzGetPoint{M}
+\tkzDefPointBy[symmetry=center D](B) \tkzGetPoint{B'}
+
+\tkzMarkAngle[color=red](A,B,D)
+\tkzMarkAngle[color=red](A,E,B')
+\tkzMarkAngle[color=red](E,A,C)
+\tkzMarkSegment[color=blue, mark=s||](E,C)
+\tkzMarkSegment[color=blue, mark=s||](C,B)
+\tkzDrawSegment(A,B)
+\tkzDrawSegment(O,C)
+\tkzDrawSegment(M,D)
+\tkzDrawSegment(B,E)
+\tkzDrawSegment(C,A)
+\tkzDrawSegment(A,E)
+\tkzDrawSegment(A,O)
+\tkzDrawSegment(B',E)
+\tkzDrawSegment(A,B')
+\tkzDrawSegment(B,B')
+\tkzDrawCircle(O1,A)
+\tkzDrawCircle(O,A)
+\tkzDrawPoints[fill=white](A,B,C,D,E,O,M,B')
+
+\tkzLabelPoint[above](A){$A$}
+\tkzLabelPoint(B){$B$}
+\tkzLabelPoint[below](C){$C$}
+\tkzLabelPoint[right](D){$D$}
+\tkzLabelPoint[below left](E){$E$}
+\tkzLabelPoint(O){$O$}
+\tkzLabelPoint[left](M){$M$}
+\tkzLabelPoint[above left](B'){$B'$}
+\end{tikzpicture}
+\end{center}
 
 La première chose qui frappe est que le point $C$ est manifestement le milieu du segment $[BE]$. Commençons par essayer de montrer ce point. 
 
-La présence d'un milieu encourage à introduire le point $B'$, symétrique du point $B$ par rapport au point $D$, de telle sorte que le quadrilatère $B'ABC$ soit un parallélogramme. On a alors 
+La présence d'un milieu encourage à introduire le point $B'$, symétrique du point $B$ par rapport au point $D$, de telle sorte que le quadrilatère $B'ABC$ soit un parallélogramme. On a alors
+$$\widehat{B'AE}= \widehat{B'AC}-\widehat{EAC}=\widehat{ACB}-\widehat{ABD}=\widehat{B'BE}$$
 
-\[\widehat{B'AE}= \widehat{B'AC}-\widehat{EAC}=\widehat{ACB}-\widehat{ABD}=\widehat{B'BE}\]
-
-donc le point $B'$ est sur le cercle circonscrit au triangle $EAB$. Il vient 
-
-\[\widehat{B'EA}=\widehat{B'BA}=\widehat{EAC}\]
+donc le point $B'$ est sur le cercle circonscrit au triangle $EAB$. Il vient
+$$\widehat{B'EA}=\widehat{B'BA}=\widehat{EAC}$$
 
 donc les droites $(EB')$ et $(AC)$ sont parallèles, donc le quadrilatère $B'ACE$ est un parallélogramme. On a donc $EC=B'A=CB$ donc $C$ est bien le milieu du segment $[EB]$.
 
 On peut alors conclure. Si $M$ est le milieu du segment $[OA]$, les droites $(MD)$ et $(OC)$ sont parallèles et 
-\[\widehat{MDA}=\widehat{COA}=\widehat{COB}+\widehat{BOA}=\widehat{EAB}+2\widehat{AEB}= 180^\circ-\widehat{EBA}+\widehat{AEB}\]
+$$\widehat{MDA}=\widehat{COA}=\widehat{COB}+\widehat{BOA}=\widehat{EAB}+2\widehat{AEB}= 180^\circ-\widehat{EBA}+\widehat{AEB}$$
 
 or
-\[180^\circ-\widehat{EBA}+\widehat{AEB}= 180^\circ-(\widehat{BCA}-\widehat{CEA})= 180^\circ- \widehat{EAC}= 180^\circ-\widehat{DBA}\]
+$$180^\circ-\widehat{EBA}+\widehat{AEB}= 180^\circ-(\widehat{BCA}-\widehat{CEA})= 180^\circ- \widehat{EAC}= 180^\circ-\widehat{DBA}$$
 
 et le point $M$ est bien sur le cercle $\gamma$.
 \end{sol}
 
 
-\begin{exo}
-Dans le plan sont dessinées $2n$ droites bleues et $n$ droites rouges en position générale, c'est à dire que deux de ces droites ne sont jamais parallèles, et trois de ces droites ne sont jamais concourrantes.
-
-Une région monochromatique est une région du plan délimitée par ces $3n$ droites, possiblement infinie, dont le périmètre est intégralement bleu ou intégralement rouge. Montrer qu'il existe au moins $\frac{(n-1)(n-2)}{2}$ régions monochromatiques.
-\end{exo}
 \begin{sol}
 Étant données $N$ droites dans le plan en position générales, elles définissent $\binom{N+1}{2}+1$. régions. Comptons les régions bichromatiques, i.e celles qui ne sont pas monochromatiques. Il reste à montrer qu'il y a au moins $\binom{3n+1}{2}-\binom{n-1}{2}=4n^2+3n$ régions bichromatiques.
 
 \medskip
 
-On apelle passage un croisement entre une droite bleue et une droite rouge. Chaque passage délimite $4$ angles, apellés coins. Il y a $p=n\times 2n=2n^2$ passages. Soit $r_i$ le nombre de régions bichromatiques infinies et $r_f$ le nombre de régions bichromatiques finies. Chaque région bichromatique finie contient au moins $2$ coins, et celles infinies contiennent au moins $1$ coin. Soit $c=4p=8n^2$ le nombre de coins. 
+On appelle passage un croisement entre une droite bleue et une droite rouge. Chaque passage délimite $4$ angles, appelés coins. Il y a $p = n \cdot 2n = 2n^2$ passages. Soit $r_i$ le nombre de régions bichromatiques infinies et $r_f$ le nombre de régions bichromatiques finies. Chaque région bichromatique finie contient au moins $2$ coins, et celles infinies contiennent au moins $1$ coin. Soit $c=4p=8n^2$ le nombre de coins. 
 
 \medskip
 
-Chaque région finie contient au moins $2$ coins, et chaque régions infinie contient au moins $1$ coin. Ainsi $2r_f+r_i\geq c$. Il y a au plus $6n$ régions infinies, donc $r_i\leq 6n$. Ainsi :
+Chaque région finie contient au moins $2$ coins, et chaque régions infinie contient au moins $1$ coin. Ainsi $2r_f+r_i\ge c$. Il y a au plus $6n$ régions infinies, donc $r_i\le 6n$. Ainsi :
 
-$$r_i+r_f\geq \frac{2r_i+r_f}{2}+\frac{r_f}{2}\geq 4n^2+3n.$$
+$$r_i+r_f\ge \frac{2r_i+r_f}{2}+\frac{r_f}{2}\ge 4n^2+3n.$$
 
-Ainsi on a bien au moins $4n^2+3n\geq 4n^2+3n\geq 4n^2+3n$, ce qui conclut.
+Ainsi on a bien au moins $4n^2+3n\ge 4n^2+3n\ge 4n^2+3n$, ce qui conclut.
 \end{sol}

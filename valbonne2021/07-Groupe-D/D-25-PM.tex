@@ -1,18 +1,18 @@
-La théorie analytique des nombres désigne l'étude asymptotique des nombres entiers, c'est-à-dire le comportement à l'infini, \og vu de loin \fg, de certaines quantités arithmétiques. Ce domaine des mathématiques consiste ainsi en un mélange d'arithmétique et d'analyse (réelle ou complexe). Dans tout ce document, les notations $n$ et $p$ désigneront respectivement un nombre entier et un nombre premier. La somme $\sum_{p \leq x} \dots$ s'étend donc sur tous les nombres premiers $p$ inférieurs à $x$.
+La théorie analytique des nombres désigne l'étude asymptotique des nombres entiers, c'est-à-dire le comportement à l'infini, \og vu de loin \fg, de certaines quantités arithmétiques. Ce domaine des mathématiques consiste ainsi en un mélange d'arithmétique et d'analyse (réelle ou complexe). Dans tout ce document, les notations $n$ et $p$ désigneront respectivement un nombre entier et un nombre premier. La somme $\sum_{p \le x} \dots$ s'étend donc sur tous les nombres premiers $p$ inférieurs à $x$.
 
 Pendant le cours, nous avons introduit les notations de Landau $o$, $O$ et $\sim$. Nous avons admis le théorème des nombres premiers : si $\pi(x)$ désigne le nombre de nombres premiers inférieurs ou égaux à $x$, alors on a l'équivalent
-$$\pi(x) \sim \frac{x}{\ln x}$$
+$$\pi(x) \sim \frac x{\ln x}$$
 Nous en avons déduit que le $n$-ième nombre premier $p_n$ vérifie $p_n \sim n \ln n$.
 
-En utilisant une comparaison série -- intégrale, nous avons prouvé que la série harmonique $H_n = \sum_{k=1}^{n} \frac{1}{k}$ diverge. Plus précisément, nous avons montré l'équivalent $H_n \sim \ln n$ à partir de l'inégalité $\ln(n+1) \leq H_n \leq 1 + \ln n $.
+En utilisant une comparaison série -- intégrale, nous avons prouvé que la série harmonique $H_n = \sum_{k = 1}^n - \frac 1{k}$ diverge. Plus précisément, nous avons montré l'équivalent $H_n \sim \ln n$ à partir de l'inégalité $\ln(n+1) \le H_n \le 1 + \ln n $.
 
 Pendant le TD, nous avons travaillé sur les exercices listés ci-dessous. Pour en savoir plus sur la théorie analytique des nombres, nous renvoyons à la bible d'Hardy et Wright \textit{An Introduction to the Theory of Numbers} ou encore au livre \textit{Les nombres premiers, entre l'ordre et le chaos} de Tenenbaum et Mendès France.
 
 
 \begin{exo}
-On note $d(n)$ le nombre de diviseurs d'un entier $n$ et on pose $F(n) = \displaystyle\sum_{k=1}^{n} d(k)$.
+On note $d(n)$ le nombre de diviseurs d'un entier $n$ et on pose $F(n) = \displaystyle\sum_{k = 1}^n d(k)$.
 \begin{enumerate}
-\item Montrer que $F(n) = \displaystyle\sum_{k=1}^{n} \left\lfloor \frac{n}{k} \right\rfloor$.
+\item Montrer que $F(n) = \displaystyle\sum_{k = 1}^n \left\lfloor \frac{n}{k} \right\rfloor$.
 \item En déduire que $F(n) \sim n \ln n$. Comment interpréter ce résultat ?
 \end{enumerate}
 \end{exo}
@@ -21,63 +21,61 @@ On note $d(n)$ le nombre de diviseurs d'un entier $n$ et on pose $F(n) = \displa
 \begin{exo}
 \begin{enumerate}
 \item Montrer que pour tout réel $-1 < x < 1$, on a
-$$\displaystyle\sum_{n=0}^{+\infty} x^n = \frac{1}{1-x}$$
+$$\displaystyle\sum_{n=0}^{+\infty} x^n = - \frac 1{1-x}$$
 \item Pour une partie finie $X$ de l'ensemble des nombres premiers, on note $N(X)$ l'ensemble des nombres naturels dont la factorisation en facteurs premiers ne fait intervenir que des nombres premiers de $X$. Montrer que pour tout entier $s$
-$$\prod_{p \in X} \frac{1}{1-\frac{1}{p^s}} = \sum_{n \in N(X)} \frac{1}{n^s}$$
-\item Pour $s > 1$, on admet que $\zeta(s) = \displaystyle\sum_{n=1}^{+\infty} \frac{1}{n^s}$ est bien définie. Déduire de ce qui précède que
-$$\frac{1}{\zeta(s)} = \prod_{p} \left(1-\frac{1}{p^s}\right)$$
-Cette formule fondamentale fait le lien entre la fonction $\zeta$ (\og zêta\fg{}) de Riemann et les nombres premiers, c'est-à-dire entre l'analyse et l'arithmétique.
+$$\prod_{p \in X} - \frac 1{1-- \frac 1{p^s}} = \sum_{n \in N(X)} - \frac 1{n^s}$$
+\item Pour $s > 1$, on admet que $\zeta(s) = \displaystyle\sum_{n=1}^{+\infty} - \frac 1{n^s}$ est bien définie. Déduire de ce qui précède que
+$$- \frac 1{\zeta(s)} = \prod_p \left(1-- \frac 1{p^s}\right)$$
+Cette formule fondamentale fait le lien entre la fonction $\zeta$ (\og zêta\fg) de Riemann et les nombres premiers, c'est-à-dire entre l'analyse et l'arithmétique.
 \end{enumerate}
 \end{exo}
 
 
 \begin{exo}[Preuve analytique de l'infinité des nombres premiers]
 \begin{enumerate}
-\item Montrer que pour tout réel $x \geq 1$ on a l'inégalité
-$$\ln x \leq \prod_{p \leq x} \frac{1}{1-\frac{1}{p}}$$
-\item En déduire que $\ln x \leq \pi(x) + 1$ et conclure.
+\item Montrer que pour tout réel $x \ge 1$ on a l'inégalité
+$$\ln x \le \prod_{p \le x} - \frac 1{1 - \frac 1p}$$
+\item En déduire que $\ln x \le \pi(x) + 1$ et conclure.
 \end{enumerate}
 \end{exo}
 
 
-\begin{exo}[dû à Erd\H{o}]
-L'objectif est de démontrer que la série $\displaystyle\sum_{p} \frac{1}{p}$ diverge. On raisonne par l'absurde en supposant que cette série converge. Il existe donc un entier $k$ tel que
-\[ \sum_{i \geq k+1} \frac{1}{p_i} < \frac{1}{2} \]
-Appelons $p_1, \dots, p_k$ les \og petits \fg{} nombres premiers et $p_{k+1}, \dots$ les \og grands \fg{} nombres premiers. Soit $N$ un entier fixé. Notons
+\begin{exo}[Divergence de la somme des inverses des nombres premiers. Preuve d'Erd\H{o}s, 1938]
+L'objectif est de démontrer que la série $\displaystyle\sum_p - \frac 1p$ diverge. On raisonne par l'absurde en supposant que cette série converge. Il existe donc un entier $k$ tel que
+$$\sum_{i \ge k+1} - \frac 1{p_i} < - \frac 1{2}$$
+Appelons \textit{petits} les nombres premiers $p_1, \dots, p_k$ et \textit{grands} les nombres premiers $p_{k+1}, \dots$. Soit $N$ un entier fixé. Notons
 \begin{itemize}
-	\item $N_g$ le nombre d'entiers inférieurs à $N$ divisibles par un grand nombre premier au moins
-	\item $N_p$ le nombre d'entiers inférieurs à $N$ qui n'ont que des petits diviseurs premiers
+\item $N_g$ le nombre d'entiers inférieurs à $N$ divisibles par un grand nombre premier au moins
+\item $N_p$ le nombre d'entiers inférieurs à $N$ qui n'ont que des petits diviseurs premiers
 \end{itemize}
 \begin{enumerate}
-	\item Montrer que $N_g < \frac{N}{2}$.
-	\item En écrivant tous les entiers $n \leq N$ n'ayant que des petits diviseurs premiers sous la forme $n = a_nb_n^2$, avec $a_n$ sans facteur carré, prouver que $N_p \leq 2^k \sqrt{N}$.
-	\item En choisissant $N$ convenablement, obtenir une contradiction à l'aide des deux questions précédentes et conclure.
+\item Montrer que $N_g < \frac{N}{2}$.
+\item En écrivant tous les entiers $n \le N$ n'ayant que des petits diviseurs premiers sous la forme $n = a_nb_n^2$, avec $a_n$ sans facteur carré, prouver que $N_p \le 2^k \sqrt N$.
+\item En choisissant $N$ convenablement, obtenir une contradiction à l'aide des deux questions précédentes et conclure.
 \end{enumerate}
 \end{exo}
 
 
 \begin{exo}
 \begin{enumerate}
-	\item Montrer que
-	\[ \ln(\ln x) - \ln \frac{\pi^2}{6} \leq \sum_{p \leq x} \frac{1}{p} \]
-	\item En utilisant des techniques plus avancées (une sommation d'Abel et le résultat de l'exercice suivant), on peut en fait montrer que $\sum_{p \leq x} \frac{1}{p} \sim \ln(\ln x)$. Retrouver cet équivalent à l'aide du théorème des nombres premiers.
+\item Montrer que
+$$\ln(\ln x) - \ln \frac{\pi^2}{6} \le \sum_{p \le x} - \frac 1p$$
+\item En utilisant des techniques plus avancées (une sommation d'Abel et le résultat de l'exercice suivant), on peut en fait montrer que $\sum_{p \le x} - \frac 1p \sim \ln(\ln x)$. Retrouver cet équivalent à l'aide du théorème des nombres premiers.
 \end{enumerate}
-
 \end{exo}
-
 
 \begin{exo}(Premier théorème de Mertens)
 \begin{enumerate}
-	\item Montrer par comparaison série -- intégrale que $\ln(n!) = n \ln n - n + O(\ln n)$.
-	\item Montrer la formule de Legendre
-	\[ v_p(n!) = \sum_{k=1}^{+\infty} \left\lfloor \frac{n}{p^k} \right\rfloor \]
-	En déduire l'inégalité
-	\[ \frac{n}{p}-1 < v_p(n!) \leq \frac{n}{p} + \frac{n}{p^2}\]
-	\item Soit $m$ un entier. Montrer que $\displaystyle\prod_{m+1<p\leq 2m+1} p$ divise $\binom{2m+1}{m}$. En déduire la majoration
-	\[ \displaystyle\prod_{m+1<p\leq 2m+1} p \leq 4^m\]
-	\item Montrer par récurrence l'inégalité $\displaystyle\prod_{p\leq n} p \leq 4^n$.
-	\item En considérant $\ln(n!)$, montrer l'estimation
-	\[ \sum_{p \leq x} \frac{\ln p}{p} = \ln x + O(1) \]
+\item Montrer par comparaison série -- intégrale que $\ln(n!) = n \ln n - n + O(\ln n)$.
+\item Montrer la formule de Legendre
+$$v_p(n!) = \sum_{k = 1}^{+\infty} \left\lfloor \frac{n}{p^k} \right\rfloor$$
+En déduire l'inégalité
+$$\frac{n}{p} - 1 < v_p(n!) \le \frac{n}{p} + \frac n{p(p - 1)}$$
+\item Soit $m$ un entier. Montrer que $\displaystyle\prod_{m+1<p\le 2m+1} p$ divise $\binom{2m+1}{m}$. En déduire la majoration
+$$\displaystyle\prod_{m+1<p\le 2m+1} p \le 4^m$$
+\item Montrer par récurrence l'inégalité $\displaystyle\prod_{p\le n} p \le 4^n$.
+\item En considérant $\ln(n!)$, montrer l'estimation
+$$\sum_{p \le x} \frac{\ln p}{p} = \ln x + O(1)$$
 \end{enumerate}
 \end{exo}
 
@@ -86,7 +84,7 @@ Appelons $p_1, \dots, p_k$ les \og petits \fg{} nombres premiers et $p_{k+1}, \d
 On souhaite affiner le résultat de l'exercice 1, dont on reprend les notations.
 \begin{enumerate}
 	\item Justifier l'existence de $\gamma = \lim\limits_{n \rightarrow +\infty} \left(H_n - \ln n \right)$.
-	\item Montrer que $F(n) = 2 \displaystyle\sum_{k=1}^{\lfloor \sqrt{n} \rfloor} \left\lfloor \frac{n}{k} \right\rfloor - \lfloor \sqrt{n} \rfloor^2$.
+	\item Montrer que $F(n) = 2 \displaystyle\sum_{k = 1}^{\lfloor \sqrt{n} \rfloor} \left\lfloor \frac{n}{k} \right\rfloor - \lfloor \sqrt{n} \rfloor^2$.
 	\item En déduire que $F(n) = n \ln n + (2\gamma - 1)n + O(\sqrt{n})$.
 \end{enumerate}
 \end{exo}
@@ -94,7 +92,7 @@ On souhaite affiner le résultat de l'exercice 1, dont on reprend les notations.
 
 \begin{exo}
 On note $q_n$ le plus grand diviseur premier de $n$.\newline
-Quelle est la nature de la série de terme général $\frac{1}{nq_n}$ ?
+Quelle est la nature de la série de terme général $- \frac 1{nq_n}$ ?
 \end{exo}
 
 

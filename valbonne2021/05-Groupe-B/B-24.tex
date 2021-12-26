@@ -1,14 +1,14 @@
-\subsubsection{Énoncés}
+\soustitre{Sujet}
 
 
 \begin{exo}
 Déterminer tous les entiers positifs $x$, $y$ et $z$ tels que
-\[x^2+ y^2 - 15 = 2^z.\]
+$$x^2+ y^2 - 15 = 2^z$$
 \end{exo}
 
 
 \begin{exo}
-On se donne un ensemble $S$ de $n \geq 5$ points du plan, coloriés en rouge et noir.
+On se donne un ensemble $S$ de $n \ge 5$ points du plan, coloriés en rouge et noir.
 On suppose que trois points de la même couleur ne sont jamais alignés.
 
 Montrer que l'on peut trouver trois points de la même couleur formant un triangle dont au moins l'un des côtés ne contient pas de point de $S$.
@@ -17,95 +17,95 @@ Montrer que l'on peut trouver trois points de la même couleur formant un triang
 
 \begin{exo}
 Déterminer les entiers positifs $x$ et $y$ tels que
-\[\left( 1 + \frac{1}{x}\right) \left(1 + \frac{1}{y} \right) = \frac{3}{2}.\]
+$$\left(1 + \frac 1x\right) \left(1 + \frac 1y\right) = \frac 32$$
 \end{exo}
 
 
 \begin{exo}
-Un pion est placé sur un échiquier $6\times6$. Il peut se déplacer horizontalement ou verticalement en sautant d'une case, puis de deux, puis d'une, puis de deux $\ldots$
+Un pion est placé sur un échiquier $6 \cdot 6$. Il peut se déplacer horizontalement ou verticalement en sautant d'une case, puis de deux, puis d'une, puis de deux $\ldots$
 
 Déterminer s'il est possible de choisir une case initiale pour le pion de façon à ce qu'il puisse passer par toutes les cases de l'échiquier par une suite de 35 sauts respectant cette alternance.
 \end{exo}
 
 
-\subsubsection{Solutions}
+\soustitre{Corrigé}
 
 
 \begin{sol}
 Comme un carré est congru à $0$ ou $1$ modulo $4$ on a
-\[\begin{aligned}
-	x^2 & \equiv 0 \text{ ou } 1 &\mod 4 \\
-	y^2 & \equiv 0 \text{ ou } 1 &\mod 4 \\
-	-15 & \equiv 1 \text{ ou } 1 &\mod 4 \\
-\end{aligned}\]
+$$\begin{aligned}
+x^2 & \equiv 0 \text{ ou } 1 &\mod 4 \\
+y^2 & \equiv 0 \text{ ou } 1 &\mod 4 \\
+-15 & \equiv 1 \text{ ou } 1 &\mod 4 \\
+\end{aligned}$$
 et par conséquent
-\[x^2 + y^2 - 15 \equiv 1, 2 \text{ ou } 3 \mod 4.\]
+$$x^2 + y^2 - 15 \equiv 1, 2 \text{ ou } 3 \mod 4.$$
 
-Or si $z \geq 2$ on a $2^z \mod 0 \mod 4$.
+Or si $z \ge 2$ on a $2^z \mod 0 \mod 4$.
 
-Par conséquent il n'y a pas de solution si $z \geq 2$.
+Par conséquent il n'y a pas de solution si $z \ge 2$.
 
 Il suffit ensuite de traiter les cas $z=0$ et $z=1$.
 
 
 \begin{itemize}
-	\item Si $z=0$, on obtient l'équation
-	\[x^2 + y^2 = 16.\]
+\item Si $z=0$, on obtient l'équation
+$$x^2 + y^2 = 16.$$
 
-	Comme un carré est toujours positif on a en particulier
-	\[x^2 \leq 16\]
-	et par positivité de $x$ il suffit de traiter les cas $0 \leq x \leq 4$.
+Comme un carré est toujours positif on a en particulier
+$$x^2 \le 16$$
+et par positivité de $x$ il suffit de traiter les cas $0 \le x \le 4$.
 
-	\begin{itemize}
-		\item Pour $x = 0$, l'équation
-		\[0^2 + y^2 = 16\]
-		admet $y = 4$ comme solution.
-		\item Pour $x = 1$, l'équation
-		\[1^2 + y^2 = 16\]
-		n'admet pas de solution entière.
-		\item Pour $x = 2$, l'équation
-		\[2^2 + y^2 = 16\]
-		n'admet pas de solution entière.
-		\item Pour $x = 3$, l'équation
-		\[3^2 + y^2 = 16\]
-		n'admet pas de solution entière.
-		\item Pour $x = 4$, l'équation
-		\[4^2 + y^2 = 16\]
-		admet $y = 0$ comme solution.
-	\end{itemize}
-	
-	\item Si $z=1$, on obtient l'équation
-	\[x^2 + y^2 = 19.\]
+\begin{itemize}
+\item Pour $x = 0$, l'équation
+$$0^2 + y^2 = 16$$
+admet $y = 4$ comme solution.
+\item Pour $x = 1$, l'équation
+$$1^2 + y^2 = 16$$
+n'admet pas de solution entière.
+\item Pour $x = 2$, l'équation
+$$2^2 + y^2 = 16$$
+n'admet pas de solution entière.
+\item Pour $x = 3$, l'équation
+$$3^2 + y^2 = 16$$
+n'admet pas de solution entière.
+\item Pour $x = 4$, l'équation
+$$4^2 + y^2 = 16$$
+admet $y = 0$ comme solution.
+\end{itemize}
 
-	Comme un carré est toujours positif on a en particulier
-	\[x^2 \leq 19 < 25\]
-	et par positivité de $x$ il suffit de traiter les cas $0 \leq x \leq 4$.
+\item Si $z=1$, on obtient l'équation
+$$x^2 + y^2 = 19.$$
 
-	\begin{itemize}
-		\item Pour $x = 0$, l'équation
-		\[0^2 + y^2 = 17\]
-		n'admet pas de solution.
-		\item Pour $x = 1$, l'équation
-		\[1^2 + y^2 = 17\]
-		admet $y=4$ comme solution.
-		\item Pour $x = 2$, l'équation
-		\[2^2 + y^2 = 17\]
-		n'admet pas de solution entière.
-		\item Pour $x = 3$, l'équation
-		\[3^2 + y^2 = 17\]
-		n'admet pas de solution entière.
-		\item Pour $x = 4$, l'équation
-		\[4^2 + y^2 = 17\]
-		admet $y = 1$ comme solution.
-	\end{itemize}
-	\end{itemize}
+Comme un carré est toujours positif on a en particulier
+$$x^2 \le 19 < 25$$
+et par positivité de $x$ il suffit de traiter les cas $0 \le x \le 4$.
 
-	Par conséquent l'ensemble des solutions est
+\begin{itemize}
+	\item Pour $x = 0$, l'équation
+	$$0^2 + y^2 = 17$$
+	n'admet pas de solution.
+	\item Pour $x = 1$, l'équation
+	$$1^2 + y^2 = 17$$
+	admet $y=4$ comme solution.
+	\item Pour $x = 2$, l'équation
+	$$2^2 + y^2 = 17$$
+	n'admet pas de solution entière.
+	\item Pour $x = 3$, l'équation
+	$$3^2 + y^2 = 17$$
+	n'admet pas de solution entière.
+	\item Pour $x = 4$, l'équation
+	$$4^2 + y^2 = 17$$
+	admet $y = 1$ comme solution.
+\end{itemize}
+\end{itemize}
 
-	\[\boxed{\left\lbrace (0,4,0),(4,0,0),(4,1,1),(1,4,1)\right\rbrace}.\]
+Par conséquent l'ensemble des solutions est
+
+$$\boxed{\left\lbrace (0,4,0),(4,0,0),(4,1,1),(1,4,1)\right\rbrace}.$$
 
 
-	\underline{Remarque}: il aurait été possible de réduire le nombre de cas à vérifier en remarquant que, par symétrie du problème, quitte à intervertir $x$ et $y$ on peut supposer $x \leq y$.
+\underline{Remarque}: il aurait été possible de réduire le nombre de cas à vérifier en remarquant que, par symétrie du problème, quitte à intervertir $x$ et $y$ on peut supposer $x \le y$.
 \end{sol}
 
 
@@ -122,57 +122,57 @@ Supposons par l'absurde que les $3$ côtés d'un tel triangle de périmètre min
 \begin{sol}
 L'idée est de majorer $x$ et $y$ pour se ramener à un nombre fini de cas à tester.
 
-On commence par remarquer que, par \emph{symétrie du problème} et quitte à intervertir $x$ et $y$, on peut supposer que $x \leq y$.
+On commence par remarquer que, par \emph{symétrie du problème} et quitte à intervertir $x$ et $y$, on peut supposer que $x \le y$.
 
 Par conséquent comme
-\[0 < x \leq y\]
+$$0 < x \le y$$
 on obtient
-\[0 < \frac{1}{y} \leq \frac{1}{x}\]
+$$0 < \frac{1}{y} \le \frac{1}{x}$$
 donc
-\[0 < 1+\frac{1}{y} \leq 1+\frac{1}{x}\]
+$$0 < 1+\frac{1}{y} \le 1+\frac{1}{x}$$
 et donc
-\[\left(1 + \frac{1}{x} \right)^2 \geq \left( 1 + \frac{1}{x}\right) \left(1 + \frac{1}{y} \right) = \frac{3}{2}.\]
+$$\left(1 + \frac{1}{x} \right)^2 \ge \left( 1 + \frac{1}{x}\right) \left(1 + \frac{1}{y} \right) = \frac{3}{2}.$$
 
 Par croissance de la racine sur les réels positifs on obtient
-\[1 + \frac{1}{x} \geq \sqrt{\frac{3}{2}}\]
+$$1 + \frac{1}{x} \ge \sqrt{\frac{3}{2}}$$
 donc
-\[\frac{1}{x} \geq \sqrt{\frac{3}{2}}-1 > 0\]
+$$\frac{1}{x} \ge \sqrt{\frac{3}{2}}-1 > 0$$
 et donc
-\[0 < x \leq \frac{1}{\sqrt{\frac{3}{2}}-1}.\]
+$$0 < x \le \frac{1}{\sqrt{\frac{3}{2}}-1}.$$
 
 
 Il reste à estimer cette borne. On peut par exemple remarquer que $\left( \frac{6}{5}\right)^2 = \frac{36}{25} < \frac{3}{2}$.
 
 Par conséquent $\sqrt{\frac{3}{2}} > \frac{6}{5}$
-\[0 < x < \frac{1}{\frac{6}{5}-1} = 5.\]
+$$0 < x < \frac{1}{\frac{6}{5}-1} = 5.$$
 
 Il suffit donc de regarder pour $x =1, 2, 3 \text{ ou } 4$.
 
 \begin{itemize}
 	\item Pour $x=1$ on obtient comme équation
-	\[\left(1 + \frac{1}{1} \right)\left(1 + \frac{1}{y} \right) = \frac{3}{2}\]
+	$$\left(1 + \frac{1}{1} \right)\left(1 + \frac{1}{y} \right) = \frac{3}{2}$$
 	c'est-à-dire
-	\[\frac{1}{y} = -\frac{1}{4}\]
+	$$\frac{1}{y} = -\frac{1}{4}$$
 	qui n'admet pas de solution entière positive.
 	\item Pour $x=2$ on obtient comme équation
-	\[\left(1 + \frac{1}{2} \right)\left(1 + \frac{1}{y} \right) = \frac{3}{2}\]
+	$$\left(1 + \frac{1}{2} \right)\left(1 + \frac{1}{y} \right) = \frac{3}{2}$$
 	c'est-à-dire
-	\[\frac{1}{y} = 0\]
+	$$\frac{1}{y} = 0$$
 	qui n'admet pas de solution entière.
 	\item Pour $x=3$ on obtient comme équation
-	\[\left(1 + \frac{1}{3} \right)\left(1 + \frac{1}{y} \right) = \frac{3}{2}\]
+	$$\left(1 + \frac{1}{3} \right)\left(1 + \frac{1}{y} \right) = \frac{3}{2}$$
 	c'est-à-dire
-	\[\frac{1}{y} = \frac{1}{8}\]
+	$$\frac{1}{y} = \frac{1}{8}$$
 	de solution $y=8$.
 	\item Pour $x=4$ on obtient comme équation
-	\[\left(1 + \frac{1}{4} \right)\left(1 + \frac{1}{y} \right) = \frac{3}{2}\]
+	$$\left(1 + \frac{1}{4} \right)\left(1 + \frac{1}{y} \right) = \frac{3}{2}$$
 	c'est-à-dire
-	\[\frac{1}{y} = \frac{1}{5}\]
+	$$\frac{1}{y} = \frac{1}{5}$$
 	de solution $y=5$.
 \end{itemize}
 
 Par symétrie l'ensemble des solutions est donc
-\[\boxed{\left\lbrace (3,8), (4,5), (8,3), (5,4) \right\rbrace}.\]
+$$\boxed{\left\lbrace (3,8), (4,5), (8,3), (5,4) \right\rbrace}.$$
 \end{sol}
 
 

@@ -1,30 +1,20 @@
 En introduction de ce TD ont été faits des rappels sur les résidus quadratiques. Les deux premiers exercices sont des applications de cette notion pour la mettre en pratique. Un cours plus complet sur les résidus quadratiques peut être retrouvé au chapitre 4 de
-%(https://maths-olympiques.fr/wp-content/uploads/2017/09/arith_zn.pdf).
+\url{https://maths-olympiques.fr/wp-content/uploads/2017/09/arith_zn.pdf}.
 
-Par la suite, des rappels ont également été faits sur le théorème de Zsigmondy, appliqué dans les exercices 3, 4 et 5. On retrouvera un cours plus complet au chapitre 6 de %(https://maths-olympiques.fr/wp-content/uploads/2017/09/arith_lte.pdf).
+Par la suite, des rappels ont également été faits sur le théorème de Zsigmondy, appliqué dans les exercices 3, 4 et 5. On retrouvera un cours plus complet au chapitre 6 de \url{https://maths-olympiques.fr/wp-content/uploads/2017/09/arith_lte.pdf}.
 
 Les exercices 1 à 7 ont été traités pendant le cours.
+
+\subsubsection{Exercices}
 
 \begin{exo}
 Soit $n>1$ un entier et $p$ un diviseur premier de $2^{2^n}+1$. Montrer que $v_2(p-1)\ge n+2$.
 \end{exo}
 
 
-\begin{sol}
-Soit $p$ un diviseur premier de $2^{2^n}+1$. On a $2^{2^n}\equiv -1[p]$, donc $2^{2^{n+1}}\equiv 1[p]$, donc l'ordre de $2$ modulo $p$ est une puissance de $2$ divisant $2^{n+1}$ mais pas $2^n$, soit $2^{n+1}$. D'après le petit théorème de Fermat, $2^{p-1}\equiv 1[p]$, donc par propriété de l'ordre, $2^{n+1}\mid p-1$. Il suffit donc de montrer que 2 est un résidu quadratique modulo p, puisque $x$ vérifiant $x^2\equiv 2[p]$ sera d'ordre $2^{n+2}$, donc $2^{n+2}\mid p-1$ comme précédemmemt. Mais comme $n+1\ge 3$, on sait que $p\equiv1[8]$ par ce qui précède, donc $2$ est bien un résidu quadratique.
-\end{sol}
-
-
-\begin{exo}
-(Corée 2012) Trouver tous les triplets d'entiers strictement positifs $(m,n,p)$ avec $p$ premier, tels que $2^mp^2+1=n^5$.
+\begin{exo}[Corée 2012]
+Trouver tous les triplets d'entiers strictement positifs $(m,n,p)$ avec $p$ premier, tels que $2^mp^2+1=n^5$.
 \end{exo}
-
-
-\begin{sol}
-On écrit $2^m p^2 = n^5-1 = (n-1)(n^4+n^3+n^2+n+1)$. Comme $n^4+n^3+n^2+n+1$ est impair, $2^m\mid n-1$.
-\newline Ainsi, $p^2 = \frac{n-1}{2^m} (n^4+n^3+n^2+n+1)$. Or $p^2$ ne peut s'écrire comme produit de deux termes que sous la forme $p\times p$ ou $1\times p^2$, et $\frac{n-1}{2^m} < n^4+n^3+n^2+n+1$, donc $\frac{n-1}{2^m} = 1$ et $p^2 = n^4+n^3+n^2+n+1$.
-\newline On a donc $n = 2^m +1$ et $p^2 = (2^m +1)^4+(2^m +1)^3+(2^m +1)^2+(2^m +1)+1$. Si $m\ge 2$, alors $p^2\equiv 5[8]$, mais $5$ n'est pas un résidu quadratique modulo $8$, absurde. Ainsi $m=1$. La seule solution est donc $(1,3,11)$.
-\end{sol}
 
 
 \begin{exo}
@@ -32,24 +22,63 @@ Trouver tous les $a,b,c\in\N$ tels que $2^a\cdot3^b=7^c-1$.
 \end{exo}
 
 
-\begin{sol}
-D'après le théorème de Zsigmondy, comme $7^1-1=2\cdot 3$, pour $c\geq 3$ (attention, $c=2$ est un cas d'exception de Zsigmondy car $7+1=8=2^3$), $7^c-1$ admet un diviseur premier différent de $2$ et $3$. Donc nécessairement, $c\leq 2$ et les solutions sont $(1,1,1)$ et $(4,1,2)$.
-\end{sol}
-
-
 \begin{exo}
-Soient $b,m,n\in\N$ avec $b\neq 1$ et $m\neq n$. Montrer que si $b^m-1$ et $b^n-1$ ont les mêmes facteurs premiers, alors $b+1$ est une puissance de $2$.
+Soient $b,m,n\in\N$ avec $b\ne 1$ et $m\ne n$. Montrer que si $b^m-1$ et $b^n-1$ ont les mêmes facteurs premiers, alors $b+1$ est une puissance de $2$.
 \end{exo}
-
-
-\begin{sol}
-Les conditions ne peuvent être réalisées que dans un cas particulier de Zsigmondy.
-\end{sol}
 
 
 \begin{exo}
 Trouver les $a,b,c\in\N$ tels que $11^a+3^b=c^2$.
 \end{exo}
+
+
+\begin{exo}
+Trouver toutes les paires d'entiers naturels $a,b$ tels que $b^a\mid a^b-1$.
+\end{exo}
+
+
+\begin{exo}
+Soient $a,b>1$ impairs tels que $a+b=2^l$. Trouver les $k \in\N^*$ tels que $k^2\mid a^k+b^k$.
+\end{exo}
+
+
+\begin{exo}
+Trouver les paires d'entiers naturels non nuls $m,n$ tels que $mn\mid 3^m+1$ et $mn\mid 3^n+1$.
+\end{exo}
+
+
+\begin{exo}[BxMO 2010, 4]
+Trouver tous les quadruplets $(a,b,p,n)$ d'entiers strictement positifs avec $p$ premier tels que $a^3+b^3=p^n$
+\end{exo}
+
+
+\begin{exo}[IMO 1999, P4]
+Trouver tous les nombres premiers $p$ et tous les entiers $x$ tels que $1\le x\le 2p$ et $x^{p-1}$ divise $(p-1)^x+1$
+\end{exo}
+
+\subsubsection{Solutions}
+
+
+\begin{sol}
+Soit $p$ un diviseur premier de $2^{2^n}+1$. On a $2^{2^n}\equiv -1[p]$, donc $2^{2^{n+1}}\equiv 1[p]$, donc l'ordre de $2$ modulo $p$ est une puissance de $2$ divisant $2^{n+1}$ mais pas $2^n$, soit $2^{n+1}$. D'après le petit théorème de Fermat, $2^{p-1}\equiv 1[p]$, donc par propriété de l'ordre, $2^{n+1}\mid p-1$. Il suffit donc de montrer que 2 est un résidu quadratique modulo p, puisque $x$ vérifiant $x^2\equiv 2[p]$ sera d'ordre $2^{n+2}$, donc $2^{n+2}\mid p-1$ comme précédemmemt. Mais comme $n+1\ge 3$, on sait que $p\equiv1[8]$ par ce qui précède, donc $2$ est bien un résidu quadratique.
+\end{sol}
+
+
+\begin{sol}
+On écrit $2^m p^2 = n^5-1 = (n-1)(n^4+n^3+n^2+n+1)$. Comme $n^4+n^3+n^2+n+1$ est impair, $2^m\mid n-1$.
+\newline Ainsi, $p^2 = \frac{n-1}{2^m} (n^4+n^3+n^2+n+1)$. Or $p^2$ ne peut s'écrire comme produit de deux termes que sous la forme $p\cdot p$ ou $1\cdot p^2$, et $\frac{n-1}{2^m} < n^4+n^3+n^2+n+1$, donc $\frac{n-1}{2^m} = 1$ et $p^2 = n^4+n^3+n^2+n+1$.
+\newline On a donc $n = 2^m +1$ et $p^2 = (2^m +1)^4+(2^m +1)^3+(2^m +1)^2+(2^m +1)+1$. Si $m\ge 2$, alors $p^2\equiv 5[8]$, mais $5$ n'est pas un résidu quadratique modulo $8$, absurde. Ainsi $m=1$. La seule solution est donc $(1,3,11)$.
+\end{sol}
+
+
+\begin{sol}
+D'après le théorème de Zsigmondy, comme $7^1-1=2\cdot 3$, pour $c\ge 3$ (attention, $c=2$ est un cas d'exception de Zsigmondy car $7+1=8=2^3$), $7^c-1$ admet un diviseur premier différent de $2$ et $3$. Donc nécessairement, $c\le 2$ et les solutions sont $(1,1,1)$ et $(4,1,2)$.
+\end{sol}
+
+
+\begin{sol}
+Les conditions ne peuvent être réalisées que dans un cas particulier de Zsigmondy.
+\end{sol}
 
 
 \begin{sol}
@@ -58,13 +87,8 @@ $$3^b=(c-11^{a'})(c+11^{a'})$$
 Ainsi par utilisation de la décomposition en facteurs premiers $c-11^{a'}\mid c+11^{a'}$ soit $c-11^{a'}\mid 2\cdot 11^{a'}$.\newline
 Mais comme $c-11^{a'}=3^\beta$, on obtient $\beta=0$, donc $c-11^{a'}=1$ et $c+11^{a'}=3^b$.\newline
 On soustrait et on trouve alors
-$3^b-1=2\cdot 11^{a'}$. On regarde l'ordre de $3$ modulo $11$ et on trouve qu'il divise $b$ et vaut $5$, donc $3^{5b'}-1=2\cdot 11^{a'}$. Là nous pouvons utiliser Zsigmondy, car $3^5-1=2\cdot 11^2$. Si nous prenons un $b'\geq 2$, nous aurons un facteur premier dans le terme de gauche qui ne sera ni $2$ ni $11$, donc il n'y a pas d'autres solutions que $(4,5,122)$.
+$3^b-1=2\cdot 11^{a'}$. On regarde l'ordre de $3$ modulo $11$ et on trouve qu'il divise $b$ et vaut $5$, donc $3^{5b'}-1=2\cdot 11^{a'}$. Là nous pouvons utiliser Zsigmondy, car $3^5-1=2\cdot 11^2$. Si nous prenons un $b'\ge 2$, nous aurons un facteur premier dans le terme de gauche qui ne sera ni $2$ ni $11$, donc il n'y a pas d'autres solutions que $(4,5,122)$.
 \end{sol}
-
-
-\begin{exo}
-Trouver toutes les paires d'entiers naturels $a,b$ tels que $b^a\mid a^b-1$.
-\end{exo}
 
 
 \begin{sol}
@@ -77,11 +101,6 @@ Si $v_2(a+1)=1$ c'est absurde. Sinon $v_2(a-1)=1$ et on a un premblème d'estima
 \end{sol}
 
 
-\begin{exo}
-Soient $a,b>1$ impairs tels que $a+b=2^l$. Trouver les $k \in\N^*$ tels que $k^2\mid a^k+b^k$.
-\end{exo}
-
-
 \begin{sol}
 Commençons par éliminer le cas $k=1$ qui fonctionne.
 Déjà $k$ est impair, car si $k$ était pair, on aurait une contradiction puisque $a^k+b^k\equiv 2[4]$. Ensuite prenons $p$ diviseur premier minimal de $k$ (possible car on a éliminé le cas $k=1$). Puisqu'il est nécessaire que $a$ et $b$ soient premiers entre eux, nous avons
@@ -91,24 +110,14 @@ Le seul $k$ qui marche est donc $1$.
 \end{sol}
 
 
-\begin{exo}
-Trouver les paires d'entiers naturels non nuls $m,n$ tels que $mn\mid 3^m+1$ et $mn\mid 3^n+1$.
-\end{exo}
-
-
 \begin{sol}
-On suppose $m\geq n$ sans perte de généralité, et on commence par soustraire les deux quantités : on a $$mn\mid 3^{n}(3^{m-n}-1)$$
+On suppose $m\ge n$ sans perte de généralité, et on commence par soustraire les deux quantités : on a $$mn\mid 3^{n}(3^{m-n}-1)$$
 Or on a $mn\wedge 3=1$ donc
 $$mn\mid 3^{m-n}-1$$
 En ajoutant la divisibilité avec $3^n+1$ on trouve
 $mn\mid 3^{\mid m-2n\mid}+1$.\newline
 En poursuivant ce procédé de division euclidienne, on aboutit sur $$mn\mid 3^d\pm1$$ où $d=pgcd(m,n)$ (le signe dépend du nombre de soustractions effectuées dans l'algorithme d'Euclide), donc si nous prenons $p$ un diviseur premier minimal de $d$, nous avons $3^{2d}\equiv 1$ modulo $p$, donc l'ordre de $3$ divise $p-1$ et $2d$. Par choix de $p$, ceci impose que l'ordre vaut $1$ ou $2$, donc que $3\equiv 1$ ou $9\equiv 1$, ce qui n'est possible que si $p=2$. Reste enfin à regarder nos divisibilités initiales modulo 4 et on aboutit à une contradiction : en effet, $mn$ est divisible par $4$ mais $3^m+1\equiv 2$ car $m$ serait pair.
 \end{sol}
-
-
-\begin{exo}
-(BxMO 2010, 4) Trouver tous les quadruplets $(a,b,p,n)$ d'entiers strictement positifs avec $p$ premier tels que $a^3+b^3=p^n$
-\end{exo}
 
 
 \begin{sol}
@@ -118,14 +127,9 @@ Ainsi, soit $p=3$, soit $p\mid a$ et $p\mid b$. Dans ce cas, on réécrit $a=pa'
 \end{sol}
 
 
-\begin{exo}
-(IMO 1999, P4) Trouver tous les nombres premiers $p$ et tous les entiers $x$ tels que $1\leq x\leq 2p$ et $x^{p-1}$ divise $(p-1)^x+1$
-\end{exo}
-
-
 \begin{sol}
-Si $p=2$, $x=1$ ou $x=2$ conviennent. Si $p=3$, $x=1$ ou $x=3$ conviennent. On suppose désormais que $p\geq 5$. Il est clair que $x=1$ est solution pour tout $p$. Si $x>1$, soit $q$ le plus petit diviseur premier de $x$. Comme $(p-1)^x+1$ est impair, $q$ est impair. Ainsi, $(p-1)^x\equiv -1[q]$ et donc $(p-1)^{2x}\equiv 1[q]$. L'ordre de $p-1$ modulo $q$ divise $2x$ mais pas $x$, donc il est pair. D'après le petit théorème de Fermat, il divise également $q-1$. Or les seuls diviseurs de $2x$ inférieurs à $q-1$ sont $1$ et $2$, donc l'ordre vaut $2$. On en déduit que $p-1\equiv -1[q]$ donc $p=q$.
+Si $p=2$, $x=1$ ou $x=2$ conviennent. Si $p=3$, $x=1$ ou $x=3$ conviennent. On suppose désormais que $p\ge 5$. Il est clair que $x=1$ est solution pour tout $p$. Si $x>1$, soit $q$ le plus petit diviseur premier de $x$. Comme $(p-1)^x+1$ est impair, $q$ est impair. Ainsi, $(p-1)^x\equiv -1[q]$ et donc $(p-1)^{2x}\equiv 1[q]$. L'ordre de $p-1$ modulo $q$ divise $2x$ mais pas $x$, donc il est pair. D'après le petit théorème de Fermat, il divise également $q-1$. Or les seuls diviseurs de $2x$ inférieurs à $q-1$ sont $1$ et $2$, donc l'ordre vaut $2$. On en déduit que $p-1\equiv -1[q]$ donc $p=q$.
 Ainsi, $p\mid x$. D'après le lemme LTE, on obtient finalement
-$$0<(p-1)v_p(x)\leq v_p(x)+1$$
+$$0<(p-1)v_p(x)\le v_p(x)+1$$
 Il ne peut y avoir égalité que pour $p=3$ et $v_p(x)=1$, soit $x=3$, ce qui convient bien $(3^2\mid 2^3+1)$. Finalement, les solutions sont $(2,2)$, $(3,3)$ et $(p,1)$ pour tout nombre premier $p$.
 \end{sol}

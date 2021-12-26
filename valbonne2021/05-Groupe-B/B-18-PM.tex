@@ -22,7 +22,7 @@ Sur ces trois premiers exemples, l'équation fonctionnelle sert de définition �
 
 \subsubsection{Substitution}
 
-\emph{L'idée est assez simple, comme la relation fonctionnelle est vérifiée pour tout élément de l'ensemble de définition, on peut chercher à fixer des paramètres pour obtenir d'autres équations. On cherchera surtout à simplifier des termes en utilisant des subtitutions du type $x=y$ ou $x=0$ ou $x=-y$. \textbf{Attention:} en procédant ainsi, on raisonne par analyse synthèse, c'est à dire que l'on suppose que $f$ est une solution puis on trouve des conditions nécéssaires que $f$ doit vérifier jusqu'à obtenir un candidat possible de solution de l'équation de départ puis on \textbf{doit} vérifier que ce candidat est effectivement solution. }
+\emph{L'idée est assez simple, comme la relation fonctionnelle est vérifiée pour tout élément de l'ensemble de définition, on peut chercher à fixer des paramètres pour obtenir d'autres équations. On cherchera surtout à simplifier des termes en utilisant des subtitutions du type $x=y$ ou $x=0$ ou $x=-y$. \textbf{Attention:} en procédant ainsi, on raisonne par analyse-synthèse, c'est-à-dire que l'on suppose que $f$ est une solution puis on trouve des conditions nécéssaires que $f$ doit vérifier jusqu'à obtenir un candidat possible de solution de l'équation de départ puis on \textbf{doit} vérifier que ce candidat est effectivement solution. }
 
 La théorie des équations fonctionnelles étant basée sur la pratique: voyons quelques exemples.
 \begin{ex}
@@ -93,7 +93,7 @@ $$f(x)f(y)=f(xy)+x+y $$
 \textbf{Analyse :} Supposons que $f$ est solution. On pose $y=0$ ce qui donne pour tout $x$ réel
 $$f(x)f(0)=x+f(0) $$
 Pour $x=1$ on a
-$$f(1)f(0)=1+f(0) $$ ce qui implique en particulier que $f(0)\neq 0$. On en déduit donc que
+$$f(1)f(0)=1+f(0) $$ ce qui implique en particulier que $f(0)\ne 0$. On en déduit donc que
 $$f(x)=\frac{x}{f(0)}+1 $$
 \textbf{Synthèse :} On considère une fonction $f$ de la forme $f(x)=ax+1$. On veut
 $$(ax+1)(ay+1)=axy+1+x+y\iff a^2xy+a(x+y)+1=axy+x+y+1\Rightarrow a=1 $$
@@ -102,22 +102,24 @@ Donc la seule solution est $f(x)=x+1$.
 \begin{exo}[F]
 Trouver les fonctions $f:\R\to \R$ telles que pour toute paire de réels $(x,y)$ on ait
 $$f(xy)=xf(x)+yf(y) $$
-
 \end{exo}
+
+
 \begin{preuve}
 \textbf{Analyse :} Supposons que $f$ est solution. On pose $y=0$ ce qui donne pour tout $x$ réel
 $$f(0)=xf(x) $$
 En particulier, pour $x=0$ on en déduit que $f(0)=0$. On a donc que pour tout $x\in \R$
-$$0=f(x)x $$ Cela assure que si $x\neq 0$, on a $f(x)=0$.
-\\
+$$0=f(x)x $$ Cela assure que si $x\ne 0$, on a $f(x)=0$. \\
+
 Comme on avait $f(0)=0$, on a en fait montré que la solution nulle était la seule fonction candidate pour être solution.
 \textbf{Synthèse :} Soit $f$ la fonction nulle, on vérifie que
 $$f(xy)=0=xf(x)+yf(y)=0+0 $$
 \end{preuve}
+
+
 \begin{exo}[M]
 Trouver les fonctions $f:\R_*^+\to \R_*^+$ telles que pour toute paire de réels $(x,y)$ on ait
 $$f(yf(x))(x+y)=x^2(f(x)+f(y)) $$
-
 \end{exo}
 \begin{preuve}
 \textbf{Analyse :} Supposons que $f$ est solution. On pose $x=y=1$ ce qui donne
@@ -166,11 +168,11 @@ $$f(xy-1)+f(x)f(y)=2xy-1 $$
 \textbf{Analyse :} Supposons que $f$ soit une solution de l'équation.
 \\
 On pose $x=0$ ce qui donne
-$$f(-1)+f(x)f(0)=-1 $$ Si $f(0)\neq 0$, on peut diviser et donc $f$ est constante. C'est absurde car aucune fonction constante n'est solution. Donc $f(0)=0$ ce qui donne
+$$f(-1)+f(x)f(0)=-1 $$ Si $f(0)\ne 0$, on peut diviser et donc $f$ est constante. C'est absurde car aucune fonction constante n'est solution. Donc $f(0)=0$ ce qui donne
 $$f(-1)=-1 $$
-Pour $x\neq 0$ on pose $y=\frac{1}{x}$ ce qui donne
+Pour $x\ne 0$ on pose $y=\frac{1}{x}$ ce qui donne
 $$f(0)+f(x)f\left(\frac{1}{x}\right)=2x\frac{1}{x}-1\iff f(x)f\left(\frac{1}{x}\right)=1 $$
-L'idée maintenant est de forcer une factorisation, pour cela, on voudrait que $xy-1=y\iff y=\frac{1}{x-1}$. Pour $x\neq 1$, on a donc
+L'idée maintenant est de forcer une factorisation, pour cela, on voudrait que $xy-1=y\iff y=\frac{1}{x-1}$. Pour $x\ne 1$, on a donc
 $$f\left(\frac{1}{x-1}\right)\left(1+f(x)\right)=\frac{2x}{x-1}-1=\frac{x+1}{x-1} $$
 Pour utiliser l'égalité précédente, on multiplie par $f(x-1)$ ce qui donne
 $$f(x)+1=\frac{x+1}{x-1}f(x-1) $$
@@ -220,8 +222,8 @@ Voici un exercice qui utilise cette idée.
 
 
 \begin{exo}[M]
-Trouver les fonctions $f:\R\to \R$ telles que pour tous $x,y$ réels on ait:
-$$f(x+yf(x)) +f(xf(y)-y) = f(x)-f(y)+2xy^2 \ \text{ pour tous } x, y \in \R.$$
+Trouver les fonctions $f:\R\to \R$ telles que pour tous $x,y$ réels on ait
+$$f(x+yf(x)) +f(xf(y)-y) = f(x)-f(y)+2xy^2 \ \text{ pour tous } x, y \in \R$$
 \end{exo}
 \begin{preuve}
 \textbf{Analyse :} On suppose que $f$ est solution de l'équation.
@@ -269,7 +271,7 @@ Donc l'équation n'a pas de solutions.
 Soit $f:A\to B$ une fonction entre deux ensemble. On dit que $f$ est injective si deux élements distincts de $A$ ont des images par $f$ différentes.
 \end{dfn}
 \begin{rem}
-Cela s'écrit que $a\neq a'\Rightarrow f(a)\neq f(a')$. Néanmoins, pour montrer qu'une fonction est injective, on raisonne par contraposée. On montre en fait que
+Cela s'écrit que $a\ne a'\Rightarrow f(a)\ne f(a')$. Néanmoins, pour montrer qu'une fonction est injective, on raisonne par contraposée. On montre en fait que
 $f(a)=f(a')\Rightarrow a=a'$. On commence donc par supposer que $f(a)=f(a')$, on substitue dans l'équation et on espère montrer que $a=a'$.
 \\
 En pratique, l'injectivité permet de "simplifier les $f$". Ainsi, si $f$ est injective, une relation du type
@@ -300,12 +302,11 @@ Soit $f:A\to B$ une fonction entre deux ensemble. On dit que $f$ est bijective s
 \end{dfn}
 \begin{exo}[F-M]
 Trouver les $f:\R\to \R$ telles que pour toute paire de réels $x,y$ on ait $$f(f(x)f(y))=f(x)y $$
-
 \end{exo}
 \begin{preuve}
 \textbf{Analyse :} Supposons que $f$ est une solution.
 \\
-La fonction nulle est solution. Sinon, supposons que $f$ est une solution non constamment nulle et donnons nous donc $a\in \R$ tel que $f(a)\neq 0$. On pose alors $x=a$ ce qui donne pour tout $y\in \R$
+La fonction nulle est solution. Sinon, supposons que $f$ est une solution non constamment nulle et donnons nous donc $a\in \R$ tel que $f(a)\ne 0$. On pose alors $x=a$ ce qui donne pour tout $y\in \R$
 $$f(f(a)f(y))=f(a)y $$
 Montrons que $f$ est injective. Supposons donc qu'il existe $b,c$ tels que $f(b)=f(c)$.
 \\
@@ -314,7 +315,7 @@ $$f(f(a)f(b))=f(a)b $$
 Et avec $y=c$ on a
 $$f(f(a)f(c))=f(a)c $$
 Et donc on a
-$$f(a)b=f(a)c $$ et comme $f(a)\neq 0$ on a $b= c$. Donc $f$ est injective.
+$$f(a)b=f(a)c $$ et comme $f(a)\ne 0$ on a $b= c$. Donc $f$ est injective.
 Pour utiliser l'injectivité, on pose $y=1$ ce qui donne
 $$f(f(x)f(1))=f(x)\Rightarrow f(x)f(1)=x $$
 Avec $x=1$, on a$$ f(1)^2=1\Rightarrow f(1)=\pm 1$$
@@ -378,7 +379,6 @@ On verra qu'elle est souvent reliée à l'injectivité. Ce point est un peu plus
 \begin{exo}[M]
 Trouver toutes les fonctions $f : \Z\to \Z$ telles que pour toute paire d'entiers $x,y$ on ait
 $$f(x+f(y))=f(x)-y $$
-
 \end{exo}
 \begin{preuve}
 \textbf{Analyse :} On suppose que $f$ est solution de l'équation.
@@ -398,9 +398,9 @@ On pose alors $y=f(z)$ ce qui donne
 $$f(x-z)=f(x)-f(z) $$
 On obtient alors que pour tous entiers, $u,v$ :
 $$f(u)+f(v)=f(u+v) $$
-En particulier, on a pour $u\geq 0$
+En particulier, on a pour $u\ge 0$
 $$f(u)=f(\underbrace{1+\dots+1}_{u \textit{ fois}})=\underbrace{f(1)+\dots+f(1)}_{u \textit{ fois}} =uf(1)$$
-Et pour $u\leq 0$, on écrit que
+Et pour $u\le 0$, on écrit que
 $$f(u)+f(-u)=f(0)=0\Rightarrow f(u)=-(-uf(1))=uf(1) $$
 \textbf{Synthèse :} Si $f(u)=au$ on vérifie que
 $$ f(x+f(y))=ax+a^2y=f(x)-y=ax-y$$ cela donne $a^2=-y$ donc l'équation n'a pas de solution.
@@ -447,7 +447,7 @@ L'astuce est que le membre de gauche ne dépend que de $f(x)$, en particulier, a
 $$2f(a+c)=2f(b+c)\iff f(a+c)=f(b+c)$$
 On a donc montré que $f$ était $b-a$ périodique à partir de $a$.
 \\
-\textbf{Attention:} Ici, $c$ est positif donc on a la périodicité seulement pour $x\geq a$.
+\textbf{Attention:} Ici, $c$ est positif donc on a la périodicité seulement pour $x\ge a$.
 
 Ceci nous sera très utile si l'on arrive à trouver une façon de créer des paires de réels positifs de même image. On commence par écarté le cas injectif.
 \\
@@ -457,12 +457,12 @@ $$x+f(x)y=y+f(y)x $$
 Donc avec $x=1$ on a
 $$f(y)=(f(1)-1)y+1 $$
 \textbf{Si $f$ n'est pas injective:}
-Alors par ce qui précède, on se donne $a>0$ te $T=b-a$ tels que $f$ est $T-$périodique pour $x\geq a$. Pour forcer des simplifications, on part de la relation
-$$f(x)f(y)=2f(x+yf(x)) $$ et on pose $y_0=\frac{T}{f(x)}$ pour $x\geq a$. Cela donne donc
+Alors par ce qui précède, on se donne $a>0$ te $T=b-a$ tels que $f$ est $T-$périodique pour $x\ge a$. Pour forcer des simplifications, on part de la relation
+$$f(x)f(y)=2f(x+yf(x)) $$ et on pose $y_0=\frac{T}{f(x)}$ pour $x\ge a$. Cela donne donc
 $$f(x)f(y_0)=2f(x+T)=2f(x)\Rightarrow f(y_0)=2 $$
 On a donc trouvé un antécédant de $2$. On pose alors $x=y_0$ ce qui donne
 $$f(y)=f(y_0+2y) $$
-Ainsi, par ce qui précède, on a montré que pour tout $y>0$, $f$ est $(y_0+y)$ périodique pour $x\geq y$.
+Ainsi, par ce qui précède, on a montré que pour tout $y>0$, $f$ est $(y_0+y)$ périodique pour $x\ge y$.
 \\
 Montrons que cela implique que $f$ est constane. Soit donc $0<a<b$. On va montrer que $f(a)=f(b)$.
 \\

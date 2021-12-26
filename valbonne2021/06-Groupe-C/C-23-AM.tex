@@ -142,7 +142,7 @@ Les triangles $A P H_A$ et $A H_A B$ ont tous les deux un angle droit et un angl
 \tkzDefPoints{-2.5/0/oo}
 \tkzDefLine[perpendicular = through oo](A,B) \tkzGetPoint{o}
 \tkzInterLL(oo,o)(A,B) \tkzGetPoint{H}
-\tkzInterLC(oo,o)(O',B) \tkzGetPointsC{O}
+\tkzInterLC(oo,o)(O',B) \tkzGetPoints{C}{O}
 \tkzInterLC(oo,o)(O,H) \tkzGetSecondPoint{D}
 \tkzInterCC(O',A)(O,H) \tkzGetPoints{X}{Y}
 \tkzDefMidPoint(O,H) \tkzGetPoint{M}
@@ -476,7 +476,7 @@ Montrons d'abord deux lemmes.
 \tkzDefPoints{4/0/O,4/-3.5/S,4/1.5/cc,3.5/0/p}
 \tkzDefLine[perpendicular = through cc](O,S) \tkzGetPoint{c}
 \tkzInterLC(c,cc)(O,S) \tkzGetPoints{A}B
-\tkzInterLL(S,p)(A,B) \tkzGetPointC
+\tkzInterLL(S,p)(A,B) \tkzGetPoint{C}
 \tkzInterLC(S,p)(O,S) \tkzGetSecondPoint{D}
 
 \tkzDrawPoints(S,A,B,C,D)

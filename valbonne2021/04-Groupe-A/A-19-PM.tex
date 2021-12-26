@@ -1,16 +1,16 @@
-\author{Auguste de Lambilly}
-
+% Auguste de Lambilly
 \subsubsection{Exercices}
 
 
 \begin{exo}
-Soit $a,b$ deux nombres réels tels que :
-$$ \frac{a}{1+b}+\frac{b}{1+a}=1 $$
-Montrer que $ a^3+b^3=a+b$
+Soit $a, b$ deux nombres réels tels que
+$$\frac a{1 + b} + \frac b{1 + a} = 1$$
+Montrer que $a^3 + b^3 = a + b$
 \end{exo}
 
+
 \begin{exo}
-Montrer que pour tous réels positifs $a,b,c$, on a : $ (a+b)(b+c)(c+a)\geq 8abc$
+Montrer que pour tous réels positifs $a,b,c$, on a : $ (a+b)(b+c)(c+a)\ge 8abc$
 \end{exo}
 
 
@@ -25,20 +25,20 @@ Trouver la valeur minimale de $a^2+b^2+c^2+d^2$ sachant que $a+2b+3c+4d=12$.
 
 
 \begin{exo}
-Pour $x,y,z>0$ montrer : $$ \frac{x}{y}+\frac{y}{z}+\frac{z}{x}+\frac{x}{z}+\frac{z}{y}+\frac{y}{x}\geq 6$$
+Pour $x, y, z > 0$ montrer que
+$$ \frac xy + \frac yz + \frac zx + \frac xz + \frac zy + \frac yx \ge 6$$
 \end{exo}
 
 
 \begin{exo}
-Trouver $k$ tel que pour tous $a,b,c$ réels :
-$(a+b)(b+c)(c+a)=(a+b+c)(ab+bc+ca)+k\times abc $
+Trouver $k$ tel que, pour tous $a, b, c$ réels,
+$$(a+b)(b+c)(c+a) = (a+b+c)(ab+bc+ca) + k\cdot abc $$
 \end{exo}
 
 
 \begin{exo}
-Pour tous réels positifs $a,b,c$, montrer que :
-
-$$ (a^2b+b^2c+c^2a)(ab^2+bc^2+ca^2)\geq 9a^2b^2c^2$$
+Pour tous réels positifs $a,b,c$, montrer que
+$$(a^2b+b^2c+c^2a)(ab^2+bc^2+ca^2)\ge 9a^2b^2c^2$$
 \end{exo}
 
 
@@ -46,14 +46,15 @@ $$ (a^2b+b^2c+c^2a)(ab^2+bc^2+ca^2)\geq 9a^2b^2c^2$$
 
 
 \begin{sol}
-On a $a(1+a)+b(1+b)=(1+a)(1+b)$. Donc $a+a^2+b+b^2=1+a+b+ab$ puis $a^2+b^2=1+ab$ ie $a^2-ab+b^2=1$
+On a $a(1+a)+b(1+b)=(1+a)(1+b)$. Donc $a+a^2+b+b^2=1+a+b+ab$ puis $a^2+b^2=1+ab$ ie $a^2-ab+b^2 = 1$.
 
-Il suit : $ a^3+b^3=(a+b)(a^2-ab+b^2)=a+b$
+Il suit
+$$a^3+b^3=(a+b)(a^2-ab+b^2)=a+b$$
 \end{sol}
 
 
 \begin{sol}
-Par IAG on a : $a+b\geq 2\sqrt{ab}$, $b+c\geq 2\sqrt{bc}$, $c+a\geq 2\sqrt{ca}$.
+Par IAG on a : $a+b\ge 2\sqrt{ab}$, $b+c\ge 2\sqrt{bc}$, $c+a\ge 2\sqrt{ca}$.
 
 Comme chaque terme est positif, on peut multiplier les inégalités, ce qui donne le résultat voulu.
 \end{sol}
@@ -68,13 +69,14 @@ Donc il faut nécessairement $1-2n+2n^2=1$, donc $n=1$.
 
 
 \begin{sol}
-Par Cauchy-Schwarz : $a^2+b^2+c^2+d^2\geq \frac{(a+2b+3c+4d)^2}{1+4+9+16}=\frac{144}{30}=\frac{24}{5}$.
-Qui est atteinte pour $a=\frac{2}{5} , b=2a, c=3a, d=4a$
+Par Cauchy-Schwarz,
+$$a^2+b^2+c^2+d^2\ge \frac{(a+2b+3c+4d)^2}{1+4+9+16}=\frac{144}{30}=\frac{24}5$$
+Réciproquement, cette valeur est atteinte pour $a = \frac 25$, $b = \frac 45$, $c = \frac 65$, $d = \frac 85$.
 \end{sol}
 
 
 \begin{sol}
-On a $a+\frac{1}{a}\geq2$ par IAG. Donc avec $a=\frac{x}{y},\frac{y}{z},\frac{z}{x}$, en les sommant on a le résultat voulu.
+On a $a + \frac 1a \ge 2$ par IAG. Donc avec $a = \frac xy,\frac yz,\frac zx$, en les sommant on a le résultat voulu.
 \end{sol}
 
 
@@ -84,9 +86,7 @@ En développant on trouve $k=-1$
 
 
 \begin{sol}
-Par IAG : $a^2b+b^2c+c^2a\geq 3abc$
-
-et $ab^2+bc^2+ca^2\geq 3abc$.
-
+Par IAG,
+$$a^2b+b^2c+c^2a\ge 3abc \text{ et } ab^2+bc^2+ca^2\ge 3abc$$
 En multipliant on obtient le résultat voulu.
 \end{sol}

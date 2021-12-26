@@ -2,208 +2,208 @@ Ce cours est inspiré du cours "The Chinese Remainder Theorem" de Evan Chen, et 
 Comme nous allons le voir, le théorème des restes chinois permet de casser un problème entre différents sous-problèmes, chacun associé à un nombre premier, et de construire la solution au problème original à partir des différentes solutions des sous-problèmes.
 
 \begin{thm}[Existence d'un inverse modulaire]
-	Soit $r, m$ deux entiers premiers entre eux.
-	Il existe un unique $s \in \{0, \dots, m - 1\}$ tel que~:
-	$$rs \equiv 1 \; [m]$$
+Soit $r, m$ deux entiers premiers entre eux.
+Il existe un unique $s \in \{0, \dots, m - 1\}$ tel que~:
+$$rs \equiv 1 \; [m]$$
 \end{thm}
 
 Pour calculer cet inverse modulaire, on peut utiliser l'algorithme d'Euclide étendu.
 
 \begin{exo}
-	Calculez l'inverse de $36$ modulo $101$.
+Calculez l'inverse de $36$ modulo $101$.
 \end{exo}
 
 \begin{thm}[Théorème des restes chinois (TRC)]
-	Soit $m_1, m_2 \in $ deux entiers premiers entre eux.
-	Soient $r_1, r_2 \in \N$. Il existe un unique $r \in \{0, \dots, m_1m_2 - 1\}$ tel que~:
-	$$x \equiv r_1 \; [m_1] \mbox{ et } x \equiv r_2 \; [m_2] \iff x \equiv r \; [m_1 m_2]$$
+Soit $m_1, m_2 \in $ deux entiers premiers entre eux.
+Soient $r_1, r_2 \in \N$. Il existe un unique $r \in \{0, \dots, m_1m_2 - 1\}$ tel que~:
+$$x \equiv r_1 \; [m_1] \mbox{ et } x \equiv r_2 \; [m_2] \iff x \equiv r \; [m_1 m_2]$$
 \end{thm}
 \begin{preuve}
-	Soit $s_1$ l'inverse de $m_1$ modulo $m_2$ et $s_2$ l'inverse de $m_2$ modulo $m_1$.
-	Pour montrer l'existence, il suffit de prendre~:
-	$$x \equiv r_2 s_1 m_1 + r_1 s_2 m_2 \; [m_1m_2]$$
-	
-	Démontrons maintenant l'unicité~:
-	soient $x_1, x_2$ qui vérifient $x_1 \equiv x_2 \; [m_1], x_1 \equiv x_2 \; [m_2]$.
-	On a donc $m_1 \;|\; x_1 - x_2$ et $m_2 \;|\; x_1 - x_2$, d'où $m_1m_2 \;|\; x_1 - x_2$, puis $x_1 \equiv x_2 \; [m_1m_2]$.
+Soit $s_1$ l'inverse de $m_1$ modulo $m_2$ et $s_2$ l'inverse de $m_2$ modulo $m_1$.
+Pour montrer l'existence, il suffit de prendre~:
+$$x \equiv r_2 s_1 m_1 + r_1 s_2 m_2 \; [m_1m_2]$$
+
+Démontrons maintenant l'unicité~:
+soient $x_1, x_2$ qui vérifient $x_1 \equiv x_2 \; [m_1], x_1 \equiv x_2 \; [m_2]$.
+On a donc $m_1 \;|\; x_1 - x_2$ et $m_2 \;|\; x_1 - x_2$, d'où $m_1m_2 \;|\; x_1 - x_2$, puis $x_1 \equiv x_2 \; [m_1m_2]$.
 \end{preuve}
 
 \begin{exo}
-	Si $x \equiv 9 \; [17]$ et $x \equiv 5 [11]$, que peut-on dire sur $x$ modulo $187$ ?
+Si $x \equiv 9 \; [17]$ et $x \equiv 5 [11]$, que peut-on dire sur $x$ modulo $187$ ?
 \end{exo}
 
 \begin{exo}
-	Trouvez tous les $x \in \N$ tel que~:
-	$$x^2 + x - 6 \equiv 0 \; [143]$$
+Trouvez tous les $x \in \N$ tel que~:
+$$x^2 + x - 6 \equiv 0 \; [143]$$
 \end{exo}
 
 \begin{exo}
-	Trouvez tous les entiers $n$ à $3$ chiffres tels que l'écriture de $x^2$ en base $10$ se termine par l'écriture de $x$ en base $10$.
-	
-	Par exemple, pour $1$ chiffre, on a $5^2 = 25, 6^2 = 36$, et pour $2$ chiffres, on a $25^2 = 625$ et $76^2 = 5776$.
+Trouvez tous les entiers $n$ à $3$ chiffres tels que l'écriture de $x^2$ en base $10$ se termine par l'écriture de $x$ en base $10$.
+
+Par exemple, pour $1$ chiffre, on a $5^2 = 25, 6^2 = 36$, et pour $2$ chiffres, on a $25^2 = 625$ et $76^2 = 5776$.
 \end{exo}
 
 \begin{exo}
-	Soit $n$ un nombre entier impair.
-	Montrez qu'il existe un entier $x$ tel que~:
-	$$n^2 \;|\; x^2 - nx - 1$$
+Soit $n$ un nombre entier impair.
+Montrez qu'il existe un entier $x$ tel que~:
+$$n^2 \;|\; x^2 - nx - 1$$
 \end{exo}
 
 \begin{exo}
-	Prouvez que pour tout entier positif $n$, il existe des entiers $a$ et $b$ tels que $4a^2 + 9b^2 - 1$ est divisible par $n$.
+Prouvez que pour tout entier positif $n$, il existe des entiers $a$ et $b$ tels que $4a^2 + 9b^2 - 1$ est divisible par $n$.
 \end{exo}
 
 \begin{exo}[IMO 1989]
-	Montrez que pour tout entier $n \in \N$, il existe $n$ entiers positifs consécutifs tel qu'aucun d'entre eux est une puissance d'un nombre premier.
+Montrez que pour tout entier $n \in \N$, il existe $n$ entiers positifs consécutifs tel qu'aucun d'entre eux est une puissance d'un nombre premier.
 \end{exo}
 
 \begin{exo}
-	Prouvez que, pour chaque entier $n \in \N$, il existe des nombres premiers deux à deux $k_0, \dots, k_n$, tous strictement plus grands que $1$, tels que $k_0k_1 \dots k_n - 1$ soit le produit de deux entiers consécutifs.
+Prouvez que, pour chaque entier $n \in \N$, il existe des nombres premiers deux à deux $k_0, \dots, k_n$, tous strictement plus grands que $1$, tels que $k_0k_1 \dots k_n - 1$ soit le produit de deux entiers consécutifs.
 \end{exo}
 
 \begin{exo}[P1 IMO 2009]
-	Soit $n \in \N, k \geq 2$, et soient $a_1, a_2, \dots, a_k$ des éléments distincts de l'ensemble $\{1, 2, \dots, n\}$, tels que $n$ divise $a_i(a_{i + 1} - 1)$ pour $i = 1, 2, \dots, k - 1$. Montrez que $n$ ne divise pas $a_k(a_1 - 1)$.
+Soit $n \in \N, k \ge 2$, et soient $a_1, a_2, \dots, a_k$ des éléments distincts de l'ensemble $\{1, 2, \dots, n\}$, tels que $n$ divise $a_i(a_{i + 1} - 1)$ pour $i = 1, 2, \dots, k - 1$. Montrez que $n$ ne divise pas $a_k(a_1 - 1)$.
 \end{exo}
 
 \begin{exo}
-	Soient $a > b > c \geq 3$ des entiers naturels. Sachant que~:
-	\begin{align*}
-		a & \;|\; bc + b + c \\
-		b & \;|\; ca + c + a \\
-		c & \;|\; ab + a + b
-	\end{align*}
-	montrez que $a, b$ et $c$ ne sont pas tous les trois des nombres premiers.
+Soient $a > b > c \ge 3$ des entiers naturels. Sachant que~:
+\begin{align*}
+a & \;|\; bc + b + c \\
+b & \;|\; ca + c + a \\
+c & \;|\; ab + a + b
+\end{align*}
+montrez que $a, b$ et $c$ ne sont pas tous les trois des nombres premiers.
 \end{exo}
 
 \subsubsection{Solutions des exercices}
 
 \begin{sol}
-	\begin{align*}
-		0 \times 36 + 1 \times 101 &= 101 \\
-		1 \times 36 + 0 \times 101 &= 36 \\
-		-2 \times 36 + 1 \times 101 &= 29 \\
-		3 \times 36 - 1 \times 101 &= 7 \\
-		-14 \times 36 + 5 \times 101 &= 1 \\
-	\end{align*}
-	L'inverse de $36$ modulo $101$ est donc $-14 \equiv 87 \; [101]$.
+\begin{align*}
+0 \cdot 36 + 1 \cdot 101 &= 101 \\
+1 \cdot 36 + 0 \cdot 101 &= 36 \\
+-2 \cdot 36 + 1 \cdot 101 &= 29 \\
+3 \cdot 36 - 1 \cdot 101 &= 7 \\
+-14 \cdot 36 + 5 \cdot 101 &= 1 \\
+\end{align*}
+L'inverse de $36$ modulo $101$ est donc $-14 \equiv 87 \; [101]$.
 \end{sol}
 
 \begin{sol}
-	L'inverse de $11$ modulo $17$ est $-3$, l'inverse de $17$ modulo $11$ est $2$, on en déduit que $x \equiv 9 \times 11 \times -3 + 5 \times 17 \times 2 \equiv 60 \; [187]$
+L'inverse de $11$ modulo $17$ est $-3$, l'inverse de $17$ modulo $11$ est $2$, on en déduit que $x \equiv 9 \cdot 11 \cdot -3 + 5 \cdot 17 \cdot 2 \equiv 60 \; [187]$
 \end{sol}
 
 \begin{sol}
-	On doit avoir~:
-	\begin{align*}
-		x &\equiv 2 \mbox{ ou } -3 \; [11] \\
-		x &\equiv 2 \mbox{ ou } -3 \; [13]
-	\end{align*}
-	
-	L'inverse de $11$ modulo $13$ est $6$, l'inverse de $13$ modulo $11$ est $6$. Ainsi, les solutions de $x$ modulo $143$ sont~:
-	
-	\begin{align*}
-		2 \times 13 \times 6 + 2 \times 11 \times 6 &\equiv 2 \; [143] \\
-		-3 \times 13 \times 6 + -3 \times 11 \times 6 &\equiv -3 \; [143] \\
-		2 \times 13 \times 6 + -3 \times 11 \times 6 &\equiv -42 \; [143] \\
-		-3 \times 13 \times 6 + 2 \times 11 \times 6 &\equiv 41 \; [143]
-	\end{align*}
+On doit avoir~:
+\begin{align*}
+x &\equiv 2 \mbox{ ou } -3 \; [11] \\
+x &\equiv 2 \mbox{ ou } -3 \; [13]
+\end{align*}
+
+L'inverse de $11$ modulo $13$ est $6$, l'inverse de $13$ modulo $11$ est $6$. Ainsi, les solutions de $x$ modulo $143$ sont~:
+
+\begin{align*}
+2 \cdot 13 \cdot 6 + 2 \cdot 11 \cdot 6 &\equiv 2 \; [143] \\
+-3 \cdot 13 \cdot 6 + -3 \cdot 11 \cdot 6 &\equiv -3 \; [143] \\
+2 \cdot 13 \cdot 6 + -3 \cdot 11 \cdot 6 &\equiv -42 \; [143] \\
+-3 \cdot 13 \cdot 6 + 2 \cdot 11 \cdot 6 &\equiv 41 \; [143]
+\end{align*}
 \end{sol}
 
 \begin{sol}
-	On cherche tous les $x$ tels que~:
-	$$1000 \;|\; x^2 - x = x(x - 1)$$
-	
-	Comme d'habitude, on casse le problème en les différents facteurs premiers.
-	On cherche donc tous les $x$ tels que~:
-	\begin{align*}
-	125 &\;|\; x(x - 1) \\
-	8 &\;|\; x(x - 1)
-	\end{align*}
-	Comme $x$ est premier avec $x - 1$, on a~:
-	\begin{align*}
-	x \equiv 0 \mbox{ ou } 1 \; [125]
-	x \equiv 1 \mbox{ ou } 1 \; [8]
-	\end{align*}
-	
-	En appliquant le TRC, on retrouve les $x$ qui fonctionnent modulo $1000$.
-	Pour cela, on doit calculer l'inverse de $125$ modulo $8$, et l'inverse de $8$ modulo $125$, qui valent respectivement $5$ et $47$.
-	Ainsi, les solutions sont~:
-	$$125 \times 5 = 625 \mbox{ et } 8 \times 47 = 376$$
+On cherche tous les $x$ tels que~:
+$$1000 \;|\; x^2 - x = x(x - 1)$$
+
+Comme d'habitude, on casse le problème en les différents facteurs premiers.
+On cherche donc tous les $x$ tels que~:
+\begin{align*}
+125 &\;|\; x(x - 1) \\
+8 &\;|\; x(x - 1)
+\end{align*}
+Comme $x$ est premier avec $x - 1$, on a~:
+\begin{align*}
+x \equiv 0 \mbox{ ou } 1 \; [125]
+x \equiv 1 \mbox{ ou } 1 \; [8]
+\end{align*}
+
+En appliquant le TRC, on retrouve les $x$ qui fonctionnent modulo $1000$.
+Pour cela, on doit calculer l'inverse de $125$ modulo $8$, et l'inverse de $8$ modulo $125$, qui valent respectivement $5$ et $47$.
+Ainsi, les solutions sont~:
+$$125 \cdot 5 = 625 \mbox{ et } 8 \cdot 47 = 376$$
 \end{sol}
 
 \begin{sol}
-	Comme $n$ est impair, $n^2$ est premier avec $2$, donc $2$ admet un inverse modulo $n^2$, que l'on note $i_2$. On peut donc essayer de mettre le polynôme sous forme canonique.
-	On a~:
-	$$x^2 - nx - 1 \equiv (x - i_2 n)^2 - 1 \; [n^2]$$
-	Il suffit donc de prendre $x = i_2 n + 1$.
+Comme $n$ est impair, $n^2$ est premier avec $2$, donc $2$ admet un inverse modulo $n^2$, que l'on note $i_2$. On peut donc essayer de mettre le polynôme sous forme canonique.
+On a~:
+$$x^2 - nx - 1 \equiv (x - i_2 n)^2 - 1 \; [n^2]$$
+Il suffit donc de prendre $x = i_2 n + 1$.
 \end{sol}
 
 \begin{sol}
-	Par le TRC, il suffit de trouver $a$ et $b$ lorsque $n$ est une puissance d'un nombre premier $p$.
-	Si $n = 2^k$, on prends $a \equiv 0 \; [2^k]$ et $b \equiv 3^{-1} \; [2^k]$.
-	Si $n = p^k$, $p \neq 2$, on prends $a \equiv 2^{-1} \; [p^k]$ et $b \equiv 0 \; [p^k]$.
+Par le TRC, il suffit de trouver $a$ et $b$ lorsque $n$ est une puissance d'un nombre premier $p$.
+Si $n = 2^k$, on prends $a \equiv 0 \; [2^k]$ et $b \equiv 3^{-1} \; [2^k]$.
+Si $n = p^k$, $p \ne 2$, on prends $a \equiv 2^{-1} \; [p^k]$ et $b \equiv 0 \; [p^k]$.
 \end{sol}
 
 \begin{sol}
-	Prenons $2n$ nombres premiers distincts, que l'on note $p_1, \dots, p_n, q_1, \dots, q_n$.
-	Si $x$ est tel que~:
-	\begin{align*}
-	x + 1 &\equiv 0 \; [p_1q_1] \\
-	x + 2 &\equiv 0 \; [p_2q_2] \\
-	&\dots \\
-	x + n &\equiv 0 \; [p_nq_n]
-	\end{align*}
-	alors aucun des $n$ entiers consécutifs $\{x + 1, \dots, x + n\}$ ne peut être une puissance de nombre premier. Un tel $x$ existe d'après le TRC.
+Prenons $2n$ nombres premiers distincts, que l'on note $p_1, \dots, p_n, q_1, \dots, q_n$.
+Si $x$ est tel que~:
+\begin{align*}
+x + 1 &\equiv 0 \; [p_1q_1] \\
+x + 2 &\equiv 0 \; [p_2q_2] \\
+&\dots \\
+x + n &\equiv 0 \; [p_nq_n]
+\end{align*}
+alors aucun des $n$ entiers consécutifs $\{x + 1, \dots, x + n\}$ ne peut être une puissance de nombre premier. Un tel $x$ existe d'après le TRC.
 \end{sol}
 
 \begin{sol}
-	On peut reformuler le problème de la manière suivante~: Pour tout $n \in \N$, trouvez
-	$x \in \N$ tel que $x^2 + x + 1$ a au moins $n + 1$ facteurs premiers distincts.
-	
-	Par le TRC, il suffit de montrer qu'il y a une infinité de nombre premiers qui divisent un nombre de la forme $x^2 + x + 1$.
-	
-	Soit $P$ l'ensemble des nombres premiers qui divisent un nombre de la forme $x^2 + x + 1$.
-	Supposons que $P$ soit fini, alors, si on pose $N = \prod_{p \in P} p$, un diviseur premier de $N^2 + N + 1$ ne peut pas être dans $P$, ce qui est absurde.
-	Ainsi $P$ est infini, ce qui conclut.
+On peut reformuler le problème de la manière suivante~: Pour tout $n \in \N$, trouvez
+$x \in \N$ tel que $x^2 + x + 1$ a au moins $n + 1$ facteurs premiers distincts.
+
+Par le TRC, il suffit de montrer qu'il y a une infinité de nombre premiers qui divisent un nombre de la forme $x^2 + x + 1$.
+
+Soit $P$ l'ensemble des nombres premiers qui divisent un nombre de la forme $x^2 + x + 1$.
+Supposons que $P$ soit fini, alors, si on pose $N = \prod_{p \in P} p$, un diviseur premier de $N^2 + N + 1$ ne peut pas être dans $P$, ce qui est absurde.
+Ainsi $P$ est infini, ce qui conclut.
 \end{sol}
 
 \begin{sol}
-	\url{https://www.cut-the-knot.org/arithmetic/IMO2009_1.shtml#solution}
+\url{https://www.cut-the-knot.org/arithmetic/IMO2009_1.shtml#solution}
 \end{sol}
 
 \begin{sol}
-	Supposons par l'absurde que $a, b, c$ sont tous les trois des nombres premiers.
-	On a~:
-	\begin{align*}
-	bc + b + c &\equiv 0 \; [a] \\
-	(b + 1)(c + 1) &\equiv 1 \; [a] \\
-	(a + 1)(b + 1)(c + 1) &\equiv 1 \; [a]
-	\end{align*}
-	De même~:
-	\begin{align*}
-		(a + 1)(b + 1)(c + 1) &\equiv 1 \; [b] \\
-		(a + 1)(b + 1)(c + 1) &\equiv 1 \; [c] \\
-	\end{align*}
-	Ainsi, par le TRC~:
-	$$(a + 1)(b + 1)(c + 1) \equiv 1 \; [abc]$$
-	D'où~:
-	\begin{align*}
-		abc &\;|\; (a + 1)(b + 1)(c + 1) - 1 \\
-		abc &\;|\; ab + bc + ca + a + b + c \\
-	\end{align*}
-	Puis~:
-	$$abc \leq ab + bc + ca + a + b + c \leq 3ab + 3a \leq 4ab$$
-	Ce qui est absurde si $c \geq 5$.
-	Si $c = 3$, on a~:
-	\begin{align*}
-	3ab &\leq ab + 4b + 4a + 3 \\
-	2ab &\leq 4a + 4b + 3 \leq 8a + 3 \leq 9a
-	\end{align*}
-	Ce qui est absurde si $b > 5$.
-	Si $b = 5$, on a~:
-	\begin{align*}
-		10a &\leq 4a + 23 \\
-		6a &\leq 23
-	\end{align*}
-	Ce qui est absurde si $a \geq 7$.
+Supposons par l'absurde que $a, b, c$ sont tous les trois des nombres premiers.
+On a~:
+\begin{align*}
+bc + b + c &\equiv 0 \; [a] \\
+(b + 1)(c + 1) &\equiv 1 \; [a] \\
+(a + 1)(b + 1)(c + 1) &\equiv 1 \; [a]
+\end{align*}
+De même~:
+\begin{align*}
+  (a + 1)(b + 1)(c + 1) &\equiv 1 \; [b] \\
+  (a + 1)(b + 1)(c + 1) &\equiv 1 \; [c] \\
+\end{align*}
+Ainsi, par le TRC~:
+$$(a + 1)(b + 1)(c + 1) \equiv 1 \; [abc]$$
+D'où~:
+\begin{align*}
+  abc &\;|\; (a + 1)(b + 1)(c + 1) - 1 \\
+  abc &\;|\; ab + bc + ca + a + b + c \\
+\end{align*}
+Puis~:
+$$abc \le ab + bc + ca + a + b + c \le 3ab + 3a \le 4ab$$
+Ce qui est absurde si $c \ge 5$.
+Si $c = 3$, on a~:
+\begin{align*}
+3ab &\le ab + 4b + 4a + 3 \\
+2ab &\le 4a + 4b + 3 \le 8a + 3 \le 9a
+\end{align*}
+Ce qui est absurde si $b > 5$.
+Si $b = 5$, on a~:
+\begin{align*}
+  10a &\le 4a + 23 \\
+  6a &\le 23
+\end{align*}
+Ce qui est absurde si $a \ge 7$.
 \end{sol}

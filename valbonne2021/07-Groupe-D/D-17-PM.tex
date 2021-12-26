@@ -7,7 +7,7 @@ Les points importants à retenir sont :
     \item $\alpha$ est une racine de multiplicité $n$ de $P$ si et seulement si $\alpha$ est une racine de $P,P',\ldots,P^{(n-1)}$ mais pas une racine de $P^{(n)}$. Notamment, $\alpha$ est une racine multiple de $P$ si et seulement si $P(\alpha)=P'(\alpha)=0$.
     \item Si $(x_0,y_0),\ldots,(x_n,y_n)$ sont des couples de réels (respectivement rationnels, complexes), alors il existe un unique polynôme $P$ de degré inférieur ou égal à $n$ vérifiant pour tout $i$ entre $0$ et $n$: $P(x_i)=y_i$. De plus, ce polynôme est à coefficients réels (respectivement rationnels, complexes). Le polynôme est l'interpolateur de Lagrange.
     \item L'arithmétique se généralise aux polynômes. La notion de PGCD est bien définie et peut se calculer par division euclidienne. Le théorème de Bézout est aussi applicable.
-    \item On peut utiliser la formule de Taylor qui assure que pour un polynôme $P$ à coefficient dans un corps $\mathbb{K}=\R$, $\mathbb{C}$ ou $\mathbb{C}$, on a pour tout $a\in \mathbb{K}$
+    \item On peut utiliser la formule de Taylor qui assure que pour un polynôme $P$ à coefficient dans un corps $\mathbb{K}=\R$, $\C$ ou $\C$, on a pour tout $a\in \mathbb{K}$
     $$P(X+a)=\sum_{n=0}^{\deg(P)}\frac{P^{(k)}(a)}{k!}X^k $$
     \item D'après le lemme de Gauss, l'irréductibilité d'un polynôme $P\in \Z[X]$ dans $\Z[X]$ équivaut à son irréductibilité dans $\Q[X]$.
     \item Les coefficients s'expriment en fonction des racines par les formules de Viète qui font intervenir des polynômes symétriques élémentaires.
@@ -18,12 +18,12 @@ Les points importants à retenir sont :
 
 
 \begin{exo}[Liouville,D]
-Soit $n\geq 3 $ un entier.Trouver les polynômes $P,Q,R\in \mathbb{C}[X]$ tels que $P^n+Q^n=R^n$.
+Soit $n\ge 3 $ un entier.Trouver les polynômes $P,Q,R\in \C[X]$ tels que $P^n+Q^n=R^n$.
 \end{exo}
 
 
 \begin{exo}[Hensel,M-D]
-Soit $p$ un nombre premier et $P\in \Z[X]$ et soit $a\in \Z$ tel que $P(a)\equiv 0 [p]$ ainsi que $P'(a)\neq 0 [p] $. Montrer qu'il existe $b\in \Z$ avec $a\equiv b[p]$ et $P(b)\equiv 0 [p^2]$.
+Soit $p$ un nombre premier et $P\in \Z[X]$ et soit $a\in \Z$ tel que $P(a)\equiv 0 [p]$ ainsi que $P'(a)\ne 0 [p] $. Montrer qu'il existe $b\in \Z$ avec $a\equiv b[p]$ et $P(b)\equiv 0 [p^2]$.
 \end{exo}
 
 
@@ -33,17 +33,17 @@ Soient $a,b\in \N^*$, determiner $(X^a-1)\wedge(X^b-1) $.
 
 
 \begin{exo}[Inertie du PGCD,M-D]
-Soient $P,Q\in \Q[X]$ premiers entre eux dans $\Q[X]$, montrer qu'ils sont premiers entre eux dans $\mathbb{C}[X]$.
+Soient $P,Q\in \Q[X]$ premiers entre eux dans $\Q[X]$, montrer qu'ils sont premiers entre eux dans $\C[X]$.
 \end{exo}
 
 
 \begin{exo}[Polynômes irréductibles,M-D]
-Soit $Q\in \Q[X]$ irréductible (c'est à dire qu'il n'admet pas de diviseur strict dans $\Q[X]$) montrer que $Q\wedge Q'=1$.
+Soit $Q\in \Q[X]$ irréductible (c'est-à-dire qu'il n'admet pas de diviseur strict dans $\Q[X]$) montrer que $Q\wedge Q'=1$.
 \end{exo}
 
 
 \begin{exo}[Polynômes positifs,M-D]
-Montrer que si $P\in \R[X]$ respecte $\forall x \in \R, P(x)\geq 0$ alors il existe $A,B\in \R[X]$ tels que $P=A^2+B^2$.
+Montrer que si $P\in \R[X]$ respecte $\forall x \in \R, P(x)\ge 0$ alors il existe $A,B\in \R[X]$ tels que $P=A^2+B^2$.
 \end{exo}
 
 
@@ -76,7 +76,7 @@ $$x_1^n+x_2^n\in \Z \text{ et } x_1^n+x_2^n\not\equiv 0[5]$$
 
 
 %\begin{exo}[IMO 1993, M]
-%Soit $n\geq 2$.Montrer que $P(X)=X^n+5X^{n-1}+3$ est irréductible sur $\Z[X]$.
+%Soit $n\ge 2$.Montrer que $P(X)=X^n+5X^{n-1}+3$ est irréductible sur $\Z[X]$.
 %\end{exo}
 
 
@@ -110,9 +110,9 @@ $$P^{n-1}(R'P-P'R)=Q^{n-1}(Q'R-R'Q) $$
 Pourquoi est-ce problématique ? En fait, on a $P^{n-1}\wedge Q^{n-1}=1$ donc le lemme de Gauss donne
 $$P^{n-1}|Q'R-R'Q $$
 Mais en étudiant les degrés on a
-$$\deg(P^{n-1})=(n-1)d\geq 2d $$
+$$\deg(P^{n-1})=(n-1)d\ge 2d $$
 Et on a
-$$ \deg(Q'R-R'Q)\leq d+(d-1)<2d\leq \deg(P^{n-1})$$
+$$ \deg(Q'R-R'Q)\le d+(d-1)<2d\le \deg(P^{n-1})$$
 Ainsi, on doit avoir
 $$Q'R-R'Q=0\iff Q'R=R'Q $$
 On recommence, on a
@@ -158,11 +158,11 @@ $$(X^a-1)\wedge (X^b-1)=(X^r-1)\wedge (X^b-1) $$
 
 
 \begin{sol}
-Si $P,Q$ sont premiers entre eux dans $\mathbb{C}[X]$, alors ils n'ont pas de diviseur commun non trivial dans $\mathbb{C}[X]$ donc aussi dans $\Q[X]$. Ainsi, ils sont premier entre eux dans $\Q[X]$. \\
+Si $P,Q$ sont premiers entre eux dans $\C[X]$, alors ils n'ont pas de diviseur commun non trivial dans $\C[X]$ donc aussi dans $\Q[X]$. Ainsi, ils sont premier entre eux dans $\Q[X]$. \\
 Réciproquement, s'ils sont premiers entre eux dans $\Q[X]$, on traduit la primaité par l'existence d'une écriture de la forme
 $$AP+BQ=1 $$
 où $A,B\in \Q[X]$, par Bézout. \\
-Mais la relation ci-dessus peut aussi être interprétée comme une relation de Bézout dans $\mathbb{C}[X]$! Ainsi, $P,Q$ doivent être premiers entre eux dans $\mathbb{C}[X]$. \\
+Mais la relation ci-dessus peut aussi être interprétée comme une relation de Bézout dans $\C[X]$! Ainsi, $P,Q$ doivent être premiers entre eux dans $\C[X]$. \\
 On a donc montré que le PGCD de deux polynômes ne changeait pas si on les regarde dans un corps plus grand. On peut donc parler sans ambiguité \textbf{du} PGCD de $P$ et $Q$.
 \end{sol}
 
@@ -170,8 +170,8 @@ On a donc montré que le PGCD de deux polynômes ne changeait pas si on les rega
 \begin{sol}
 Comme on peut calculer le PGCD par division euclidienne, on sait que $A\wedge Q'\in \Q[X]$. De plus, on sait que
 $$Q\wedge Q'|Q $$ Mais comme
-$$\deg(Q\wedge Q')\leq \deg(Q')<\deg(Q) $$
-On doit avoir par irréductibilité que $Q\wedge Q'=1$. En particulier, le rappel donné en dédut de TD permet d'affirme que $Q$ est à racines simples dans $\mathbb{C}$.
+$$\deg(Q\wedge Q')\le \deg(Q')<\deg(Q) $$
+On doit avoir par irréductibilité que $Q\wedge Q'=1$. En particulier, le rappel donné en dédut de TD permet d'affirme que $Q$ est à racines simples dans $\C$.
 \end{sol}
 
 
@@ -186,8 +186,8 @@ Dans le cas général, comment obtenir le résultat ? On sait d'une part que les
 $$P=A\prod_{i=0}^d(X-r_i)^{m_i}\prod_{j=0}^h((X-\alpha_j)^2+\beta_j^2) $$
 On va d'abord montrer que les $m_i$ sont pairs. \\
 Supposons par l'absurde que $m_{i_0}\equiv 1[2]$. Alors proche de $r_{i_0}$, on sait que
-$$Q=A\prod_{i\neq i_0}^d(X-r_i)^{m_i}\prod_{j=0}^h((X-\alpha_j)^2+\beta_j^2) $$ garde un signe constant (car il ne s'annule pas en $r_{i_0}$ et est continu). Ce signe est le signe de $Q(r_{i_0})$. \\
-On en déduit que le signe de $P$ proche de $r_{i_0}$ est celui de $(x-r_{i_0}^{m_{i_0}}Q(r_{i_0})$ mais, comme $m_{i_0}$ est impair, ce signe doit changer au passage de $r_{i_0}$. C'est absurde car on a supposé $P\geq 0$. Donc les $m_j$ sont pairs et on peut écrire que
+$$Q=A\prod_{i\ne i_0}^d(X-r_i)^{m_i}\prod_{j=0}^h((X-\alpha_j)^2+\beta_j^2) $$ garde un signe constant (car il ne s'annule pas en $r_{i_0}$ et est continu). Ce signe est le signe de $Q(r_{i_0})$. \\
+On en déduit que le signe de $P$ proche de $r_{i_0}$ est celui de $(x-r_{i_0}^{m_{i_0}}Q(r_{i_0})$ mais, comme $m_{i_0}$ est impair, ce signe doit changer au passage de $r_{i_0}$. C'est absurde car on a supposé $P\ge 0$. Donc les $m_j$ sont pairs et on peut écrire que
 $$P=R^2\prod_{j=0}^h((X-\alpha_j)^2+\beta_j^2) $$
 Avec $R\in \R[X]$. Pour finir, on va montrer que la condition "être somme de deux carrés" est stable par produit. En effet, donnons-nous $A,B,C,D\in \R[X]$. On a alors
 $$(A^2+B^2)(C^2+D^2)=(AC)^2+(AD)^2+(BC)^2+(BD)^2 = ((AC)^2-2ABCD+(BD)^2)+((AD)^2+2ABCD+(BC)^2)=(AC-BD)^2+(AD+BC)^2 $$
@@ -196,19 +196,19 @@ Cela conclut la preuve.
 
 
 \begin{sol}
-On suppose par l'absurde que les diviseurs premiers des $a_n$ figurent tous parmi $\mathcal{H}=\{p_1<\dots<p_N\}$ où $N\geq 1$ est un entier. \\
+On suppose par l'absurde que les diviseurs premiers des $a_n$ figurent tous parmi $\mathcal{H}=\{p_1<\dots<p_N\}$ où $N\ge 1$ est un entier. \\
 Pour chaque $a_n$, on peut trouver un $N$-uplet $(m_{1,n},\dots,m_{N,n})$ tel que
 $$a_n=\prod_{i=1}^Np_i^{m_{i,n}} $$
 Nous allons étudier la croissance de $a_n$ et montrer qu'elle ne peut pas être au plus polynomiale. \\
 On écrit tout d'abord que
-$$a_n\geq p_1^{\sum_{i=1}^Nm_{i,n}}\geq 2^{\sum_{i=1}^Nm_{i,n}} $$
+$$a_n\ge p_1^{\sum_{i=1}^Nm_{i,n}}\ge 2^{\sum_{i=1}^Nm_{i,n}} $$
 Il s'agit donc d'estimer
 $\sum_{i=1}^N m_{i,n}$.
 Donnons nous $M>0$ un entier, si $$ \sum_{i=1}^Nm_{i,n}<M$$ alors en particulier on a $m_{i,1}<M$. Ainsi, le nombre de tuples de somme au plus $M$ est majoré par $M^N$. Par stricte croissance des $a_n$, on a donc que
-$$n\geq M^N\Rightarrow a_n\geq 2^M $$
+$$n\ge M^N\Rightarrow a_n\ge 2^M $$
 
 On pose donc $M=\left\lfloor n^{\frac{1}{N}} \right\rfloor$ et on a
-$$a_n\geq 2^{\left\lfloor n^{\frac{1}{N}} \right\rfloor} $$
+$$a_n\ge 2^{\left\lfloor n^{\frac{1}{N}} \right\rfloor} $$
 Mais par croissance comparées, la fonction
 $$n\mapsto 2^{\left\lfloor n^{\frac{1}{N}} \right\rfloor} $$ a une croissance plus que polynomiale pour tout polynôme. Cela contredit l'existence de $f$. Absurde.
 \end{sol}
@@ -267,7 +267,6 @@ Si $\sigma_2=44$, alors les solutions sont non réelles.
 \end{sol}
 
 \begin{sol}
-
 On va encore utiliser les polynômes symétriques. On souhaite calculer de proche en proche les $s_n=x_1^n+x_2^n$. Pour cela, on remarque que
 $$s_{n+1}=x_1^{n+1}+x_2^{n+1}=(x+y)(x^n+y^n)-xy(x_1^{n-1}+x_2^{n-1})=6s_n-s_{n-1} $$
 Comme $s_0,s_1\in \Z$ on a par récurrence que $s_n\in \Z$ pour tout eniter $n$. On passe la relation modulo $5$ ce qui donne
@@ -280,11 +279,11 @@ On vérifie sans peine que cette dernière est périodique de période $2, 1, 4,
 %$$P=(b_0+b_1X+\dots+b_mX^m)(c_0+\dots+c_{n-m}X^{n-m})$$
 %Où les $b_i$ et les $c_i$ sont des entiers. Supposons sans perte de généralité que $|b_0|=3$ et donc $|c_0|=1$. On note $i$ l'indice minimal tel que $3$ ne divise pas $b_i$. Cela assure que
 %$$b_ic_0+\underbrace{b_{i-1}c_1+\dots+b_0c_i}_{\equiv 0[3]}\not\equiv 0[3] $$
-%Comme $P$ a ses coefficient nuls pour $1\leq i \leq n-2$, cela assure que $i\geq n-1$ et donc que $\deg(_0+\dots+c_{n-m}X^{n-m})\leq 1$. \\
+%Comme $P$ a ses coefficient nuls pour $1\le i \le n-2$, cela assure que $i\ge n-1$ et donc que $\deg(_0+\dots+c_{n-m}X^{n-m})\le 1$. \\
 %Comme la décomposition est non triviale, on doit avoir
 %$$X+1|P $$ ou encore
 %$$X-1|P $$
-%Mais on vérifie que $P(1)=9\neq 0$ et que $P(-1)=(-1)^n+5(-1)^{n-1}+3\neq 0$. C'est l'absurdité recherchée.
+%Mais on vérifie que $P(1)=9\ne 0$ et que $P(-1)=(-1)^n+5(-1)^{n-1}+3\ne 0$. C'est l'absurdité recherchée.
 %\end{sol}
 
 

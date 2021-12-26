@@ -64,7 +64,7 @@ Soit $p$ premier et $a, b$ naturels. Si $p$ divise $ab$, alors soit $p$ divise $
 \end{lem}
 
 \begin{rem}
-La condition $p$ premier est indispensable. De fait, $6$ divise $12 = 3 \times 4$, mais $6$ ne divise ni $3$ ni $4$. Cela arrive parce que $6$ n'est pas premier.
+La condition $p$ premier est indispensable. De fait, $6$ divise $12 = 3 \cdot 4$, mais $6$ ne divise ni $3$ ni $4$. Cela arrive parce que $6$ n'est pas premier.
 \end{rem}
 
 On va prouver le lemme d'Euclide plus tard, puisque la preuve est assez compliquée et technique.
@@ -79,12 +79,12 @@ Montrer que $5$ divise $a^2$ si et seulement si $5$ divise $a$.
 On peut légèrement généraliser le lemme d'Euclide :
 
 \begin{thm}[Lemme d'Euclide (généralisé)]
-Soit $p$ premier et $a_1, a_2, \dots, a_n$ des entiers. Si $p$ divise $a_1 \times a_2 \times \dots \times a_n$, alors il divise un des $a_1, a_2, \dots, a_n$.
+Soit $p$ premier et $a_1, a_2, \dots, a_n$ des entiers. Si $p$ divise $a_1 \cdot a_2 \cdot \dots \cdot a_n$, alors il divise un des $a_1, a_2, \dots, a_n$.
 \end{thm}
 
 \begin{preuve}
 On va prouver cette généralisation en appliquant le lemme d'Euclide plusieurs fois.
-Si un premier $p$ divise $a_1 \times a_2 \times \dots \times a_n$, alors par le lemme d'Euclide, $p$ divise soit $a_1$ soit $a_2 \times a_3 \times \dots a_n$. Dans le premier cas, on a terminé. Dans le deuxième cas, on réapplique le lemme d'Euclide de la même manière. On a alors que $p$ divise soit $a_2$ soit $a_3 \times a_4 \times \dots \times a_n$. Dans le premier cas, on a terminé, dans le deuxième cas, on refait le même raisonnement. Si on refait ce raisonnement assez de fois, on aura terminé au bout d'un moment.
+Si un premier $p$ divise $a_1 \cdot a_2 \cdot \dots \cdot a_n$, alors par le lemme d'Euclide, $p$ divise soit $a_1$ soit $a_2 \cdot a_3 \cdot \dots a_n$. Dans le premier cas, on a terminé. Dans le deuxième cas, on réapplique le lemme d'Euclide de la même manière. On a alors que $p$ divise soit $a_2$ soit $a_3 \cdot a_4 \cdot \dots \cdot a_n$. Dans le premier cas, on a terminé, dans le deuxième cas, on refait le même raisonnement. Si on refait ce raisonnement assez de fois, on aura terminé au bout d'un moment.
 \end{preuve}
 
 \begin{rem}
@@ -120,13 +120,13 @@ Donc $p$ divise $1$, ce qui est une contradiction.
 Soit $n\ge 1$ naturel. $n$ peut s'écrire comme produit de facteurs premiers d'une manière unique. Cette écriture s'appelle la décomposition de $n$ en facteurs premiers.
 \end{thm}
 
-Par exemple, $6 = 2 \times 3$, $2 \times 3$ est la décomposition de $6$ en facteurs premiers. $12 = 2 \times 2 \times 3, 15 = 3 \times 5, 14 = 2 \times 7, 8 = 2 \times 2 \times 2$.
+Par exemple, $6 = 2 \cdot 3$, $2 \cdot 3$ est la décomposition de $6$ en facteurs premiers. $12 = 2 \cdot 2 \cdot 3, 15 = 3 \cdot 5, 14 = 2 \cdot 7, 8 = 2 \cdot 2 \cdot 2$.
 
 \begin{rem}
 \begin{itemize}
 \item Pour que ce théorème s'applique aux nombres premiers et à $1$, un produit d'aucun nombre premier (le \textit{produit vide}) vaut $1$, et un produit d'un seul nombre premier vaut lui-même.
-\item Bien sûr, $12 = 2 \times 2 \times 3 = 2 \times 3 \times 2 = 3 \times 2 \times 2$. Quand on parle de décomposition en facteurs premiers, on la considère implicitement unique \textit{à permutation près}.
-\item On a défini les nombres premiers de manière à ce que $1$ ne soit pas premier. On peut maintenant voir en quoi ça nous simplifie la vie : si $1$ était premier, la décomposition en facteurs premiers ne serait pas unique : $6 = 2 \times 3 = 1 \times 2 \times 3 = 1 \times 1 \times 2 \times 3 = \dots$.
+\item Bien sûr, $12 = 2 \cdot 2 \cdot 3 = 2 \cdot 3 \cdot 2 = 3 \cdot 2 \cdot 2$. Quand on parle de décomposition en facteurs premiers, on la considère implicitement unique \textit{à permutation près}.
+\item On a défini les nombres premiers de manière à ce que $1$ ne soit pas premier. On peut maintenant voir en quoi ça nous simplifie la vie : si $1$ était premier, la décomposition en facteurs premiers ne serait pas unique : $6 = 2 \cdot 3 = 1 \cdot 2 \cdot 3 = 1 \cdot 1 \cdot 2 \cdot 3 = \dots$.
 \end{itemize}
 \end{rem}
 
@@ -218,7 +218,7 @@ Il y a une infinité de nombres premiers.
 \end{thm}
 
 \begin{preuve}
-Supposons par l'absurde qu'il n'y a qu'un nombre fini de nombres premiers. Disons que $p_1, p_2, \dots, p_n$ sont tous les nombres premiers. Mais alors, $p_1 p_2 \dots p_n + 1$ n'est divisible par aucun nombre premier puisque, si $p_i$ divise $p_1 p_2 \dots p_n + 1$, alors il divise $p_1 p_2 \dots p_n + 1 - p_i \times p_1 p_2 \dots p_{i-1} p_{i+1} \dots p_n = 1$. Donc $p_1 p_2 \dots p_n + 1 = 1$, ce qui signifie que l'un des $p_i$ est $0$. Absurde.
+Supposons par l'absurde qu'il n'y a qu'un nombre fini de nombres premiers. Disons que $p_1, p_2, \dots, p_n$ sont tous les nombres premiers. Mais alors, $p_1 p_2 \dots p_n + 1$ n'est divisible par aucun nombre premier puisque, si $p_i$ divise $p_1 p_2 \dots p_n + 1$, alors il divise $p_1 p_2 \dots p_n + 1 - p_i \cdot p_1 p_2 \dots p_{i-1} p_{i+1} \dots p_n = 1$. Donc $p_1 p_2 \dots p_n + 1 = 1$, ce qui signifie que l'un des $p_i$ est $0$. Absurde.
 \end{preuve}
 
 
@@ -273,7 +273,7 @@ Soit $d$ le plus grand diviseur commun de $p$ et de $n$. Comme $d$ divise $p$, $
 
 
 \begin{sol}
-$5$ est premier. Donc, par le lemme d'Euclide, si $5$ divise $a^2 = a \times a$, alors soit $5$ divise $a$, soit $5$ divise $a$, on a donc conclu.
+$5$ est premier. Donc, par le lemme d'Euclide, si $5$ divise $a^2 = a \cdot a$, alors soit $5$ divise $a$, soit $5$ divise $a$, on a donc conclu.
 \end{sol}
 
 
@@ -283,20 +283,20 @@ $5$ est premier. Donc par la généralisation du lemme d'Euclide, on a que $5$ d
 
 
 \begin{sol}
-Dans un sens, si $p$ est présent dans la décomposition en facteurs premiers de $n$, alors on peut ordonner cette décomposition comme $n = p \times q_1 q_2 \dots q_k$, donc $p$ divise bien $n$.
+Dans un sens, si $p$ est présent dans la décomposition en facteurs premiers de $n$, alors on peut ordonner cette décomposition comme $n = p \cdot q_1 q_2 \dots q_k$, donc $p$ divise bien $n$.
 
 Dans l'autre sens, si $p$ divise $n$, alors décomposons $n$ en facteurs premiers : $n = q_1 q_2 \dots q_k$. $p$ divise $q_1 q_2 \dots q_k$ et donc par la généralisation du lemme de Gauss il divise $q_i$ pour un certain $i$. Donc, comme $p$ et $q_i$ sont premiers, on a $q_i = p$, donc $p$ est bien présent dans la décomposition de $n$ en facteurs premiers.
 \end{sol}
 
 
 \begin{sol}
-$2$ et $3$ sont premiers. Donc, si un entier naturel $n$ est divisible par $2$ et par $3$, $2$ et $3$ sont présents dans sa décomposition en facteurs premiers. Alors cette décomposition peut être réordonnée comme $n = 2 \times 3 \times q_1 q_2 \dots q_k = 6 \times q_1 q_2 \dots q_k$. $n$ est donc bien divisible par $6$.
+$2$ et $3$ sont premiers. Donc, si un entier naturel $n$ est divisible par $2$ et par $3$, $2$ et $3$ sont présents dans sa décomposition en facteurs premiers. Alors cette décomposition peut être réordonnée comme $n = 2 \cdot 3 \cdot q_1 q_2 \dots q_k = 6 \cdot q_1 q_2 \dots q_k$. $n$ est donc bien divisible par $6$.
 \end{sol}
 
 
 \begin{sol}
 Pour la première sous-question, dans un sens, si un entier naturel $n$ est un carré parfait, posons $n = a^2$. Soit alors $a = p_1^{a_1} p_2^{a_2} \dots p_l^{a_l}$ la décomposition de $a$ en facteurs premiers. On a
-$$n = a \times a = \left(p_1^{a_1} \dots p_l^{a_l}\right) \times \left(p_1^{a_1} \dots p_l^{a_l}\right) = p_1^{2a_1} \dots p_l^{2a_l}$$
+$$n = a \cdot a = \left(p_1^{a_1} \dots p_l^{a_l}\right) \cdot \left(p_1^{a_1} \dots p_l^{a_l}\right) = p_1^{2a_1} \dots p_l^{2a_l}$$
 On voit que chaque nombre premier apparait un nombre pair de fois.
 
 Dans l'autre sens, si chaque facteur premier apparait un nombre pair de fois dans la décomposition en facteurs premiers de $n$, on peut écrire
@@ -315,7 +315,7 @@ comme voulu.
 
 
 \begin{sol}
-La réponse est oui. Soit $n$ un naturel qui est à la fois un carré parfait et un cube parfait. Comme $n$ est un carré parfait, chaque facteur premier présent dans sa décomposition en facteurs premiers est présent un nombre divisible par $2$ de fois dans sa décomposition en facteurs premiers. Comme $n$ est un cube parfait, chaque facteur premier présent dans sa décomposition en facteurs premiers y est présent un nombre divisible par $3$ de fois. Donc, chaque facteur premier de $n$ est présent un nombre divisible par $2 \times 3 = 6$ de fois dans la décomposition de $n$ en facteurs premiers, donc $n$ est bien une puissance $6$-ième.
+La réponse est oui. Soit $n$ un naturel qui est à la fois un carré parfait et un cube parfait. Comme $n$ est un carré parfait, chaque facteur premier présent dans sa décomposition en facteurs premiers est présent un nombre divisible par $2$ de fois dans sa décomposition en facteurs premiers. Comme $n$ est un cube parfait, chaque facteur premier présent dans sa décomposition en facteurs premiers y est présent un nombre divisible par $3$ de fois. Donc, chaque facteur premier de $n$ est présent un nombre divisible par $2 \cdot 3 = 6$ de fois dans la décomposition de $n$ en facteurs premiers, donc $n$ est bien une puissance $6$-ième.
 \end{sol}
 
 
@@ -332,7 +332,7 @@ Réciproquement, supposons que $\pgcd(a, b) \ne 1$. Alors ce pgcd possède au mo
 Supposons que dans la décomposition de $a$ en facteurs premiers, $p_1$ apparait $k_1$ fois, $p_2$ apparait $k_2$ fois, $\dots$, $p_n$ apparait $k_n$ fois, avec $p_1, p_2, \dots, p_n$ des premiers distincts. On a alors
 $$a = p_1^{k_1} p_2^{k_2} \dots p_n^{k_n}$$
 Supposons que $p_1, \dots, p_n$ apparaissent aussi dans la décomposition de $b$ en facteurs premiers, $l_1$ fois, $\dots$, $l_n$ fois respectivement, avec $k_1 \le l_1, \dots, k_n \le l_n$. On a alors, pour certains premiers $q_1, q_2, \dots q_m$,
-$$b = p_1^{l_1} \dots p_n^{l_n} q_1 \dots q_m = p_1^{k_1} \dots p_n^{k_n} \times p_1^{l_1 - k_1} \dots p_n^{l_n - k_n} q_1 \dots q_m = a \times p_1^{l_1 - k_1} \dots p_n^{l_n - k_n} q_1 \dots q_m$$
+$$b = p_1^{l_1} \dots p_n^{l_n} q_1 \dots q_m = p_1^{k_1} \dots p_n^{k_n} \cdot p_1^{l_1 - k_1} \dots p_n^{l_n - k_n} q_1 \dots q_m = a \cdot p_1^{l_1 - k_1} \dots p_n^{l_n - k_n} q_1 \dots q_m$$
 Donc $a$ divise bien $b$ (on utilise $k_i \le l_i$ pour que $l_i - k_i$ soit positif et donc que $p_i^{l_i - k_i}$ soit entier).
 
 Réciproquement, supposons que $a$ divise $b$ et qu'un premier $p$ apparait $k$ fois dans la décomposition de $a$ en facteurs premiers. On a que $p^k$ divise $a$ et $a$ divise $b$, donc $p^k$ divise $b$. $p$ apparait donc aussi (au moins) $k$ fois dans la décomposition de $b$ en facteurs premiers.
@@ -342,14 +342,14 @@ Réciproquement, supposons que $a$ divise $b$ et qu'un premier $p$ apparait $k$ 
 \begin{sol}
 $121 = 11^2$. Donc les diviseurs naturels de $121$ sont exactement $1$, qui n'a aucun facteur premier, et les naturels dont $11$ est le seul facteur premier et ce facteur premier est présent $1$ ou $2$ fois dans la décomposition en facteurs premiers, ce sont $11$ et $121$. Donc, $121$ a exactement $3$ diviseurs naturels.
 
-$1\ 000 = 2^3 \times 5^3$. Les diviseurs naturels de $1\ 000$ sont donc exactement les naturels avec que des $2$ et $5$ dans la décomposition en facteurs premiers et qui y ont $0, 1, 2$ ou $3$ fois $2$ et $0, 1, 2$ ou $3$ fois $5$. Il y a quatre possibilités de combien de facteurs $2$ il y a et quatre possibilités de combien de facteurs $5$ il y a, ça donne donc en tout $4 \times 4 = 16$ diviseurs.
+$1\ 000 = 2^3 \cdot 5^3$. Les diviseurs naturels de $1\ 000$ sont donc exactement les naturels avec que des $2$ et $5$ dans la décomposition en facteurs premiers et qui y ont $0, 1, 2$ ou $3$ fois $2$ et $0, 1, 2$ ou $3$ fois $5$. Il y a quatre possibilités de combien de facteurs $2$ il y a et quatre possibilités de combien de facteurs $5$ il y a, ça donne donc en tout $4 \cdot 4 = 16$ diviseurs.
 
-$1\ 000\ 000\ 000 = 2^9 \times 5^9$. Donc, de même que dans la question précédente, il a $(9 + 1)\times (9 + 1) = 100$ diviseurs.
+$1\ 000\ 000\ 000 = 2^9 \cdot 5^9$. Donc, de même que dans la question précédente, il a $(9 + 1)\cdot (9 + 1) = 100$ diviseurs.
 \end{sol}
 
 
 \begin{sol}
-Si $p$ est le seul facteur premier de $n$, alors, en décomposant $n$, $n = p \times p \times \dots \times p$ est bien une puissance de $p$. Réciproquement, si $n$ est une puissance de $p$, alors on peut écrire $n = p \times p \times \dots \times p$, un produit de nombres premiers, donc $p$ est le seul facteur premier de $n$.
+Si $p$ est le seul facteur premier de $n$, alors, en décomposant $n$, $n = p \cdot p \cdot \dots \cdot p$ est bien une puissance de $p$. Réciproquement, si $n$ est une puissance de $p$, alors on peut écrire $n = p \cdot p \cdot \dots \cdot p$, un produit de nombres premiers, donc $p$ est le seul facteur premier de $n$.
 \end{sol}
 
 
@@ -359,7 +359,7 @@ Supposons qu'un premier $p$ divise $ab$. Si $p$ divise $a$, alors on a gagné. S
 
 
 \begin{sol}
-$2x+1$ est premier avec $8 = 2 \times 2 \times 2$ car $2x+1$ est impair et $2$ n'en est donc pas un facteur premier. Donc, par le lemme de Gauss, $2x+1$ divise $y$ car il divise $8y$.
+$2x+1$ est premier avec $8 = 2 \cdot 2 \cdot 2$ car $2x+1$ est impair et $2$ n'en est donc pas un facteur premier. Donc, par le lemme de Gauss, $2x+1$ divise $y$ car il divise $8y$.
 \end{sol}
 
 

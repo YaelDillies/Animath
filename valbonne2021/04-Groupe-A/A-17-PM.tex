@@ -9,11 +9,15 @@ Dans un triangle, la somme des angles vaut $180^\circ$.
 Vous pouvez évidemment faire une figure soigneusement et vérifier à l'aide d'un rapporteur (par ailleurs interdit à la plupart des compétitions de mathématiques) que la somme des angles vaut $180^\circ$. Ceci dit, comment en être sûr que c'est vrai quelque soit le triangle que vous tracez ? Il faut en faire la démonstration ! Ceci dit, il est illusoire de faire une démonstration sans faire de figure. C'est pourquoi dans les entraînements d'Animath, on vous accorde 1 point (sur 7) pour un exercice de géométrie où vous avez fait une figure correctement. Il s'agit de la première étape dans la résolution d'un exercice. La figure peut aussi vous permettre de comprendre comment faire la démonstration.
 
 \begin{preuve}
-Traçons un triangle $ABC$, dont on notera les angles $\alpha,\beta,\gamma$ (il s'agit d'une notation habituelle).
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-0.png}}\newline
+Traçons un triangle $ABC$, dont on notera les angles $\alpha, \beta, \gamma$ (il s'agit d'une notation habituelle).
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-0.png}}
+\end{figure}
 On trace la droite parallèle passant par $A$ et parallèle à $(BC)$, ce qui nous permet de noter des égalités d'angles, d'après l'égalité des angles alternes-internes.
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-1.png}}\newline
-Ceci nous démontre que $\alpha+\beta+\gamma$ correspond à l'angle plat, i.e. $180^\circ$.
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-1.png}}
+\end{figure}
+Ceci nous démontre que $\alpha + \beta + \gamma$ correspond à l'angle plat, i.e. $180^\circ$.
 \end{preuve}
 
 Notons que ce résultat peut être généralisé pour un polygone à $n$ côtés. Nous allons nous limiter aux polygones convexes ici (pour ceux qui ne savent pas ce que c'est, vous allez bientôt l'apprendre !), mais ce résultat est aussi valide pour les polygones non convexes.
@@ -26,24 +30,30 @@ En particulier, la somme des angles d'un quadrilatère vaut $360^\circ$.
 
 \begin{preuve}
 Remarquons tout d'abord qu'un quadrilatère peut être décomposé en deux triangles en traçant une diagonale.
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-2.png}}\newline
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-2.png}}
+\end{figure}
 Ainsi, la somme des angles du quadrilatère vaut la somme des des angles des deux triangles, donc $2 \dot 180^\circ$, i.e. $360^\circ$.
 
-Pour le cas général, on peut imaginer deux approches. La première consiste à supposer que vous avez déjà démontré le théorème pour un polygone à $n$ côtés (par exemple, $n=4$ car on a effectivement déjà démontré que la somme des angles d'un quadrilatère vaut $180^\circ \cdot (4-2)$), et de démontrer ce théorème pour un polygone à $n+1$ côtés. Prenons un polygone à $n+1$ côtés $ABCDE...$ et traçons la diagonale $AC$ comme sur la figure :
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-3.png}}\newline
-Ainsi, le polygone à $n+1$ côtés est partagé en un triangle $ABC$ et un polygone à $n$ côtés $ACDE...$. Donc, la somme des angles du polygone à $n+1$ côtés vaut la somme des angles d'un triangle auquel on rajoute la somme des angles d'un polygone à $n$ côtés, i.e. $180^\circ+180^\circ\cdot(n-2)=180^\circ\cdot((n+1)-2)$. Ainsi, après avoir démontré ce théorème pour un quadrilatère, vous le démontrez pour un pentagone, puis pour un hexagone, puis pour un heptagone, puis pour un octogone, etc. Vous verrez plus tard que ce genre de raisonnement s'appelle un raisonnement par récurrence.
+Pour le cas général, on peut imaginer deux approches. La première consiste à supposer que vous avez déjà démontré le théorème pour un polygone à $n$ côtés (par exemple, $n=4$ car on a effectivement déjà démontré que la somme des angles d'un quadrilatère vaut $180^\circ \cdot (4-2)$), et de démontrer ce théorème pour un polygone à $n + 1$ côtés. Prenons un polygone à $n + 1$ côtés $ABCDE\dots$ et traçons la diagonale $AC$ comme sur la figure :
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-3.png}}
+\end{figure}
+Ainsi, le polygone à $n + 1$ côtés est partagé en un triangle $ABC$ et un polygone à $n$ côtés $ACDE\dots$. Donc, la somme des angles du polygone à $n + 1$ côtés vaut la somme des angles d'un triangle auquel on rajoute la somme des angles d'un polygone à $n$ côtés, i.e. $180^\circ+180^\circ\cdot(n-2)=180^\circ\cdot((n + 1)-2)$. Ainsi, après avoir démontré ce théorème pour un quadrilatère, vous le démontrez pour un pentagone, puis pour un hexagone, puis pour un heptagone, puis pour un octogone, etc. Vous verrez plus tard que ce genre de raisonnement s'appelle un raisonnement par récurrence.
 
 La deuxième approche consiste à prendre un point $O$ à l'intérieur du polygone et le joindre à tous les sommets du polygone par des segments.
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-4.png}}\newline
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-4.png}}
+\end{figure}
 Ainsi, on voit apparaître $n$ polygones. On observe que si on somme les angles de tous les triangles, on obtient la somme des angles du polygone auquel il faut rajouter la somme de tous les angles autour de $O$. La somme des angles de tous les triangles vaut $180^\circ\cdot n$ car il y a $n$ triangles. La somme des angles du polygone est ce qu'on cherche. Et la somme de tous les angles autour de $O$ vaut $360^\circ$ (l'angle plein).
 
 Ainsi, la somme des angles d'un polygone à $n$ côtés vaut
-\[
-180^\circ \cdot n - 360^\circ = 180^\circ\cdot(n-2).
-\]
+$$180^\circ \cdot n - 360^\circ = 180^\circ\cdot(n - 2)$$
 \end{preuve}
 
+
 \subsubsection{Quelques révisions sur les triangles égaux}
+
 Nous vous renvoyons à votre cours de collège pour l'énoncé des trois cas d'égalité des triangles. Rappelons que quand on parle des triangles égaux, il est important de faire attention à l'ordre dans lequel on écrit les sommets (si un triangle $ABC$ est égal à un triangle $DEF$, il n'est pas forcément égal au triangle $EDF$). C'est un des premiers outils dont il faut savoir se servir pour les exercices. Pour trouver ce qu'il faut démontrer dans les deux exercices suivants, il faut commencer par faire une belle figure et émettre des conjectures.
 
 \begin{exo}
@@ -55,7 +65,9 @@ de $C$ tel que $CD=AB-BC$. Que dire du triangle $ADE$ ?
 
 \begin{sol}
 On commence par faire une jolie figure et on fait des mesures sur la figure pour faire des conjectures.
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-5.png}}\newline
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-5.png}}
+\end{figure}
 Vous avez probablement remarqué que le triangle $ADE$ est isocèle en $D$, mais n'est pas équilatéral, ni rectangle.
 
 Essayons maintenant de le démontrer. On veut montrer que $ED=DA$. En observant la figure, on est tenté de montrer que le triangle $BED$ est égal au triangle $CDA$, ce qui implique l'égalité des longueurs voulue. Pour y arrivons, utilisons le premier cas d'égalité des triangles et montrons que $BE=CD$, $BD=CA$ et $\widehat{EBD}=\widehat{DCA}$. Tout d'abord, $BD=CD=AB-BC$ d'après l'énoncé. Puis, $BD=BC+CD=BC+(AB-BC)=AB=CA$ d'après l'énoncé. Enfin, $\widehat{EBD}$ est supplémentaire à $\widehat{ABC}$, et $\widehat{DCA}$ est supplémentaire à $\widehat{ACB}$. Donc, comme $\widehat{ABC}=\widehat{ACB}$ d'après le critère du triangle isocèle, on a $\widehat{EBD}=\widehat{DCA}$.
@@ -73,7 +85,9 @@ $PQC$ ?
 
 \begin{sol}
 Comme d'habitude, on commence par une jolie figure et on fait des conjectures.
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-6.png}}\newline
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-6.png}}
+\end{figure}
 En voyant la figure, on conjecture que $PQC$ est équilatéral. Pour montrer que $QC=CP=QP$, la figure nous suggère de montrer l'égalité entre trois triangles. On va montrer que le triangle $QCB$ est égal au triangle $CPD$ et qui est lui-même égal au triangle $QPA$. Pour y arriver, nous allons utiliser le premier cas d'égalité, i.e. il suffit de montrer que $QB=CD=QA$, $CB=PD=PA$ et $\widehat{QBC}=\widehat{CDP}=\widehat{QAP}$. Pour la première égalité, $QB=AB$ et $QB=QA$ car $QAB$ est équilatéral, puis $AB=CD$ car $ABCD$ est un parallélogramme. Pour la deuxième égalité, $CB=AD$ car $ABCD$ est un parallélogramme, puis $AD=PD$ et $AD=PA$ car $APD$ est équilatéral. Pour la dernière égalité (celle à propos des angles), notons $\beta=\widehat{ABC}$, alors $\widehat{ADC}=\beta$ et $\widehat{DAB}=180^\circ-\beta$ d'après les égalités d'angles obtenues avec les droites parallèles. Ainsi, $\widehat{QBC}=60^\circ+\beta$ (d'après les angles du triangle équilatéral), $\widehat{CDP}=60^\circ+\beta$ également, et $\widehat{QAP}=360^\circ-2\cdot 60^\circ-(180^\circ-\beta)=60^\circ+\beta$. Ce qui conclut.
 \end{sol}
 
@@ -88,37 +102,41 @@ Soit $\mathcal{C}$ un cercle de centre $O$. On prend $A,B,C$ trois points sur $\
 \end{dfn}
 
 Voici une figure qui permet d'illustrer le concept. Observez qu'il existe deux arcs de cercle qu'on peut nommer $\stackrel \frown{BC}$, ainsi que deux angles qu'on peut nommer $\widehat{BAC}$ ou $\widehat{BOC}$, mais la correspondance entre l'arc de cercle et l'angle inscrit est sans ambiguité. De plus, il y a une correspondance entre chaque arc de cercle et chaque angle au centre.
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-7.png}}\newline
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-7.png}}
+\end{figure}
 
 Voici le théorème de base dont nous avons besoin. C'est le théorème de l'angle au centre et de l'angle inscrit.
 
 \begin{thm}
 Soit $\mathcal{C}$ un cercle de centre $O$. On prend $A,B,C$ trois points sur $\mathcal{C}$. Soit $\widehat{BAC}$ un angle inscrit interseptant l'arc $\stackrel \frown{BC}$ et $\widehat{BOC}$ l'angle au centre associé. Alors,
-\[
+$$
 2\widehat{BAC}=\widehat{BOC}.
-\]
+$$
 \end{thm}
 
 \begin{preuve}
 Pour démontrer ce théorème, il convient de distinguer trois cas.
 
 \underline{\textit{Premier cas :}} le cas où $O$ se trouve sur un côté de l'angle $\widehat{BAC}$.
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-8.png}}\newline
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-8.png}}
+\end{figure}
 $\widehat{BOC}$ est supplémentaire à $\widehat{AOB}$, qui est lui-même supplémentaire à $\widehat{OAB}+\widehat{OBA}$ (d'après la somme des angles dans le triangle $OAB$). Comme le triangle $OAB$ est isocèle en $O$ ($OA=OB$ car c'est des rayons), on a $\widehat{OAB}=\widehat{OBA}$. Donc, $\widehat{BOC}=2\widehat{BAC}$.
 
 \underline{\textit{Deuxième cas :}} le cas où $O$ se trouve à l'intérieur de l'angle $\widehat{BAC}$.
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-9.png}}\newline
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-9.png}}
+\end{figure}
 On trace le diamètre $AD$. Ceci partage l'angle $\widehat{BAC}$ en deux angles : $\widehat{BAD}$ et $\widehat{DAC}$. On utilise le premier cas pour affirmer que :
-\[
-\widehat{BOC}=\widehat{BOD}+\widehat{DOA}=2\widehat{BAD}+2\widehat{DAC}=2\widehat{BAC}.
-\]
+$$\widehat{BOC}=\widehat{BOD}+\widehat{DOA}=2\widehat{BAD}+2\widehat{DAC}=2\widehat{BAC}$$
 
 \underline{\textit{Troisième cas:}} le cas où $O$ se trouve à l'extérieur de l'angle $\widehat{BAC}$.
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-10.png}}\newline
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-10.png}}
+\end{figure}
 On trace le diamètre $AD$ et on utilise le premier cas :
-\[
-\widehat{BOC}=\widehat{BOD}-\widehat{COD}=2\widehat{BAD}-2\widehat{CAD}=2\widehat{BAC}.
-\]
+$$\widehat{BOC}=\widehat{BOD}-\widehat{COD}=2\widehat{BAD}-2\widehat{CAD}=2\widehat{BAC}$$
 
 \end{preuve}
 
@@ -137,7 +155,9 @@ Commençons par remarquer qu'un triangle est toujours inscriptible, chose dont o
 \begin{thm}
 Si un quadrilatère est inscriptible, alors la somme de ses angles opposés vaut $180^\circ$.
 \end{thm}
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-11.png}}\newline
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-11.png}}
+\end{figure}
 
 On remarque que si la somme de deux angles opposés d'un quadrilatère vaut $180^\circ$, alors la somme des deux autres angles opposés du quadrilatère vaut aussi $180^\circ$ car la somme des angles d'un quadrilatère vaut $360^\circ$.
 
@@ -148,30 +168,30 @@ $\widehat{B}$ et $\widehat{D}$ sont des angles inscrits, donc le premier se mesu
 
 Il sera également très important pour les chasses aux angles d'utiliser les réciproques du théorème des angles inscrits et du théorème du quadrilatère inscriptible. Elles nous permettent de démontrer qu'on a des points cocycliques à partir d'égalités d'angles.
 
+
 \subsubsection{Exercices sur la chasse aux angles}
+
+
 \begin{exo}
-Soient $C_{1}$ et $C_{2}$ deux cercles ayant deux points d'intersection
-$A$ et $B$. Soit $d_{A}$ une droite passant par $A$ et $d_{B}$
-une droite passant par $B$. On note $C$ et $E$ les points d'intersection
-de $d_{A}$ avec $C_{1}$ et $C_{2}$ respectivement, et on définit
-de même $D$ et $F$ comme les points d'intersection de $d_{B}$ avec
-$C_{1}$ et $C_{2}$ respectivement. Montrer que les droites $(CD)$
-et $(EF)$ sont parallèles.
+Soient $C_{1}$ et $C_{2}$ deux cercles ayant deux points d'intersection $A$ et $B$. Soit $d_{A}$ une droite passant par $A$ et $d_{B}$ une droite passant par $B$. On note $C$ et $E$ les points d'intersection de $d_{A}$ avec $C_{1}$ et $C_{2}$ respectivement, et on définit de même $D$ et $F$ comme les points d'intersection de $d_{B}$ avec $C_{1}$ et $C_{2}$ respectivement.
+
+Montrer que les droites $(CD)$ et $(EF)$ sont parallèles.
 \end{exo}
 
 \begin{sol}
 Il y a plusieurs façons de tracer la figure pour cet exercice, mais la solution est essentiellement la même, peu importe la configuration considérée (quitte à remplacer certains théorèmes de l'angle inscrit par des théorèmes du quadrilatère inscriptible). Nous allons faire notre raisonnement en nous appuyant sur la figure suivante, mais on invite le lecteur à tracer des figures différentes pour se convaincre que le raisonnement est essentiellement le même :
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-12.png}}\newline
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-12.png}}\newline
 On veut montrer que les droites $(CD)$ et $(EF)$ sont parallèles.
 
 Quand on a deux cercles qui s'intersectent, il est une bonne idée de tracer leur droite d'intersection. On a maintenant assez d'éléments de tracés pour démarrer une chasse aux angles sur la figure.
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-13.png}}\newline
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-13.png}}\newline
 D'après les angles alternes-internes, pour montrer que les droites $(CD)$ et $(EF)$ sont parallèles, il suffit de montrer que l'angle $\widehat{DCA}$ est égal à l'angle $\widehat{AEF}$. Montrons cette égalité d'angles par chasse aux angles.
 
 Puisque le quadrilatère $ABDC$ est inscriptible, on a que les angles $\widehat{DCA}$ et $\widehat{ABD}$ sont supplémentaires. Comme la somme de $\widehat{ABD}$ et $\widehat{ABF}$ donne l'angle plat, on en déduit que les angles $\widehat{DCA}$ et $\widehat{ABF}$ sont égaux. Enfin, d'après le théorème de l'angle inscrit, $\widehat{ABF}=\widehat{AEF}$.
 
 Ainsi, $\widehat{DCA}=\widehat{AEF}$ et c'est ce qu'on voulait.
 \end{sol}
+
 
 \begin{exo}
 Soit $ABC$ un triangle, $P$ un point du côté $BC$, $Q$ un point
@@ -182,11 +202,15 @@ que $X$ est aussi sur le cercle circonscrit à $CPQ$.
 
 \begin{sol}
 On commence bien sûr par tracer une figure et mettre en pointillés le cercle dont nous voulons démontrer l'existence :
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-14.png}}\newline
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-14.png}}
+\end{figure}
 Traçons les droites d'intersection des cercles qui s'intersectent et démarrons une chasse aux angles sur la figure. Deux chasses aux angles différentes ont été proposées par les élèves. Dans tous les cas, notre objectif est de montrer que le quadrilatère $CPXQ$ est inscriptible.
 
 \underline{\textit{Première version :}} Pour y arriver, nous allons montrer que $\widehat{XQC}+\widehat{XPC}=180^\circ$.
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-15.png}}\newline
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-15.png}}
+\end{figure}
 Comme les points $B,P,C$ sont alignés, on a que $\widehat{BPX}+\widehat{XPC}=180^\circ$. Comme le quadrilatère $RXPB$ est inscriptible, on a que $\widehat{BRX}+\widehat{BPX}=180^\circ$.
 
 Donc, $\widehat{XPC}=\widehat{BRX}$.
@@ -196,27 +220,19 @@ Par le même raisonnement, $\widehat{XQC}=\widehat{XRA}$.
 Or, $\widehat{BRX}+\widehat{XRA}=180^\circ$ car $B,R,A$ sont alignés. Donc, $\widehat{XQC}+\widehat{XPC}=180^\circ$ en découle.
 
 \underline{\textit{Deuxième version :}} Pour y arriver, nous allons montrer que $\widehat{PXQ}+\widehat{QCP}=180^\circ$.
-\centering{\includegraphics[scale=1]{A-17-PM/A-17-PM-16.png}}\newline
+\begin{figure}[H]
+\centering{\includegraphics[width=0.6\linewidth]{A-17-PM/A-17-PM-16.png}}
+\end{figure}
 En faisant le tour autour du point $X$, on s'aperçoit que
-\[
-\widehat{PXQ}+\widehat{QXR}+\widehat{RXP}=360^\circ.
-\]
+$$\widehat{PXQ}+\widehat{QXR}+\widehat{RXP}=360^\circ$$
 D'après la somme des angles du triangle $ABC$, on a
-\[
-\widehat{QCP}+\widehat{RAQ}+\widehat{PBR}=180^\circ.
-\]
+$$\widehat{QCP}+\widehat{RAQ}+\widehat{PBR}=180^\circ$$
 De plus, comme les quadrilatères $XQAR$ et $XRBP$ sont inscriptibles, on a
-\[
-\widehat{QXR}+\widehat{RAQ}=180^\circ,
-\]
+$$\widehat{QXR}+\widehat{RAQ}=180^\circ$$
 et
-\[
-\widehat{RXP}+\widehat{PBR}=180^\circ.
-\]
+$$\widehat{RXP}+\widehat{PBR}=180^\circ$$
 En mettant toutes ces informations ensemble, on en déduit que
-\[
-\widehat{PXQ}+\widehat{QCP}=360^\circ-(\widehat{QXR}+\widehat{RXP})+180^\circ-(\widehat{RAQ}+\widehat{PBR})=3 \cdot 180^\circ -(\widehat{QXR}+\widehat{RAQ})-(\widehat{RXP}+\widehat{PBR})=3 \cdot 180^\circ -2 \cdot 180^\circ=180^\circ,
-\]
+$$\widehat{PXQ}+\widehat{QCP}=360^\circ-(\widehat{QXR}+\widehat{RXP})+180^\circ-(\widehat{RAQ}+\widehat{PBR})=3 \cdot 180^\circ -(\widehat{QXR}+\widehat{RAQ})-(\widehat{RXP}+\widehat{PBR})=3 \cdot 180^\circ -2 \cdot 180^\circ=180^\circ$$
 ce qui termine la démonstration.
 \end{sol}
 

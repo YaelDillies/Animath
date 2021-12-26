@@ -1,6 +1,7 @@
-\author{Matthieu Bouyer, Auguste de Lambilly}
+%Matthieu Bouyer, Auguste de Lambilly
 
 \subsubsection{Premiers exercices}
+
 
 \begin{exo}
 Trouver tous les entiers $n$ strictement positifs tels que $1!+2!+\ldots+n!$ soit un carré parfait.
@@ -65,6 +66,7 @@ somme de deux carres si et seulement si $n$ et $m$ ont même parité.
 
 \subsubsection{Plus exotique…}
 
+
 \begin{exo} Soient $a_1,\dots,a_n \in \{-1,1\}$ tels que : $a_1a_2+a_2a_3+\dots+a_{n-1}a_n+a_na_1=0$.
 Montrer que $4\mid n$.
 \end{exo}
@@ -78,14 +80,19 @@ Soit $n\ge1$ un entier. Montrer qu'il existe un multiple de $n$ dont la somme de
 \subsubsection{Solutions}
 
 
-\begin{sol} Si $n\geq5$, alors $ 1!+2!+\ldots+n!\equiv 1+2+6+24\equiv 3 [5]$.
-Or, modulo $5$, on a : $\begin{array}{|r|c|c|c|c|l|}
+\begin{sol} Si $n\ge5$, alors $ 1!+2!+\ldots+n!\equiv 1+2+6+24\equiv 3 [5]$.
+Or, modulo $5$, on a :
+\begin{center}
+$\begin{array}{|r|c|c|c|c|l|}
 \hline
 x & 0 & 1 & 2 & 3 & 4 \\
 x^2 & 0 & 1 & 4 & 4 & 1 \\
 \hline
-\end{array}$. Ainsi, $n\leq5$. En testant manuellement, on trouve que seuls $n=1$ et $n=3$ conviennent.
+\end{array}$
+\end{center}
+Ainsi, $n\le5$. En testant manuellement, on trouve que seuls $n=1$ et $n=3$ conviennent.
 \end{sol}
+
 
 \begin{sol}
 Soit $(x,y)$ une éventuelle solution.
@@ -98,7 +105,7 @@ La seule solution est donc $(6,3)$.
 
 \begin{sol}
 On travaille modulo $p=2\cdot5+1=11$ qui est premier et on a :
-
+\begin{center}
 $\begin{array}{|r|c|c|c|c|c|c|c|c|c|c|l|}
 \hline
 x & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
@@ -106,6 +113,7 @@ x^2 & 0 & 1 & 4 & 9 & 5 & 3 & 3 & 5 & 9 & 4 & 1 \\
 x^5 & 0 & 1 & 10 & 1 & 1 & 1 & 10 & 10 & 10 & 1 & 10 \\
 \hline
 \end{array}$
+\end{center}
 
 Ainsi, il n'y a aucune solution possible.
 
@@ -126,7 +134,7 @@ Supposons alors que $p$ est le plus petit diviseur premier de $n$, de sorte que 
 
 
 
-\begin{sol} On a alors : $(n-2)(n^2-n-1)=5^a$. Ainsi, on a : $n-2=5^x$ et $n^2-n-1=5^y$. Il suit $5^y-5^{2x}-3\cdot5^x=1$. Donc, si $x,y\geq1$ alors $0\equiv1[5]$, ce qui est absurde. Donc $x=0$ ou $y=0$.
+\begin{sol} On a alors : $(n-2)(n^2-n-1)=5^a$. Ainsi, on a : $n-2=5^x$ et $n^2-n-1=5^y$. Il suit $5^y-5^{2x}-3\cdot5^x=1$. Donc, si $x,y\ge1$ alors $0\equiv1[5]$, ce qui est absurde. Donc $x=0$ ou $y=0$.
 Si $x=0$, alors $y=1$, ce qui donne $n=3$.
 Si $y=0$, alors $5^{2x}+3\cdot5^x=0$, ce qui est absurde.
 La seule solution est ainsi $n=3$.
@@ -135,35 +143,37 @@ La seule solution est ainsi $n=3$.
 
 
 \begin{sol}
-On suppose $z\geq1$, comme $7\mid 2016$, $x^2+y^2\equiv0[7]$.
+On suppose $z\ge1$, comme $7\mid 2016$, $x^2+y^2\equiv0[7]$.
 Or, modulo $7$, on a :
-
+\begin{center}
 $\begin{array}{|r|c|c|c|c|c|c|l|}
 \hline
 x & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
 x^2 & 0 & 1 & 4 & 2 & 2 & 4 & 1 \\
 \hline
 \end{array}$
+\end{center}
 
-Ainsi, le seul cas possible est $x\equiv y \equiv 0[7]$. On a alors $x=7a,y=7b$. Il suit : $7(a^2+b^2)=11+3\cdot288\cdot 2016^{z-1}$. Si, $z\geq2$, alors la partie de droite ne serait pas divisible par $7$. Donc, $z=1$. On a alors : $7(a^2+b^2)=11+3\cdot288=875$, donc $a^2+b^2=125$, donc nécessairement, $a,b<12$.
+Ainsi, le seul cas possible est $x\equiv y \equiv 0[7]$. On a alors $x=7a,y=7b$. Il suit : $7(a^2+b^2)=11+3\cdot288\cdot 2016^{z-1}$. Si, $z\ge2$, alors la partie de droite ne serait pas divisible par $7$. Donc, $z=1$. On a alors : $7(a^2+b^2)=11+3\cdot288=875$, donc $a^2+b^2=125$, donc nécessairement, $a,b<12$.
 On trouve manuellement : $\{a,b\}\in\{\{11,2\},\{10,5\} \}$.
 Ce qui donne $(x,y,z)\in\{(77,14,1),(14,77,1),(70,35,1),(35,70,1)\}$.
 Sinon, on a $z=0$, et alors $x^2+y^2=80$, donc $x,y<9$. On teste manuellement et on obtient comme autres solutions : $(x,y,z)\in\{(8,4,0),(4,8,0)\}$.
 \end{sol}
 
 
-\begin{sol} On fait une disjonction de cas.
+\begin{sol}
+On fait une disjonction de cas.
 
 Premier cas :
 $3^a-2^b=1$. On a donc : $-(-1)^b\equiv 1 [3]$, d'où $b\equiv 1 [2]$.
-Ainsi, avec $b=2c+1$, $3^a-2\cdot4^c=1$. Si $c\geq1$, alors $3^a\equiv 1 [8]$, donc $a=2d$. Il suit : $3^{2d}-2^{2b+1}=1$.
+Ainsi, avec $b=2c+1$, $3^a-2\cdot4^c=1$. Si $c\ge1$, alors $3^a\equiv 1 [8]$, donc $a=2d$. Il suit : $3^{2d}-2^{2b+1}=1$.
 Ainsi : $(3^d-1)(3^d+1)=2^{2b+1}$.
-Il suit qu'il existe $x,y$ tels que $x+y=2b+1$ et $3^d-1=2^x$ et $3^d+1=2^y$. Donc $2^x+2=2^y$. Si $x\geq2$, alors $2^y\equiv2[4]$ mais $2^y\geq4$, ce qui est absurde. D'où $x\in\{0,1\}$.
+Il suit qu'il existe $x,y$ tels que $x+y=2b+1$ et $3^d-1=2^x$ et $3^d+1=2^y$. Donc $2^x+2=2^y$. Si $x\ge2$, alors $2^y\equiv2[4]$ mais $2^y\ge4$, ce qui est absurde. D'où $x\in\{0,1\}$.
 Un rapide calcul mène à $x=1$ et $y=2$, il suit $b=1$ et $d=1$ soit : $(a,b)=(2,3)$.
 Sinon, $c=0$, et alors, $3^a=3$, d'où $a=1$. Donc $(a,b)=(1,1)$ est une autre solution.
 
 Deuxième cas :
-$2^b-3^a=1$. On a donc, si $a\geq1$, $(-1)^b\equiv 1 [3]$, donc $b=2c$, ainsi, $2^{2c}-3^a=1$. Donc $(2^c+1)(2^c-1)=3^a$. Donc $2^c-1=3^x$ et $2^c+1=3^y$ avec $x+y=a$. Il suit, $3^x+2=3^y$. Si $y\geq1$, alors $x=0$, donc $y=1$. Sinon, $y=0$, ce qui est impossible.
+$2^b-3^a=1$. On a donc, si $a\ge1$, $(-1)^b\equiv 1 [3]$, donc $b=2c$, ainsi, $2^{2c}-3^a=1$. Donc $(2^c+1)(2^c-1)=3^a$. Donc $2^c-1=3^x$ et $2^c+1=3^y$ avec $x+y=a$. Il suit, $3^x+2=3^y$. Si $y\ge1$, alors $x=0$, donc $y=1$. Sinon, $y=0$, ce qui est impossible.
 Donc, on a $(a,b)=(1,2)$.
 Dans le dernier cas, $a=0$, et ainsi, $b=1$ : on a comme autre solution $(a,b)=(0,1)$
 \end{sol}
@@ -182,6 +192,7 @@ $\bullet$ Si $\omega=p$ ou $\omega=2p$, par le petit théorème de Fermat, $p\mi
 On vérifie aisément que toutes ces solutions conviennent ainsi que leur permutation.
 \end{sol}
 
+
 \begin{sol}
 On se donne une éventuelle solution $x$. Encadrons alors $x^4+x^3+x^2+x+1$ par deux carrés consécutifs comme à l'exercice $2$.
 On remarque que $A=4(x^4+x^3+x^2+x+1)$ est encore un carré parfait et :
@@ -193,14 +204,17 @@ Nécessairement on a donc $x\in\{-1;0;1;2;3\}$.
 En testant les $5$ cas à la main, on obtient comme seules solutions $-1,0,3$.
 \end{sol}
 
-\begin{sol} On a donc $2^a3^b=(c+3)(c-3)$.
+
+\begin{sol}
+On a donc $2^a3^b=(c+3)(c-3)$.
 D'où, il existe $x,y,u,v$ tels que $x+u=a, y+v=b, c-3=2^x3^y$ et $c+3=2^u3^v$. Ainsi, $2^x3^y+6=2^u3^v$.
-Si $y\geq2$, alors $2^u3^v\equiv6[9]$, donc $v=1$.
-Si $x\geq2$, alors $2^u3^v\equiv2[4]$, donc $u=1$.
-Donc, si $x,y\geq2$, alors $u=v=1$, d'où $2^x3^y=0$ : absurde.
-Ainsi, on a nécessairement $y\leq1$ ou $x\leq1$.
+Si $y\ge2$, alors $2^u3^v\equiv6[9]$, donc $v=1$.
+Si $x\ge2$, alors $2^u3^v\equiv2[4]$, donc $u=1$.
+Donc, si $x,y\ge2$, alors $u=v=1$, d'où $2^x3^y=0$ : absurde.
+Ainsi, on a nécessairement $y\le1$ ou $x\le1$.
 En testant les derniers cas restants (et en utilisant l'exercice $7$), on trouve comme solutions : $(a,b,c)\in \{(4,0,5),(4,5,51),(3,3,15),(4,3,21),(3,2,9)\}$
 \end{sol}
+
 
 \begin{sol}
 Cf envoi d'arithmétique 2012-2013, exercice 5, page 6 :

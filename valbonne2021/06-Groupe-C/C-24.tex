@@ -1,3 +1,6 @@
+\soustitre{Sujet}
+
+
 \begin{exo}
 Soit $ABC$ un triangle non isocèle en $A$, $\Gamma_1$ un cercle passant par les points $B$ et $C$ et dont le centre $O$ se trouve sur la bissectrice de l'angle $\widehat{BAC}$. Soit $\Gamma_2$ un cercle passant par les points $O$ et $A$. On note $P$ et $Q$ les points d'intersection des cercles $\Gamma_1$ et $\Gamma_2$. Soit $X$ le point d'intersection des droites $(PQ)$ et $(AO)$. Montrer que le point $X$ appartient au segment $[BC]$.
 \end{exo}
@@ -21,16 +24,12 @@ pour tous réels $x$ et $y$.
 \end{exo}
 
 
-\section{Solutions}
-\setcounter{exo}{0}
+\soustitre{Corrigé}
 
-\begin{exo}
-Soit $ABC$ un triangle, $\Gamma_1$ un cercle passant par $B$ et $C$ et dont le centre $O$ se trouve sur la bissectrice de $\widehat{BAC}$. Soit $\Gamma_2$ un cercle passant par $O$ et $A$ qui coupe $\Gamma_1$ en $P$ et $Q$. Soit $X$ le point d'intersection des droites $(PQ)$ et $(AO)$. Montrer que $X$ appartient à $[BC]$. 
-\end{exo}
+
 \begin{sol}
 \begin{center}
-\begin{tikzpicture}
-[scale=1]
+\begin{tikzpicture}[scale=1]
 \tkzInit[ymin=-5,ymax=7,xmin=-4,xmax=4]
 \tkzClip 
 
@@ -77,13 +76,6 @@ On dispose désormais de trois cercles, dont les axes radicaux sont les droites 
 \end{sol}
 
 
-\begin{exo}
-Soit $P$ un polynôme à coefficients entiers. On suppose qu'il existe quatre entiers $a,b,c$ et $d$ distincts tels que 
-
-\[P(a)=P(b)=P(c)=P(d)=4\]
-
-Montrer qu'il n'existe par d'entier $e$ tel que $P(e)=7$. 
-\end{exo}
 \begin{sol}
 Tout d'abord, l'hypothèse se traduit par le fait que les entiers $a,b,c$ et $d$ sont racines distinctes du polynôme $P(X)-4$. On peut donc factoriser $P$ : on dispose d'un polynôme $Q$ à coefficients entiers tel que 
 
@@ -97,10 +89,6 @@ $$3=(e-a)(e-b)(e-c)(e-d)Q(e)$$
 Comme tous les termes du membre de droite de l'égalité sont des entiers, les nombres $e-a,e-b,e-c$ et $e-d$ sont des diviseurs de $3$. Comme les entiers $a,b,c$ et $d$ sont distincts, les entiers $e-a,e-b,e-c$ et $e-d$ sont également des diviseurs distincts de $3$. Les seuls diviseurs entiers de $3$ étant $-3,-1,1$ et $3$, on a forcément $\{e-a,e-b,e-c,e-d\}=\{-3,-1,1,3\}$. Mais comme $(e-a)(e-b)(e-c)(e-d)$ divise $3$ et vaut $9$, et on obtient bien une contradiction.
 \end{sol}
 
-
-\begin{exo}
-Soit $ABC$ un triangles et soient $P$ et $Q$ des points respectivement sur les segments $[AB]$ et $[AC]$ tels que $BP=CQ$. Les droites $(BQ)$ et $(CP)$ se coupent au point $R$. Les cercles circonscrits aux triangles $BPR$ et $CQR$ se recoupent au point $S$. Montrer que le point $S$ appartient à la bissectrice de l'angle $\widehat{BAC}$. 
-\end{exo}
 
 \begin{sol}
 \begin{center}
@@ -157,14 +145,6 @@ $$\widehat{QSB}=\widehat{QSR}+\widehat{RSB}=\widehat{RCQ}+\widehat{RPA}=180^\cir
 donc les points $A,B, S$ et $Q$ sont cocycliques. Le point $S$ est alors le pôle Sud du sommet $A$ dans le triangle $AQB$, le point $S$ appartient donc à la bissectrice de l'angle $\widehat{BAC}$. 
 \end{sol}
 
-
-\begin{exo}
-Déterminer toutes les fonctions $f : \R \rightarrow \R$ qui vérifient l'équation :
-
-\[f(x^2+xy+f(y^2)=xf(y)+x^2+f(y^2)\]
-
-pour tous réels $x$ et $y$. 
-\end{exo}
 
 \begin{sol}
 En remplaçant $x$ par $0$, on trouve $f(f(y^2))=f(y^2)$ pour tout $y$ réel. Puis, en remplaçant $x$ par $-y$, on trouve 

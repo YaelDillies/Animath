@@ -80,7 +80,7 @@ Trouver toutes les fonctions $f : \R\rightarrow \R$ vérifiant pour tout $x,y\in
 $$f(f(x)+y)+f(x+f(y))=2f(xf(y))$$
 \end{exo}
 
-%On remarque que le membre de gauche est symétrique, donc on peut échanger $x$ et $y$ pour obtenir $f(xf(y))=f(yf(x))$. En posant $y=0$ dans cette équation, on a $f(xf(0))=f(0)$. Si $f(0)\neq 0$, alors $f$ est constante égale à $f(0)$. Sinon, on a $f(0)=0$.
+%On remarque que le membre de gauche est symétrique, donc on peut échanger $x$ et $y$ pour obtenir $f(xf(y))=f(yf(x))$. En posant $y=0$ dans cette équation, on a $f(xf(0))=f(0)$. Si $f(0)\ne 0$, alors $f$ est constante égale à $f(0)$. Sinon, on a $f(0)=0$.
 
 %On pose $y=0$ dans l'équation initiale, ce qui donne $f(f(x))=-f(x)$. En évaluant $f(f(f(x)))$ de deux manières différentes, on trouve alors l'égalité $f(-f(x))=-f(f(x))=f(x)$ d'après ce qui précède.
 
@@ -127,7 +127,7 @@ $$f(x)f(y)=2f(x+yf(x))$$
 %$$f(g(x)y + f(x)) = (y+2015)f(x)$$
 %\begin{enumerate}
 %    \item Montrer que $f(x)=2015g(x)$ pour tout $x>0$.
-%    \item Trouver un exemple de solution vérifiant $f(x)\geqslant 1$ pour tout $x>0$.
+%    \item Trouver un exemple de solution vérifiant $f(x)\ge 1$ pour tout $x>0$.
 %\end{enumerate}
 
 %\end{exo}
@@ -136,7 +136,7 @@ $$f(x)f(y)=2f(x+yf(x))$$
 \subsubsection{Solutions}
 
 \begin{sol}
-On remarque que l'on a $f(f(x)+x+y)$ d'un côté et $f(x+y)$ de l'autre, donc on aimerait trouver un $x$ pour lequel $f(x)=0$. On cherche donc naturellement des valeurs de $x$ et $y$ pour lesquelles $f(x+y)+yf(y)=0$. C'est le cas pour $x=0$ et $y=-1$, cela donne précisément $f(f(0)-1)=0$. On choisit donc ensuite $x=f(0)-1$ pour obtenir $yf(y)=0$ pour tout $y$, donc $f$ est la fonction nulle sur $\mathbb R^*$. Reste à montrer que $f(0)=0$, ce que l'on fait par l'absurde, en supposant $f(0)=a\neq 0$ et en prenant $x=0$ et $y=-a$, ce qui donne $f(0)=f(-a)-af(a)$, ce qui est bien nul puisque $f$ est nulle en $a$ et en $-a$. Finalement, la fonction nulle est la seule solution possible, et on vérifie réciproquement qu'elle convient bien.
+On remarque que l'on a $f(f(x)+x+y)$ d'un côté et $f(x+y)$ de l'autre, donc on aimerait trouver un $x$ pour lequel $f(x)=0$. On cherche donc naturellement des valeurs de $x$ et $y$ pour lesquelles $f(x+y)+yf(y)=0$. C'est le cas pour $x=0$ et $y=-1$, cela donne précisément $f(f(0)-1)=0$. On choisit donc ensuite $x=f(0)-1$ pour obtenir $yf(y)=0$ pour tout $y$, donc $f$ est la fonction nulle sur $\R^*$. Reste à montrer que $f(0)=0$, ce que l'on fait par l'absurde, en supposant $f(0)=a\ne 0$ et en prenant $x=0$ et $y=-a$, ce qui donne $f(0)=f(-a)-af(a)$, ce qui est bien nul puisque $f$ est nulle en $a$ et en $-a$. Finalement, la fonction nulle est la seule solution possible, et on vérifie réciproquement qu'elle convient bien.
 \end{sol}
 
 
@@ -184,7 +184,7 @@ De plus on a $f(1)+f(-1)\ge 0$ d'après l'inégalité de départ, contradiction 
 
 
 \begin{sol}
-On remarque que le membre de gauche est symétrique, donc on peut échanger $x$ et $y$ pour obtenir $f(xf(y))=f(yf(x))$. En posant $y=0$ dans cette équation, on a $f(xf(0))=f(0)$. Si $f(0)\neq 0$, alors $f$ est constante égale à $f(0)$. On suppose donc $f$ non constante et on a $f(0)=0$.
+On remarque que le membre de gauche est symétrique, donc on peut échanger $x$ et $y$ pour obtenir $f(xf(y))=f(yf(x))$. En posant $y=0$ dans cette équation, on a $f(xf(0))=f(0)$. Si $f(0)\ne 0$, alors $f$ est constante égale à $f(0)$. On suppose donc $f$ non constante et on a $f(0)=0$.
 
 On pose $y=0$ dans l'équation initiale, ce qui donne $f(f(x))=-f(x)$. En évaluant $f(f(f(x)))$ de deux manières différentes, on trouve alors l'égalité $f(-f(x))=-f(f(x))=f(x)$ d'après ce qui précède.
 

@@ -1,9 +1,10 @@
-\subsubsection{Sujet}
+\soustitre{Sujet}
 
 \begin{exo}
-Montrez que, pour toute paire d'entiers strictement positifs $(a, b)$ premiers entre eux, il existe deux entiers $m, n \geq 1$ tels que~:
+Montrez que, pour toute paire d'entiers strictement positifs $(a, b)$ premiers entre eux, il existe deux entiers $m, n \ge 1$ tels que~:
 $$a^m + b^n \equiv 1 \; [ab]$$
 \end{exo}
+
 
 \begin{exo}
 On se donne une grille de taille $m\times n$ remplie avec $mn$ nombres réels non-nuls. Aurélien peut changer les signes de tous les nombres de n'importe quelle ligne ou de n'importe quelle colonne autant de fois qu'il le souhaite. Montrez qu'Aurélien peut faire en sorte que les sommes de chaque ligne et de chaque colonne soient positive.
@@ -11,7 +12,7 @@ On se donne une grille de taille $m\times n$ remplie avec $mn$ nombres réels no
 
 
 \begin{exo}
-Soit $k \geq 1$ un entier qui divise $80$.
+Soit $k \ge 1$ un entier qui divise $80$.
 Dans un village de $81$ dinosaures, chaque dinosaure a un type de relation particulier avec chaque autre dinosaure (amour, amitié, fraternité, parenté, \dots). Il y a exactement $k$ types de relations différentes.
 Ces types de relation sont réciproques~: si un dinosaure (nommons-le Baptiste) est en relation d'amitié avec un autre dinosaure (nommons-le Tristan), alors Tristan est en relation d'amitié avec Baptiste. Les scientifiques ont découvert que, pour chaque type $X$ de relation, chaque dinosaure avait une relation de type $X$ avec exactement $\frac{80}{k}$ autres dinosaures.
 Trois dinosaures forment un \textbf{triplet instable} si les trois types de relations entre eux sont tous différents~: ces triplets ont tendance à se battre entre eux.
@@ -24,10 +25,11 @@ Déterminez tous les triplets d'entiers naturels $(m, n, k)$ tels que $3^n + 4^m
 \end{exo}
 
 
-\subsubsection{Corrigé}
+\soustitre{Corrigé}
+
 
 \begin{sol}
-Par le théorème des restes chinois, il suffit de trouver $m, n \geq 1$ tels que~:
+Par le théorème des restes chinois, il suffit de trouver $m, n \ge 1$ tels que~:
 \begin{align*}
     b^n &\equiv 1 \; [a] \\
     a^m &\equiv 1 \; [b]
@@ -44,17 +46,17 @@ Si la somme des nombres d'une rangée (ligne ou colonne) est strictement négati
 \begin{sol}
 Soit $n = 81$ le nombre de dinosaures.
 Soit $Q$ le nombre de triplets de dinosaures distincts $(A, B, C)$ tels que le type de relation entre $A$ et $B$ soit différent du type de relation entre $B$ et $C$.
-Soit $T = 69120$ le nombre de triplets instables. Chaque triplet instable donne $6$ triplets, d'où $Q \geq 6T$.
+Soit $T = 69120$ le nombre de triplets instables. Chaque triplet instable donne $6$ triplets, d'où $Q \ge 6T$.
 Si l'on fixe le dinosaure $B$, il y a $(n - 1)^2 \left (1 - \frac{1}{k}\right )$ manières de le compléter en un triplet valide.
 Ainsi~:
 $$Q = n(n - 1)^2 \left (1 - \frac{1}{k}\right )$$
 D'où~:
 \begin{align*}
-    n(n - 1)^2 \left (1 - \frac{1}{k}\right ) &\geq 6T \\
-    1 - \frac{6T}{n(n - 1)^2} &\geq \frac{1}{k} \\
-    \frac{1}{1 - \frac{6T}{n(n - 1)^2}} &\leq k \\
-    \frac{1}{1 - \frac{6\times 69120}{81\times80^2}} &\leq k \\
-    5 &\leq k
+    n(n - 1)^2 \left (1 - \frac{1}{k}\right ) &\ge 6T \\
+    1 - \frac{6T}{n(n - 1)^2} &\ge \frac{1}{k} \\
+    \frac{1}{1 - \frac{6T}{n(n - 1)^2}} &\le k \\
+    \frac{1}{1 - \frac{6\cdot 69120}{81\cdot80^2}} &\le k \\
+    5 &\le k
 \end{align*}
 \end{sol}
 

@@ -6,7 +6,7 @@ Soient $n$ tiroirs et $n + 1$ chaussettes rangées dans ces tiroirs. Il existe a
 Plus généralement, si $n$ éléments doivent être rangés dans $k$ tiroirs, alors il existe au moins un tiroir qui contient au moins $\lceil \frac{n}{k}\rceil$ éléments.
 \end{thm}
 
-\textit{Note : $\lceil x \rceil$ désigne la partie entière supérieure, ie l'unique entier tel que $x\leq \lceil x \rceil< x +1$.}
+\textit{Note : $\lceil x \rceil$ désigne la partie entière supérieure, ie l'unique entier tel que $x\le \lceil x \rceil< x +1$.}
 \newline
 
 \begin{ex}
@@ -41,7 +41,7 @@ Chaque point du plan est colorié soit en rouge, soit en vert, soit en bleu. Mon
 \end{exo}
 
 \begin{exo}
-Sur une table rectangulaire de dimension $2m \times 1m$ sont réparties 500 miettes de pain. Prouver que l'on peut trouver trois miettes qui déterminent un triangle d'aire inférieure à $50cm^2$.
+Sur une table rectangulaire de dimension $2m \cdot 1m$ sont réparties 500 miettes de pain. Prouver que l'on peut trouver trois miettes qui déterminent un triangle d'aire inférieure à $50cm^2$.
 \end{exo}
 
 \begin{exo}
@@ -94,7 +94,7 @@ Lorsqu'on fait la division euclidienne d'un entier par $2021$, le reste sera com
 
 
 \begin{sol}
-Traçons le rectangle plein à coordonnées entières de taille $4 \times 82$ dont le sommet en bas à gauche est $(0, \, 0)$. Il y a $3^4 = 81$ façons de colorier une colonne de 4 points. Par principe des tiroirs, parmi les 82 colonnes, il en existe 2 identiques. Or, sur ces deux colonnes, parmi les 4 points, deux sont de la même couleur. Il suffit alors de sélectionner ces quatre sommets et de tracer le rectangle adéquat.
+Traçons le rectangle plein à coordonnées entières de taille $4 \cdot 82$ dont le sommet en bas à gauche est $(0, \, 0)$. Il y a $3^4 = 81$ façons de colorier une colonne de 4 points. Par principe des tiroirs, parmi les 82 colonnes, il en existe 2 identiques. Or, sur ces deux colonnes, parmi les 4 points, deux sont de la même couleur. Il suffit alors de sélectionner ces quatre sommets et de tracer le rectangle adéquat.
 \end{sol}
 
 
@@ -116,22 +116,23 @@ Pour la première question, il s'agit d'une simple application du principe des t
 La seconde question se résout de la même façon : commençons par choisir $n\in\N$ tel que $\frac{1}{2^n}<\varepsilon$. Prenons pour tiroirs les ensembles $\left[0,\frac1{2^n}\right]$,\dots,$\left[\frac{k}{2^n},\frac{k+1}{2^n}\right]$,\dots,$\left[\frac{2^n-1}{2^n},1\right]$. Par principe des tiroirs infinis, l'un de ces tiroirs contient une infinité d'éléments, et notons $\alpha$ son milieu. Cet intervalle est alors inclus dans $[\alpha-\varepsilon,\alpha+\varepsilon]$, ce qui achève la démonstration.
 \end{sol}
 
+
 \begin{sol}
 Soient $a$, $b$, $c$, $d$, $e$ des entiers consécutifs tels que $abcde$ soit un carré, et $p$ un nombre premier plus grand ou égal à 5. Si l’un des nombres est multiple de $p$, alors aucun des autres nombres ne l’est, donc ce nombre est multiple de $p^2$.
 \smallskip
 \newline
 Chacun de ces nombres appartient à l’une de ces catégories, selon le nombre de facteurs 2 et 3 :
-\newline
-1. un carré ;\\
-2. deux fois un carré ;\\
-3. trois fois un carré ;\\
-4. six fois un carré.
-\smallskip
-\newline
-Par le principe des tiroirs, une des catégories contient deux nombres. Si ces deux nombres sont dans les catégories 2, 3 ou 4, alors leur différence vaut au moins 6.
-\newline
-Si ces deux nombres sont des carrés, alors ce sont 1 et 4, ce qui ne laisse que $1 \times 2 \times 3 \times 4 \times 5 = 120$, qui n’est pas un carré.
+\begin{enumerate}
+\item un carré
+\item deux fois un carré
+\item trois fois un carré
+\item six fois un carré.
+\end{enumerate}
+Par le principe des tiroirs, une des catégories contient deux nombres. Si ces deux nombres sont dans les catégories 2, 3 ou 4, alors leur différence vaut au moins $6$.
+
+Si ces deux nombres sont des carrés, alors ce sont $1$ et $4$, ce qui ne laisse que $1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 = 120$, qui n’est pas un carré.
 \end{sol}
+
 
 \begin{sol}
 Appelons $i$-ième croix la réunion de la $i$-ième ligne et de la $i$-ième colonne. Soit $a$ un entier compris entre 1 et $2n-1$. Si cet entier apparaît à la position $(i, j)$, alors il apparaît à la fois dans la $i$-ième croix et dans la $j$-ième croix. Comme
@@ -176,11 +177,11 @@ Montrer que l'ensemble des réels appartenant à l'intervalle $]0,1]$ n'admet pa
 On rappelle qu'un ensemble $A$ admet $m$ pour minimum si :
 \begin{itemize}
 \item $m\in A$
-\item $\forall~ x\in A, ~~ x\geq m$.
+\item $\forall~ x\in A, ~~ x\ge m$.
 \end{itemize}
 \bigskip
 \noindent\textit{Démonstration :} Supposons par l'absurde que $m$ soit le minimum de $]0,1]$. \newline
-Notons que $1\geq m>0$ donc $1>\frac12\geq\frac{m}{2}>0$, et $\frac{m}{2}\in]0,1]$. Or $m>\frac{m}{2}$, ce qui contredit la minimalité de $m$. Donc $]0,1]$ n'admet par de minimum.
+Notons que $1\ge m>0$ donc $1>\frac12\ge\frac{m}{2}>0$, et $\frac{m}{2}\in]0,1]$. Or $m>\frac{m}{2}$, ce qui contredit la minimalité de $m$. Donc $]0,1]$ n'admet par de minimum.
 \end{ex}
 
 

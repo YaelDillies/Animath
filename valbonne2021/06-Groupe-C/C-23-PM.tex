@@ -25,6 +25,7 @@ Pour $f : X\to Y$ on dit que :
     \item Ne rien effacer sur ses brouillons et penser à mettre en valeur ses trouvailles importantes.
 \end{itemize}
 
+
 \begin{exo}
 Déterminer dans chaque cas si $f:\R\to\R$ est injective, surjective et bijective :
 \begin{itemize}
@@ -34,58 +35,84 @@ Déterminer dans chaque cas si $f:\R\to\R$ est injective, surjective et bijectiv
     \item $f(f(x))=\sin x$
     \item $f(x+y^2)=f(x)f(y)+xf(y)-y^3f(x)$
 \end{itemize}
-
 \end{exo}
+
+
 %\begin{exo}
 %Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ :
 %$$f(x)f(y)+f(x+y)=xy$$
 %\end{exo}
+
+
 \begin{exo}
 Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ :
 $$f(2f(x)+f(y))=2x+f(y)$$
 \end{exo}
+
+
 \begin{exo}
 Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ :
 $$(y+1)f(x+y)-f(x)f(x+y^2)=yf(x)$$
 \end{exo}
+
+
 \begin{exo}
 Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ :
 $$f(x)f(y)=f(x-y)$$
 \end{exo}
 
+
 \begin{exo}
 Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ :
 $$f(x^{2022}+y)=f(x^{1747}+2y)+f(x^{42})$$
 \end{exo}
+
+
 \begin{exo}
 Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ :
 $$f(f(x)^2+f(y))=xf(x)+y$$
 \end{exo}
+
+
 \begin{exo}
 Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ :
 $$(x-y)f(x+y)-(x+y)f(x-y)=4xy(x^2-y^2)$$
 \end{exo}
+
+
 \begin{exo}
 Trouver toutes les fonctions $f:\N\to\N$ telles que pour tous naturels $n$ et $m$ :
 $$f(3n+2m)=f(n)f(m)$$
 \end{exo}
+
+
 \begin{exo}
 Trouver toutes les fonctions $f:\N\to\N$ telles que pour tous naturels $a$ et $b$ :
 $$f(f(a)+f(b))=a+b$$
 \end{exo}
+
+
 \begin{exo}
 Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ :
 $$f(x^2-y^2)=xf(x)-yf(y)$$
 \end{exo}
+
+
 \begin{exo}
 Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ différent de 1 :
 $$f(x)+f\left(\frac1{1-x}\right)=x$$
 \end{exo}
+
+
 \begin{exo}
 Trouver toutes les fonctions $f:\R\to\R$ telles que pour tous réels $x$ et $y$ :
 $$f(x^2+f(y))=y+f(x)^2$$
 \end{exo}
-\subsubsection{Corrections}
+
+
+\subsubsection{Solutions}
+
+
 \begin{sol}[][1]
 \begin{itemize}
     \item Soient $a$ et $b$ deux réels tels que $f(a)=f(b)$, on a $f(f(a)-1)=f(f(b)-1)$ donc $a+1=b+1$, dès lors $f$ est injective.\\
@@ -101,6 +128,8 @@ $$f(x^2+f(y))=y+f(x)^2$$
     On considère $y=0$, on a $f(x)=0$ donc $f$ n'est ni surjective ni injective.
 \end{itemize}
 \end{sol}
+
+
 %\begin{sol}[][2]
 %On considère $y=0$ : on a $f(x)(f(0)+1)=0$.\\
 %Ainsi soit $f=0$ soit $f(0)=-1$. Si $f=0$, on a pour tous $x$ et $y$ : $0=xy$ donc c'est impossible.\\
@@ -108,8 +137,9 @@ $$f(x^2+f(y))=y+f(x)^2$$
 %On prend $x=-y=1$, on a $f(1)f(-1)=0$, donc $f(1)=0$ ou $f(-1)=0$.\\
 %Si $f(1)=0$, avec $y=1$ : $f(x+1)=x$ donc $f:x\longmapsto x-1$, qui convient.\\
 %Sinon, $f(-1)=0$, avec $y=-1$ : $f(x-1)=-x$ donc $f :\longmapsto -x-1$, qui convient aussi.
-
 %\end{sol}
+
+
 \begin{sol}[][2]
 On prend $y=0$, on a $f(2f(x)+f(0))=2x+f(0)$. Soit $a$ et $b$ deux réels tels que $f(a)=f(b)$, on a alors $f(2f(a)+f(0))=f(2f(b)+f(0))$ d'où $2a+f(0)=2b+f(0)$ et $a=b$, donc $f$ est injective.\\
 On considère $x=0$, on a alors $f(2f(0)+f(y))=f(y)$, par injectivité, $f(y)=y-2f(0)$, en particulier $f(0)=-f(0)$ donc $f(0)=0$ et $f$ est l'indentité. Elle convient c'est donc l'unique solution.
@@ -134,7 +164,6 @@ On considère $x=0$, on a alors $f(f(0)^2+f(y))=y$ donc $f$ est bijective.\\
 Soit $a$ l'antécédant de $0$, on considère $x=a$, on a $f(f(y))=y$, $f$ est involutive !\\
 En évaluant en $f(x)$ au lieu de $x$ l'équation, le membre de droite ne change pas mais le membre de gauche si. Ainsi : $$f(f(x)^2+f(y))=f(x^2+f(y))$$ par injectivité : $x^2=f(x)^2$. Cela signifie que pour tout $x$, on a $f(x)=x$ ou $f(x)=-x$. (Attention cela ne vaut pas dire que $f:x\longmapsto x$ ou $f:x\longmapsto -x$)\\
 On suppose qu'il existe $b$ et $c$ deux réels tels que $f(b)=b$ et $f(c)=-c$, on a alors en prenant $x=b$ et $y=c$ : $$f(b^2-c)=b^2+c$$ on a alors $b^2-c=b^2+c$ ou $b^2-c=-b^2-c$, dans les deux cas, $b$ ou $c$ est nul. Ainsi on a $f:x\longmapsto x$ ou $f:x\longmapsto -x$. Ces fonctions conviennent à l'énoncé, ce sont donc les solutions.
-
 \end{sol}
 
 \begin{sol}[][7]
@@ -143,8 +172,8 @@ L'expression semble au premier abord compliquée. On peut cependant remarquer la
 \begin{sol}[][8]
 Pour $n=m=0$ on a $f(0)=f(0)^2$ donc $f(0)=0$ ou $f(0)=1$\\
 On suppose $f(0)=0$, avec $n=0$, $f(2m)=0$ et avec $m=0$, $f(3n)=0$. Puis avec $n=3$, $f(2m+9)=0$, ainsi $f(n)=0$ pour $n$ différent de $1$,$3$,$5$ et $7$. On prend ensuite $n=m$ égal à $3$, $5$ et $7$ pour avoir $f(n)^2=f(5n)=0$ d'où $f(n)=0$ pour $n\in\{3,5,7\}$. De même, $f(1)^2=f(5)=0$ et $f=0$. Cette fonction convient.\\
-On suppose ensuite $f(0)=1$. On a $f(3 \times 4) = f(4)f(0) = f(2 \times 2) = f(2)f(0) = f(1)f(0) = f(1)$, et $f(3 \times2 +
-2 \times 3) = f(2)f(3) = f(1)^2$ Donc $f(1) = f(1)^2$. Donc $f(1) = 1$ ou $f(1) = 0$.\\
+On suppose ensuite $f(0)=1$. On a $f(3 \cdot 4) = f(4)f(0) = f(2 \cdot 2) = f(2)f(0) = f(1)f(0) = f(1)$, et $f(3 \cdot2 +
+2 \cdot 3) = f(2)f(3) = f(1)^2$ Donc $f(1) = f(1)^2$. Donc $f(1) = 1$ ou $f(1) = 0$.\\
 \begin{itemize}
     \item Si $f(1)=0$. On a $f(2)=0$ donc $f(2n+3)=f(n)f(1)=0$ et $f(2n+6)=f(n)f(2)=0$. Ainsi $f(n)=0$ pour $n$ différent de $4$ (et de $0$). Enfin $f(20)=f(4)^2=0$ donc $f(n)=0$ pour $n\ne 0$. Cette fonction convient également.
     \item Si $f(1)=1$, $f(2n)=f(n)$ et $f(2n+3)=f(n)$. Ainsi pour $n>1$, il existe $m<n$ tel que $f(m)=f(n)$ ainsi par récurrence forte $f(n)=f(1)=1$. Cette fonction vérifie aussi l'énoncé.

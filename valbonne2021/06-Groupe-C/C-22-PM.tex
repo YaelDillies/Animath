@@ -1,47 +1,76 @@
-Le cours était essentiellement issu du merveilleux cours d'Igor Kortchemski sur les polynômes, disponible ici :\url{https://maths-olympiques.fr/wp-content/uploads/2017/09/polynomes.pdf}. On a fait les parties 2.5 et 3.1, et commencé la partie 7.1 à titre d'introduction à l'arithmétique des polynômes.
+Le cours était essentiellement issu du merveilleux cours d'Igor Kortchemski sur les polynômes, disponible ici :\url{https://maths-olympiques.fr/wp-content/uploads/2017/09/polynomes.pdf}. On a traité les parties 2.5 et 3.1, et commencé la partie 7.1 à titre d'introduction à l'arithmétique des polynômes.
 
-%Exercices
-\textbf{Viète}\\
+
+\subsubsection{Exercices}
+
+
 On notera par la suite $s_k$ le $k$-ième polynôme symétrique élémentaire.
+
+
 \begin{exo}
 Déterminer les réels non nuls $x$ tels que $x+\frac1x=2.$
 \end{exo}
+
+
 \begin{exo}
 Déterminer les réels $x,y$ tels que $x+y=1$ et $x^3+y^3=19$.
 \end{exo}
+
+
 \begin{exo}
 Déterminer tous les réels $x,y,z$ vérifiant $x+y+z=2,x^2+y^2+z^2=6$ et $x^3+y^3+z^3=8.$
 \end{exo}
+
+
 \begin{exo}
 Soient $a,b,c$ les trois racines de $X^3-3X+1$. Calculer $a^4+b^4+c^4$.
 \end{exo}
+
+
 \begin{exo}
 Déterminer les triplets de réels $(a,b,c)$ tels que $$a+b+c=\frac1a+\frac1b+\frac1c\text{ et }a^2+b^2+c^2= \frac1{a^2}+\frac1{b^2}+\frac1{c^2}.$$
 \end{exo}
+
+
 \begin{exo}
 Soient $a,b,c,d$ des réels tels que :
-$$abc-d=1\quad bcd-a=2,\quad cda-b=3,\quad dab-c=-6$$Montrer que $a+b+c+d\ne 0.$
+$$abc-d=1\quad bcd-a=2,\quad cda-b=3,\quad dab-c=-6$$Montrer que $a+b+c+d\ne 0$.
 \end{exo}
+
+
 \begin{exo}
-Soient $a_1,\ldots,a_n$ deux-à-deux distincts et $b_1,\ldots,b_n$ des réels.\\Quels sont les polynômes tels que $P(a_i)=b_i$ pour tout $i$ ?
+Soient $a_1,\dots,a_n$ deux-à-deux distincts et $b_1,\ldots,b_n$ des réels.\\
+Quels sont les polynômes tels que $P(a_i)=b_i$ pour tout $i$ ?
 \end{exo}
+
+
 \begin{exo}
 Quels sont les polynômes tels que pour tout rationnel $q,\:P(q)\in\mathbb Q$ ?
 \end{exo}
-%Solutions
+
+
+\subsubsection{Solutions}
+
+
 \begin{sol}
 On pourrait juste multiplier par $x$ (non nul) pour obtenir $(x-1)^2=0$ et puis voilà, mais ce n'est pas drôle, il faut utiliser Viète !\\
 Prenons un polynôme qui a pour racines $x$ et $\frac 1x.$ Leur somme fait $2$ et leur produit fait $1$, donc ils sont racines de $X^2-2X+1,$ donc $x=1.$
 \end{sol}
+
+
 \begin{sol}
 On a $s_1^3=x^3+3x^2y+3xy^2+y^3=x^3+y^3+3s_1s_2,$ donc $x^3+y^3=s_1^3-3s_1s_2$. Ainsi, $s_1=1$ et $s_2=-6$, donc $x$ et $y$ sont racines du polynôme $X^2-X-6,$ qui a $3$ et $-2$ pour racines. Ainsi, $(x,y)=(3,-2)$ ou $(x,y)=(-2,3)$.
 \end{sol}
-\begin{sol}On a le système suivant :
-\[\begin{cases}
+
+
+\begin{sol}
+On a le système suivant :
+$$\begin{cases}
 s_1=2\\
 s_1^2-2s_2=6\\
 s_1^3-3s_1s_2+3s_3=8
-\end{cases}\]qu'il n'est pas dur de résoudre par
+\end{cases}$$
+qu'il n'est pas dur de résoudre par
 $$\begin{cases}
 s_1=2\\
 s_2=-1\\
@@ -49,21 +78,32 @@ s_3=-2
 \end{cases}$$
 $x,y,z$ sont donc racines du polynôme $X^3-2x^2-X+2=(X^2-1)(X-2)=(X-1)(X+1)(X-2),$ donc $x,y,z$ sont une permutation de $-1,1,2$.
 \end{sol}
+
+
 \begin{sol}
-On pourrait essayer d'exprimer bêtement $a^4+b^4+c^4$ en fonction des polynômes symétriques élémentaires, mais développer $s_1^4$ ne donne quand même vraiment pas envie…\\À la place, on peut utiliser la définition de $a,b,c,$ pour dire que $a^3-3a+1=0.$ Ainsi, comme $X^4=X(X^3-3X+1)+3X^2-X,$ on a $a^4=3a^2-a.$ Ainsi, $a^4+b^4+c^4=3a^2+3b^2+3c^2-a-b-c=3(s_1^2-2s_2)-s_1=3(0^2-2\times -3)-0=18.$
+On pourrait essayer d'exprimer bêtement $a^4+b^4+c^4$ en fonction des polynômes symétriques élémentaires, mais développer $s_1^4$ ne donne quand même vraiment pas envie…\\
+À la place, on peut utiliser la définition de $a,b,c,$ pour dire que $a^3-3a+1=0$. Ainsi, comme $X^4=X(X^3-3X+1)+3X^2-X,$ on a $a^4=3a^2-a$. Donc, $$a^4+b^4+c^4=3a^2+3b^2+3c^2-a-b-c=3(s_1^2-2s_2)-s_1=3(0^2-2\cdot -3)-0=18$$
 \end{sol}
+
+
 \begin{sol}
-En multipliant la première équation par $s_3$ et la deuxième par $s_3^2,$ on obtient $s_1s_3=s_2$ et $s_3^2(s_1^2-2s_2)=s_2^2-2s_3s_1=s_2^2-2s_2,$ soit $s_2^2-2s_2s_3^2=s_2^2-2s_2,$ et $s_2(s_3^2-1)=0.$ Si $s_2=0,s_3s_1=0.$ Si $s_3=0,$ l'un des nombres est nul, et si $s_1=0$, $a,b,c$ sont racines du polynôme $X^3-s_3$ qui n'admet qu'une seule racine réelle (même avec multiplicités). Ainsi, $s_3^2=1.$\\$\bullet$ Si $s_3=1,$ alors $s_1=s_2.$ $a,b,c$ sont donc racines du polynôme $X^3-kX^2+kX-1=(X-1)(X^2-(k-1)X+1).$ Les solutions dans ce cas sont donc de la forme $(1,\frac{k-1+\sqrt{(k-1)^2-4}}2,\frac{k-1-\sqrt{(k-1)^2-4}}2),|k-1|\geqslant 2,$ ainsi que ses permutations.\\
-$\bullet$ Si $s_3=-1,$ on raisonne de la même manière et on obtient les solutions $(-1,\frac{k+1+\sqrt{(k+1)^2-4}}2,\frac{k+1-\sqrt{(k+1)^2-4}}2) ,|k+1|\geqslant 2$ à permutations près.
+En multipliant la première équation par $s_3$ et la deuxième par $s_3^2,$ on obtient $s_1s_3=s_2$ et $s_3^2(s_1^2-2s_2)=s_2^2-2s_3s_1=s_2^2-2s_2,$ soit $s_2^2-2s_2s_3^2=s_2^2-2s_2,$ et $s_2(s_3^2-1)=0.$ Si $s_2=0,s_3s_1=0.$ Si $s_3=0,$ l'un des nombres est nul, et si $s_1=0$, $a,b,c$ sont racines du polynôme $X^3-s_3$ qui n'admet qu'une seule racine réelle (même avec multiplicités). Ainsi, $s_3^2=1.$\\$\bullet$ Si $s_3=1,$ alors $s_1=s_2.$ $a,b,c$ sont donc racines du polynôme $X^3-kX^2+kX-1=(X-1)(X^2-(k-1)X+1).$ Les solutions dans ce cas sont donc de la forme $(1,\frac{k-1+\sqrt{(k-1)^2-4}}2,\frac{k-1-\sqrt{(k-1)^2-4}}2),|k-1|\ge 2,$ ainsi que ses permutations.\\
+$\bullet$ Si $s_3=-1,$ on raisonne de la même manière et on obtient les solutions $(-1,\frac{k+1+\sqrt{(k+1)^2-4}}2,\frac{k+1-\sqrt{(k+1)^2-4}}2) ,|k+1|\ge 2$ à permutations près.
 \end{sol}
+
+
 \begin{sol}
 Supposons par l'absurde que $a+b+c+d=0.$ En sommant les quatre relations de l'énoncé, on obtient $s_1=s_3$, donc $s_1=s_3=0.$ Ainsi, $a,b,c,d$ sont les racines d'un polynôme qui s'écrit sous la forme $P(X)=X^4+kX^2+l$. Ainsi, si $a$ est racine, $-a$ l'est également. Si $a,b,c,d$ étaient nuls, aucune des quatre équations de l'énoncé ne tiendrait. Ainsi, il existe une racine non nulle, supposons ici que ce soit $a$, on pourrait raisonner de façon similaire s'il ne s'agissait pas de $a$. Il y a donc une autre racine du polynôme qui est égale à $-a(\ne a)$.\\
 S'il s'agit de $b$, on aurait $-acd-a=2$ et $cda+a=3,$ contradiction. On raisonne d'une manière similaire si $a=-c$ ou $a=-d.$
 \end{sol}
+
+
 \begin{sol}
-Il existe un unique polynôme $P_0$ (le polynôme interpolateur de Lagrange) tel que $P_0(a_i)=b_i$ pour tout $i$ et $\deg(P_0)\leqslant n-1$. Considérons à présent un polynôme $P$ qui vérifie $P(a_i)=b_i$ pour tout $i$. Alors $Q=P-P_0$ vérifie $Q(a_i)=0$ pour tout $i$, il existe donc $R$ tel que $Q=R\prod\limits_i (X-a_i)$, et $P=P_0+R\prod\limits_i (X-a_i)$ avec $R$ un polynôme quelconque. Réciproquement, tout polynôme de cette forme vérifie bien $P(a_i)=b_i$ pour tout $i$.
+Il existe un unique polynôme $P_0$ (le polynôme interpolateur de Lagrange) tel que $P_0(a_i)=b_i$ pour tout $i$ et $\deg(P_0)\le n-1$. Considérons à présent un polynôme $P$ qui vérifie $P(a_i)=b_i$ pour tout $i$. Alors $Q=P-P_0$ vérifie $Q(a_i)=0$ pour tout $i$, il existe donc $R$ tel que $Q=R\prod\limits_i (X-a_i)$, et $P=P_0+R\prod\limits_i (X-a_i)$ avec $R$ un polynôme quelconque. Réciproquement, tout polynôme de cette forme vérifie bien $P(a_i)=b_i$ pour tout $i$.
 \end{sol}
+
+
 \begin{sol}
-Remarquons que si les coefficients d'un polynôme sont tous rationnels, il vérifie cette propriété.\\
-Soit $P$ un polynôme vérifiant cette propriété, et soit $n=\deg(P).$ Alors, $P(0),P(1),P(2),\ldots,P(n)\in\mathbb Q$, et on connaît notre polynôme sur $n+1$ points, $P$ est donc le polynôme interpolateur de $i,P(i),0\leqslant i\leqslant n$, soit : $$P=\sum_{i=0}^nP(i)\frac{\prod\limits_{j\ne i}X-j}{\prod\limits_{j\ne i}i-j}$$et comme tout ici est à coefficients rationnels, $P$ est à coefficients rationnels.
+Remarquons que si les coefficients d'un polynôme sont tous rationnels, il vérifie cette propriété. \\
+Soit $P$ un polynôme vérifiant cette propriété, et soit $n=\deg(P).$ Alors, $P(0),P(1),P(2),\ldots,P(n)\in\mathbb Q$, et on connaît notre polynôme sur $n+1$ points, $P$ est donc le polynôme interpolateur de $i,P(i),0\le i\le n$, soit : $$P=\sum_{i=0}^nP(i)\frac{\prod\limits_{j\ne i}X-j}{\prod\limits_{j\ne i}i-j}$$et comme tout ici est à coefficients rationnels, $P$ est à coefficients rationnels.
 \end{sol}

@@ -1,6 +1,7 @@
 \subsubsection{Rappels sur les points particuliers dans un triangle}
 
-Centre du cercle circonscrit = médiatrices\\
+
+\begin{figure}[H]
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
 \definecolor{zzttqq}{rgb}{0.6,0.2,0.}
 \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
@@ -25,11 +26,11 @@ Centre du cercle circonscrit = médiatrices\\
 \draw[color=uuuuuu] (0.1,2.77) node {$O$};
 \end{scriptsize}
 \end{tikzpicture}
+\caption{Centre du cercle inscrit = Bissectrices}
+\end{figure}
 
 
-Centre du cercle inscrit = Bissectrices\\
-
-
+\begin{figure}[H]
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
 \definecolor{zzttqq}{rgb}{0.6,0.2,0.}
 \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
@@ -55,10 +56,11 @@ Centre du cercle inscrit = Bissectrices\\
 \draw[color=uuuuuu] (-0.26,3.11) node {$I$};
 \end{scriptsize}
 \end{tikzpicture}
+\caption{Centre du cercle inscrit = Bissectrices}
+\end{figure}
 
 
-Centre de gravité = point d'intersection des médianes
-
+\begin{figure}[H]
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
 \definecolor{zzttqq}{rgb}{0.6,0.2,0.}
 \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
@@ -82,18 +84,11 @@ Centre de gravité = point d'intersection des médianes
 \draw[color=uuuuuu] (0.06,3.01) node {$G$};
 \end{scriptsize}
 \end{tikzpicture}
+\caption{Centre de gravité = point d'intersection des médianes}
+\end{figure}
 
 
-
-
-
-Orthocentre = point d'intersection des hauteurs \\
-
-
-
-
-
-
+\begin{figure}[H]
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
 \definecolor{zzttqq}{rgb}{0.6,0.2,0.}
 \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
@@ -117,15 +112,14 @@ Orthocentre = point d'intersection des hauteurs \\
 \draw[color=uuuuuu] (-0.26,3.31) node {$H$};
 \end{scriptsize}
 \end{tikzpicture}
+\caption{Orthocentre = point d'intersection des hauteurs}
+\end{figure}
 
 
 \subsubsection{Éléments de chasse aux angles}
 
-\begin{pro}[Angle au centre]
-On a ici $\alpha = 2\beta$
-\end{pro}
 
-
+\begin{figure}[H]
 \definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
 \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
 \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
@@ -151,11 +145,11 @@ On a ici $\alpha = 2\beta$
 \draw[color=qqwuqq] (1.26,0.83) node {$\beta$};
 \end{scriptsize}
 \end{tikzpicture}
+\caption{$\alpha = 2\beta$}
+\end{figure}
 
-\begin{pro}[Angle inscrit]
-$\beta = \gamma$
-\end{pro}
 
+\begin{figure}[H]
 \definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
 \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
 \definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
@@ -181,10 +175,11 @@ $\beta = \gamma$
 \draw[color=qqwuqq] (1.24,0.11) node {$\gamma$};
 \end{scriptsize}
 \end{tikzpicture}
+\caption{$\beta = \gamma$}
+\end{figure}
 
 
-Dans cette configuration, on a cette fois $\alpha+\beta = 180°$
-
+\begin{figure}[H]
 \definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
 \definecolor{zzttqq}{rgb}{0.6,0.2,0}
 \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
@@ -212,11 +207,11 @@ Dans cette configuration, on a cette fois $\alpha+\beta = 180°$
 \draw[color=qqwuqq] (2.98,-3.55) node {$\beta$};
 \end{scriptsize}
 \end{tikzpicture}
+\caption{Dans cette configuration, on a cette fois $\alpha+\beta = 180^\circ$.}
+\end{figure}[H]
 
 
-
-Enfin, le théorème de la tangente : $\alpha=\beta$
-
+\begin{figure}[H]
 \definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
 \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
@@ -236,35 +231,58 @@ Enfin, le théorème de la tangente : $\alpha=\beta$
 \draw [fill=uuuuuu] (0.035965517617948056,0.8624176369478369) circle (2.0pt);
 \end{scriptsize}
 \end{tikzpicture}
+\caption{Théorème de la tangente : $\alpha = \beta$}
+\end{figure}
 
 
-\begin{exo} Soit $\Gamma_1$ et $\Gamma_2$ deux cercles se coupant en $A$ et $B$ distincts. On note $O$ le centre d $\Gamma_1$. Soit $C$ un point de $\Gamma_1$ distinct de $A$ et $B$, $D$ et $E$ les intersections de $\Gamma_2$ respectivement avec $(AC)$ et $(BC)$ . Montrer que $(OC)$ et $(DE)$ sont perpendiculaires.
+\subsubsection{Exercices}
+
+
+\begin{exo}
+Soit $\Gamma_1$ et $\Gamma_2$ deux cercles se coupant en $A$ et $B$ distincts. On note $O$ le centre d $\Gamma_1$. Soit $C$ un point de $\Gamma_1$ distinct de $A$ et $B$, $D$ et $E$ les intersections de $\Gamma_2$ respectivement avec $(AC)$ et $(BC)$ . Montrer que $(OC)$ et $(DE)$ sont perpendiculaires.
 \end{exo}
 
-\begin{exo} Soit $\Omega_1$ un cercle tangent intérieurement en en second cercle $\Omega_2$. On note $A$ le point de tangence. Soit $P$ un point de $\Omega_2$. On consière les tangentes à $\Omega_1$ passant par $P$ : la première coupe $\Omega_1$ en $X$ et recoupe $\Omega_2$ en $Q$, la seconde coupe $\Omega_1$ en $Y$ et recoupe $\Omega_2$ en $R$. Montrer que $\widehat{QAR} = 2 \cdot \widehat{XAY}$
+
+\begin{exo}
+Soit $\Omega_1$ un cercle tangent intérieurement en en second cercle $\Omega_2$. On note $A$ le point de tangence. Soit $P$ un point de $\Omega_2$. On consière les tangentes à $\Omega_1$ passant par $P$ : la première coupe $\Omega_1$ en $X$ et recoupe $\Omega_2$ en $Q$, la seconde coupe $\Omega_1$ en $Y$ et recoupe $\Omega_2$ en $R$. Montrer que $\widehat{QAR} = 2 \cdot \widehat{XAY}$
 \end{exo}
 
-\begin{exo} Soit $ABCD$ un quadrilatère convexe. On se donne $E, F$ deux points tels que $E$, $B$, $C$, $F$, soient alignés dans cet ordre. On suppose de plus que $\widehat{BAE} = \widehat{CDF}$ et $\widehat{EAF} = \widehat{FDE}$. Montrer que $\widehat{FAC}=\widehat{EDB}$
+
+\begin{exo}
+Soit $ABCD$ un quadrilatère convexe. On se donne $E, F$ deux points tels que $E$, $B$, $C$, $F$, soient alignés dans cet ordre. On suppose de plus que $\widehat{BAE} = \widehat{CDF}$ et $\widehat{EAF} = \widehat{FDE}$. Montrer que $\widehat{FAC}=\widehat{EDB}$
 \end{exo}
 
-\begin{exo} Soit un demi-cercle de diamètre $[AB]$ sur lequl on choisit deux points $C$ et $D$. Soit $S$ l'intersection de $(AC)$ et $(BD)$ et $T$ le pied de la perpendiculaire à $[AB]$ issue de $S$. Montrer que $(ST)$ est la bissectrice de $\widehat{CTD}$.
+
+\begin{exo}
+Soit un demi-cercle de diamètre $[AB]$ sur lequl on choisit deux points $C$ et $D$. Soit $S$ l'intersection de $(AC)$ et $(BD)$ et $T$ le pied de la perpendiculaire à $[AB]$ issue de $S$. Montrer que $(ST)$ est la bissectrice de $\widehat{CTD}$.
 \end{exo}
 
-\begin{exo} On considère deux cercles $\Gamma_1$ et $\Gamma_2$ ayant deux points d'intersection $A$ et $D$. On considère deux droites $d_1$ et $d_2$ pssant respectivement par $A$ et par $B$. Soient $C$ et $E$ les points d'intersection respectifs de $\Gamma_1$ et $\Gamma_2$ avec $d_1$, $D$ et $F$ les points d'intersection respectifs avec $d_2$. Montrer que $(CD)$ et $(EF)$ sont parallèles.
+
+\begin{exo}
+On considère deux cercles $\Gamma_1$ et $\Gamma_2$ ayant deux points d'intersection $A$ et $D$. On considère deux droites $d_1$ et $d_2$ pssant respectivement par $A$ et par $B$. Soient $C$ et $E$ les points d'intersection respectifs de $\Gamma_1$ et $\Gamma_2$ avec $d_1$, $D$ et $F$ les points d'intersection respectifs avec $d_2$. Montrer que $(CD)$ et $(EF)$ sont parallèles.
 \end{exo}
 
-\begin{exo} Soit $ABC$ un triangle, $P$ un point de $[BC]$, $Q$ un point de $[CA]$, $R$ un point de $[AB]$. Les cercles circonscrits à $AQR$ et à $BRP$ ont pour second point d'intersection $X$.
+
+\begin{exo}
+Soit $ABC$ un triangle, $P$ un point de $[BC]$, $Q$ un point de $[CA]$, $R$ un point de $[AB]$. Les cercles circonscrits à $AQR$ et à $BRP$ ont pour second point d'intersection $X$.
 Montrer que $X$ est aussi sur le cercle circonscrit à $CQP$
 \end{exo}
 
-\begin{exo} Soit $\Gamma$ un cercle et $[BC]$ une corde de ce cercle. On note $A$ le milieu de l'arc $BC$. On considère deux cordes de $\Gamma$ passant par $A$, qu'on note $AD$ et $AE$, et $F$ et $G$ les points d'intersection respectifs de ces cordes avec $BC$. Montrer que $D, E, F, G$ sont cocycliques.
+\begin{exo}
+Soit $\Gamma$ un cercle et $[BC]$ une corde de ce cercle. On note $A$ le milieu de l'arc $BC$. On considère deux cordes de $\Gamma$ passant par $A$, qu'on note $AD$ et $AE$, et $F$ et $G$ les points d'intersection respectifs de ces cordes avec $BC$. Montrer que $D, E, F, G$ sont cocycliques.
 \end{exo}
 
-\begin{exo} Soit $ABC$ un triangle. Les bissectrices des angles de sommets $A$ et $B$ rencontrent les côtés $BC$ et $AC$ respectivement en $D$ et $E$. Soit $F$ la projection orthogonale de $C$ sur $BE$ et $G$ la projection orthogonale de $C$ sur $AD$. Montrer que $(FG)$ et $(AB)$ sont parallèles.
+\begin{exo}
+Soit $ABC$ un triangle. Les bissectrices des angles de sommets $A$ et $B$ rencontrent les côtés $BC$ et $AC$ respectivement en $D$ et $E$. Soit $F$ la projection orthogonale de $C$ sur $BE$ et $G$ la projection orthogonale de $C$ sur $AD$. Montrer que $(FG)$ et $(AB)$ sont parallèles.
 \end{exo}
 
-\begin{sol} Attention, il y a deux cas à traiter, selon la position de $C$ par rapport à $(AB)$ ! Raisonner par chasse aux angles dans les deux cas, pour montrer qu'un triangle est rectangle. Il est sinon possible d'introduire la tangente à $\Gamma_1$ passant par $C$.
+\subsubsection{Solutions}
 
+
+\begin{sol}
+Attention, il y a deux cas à traiter, selon la position de $C$ par rapport à $(AB)$ ! Raisonner par chasse aux angles dans les deux cas, pour montrer qu'un triangle est rectangle. Il est sinon possible d'introduire la tangente à $\Gamma_1$ passant par $C$.
+
+\begin{figure}[H]
 \definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
 \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
@@ -300,15 +318,19 @@ Montrer que $X$ est aussi sur le cercle circonscrit à $CQP$
 \draw[color=black] (-9.091737868379138,5.917470165694606) node {$m$};
 \end{scriptsize}
 \end{tikzpicture}
-
+\end{figure}
 \end{sol}
+
 
 \begin{sol}
 On raisonne par chasse aux angles :
 \begin{align*}
-\widehat{QAR} &= 180 - \widehat{XPY} \\ &= 180-(180-2 \cdot \widehat{PXY}) \\ &= 2 \cdot \widehat{XAY}
+\widehat{QAR} &= 180 - \widehat{XPY} \\
+&= 180-(180-2 \cdot \widehat{PXY}) \\
+&= 2 \cdot \widehat{XAY}
 \end{align*}
 
+\begin{figure}[H]
 \definecolor{ffzzqq}{rgb}{1.,0.6,0.}
 \definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
@@ -344,8 +366,9 @@ On raisonne par chasse aux angles :
 \draw[color=uuuuuu] (1.78,-1.83) node {$R$};
 \end{scriptsize}
 \end{tikzpicture}
-
+\end{figure}
 \end{sol}
+
 
 \begin{sol}
 On raisonne par chasse aux angles, en cherchant des points cocycliques. \\
@@ -357,12 +380,14 @@ On conclut enfin en utilisant cette information et en combinant des angles.
 \begin{sol}
 Cet exercice revient à montrer que l'orthocentre d'un triangle est aussi le centre du cercle inscrit du triangle formé par les pieds des hauteurs. \\
 Ici, on introduit $H$, le point d'intersection de $(BC)$ et $(AD)$. et l'on raisonne par chasse au angle. \\
-Comme la somme de deux angles droits est égale à $180°$, on en déduit que les points $ATHC$ et $TBDH$ sont cocycliques. Ainsi, en utilisant le théorème de l'angle inscrit,
+Comme la somme de deux angles droits est égale à $180^\circ$, on en déduit que les points $ATHC$ et $TBDH$ sont cocycliques. Ainsi, en utilisant le théorème de l'angle inscrit,
 \begin{align*}
 \widehat{HTD} &= \widehat{HBD} \\ &= \widehat{CAH} \\ &= \widehat{CTH}
-\end{align*} \\
+\end{align*}
+
 Cela conclut.
 
+\begin{figure}[H]
 \definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
 \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
@@ -403,12 +428,14 @@ Cela conclut.
 \draw[color=uuuuuu] (0.82,4.61) node {$H$};
 \end{scriptsize}
 \end{tikzpicture}
-
+\end{figure}
 \end{sol}
 
 
-\begin{sol} Les points $ABDC$ et $ABFE$ sont cocycliques. Donc les angles $\widehat{AEF}$ et $\widehat{ABF}$ sont supplémentaires, de même que les angles $\widehat{ABD}$ et $\widehat{DCA}$. Ainsi, une chasse aux angles fait apparaître des angles alternes-internes égaux qui démontrent le résultat.
+\begin{sol}
+Les points $ABDC$ et $ABFE$ sont cocycliques. Donc les angles $\widehat{AEF}$ et $\widehat{ABF}$ sont supplémentaires, de même que les angles $\widehat{ABD}$ et $\widehat{DCA}$. Ainsi, une chasse aux angles fait apparaître des angles alternes-internes égaux qui démontrent le résultat.
 
+\begin{figure}[H]
 \definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
 \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
@@ -440,16 +467,20 @@ Cela conclut.
 \draw[color=uuuuuu] (3.9,0.97) node {$F$};
 \end{scriptsize}
 \end{tikzpicture}
-
+\end{figure}
 \end{sol}
 
 
-\begin{sol} On raisonne toujours pas chasse aux angles. Objectif : montrer que les points $C, Q, P, X$ sont cocycliques. \\ On mène les calculs d'angles suivant : \\
+\begin{sol}
+On raisonne toujours pas chasse aux angles. Objectif : montrer que les points $C, Q, P, X$ sont cocycliques. On mène les calculs d'angles suivant :
 \begin{align*}
-\widehat{PCQ} &= 180 - \widehat{QAR}-\widehat{RBP}\\ &= \widehat{RXQ} - \widehat{RXP} \\ &= \widehat{PXQ},
+\widehat{PCQ} &= 180 - \widehat{QAR}-\widehat{RBP} \\
+&= \widehat{RXQ} - \widehat{RXP} \\
+&= \widehat{PXQ},
 \end{align*}
 ce qui conclut.
 
+\begin{figure}[H]
 \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
 \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1.}
 \definecolor{zzttqq}{rgb}{0.6,0.2,0.}
@@ -483,22 +514,39 @@ ce qui conclut.
 \draw[color=uuuuuu] (2.4,-0.69) node {$X$};
 \end{scriptsize}
 \end{tikzpicture}
-
+\end{figure}
 \end{sol}
 
 
-\begin{sol} \begin{align*}
-\widehat{FED} &= 180 - \widehat{ABD} \\ &= \widehat{BAD} + \widehat{BDA} \\ &= \widehat{GAB} + \widehat{ACB} \\ &= \widehat{GAB} + \widehat{ABG} \\ &= 180 - \widehat{AGB} \\ &= 180 - \widehat{FGD}
+\begin{sol}
+\begin{align*}
+\widehat{FED}
+&= 180 - \widehat{ABD} \\
+&= \widehat{BAD} + \widehat{BDA} \\
+&= \widehat{GAB} + \widehat{ACB} \\
+&= \widehat{GAB} + \widehat{ABG} \\
+&= 180 - \widehat{AGB} \\
+&= 180 - \widehat{FGD}
 \end{align*}
 ce qui conclut.
 \end{sol}
 
-\begin{sol} On note $\alpha, \beta, \gamma$ les angles du triangle $ABC$, selon les conventions d'usage. On note $I$ le centre du cercle inscrit. \\ Alors, on cherche à montrer que $\widehat{AGF} = \widehat{BAG}$. \\ \begin{align*}
-\widehat{AGF} &= \widehat{IGF} \\ &= 90 - \widehat{FIC} \\ &= 90 - (180-\widehat{IEC} - \widehat{ECI}) \\ &= 90 - \widehat{IEA} + \widehat{ICE} \\ &= 90 - (180 - \alpha - \frac{\beta}{2}) + \frac{\gamma}{2} \\ &= \alpha + 90 - \frac{\alpha}{2} - 90 \\&= \widehat{BAI}
+\begin{sol}
+On note $\alpha, \beta, \gamma$ les angles du triangle $ABC$, selon les conventions d'usage. On note $I$ le centre du cercle inscrit. \\
+Alors, on cherche à montrer que $\widehat{AGF} = \widehat{BAG}$. \\
+\begin{align*}
+\widehat{AGF}
+&= \widehat{IGF} \\
+&= 90 - \widehat{FIC} \\
+&= 90 - (180 - \widehat{IEC} - \widehat{ECI}) \\
+&= 90 - \widehat{IEA} + \widehat{ICE} \\
+&= 90 - (180 - \alpha - \frac\beta 2) + \frac\gamma2 \\
+&= \alpha + 90 - \frac\alpha 2 - 90 \\
+&= \widehat{BAI}
 \end{align*}
 ce qui conclut.
 
-
+\begin{figure}[H]
 \definecolor{ffdxqq}{rgb}{1.,0.8431372549019608,0.}
 \definecolor{ffzzqq}{rgb}{1.,0.6,0.}
 \definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
@@ -542,5 +590,5 @@ ce qui conclut.
 \draw[color=uuuuuu] (1.14,3.17) node {$I$};
 \end{scriptsize}
 \end{tikzpicture}
-
+\end{figure}
 \end{sol}

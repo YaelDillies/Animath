@@ -1,4 +1,4 @@
-\subsubsection{Énoncés}
+\soustitre{Sujet}
 
 
 \begin{exo}
@@ -8,8 +8,8 @@ Soit $ABC$ un triangle. Soit $D$ le pied de la bissectrice issue de $A$. La tang
 
 \begin{exo}
 Soient $a$ et $b$ deux réels strictement positifs. Montrer que
-$$\left(1+\frac{a}{b}\right)^n+\left(1+\frac{b}{a}\right)^n\geq 2^{n+1} $$
-Quels sont les cas d'égalité?
+$$\left(1+\frac a b\right)^n+\left(1+\frac b a\right)^n\ge 2^{n+1} $$
+Quels sont les cas d'égalité ?
 \end{exo}
 
 
@@ -25,7 +25,7 @@ Montrer que les points $X,Y,C,D$ sont cocycliques.
 \end{exo}
 
 
-\subsubsection{Solutions}
+\soustitre{Corrigé}
 
 
 \begin{sol}
@@ -55,7 +55,6 @@ Montrer que les points $X,Y,C,D$ sont cocycliques.
 
 \tkzDrawCircle(O,B)
 
-
 \tkzLabelPoint[above left](A){$A$}
 \tkzLabelPoint[below left](B){$B$}
 \tkzLabelPoint[right](C){$C$}
@@ -64,20 +63,17 @@ Montrer que les points $X,Y,C,D$ sont cocycliques.
 
 \tkzMarkAngles[color=red, opacity=1](P,A,B A,C,B)
 \tkzMarkAngles[color=blue, opacity=1](B,A,D D,A,C)
-
-
 \end{tikzpicture}
 \end{center}
 
-On commence par noter $$\left\{
-    \begin{array}{ll}
-        \widehat{BAC}=2\alpha\\
-        \widehat{ACB}=2\gamma\\
-        \widehat{ABC}=2\beta
-    \end{array}
-\right.$$
-En particulier, on remarque que
-$$\widehat{DAB}=\frac{\widehat{BAC}}{2}=\frac{2\alpha}{2}=\alpha $$
+On commence par noter
+$$\begin{cases}
+\widehat{BAC} = 2\alpha \\
+\widehat{ACB} = 2\gamma \\
+\widehat{ABC} = 2\beta
+\end{cases}$$
+On remarque que
+$$\widehat{DAB}=\frac{\widehat{BAC}}2=\frac{2\alpha}2=\alpha $$
 On en déduit que
 $$\widehat{PDA}=\widehat{BDA}=\widehat{BCA}+\widehat{CAD}=2\gamma+\alpha $$
 D'autre part, on remarque que
@@ -92,46 +88,44 @@ Et on a bien montré que $ADP$ était isocèle en $P$.
 
 \begin{sol}
 On va utiliser à plusieurs reprises l'inégalité arithmético-géométrique sous la forme suivante :
-$$\mathrm{Pour}\: \mathrm{tous}\: \mathrm{nombres}\: \mathrm{ positifs }\:a,b,\:\: \mathrm{on}\: \mathrm{a}\:\:a+b\geq 2\sqrt{ab} $$
+$$\mathrm{Pour}\: \mathrm{tous}\: \mathrm{nombres}\: \mathrm{ positifs }\:a,b,\:\: \mathrm{on}\: \mathrm{a}\:\:a+b\ge 2\sqrt{ab} $$
 
 On commence donc par écrire que
-$$\left(1+\frac{a}{b}\right)\geq 2\sqrt{\frac{a}{b}} $$
+$$\left(1+\frac a b\right)\ge 2\sqrt{\frac a b} $$
 Ainsi que
-$$\left(1+\frac{b}{a}\right)\geq 2\sqrt{\frac{b}{a}} $$
+$$\left(1+\frac b a\right)\ge 2\sqrt{\frac b a} $$
 On a donc montré que
-$$\left(1+\frac{a}{b}\right)^n+\left(1+\frac{b}{a}\right)^n\geq \left(2\sqrt{\frac{a}{b}}\right)^n+\left(2\sqrt{\frac{b}{a}}\right)^n=2^n\left(\left(\sqrt{\frac{b}{a}}\right)^n+\left(\sqrt{\frac{a}{b}}\right)^n \right) $$
-On utilise une dernière fois l'inégalité arithmético géométrique pour obtenir que
-$$\left(\sqrt{\frac{b}{a}^n}+\sqrt{\frac{a}{b}}^n\right)^n\geq 2\left(\sqrt{\sqrt{\frac{a}{b}}\sqrt{\frac{b}{a}}}\right)^n=2\sqrt{1}=2 $$
+$$\left(1+\frac a b\right)^n+\left(1+\frac b a\right)^n\ge \left(2\sqrt{\frac a b}\right)^n+\left(2\sqrt{\frac b a}\right)^n=2^n\left(\left(\sqrt{\frac b a}\right)^n+\left(\sqrt{\frac a b}\right)^n \right) $$
+On utilise une dernière fois l'inégalité arithmético-géométrique pour obtenir que
+$$\left(\sqrt{\frac b a}^n + \sqrt{\frac a b}^n\right) \ge 2 \sqrt{\sqrt{\frac a b}^n\sqrt{\frac b a}^n} = 2 $$
 On a donc finalement que
-$$\left(1+\frac{a}{b}\right)^n+\left(1+\frac{b}{a}\right)^n\geq 2^n\left(1+\frac{a}{b}\right)^n+\left(1+\frac{b}{a}\right)^n \geq2^n\times 2=2^{n+1} $$
+$$\left(1+\frac a b\right)^n+\left(1+\frac b a\right)^n \ge 2^n \left(\left(1+\frac a b\right)^n + \left(1+\frac b a\right)^n\right) \ge2^n\cdot 2=2^{n+1} $$
 \end{sol}
 
 
 \begin{sol}
-\textbf{Analyse :} On suppose que $f$ est solution de l'équation.
-\\
-On remarque la présence d'un terme $"x"$ dans le membre de droite. Cela nous pousse à étudier l'injectivité et la surjectivité de $f$.
-\\
-\textbf{Injectivité:} Supposons qu'il existe $b,c$ des réels tels que $f(b)=f(c)$ et montrons que $b=c$. La remarque importante est que $x$ n'apparait que sous la forme $f(x)$ dans le membre de gauche, ce membre de gauche va donc être le même après la subtitution $x=b$ ou la substitution $x=c$.
-\\
+\textbf{Analyse :} On suppose que $f$ est solution de l'équation.\\
+On remarque la présence d'un terme $"x"$ dans le membre de droite. Cela nous pousse à étudier l'injectivité et la surjectivité de $f$.\\
+\textbf{Injectivité :} Supposons qu'il existe $b,c$ des réels tels que $f(b)=f(c)$ et montrons que $b=c$. La remarque importante est que $x$ n'apparait que sous la forme $f(x)$ dans le membre de gauche, ce membre de gauche va donc être le même après la substitution $x=b$ ou la substitution $x=c$. \\
 On pose donc $y=0$ et $x=b$ ce qui donne
 $$f(f(f(b)))+f(f(0))-f(0)=b $$
 Maintenant, on pose $y=0$ et $x=c$ ce qui donne
-$$f(f(f(c)))+f(f(0))-f(0)=c $$ et donc on en déduit que
+$$f(f(f(c)))+f(f(0))-f(0)=c$$
+et donc on en déduit que
 $$b=f(f(f(b)))+f(f(0))-f(0)=f(f(f(c)))+f(f(0))-f(0)=c $$
 Ainsi, $f$ est injective.
 \\
-\textbf{Surjectivité:} On pose encore $y=0$ ce qui donne pour tout réel $x$ que
+\textbf{Surjectivité :} On pose encore $y=0$ ce qui donne pour tout réel $x$ que
 $$f(f(f(x)))=x+f(0)-f(f(0)) $$
 Comme le membre de droite est affine, il est surjectif et on en déduit la surjectivité de $f$. Plus précisément, on se donne un réel $b$ et va chercher un antécédant $a$ de $f$ pour $b$. Pour cela, on remarque que
 $$x=b-f(0)+f(f(0))\iff f(f(f(x))))=x+f(0)-f(f(0))=b $$
 Et donc $f(f(x))$ est un antécédant de $f$. On a donc $f$ surjective.
 \\
-Cela permet de faire la subtitution $f(y)=u$ et donc on a pour tous réels $x,u$:
+Cela permet de faire la substitution $f(y)=u$ et donc on a pour tous réels $x,u$:
 $$f(f(f(x))))+f(u)=u+x $$
 On pose finalement $x=0$ et on a pour tout réel $u$
 $$f(u)=u-f(f(f(0)))=u+C $$
-\textbf{Synthèse:} On suppose que $f(u)=u+C$ avec $C$ une constante. On vérifie que
+\textbf{Synthèse :} On suppose que $f(u)=u+C$ avec $C$ une constante. On vérifie que
 $$f(f(f(x)))+f(f(y))=x+C+C+C+y+C+C=x+y+5C $$
 d'une part et on a
 $$f(y)+x=x+y=C $$
@@ -200,7 +194,7 @@ L'injectivité n'a pas servi dans l'argument. Toutefois, cela reste un bon réfl
 \end{tikzpicture}
 \end{center}
 
-Voici une autre solution ne nécéssitant pas d'introduire des points supplémentaires mais seulement d'utiliser des triangles semblables. \\
+\textit{Première solution, triangles semblables :} \\
 On montre que les triangles $YPB$ et $BCD$ sont semblables. Par angle à la tangence on a
 $$\widehat{PBY}=\widehat{ADB} $$
 Puis par parallélisme on remarque que
@@ -214,9 +208,9 @@ Comme $(PY)//(QB)$ et $(PX)//(AQ)$, il nous suffit de montrer que
 $$APY\sim AQB $$ pour obtenir $(AB)//(XY)$. On se ramène donc à montrer que
 $$\frac{PX}{AQ}=\frac{PY}{PX} $$
 On a d'une part
-$$YP=\frac{BC\times PB}{CD} $$
+$$YP=\frac{BC\cdot PB}{CD} $$
 D'autre part on a
-$$XP=\frac{AD\times PA}{CD}$$
+$$XP=\frac{AD\cdot PA}{CD}$$
 Comme $PA=PB$ on a finalement
 $$\frac{PY}{BC}=\frac{PX}{AD} $$
 Comme $BQC\sim AQD$, on peut écrire que
@@ -289,7 +283,7 @@ Ce qui montre que $X,Y,C$ et $D$ sont cocycliques.
 \end{tikzpicture}
 \end{center}
 
-
+\textit{Second solution, points supplémentaires :} \\
 On introduit deux nouveaux points : on note pour commencer $W=(PY)\cap (AD)$ puis on note $Z=(XP)\cap (BC)$. \\
 On considère les deux droites de référence $(AD)$ et $(BC)$. On veut montrer que $(XY)$ et $(CD)$ sont antiparallèles. \\
 On sait déjà que $(DC)$ et $(AB)$ sont antiparallèles. On va en fait montrer que

@@ -1,222 +1,155 @@
 ﻿Ce TD est très fortement inspiré par le chapitre "Graphs" du livre "Problem-Solving Methods in Combinatorics" de Pablo Soberón.
 
+
 \subsubsection{Exercices classiques/lemmes utiles}
 
+
 \begin{exo}
-
-On considère un graphe $G=(V,E)$ . Montrer que $\sum_{v \in V} \deg(v) = 2 \cdot \mid E \mid$.
-
+On considère un graphe $G=(V,E)$. Montrer que $\sum_{v \in V} \deg(v) = 2 \cdot \mid E \mid$.
 \end{exo}
 
 
 \begin{exo}
-
 Est-ce qu’un graphe peut posséder un nombre impair de sommets de degré impair ?
-
 \end{exo}
 
 
-
 \begin{exo}
-
 Tout graphe connexe $G$ possède un arbre couvrant.
-
 \end{exo}
 
 
-
 \begin{exo}
-
 Montrer qu’un arbre avec $n$ sommets a exactement $n-1$ arêtes.
-
-\end{exo}
-
-\begin{exo}
-
-Montrer que tout graphe connexe avec $n$ sommets a au moins
-$n-1$ arêtes. Il possède exactement $n-1$ arêtes si, et seulement si le graphe est un arbre.
-
 \end{exo}
 
 
 \begin{exo}
+Montrer que tout graphe connexe avec $n$ sommets a au moins $n-1$ arêtes et qu'il possède exactement $n-1$ arêtes si et seulement si c'est un arbre.
+\end{exo}
 
+
+\begin{exo}
 Dans une petite classe de six étudiants, certains élèves sont amis et d'autres non. La relation d'amitié est réciproque : si $A$ est ami avec $B$, alors $B$ est ami avec $A$. Montrer qu'il existe trois étudiants qui sont deux à deux amis ou trois étudiants qui sont deux à deux non-amis.
-
 \end{exo}
+
 
 \subsubsection{Exercices divers}
+
+
 \begin{exo}
-
-Dans un graphe $G$ chaque sommet est de degré $k\geq 2$. Montrer que $G$ possède un cycle de longueur au moins $k+1$.
-
+Dans un graphe $G$ chaque sommet est de degré $k\ge 2$. Montrer que $G$ possède un cycle de longueur au moins $k+1$.
 \end{exo}
 
-\begin{exo}
 
+\begin{exo}
 Soit $G$ un graphe. Montrer qu’on peut séparer les sommets en deux groupes de sorte qu’au moins la moitié des voisins de chaque sommet se retrouve dans l’autre groupe.
 \end{exo}
 
 
-\begin{exo}
-
- ( Olympiade de Mathématique Balkanique 2002)
-
+\begin{exo}[Olympiade de Mathématiques Balkanique 2002]
 Soit $G$ un graphe dont tous les sommets sont de degré au moins $3$. Montrer que $G$ possède au moins un cycle de longueur paire.
-
 \end{exo}
 
 
-
 \begin{exo}
-
 Soit $G$ un graphe avec $n$ sommets qui ne contiennent pas de triangles (cycles de longueurs $3$). Montrer que $G$ ne possède pas plus de $n^2/4$ arêtes.
-
 \end{exo}
 
 
-\begin{exo}
-(OMM 2009)
-
-
+\begin{exo}[OMM 2009]
 Dans une assemblée de $n$ personnes, on sait que parmi n’importe quel groupe de $4$ personnes il y a soit $3$ qui se connaissent deux à deux, soit $3$ qui ne se connaissent pas deux à deux. Montrer qu’on peut séparer l’assemblée en deux groupes de sorte que toute paire de personnes se connaisse dans le premier groupe et aucune paire de personnes ne se connaissent dans le deuxième groupe.
-
 \end{exo}
 
 
-\begin{exo}
-Olympiades allemandes 2020
-
-Les habitants d’un village de druides ne s'entendent pas très bien. Il se trouve même qu'il est impossible de placer $4$ druides ou plus en cercle de sorte que chaque druide veuille bien serrer la main de ses deux voisins. Jugeant qu’un tel état des choses ternit la réputation de la tribu, le chef essaie d’entreprendre une action pacifiste pour apaiser la situation. Il collecte 3 pièces d’or de chaque druide, puis à toute paire de personne qui accepte de se serrer la main il paie une pièce d’or à chacun. Montrer que le chef peut se mettre au moins 3 pièces d’or dans la poche à la fin de l’action.
-
-\end{exo}
-
-\begin{exo}
-(Allemagne 2004)
-
-Dans un graphe avec des sommets noirs ou blancs, on nous permet de choisir un sommet $v$ et inverser la couleur de $v$ ainsi que de tous ses voisins. Est-ce qu’il est possible d’obtenir à partir d’un graphe avec que des sommets blancs un graphe avec que des sommets noirs ?\\
-
+\begin{exo}[Olympiades allemandes 2020, problème 591242]
+Les habitants d’un village de druides ne s'entendent pas très bien. Il se trouve même qu'il est impossible de placer $4$ druides ou plus en cercle de sorte que chaque druide veuille bien serrer la main de ses deux voisins. Jugeant qu’un tel état des choses ternit la réputation de la tribu, le chef essaie d’entreprendre une action pacifiste pour apaiser la situation. Il collecte 3 pièces d’or de chaque druide, puis à toute paire de personne qui accepte de se serrer la main il paie une pièce d’or à chacun. Montrer que le chef peut se mettre au moins $3$ pièces d’or dans la poche à la fin de l’action.
 \end{exo}
 
 
-\begin{exo}
+\begin{exo}%(Allemagne 2004)
+Dans un graphe avec des sommets noirs ou blancs, on nous permet de choisir un sommet $v$ et inverser la couleur de $v$ ainsi que de tous ses voisins. Est-ce qu’il est possible de passer de tous les sommets blancs à tous les sommets noirs ?
+\end{exo}
 
-(IMO 2020)
 
+\begin{exo}[P4 IMO 2021]
 Soit $n > 1$ un entier. Il y a $n^2$ stations sur le versant d’une montagne, toutes à des altitudes différentes. Chacune des deux compagnies de téléphériques, $A$ et $B$, gère $k$ téléphériques ; chaque téléphérique permet de se déplacer d’une des stations vers une station plus élevée (sans arrêt intermédiaire). Les $k$ téléphériques de $A$ ont $k$ points de départ différents et $k$ points d’arrivée différents et un téléphérique qui a un point de départ plus élevé a aussi un point d’arrivée plus élevé. Les mêmes conditions sont satisfaites pour $B$. On dit que deux stations sont reliées par une compagnie s’il est possible de partir de la station la plus basse et d’atteindre la plus élevée en utilisant un ou plusieurs téléphériques de cette compagnie (aucun autre mouvement entre les stations n’est autorisé). Déterminer le plus petit entier strictement positif $ k$ qui garantisse qu’il existe deux stations reliées par chacune des deux compagnies.
-
 \end{exo}
 
 
 
-\begin{exo}
-(IMO 2006)
-
- Soit $P$ un polygone régulier à 2006 côtés. Une diagonale de $P$ est appelée bonne si ses extrémités partagent le contour de $P$ en deux parties ayant chacune un nombre impair de côtés de $P$. Les côtés de $P$ sont aussi appelés bons. On suppose que $P$ a été subdivisé en triangles par 2003 diagonales n’ayant deux à deux aucun point commun à l’intérieur de $P$. Trouver le nombre maximum de triangles isocèles ayant deux côtés bons qui peuvent apparaître dans une telle subdivision.
-
+\begin{exo}[IMO 2006 P2]
+Soit $P$ un polygone régulier à $2006$ côtés. Une diagonale de $P$ est appelée bonne si ses extrémités partagent le contour de $P$ en deux parties ayant chacune un nombre impair de côtés de $P$. Les côtés de $P$ sont aussi appelés bons. On suppose que $P$ a été subdivisé en triangles par 2003 diagonales n’ayant deux à deux aucun point commun à l’intérieur de $P$. Trouver le nombre maximum de triangles isocèles ayant deux côtés bons qui peuvent apparaître dans une telle subdivision.
 \end{exo}
 
 
-\begin{exo}
-
-(IMO 2007)
-
-Dans une compétition mathématique certains participants sont des amis. L’amitié est toujours réciproque. Un groupe de participants est appelé une clique si toute paire d’entre eux est formée de deux amis. (En particulier, chaque groupe d’au plus un participant constitue une clique.) Le nombre de participants dans une clique est appelé sa taille. On suppose que, dans cette compétition, la plus grande taille des cliques est paire. Montrer que les participants peuvent être répartis dans deux pièces de telle sorte que la plus grande taille des cliques contenues dans une de ces pièces soit égale à la plus grande taille des cliques contenues dans l’autre.
-
+\begin{exo}[IMO 2007 P3]
+À une compétition mathématique, certains participants sont des amis. L’amitié est toujours réciproque. Un groupe de participants est appelé une clique si toute paire d’entre eux est formée de deux amis. (En particulier, chaque groupe d’au plus un participant constitue une clique.) Le nombre de participants dans une clique est appelé sa taille. On suppose que, dans cette compétition, la plus grande taille des cliques est paire. Montrer que les participants peuvent être répartis dans deux pièces de telle sorte que la plus grande taille des cliques contenues dans une de ces pièces soit égale à la plus grande taille des cliques contenues dans l’autre.
 \end{exo}
-
-
 
 
 \subsubsection{Solutions}
 
 
-
 \begin{sol}
-
-On remarque que dans la somme de gauche, chaque arête est comptée deux fois, ce qui implique l’égalité.\\
-
-\end{sol}
-
-\begin{sol}
-
-La réponse est non. En fait, si c’était le cas, la somme de gauche dans la question précédente serait impaire, ce qui est impossible.\\
-
-\end{sol}
-
-
-
-
-
-\begin{sol}
-
-Soit $G$ un graphe connexe. Si $G$ n'a pas de cycles, alors $G$ est un arbre et nous avons fini. Si $G$ a un cycle $(v_0, v_1,\ldots ,v_k = v_0)$, alors on peut supprimer l'arête $(v_0, v_{k-1})$ de $G$, sans que cela modifie la connexité du graphe. On continue jusqu’à ce qu’il n’y ait plus de cycles.\\
-
+On remarque que dans la somme de gauche, chaque arête est comptée deux fois, ce qui implique l’égalité.
 \end{sol}
 
 
 \begin{sol}
+La réponse est non. En fait, si c’était le cas, la somme de gauche dans la question précédente serait impaire, ce qui est impossible.
+\end{sol}
 
 
+\begin{sol}
+Soit $G$ un graphe connexe. Si $G$ n'a pas de cycles, alors $G$ est un arbre et nous avons fini. Si $G$ a un cycle $(v_0, v_1,\ldots ,v_k = v_0)$, alors on peut supprimer l'arête $(v_0, v_{k-1})$ de $G$, sans que cela modifie la connexité du graphe. On continue jusqu’à ce qu’il n’y ait plus de cycles.
+\end{sol}
+
+
+\begin{sol}
 Nous allons procéder par récurrence sur $n$. Si $n = 1$, l'affirmation est triviale. Supposons donc que la propriété est vraie pour $n$ et considérons un arbre $G$ avec $n+1$ sommets. Montrons que $G$ contient un sommet de degré~$1$. Notons que puisque $n + 1 > 1$, pour que le graphe soit connexe tous les sommets doivent avoir au moins degré $1$. Une façon de montrer qu'il y a un sommet de degré au plus $1$ est de considérer le plus long chemin possible $(v_1, v_2, \ldots, v_k)$ de $G$. Alors, $v_1$ est de degré $1$. En effet, $v_1$ ne peut pas être connecté à un sommet parmi $v_1,v_2 \ldots v_k$, car dans ce cas on aurait un cycle. Il ne peut pas non plus être relié à un sommet à l’extérieur du chemin par maximalité de ce dernier. Donc, $v_1$ est de degré $1$. Ainsi, nous pouvons supprimer $v_1$ du graphe avec son arête.
-Le nouveau graphe $G'$ a $n$ sommets. Il est connexe et sans cycles. Ainsi $G'$ est un arbre avec $n$ sommets, ce qui signifie qu'il a exactement $n-1$ arêtes. Donc, $G$ a $n$ arêtes.\\
-
+Le nouveau graphe $G'$ a $n$ sommets. Il est connexe et sans cycles. Ainsi $G'$ est un arbre avec $n$ sommets, ce qui signifie qu'il a exactement $n-1$ arêtes. Donc, $G$ a $n$ arêtes.
 \end{sol}
 
 
 \begin{sol}
+ Par l’exercice précédant, $G$ possède un arbre couvrant $T$ qui contient $n-1$ arêtes. Si $G=T$, alors $G$ est un arbre. Si $G \ne T$, alors $G$ contient une arête $(x,y)$ qui n’est pas contenue dans $T$. Puisque $T$ est connexe, il existe un chemin qui lie $x$ et $y$ dans $T$ (qui ne contient pas $(x,y))$. Mais dans ce cas $G$ contient un cycle et n’est donc pas un arbre.
+\end{sol}
 
- Par l’exercice précédant, $G$ possède un arbre couvrant $T$ qui contient $n-1$ arêtes. Si $G=T$, alors $G$ est un arbre. Si $G \neq T$, alors $G$ contient une arête $(x,y)$ qui n’est pas contenue dans $T$. Puisque $T$ est connexe, il existe un chemin qui lie $x$ et $y$ dans $T$ (qui ne contient pas $(x,y))$. Mais dans ce cas $G$ contient un cycle et n’est donc pas un arbre.\\
-
- \end{sol}
 
 \begin{sol}
-
-
-
-
 On considère un graphe $G$ à six sommets représentants les étudiants, où deux sommets sont reliés par une arête rouge si les étudiants correspondants sont amis, et par une arête bleue dans le cas contraire. Nous voulons montrer que $G$ possède un triangle monochrome (soit complètement bleu, soit complètement rouge).
 
 Soit $v$ un sommet arbitraire du graphe. Par principe des tiroirs, on peut supposer sans perte de généralité que $v$ est relié à un moins trois étudiants (disons $v_1, v_2 $ et $v_3$) par une arête rouge. Si parmi les arêtes qui relient $v_1, v_2, v_3$ il y a une arête rouge $(v_i,v_j)$, alors $v,v_i,v_j$ forment un triangle monochrome rouge. Si ce n’est pas le cas, alors $v_1,v_2,v_3$ forme un triangle monochrome bleu. L’affirmation que nous voulons démontrer est donc vérifiée.
-
 \end{sol}
 
 
-
-
-
 \begin{sol}
-
-On construit une suite de sommets $(v_0, v_1, v_2,\ldots)$ de la manière suivante :
-$v_0$ est un sommet arbitraire du graphe; $v_1$ est un sommet adjacent à $v_0$, $v_2$ est un sommet adjacent à $v_1$ et différent de $v_0$; si nous avons construit $v_0, v_1, \ldots, v_{t-1}$, alors on choisit $v_t$ de telle sorte qu’il soit adjacent à $v_{t-1}$ et différent de $v_0, v_1, v_2, \ldots, v_{t-2}$ si $t-1<k$, ou différent de $v_{t-2}, v_{t-3}, \ldots , v_{t-k}$, si $t-1\geq k$. Cela peut être fait puisque
-$\mathrm{deg}\,(v_{t-1})\geq k.$ Puisque $G$ est un graphe fini, la suite ne peut pas continuer indéfiniment sans sommets répétitifs: il doit y avoir deux sommets $v_t$ et $v_{t-l}$ tels que $v_t = v_{t-l}$.
-On peut supposer que $t$ est le premier moment où cela se produit. Étant donné la construction de la suite, on a que $l\geq k + 1$. Ainsi $(v_{t-l}, v_{t-l+1}, \ldots, v_{t-1}, v_{t} = v_{t-l})$ est
-le cycle que nous cherchions.\\
-
+On construit une suite de sommets $(v_0, v_1, v_2,\ldots)$ de la manière suivante : \\
+$v_0$ est un sommet arbitraire du graphe; $v_1$ est un sommet adjacent à $v_0$, $v_2$ est un sommet adjacent à $v_1$ et différent de $v_0$; si nous avons construit $v_0, v_1, \ldots, v_{t-1}$, alors on choisit $v_t$ de telle sorte qu’il soit adjacent à $v_{t-1}$ et différent de $v_0, v_1, v_2, \ldots, v_{t-2}$ si $t-1<k$, ou différent de $v_{t-2}, v_{t-3}, \ldots , v_{t-k}$, si $t-1\ge k$. Cela peut être fait puisque
+$\deg\,(v_{t-1})\ge k.$ Puisque $G$ est un graphe fini, la suite ne peut pas continuer indéfiniment sans sommets répétitifs: il doit y avoir deux sommets $v_t$ et $v_{t-l}$ tels que $v_t = v_{t-l}$. On peut supposer que $t$ est le premier moment où cela se produit. Étant donné la construction de la suite, on a que $l\ge k + 1$. Ainsi $(v_{t-l}, v_{t-l+1}, \ldots, v_{t-1}, v_{t} = v_{t-l})$ est le cycle que nous cherchions.
 \end{sol}
 
-\begin{sol}
-Séparons les sommets en deux groupes $A$ et $B$ de sorte que le nombre d’arêtes entre $A$ et $B$ soit maximal. Démontrons qu’au moins la moitié des voisins de chaque sommet se retrouve dans l’autre groupe. En effet, supposons par l’absurde qu’il y ait un sommet $v$ dans notre graphe, tel que plus de la moitié de ses voisins sont dans le même groupe que lui. Alors, déplacer $v$ dans l’autre groupe augmente strictement le nombre d’arêtes entre $A$ et $B$. Contradiction. Ainsi, la séparation satisfait les conditions de l’énoncé.\\
 
+\begin{sol}
+Séparons les sommets en deux groupes $A$ et $B$ de sorte que le nombre d’arêtes entre $A$ et $B$ soit maximal. Démontrons qu’au moins la moitié des voisins de chaque sommet se retrouve dans l’autre groupe. En effet, supposons par l’absurde qu’il y ait un sommet $v$ dans notre graphe, tel que plus de la moitié de ses voisins sont dans le même groupe que lui. Alors, déplacer $v$ dans l’autre groupe augmente strictement le nombre d’arêtes entre $A$ et $B$. Contradiction. Ainsi, la séparation satisfait les conditions de l’énoncé.
 \end{sol}
 
 
 \begin{sol}
 Soit $v_1, v_2,\ldots , v_k$ le chemin le plus long du graphe. $v_1$ est adjacent à au moins trois sommets, et donc à au moins à deux sommets différents de $v_2$. Ces deux sommets doivent être dans le chemin, sans quoi on a une contradiction de la maximalité. Disons que $v_1$ est adjacent à $v_i , v_j$. Par le principe des tiroirs, deux des nombres $2, i, j$ sont de même parité.
-Mais alors, la partie du chemin entre leurs sommets correspondants et $v_1$ forme un cycle de longueur paire.\\
-
+Mais alors, la partie du chemin entre leurs sommets correspondants et $v_1$ forme un cycle de longueur paire.
 \end{sol}
 
 
 \begin{sol}
-
 Solution 1. Supposons que $G$ est un graphe sans triangles et soit $e$ le nombre d’arêtes dans $G$. Soit $u$ un sommet de degré maximal $d$ et $A$ l'ensemble des sommets adjacents à
 $u$. Comme il n'y a pas de triangles, les sommets de $A$ forment un ensemble indépendant (il
 n'y a pas d'arêtes entre elles), donc leur degré est au plus $n-d$ . Les autres $n-d$ sommets
 en dehors $A$ (ceux-ci incluent $ u$) ont au plus le degré $d$. Ainsi, par le lemme des poignées de mains,
 on a
-$$ 2e = \sum_{v \in A} \mathrm{deg}\, (v) + \sum_{v \notin A} \mathrm{deg}\, (v)\leq 2\cdot (n-d) \cdot d $$
-$$ \Leftrightarrow e \leq (n-d)d \leq \frac{n^2}{4}$$
+$$ 2e = \sum_{v \in A} \deg\, (v) + \sum_{v \notin A} \deg\, (v)\le 2\cdot (n-d) \cdot d $$
+$$ \Leftrightarrow e \le (n-d)d \le \frac{n^2}{4}$$
  par l’IAG.
 
 
@@ -224,24 +157,24 @@ $$ \Leftrightarrow e \leq (n-d)d \leq \frac{n^2}{4}$$
 Solution 2.
 Il est aussi possible de résoudre le problème par récurrence de type $P_n \Rightarrow P_{n+2}$.
 Pour cela, on note qu’une arête à au plus $(n-2)$ arêtes adjacentes à elle.
-Donc, si on utilise l’hypothèse de récurrence sur $n-2$, le nombre d’arêtes maximal dans un graphe sans triangles à $n$ sommets n’est pas plus grand que $1+n – 2 + \frac{(n-2)^2}{4}= \frac{n^2}{4}$.
+Donc, si on utilise l’hypothèse de récurrence sur $n-2$, le nombre d’arêtes maximal dans un graphe sans triangles à $n$ sommets n’est pas plus grand que $1 + n - 2 + \frac{(n-2)^2}{4}= \frac{n^2}{4}$.
 
 
 Solution 3.
 
 Double comptage avec cette même idée :
 
-On observe que pour toute arête $(x,z)$, on doit avoir $deg(x) + deg(y) \leq n$.
+On observe que pour toute arête $(x,z)$, on doit avoir $ \deg x + \deg y \le n$.
 En sommant sur toutes les arêtes, on obtient
-$$ \sum_{x \in V} \mathrm{deg}\,(x)^2 = \sum_{(x,y) \in E} (\mathrm{deg}\,(x) + \mathrm{deg}\,(y)) \leq ne.$$
+$$ \sum_{x \in V} (\deg x)^2 = \sum_{(x,y) \in E} (\deg x + \deg\ y) \le ne.$$
 
-Par l’inégalité de Cauchy Schwarz,
+Par l’inégalité de Cauchy-Schwarz,
 
-$$ \frac{1}{n} \left( \sum_{x \in V} \mathrm{deg}\,(x) \right) ^2 \leq \sum_{x \in V} \mathrm{deg}\,(x)^2$$
+$$ \frac{1}{n} \left(\sum_{x \in V} \deg x) \right)^2 \le \sum_{x \in V} (\deg x)^2$$
 
-En appliquant le lemme des poignées de mains, on obtient l’inégalité voulue.\\
-
+En appliquant le lemme des poignées de mains, on obtient l’inégalité voulue.
 \end{sol}
+
 
 \begin{sol}
  Solution 1.
@@ -256,36 +189,28 @@ S'il n'y a qu'un seul de tels sommets, nous pouvons le supprimer et ajouter $x$ 
 
  Solution 2.
 
-On résout le problème par récurrence sur $n$. Si $n\leq 4$ l'affirmation est vraie. Supposons que cela soit vrai pour un certain $k$ et prouvons-le pour $k+1$. Pour cela, construisons un graphe comme dans la solution précédente. Soit $v_0$ un sommet arbitraire. Comme les $k$ sommets restants satisfont la condition du problème, on peut les séparer en deux ensembles, $A$ et $B$, de sorte que les sommets de $A$ ne soient reliés aux sommets $B$ que par des arêtes rouges. On choisit cette division de telle sorte que la somme $T$ d'arêtes bleues de $v_0$ à $ A$ et du nombre d’arêtes rouges de $v_0$ à $B$ soit minimale.
+On résout le problème par récurrence sur $n$. Si $n\le 4$ l'affirmation est vraie. Supposons que cela soit vrai pour un certain $k$ et prouvons-le pour $k+1$. Pour cela, construisons un graphe comme dans la solution précédente. Soit $v_0$ un sommet arbitraire. Comme les $k$ sommets restants satisfont la condition du problème, on peut les séparer en deux ensembles, $A$ et $B$, de sorte que les sommets de $A$ ne soient reliés aux sommets $B$ que par des arêtes rouges. On choisit cette division de telle sorte que la somme $T$ d'arêtes bleues de $v_0$ à $ A$ et du nombre d’arêtes rouges de $v_0$ à $B$ soit minimale.
 
 Supposons que nous ne puissions pas ajouter $v_0$ à
 $A$. Cela signifie qu'il existe un sommet
 $a$ dans $A$ tel que
 $(v_0,a)$ est bleue. De la même manière, il doit y avoir un sommet $b$ dans $B$ tel que $(b,v_0)$ est rouge. Supposons sans perte de généralité que $(a,b)$ est rouge.
-Soit $x$ un autre sommet de $A$. Cela signifie que $(x,a)$ est rouge. Si $(b,x)$ était bleue, alors les sommets $\{v_0, a, b, x\}$ ne satisferaient pas les conditions du problème. Donc $(b,x)$ est rouge. Comme cela est vrai pour n’importe quel sommet $x$ de $A$, on peut placer $b$ dans $A$. En faisant ainsi, nous réduisons le nombre d'arêtes rouges de $v_0$ à $B$, ce qui contredit la minimalité de $T$. Ainsi $v_0$ peut être ajouté à l'un des ensembles.\\
+Soit $x$ un autre sommet de $A$. Cela signifie que $(x,a)$ est rouge. Si $(b,x)$ était bleue, alors les sommets $\{v_0, a, b, x\}$ ne satisferaient pas les conditions du problème. Donc $(b,x)$ est rouge. Comme cela est vrai pour n’importe quel sommet $x$ de $A$, on peut placer $b$ dans $A$. En faisant ainsi, nous réduisons le nombre d'arêtes rouges de $v_0$ à $B$, ce qui contredit la minimalité de $T$. Ainsi $v_0$ peut être ajouté à l'un des ensembles.
 \end{sol}
 
 
-
 \begin{sol}
-
-Plaçons-nous dans un graphe dans lequel chaque sommet représente un druide et deux sommets sont reliés par une arête ssi les druides correspondants sont d'accord de se serrer la main. Nous savons que ce graphe ne contient pas de cycles de longueur supérieure ou égale à $4$. Soit $n$ le nombre de sommets et $e$ le nombre d'arêtes dans ce graphe. On doit montrer que $$3n -2e \geq 3. $$ Supposons pour commencer que le graphe est connexe. Dans ce cas, on peut écrire $e=n-1 + u$ avec $u$ un entier positif ou nul. Considérons un arbre couvrant de $G$ et colorions toutes les arêtes dans cet arbre en bleu, le reste du graphe en vert. L'inégalité que nous voulons montrer devient
-$$3n -2(n-1 + u) \geq 3 $$
-$$\Leftrightarrow n-1 \geq 2u, $$
+Plaçons-nous dans un graphe dans lequel chaque sommet représente un druide et deux sommets sont reliés par une arête ssi les druides correspondants sont d'accord de se serrer la main. Nous savons que ce graphe ne contient pas de cycles de longueur supérieure ou égale à $4$. Soit $n$ le nombre de sommets et $e$ le nombre d'arêtes dans ce graphe. On doit montrer que $$3n -2e \ge 3. $$ Supposons pour commencer que le graphe est connexe. Dans ce cas, on peut écrire $e=n-1 + u$ avec $u$ un entier positif ou nul. Considérons un arbre couvrant de $G$ et colorions toutes les arêtes dans cet arbre en bleu, le reste du graphe en vert. L'inégalité que nous voulons montrer devient
+$$3n -2(n-1 + u) \ge 3 $$
+$$\Leftrightarrow n-1 \ge 2u, $$
 ou, autrement dit, que le nombre d'arêtes bleues est au moins fois plus grand que le nombre d'arêtes vertes. Pour cela, notons que chaque arête verte fait partie d'exactement un triangle ayant deux côtés bleus et un côté vert. En effet, comme une arête verte ne fait partie de l'arbre couvrant, ces deux extrémités sont reliées par un chemin bleu. Comme notre graphe n'a pas de cycles de longueur strictement supérieure à $3$, ce chemin bleu doit être de longueur $2$.
 
 Comme en particulier on n’a pas de cycle de longueur $4$, chaque arête fait partie d'au plus un triangle, et donc en particulier, chaque arête bleue fait partie d'au plus un triangle avec deux côtés bleus et un côté vert. Ainsi, il doit y avoir au moins deux fois plus d'arêtes bleues que d'arêtes vertes, ce qui conclut.
-Pour un qui n'est pas connexe, il suffit de sommer les inégalités pour chaque composante connexe.\\
-
-
+Pour un qui n'est pas connexe, il suffit de sommer les inégalités pour chaque composante connexe.
 \end{sol}
 
 
-
-
-
 \begin{sol}
-
 Nous allons montrer par récurrence sur le nombre de sommets du graphe qu'il est
 toujours possible de rendre tous les sommets noirs. Soit $n $ le nombre de sommets de $G$.
 Si $n$ vaut $1$, nous ne changeons que ce sommet.
@@ -298,50 +223,36 @@ Si $n$ pair, nous pouvons appliquer cette nouvelle opération pour chaque sommet
 
 Si $ n $ est impair, alors par le lemme des poignées de mains, il doit y avoir un sommet $v_0$ de degré pair. Soit $B $ l'ensemble formé
 par $v_0 $ et tous ses voisins. Si nous effectuons la nouvelle opération pour chaque sommet de $B$, alors
-chaque sommet à l’extérieur de $B$ change de couleur tandis que les sommets de B restent blancs. Il nous reste qu’à utiliser le mouvement d'origine sur $v_0 $ et nous avons terminé.\\
-
+chaque sommet à l’extérieur de $B$ change de couleur tandis que les sommets de B restent blancs. Il nous reste qu’à utiliser le mouvement d'origine sur $v_0 $ et nous avons terminé.
 \end{sol}
 
 
-
-
 \begin{sol}
-
-
-Nous commençons par montrer que pour tout $k \leq n^2 – n$ il peut ne pas y avoir deux stations reliées par les deux entreprises. De toute évidence, il est suffisant de fournir un exemple $k =n^2 - n$.
-Supposons que $ A$ relie les stations $i$ et $i+1$ pour tout $1 \leq i \leq n^2$ avec $n\nmid i$, et $B$ relie les stations $i$ et $i+n$ pour $1 \leq i \leq n^2 – n$.
+Nous commençons par montrer que pour tout $k \le n^2 - n$ il peut ne pas y avoir deux stations reliées par les deux entreprises. De toute évidence, il est suffisant de fournir un exemple $k =n^2 - n$.
+Supposons que $ A$ relie les stations $i$ et $i+1$ pour tout $1 \le i \le n^2$ avec $n\nmid i$, et $B$ relie les stations $i$ et $i+n$ pour $1 \le i \le n^2 - n$.
  Il est facile de vérifier qu’aucune paire de stations n’est reliée par les deux compagnies.
 
 Maintenant, montrons que pour $k=n^2-n+1$ il doit y avoir une paire de stations qui sont reliées par les deux compagnies.
 Supposons par l’absurde qu’il existe une configuration pour laquelle ce n’est pas le cas.
 
-Regardons les différentes stations comme des graphes dans lesquels deux sommets sont reliées par arête bleue si la compagnie $A$ lie les deux stations, et par une arête rouge si elles sont reliés la compagnie $B$. Par les conditions de l’énoncé les deux graphes rouges et bleus qu’on obtient sont des arbres (en fait, ce sont même des „chaines“). Soit $k$ le nombre de composantes connexes dans le graphe rouge. Le graphe a alors $n^2-k $ arêtes, d’où $k = n-1$. Il en de même pour le graphe bleu. De plus, par hypothèse il n’y a pas deux sommets d’une même composante connexe bleue qui se trouvent dans une même composante connexe rouge. Donc, chaque composante connexe bleue a au plus $n-1$ sommets. Comme le graphe bleu a $n-1$ composantes connexes, cela implique qu’il y a au plus $(n-1) \cdot (n-1) < n^2-n + 1$ arêtes au total. On a la contradiction voulue.\\
+Regardons les différentes stations comme des graphes dans lesquels deux sommets sont reliées par arête bleue si la compagnie $A$ lie les deux stations, et par une arête rouge si elles sont reliés la compagnie $B$. Par les conditions de l’énoncé les deux graphes rouges et bleus qu’on obtient sont des arbres (en fait, ce sont même des „chaines“). Soit $k$ le nombre de composantes connexes dans le graphe rouge. Le graphe a alors $n^2-k $ arêtes, d’où $k = n-1$. Il en de même pour le graphe bleu. De plus, par hypothèse il n’y a pas deux sommets d’une même composante connexe bleue qui se trouvent dans une même composante connexe rouge. Donc, chaque composante connexe bleue a au plus $n-1$ sommets. Comme le graphe bleu a $n-1$ composantes connexes, cela implique qu’il y a au plus $(n-1) \cdot (n-1) < n^2-n + 1$ arêtes au total. On a la contradiction voulue.
 \end{sol}
 
 
-
 \begin{sol}
-
-Nous allons nous aider d’un graphe $G$ ayant sommet pour chacun des 2004 triangles et une arête entre deux sommets si les triangles correspondants partagent un mauvais côté (c-à-d, un côté qui n’est pas bon).
+Nous allons nous aider d’un graphe $G$ ayant sommet pour chacun des $2004$ triangles et une arête entre deux sommets si les triangles correspondants partagent un mauvais côté (c'est-à-dire un côté qui n’est pas bon).
 Chaque sommet est de degré $1$ ou $3$.
 
-Les bons triangles ont le degré $1$ (mais pas tous sommets dont le degré 1 représentent des triangles isocèles). Notons aussi que le graphe que nous obtenons ne contient pas de cycles.
-Soit $N_1,N_2,\ldots, N_k$ les composantes connexes de $G$ (chacune d'elles est un arbre).Si $N_i $ a $n_i$ sommets, supposons que $x$ d’entre eux sont de degré $1$ et $y$ de degré $3$.
-On a
+Les bons triangles sont de degré $1$ (mais tous les sommets de degré 1 représentent des triangles isocèles). Notons aussi que le graphe que nous obtenons est acyclique. Soit $N_1, \dots, N_k$ les composantes connexes de $G$ (chacune d'elles est un arbre). Si $N_i $ a $n_i$ sommets, supposons que $x$ d’entre eux sont de degré $1$ et $y$ de degré $3$. On a
 \begin{align*}
 x +y &= n_i ,\\
 x +3y &= 2(n_i - 1).
 \end{align*}
-Donc $x = \frac{ni+2 }{2}$ . Par conséquent, le nombre total de sommets de degré $1$ est $\frac{n_1+n_2+···+n_k}{2}+ k = 1002 + k$. Notez que les sommets de $N_i$ représentent des triangles qui forment un polygone,
-et que l'union des polygones formés par toutes les composantes connexes est le 2006-gone d’origine. Considérons un nouveau graphe $H $ avec un sommet pour chaque composante connexe et une arête entre eux si les polygones correspondants partagent un côté. Notez que $H $ est connexe. Il a donc au moins $k - 1$ arêtes. Si $\delta_1$ et $\delta_2$ sont triangles dans différents composants connectés qui partagent un côté, ce côté doit être un bon segment. Cela implique que $\delta_1$ et $\delta_2$ sont représentées dans $G$ par des sommets de degré $1$. De plus, il est facile de voir qu'au plus l'un d'eux est un bon triangle. Ainsi au moins $k - 1$ sommets de degré $1$ ne sont pas de bons triangles. Cela implique qu'il y a aux plus $1003$ bons triangles. On obtient une triangulation avec $1003$ bons triangles en considérant $1003$ diagonales disjointes qui laissent chacune exactement $1$ sommet d'un côté puis $1000$ autres diagonales pour compléter la triangulation.\\
-
+Donc $x = \frac{ni + 2}{2}$. Par conséquent, le nombre total de sommets de degré $1$ est $\frac{n_1 + \dots + n_k}{2} + k = 1002 + k$. Notez que les sommets de $N_i$ représentent des triangles qui forment un polygone, et que l'union des polygones formés par toutes les composantes connexes est le $2006$-gone d’origine. Considérons un nouveau graphe $H $ avec un sommet pour chaque composante connexe et une arête entre eux si les polygones correspondants partagent un côté. Notez que $H $ est connexe. Il a donc au moins $k - 1$ arêtes. Si $\delta_1$ et $\delta_2$ sont triangles dans différents composants connectés qui partagent un côté, ce côté doit être un bon segment. Cela implique que $\delta_1$ et $\delta_2$ sont représentées dans $G$ par des sommets de degré $1$. De plus, il est facile de voir qu'au plus l'un d'eux est un bon triangle. Ainsi au moins $k - 1$ sommets de degré $1$ ne sont pas de bons triangles. Cela implique qu'il y a au plus $1003$ bons triangles. On obtient une triangulation avec $1003$ bons triangles en considérant $1003$ diagonales disjointes qui laissent chacune exactement $1$ sommet d'un côté puis $1000$ autres diagonales pour compléter la triangulation.
 \end{sol}
 
-{\bf Exercice 16.}
 
 \begin{sol}
-{\bf Solution.}
-
 Abordons le problème en considérant un graphe ayant un sommet pour chaque étudiant et une arête pour chaque amitié. Désignons les deux pièces par $X$ et $Y$. Soit $K$ une clique de taille maximale et supposons qu'elle a $2k$ sommets. On place initialement les sommets de $K$ en $ X$et le reste en $Y$ . La taille de la plus grande clique de $X $est $2k$ et la taille de la plus grande clique en $Y$ est au plus $2k$. Si elles ont la même taille, alors on s’arrête, car nous avons la partition désirée. Sinon, la taille maximale d’une clique en $X$ est strictement plus grande qu’en $Y$. À présent, nous allons déplacer les sommets de $X$ en $Y$ un par un. Notez qu'à chaque étape la taille de la plus grande clique dans $X $ est réduite de 1, tandis que la taille de la plus grande clique de $Y$ augmente d'au plus un. Nous déplaçons les sommets tant que la taille de la clique maximale en $X$ est strictement plus grande qu’en $Y $. Quand ce n'est plus le cas, il y a deux possibilités. Soit les deux chambres possèdent la même taille de la clique maximale, dans quel cas on a gagné, soit la taille de la plus grande clique en $Y$ est supérieur de $1$ à la taille de la plus grande clique en $X$.
 
 Dans le second cas, on peut supposer que la taille maximale d’une clique en $Y$ est $r + 1$, la taille maximale d’une clique en $X$ est $r $,
@@ -350,19 +261,18 @@ Observons que $Y$ peut avoir au plus $k$ sommets de $K$.
 
 En effet, dans le cas contraire, il resterait dans $X$ au plus $k-1$ sommet, et la différence entre les tailles maximales d’une clique en $Y$ et $X$ serait supérieure ou égale à $k+1-(k-1)=2$. Contradiction. Ainsi, il reste au moins $k$ sommets de $K$ en $X$.
 
-Regardons à présent de plus près les sommets qui ont déplacé de $K$ vers $Y$. S'il existe un sommet $y \in Y \cap K$ qui ne soit pas dans une clique maximale de $Y$, alors en le déplaçant de $ Y$ en $X$, augmente la taille de la clique maximale dans cette pièce (puisqu'il fait partie de $K$) sans diminuer la taille maximale d'une clique de taille maximale dans $Y $. Cela signifierait
-que les deux salles ont maintenant une taille de clique maximale de $r + 1$, et nous avons terminé.
+Regardons à présent de plus près les sommets qui ont déplacé de $K$ vers $Y$. \\
+S'il existe un sommet $y \in Y \cap K$ qui ne soit pas dans une clique maximale de $Y$, alors en le déplaçant de $ Y$ en $X$, augmente la taille de la clique maximale dans cette pièce (puisqu'il fait partie de $K$) sans diminuer la taille maximale d'une clique de taille maximale dans $Y $. Cela signifierait que les deux salles ont maintenant une taille de clique maximale de $r + 1$, et nous avons terminé. \\
 Ainsi, on peut supposer que pour toute clique maximale $M$ de $Y$ , $Y \cap K \in M$. Cependant, nous savons que
-$Y \cap K $a au plus $ k$ sommets de $K$. Ainsi, chaque clique maximale de $Y$ doit avoir sommets qui ne sont pas dans $Y \cap K$. Tant que la clique maximale de $Y $est de taille $r+1$, on va faire la chose suivante. On prend une clique maximale $M$ dans $Y$ et déplace un sommet de $M\ (Y K)$ en $X$. À la fin de ce processus, la taille maximale d'une clique dans $Y $est $r$. Il nous reste à montrer que la taille d’une clique maximale en $X$ est toujours $r$. Soit $N $ une clique maximale de $X$. Les sommets de $N$ sont soit des sommets de $K$ restés en
-$X$ soit des sommets que nous avons ramenés de $Y$ dans ce processus. Dans les deux cas, ils sont adjacents à
-tous les sommets de $Y \cap K.$ Cela signifie que $N \cup (Y \cap K) $ est une clique.
+$Y \cap K $a au plus $ k$ sommets de $K$. Ainsi, chaque clique maximale de $Y$ doit avoir sommets qui ne sont pas dans $Y \cap K$. Tant que la clique maximale de $Y$ est de taille $r+1$, on va faire la chose suivante. On prend une clique maximale $M$ dans $Y$ et déplace un sommet de $M\ (Y K)$ en $X$. À la fin de ce processus, la taille maximale d'une clique dans $Y $est $r$. Il nous reste à montrer que la taille d’une clique maximale en $X$ est toujours $r$. Soit $N $ une clique maximale de $X$. Les sommets de $N$ sont soit des sommets de $K$ restés en
+$X$ soit des sommets que nous avons ramenés de $Y$ dans ce processus. Dans les deux cas, ils sont adjacents à tous les sommets de $Y \cap K.$ Cela signifie que $N \cup (Y \cap K) $ est une clique.
 
 On a $$ 2k = |K| = |X\cap K| + |Y\cap K| = r + |Y\cap K|. $$
 et par hypothèse
-$$N \cup (Y \cap K) | \leq 2k \Leftrightarrow |N | + |(Y \cap K) | \leq 2k = r + |Y\cap K|.$$
+$$N \cup (Y \cap K) | \le 2k \Leftrightarrow |N | + |(Y \cap K) | \le 2k = r + |Y\cap K|.$$
 
-Donc $$| N | \leq r. $$
+Donc
+$$| N | \le r$$
 
 Cela signifie que $X $ et $Y $ont tous deux une taille de clique maximale $r$, comme nous le voulions.
-
 \end{sol}

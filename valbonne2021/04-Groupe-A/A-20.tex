@@ -1,5 +1,8 @@
+\soustitre{Sujet}
+
+
 \begin{exo}
-Soient $x, y$ des réels positifs tels que $xy=1$. Montrer que $(x+1)(y+1) \geq 4$. Quels sont les cas d'égalité ?
+Soient $x, y$ des réels positifs tels que $xy=1$. Montrer que $(x+1)(y+1) \ge 4$. Quels sont les cas d'égalité ?
 \end{exo}
 
 
@@ -9,7 +12,7 @@ Soient $\Omega_1$ et $\Omega_2$ deux cercles qui se coupent en deux points $A$ e
 
 
 \begin{exo}
-Soient $x, y$ des réels positifs. Montrer que $x^2+y^2+1 \geq x\sqrt{y^2+1} + y\sqrt{x^2+1}$. Existe-t-il des cas d'égalité ?
+Soient $x, y$ des réels positifs. Montrer que $x^2+y^2+1 \ge x\sqrt{y^2+1} + y\sqrt{x^2+1}$. Existe-t-il des cas d'égalité ?
 \end{exo}
 
 
@@ -18,15 +21,18 @@ Soit $ABC$ un triangle isocèle en $A$. Soit $D$ le milieu de $BC$. Soit $E$ et 
 \end{exo}
 
 
+\soustitre{Corrigé}
+
+
 \begin{sol}
 Cet exercice peut se résoudre de plusieurs façons différentes. L'idée principale est d'utiliser l'IAG au rang $2$. \\
 \textbf{Première méthode :} En développant,
 $$(x + 1)(y + 1) = xy + x + y + 1 = 2 + x + y$$
-Or $x+ y  \geq 2\sqrt{xy} = 2$ d'après l'IAG. \\
-Ainsi, $(x + 1)(y + 1) \geq 2 + 2 = 4$ ce qui conclut. \\
+Or $x+ y  \ge 2\sqrt{xy} = 2$ d'après l'IAG. \\
+Ainsi, $(x + 1)(y + 1) \ge 2 + 2 = 4$ ce qui conclut. \\
 Il y a égalité quand $x = y$, c'est-à-dire quand $x = y = 1$. \\
-\textbf{Deuxième méthode :} On utilise deux fois l'IAG. Tout d'abord, $x + 1 \geq 2 \sqrt{x \cdot 1} = 2 \sqrt{x}$. De même, $y+1 \geq \sqrt 2{y}$. \\
-Par produit d'inégalités dont tous les termes sont positifs, $(x+1)(y+1) \geq 4\sqrt{xy} = 4$. \\
+\textbf{Deuxième méthode :} On utilise deux fois l'IAG. Tout d'abord, $x + 1 \ge 2 \sqrt{x \cdot 1} = 2 \sqrt{x}$. De même, $y+1 \ge \sqrt 2{y}$. \\
+Par produit d'inégalités dont tous les termes sont positifs, $(x+1)(y+1) \ge 4\sqrt{xy} = 4$. \\
 Il y a égalité quand $x = 1$ et $y = 1$.
 \end{sol}
 
@@ -44,13 +50,14 @@ Cela conclut.
 
 \begin{sol}
 \textbf{Première méthode :} IAG \\
-$x^2 + y^2 + 1 = \dfrac{(x^2+1)+y^2}{2} + \dfrac{x^2+(y^2+1)}{2} \geq y\sqrt{x^2+1}+x\sqrt{y^2+1}$\\ On suppose par l'absurde qu'il existe un cas d'égalité. Alors, d'après le cas d'égalité de l'IAG, $y^2=x^2+1$ et $x^2 = y^2+1$ ce qui est absurde.\\
+$x^2 + y^2 + 1 = \dfrac{(x^2+1)+y^2}{2} + \dfrac{x^2+(y^2+1)}{2} \ge y\sqrt{x^2+1}+x\sqrt{y^2+1}$ \\
+On suppose par l'absurde qu'il existe un cas d'égalité. Alors, d'après le cas d'égalité de l'IAG, $y^2=x^2+1$ et $x^2 = y^2+1$ ce qui est absurde. \\
 \textbf{Deuxième méthode :} Cauchy-Schwarz
 \begin{align*}
-\left( x\sqrt{y^2+1} + y \sqrt{x^2+1} \right)^2 &\leq \left( x^2 + y^2 \right) \left( x^2 + 1 +y^2 + 1 \right) \\ 
-&= \left(\left( x^2 + y^2 +1\right) -1 \right) \left(\left( x^2 +y^2 + 1\right) + 1 \right) \\
-&= \left( x^2 +y^2 +1 \right)^2 - 1 \\
-&< \left( x^2 +y^2 +1 \right)^2 
+\left( x\sqrt{y^2 + 1} + y \sqrt{x^2 + 1} \right)^2 &\le \left(x^2 + y^2\right) \left(x^2 + 1 + y^2 + 1\right) \\ 
+& = \left(\left(x^2 + y^2 + 1\right) - 1\right) \left(\left( x^2 + y^2 + 1\right) + 1\right) \\
+& = \left(x^2 + y^2 + 1\right)^2 - 1 \\
+& < \left(x^2 + y^2 + 1\right)^2 
 \end{align*}
 L'inégalité stricte élimine immédiatement un possible cas d'égalité.
 \end{sol}

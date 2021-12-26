@@ -3,52 +3,34 @@
 %et du cours de Margaret Bilu durant le stage d'été 2013 :
 %http://www.math.ens.fr/~budzinski/polys/Combinatoire/Avancé/2013_courstd.pdf
 
+\subsubsection{Rappels}
+Quelques identités qu'il est bon de rappeler.
+
+\begin{lem}[Binôme de Newton généralisé]
+Si $|x| < 1$ et $r \in \C$, alors
+$$(1 + x)^r = \sum_{k = 0}^\infty \binom r k x^k \text{ et } \frac 1{(1 - x)^r} = \sum_{k = 0}^\infty \binom{k + r - 1}{r - 1} x^k$$
+En particulier,
+$$\frac 1{1 - X} = 1 + X + X^2 + \dots, \frac 1{(1 - X)^2} = 1 + 2X + 3X^2 + \dots, \text{ etc}$$
+\end{lem}
+
+
+\subsubsection{Exercices}
+
+
 \begin{exo}
 Déterminer le nombre de manières de se servir $n$ aliments à la cantine sachant que les pommes sont prises par $3$, les yaourts vont par $2$, et qu'on n'a le droit qu'à $2$ morceaux de pain et un bol de céréales au plus pour cause de changement de prestataire.
 \end{exo}
 
+
 \begin{exo}
 Les $79$ stagiaires du stage Animath choisissent chacun une activité pour l’après-midi libre parmi $5$ activités proposées. On sait que :
-. La piscine a été au moins aussi populaire que le foot ;
-. Les élèves allaient au shopping par groupe de $5$ ;
-. Au plus $4$ élèves ont joué aux cartes;
-. Au plus un élève est resté dans sa chambre.
-En écrivant la liste des activités par ordre alphabétique, on écrit le nombre d’élèves correspondant à chaque activité. Combien de listes de nombres différentes a-t-on pu écrire ?
-\end{exo}
-
-\begin{exo}
-Déterminer la série génératrice du nombre de manières payer $n$ centimes
-\end{exo}
-
-\subsubsection{Partitions}
-
-\begin{exo}
-Montrer que le nombre de partitions de $n$ en parts impaires vaut le nombre de partitions de $n$ en parts distinctes. \\
-Montrer que le nombre de partitions of $n$ en parts non divisibles par $k$ vaut le nombre de partitions de $n$ où chaque part apparait au plus $k - 1$ fois.
-\end{exo}
-
-\begin{exo}
-Peut-on partitionner $\Z$ en un nombre fini de suites arithmétiques de raisons distinctes ?
-\end{exo}
-
-
-\begin{exo}
-Montrer que le nombre de partitions de $[\![1, n]\!]$ vaut
-$$\frac 1e \sum_{k=0}^\infty \frac{k^n}{k!} $$
-\end{exo}
-
-
-\begin{sol}
-Posons $B_n$ ce nombre de partitions. On a $a_{n+1} = \sum_{k=0}^n {n \choose k} a_{n - k}$. et $A$ la série génératrice associée
-$\frac{B_{n+1}}{n!} = \sum_{k+l=n} \frac 1{k!}\frac{B_l}{l!}$
-\end{sol}
-
-
-\subsubsection{Suites arithmétiques}
-
-
-\begin{exo}
-On a $n$ suites arithmétiques qui couvrent les entiers de $1$ à $2^n$. Montrer qu'elles couvrent tous les entiers.
+\begin{itemize}
+\item La piscine a été au moins aussi populaire que le foot
+\item Les élèves allaient au shopping par groupe de $5$
+\item Au plus $4$ élèves ont joué aux cartes
+\item Au plus un élève est resté dans sa chambre
+\end{itemize}
+On écrit en face de chaque activité le nombre d’élèves y ayant participé. Combien de listes différentes a-t-on pu écrire ?
 \end{exo}
 
 
@@ -56,12 +38,12 @@ On a $n$ suites arithmétiques qui couvrent les entiers de $1$ à $2^n$. Montrer
 
 
 \begin{exo}
-Pour $n\geq 0$ calculer $\sum_{k\geq 0}\binom{k}{n-k}$.
+Pour $n\ge 0$ calculer $\sum_{k\ge 0}\binom{k}{n-k}$.
 \end{exo}
 
 
 \begin{exo}
-Pour $1\leq m\leq n$ calculer $\sum_{k=m}^{n} \binom{n}{k}\binom{k}{m}$.
+Pour $1\le m\le n$ calculer $\sum_{k=m}^{n} \binom{n}{k}\binom{k}{m}$.
 \end{exo}
 
 
@@ -69,17 +51,17 @@ Pour $1\leq m\leq n$ calculer $\sum_{k=m}^{n} \binom{n}{k}\binom{k}{m}$.
 
 
 \begin{exo}
-Trouver le terme général de la suite définie par $a_0=1, a_{n+1}=2a_n+n$.
+Trouver le terme général de la suite définie par $a_0=1, a_{n+1} = 2a_n + n$.
 \end{exo}
 
 
 \begin{exo}
-Trouver le terme général de la suite définie par $x_0=x_1=0, x_{n+2}=6x_{n+1}-9x_n+2^n+n$.
+Trouver le terme général de la suite définie par $a_0 = a_1 = 0, a_{n + 2} = 6a_{n + 1} - 9a_n + 2^n + n$.
 \end{exo}
 
 
 \begin{exo}
-Montrer que $F_0+...+F_n=F_{n+2}+1$
+Montrer que $F_0 + \dots + F_n = F_{n+2} - 1$
 \end{exo}
 
 
@@ -102,7 +84,7 @@ Trouver le nombre de séquences de $6$ chiffres dont la somme vaut $10$.
 
 
 \begin{exo}
-Soit $p$ un nombre premier. Trouver le nombre de sous-ensembles de $\{1,2,...,2p\}$ à $p$ élements dont la somme est divisible par $p$.
+Soit $p$ un nombre premier. Trouver le nombre de sous-ensembles de $\{1,2,\dots,2p\}$ à $p$ élements dont la somme est divisible par $p$.
 \end{exo}
 
 
@@ -112,22 +94,12 @@ Soit $n\in\N^*$. Trouver le nombre de polynômes $P$ à coefficients dans $\{0, 
 
 
 \begin{exo}
-Soit $n\in\N^*$. Trouver le nombre de sous-ensembles de $\{1,2,...,n\}$ dont le cardinal est également le plus petit élement.
-\end{exo}
-
-
-\begin{exo}
-Trouver le nombre de triplets d'entiers $(a,b,c)$ tels que $a+b+c=6$, $-1\leq a\leq 2$ et $1\leq b,c\leq 4$.
-\end{exo}
-
-
-\begin{exo}
 Soit $n\in\N^*$. Trouver le nombre de nombres à $n$ chiffres dont les chiffres sont parmi $\{2,3,7,9\}$ et qui sont divisibles par $3$.
 \end{exo}
 
 
 \begin{exo}
-Trouver le nombre de suites $a_1, a_2, ...$ croissantes ne contenant que des entiers entre $1$ et $20$ et telles que $a_i\equiv i[2]$ pour tout $i$.
+Trouver le nombre de suites $a_1, a_2, \dots$ croissantes ne contenant que des entiers entre $1$ et $20$ et telles que $a_i\equiv i[2]$ pour tout $i$.
 \end{exo}
 
 
@@ -137,7 +109,7 @@ Soit $n,k\in\N^*$. Trouver le nombre de manières de colorier un $n$-gone avec $
 
 
 \begin{exo}
-Une pièce est lancée plusieurs fois jusqu'à ce que l'on obtienne une suite impaire de faces suivie par un pile. Etant donné $n\in\N^*$, trouver le nombre de séquences de $n$ lancés.
+Une pièce est lancée plusieurs fois jusqu'à ce que l'on obtienne une suite impaire de faces suivie par un pile. Étant donné $n\in\N^*$, trouver le nombre de séquences de $n$ lancés.
 \end{exo}
 
 
@@ -161,7 +133,12 @@ $$\frac{p_{2004}-p_{2002}-p_{1999}}{p_{2000}+p_{2001}}$$
 
 
 \begin{exo}
-Soit $n\in\N^*$. Montrer que le nombre de manière d'exprimer $n$ comme somme d'entiers strictement positifs deux à deux distincts est égal au nombre de manière d'exprimer $n$ comme somme d'entiers strictement positifs impairs (sans tenir compte de l'ordre des termes).
+Soit $n\in\N$. Montrer que le nombre de manières d'exprimer $n$ comme somme d'entiers strictement positifs deux à deux distincts est égal au nombre de manière d'exprimer $n$ comme somme d'entiers impairs (sans tenir compte de l'ordre des termes).
+\end{exo}
+
+
+\begin{exo}
+Soient $n\in\N$ et $ k\ge 2$. Montrer que le nombre de manières d'exprimer $n$ comme somme d'entiers strictement positifs où chaque entier apparait strictement moins de $k$ fois est égal au nombre de manière d'exprimer $n$ comme somme d'entiers non divisibles par $k$ (sans tenir compte de l'ordre des termes).
 \end{exo}
 
 
@@ -196,11 +173,35 @@ Soit $n\in\N^*$. Montrer que le nombre de manières d'écrire $n$ comme somme d'
 
 
 \begin{exo}
-Déterminer s'il existe $S\subset\N$ tel que pour tout $n\in\N$ l'équation $a+2b=n$ a une unique solution dans $S^2$.
+Déterminer s'il existe $S\subset\N$ tel que pour tout $n\in\N$ l'équation $a + 2b = n$ a une unique solution dans $S^2$.
+\end{exo}
+
+
+\subsubsection{Suites arithmétiques}
+
+
+\begin{exo}
+Peut-on partitionner $\Z$ en un nombre fini $\ge 2$ de suites arithmétiques de raisons distinctes ?
+\end{exo}
+
+
+\begin{exo}
+Soient $a_1, \dots, a_k$ et $d_1, \dots, d_k$ tels que $\{\{a_1 + kd_1, k\in\N\}, \dots, \{a_n + kd_n, k\in\N\}\}$ soit une partition de $\N$ en suites arithmétiques. Montrer que
+$$\sum_i\frac{1}{d_i} = 1 \text{ et } \sum_i\frac{a_i}{d_i} = \frac{k-1}{2}$$
+\end{exo}
+
+
+\begin{exo}[Difficile]
+$n$ suites arithmétiques couvrent les entiers de $1$ à $2^n$. Montrer qu'elles couvrent tous les entiers.
 \end{exo}
 
 
 \subsubsection{Autres exercices}
+
+
+\begin{exo}
+Soit $n\in\N^*$. Alice possèce $n$ pièces biaisées telles que la $k$-ième pièce a une probabilité de $\frac{1}{2k+1}$ de tomber sur face. Elle lance toutes les pièces une fois. Calculer la probabilité qu'elle obtienne un nombre impair de faces.
+\end{exo}
 
 
 \begin{exo}
@@ -209,7 +210,7 @@ Soit $S$ l'ensemble des triplets $(i,j,k)\in\N^3$ tels que $i+j+k=17$. Calculer 
 
 
 \begin{exo}
-Soient $1 \leq n \leq k$ tels que $k-n$ est pair. On a $2n$ lampes éteintes. Une opération consiste à changer l'état d'une lampe. Soit $N$ le nombre de séquences constituées de $k$ opérations telles qu'à la fin les lampes $1$ à $n$ sont allumées et les lampes $n+1$ à $2n$ sont éteintes. Soit M le nombre de séquences constituées de $k$ opérations telles qu'à la fin les lampes $1$ à $n$ sont allumées et les lampes $n+1$ à $2n$ sont éteintes mais où les lampes de $n+1$ à $2n$ n'ont jamais été allumées. Déterminer $\frac{N}{M}$.
+Soient $1 \le n \le k$ tels que $k-n$ est pair. On a $2n$ lampes éteintes. Une opération consiste à changer l'état d'une lampe. Soit $N$ le nombre de séquences constituées de $k$ opérations telles qu'à la fin les lampes $1$ à $n$ sont allumées et les lampes $n+1$ à $2n$ sont éteintes. Soit $M$ le nombre de séquences constituées de $k$ opérations telles qu'à la fin les lampes $1$ à $n$ sont allumées et les lampes $n+1$ à $2n$ sont éteintes mais où les lampes de $n+1$ à $2n$ n'ont jamais été allumées. Déterminer $\frac{N}{M}$.
 \end{exo}
 
 
@@ -224,12 +225,7 @@ Trouver la proportion de permutations à $n$ élements sans point fixe quand $n$
 
 
 \begin{exo}
-Soit $n\in\N^*$, $a_1,...,a_n$ et $b_1,...,b_n$ deux suites finies telles que les nombres $a_i+a_j$, $i\neq j$ et $b_i+b_j$, $i\neq j$ soient les mêmes à permutation près. Montrer que $n$ est une puissance de $2$.
-\end{exo}
-
-
-\begin{exo}
-Soit $k\in\N^*$, $E_i=\{a_i+nd_i, n\in\N\}$, $1\leq i\leq k$ des suites arithmétiques qui forment une partition de $\N^*$. Montrer que $\sum_{i}\frac{1}{d_i}=1$, $\sum_{i}\frac{a_i}{d_i}=\frac{k+1}{2}$ et qu'il existe deux suites de raisons égales si $k\geq 2$.
+Soit $n\in\N^*$, $a_1,\dots,a_n$ et $b_1,\dots,b_n$ deux suites finies telles que les nombres $a_i+a_j$, $i\ne j$ et $b_i+b_j$, $i\ne j$ soient les mêmes à permutation près. Montrer que $n$ est une puissance de $2$.
 \end{exo}
 
 
@@ -239,33 +235,22 @@ Peut-on piper une paire de dés classiques de sorte que chaque somme ait la mêm
 
 
 \begin{exo}
-Peut écrire sur les faces d'une paire de dés classiques d'autres entiers positifs de sorte que la probabilité de chaques somme reste la même ?
+Peut-on écrire sur les faces d'une paire de dés classiques d'autres entiers positifs de sorte que la probabilité de chaques somme reste la même ?
 \end{exo}
 
 
 \begin{exo}
-Soit $n\in\N^*$. Alice possèce $n$ pièces biaisées telles que la $k$-ième pièce a une probabilité de $\frac{1}{2k+1}$ de tomber sur face. Elle lance toutes les pièces une fois. Calculer la probabilité qu'elle obtienne un nombre impair de faces.
+Soit $S_i$ une suite d'ensembles tels que $S_0\subset\N$ est un ensemble fini et $S_{n+1}$ est l'ensemble des $k\in\N^*$ tels que exactement un des nombres $k$ et $k-1$ est dans $S_n$. Montrer que $S_n$ est l'union de $S_0$ et d'un translaté de $S_0$ pour une infinité de $n$.
 \end{exo}
 
 
 \begin{exo}
-Soit $S_i$ une suite d'ensembles tels que $S_0\subset\N^*$ est un ensemble fini et $S_{n+1}$ est l'ensemble des $k\in\N^*$ tels que exactement un des nombres $k$ et $k-1$ est dans $S_n$. Montrer que $S_n$ est l'union de $S_0$ et d'un translaté de $S_0$ pour une infinité de $n$.
+Montrer que tout entier relatif s'écrit de manière unique comme $\sum_{k\ge 0}3^ka_k$ avec $a_k\in\{-1,0,1\}$ pour tout $k$.
 \end{exo}
 
 
 \begin{exo}
-Montrer que tout entier relatif s'écrit de manière unique comme $\sum_{k\geq 0}3^ka_k$ avec $a_k\in\{-1,0,1\}$ pour tout $k$.
-\end{exo}
-
-
-\begin{exo}
-Montrer que tout entier relatif s'écrit de manière unique comme $\sum_{k\geq 0}(-4)^ka_k$ avec $a_k\in\{0,1,2,3\}$ pour tout $k$.
-\end{exo}
-
-
-\begin{exo}
-Soit $a_1,a_2,...$ une suite croissante d'entiers naturels telle que tout entier naturel peut être représenté de manière unique sous la
-forme $a_i +2a_j +4a_k$ (avec $i$, $j$, $k$ non nécessairement distincts). Déterminer $a_{1998}$.
+Montrer que tout entier relatif s'écrit de manière unique comme $\sum_{k\ge 0}(-4)^ka_k$ avec $a_k\in\{0,1,2,3\}$ pour tout $k$.
 \end{exo}
 
 
@@ -275,23 +260,303 @@ Montrer que si un rectangle peut être pavé avec des rectangles $1\times p$ et 
 
 
 \begin{exo}
-Pour tout $m,n\in\N$, soit $f(m,n)$ le nombre de $(x_1,...,x_n)\in\mathbb{Z}^n$ tels que $|x_1|+...+|x_n|\leq m$. Montrer que $f(m,n)=f(n,m)$.
+Pour tous $m,n\in\N$, soit $f(m,n)$ le nombre de $(x_1, \dots, x_n)\in\Z^n$ tels que $|x_1|+\dots+|x_n|\le m$. Montrer que $f(m,n)=f(n,m)$.
 \end{exo}
 
 
 \begin{exo}
-Soit $n\in\N^*$. Pour tout ensemble $S\subseteq \{1,2,...,n\}$, $S\neq\emptyset$, soient $\sigma(S)$ et $\pi(S)$ la somme et le produit des élements de $S$. Montrer que
-$$\sum_{S\neq\emptyset}\frac{\sigma(S)}{\pi(S)}=n^2+2n-(1+\frac{1}{2}+...+\frac{1}{n})(n+1)$$
+Soit $n\in\N^*$. Pour tout ensemble $S\subseteq \{1, \dots, n\}$, soient $\sigma(S)$ et $\pi(S)$ la somme et le produit des élements de $S$ ($\sigma(\emptyset) = 0$ et $\pi(\emptyset) = 1$). Montrer que
+$$\sum_{S\subseteq \{1, \dots, n\}} \frac{\sigma(S)}{\pi(S)} = n^2 + 2n - \left(1 + \frac{1}{2} + \dots + \frac{1}{n}\right)(n+1)$$
 \end{exo}
 
 
 \begin{exo}
-Pour tout $n,k\in\N$, soit $p_n(k)$ le nombre de partitions de $\{1,2,...,n\}$ ayant exactement $k$ point fixes. Montrer que
+Pour tout $n,k\in\N$, soit $p_n(k)$ le nombre de partitions de $\{1, \dots, n\}$ ayant exactement $k$ points fixes. Montrer que
 $$\sum_{k=1}^n kp_n(k)=n!$$
 \end{exo}
 
 
 \begin{exo}
-Soit $n\in\N^*$. Pour toute permutation $\pi$ de $\{1,2,...,n\}$, soit $\sigma(\pi)$ sa signature et $\nu(\pi)$ son nombre de points fixes. Montrer que
+Soit $n\ge 1$. Pour toute permutation $\pi$ de $\{1,\dots,n\}$, soit $\sigma(\pi)$ sa signature et $\nu(\pi)$ son nombre de points fixes. Montrer que
 $$\sum_{\pi}\frac{\sigma(\pi)}{\nu(\pi)+1}=(-1)^{n+1}\frac{n}{n+1}$$
 \end{exo}
+
+
+\begin{exo}
+Montrer que le nombre de partitions d'un ensemble à $n$ éléments vaut
+$$\frac 1e \sum_{k=0}^\infty \frac{k^n}{k!}$$
+\end{exo}
+
+
+\subsubsection{Solutions}
+
+
+\begin{sol}
+\textbf{Sans série génératrice :} Soient $a$ le nombre de pommes + morceaux de pain, et $b$ le nombre de yaourts + bol de céréales. Pour $a$ et $b$ fixés, on constate qu'il y a une unique manière de prendre les aliments nécessaires, c'est-à-dire prendre le nombre de pommes le plus proche possible de $a$ et compléter avec du pain, et prendre le nombre de yaourts le plus proche possible et compléter avec un bol si besoin. Il y a donc autant de façons de se servir que de manières d'écrire $n = a + b$ avec $a, b$ naturels, soit $n + 1$ manières. \\
+\textbf{Avec série génératrice :} La série génératrice des pommes est $1 + X^3 + X^6 + \dots = \frac 1{1 - X^3}$, celle des yaourts est $1 + X^2 + X^4 + \dots = \frac 1{1 - X^2}$, celle des morceaux de pain est $1 + X + X^2 = \frac{1 - X^3}{1 - X}$ et celle du bol est $1 + X$. Donc la série du petit-déjeuner est
+$$\frac 1{1 - X^3}\frac 1{1 - X^2}\frac{1 - X^3}{1 - X}(1 + X) = \frac 1{(1 - X)^2} = 1 + 2X + 3X^2 + \dots $$
+Donc la réponse est $n + 1$.
+\end{sol}
+
+
+\begin{sol}
+On associe mentalement chaque élèves ayant joué au foot à un élève parti à la piscine, de sorte que les élèves piscine + foot soient maintenant répartis en paires + un excédent d'élèves à la piscine. La série génératrice est donc
+$$\begin{array}{rcl}
+&  & \underbrace{(1 + X^2 + X^4 + \dots)}_{\text{paires foot-piscine}}\underbrace{(1 + X + \dots)}_{\text{excédent piscine}}\underbrace{(1 + X^5 + X^{10} + \dots)}_{\text{shopping}}\underbrace{(1 + X + X^2 + X^3 + X^4)}_{\text{cartes}}\underbrace{(1 + X)}_{\text{asocial}} \\
+& = & \dfrac{1}{1 - X^2}\dfrac{1}{1 - X}\dfrac{1}{1 - X^5}\dfrac{1 - X^5}{1 - X}(1 + X) = \dfrac{1}{(1 - X)^3}
+\end{array}$$
+Donc la réponse est $\binom{79 + 3 - 1}{3 - 1} = \binom{81}2$.
+\end{sol}
+
+
+\begin{sol}
+%Exo 3
+%TODO
+\end{sol}
+
+
+\begin{sol}
+Remarquons que
+$$\sum_{k = m}^n\binom n k\binom k m = \sum_{k = m}^n\binom n{n - k}\binom k m = \sum_{a + b = n}\binom n a\binom b m$$
+ce qui ressemble douteusement à une multiplication de séries génératrices.
+%TODO
+\end{sol}
+
+
+\begin{sol}
+\textbf{Sans série génératrice :} Posons $b_n = a_n + n + 1$ (légèrement parachuté). On a $b_0 = 2$ et
+$$b_{n + 1} = a_{n + 1} + n + 2 = 2a_n + 2n + 2 = 2b_n$$
+Donc $b_n = 2^nb_0 = 2^{n + 1}$ et $a_n = b_n - n - 1 = 2^{n + 1} - n - 1$. \\
+\textbf{Avec série génératrice :} Soit $A$ la série génératrice des $a_n$. On a
+$$A = \sum a_nX^n = 1 + X\sum a_{n + 1}X^n = 1 + X\sum (2a_n + n)X^n = 1 + 2XA + \frac X{(1 - X)^2} - \frac X{1 - X}$$
+Donc
+$$A = \frac{1 - \frac 1{1 - X} + \frac 1{(1 - X)^2}}{1 - 2X} = \frac{1 - 2X + 2X^2}{(1 - X)^2(1 - 2X)} = \frac 2{1 - 2X} - \frac 1{(1 - X)^2}$$
+où l'on obtient la dernière expression en décomposant en éléments simples. Donc la réponse est $2\cdot 2^n - (n + 1) = 2^{n + 1} - n - 1$.
+\end{sol}
+
+
+\begin{sol}
+\textbf{Sans série génératrice :} Posons $b_n = a_n + B2^n + Cn + D$. On a
+$$\begin{array}{rcl}
+b_{n + 2}
+& = & a_{n + 2} + B2^{n + 2} + C(n + 2) + D  \\
+& = & 6a_{n + 1} - 9a_n + 2^n + n + B2^{n + 2} + C(n + 2) + D \\
+& = & 6(b_{n + 1} - B2^{n + 1} - C(n + 1) - D) - 9(b_n - B2^n - Cn - D) \\
+&   & + 2^n + n + B2^{n + 2} + C(n + 2) + D \\
+& = & 6b_{n + 1} - 9b_n + (1 + B)2^n + (1 + 4C)n + 4(D - C)
+\end{array}$$
+Pour rendre $b_n$ récurrente linéaire, nous allons donc prendre $B = -1, C = D = -\frac 1 4$, ce qui donne $b_0 = -\frac 5 4, b_1 = -\frac 52$ puis $b_{n + 2} - 6b_{n + 1} + 9b_n = 0$ et le problème devient routine. \\
+\textbf{Avec série génératrice :} Soit $A$ la série génératrice des $a_n$. On a
+$$\begin{array}{rcl}
+A
+& = & \displaystyle \sum a_nX^n = X^2\sum a_{n + 2}X^n = X^2\sum (6a_{n + 1} - 9a_n + 2^n + n)X^n \\
+& = & \displaystyle 6X\sum a_nX^n - 9X^2\sum a_nX^n + X^2\sum (2X)^n + X^2\sum (n + 1)X^n - X^2\sum X^n \\
+& = & \displaystyle 6XA - 9X^2A + \dfrac{X^2}{1 - 2X} + \dfrac{X^2}{(1 - X)^2}- \dfrac{X^2}{1 - X} \\
+\end{array}$$
+Donc
+$$A = \frac{\frac{X^2}{1 - 2X} + \frac{X^2}{(1 - X)^2}- \frac{X^2}{1 - X}}{1 - 6X + 9X^2} = \frac 1 4\frac 1{(1 - X)^2} + \frac 1{1 - 2X} - \frac 5 3\frac 1{1 - 3X} + \frac 5{12}\frac 1{(1 - 3X)^2}$$
+Donc la réponse est $\frac 1 4 (n + 1) + 2^n - \frac 5 3 3^n + \frac 5{12}(n + 1)3^n = \frac{n + 1}4 + 2^n + \left(-\frac 5 4 n + \frac 5{12}\right)3^n$.
+\end{sol}
+
+
+\begin{sol}
+\textbf{Sans série génératrice :} Montrons-le par récurrence :
+\begin{itemize}
+\item[•] \textbf{Initialisation :} $F_0 = 0 = F_{0 + 2} - 1$
+\item[•] \textbf{Hérédité :} Si $F_0 + \dots + F_n = F_{n + 2} - 1$, alors
+$$F_0 + \dots + F_{n + 1} = F_{n + 2} - 1 + F_{n + 1} = F_{n + 3} - 1$$ 
+\end{itemize}
+\textbf{Avec série génératrice :} La série génératrice de la suite de Fibonacci est $\frac X{1 - X - X^2}$, donc celles de $F0 + \dots + F_n$ et de $F_{n + 2} - 1$ sont respectivement
+$$\frac X{(1 - X - X^2)(1 - X)} \text{ et } \underbrace{\frac{\frac X{1 - X - X^2} - F_0 - F_1X}{X^2}}_{F_{n + 2}} - \underbrace{\frac{1}{1 - X}}_{-1}$$
+Or on vérifie que
+$$\frac{\frac X{1 - X - X^2} - F_0 - F_1X}{X^2} - \frac{1}{1 - X} = \frac{1 + X}{1 - X - X^2} - \frac{1}{1 - X} = \frac X{(1 - X - X^2)(1 - X)}$$ 
+Donc les deux suites sont égales.
+\end{sol}
+
+
+\begin{sol}
+Par inclusion-exclusion, la série génératrice associée est
+$$\begin{array}{rcl}
+&  & \underbrace{(1 + X^2 + X^4 + \dots)}_{\text{rouge pair}}\underbrace{(1 + X + X^2 + \dots)}_{\text{vert}}\underbrace{(1 + X + X^2 + \dots)}_{\text{jaune}} \\
+& + & \underbrace{(1 + X + X^2 + \dots)}_{\text{rouge}}\underbrace{(X + X^3 + X^5 + \dots)}_{\text{vert impair}}\underbrace{(1 + X + X^2 + \dots)}_{\text{jaune}} \\
+& - & \underbrace{(1 + X^2 + X^4 + \dots)}_{\text{rouge pair}}\underbrace{(X + X^3 + X^5 + \dots)}_{\text{vert impair}}\underbrace{(1 + X + X^2 + \dots)}_{\text{jaune}} \\
+& = & \dfrac{1}{1 - X^2}\dfrac{1}{1 - X}\dfrac{1}{1 - X} + \dfrac{1}{1 - X}\dfrac{X}{1 - X^2}\dfrac{1}{1 - X} - \dfrac{1}{1 - X^2}\dfrac{X}{1 - X^2}\dfrac{1}{1 - X} \\
+& = & \dfrac{1 + X}{(1 - X^2)(1 - X)^2} - \dfrac{X}{(1 - X^2)^2(1 - X)} \\
+& = & \dfrac{1}{(1 - X)^3} - \dfrac{X + X^2}{(1 - X^2)^3} \\
+& = & \dfrac{1}{(1 - X)^3} - \dfrac{X}{(1 - X^2)^3} - \dfrac{X^2}{(1 - X^2)^3}
+\end{array}$$
+
+On cherche le coefficient de $X^{2005}$ de cette série génératrice. On fait ça terme par terme :
+\begin{itemize}
+\item Pour $\frac{1}{(1-X)^3}$, il vaut $\binom{2005 + 3 - 1}{3 - 1} = \binom{2007}{2}$.
+\item Pour $\frac{X}{(1-X^2)^3}$, cela revient à calculer le coefficient de $X^{2004}$ dans $\frac{1}{(1 - X^2)^3}$ ou encore le coefficient de $X^{1002}$ dans $\frac{1}{(1-X)^3}$, c'est-à-dire $\binom{1002 + 3 - 1}{3 - 1} = \binom{1004}{2}$.
+\item Pour $\frac{X^2}{(1-X^2)^3}$, il vaut $0$ car tous les coefficients d'indice impair sont nuls.
+\end{itemize}
+La réponse est donc $\binom{2007}{2} - \binom{1004}{2}$.
+\end{sol}
+
+
+\begin{sol}
+\textbf{Sans série génératrice :}
+
+\textbf{Avec série génératrice :} La série génératrice est
+$$\underbrace{\frac 1{1 - X^2}}_{\text{rouge}}\underbrace{\frac 1{1 - X^2}}_{\text{jaune}}\underbrace{\frac 1{1 - X}}_{\text{vert}}\underbrace{\frac 1{1 - X}}_{\text{bleu}}$$
+%TODO
+\end{sol}
+
+
+\begin{sol}
+\textbf{Sans série génératrice :} Plutôt que de se restreindre à prendre des nombres $\le 9$, on va tout autoriser et retirer ceux qui utilisent des nombres $\ge 10$. Par stars and bars, cette première quantité est $\binom{10 + 6 - 1}{6 - 1}$. La deuxième quantité est $6$ puisque la seule manière d'utiliser un nombre $\ge 10$ est d'avoir $10, 0, 0, 0, 0, 0$ à permutation près. La réponse est donc $\binom{15}5 - 6$.
+
+\textbf{Avec série génératrice :}
+%TODO
+\end{sol}
+
+
+\begin{sol}
+\textbf{Sans série génératrice :}
+%TODO
+
+\textbf{Avec série génératrice :} On va associer
+\end{sol}
+
+
+\begin{sol}
+Déjà, remarquons que nous pouvons remplacer $P$ par une série formelle puisque si $P(2) = n$, alors seul un nombre fini de coefficients de $P$ (majoré par $\log_2 n$) seront non nuls et $P$ correspondra à un polynôme. Si on écrit $P = a_0 + a_1X + \dots$, on voit que la série génératrice du nombre de manières d'écrire $P(2) = n$ est
+\begin{align*}
+& \underbrace{(1 + X + X^2 + X^3)}_{\text{contribution de }a_0}\underbrace{(1 + X^2 + X^4 + X^6)}_{\text{contribution de }a_1}\underbrace{(1 + X^4 + X^8 + X^{12})}_{\text{contribution de }a_2}\dots \\
+& = \dfrac{1 - X^4}{1 - X}\dfrac{1 - X^8}{1 - X^2}\dfrac{1 - X^{16}}{1 - X^4}\dots \\
+& = \dfrac 1{(1 - X)(1 - X^2)} \\
+& = \dfrac 1 2\dfrac 1{(1 - X)^2} + \dfrac 1 4\dfrac 1{1 - X} + \dfrac 1 4\dfrac 1{1 + X}
+\end{align*}
+La réponse est donc
+$$\frac{n + 1}2 + \frac 1 4 + \frac 1 4 (-1)^n = \frac{2n + 3 + (-1)^n}4 = \left\lfloor\frac n 2\right\rfloor + 1$$
+\end{sol}
+
+
+\begin{sol}
+\textbf{Sans série génératrice :} Posons $a_{0, n}, a_{1, n}, a_{2, n}$ le nombre de nombres à $n$ chiffres dans $\{2, 3, 7, 9\}$ congrus à $0, 1, 2$ modulo $3$. Nous avons $a_{0, 0} = 1, a_{1, 0} = 0, a_{2, 0} = 0$, puis $a_{i, n + 1} = 2a_{i, n} + a_{i + 1, n} + a_{i + 2, n}$, ce qui peut se résoudre par récurrence (mais est assez pénible). \\
+\textbf{Avec série génératrice :} Nous voulons le coefficient constant de $(X^2 + X^3 + X^7 + X^9)^n$ modulo $1 - X^3$. Tout d'abord,
+$$(X^2 + X^3 + X^7 + X^9)^n \equiv (2 + X + X^2)^n \mod 1 - X^3$$
+Puis, exploitons le fait que $1 - X^3 = (1 - X)(1 + X + X^2)$,
+$$(2 + X + X^2)^n \equiv 1^n = 1 \mod 1 + X + X^2 \text{ et } (2 + X + X^2)^n \equiv 4^n \mod 1 - X$$
+Donc, par restes chinois,
+$$(2 + X + X^2)^n \equiv \frac{4^n + 2}3 + \frac{4^n - 1}3 X + \frac{4^n - 1}3 X^2 \mod 1 - X^3$$
+(pour trouver ça, le plus simple est de poser $(2 + X + X^2)^n \equiv A + BX + CX^2$, de remarquer que $B = C$ par symétrie, de réduire modulo $1 - X$ pour avoir $A + 2B = 4^n$, puis modulo $1 + X + X^2$ pour avoir $A - B = 1$). Ainsi, la réponse est
+$$\frac{4^n + 2}3$$
+\end{sol}
+
+
+\begin{sol}
+Regardons d'abord la série génératrice $A$ du nombre de suites $a_1, \dots, a_k$ telles que $a_i \equiv i \mod 2$ pour $k$ et $a_k = n$. Cela revient à compter le nombre de façons d'écrire $n$ comme somme ordonnée d'impairs ($a_i \equiv i \mod 2$ pour tout $i$ équivaut à $a_1 - 0, a_2 - a_1, \dots, a_n - a_{n - 1}$ impairs). Ainsi,
+$$A = (X + X^3 + X^5 + \dots)^k = \left(\frac X{1 - X^2} \right)^k$$
+Maintenant, ce qui nous intéresse est de sommer ça pour tout $k$ et de cumuler (car notre condition est $a_k \le 20$, pas $a_k = 20$). Notre série génératrice est donc
+$$\underbrace{\frac 1{1 - X}}_{\text{cumul}}\left(\underbrace{1}_{k = 0} + \underbrace{\frac X{1 - X^2}}_{k = 1} + \underbrace{\left(\frac X{1 - X^2} \right)^2}_{k = 2} + \dots\right) = \frac 1{1 - X}\frac 1{1 - \frac X{1 - X^2}} = \frac{1 + X}{1 - X - X^2}$$
+Cela ressemble sacrément à la série génératrice $\frac{X}{1 - X - X^2}$ de Fibonacci. La réponse est donc
+$$F_{20} + F_{21} = F_{22}$$
+\end{sol}
+
+
+\begin{sol}
+%TODO
+\end{sol}
+
+
+\begin{sol}
+\textbf{Sans série génératrice :} Soit $a_n$ le nombre de séquences de $n$ lancers. On vérifie aisément que $a_0 = 0, a_1 = 0, a_2 = 1$. Puis, pour $n \ge 3$, toute séquence de lancers commence soit par $P$, soit par $FF$, et la séquence qu'on obtient en en enlevant ça reste valide. Et réciproquement on peut rajouter $P$ ou $FF$ à n'importe quelle séquence valide pour en obtenir une nouvelle valide. Donc $a_{n + 2} = a_{n + 1} + a_n$, ce qui est la récurrence de Fibonacci, ce qui signifie que $a_{n + 1} = F_n$. \\
+\textbf{Avec série génératrice :} Une séquence de lancers valide ressemble à ça :
+$$\underbrace{P\dots P}_{\text{piles}}\underbrace{\underbrace{F\dots F}_{\text{faces pair $\ge 2$}}\underbrace{P\dots P}_{\text{piles $\ge 1$}}\dots}_{\text{alternance faces/piles}}\underbrace{F\dots F}_{\text{faces impair}}\underbrace{P}_{\text{pile final}}$$
+Donc la série génératrice correspondante est
+\begin{align*}
+& \underbrace{\frac 1{1 - X}}_{\text{piles}}\underbrace{\left(1 + \underbrace{\frac{X^2}{1 - X^2}}_{\text{faces pair $\ge 2$}}\underbrace{\frac X{1 - X}}_{\text{piles $\ge 1$}} + \left(\frac{X^2}{1 - X^2}\frac X{1 - X}\right)^2 + \dots\right)}_{\text{alternance faces/piles}}\underbrace{\frac X{1 - X^2}}_{\text{faces impair}}\underbrace{X}_{\text{pile final}} \\
+& = \frac{X^2}{(1 - X)^2(1 + X)}\frac 1{1 - \frac{X^3}{(1 - X)^2(1 + X)}} \\
+& = \frac{X^2}{(1 - X)^2(1 + X) - X^3} \\
+& = \frac{X^2}{1 - X - X^2}
+\end{align*}
+Donc la réponse est $F_{n - 1}$.
+\end{sol}
+
+
+\begin{sol}
+%TODO
+\end{sol}
+
+
+\begin{sol}
+Une suite contenant $m$ fois le bloc $01$ ressemble à ça :
+$$\underbrace{1\dots 1}_{\text{uns}}\underbrace{\underbrace{0\dots 0}_{\ge 1 \text{ uns}}\underbrace{1\dots 1}_{\ge 1 \text{ zéros}}\dots}_{\text{$m$ alternances zéros/uns}}\underbrace{0\dots 0}_{\text{zéros}}$$
+Donc la série génératrice est
+$$\underbrace{\frac 1{1 - X}}_{\text{uns}}\underbrace{\left(\underbrace{\frac X{1 - X}}_{\ge 1 \text{ zéros}}\underbrace{\frac X{1 - X}}_{\ge 1 \text{ uns}}\right)^m}_{\text{$m$ alternances zéros/uns}}\underbrace{\frac 1{1 - X}}_{\text{zéros}} = \frac{X^{2m}}{(1 - X)^{2m + 2}}$$
+et la réponse est
+$$\binom{(n - 2m) + (2m + 2) - 1}{(2m + 2) - 1} = \binom{n + 1}{2m + 1}$$
+On fait bien attention à ce que ça vale $0$ quand $n < 2m$.
+\end{sol}
+
+
+\begin{sol}
+Une suite ne contenant ni $AAAA$ ni $BBB$ ressemble à ça :
+$$\underbrace{B\dots B}_{\le 2\ B}\underbrace{\underbrace{A\dots A}_{\text{entre $1$ et $3$ } A}\underbrace{B\dots B}_{\text{$1$ ou $2$ } B}\dots}_{\text{alternances $A$/$B$}}\underbrace{A\dots A}_{\le 3\ A}$$
+Donc la série génératrice est
+\begin{align*}
+& \underbrace{(1 + X + X^2)}_{\le 2\ B}\underbrace{\left(1 + \underbrace{(X + X^2 + X^3)}_{\text{entre $1$ et $3$ } A}\underbrace{(X + X^2)}_{\text{$1$ ou $2$ } B} + \left((X + X^2 + X^3)(X + X^2)\right)^2 + \dots\right)}_{\text{alternances $A$/$B$}} \\
+& \underbrace{(1 + X + X^2 + X^3)}_{\le 3\ A} \\
+& = (1 + X + X^2)(1 + X + X^2 + X^3)\frac 1{1 - X^2(1 + X)(1 + X + X^2)}
+\end{align*}
+et la réponse est %TODO
+\end{sol}
+
+
+\begin{sol}
+L'intérêt des séries génératrices ici est de deviner un $S$ solution, la vérification étant aisée. On obtient l'unicité de la solution en bonus.
+
+Soient $A$ et $B$ de tels ensembles et $P, Q$ leurs séries génératrices. La condition de l'énoncé devient
+$$P + Q = \frac 1{1 - X} \text{ et } P^2 - P\circ X^2 = Q^2 - Q\circ X^2$$
+car $P^2$ correspond aux sommes de deux éléments de $P$ et $P\circ X^2$ aux doubles des éléments de $P$, donc soustraire l'un à l'autre donne les sommes de deux éléments \textbf{distincts} de $P$. En combinant les deux équations, on obtient
+$$\frac{P - Q}{P\circ X^2 - Q\circ X^2} = \frac{P - Q}{P^2 - Q^2} = \frac 1{P + Q} = 1 - X$$
+et, par précomposition,
+$$\frac{P\circ X^{2^k} - Q\circ X^{2^k}}{P\circ X^{2^{k + 1}} - Q\circ X^{2^{k + 1}}} = 1 - X^{2^k}$$
+Ainsi, en télescopant,
+$$P - Q = \frac{P - Q}{P\circ X^2 - Q\circ X^2} \frac{P\circ X^2 - Q\circ X^2}{P\circ X^4 - Q\circ X^4}\dots = (1 - X)(1 - X^2)(1 - X^4)\dots$$
+\begin{rem}
+Jusqu'ici, tout était symétrique en $P$ et $Q$. Le télescopage brise cette symétrie car nous y supposons que $\frac 1{P\circ X^{2^k} - Q\circ X^{2^k}}$, le dernier facteur de chaque produit partiel, tend vers $1$. Échanger $P$ et $Q$ revient à changer le signe de la limite.
+\end{rem}
+À partir d'ici, on peut trouver $P = \frac{(P + Q) + (P - Q)}2$ et $Q = \frac{(P + Q) - (P - Q)}2$ et rentrer les expressions dans le système d'équations originel pour vérifier. On fait aussi bien attention à ce que nos $P$ et $Q$ n'aient que des $0$ et $1$ en coefficients, ce qui est vrai car $P + Q$ n'a que des $1$ et $P - Q$ que des $\pm 1$.
+
+Quel ensemble avons-nous trouvé ? Les séries génératrices finales ne sont pas très parlantes. Il est plus simple de regarder $P - Q$ en remarquant que les termes positifs, les sommes d'un nombre pair de puissances distinctes de $2$, viennent de $P$ et les négatifs, les sommes d'un nombre impair de puissances distinctes de $2$ de $Q$. Ainsi, un entier naturel appartiendra à $A$ ou $B$ selon la parité du nombre de $1$ dans son écriture binaire.
+\end{sol}
+
+
+\begin{sol}
+L'intérêt des séries génératrices ici est de deviner un $S$ solution, la vérification étant aisée. On obtient l'unicité de la solution en bonus.
+
+Soit $S$ un tel ensemble et $A$ sa série génératrice. La condition "Pour tout $n$, $a + 2b = n$ a une unique solution avec $a, b \in S$" se traduit par
+$$A\cdot \left(A\circ X^2\right) = \frac 1{1 - X}$$
+L'idée (assez technique) est maintenant de télescoper $\prod_{k \ge 0} (A\circ X^{2^k})$ de deux manières différentes (ce qui se justifie car $A\circ X^{2^k} \underline\rightarrow_{k \rightarrow \infty} 1$) car on remarque que l'équation précédente donne, par précomposition,
+$$\left(A\circ X^{2^k}\right)\cdot \left(A\circ X^{2^{k + 1}}\right) = \frac 1{1 - X^{2^k}}$$
+Ainsi,
+\begin{align*}
+A
+& = \frac{A\cdot \left(A\circ X^2\right)\cdot \left(A\circ X^4\right)\cdot \left(A\circ X^8\right)\dots}{(A\circ X)\cdot \left(A\circ X^2\right)\cdot \left(A\circ X^4\right)\dots}
+& = \frac{\frac 1{1 - X}\frac 1{1 - X^4}\frac 1{1 - X^{16}}\dots}{\frac 1{1 - X^2}\frac 1{1 - X^8}\frac 1{1 - X^{32}}\dots}
+& = \frac {1 - X^2}{1 - X}\frac {1 - X^8}{1 - X^4}\frac {1 - X^{16}}{1 - X^8}\dots
+& = (1 + X)(1 + X^4)(1 + X^{16})\dots
+\end{align*}
+Mais de quel ensemble est-ce la série génératrice ? Le $k$-ième facteur nous permet de décider d'ajouter $X^{4^k}$ ou pas, donc $S$ est l'ensemble des sommes de puissances de $4$ distinctes, c'est-à-dire l'ensemble des naturels dont l'écriture en base $4$ ne contient que des $0$ et des $1$.
+
+La vérification devient claire : Pour écrire $n$ comme $a + 2b$ avec $a, b$ des naturels dont l'écriture en base $4$ ne contient que des $0$ et des $1$, on doit écrire $n$ en base $4$ et chaque chiffre de $n$ dans cette écriture doit lui-même être décomposé en binaire. Les chiffres de cette dernière écriture définissent alors $a$ et $2b$. Par exemple, pour $n = 27 = \overline{123}^4$, on doit prendre $a = \overline{101}^4 = 17 $ et $b = \overline{011}^4 = 5$.
+\end{sol}
+
+
+\begin{sol}
+Soit $A$ la série génératrice des $a_i$. Les $a_i$ sont $p$-équilibrés ssi $ A \equiv k + kX + \dots + kX^{p - 1} \mod{X^p - 1}$(Le $\mod{X^p - 1}$ permet d'ajouter ou retirer librement $p$ aux exposants, ce qui traduit la condition de modulo dans la somme) pour un certain $k$ (ici, on s'intéresse à la divisibilité polynomiale, alors on se fiche bien d'avoir $k\in\R$ plutôt que $k\in\Z$). Ainsi, puisque
+$1 + X + \dots + X^{p - 1} = \Phi_p$ (le $p$-ième polynôme cyclotomique) divise $X^p - 1$, les $a_i$ sont $p$-équilibrés ssi $\Phi_p \mid A$. \\
+Le reste de la preuve se dessine : $\Phi_3, \Phi_5, \Phi_7, \Phi_{11}, \Phi_{13}, \Phi_{17} \mid A$ et $\deg A < 50$, donc il suffit d'avoir $\deg(\mathrm{PPCM}(\Phi_3, \Phi_5, \Phi_7, \Phi_{11}, \Phi_{13}, \Phi_{17})) \ge 50$ pour conclure que $A = 0$ et que tous les $a_i$ sont nuls. Or les $\Phi_p$ sont deux à deux premiers entre eux (car $3, 5, 7, 11, 13, 17$ sont deux à deux premiers entre eux), donc
+$$\deg(\mathrm{PPCM}(\Phi_3, \dots, \Phi_{17})) = \deg(\Phi_3\dots\Phi_{17})= \deg\Phi_3 + \dots + \deg\Phi_{17} = 2 + 4 + 6 + 10 + 12 + 16 = 50$$
+comme voulu.
+\end{sol}
+
+
+\begin{sol}
+Posons $B_n$ ce nombre de partitions. On a $a_{n+1} = \sum_{k=0}^n {n \choose k} a_{n - k}$. et $A$ la série génératrice associée
+$\frac{B_{n+1}}{n!} = \sum_{k+l=n} \frac 1{k!}\frac{B_l}{l!}$
+\end{sol}
