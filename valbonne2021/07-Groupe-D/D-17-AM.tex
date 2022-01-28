@@ -1,7 +1,196 @@
-%\author{Théodore \& Aurélien-- 17 août 2021}
+%\author{Théodore \& Aurélien -  - 17 août 2021}
 
 \subsubsection{Exercices}
 
 \begin{exo}%tournament of towns 2020
 $n$ entiers strictement positifs sont donnés. Pour chaque paire de ces entiers, soit leur moyenne arithmétique est entière, soit leur moyenne géométrique l'est. Prouver qu'elles sont en fait toutes entières.
 \end{exo}
+
+
+% Source :China TST 2012
+
+%Commentaires : je pense que ce genre d'exo est pas mal pour se faire une intuition sur des choses du style "comment avoir beaucoup de diviseurs", et avoir des idées pas trop naïves sur les comportements asymptotiques en arithmétique.
+
+%\textbf{Solution :} Notons $p_i$ le $i$-ème nombre premier. On montre que le $n$-ème nombre bon est nécessairement de la forme $p_1^{\alpha_{1, n}}\dots p_j^{\alpha_{j, n}}$ avec $\alpha_1_ge \dots \ge \alpha_j$. En effet, si la suite des valuation n'est pas décroissante, on peut en échanger deux pour obtenir un nombre plus petit avec autant de diviseurs. On peut de plus montrer que $\alpha_{j, n}$ tend vers $ + \infty$ à $j$ fixé. En effet, si $\alpha_{j, n}$ est bornée, on peut montrer qu'on pourra faire mieux en augmentant la valuation sur $p_j$ et en diminuant celles sur les autres $p_i$.
+\begin{exo}
+On note $\tau(n)$ le nombre de diviseurs d'un entier $n$. On dit qu'un entier $n$ est "bon" si pour tout $m < n$ on a $\tau(m) < \tau(n)$. Montrer que pour tout entier $k\ge 1$, il existe un nombre fini d'entiers bons non divisibles par $k$.
+\end{exo}
+
+
+%Tournament of the towns 2020 
+%facile
+\begin{exo}
+Alice a choisi trois entiers $a, b, c$ et a ensuite essayé de trouver $x, y, z$ tels que $a = \mathrm{ppcm} (y, z)$, $b = \mathrm{ppcm}(x, z)$, $c = \mathrm{ppcm}(x, y)$. Il se trouve que $x, y, z$ existent et sont uniques. Alice le dit à Bob (sans lui dire $x$, $y$ et $z$) et lui dit aussi les nombres $a$ et $b$. Prouver que Bob peut déterminer $c$.
+\end{exo}
+
+
+%China TST 2006 (et probablement ailleurs, je crois que je l'ai déjà vu passer)
+% un petit classique pour s'échauffer, $n = 1$ est toujours solution. Si on prend $p$ minimal divisant $n$, on voit facilement que $a$ et $a + 1$ sont premiers avec $p$ (en particulier p>2). On voit alors que l'ordre de $\frac{a + 1}{a}$ modulo $p$ doit diviser $n$ et $p - 1$, absurde par minimalité de $p$.
+\begin{exo}
+Trouver les couples d'entiers $(a, n)\in \N^2$ vérifiant
+$$\frac{(a + 1)^n - a^n }{n}\in \N$$
+\end{exo}
+
+
+\begin{exo}%N3 2019
+Un ensemble $S$ d'entiers est dit racineux si et seulement si, pour tous entiers $n$ et $a_0, a_1, \cdots, a_n \in S$, toutes les racines entières du polynôme $a_0 + a_1x + \cdots + a_nx^n$ sont aussi dans $S$. Trouver tous les ensembles racineux qui contiennent tous les nombres de la forme $2^a - 2^b$ avec $a$ et $b$ deux entiers strictement positifs.
+\end{exo}
+
+
+% N3 2013
+% On a la factorisation en polynôme cyclo : $$n^4 + n^2 + 1 = (n^2 + n + 1)(n^2 - n + 1) = ((n + 1)^2 - (n + 1) + 1)(n^2 - n + 1)$$
+% Si on pose $a_n = n^2 - n + 1$, et $b_n$ le plus grand diviseur premier de $a_n$, il suffit donc de montrer qu'on a une infinité de $n$ pour lesquels $b_n, b_{n + 2}\le b_{n + 1}$. Supposons que ce ne soit pas le cas, dans ce cas on aurait soit $(b_n)$ strictement décroissante apcr (clairement impossible), soit croissante apcr. Or on a par la factorisation précédente $a_{n^2 + 1} = a_na_{n + 1}$, donc $b_{n^2 + 1}\le \max(b_n, b_{n + 1})$, donc la suite $b_n$ ne peut pas etre strictement croissante apcr. 
+\begin{exo}
+Prouver qu'il existe une infinité de $n$ pour lesquels le plus grand diviseur premier de $n^4 + n^2 + 1$ est le même que celui de $(n + 1)^4 + (n + 1)^2 + 1$
+\end{exo}
+
+
+%N2 2017
+\begin{exo}
+Soit $ p \geq 2$ un premier. Pauline et Appoline jouent au jeu suivant, en jouant alternativement : à chaque tour, la joueuse choisit un indice $i$ de l'ensemble $\{0, 1, 2, \ldots, p - 1 \}$ qui n'a pas déjà été choisi puis choisit un élément $a_i$ de l'ensemble $\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}$. Pauline joue en premier. Le jeu se termine quand tous les indices ont été choisis. Ensuite, on calcule le nombre suivant :
+$$M = a_0 + a_110 + a_210^2 + \cdots + a_{p - 1}10^{p - 1} = \sum_{i = 0}^{p - 1}a_i.10^i$$.
+Le but de Pauline est de s'assurer que $M$ est divisible par $p$, le but d'Appoline est de l'empêcher
+
+Prouver que Pauline a une stratégie gagnante.
+\end{exo}
+
+
+%P6 de 2021. Possible que seul Mano le connaisse, ou peu d'autres. Clairement dur, mais pas tant que ça pour un p6, le p2 était moins bien réussi que ce p6. Preuve en une idée.
+%Let $k = |A|$ and $A = \{a_1, a_2, \cdots, a_k\}$. By the given condition, for all $1 \le i \le m$, we have $m^i = \displaystyle\sum_{j = 1}^kb_{i, j}a_j$ for some $b_{i, j} \in \{0, 1\}$. Thus, for every integer $0 \le x \le m^m - 1$, writing $mx = \displaystyle\sum_{i = 1}^mc_im^i$ for $0 \le c_i \le m - 1$, we obtain \[mx = \displaystyle\sum_{i = 1}^mc_im^i = \displaystyle\sum_{i = 1}^mc_i\left(\displaystyle\sum_{j = 1}^kb_{i, j}a_j\right) = \displaystyle\sum_{j = 1}^k(\displaystyle\sum_{i = 1}^mc_ib_{i, j})a_j = \displaystyle\sum_{j = 1}^kd_ja_j\]for some integers $0 \le d_j \le (m - 1)m$. Hence, the RHS must take at least $m^m$ distinct values, which implies \[m^m \le [m(m - 1) + 1]^k < m^{2k}\]which immediately gives $|A| = k>\frac m2$.
+\begin{exo}
+Soit $m\ge 2$ un entier, $A$ un ensemble fini d'entiers relatifs et $B_1, B_2, \dots , B_m$ des sous - ensembles de $A$. Supposons que, pour chaque $k = 1, 2, \dots , m$, la somme des éléments de $B_k$ vaille $m^k$. Prouver que $A$ contient au moins $\dfrac m2$ éléments.
+\end{exo}
+
+
+% N5 2000, pas facile parce qu'il faut trouver la bonne direction dans laquelle partir, et le résultat est un peu parachuté.
+% Si on note $x, y, z$ les distance sommets - point de tangence, on a par Héron par exemple :
+%$$r(x + y + z) = \sqrt{(x + y + z)xyz}$$
+%qui se réécrit r = \sqrt{\frac{xyz}{x + y + z}}
+% On veut donc des solutions entières à $x + y + z = n\sqrt{\frac{xyz}{x + y + z}}$
+% Ou encore (x + y + z)^3 = n^2 xyz
+% a ce stade on remarque que x + y et z doivent avoir des facteurs en commun, on peut donc tenter de poser z = t(x + y), on veut alors :
+% $$(t + 1)^3(x + y)^2 = tn^2xy$$
+% On veut maintenant que t + 1 ait des facteurs communs avec xy, on pose donc $t = xy - 1$, on veut alors $$((x + y)xy)^2 = (xy - 1)n^2$$
+% A ce stade on aimerait que xy - 1 divise $(x + y)^2$ (puisque de toute façon xy est premier avec $xy - 1$), il suffit donc d'avoir pour un $m$ fixé, une infinité de solutions à :
+%$$\frac{(x + y)^2}{xy - 1} = m^2$$
+% Pour des raisons de taille, on voit que $m = 1$ et $m = 2$ ne vont pas fonctionner, on essaie donc $m = 3$, et on veut :
+% $$(x + y)^2 = 9(xy - 1)$$
+% $$x^2 - 7xy + y^2 + 9 = 0$$
+% $$x = \frac{7y + \sqrt{49y^2 - 4(y^2 + 9)}}2$$
+% Il reste à faire en sorte que 45y^2 - 36 soit un carré, ou encore que $5y^2 - 4$ soit un carré, et on a une infinité de solution par Pell - Fermat.
+\begin{exo}
+Montrer qu'il existe une infinité de $n$ pour lesquels il existe un triangle à côtés entiers tels que $p = nr$ avec $p$ le semipérimètre de ce triangle et $r$ le rayon de son cercle inscrit.
+\end{exo}
+
+
+\subsubsection{Solutions}
+
+
+\begin{sol}
+Montrons cette propriété par récurrence sur le nombre d'entiers considérés. \\
+
+\textbf{Initialisation :} Pour $n = 2$, la moyenne arithmétique ou géométrique des deux entiers est entière, et on a la propriété désirée.
+
+\textbf{Hérédité :} Supposons la propriété vérifiée au rang $n$ et montrons-la au rang $n + 1$. Notons $a_1, a_2, \dots , a_{n + 1}$ les entiers considérés. Supposons que toutes les moyennes arithmétiques de deux entiers choisis parmi $a_1, \dots , a_n$ soient entières. Si $\frac{a_\ell + a_{n + 1}}2$ est entière pour un certain $1\le \ell\le n$. Alors on a pour $1\le k\le n$ :
+$$\frac{a_{n + 1} + a_k}2 = \frac{a_{n + 1} + a_\ell}2 + \frac{a_k + a_\ell}2 - a_\ell\in \Z$$
+Donc toutes les moyennes arithmétiques sont entières. \\
+Si toutes les moyennes $\sqrt{a_\ell a_{n + 1}}$ sont entières pour $1\le \ell\le n$, alors $\sqrt{a_ka_m} = \frac1{a_{n + 1}}\sqrt{a_ka_{n + 1}}\sqrt{a_ma_{n + 1}}\in \Q$. Or les racines d'entiers qui sont rationnelles sont entières, donc dans ce cas toutes les moyennes géométriques sont entières. \\\\
+On conclut de façon analogue dans le cas où toutes les moyennes géométriques des $n$ premiers entiers sont entières.
+\end{sol}
+
+
+\begin{sol}
+Notons $(a_n)$ la suites des entiers \textit{"bons"} classés par ordre croissant. Décomposons $a_n$ en facteurs premiers comme $a_n = \prod \limits_{i = 1}^{ + \infty} p_i^{\alpha_{i, n}}$, où $p_i$ désigne le $i$ - ème nombre premier. \\
+On peut commencer par remarquer que si $\alpha_{i, n}>\alpha_{j, n}$ pour $i<j$, alors en échangeant les valuations des premiers $p_i$ et $p_j$, on obtient un nombre plus petit avec autant de diviseurs, ce qui est impossible. Donc la suite $(\alpha_{i, n})_{i\in\N^*}$ est décroissante. \\
+De plus, si on pose $k = \prod \limits_{i = 1}^mp_i^{\beta_i}$ et $N = \max_{1\le i\le m}$, si on montre la propriété pour $k' = \prod\limits_{i = 1}^{n}p_i^N$, alors elle sera aussi vérifiée pour $k$. \\
+
+Supposons que la propriété ne soit pas vérifiée pour $k'$, cela signifie qu'il existe une infinité d'entiers $n$ tels que $\alpha_{m, n}<N$ (par décroissance de la suite $(\alpha_{i, n})_i$).\\
+Pour $n$ assez grand satisfaisant la conditions précédente, on se trouve dans l'une des deux situations suivantes :\\\\
+Soit on a un premier $p$ dans la décomposition en facteurs premiers de $a_n$ vérifiant $p\ge p_m^{N + 1}$, dans ce cas si on remplace $a_n$ par $a_n' : = \frac{a_n\cdot p_m^{N + 1}}{p}$, le nombre de diviseurs de $a_n'$ est alors plus grand que celui de $a_n$ mais on a $a_n'<a_n$, absurde. \\\\
+Soit $2^{\lfloor\alpha_{2, n}/2\rfloor}>p_m^{N + 1}$, et dans ce cas, on peut remplacer un facteur $2^{\lfloor\alpha_{2, n}/2\rfloor}$ par un facteur $p_m^{N + 1}$ en augmentant le nombre de diviseurs mais en diminuant le nombre obtenu, absurde. \\\\
+Finalement, il y a bien un nombre fini d'entiers $a_n$ qui ne sont pas divisibles par $k$.
+\end{sol}
+
+
+\begin{sol}
+On regarde chaque valuation $p$ - adique séparément et on montre que pour tout $p$, la valuation $p$ - adique de $c$ est déterminée par celles de $a$ et de $b$. Soient $A, B, C, X, Y, Z$ les valuations p - adiques de $a, b, c, x, y, z$ respectivement.
+
+On sait que $A = \max(Y, Z)$, $B = \max(X, Z)$, $C = \max(X, Y)$ et que $X, Y, Z$ sont uniques satisfaisant ceci.
+
+Cela implique qu'au moins 1 parmi $A, B, C$ est nul. En effet, supposons le contraire. Alors on considère le minimum entre $X, Y, Z$. S'il est strictement positif, on peut le remplacer par $0$. Cela ne change aucun des $\max$, donc $A, B, C$ ne change pas, ce qui contredit la minimalité. Si le minimum entre $X, Y, Z$ est nul, les deux autres sont non nuls, car sinon le max de deux nombres nuls est nul et on a supposé $A, B, C$ non nuls. Alors, on peut remplacer le minimum entre $X, Y, Z$ par $1$ sans augmenter les maximums non plus, c'est encore une contradiction avec l'unicité.
+
+Donc entre $A, B, C$, l'un est nul. De plus, le maximum entre $X, Y, Z$ apparaît forcément au moins deux fois parmi $A, B, C$. Qu'il soit nul ou pas, cela implique que deux parmi $A, B, C$ soient égaux et que un troisième soit nul.
+
+Si $A = B$, alors $C = 0$ est unique et bien déterminé, Bob peut en être sûr.
+Si $A > B$, alors $B = 0$ et $C = A$ est unique et bien déterminé.
+
+Dans tous les cas, Bob peut déterminé $C$ puis $c$ en combinant toutes les valuations $p$ - adiques.
+\end{sol}
+
+
+\begin{sol}
+Soit $(a, n)$ un couple de solutions éventuelles. On commence par remarquer que $a$ est premier avec $n$. En effet si on dispose d'un premier $p$ qui divise $n$ et $a$. Alors on a $(a + 1)^n - a^n \equiv 1\pmod p $, donc $p\nmid (a + 1)^n - a^n$, ce qui contredit $n|(a + 1)^n - a^n$. On peut alors réécrire la condition de l'énoncé comme :
+$$(a + 1)^n\equiv a^n \pmod n $$
+$$(1 + a^{ - 1})^n\equiv 1 \pmod n$$
+En particulier si $q$ est un premier divisant $n$ et si $\omega$ est l'ordre de $1 + a^{ - 1}$ modulo $q$, alors d'après ce qui précède et par le petit théorème de Fermat, on a $\omega ~|~ pgcd(q - 1, n)$. \\
+Si on prend $q$ minimal divisant $n$, on obtient $\omega = 1$, donc $1 + a^{ - 1}\equiv 1\pmod q$, donc $a^{ - 1}\equiv 0\pmod q$, ce qui est impossible. La seule possibilité est donc que $n = 1$, qui convient quelque soit $a$ réciproquement.
+\end{sol}
+
+
+\begin{sol}
+$1$ est racine de $(2^2 - 2^1)X + (2^1 - 2^2) = 0$ donc $1\in S$
+
+$\forall n\in S : 1\cdot X + n$ admet $ - n$ comme racine, donc les opposés d'éléments de $S$ sont dans $S$. On va montrer que tous les entiers positifs sont dans $S$.
+
+
+\textbf{Initialisation :} $1$ et $2$ sont dans l'ensemble.
+\textbf{Hérédité :} On suppose que $[\![ - (n - 1), (n - 1)]\!]\subset S$ et on montre $n\in S$
+
+Le terme constant d'un polynôme annulant $n$ soit être divisible par $n$, et sauf à choisir $0$, ce qui ne nous aide pas beaucoup et ne fait que reporter le problème (car le polynôme sera factorisable, et le même raisonnement s'appliquera au polynôme après factorisation), il faut choisir un élément de $S$ qui n'est pas obtenu grâce à l'hypothèse de récurrence. Ce sera donc un nombre de la forme $2^a - 2^b$. Montrons qu'il existe un nombre non nul de cette forme divisible par $n$. Dans l'ensemble à $n + 1$ éléments $\{2^i|i\in[\![1, n + 1]\!]\}$, par principe des tiroirs, deux éléments distincts sont congrus modulo $n$. Leur différence (positive) est divisible par $n$ et nommée $N$. On décompose $N$ en base $n$ : $$N = \sum_{i = 1}^k a_i\cdot n^i$$
+Il n'y a pas de chiffre des unités car $n\mid N$. Les $a_i$ et les $ - a_i$ sont dans $S$ par hypothèse de récurrence forte.
+Donc : $$\left(\sum_{i = 1}^k a_i\cdot n^i\right) - N = 0$$
+
+Donc $n\in S$.
+\end{sol}
+
+
+\begin{sol}
+On commence par remarquer qu'on a la factorisation suivante :
+$$n^4 + n^2 + 1 = (n^2 - n + 1)(n^2 + n + 1)$$
+$$(n + 1)^4 + (n + 1)^2 + 1 = (n^2 + n + 1)(n^2 + 3n + 3)$$
+Pour avoir la propriété désirée, il suffit donc de montrer qu'on a une infinité de $n$ pour lesquels on a $d(n^2 + n + 1)\ge d(n^2 - n + 1), d(n^2 + 3n + 3)$, où $d(m)$ est le plus grand diviseur premier d'un entier $m$. Si on pose $f(n) = d(n^2 + n + 1)$, il suffit de montrer qu'on a $f(n)\ge f(n + 1), f(n - 1)$ pour une infinité de $n$. Il suffit donc de montrer que $f$ n'est pas strictement croissante à partir d'un certain rang. Or d'après la factorisation précédente, on a également $f(n^2) = \max(f(n), f(n + 1))$, donc en particulier, $f$ n'est pas strictement croissante entre $n$ et $n^2$, et on a la propriété désirée. 
+\end{sol}
+
+
+\begin{sol}
+Si $10$ est un résidu quadratique modulo $p$, on a $10^{\frac{p - 1}2}\equiv 1 \pmod p$. La stratégie de Pauline est la suivante : au premier coup, elle choisit $a_0 = 0$, puis, lorsqu'Appoline joue le coefficient $a_k\cdot 10^k$, Pauline répond avec le coefficient $(9 - a_k)\cdot 10^{\pm \frac{p - 1}2 + k}$ (selon que $k$ est plus petit que $\frac{p - 1}2$). La somme obtenue est alors :
+$$9\cdot (10^1 + 10^{1 + \frac{p - 1}2}) + 9\cdot (10^2 + 10^{2 + \frac{p - 1}2}) + \dots  + 9\cdot (10^{\frac{p - 1}2} + 10^{p - 1})\equiv 2\cdot 10\cdot (10^{\frac{p - 1}2} - 1)\equiv 0\pmod p$$
+Si $10$ n'est pas un résidu quadratique, Pauline commence à nouveau par prendre $a_0 = 0$, puis lorsque Appoline joue $a_k\cdot 10^k$, Pauline joue $a_k\cdot 10^{\pm \frac{p - 1}2 + k}$, et on a toujours 
+$$a_k\cdot 10^k + a_k\cdot 10^{\pm \frac{p - 1}2 + k}\equiv 0 \pmod p$$
+Donc la somme totale est nulle.
+\end{sol}
+
+
+\begin{sol}
+Si on note $x, y, z$ les distance sommets - point de tangence, on a d'après la formule de Héron :
+$$r(x + y + z) = \sqrt{(x + y + z)xyz}$$
+ce qui peut se réécrire $r = \sqrt{\frac{xyz}{x + y + z}}$\\
+On cherche donc des solutions entières à l'équation : $x + y + z = n\sqrt{\frac{xyz}{x + y + z}}$ ou encore $(x + y + z)^3 = n^2 xyz$. \\
+On remarque alors que $x + y$ et $z$ doivent avoir des facteurs en commun, on peut donc tenter de poser $z = t(x + y)$, on veut ainsi
+$$(t + 1)^3(x + y)^2 = tn^2xy$$
+On veut maintenant que $t + 1$ ait des facteurs communs avec $xy$, on pose donc $t = xy - 1$, on veut alors $$((x + y)xy)^2 = (xy - 1)n^2$$
+À ce stade, on aimerait que $xy - 1$ divise $(x + y)^2$ (puisque $xy$ est premier avec $xy - 1$), il suffit donc d'avoir pour un $m$ fixé, une infinité de solutions à l'équation :
+$$\frac{(x + y)^2}{xy - 1} = m^2$$
+Pour des raisons de taille, on voit que $m = 1$ et $m = 2$ ne vont pas fonctionner, on essaie donc $m = 3$, et on veut :
+ $$(x + y)^2 = 9(xy - 1)$$
+$$x^2 - 7xy + y^2 + 9 = 0$$
+$$x = \frac{7y + \sqrt{49y^2 - 4(y^2 + 9)}}2$$
+Il reste à faire en sorte que $45y^2 - 36$ soit un carré, ou encore que $5y^2 - 4$ soit un carré, et on a une infinité de solution d'après la théorie des équations de Pell - Fermat puisque $y = 1$ convient.
+\end{sol}
+
+
+\begin{sol}
+Soit $k = |A|$ le cardinal de $A$, composé des $A = \{a_1, a_2, \cdots, a_k\}$. D'après la condition, pour chaque $1 \le i \le m$, on a $m^i = \displaystyle\sum_{j = 1}^kb_{i, j}a_j$ pour des $b_{i, j} \in \{0, 1\}$ qui décrivent comment on été formés les ensembles $B$. Alors, pour chaque entier $0 \le x \le m^m - 1$, on décompose $m\cdot x$ en base $m$ : $mx = \displaystyle\sum_{i = 1}^mc_im^i$ avec $0 \le c_i \le m - 1$. On obtient alors
+$$mx = \displaystyle\sum_{i = 1}^mc_im^i = \displaystyle\sum_{i = 1}^mc_i\left(\displaystyle\sum_{j = 1}^kb_{i, j}a_j\right) = \displaystyle\sum_{j = 1}^k\left(\displaystyle\sum_{i = 1}^mc_ib_{i, j}\right)a_j = \displaystyle\sum_{j = 1}^kd_ja_j$$
+Avec $d_i = \displaystyle\sum_{i = 1}^mc_ib_{i, j}$. On vérifie $0 \le d_j \le (m - 1)m$. Par conséquent, quand $x$ et les $d_i$ varient, le membre de droite doit prendre au moins autant de valeurs différentes que $x$ peut prendre, soit au moins $m^m$ valeurs distinctes. Ceci implique $$m^m \le [m(m - 1) + 1]^k < m^{2k}$$ ce qui donne par passage au logarithme base $m\ge2$ $$|A| = k > \frac m2$$.
+\end{sol}
