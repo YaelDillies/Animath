@@ -11,8 +11,8 @@ On verra dans le cours que
 \begin{itemize}
 \item pour $p$ un nombre premier et $n$ un entier, $v_p(n)$ est l'exposant de $p$ dans la décomposition en facteurs premiers de $n$,
 \item le logarithme est une fonction croissante définie sur les réels strictement positifs tels que pour tous $a$ et $b$, $\ln(ab) = \ln(a) + \ln(b)$,
-\item la partie entière de d'un réel $x$ est l'unique entier vérifiant $\lfloor x \rfloor \le x < \lfloor x \rfloor +1$,
-\item les symboles $\sum$ et $\prod$ permettent de se passer des "$\cdots$" et d'effectuer des calculs efficaces: $a_1 + a_2 + \cdots + a_n = \sum_{k=1}^n a_k$ et $a_1 \cdot a_2 \cdot \cdots \cdot a_n = \prod_{k=1}^n a_k$.
+\item la partie entière de d'un réel $x$ est l'unique entier vérifiant $\lfloor x \rfloor \le x < \lfloor x \rfloor + 1$,
+\item les symboles $\sum$ et $\prod$ permettent de se passer des "$\cdots$" et d'effectuer des calculs efficaces: $a_1 + a_2 + \cdots + a_n = \sum_{k = 1}^n a_k$ et $a_1 \cdot a_2 \cdot \cdots \cdot a_n = \prod_{k = 1}^n a_k$.
 \item pour un réel $x$, $\pi(x)$ est le nombre de nombres premiers inférieurs à $x$.
 \end{itemize}
 
@@ -54,7 +54,7 @@ admet une solution avec $(a,b) \neq (0,0)$, alors $d$ est la puissance $r$-ième
 On rappelle que pour un entier $m$ on note $\varphi(m)$ le nombre de nombres inférieurs à $m$ premiers avec $m$, et que si $a$ et $b$ sont premiers entre eux alors $\varphi(ab) = \varphi(a) \varphi(b)$.
 \begin{enumerate}
 \item Soit $n$ un entier admettant $p_1,\ldots,p_r$ comme facteurs premiers. Montrer que
-  $$\sum_{d | n} \varphi(d) = \prod_{k=1}^r \sum_{j=0}^{v_{p_k}(n)} \varphi({p_k}^j)$$
+  $$\sum_{d | n} \varphi(d) = \prod_{k = 1}^r \sum_{j = 0}^{v_{p_k}(n)} \varphi({p_k}^j)$$
 \item En déduire que
   $$\sum_{d | n} \varphi(d) = n$$
 \end{enumerate}
@@ -73,7 +73,7 @@ On rappelle que pour un entier $m$ on note $\varphi(m)$ le nombre de nombres inf
 
 \begin{exo}
 Montrer que pour tout entier $n$,
-$$n \ln(2) \le \ln \left(\binom{2n} n \right) \le n \ln(4)$$
+$$n \ln 2 \le \ln \left(\binom{2n} n \right) \le n \ln(4)$$
 \end{exo}
 
 
@@ -87,7 +87,7 @@ Pour un entier $n$, on note $F(n)$ le nombre d'entiers inférieurs à $n$ dont t
 
 Montrer que pour tout $n$
 
-$$F(n) \le \left(\frac{\ln n}{\ln(2)}+1 \right)^r$$
+$$F(n) \le \left(\frac{\ln n}{\ln 2} + 1 \right)^r$$
 \item On rappelle que lorsque $n \to + \infty$,
 $$\frac{\ln n} n \to 0$$
 En déduire une preuve combinatoire de l'existence d'une infinité de nombres premiers.
@@ -100,7 +100,7 @@ En déduire une preuve combinatoire de l'existence d'une infinité de nombres pr
 Soit $p$ un nombre premier et $n$ un entier.
 
 Montrer que
-$$v_p(n!) = \sum_{k=1}^{\left\lfloor \frac{\ln n}{\ln p} \right\rfloor} \left\lfloor \frac n{p^k} \right\rfloor$$
+$$v_p(n!) = \sum_{k = 1}^{\left\lfloor \frac{\ln n}{\ln p} \right\rfloor} \left\lfloor \frac n{p^k} \right\rfloor$$
 \end{exo}
 
 
@@ -121,7 +121,7 @@ $$N = 2021!$$
 \item Montrer que pour tous réels $\alpha$ et $\beta$
 $$\lfloor 2 \alpha \rfloor  + \lfloor  2\beta\rfloor \ge \lfloor \alpha \rfloor + \lfloor \beta \rfloor + \lfloor \alpha + \beta \rfloor. $$
 \item En déduire que pour tous entiers $n$ et $m$
-$$ \frac{(2m)! (2n)!}{m! n! (m+n)!}$$
+$$ \frac{(2m)! (2n)!}{m! n! (m + n)!}$$
 est un entier.
 \end{enumerate}
 \end{exo}
@@ -132,14 +132,14 @@ est un entier.
 On rappelle le point clé de la preuve d'Euclide de l'existence d'une infinité de nombres premiers
 \begin{quote}
 Si $p_1, p_2, \ldots, p_r$ sont des nombres premiers alors
-$$\prod_{k=1}^r p_k +1$$
+$$\prod_{k = 1}^r p_k + 1$$
 admet un diviseur premier qui n'est pas parmi les $(p_i)_{1 \le i \le r}$.
 
 
 \end{quote}
 En adaptant cet argument montrer que le $n$-ième nombre premier est inférieur à $2^{2^n}$ et en déduire qu'il existe une constante $c>0$telle que, pour tout réel $x$,
 
-$$\pi(x) \ge c \ln(\ln(x))$$
+$$\pi(x) \ge c \ln(\ln x)$$
 \end{exo}
 
 
@@ -152,14 +152,14 @@ Montrer que pour tout $n$,
 
 $$F(n) \le 2^r \sqrt n$$
 et en déduire qu'il existe une constante $c>0$ telle que, pour tout réel $x$,
-$$\pi(x) \ge c \ln(x)$$
+$$\pi(x) \ge c \ln x$$
 \end{exo}
 
 \begin{exo}
 Soient $n$ un entier naturel et $p$ un nombre premier.
 
 Montrer à l'aide de la formule de Legendre (exercice~\ref{exo-IV-5-2-8})
-$$v_p\left( \binom{2n} n\right) = \sum_{k=1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor} \left(\left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \left\lfloor \frac n{p^k} \right\rfloor  \right)$$
+$$v_p\left( \binom{2n} n\right) = \sum_{k = 1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor} \left(\left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \left\lfloor \frac n{p^k} \right\rfloor  \right)$$
 puis à l'aide de l'exercice~\ref{exo-IV-5-2-5} en déduire que
 $$v_p\left( \binom{2n} n\right) \le \left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor$$
 \end{exo}
@@ -167,19 +167,19 @@ $$v_p\left( \binom{2n} n\right) \le \left\lfloor \frac{\ln(2n)}{\ln p} \right\rf
 \begin{exo}
     % \begin{enumerate}
     % \item À l'aide la formule de Legendre (exercice~\ref{exo-IV-5-2-8}) montrer que pour tout entier $n$
-    % $$\ln \left( \binom{2n} n\right) = \sum_{\substack{p \text{ premier} \\ p \le 2n }} \sum_{k=1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor} \left(\left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \left\lfloor \frac n{p^k} \right\rfloor  \right) \ln p$$
+    % $$\ln \left( \binom{2n} n\right) = \sum_{\substack{p \text{ premier} \\ p \le 2n }} \sum_{k = 1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor} \left(\left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \left\lfloor \frac n{p^k} \right\rfloor  \right) \ln p$$
     % \item En utilisant l'exercice~\ref{exo-IV-5-2-5} montrer que pour tout entier $n$
-    % $$\sum_{\substack{p \text{ premier} \\ p \le 2n }} \sum_{k=1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor} \left(\left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \left\lfloor \frac n{p^k} \right\rfloor  \right) \ln p \le \ln(2n) \pi(2n)$$
+    % $$\sum_{\substack{p \text{ premier} \\ p \le 2n }} \sum_{k = 1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor} \left(\left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \left\lfloor \frac n{p^k} \right\rfloor  \right) \ln p \le \ln(2n) \pi(2n)$$
     En utilisant l'exercice~\ref{exo-IV-5-2-13} montrer que
     $$\ln \left( \binom{2n} n\right) \le \sum_{\substack{p \text{ premier} \\ p \le 2n }} \left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor \ln p$$ puis en déduire à l'aide de l'exercice~\ref{exo-IV-5-2-6} qu'il existe une constante $c>0$telle que pour tout réel $x$,
-    $$\pi(x) \ge c \frac{x}{\ln(x)}$$
+    $$\pi(x) \ge c \frac{x}{\ln x}$$
     % \end{enumerate}
 \end{exo}
 
 
 \begin{exo}
 Il a été montré que (théorème des nombres premiers)
-$$\lim_{x \to + \infty} \frac{\pi(x)}{\left(\frac{x}{\ln(x)}\right)} = 1$$
+$$\lim_{x \to + \infty} \frac{\pi(x)}{\left(\frac{x}{\ln x}\right)} = 1$$
 
 Comparer les résultats des exercices~\ref{exo-IV-5-2-11},~\ref{exo-IV-5-2-12} et~\ref{exo-IV-5-2-13} entre eux, et les comparer le théorème des nombres premiers.
 \end{exo}
@@ -222,7 +222,7 @@ Comparer les résultats des exercices~\ref{exo-IV-5-2-11},~\ref{exo-IV-5-2-12} e
 %     $$\alpha_n = \# \left\lbrace p \text{ premier }, n \le p \le 2n \right\rbrace$$
 %     \begin{enumerate}
 %         \item Démontrer que pour tout nombre premier $p$,
-%               $$\text{ si }\frac{2n}{3} < p < n ~~ \text{ alors }\ v_p\left( \binom{2n} n\right)=0$$
+%               $$\text{ si }\frac{2n}{3} < p < n ~~ \text{ alors }\ v_p\left( \binom{2n} n\right) = 0$$
 %         \item En déduire que
 %               $$\binom{2n} n \le (2n)^{\sqrt{2n}} \left(\prod_{\substack{p \text{ premier } \\p \le \frac{2n}{3}}} p \right) (2n)^{\alpha_n}$$
 %         \item Expliquer comment déduire de la question précédente une preuve du théorème de Bertrand.
@@ -258,16 +258,16 @@ L'idée est de s'inspirer du sens direct et de ``compléter l'écart'' entre les
 
 Posons
 
-$$q = \prod_{k=1}^r p_k^{v_{p_k}(n)-v_{p_k}(m)}$$
+$$q = \prod_{k = 1}^r p_k^{v_{p_k}(n)-v_{p_k}(m)}$$
 
 qui est bien défini car pour tout $k$, $v_{p_k}(n)-v_{p_k}(m) \ge 0$.
 
 Alors on a
 
 $$\begin{aligned}
-        q m & = \prod_{k=1}^r p_k^{v_{p_k}(n)-v_{p_k}(m)} ~ \cdot ~\prod_{k=1}^r p_k^{v_{p_k}(m)} \\
-            & = \prod_{k=1}^r p_k^{v_{p_k}(n)-v_p(m)+v_p(m)} = n                                   \\
-            & = \prod_{k=1}^r p_k^{v_{p_k}(n)}                                                     \\
+        q m & = \prod_{k = 1}^r p_k^{v_{p_k}(n)-v_{p_k}(m)} ~ \cdot ~\prod_{k = 1}^r p_k^{v_{p_k}(m)} \\
+            & = \prod_{k = 1}^r p_k^{v_{p_k}(n)-v_p(m) + v_p(m)} = n                                   \\
+            & = \prod_{k = 1}^r p_k^{v_{p_k}(n)}                                                     \\
             & = n
     \end{aligned}$$
 et donc
@@ -285,9 +285,9 @@ $$\boxed{v_p\left(\operatorname{pgcd}(m,n)\right) = \min \left(v_p(m),v_p(n)\rig
 et de même
 $$\boxed{v_p\left(\operatorname{pgcd}(m,n)\right) = \max \left(v_p(m),v_p(n)\right)}$$
 
-Par conséquent, comme pour tous réels $x$ et $y$, $\min(x,y) + \max(x,y) = x+y$, on a pour tout nombre premier $p$,
+Par conséquent, comme pour tous réels $x$ et $y$, $\min(x,y) + \max(x,y) = x + y$, on a pour tout nombre premier $p$,
 $$\begin{aligned}
-        v_p(\operatorname{pgcd}(m,n) \operatorname{ppcm}(m,n)) & = \min \left(v_p(m),v_p(n)\right) +\max \left(v_p(m),v_p(n)\right) \\
+        v_p(\operatorname{pgcd}(m,n) \operatorname{ppcm}(m,n)) & = \min \left(v_p(m),v_p(n)\right) + \max \left(v_p(m),v_p(n)\right) \\
                                     & = v_p(m) + v_p(n)                                                  \\
                                     & = v_p(mn).
     \end{aligned}$$
@@ -303,13 +303,13 @@ $$a^r = d b^r$$
 Alors pour tout nombre premier $p$ on a
 $$v_p(a^r) = v_p(d b^r)$$
 et donc
-$$r v_p(a) = v_p(d)+r v_p(b)$$
+$$r v_p(a) = v_p(d) + r v_p(b)$$
 On en déduit que $r | v_p(d)$ et c'est à dire que
 $$\frac{v_p(d)}{r} \in \N$$
 Or
 $$ d = \prod_{ p \text{ premier }} p^{v_p(d)}$$
 et donc en définissant l'entier $\delta$ par
-$$ \delta= \prod_{ p \text{ premier }} p^{\frac{v_p(d)}{r}}$$
+$$ \delta = \prod_{ p \text{ premier }} p^{\frac{v_p(d)}{r}}$$
 on obtient
 $$ \boxed{d = \delta^r}$$
 ce qui est bien le résultat recherché.
@@ -323,31 +323,31 @@ On a donc montré que pour tout entier $d$ et tout entier $r$, sa racine $r$-iè
 \begin{enumerate}
 \item  En développant le produit de gauche et en utilisant la multiplicativité de $\varphi$ on obtient
 $$\begin{aligned}
-  \prod_{k=1}^r \sum_{j=0}^{v_{p_k}(n)} \varphi({p_k}^j) & = \sum_{\substack{ 0 \le j_1 \le v_{p_1}(n) \\ 0 \le j_2 \le v_{p_2}(n) \\ \vdots\\  0 \le j_r \le v_{p_r}(n)
-      }}\prod_{k=1}^r \varphi({p_k}^{j_k})                                                               \\
+  \prod_{k = 1}^r \sum_{j = 0}^{v_{p_k}(n)} \varphi({p_k}^j) & = \sum_{\substack{ 0 \le j_1 \le v_{p_1}(n) \\ 0 \le j_2 \le v_{p_2}(n) \\ \vdots\\  0 \le j_r \le v_{p_r}(n)
+      }}\prod_{k = 1}^r \varphi({p_k}^{j_k})                                                               \\
                                                           & = \sum_{\substack{ 0 \le j_1 \le v_{p_1}(n) \\ 0 \le j_2 \le v_{p_2}(n) \\ \vdots\\  0 \le j_r \le v_{p_r}(n)
-      }}\varphi\left(\prod_{k=1}^r {p_k}^{j_k}\right)
+      }}\varphi\left(\prod_{k = 1}^r {p_k}^{j_k}\right)
 \end{aligned} $$
-Or l'ensemble des diviseurs de $n$ est l'ensemble des $\prod_{k=1}^r {p_k}^{j_k}$ tels que pour tout $k$, $0 \le j_k \le v_{p_k}(n)$.
+Or l'ensemble des diviseurs de $n$ est l'ensemble des $\prod_{k = 1}^r {p_k}^{j_k}$ tels que pour tout $k$, $0 \le j_k \le v_{p_k}(n)$.
 
 On a donc bien
-$$\boxed{\prod_{k=1}^r \sum_{j=0}^{v_{p_k}(n)} \varphi({p_k}^j) = \sum_{d | n} \varphi(d)}$$
+$$\boxed{\prod_{k = 1}^r \sum_{j = 0}^{v_{p_k}(n)} \varphi({p_k}^j) = \sum_{d | n} \varphi(d)}$$
 \item On a de plus par un comptage que pour tout nombre premier $p$ et toute puissance $j\ge 1$,
 $$\varphi(p^j) = p^j-p^{j-1}$$
 
 Par conséquent pour tout entier $k$, (il s'agit d'une \emph{somme télescopique})
 $$\begin{aligned}
-  \sum_{j=1}^{v_{p_k}(n)} \varphi({p_k}^j) & = \sum_{j=1}^{v_{p_k}(n)} \left( {p_k}^j - {p_k}^{j-1}\right)                                                                                                         \\
-                                          & = \left(p^{v_{p_k}(n)} - p^{v_{p_k}(n)-1}\right) + \left(p^{v_{p_k}(n)-1} - p^{v_{p_k}(n)-2}\right) + \cdots + \left(p^{2} - p^{1}\right)+ \left(p^{1} - p^{0}\right) \\
+  \sum_{j = 1}^{v_{p_k}(n)} \varphi({p_k}^j) & = \sum_{j = 1}^{v_{p_k}(n)} \left( {p_k}^j - {p_k}^{j-1}\right)                                                                                                         \\
+                                          & = \left(p^{v_{p_k}(n)} - p^{v_{p_k}(n)-1}\right) + \left(p^{v_{p_k}(n)-1} - p^{v_{p_k}(n)-2}\right) + \cdots + \left(p^{2} - p^{1}\right) + \left(p^{1} - p^{0}\right) \\
                                           & = p^{v_{p_k}(n)}-1
 \end{aligned} $$
 et donc
 $$\begin{aligned}
-  \sum_{j=0}^{v_{p_k}(n)} \varphi({p_k}^j) = \sum_{j=1}^{v_{p_k}(n)} \varphi({p_k}^j) +1  = p^{v_{p_k}(n)}.
+  \sum_{j = 0}^{v_{p_k}(n)} \varphi({p_k}^j) = \sum_{j = 1}^{v_{p_k}(n)} \varphi({p_k}^j) + 1 = p^{v_{p_k}(n)}.
 \end{aligned}$$
 
 On obtient finalement
-$$ \sum_{d | n} \varphi(d) = \prod_{k=1}^r p^{v_{p_k}(n)}$$
+$$ \sum_{d | n} \varphi(d) = \prod_{k = 1}^r p^{v_{p_k}(n)}$$
 c'est à dire
 $$\boxed{ \sum_{d | n} \varphi(d) = n}$$
 \end{enumerate}
@@ -355,7 +355,7 @@ $$\boxed{ \sum_{d | n} \varphi(d) = n}$$
 
 \begin{sol}
 \begin{enumerate}
-\item Par définition on a $\lfloor x \rfloor \le x$ et $x <\lfloor x \rfloor +1$, i.e $x -1 <\lfloor x \rfloor $. D'où le résultat.
+\item Par définition on a $\lfloor x \rfloor \le x$ et $x <\lfloor x \rfloor + 1$, i.e $x -1 <\lfloor x \rfloor $. D'où le résultat.
 \item Pour tout réel $x$ de par la question précédente on a
 $$2x-1 < \lfloor 2x  \rfloor \le 2x$$
 et de plus, comme $x-1 < \lfloor x  \rfloor \le x$,
@@ -377,13 +377,13 @@ On peut utiliser des arguments combinatoires, ou alternativement effectuer un si
 Tout d'abord, $\binom{2n} n \le 2^{2n} = 4^n$ donc 
 $$\boxed{\ln \left(\binom{2n} n \right) \le n \ln(4)}$$
 Pour la minoration on peut remarquer que
-$$\begin{aligned}\binom{2n} n &= \frac{(2n) (2n-1) \cdots (n+1) }{n (n-1) \cdots 1}\\
-&= \frac{\prod_{k=1}^ n (n+k)}{\prod_{k=1}^n k} \\
-&= \prod_{k=1}^n \left(\frac n{k}+1 \right) \end{aligned}$$
-or pour tout $k$ entre $1$ et $n$, $\frac n{k}+1 \ge 2 >0$. Donc par produit d'inégalités positives
-$$\binom{2n} n \ge \prod_{k=1}^n 2 = 2^n$$
+$$\begin{aligned}\binom{2n} n & = \frac{(2n) (2n-1) \cdots (n + 1) }{n (n-1) \cdots 1}\\
+& = \frac{\prod_{k = 1}^ n (n + k)}{\prod_{k = 1}^n k} \\
+& = \prod_{k = 1}^n \left(\frac n{k} + 1 \right) \end{aligned}$$
+or pour tout $k$ entre $1$ et $n$, $\frac n{k} + 1 \ge 2 >0$. Donc par produit d'inégalités positives
+$$\binom{2n} n \ge \prod_{k = 1}^n 2 = 2^n$$
 ce qui donne bien 
-$$\boxed{\ln \left(\binom{2n} n \right) \ge n \ln(2)}$$
+$$\boxed{\ln \left(\binom{2n} n \right) \ge n \ln 2}$$
 \end{sol}
 
 \begin{sol}
@@ -395,24 +395,32 @@ $$p^{v_p(n)} \le n$$
 en passant au $\ln$ on déduit que
 $$\boxed{v_p(n) \le \frac{\ln n}{\ln p}}$$
 
-\item Les entiers dont tous les diviseurs sont parmi $p_1,\ldots,p_r$ et plus petits que $n$ sont
+\item Les entiers dont tous les diviseurs sont parmi $p_1, \dots, p_r$ et plus petits que $n$ peuvent s'écrire comme $p_1^{a_1}\dots p_r^{a_r}$ où $p_i^{a_i} \le n$. En particulier, il suffit de compter combien de $a_i$ sont tels que $p_i^{a_i} \le n$. Comme en partie 1, pour $i$ fixé on trouve $a_i \le \frac{\ln n}{\ln p_i}$, c'est-à-dire qu'il y a $\lfloor \frac{\ln n}{\ln p_i}\rfloor + 1$ possibilités. Donc au total
 
-TODO
+\begin{eqnarray*}
+F(n)
+& \le & \prod_{i = 1}^r \left(\lfloor \frac{\ln n}{\ln p_i}\rfloor + 1\right) \\
+& \le & \prod_{i = 1}^r \left(\frac{\ln n}{\ln p_i} + 1\right) \\
+& \le & \prod_{i = 1}^r \left(\frac{\ln n}{\ln 2} + 1\right) \text{ car $p_i \ge 2$} \\
+& = & \left(\frac{\ln n}{\ln 2} + 1 \right)^r
+\end{eqnarray*}
 
-$$\boxed{F(n) \le \left(\frac{\ln n}{\ln(2)}+1 \right)^r}$$
+Donc
+$$\boxed{F(n) \le \left(\frac{\ln n}{\ln 2} + 1 \right)^r}$$
+
 \item Supposons par l'absurde qu'il n'existe qu'un nombre fini de nombres premiers et soient $p_1,\ldots,p_r$ tous les nombres premiers.
 
 Alors comme tout entier est produit de facteurs premiers on en déduit que pour tout $n$
 $$F(n) = n$$
 
 On a donc pour tout entier $n$
-$$n \le \left(\frac{\ln n}{\ln(2)}+1 \right)^r$$
+$$n \le \left(\frac{\ln n}{\ln 2} + 1 \right)^r$$
 ce qui est une contradiction quand $n \to + \infty$.
 
 Plus précisément cela impliquerait que
-$$n^\frac{1}{r} \le 2\frac{r \ln\left(n^\frac{1}{r} \right)}{\ln(2)}$$
+$$n^\frac{1}{r} \le 2\frac{r \ln\left(n^\frac{1}{r} \right)}{\ln 2}$$
 et donc que
-$$0 <\frac{\ln(2)}{2r} \ge \frac{\ln(n^\frac{1}{r})}{n^\frac{1}{r}}$$
+$$0 < \frac{\ln 2}{2r} \ge \frac{\ln(n^\frac{1}{r})}{n^\frac{1}{r}}$$
 ce qui contredit
 $$\frac{\ln(n^\frac{1}{r})}{n^\frac{1}{r}} \to 0$$
 
@@ -425,20 +433,20 @@ Par l'absurde on a donc \framebox{il existe une infinité de nombres premiers}.
 
 \begin{sol}
 En remarquant que
-$$v_p(n!) = \sum_{k=1}^n v_p(k)$$
+$$v_p(n!) = \sum_{k = 1}^n v_p(k)$$
 on se ramène à un exercice de combinatoire.
 
 Une façon de procéder est d'utiliser le fait que pour toute fonction $f : \N \to \N$ on a (faire un schéma)
-$$\sum_{k=1}^n f(k) = \sum_j \# \left\lbrace k \in \{1,\ldots,n\} \mid f(k) \ge j\right\rbrace$$
+$$\sum_{k = 1}^n f(k) = \sum_j \# \left\lbrace k \in \{1,\ldots,n\} \mid f(k) \ge j\right\rbrace$$
 
 Or pour tout $j$  on a $\# \left\lbrace k \in \{1,\ldots,n\} \mid v_p(k) \ge j\right\rbrace$ est le nombre d'entiers entre $1$ et $n$ divisible par $p^j$ c'est à dire
 $$\left\lfloor \frac n{p^j} \right\rfloor$$
 Ce terme valant en particulier  $0$ dès que $p^j > n$ i.e $j > \left\lfloor \frac{\ln n}{\ln p} \right\rfloor$ on en déduit donc
 
-$$\boxed{v_p(n!) = \sum_{j=1}^{\left\lfloor \frac{\ln n}{\ln p} \right\rfloor} \left\lfloor \frac n{p^j} \right\rfloor}$$
+$$\boxed{v_p(n!) = \sum_{j = 1}^{\left\lfloor \frac{\ln n}{\ln p} \right\rfloor} \left\lfloor \frac n{p^j} \right\rfloor}$$
 
 \underline{Remarque :} Étant donné que $\left\lfloor \frac n{p^j} \right\rfloor$ est nul dès que $j > \left\lfloor \frac{\ln n}{\ln p} \right\rfloor$ on écrit parfois le résultat sous la forme
-$${v_p(n!) = \sum_{j=1}^{+\infty}  \left\lfloor \frac n{p^j} \right\rfloor}$$
+$${v_p(n!) = \sum_{j = 1}^{ + \infty}  \left\lfloor \frac n{p^j} \right\rfloor}$$
 ici la somme jusqu'à l'infini ayant un sens car \textbf{seuls un nombre fini de termes sont non nuls} (et il s'agit donc d'une somme finie).
 \end{sol}
 
@@ -448,23 +456,23 @@ ici la somme jusqu'à l'infini ayant un sens car \textbf{seuls un nombre fini de
 \item Plutôt que de calculer explicitement $N$ on a que le nombre $d$ de chiffres de l'écriture décimale de $N$ est l'entier vérifiant
 $$10^{d-1} \le N < 10^{d}$$
 ce qui donne en passant au $\ln$
-$$d \le \frac{\ln(N)}{\ln(10)}+1 < d+1$$
-ce qui est la définition de $\left\lfloor \frac{\ln(N)}{\ln(10)} \right\rfloor+1$. Or comme
-$$\ln(2021!) = \sum_{k=1}^{2021} \ln(k)$$
+$$d \le \frac{\ln(N)}{\ln(10)} + 1 < d + 1$$
+ce qui est la définition de $\left\lfloor \frac{\ln(N)}{\ln(10)} \right\rfloor + 1$. Or comme
+$$\ln(2021!) = \sum_{k = 1}^{2021} \ln(k)$$
 on en déduit qu'il suffit de calculer (en faisant attention aux erreurs d'arrondi)
-$$ \boxed{d = \left\lfloor \frac{1}{\ln(10)} \sum_{k=1}^{2021} \ln(k) \right\rfloor +1}$$
+$$ \boxed{d = \left\lfloor \frac{1}{\ln(10)} \sum_{k = 1}^{2021} \ln(k) \right\rfloor + 1}$$
 \item Le nombre de ``$0$'' terminant l'écriture décimale de $N$ est la plus grande puissance $p$ telle que $10^p | N$.
 
-Comme $10 = 2 \cdot 5$ on en déduit qu'il s'agit de
+Comme $10  = 2 \cdot 5$ on en déduit qu'il s'agit de
 $$\min(v_2(N),v_5(N))$$
 
 Or par la formule de Legendre on sait que pour tout entier $p$
-$$v_p(2021!) = \sum_{j=1}^{\left\lfloor \frac{\ln(2021)}{\ln p} \right\rfloor} \left\lfloor \frac{2021}{p^j} \right\rfloor$$
+$$v_p(2021!) = \sum_{j = 1}^{\left\lfloor \frac{\ln(2021)}{\ln p} \right\rfloor} \left\lfloor \frac{2021}{p^j} \right\rfloor$$
 on obtient donc que $v_2(N) \ge v_5(N)$ et que
 $$\begin{aligned}
 v_5(N)
-& =  \left\lfloor \frac{2021}{5} \right\rfloor + \left\lfloor \frac{2021}{25} \right\rfloor +\left\lfloor \frac{2021}{125} \right\rfloor + \left\lfloor \frac{2021}{625} \right\rfloor \\
-& = 404 + 80 + 16 +3 \\
+& = \left\lfloor \frac{2021}{5} \right\rfloor + \left\lfloor \frac{2021}{25} \right\rfloor + \left\lfloor \frac{2021}{125} \right\rfloor + \left\lfloor \frac{2021}{625} \right\rfloor \\
+& = 404 + 80 + 16 + 3 \\
 & = \boxed{513}
 \end{aligned}$$
 \end{enumerate}
@@ -480,81 +488,78 @@ Il suffit donc de traiter le car $(\alpha,\beta) \in [0,1[ \cdot [0,1[$.
 On vérifie alors que
 $$\boxed{\lfloor 2 \alpha \rfloor  + \lfloor  2\beta\rfloor \ge \lfloor \alpha \rfloor + \lfloor \beta \rfloor + \lfloor \alpha + \beta \rfloor}. $$
 \item La question revient à prouver que pour tout nombre premier $p$
-$$v_p \left((2m)! (2n)! \right) \ge v_p\left( m! n! (m+n)!\right)$$
+$$v_p \left((2m)! (2n)! \right) \ge v_p\left( m! n! (m + n)!\right)$$
 Or, d'après la formule de Legendre le membre de gauche est
 $$\begin{aligned}
-  v_p \left((2m)! (2n)! \right) & = \sum_{k=1}^{+ \infty} \left\lfloor \frac{2m}{p^k} \right\rfloor + \sum_{k=1}^{+ \infty} \left\lfloor \frac{2n}{p^k} \right\rfloor\\
-  & = \sum_{k=1}^{+\infty} \left(\left\lfloor 2 \frac m{p^k} \right\rfloor + \left\lfloor 2 \frac n{p^k} \right\rfloor\right)
+  v_p \left((2m)! (2n)! \right) & = \sum_{k = 1}^{ + \infty} \left\lfloor \frac{2m}{p^k} \right\rfloor + \sum_{k = 1}^{ + \infty} \left\lfloor \frac{2n}{p^k} \right\rfloor\\
+  & = \sum_{k = 1}^{ + \infty} \left(\left\lfloor 2 \frac m{p^k} \right\rfloor + \left\lfloor 2 \frac n{p^k} \right\rfloor\right)
 \end{aligned}$$
 tandis que celui de droite est
 $$\begin{aligned}
-  v_p \left((m)! (n)!(m+n)! \right) & = \sum_{k=1}^{+ \infty} \left\lfloor \frac m{p^k} \right\rfloor + \sum_{k=1}^{+ \infty} \left\lfloor \frac n{p^k} \right\rfloor+ \sum_{k=1}^{+ \infty} \left\lfloor \frac{m+n}{p^k} \right\rfloor\\
-  & = \sum_{k=1}^{+\infty} \left(\left\lfloor  \frac m{p^k} \right\rfloor + \left\lfloor \frac n{p^k} \right\rfloor+ \left\lfloor \frac m{p^k} +\frac n{p^k} \right\rfloor\right)
+  v_p \left((m)! (n)!(m + n)! \right) & = \sum_{k = 1}^{ + \infty} \left\lfloor \frac m{p^k} \right\rfloor + \sum_{k = 1}^{ + \infty} \left\lfloor \frac n{p^k} \right\rfloor + \sum_{k = 1}^{ + \infty} \left\lfloor \frac{m + n}{p^k} \right\rfloor\\
+  & = \sum_{k = 1}^{ + \infty} \left(\left\lfloor  \frac m{p^k} \right\rfloor + \left\lfloor \frac n{p^k} \right\rfloor + \left\lfloor \frac m{p^k} + \frac n{p^k} \right\rfloor\right)
 \end{aligned}$$
 La question précédente permet alors de conclure que pour tout nombre premier $p$,
-$$\boxed{v_p \left((2m)! (2n)! \right) \ge v_p\left( m! n! (m+n)!\right)}$$
+$$\boxed{v_p \left((2m)! (2n)! \right) \ge v_p\left( m! n! (m + n)!\right)}$$
 
 \underline{Remarque :} À priori il faut faire très attention aux calculs avec des sommes infinies. Mais ici seuls {un nombre fini de termes sont non nuls} et il n'y a donc pas de problème particulier.
 \end{enumerate}
 \end{sol}
 
 \begin{sol}
-  Notons $p_1 < p_2 < \ldots$ les nombres premiers rangés par ordre croissant. Ainsi pour tout $n$, $p_n$ est le $n$-ième nombre premier.
-  
-  Montrons par récurrence (forte) sur $n$ que pour tout entier $n$:
+Notons $p_1 < p_2 < \ldots$ les nombres premiers rangés par ordre croissant. Ainsi pour tout $n$, $p_n$ est le $n$-ième nombre premier.
 
-  $$\mathcal{H}_n: \quad p_n \le 2^{2^n}$$
-  
-  \textbf{Initialisation :} Pour $n=1$, $p_1 = 2 \le 2^{2^1}$.
+Montrons par récurrence (forte) sur $n$ que pour tout entier $n$:
 
+$$\mathcal H_n : \quad p_n \le 2^{2^n}$$
 
-  \textbf{Hérédité :} Soit $n$ un entier et supposons que pour tout $k \le n$, l'hypothèse $\mathcal{H}_k$ est vérifiée i.e que
-  $$\forall k \le n, \quad p_k \le 2^{2^k}$$
+\textbf{Initialisation :} Pour $n = 1$, $p_1 = 2 \le 2^{2^1}$.
+\textbf{Hérédité :} Soit $n$ un entier et supposons que pour tout $k \le n$, l'hypothèse $\mathcal H_k$ est vérifiée i.e que
+$$\forall k \le n, \quad p_k \le 2^{2^k}$$
 
-  On a (argument d'Euclide)
-  $$\prod_{k=1}^n p_k +1$$
-  admet un diviseur premier qui n'est pas un des $(p_k)_{1 \le k \le n}$.
+On a (argument d'Euclide)
+$$\prod_{k = 1}^n p_k + 1$$
+admet un diviseur premier qui n'est pas un des $(p_k)_{1 \le k \le n}$.
 
-  C'est donc un $p_j$ avec $$j > n$$ et en particulier
-  $$p_j \le \prod_{k=1}^n p_k +1$$
-  et comme les $p_j$ rangés par ordre croissant on en déduit que
-  $$p_{n+1} \le \prod_{k=1}^n p_k +1$$
+C'est donc un $p_j$ avec $$j > n$$ et en particulier
+$$p_j \le \prod_{k = 1}^n p_k + 1$$
+et comme les $p_j$ rangés par ordre croissant on en déduit que
+$$p_{n + 1} \le \prod_{k = 1}^n p_k + 1$$
 
-
-  Par l'hypothèse de récurrence on a alors
-  $$p_{n+1} \le \prod_{k=1}^n 2^{2^k} +1$$
-  et étant donné que membre de droite se calcule
-  $$\begin{aligned}
-      [TODO]
-  \end{aligned}$$
-  on en déduit que
-  $$p_{n+1} \le 2^{2^{n+1}}$$
-  ce qui est l'hypothèse de récurrence au rang $n+1$.
+Par l'hypothèse de récurrence on a alors
+$$p_{n + 1} \le \prod_{k = 1}^n 2^{2^k} + 1$$
+et étant donné que le membre de droite se calcule
+\begin{eqnarray*}
+\prod_{k = 1}^n 2^{2^k} + 1 = 2^{\sum_{k = 1}^n 2^k} + 1 = 2^{2^{n + 1} - 2} + 1
+\end{eqnarray*}
+on en déduit que
+$$p_{n + 1} \le 2^{2^{n + 1}}$$
+ce qui est l'hypothèse de récurrence au rang $n + 1$.
 
 
-  \textbf{Conclusion} On a donc montré $\mathcal{H}_1$ et $\left(\forall k \le n, \mathcal{H}_k \right) \Rightarrow \mathcal{H}_{n+1}$, par récurrence forte on a donc pour tout entier $n$
-  $$\boxed{p_n \le 2^{2^n}}$$
+\textbf{Conclusion} On a donc montré $\mathcal H_1$ et $\left(\forall k \le n, \mathcal H_k \right) \Rightarrow \mathcal H_{n + 1}$, par récurrence forte on a donc pour tout entier $n$
+$$\boxed{p_n \le 2^{2^n}}$$
 
-  Comme le $n$-ième premier est inférieur à $2^{2^n}$ on a donc au moins $n$ nombres premiers inférieurs à $2^{2^n}$ et donc 
-  $$\pi(2^{2^n}) \ge n$$
+Comme le $n$-ième premier est inférieur à $2^{2^n}$ on a donc au moins $n$ nombres premiers inférieurs à $2^{2^n}$ et donc 
+$$\pi(2^{2^n}) \ge n$$
 
-  Soit $y$ un réel. Alors par croissance de $\pi$ on a
-  $$\pi(2^{2^{y}}) \ge \pi(2^{2^{\lfloor y \rfloor}})  \ge \lfloor y \rfloor \ge y-1$$
+Soit $y$ un réel. Alors par croissance de $\pi$ on a
+$$\pi(2^{2^y}) \ge \pi(2^{2^{\lfloor y \rfloor}})  \ge \lfloor y \rfloor \ge y - 1$$
 
-  Pour tout réel $x$, en posant alors
-  $$ y = \frac{1}{\ln(2)}\ln \left( \frac{\ln(x)}{\ln(2)} \right) $$
+Pour tout réel $x$, en posant alors
+$$ y = \frac{1}{\ln 2}\ln \left( \frac{\ln x}{\ln 2} \right) $$
 
-  on en déduit
-  \begin{equation*}
-      \begin{aligned}
-          \pi(x) =\pi \left( 2^{2^y} \right) \ge y -1 &= \frac{1}{\ln(2)}\ln \left( \frac{\ln(x)}{\ln(2)} \right) -1\\
-          &=\frac{\ln(\ln(x))}{\ln(2)}- \frac{\ln(\ln(2))}{\ln(2)} -1.
-      \end{aligned}
-  \end{equation*}
-  et par conséquent il existe $c > 0$ tel que pour tout $x$ réel
-  $$\boxed{\pi(x) \ge \ln(\ln(x))}$$
+on en déduit
+\begin{equation*}
+    \begin{aligned}
+        \pi(x) = \pi \left( 2^{2^y} \right) \ge y -1 & = \frac{1}{\ln 2}\ln \left( \frac{\ln x}{\ln 2} \right) -1\\
+        & = \frac{\ln(\ln x)}{\ln 2}- \frac{\ln(\ln 2)}{\ln 2} -1.
+    \end{aligned}
+\end{equation*}
+et par conséquent il existe $c > 0$ tel que pour tout $x$ réel
+$$\boxed{\pi(x) \ge \ln(\ln x)}$$
 
-  \underline{Remarque :} ces encadrements sont de très mauvaises qualités, en effet on a $p_n \sim n \ln n$ et $\pi(x) \sim \frac{x}{\ln(x)}$.
+\underline{Remarque :} Ces encadrements sont de très mauvaise qualité. En effet on a $p_n \sim n \ln n$ et $\pi(x) \sim \frac x {\ln x}$.
 \end{sol}
 
 \begin{sol}
@@ -587,11 +592,11 @@ $$n \le 2^{\pi(n)}\sqrt n$$
 On en déduit 
 $$\sqrt n \le 2^{\pi(n)}$$
 puis par croissance de $\ln$ 
-$$\frac{1}{2} \ln n \le \pi(n) \ln(2)$$
+$$\frac{1}{2} \ln n \le \pi(n) \ln 2$$
 c'est à dire
-$$\frac{1}{2 \ln(2)} \ln n \le \pi(n)$$
+$$\frac{1}{2 \ln 2} \ln n \le \pi(n)$$
 et par conséquent, par croissance de $\pi$, on en déduit qu'il existe $c>0$ tel que pour tout réel $x$
-$$\boxed{\pi(x) \ge c \ln(x)}$$
+$$\boxed{\pi(x) \ge c \ln x}$$
 \end{sol}
 
 
@@ -602,11 +607,11 @@ donc
 $$v_p\left(\binom{2n} n\right) = v_p \left( (2n)!\right)-2 v_p(n!)$$
 et donc par la formule de Legendre on en déduit que, quitte à rajouter des $0$ dans les sommes,
 $$\begin{aligned}
-    v_p\left( \binom{2n} n\right) &= \sum_{k=1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor} \left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \sum_{k=1}^{\left\lfloor \frac{\ln n}{\ln p} \right\rfloor}\left\lfloor \frac n{p^k} \right\rfloor  \\
-    &= \sum_{k=1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor} \left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \sum_{k=1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor}\left\lfloor \frac n{p^k} \right\rfloor  
+    v_p\left( \binom{2n} n\right) & = \sum_{k = 1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor} \left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \sum_{k = 1}^{\left\lfloor \frac{\ln n}{\ln p} \right\rfloor}\left\lfloor \frac n{p^k} \right\rfloor  \\
+    & = \sum_{k = 1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor} \left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \sum_{k = 1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor}\left\lfloor \frac n{p^k} \right\rfloor  
 \end{aligned}$$
 et donc
-$$\boxed{v_p\left( \binom{2n} n\right) = \sum_{k=1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor} \left(\left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \left\lfloor \frac n{p^k} \right\rfloor  \right)}$$
+$$\boxed{v_p\left( \binom{2n} n\right) = \sum_{k = 1}^{\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor} \left(\left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \left\lfloor \frac n{p^k} \right\rfloor  \right)}$$
 De plus pour tout $k$ d'après l'exercice~\ref{exo-IV-5-2-5} on a
 $$\left(\left\lfloor \frac{2n}{p^k} \right\rfloor - 2 \left\lfloor \frac n{p^k} \right\rfloor  \right) \le 1$$
 et par conséquent
@@ -625,24 +630,24 @@ En utilisant la majoration de l'exercice~\ref{exo-IV-5-2-13} on en déduit
 $$\boxed{\ln \left( \binom{2n} n\right) \le \sum_{\substack{p \text{ premier} \\ p \le 2n }} \left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor \ln p}$$ 
 
 De plus d'après l'exercice~\ref{exo-IV-5-2-6} on a 
-$$n \ln(2) \le \ln \left( \binom{2n} n\right)$$
+$$n \ln 2 \le \ln \left( \binom{2n} n\right)$$
 et comme tous les nombres premiers sont plus grand que $2$, pour tout $p$ premier on a
 $$\left\lfloor \frac{\ln(2n)}{\ln p} \right\rfloor \ln p \le  \ln(2n)$$
 
 On en déduit donc
-$$n \ln(2) \le \ln(2n) \sum_{\substack{p \text{ premier} \\ p \le 2n }} 1$$
+$$n \ln 2 \le \ln(2n) \sum_{\substack{p \text{ premier} \\ p \le 2n }} 1$$
 c'est à dire
-$$\frac{2 n \ln(2)}{2\ln(2n)} \le \pi(2n)$$
+$$\frac{2 n \ln 2}{2\ln(2n)} \le \pi(2n)$$
 Par croissance de $\pi$ il existe donc $c > 0$ tel que pour tout réel $x$
-$$\pi(x) \ge c \frac x{\ln(x)}$$
+$$\pi(x) \ge c \frac x{\ln x}$$
 \end{sol}
 
 \begin{sol}
 Étant donné que lorsque $x \to + \infty$ on a
-$$\ln(\ln(x)) \ll \ln(x) \ll \frac{x}{\ln(x)}$$
+$$\ln(\ln x) \ll \ln x \ll \frac{x}{\ln x}$$
 le résultat de l'exercice~\ref{exo-IV-5-2-14} est plus précis que celui de l'exercice~\ref{exo-IV-5-2-12} qui lui même est plus précis que celui de l'exercice~\ref{exo-IV-5-2-11}.
 
 Le théorème des nombres premiers affirmant que
-$$\pi(x) \sim \frac{x}{\ln(x)}$$
-l'exercice~\ref{exo-IV-5-2-14}est un résultat satisfaisant même si la constante obtenue ($\frac{\ln(2)}{2}< 1$) est non optimale et si il manque la majoration.
+$$\pi(x) \sim \frac{x}{\ln x}$$
+l'exercice~\ref{exo-IV-5-2-14}est un résultat satisfaisant même si la constante obtenue ($\frac{\ln 2}{2}< 1$) est non optimale et si il manque la majoration.
 \end{sol}
